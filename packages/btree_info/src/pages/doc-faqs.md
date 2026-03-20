@@ -12,10 +12,10 @@ The b.tree beekeeping application is a pure web solution and can be installed as
 #### Installation PWA
 
 - Chrome Computer & Android
-  - YouTube Video: [b.tree - Tutorial - PWA Android - English](https://youtu.be/Qz_Dt4LRj3M)
+  - Tutorial Video: [b.tree - Tutorial - PWA Android - English](https://www.btree.tv/watch/pwa-android/)
   - Text description: [support.google.com/chrome/answer/9658361](https://support.google.com/chrome/answer/9658361)
 - Apple iOS
-  - YouTube Video: [b.tree - Tutorial - PWA iOS - Deutsch](https://youtu.be/_O5TJDFNtC0)
+  - Tutorial Video: [b.tree - Tutorial - PWA iOS - English](https://www.btree.tv/watch/pwa-ios/)
   - Text description: [pcmag.com/how-to/how-to-use-progressive-web-apps](https://www.pcmag.com/how-to/how-to-use-progressive-web-apps)
 
 #### Mobile store links
@@ -57,13 +57,13 @@ Both NFC and QR code scanner are meant to help you work faster in the field. The
 
 #### Export NFC
 
-Video explanation: [b.tree - Tutorial - NFC - English](https://youtu.be/6gaJMcWiAGA)
+Video explanation: [b.tree - Tutorial - NFC - English](https://www.btree.tv/watch/nfc/)
 
 You can write NFCs with a third party tool or use the integrated "share" button. You find it in the footer of the app and it will show the current url. If you click on it a dialog will open which allows you to write onto a NFC tag.
 
 #### Export QR code
 
-Video explanation: [b.tree - Tutorial - QR Code - English](https://youtu.be/L1Cv6pYBx9Q)
+Video explanation: [b.tree - Tutorial - QR Code - English](https://www.btree.tv/watch/qr-code/)
 
 On the hive table [/table/hive](https://app.btree.at/table/hive) you select the hives you want a QR code generated. Then you click on the dropdown button and select "Print QR". A dialog will open and QR codes for each selected hive will be generated. With an additional button you can open a separate window for printing. Alternative you can use a third party QR code generation tool and simply generate QR based on the urls.
 
@@ -93,7 +93,7 @@ The numbers for tasks and to-dos indicate the count of tasks still open / not co
 
 ### Tutorial video
 
-On YouTube you can find a collection of tutorial videos on different topics: [b.tree | Beekeeping App Tutorial | English](https://youtube.com/playlist?list=PLtd4fnhQMyZ34CSl0_vc4dMOP3BrVoXYK)
+On [b.tree Tutorials](https://www.btree.tv/) you can find a collection of tutorial videos on different topics.
 
 ### Can I sign in with Google or Apple?
 
