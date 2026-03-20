@@ -3,17 +3,15 @@
  *
  * Deploy via: Bunny Dashboard → CDN → Pull Zone → Edge Scripting
  *
- * Handles redirects that can't be expressed as simple Bunny Edge Rules
- * (pattern matching with capture groups). Everything else — HTTPS, www,
- * HSTS, cache headers, CORS — is configured in the pull zone settings.
+ * Handles redirects that require pattern matching with capture groups —
+ * not possible with simple Bunny Edge Rules. Everything else (HTTPS, www,
+ * HSTS, cache headers, CORS) is configured in the pull zone settings.
  */
 
-addEventListener('fetch', (event) => {
-  event.respondWith(handleRequest(event.request));
-});
+import * as BunnySDK from "https://esm.sh/@bunny.net/edgescript-sdk@0.11.2";
 
-async function handleRequest(request) {
-  const url = new URL(request.url);
+BunnySDK.net.http.servePullZone().onOriginRequest(async (ctx) => {
+  const url = new URL(ctx.request.url);
   const { pathname } = url;
 
   // ── /app/detail/* → https://app.btree.at/detail/* ────────────────────────
@@ -34,5 +32,6 @@ async function handleRequest(request) {
     return Response.redirect(`https://www.btree.at${rest}`, 301);
   }
 
-  return fetch(request);
-}
+  // Forward all other requests to origin
+  return ctx.request;
+});
