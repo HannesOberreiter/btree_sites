@@ -2,16 +2,10 @@
  * Bunny Edge Script for www.btree.at
  *
  * Deploy via: Bunny Dashboard → CDN → Pull Zone → Edge Scripting
- * Replaces the legacy Apache .htaccess.
  *
- * Handles:
- *  - HTTP → HTTPS redirect
- *  - Non-www → www redirect
- *  - /app/* → app.btree.at
- *  - /en/* → / (Astro i18n: English is the default locale, no prefix)
- *  - HSTS header
- *  - Cache-Control per file type
- *  - CORS for fonts / CSS / JSON
+ * Handles redirects that can't be expressed as simple Bunny Edge Rules
+ * (pattern matching with capture groups). Everything else — HTTPS, www,
+ * HSTS, cache headers, CORS — is configured in the pull zone settings.
  */
 
 addEventListener('fetch', (event) => {
@@ -20,19 +14,7 @@ addEventListener('fetch', (event) => {
 
 async function handleRequest(request) {
   const url = new URL(request.url);
-  const { hostname, pathname } = url;
-
-  // ── Force HTTPS ──────────────────────────────────────────────────────────
-  if (url.protocol === 'http:') {
-    url.protocol = 'https:';
-    return Response.redirect(url.toString(), 301);
-  }
-
-  // ── Force www ─────────────────────────────────────────────────────────────
-  if (hostname === 'btree.at') {
-    url.hostname = 'www.btree.at';
-    return Response.redirect(url.toString(), 301);
-  }
+  const { pathname } = url;
 
   // ── /app/detail/* → https://app.btree.at/detail/* ────────────────────────
   const appDetailMatch = pathname.match(/^\/app\/detail\/(.*)$/);
@@ -52,32 +34,5 @@ async function handleRequest(request) {
     return Response.redirect(`https://www.btree.at${rest}`, 301);
   }
 
-  // ── Forward to origin ─────────────────────────────────────────────────────
-  const originResponse = await fetch(request);
-  const response = new Response(originResponse.body, originResponse);
-  const headers = response.headers;
-
-  // HSTS
-  headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
-
-  // Derive extension for header rules
-  const ext = pathname.split('.').pop()?.toLowerCase() ?? '';
-
-  // CORS — fonts, CSS, JSON
-  if (['ttf', 'ttc', 'otf', 'eot', 'woff', 'woff2', 'css', 'json'].includes(ext)) {
-    headers.set('Access-Control-Allow-Origin', '*');
-  }
-
-  // Cache-Control
-  if (['ttf', 'ttc', 'otf', 'eot', 'woff', 'woff2', 'ico',
-       'jpg', 'jpeg', 'gif', 'png', 'webp', 'pdf', 'mp3', 'mp4'].includes(ext)) {
-    // Immutable assets (hashed filenames from Astro build)
-    headers.set('Cache-Control', 'max-age=31536000, immutable');
-  } else if (['js', 'css'].includes(ext)) {
-    headers.set('Cache-Control', 'max-age=2628000, must-revalidate');
-  } else if (['html', 'htm', 'xml', 'txt', 'xsl'].includes(ext)) {
-    headers.set('Cache-Control', 'max-age=86400, must-revalidate');
-  }
-
-  return response;
+  return fetch(request);
 }
