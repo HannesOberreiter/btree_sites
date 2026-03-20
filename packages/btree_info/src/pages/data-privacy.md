@@ -83,6 +83,7 @@ The Website und Beekeeping Application uses, on basis of our legitimate interest
   - WizBee AI Assistant – If the user chooses to use WizBee, our integrated beekeeping knowledge AI, the service is powered by Mistral AI (Mistral AI, Paris, France, <https://mistral.ai/>). When using WizBee, user queries are sent to Mistral AI for processing. Usage of WizBee is optional and requires an active premium subscription.
 - btree.at
   - iNaturalist (California Academy of Sciences, San Francisco <https://www.inaturalist.org/>) (API to get recent observations)
+  - Bunny Stream – Tutorial videos on [btree.tv](https://www.btree.tv/) are hosted and streamed via Bunny Stream (BunnyWay d.o.o., Cesta Komandanta Staneta 4a, 1215 Medvode, Slovenia, <https://bunny.net/>). When you watch a video, your IP address and technical connection data are transmitted to Bunny's servers for delivery. No personal account data is required to watch videos.
 
 ### Data Processing Agreement
 
@@ -92,6 +93,7 @@ Agreement on data processing according to art. 28 GDPR, with following companies
 - tablegray – tablegray gmbh, St. Stefan ob Stainz, Österreich (Hosting, Backup)
 - aws - Amazon Web Service (Backup)
 - Bunny CDN - Cesta Komandanta, Staneta 4a, 1215 Medvode, Slowenien (CDN)
+- Bunny Stream - Cesta Komandanta, Staneta 4a, 1215 Medvode, Slovenia (Video hosting, btree.tv)
 
 ### Your rights
 

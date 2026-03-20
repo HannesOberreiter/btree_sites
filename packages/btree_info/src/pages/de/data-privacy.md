@@ -84,7 +84,7 @@ Die Imkerei Applikation benutzt auf Grundlage unserer berechtigten Interessen (A
   - Dropbox (Dropbox Inc., https:/www.dropbox.com) (Speicher von Dateien, Optional)
   - WizBee KI-Assistent – Wenn der Benutzer WizBee, unseren integrierten Imkerei-Wissens-KI-Assistenten, nutzt, wird der Dienst von Mistral AI (Mistral AI, Paris, Frankreich, <https://mistral.ai/>) bereitgestellt. Bei der Nutzung von WizBee werden Benutzeranfragen zur Verarbeitung an Mistral AI gesendet. Die Nutzung von WizBee ist optional und erfordert ein aktives Premium-Abonnement.
 - btree.at
-  - iNaturalist (California Academy of Sciences, San Francisco <https://www.inaturalist.org/>) (API um aktuelle Observations anzuzeigen)
+  - Bunny Stream – Tutorial-Videos auf [btree.tv](https://www.btree.tv/) werden über Bunny Stream gehostet und gestreamt (BunnyWay d.o.o., Cesta Komandanta Staneta 4a, 1215 Medvode, Slowenien, <https://bunny.net/>). Beim Abspielen eines Videos wird Ihre IP-Adresse und technische Verbindungsdaten zur Auslieferung an die Server von Bunny übermittelt. Zur Wiedergabe von Videos sind keine persönlichen Kontodaten erforderlich.
 
 ### Auftragsverarbeitung
 
@@ -95,6 +95,7 @@ Mit folgenden Firmen besteht eine Vereinbarung über eine Auftragsverarbeitung:
 - tablegray – tablegray gmbh, St. Stefan ob Stainz, Österreich (Hosting)
 - aws - Amazon Web Service (Backup)
 - Bunny CDN - Cesta Komandanta, Staneta 4a, 1215 Medvode, Slowenien (CDN)
+- Bunny Stream - Cesta Komandanta, Staneta 4a, 1215 Medvode, Slowenien (Video Hosting, btree.tv)
 
 ### Ihre Rechte
 
