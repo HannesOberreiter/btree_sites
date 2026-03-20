@@ -22,7 +22,7 @@ lang: "en"
     <li>✅ API access for iCal and hive scales (10)</li>
     <li>✅ Responsive statistics (harvest, feed, treatment, varroa, queens)</li>
     <li>✅ Queen statistics and pedigree tree</li>
-    <li>✅ Access to WizBee your personal beekeeping knowledge AI, powered by Mistral</li>
+    <li>✅ Access to <a href="https://www.wiz-bee.com/">WizBee</a> your personal beekeeping knowledge AI, powered by Mistral</li>
     <li>✅ Automatic fetching data for temperature field on checkup</li>
     <li>✅ Apiary map with optional weather overlay</li>
 </ul>

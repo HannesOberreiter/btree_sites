@@ -101,7 +101,7 @@ Yes, in addition to the standard email and password login, b.tree supports sign-
 
 ### What is WizBee?
 
-WizBee is your personal AI beekeeping assistant, powered by Mistral AI. It is available exclusively for premium members at [/wizbee](https://app.btree.at/wizbee). You can ask beekeeping questions in plain language — from treatment timing and disease identification to feeding recommendations — and receive conversational, context-aware answers. Monthly usage is tracked and a budget applies to keep the service fair for all premium users.
+WizBee is your personal AI beekeeping assistant, powered by Mistral AI. It is available exclusively for premium members at [/wizbee](https://app.btree.at/wizbee). You can ask beekeeping questions in plain language — from treatment timing and disease identification to feeding recommendations — and receive conversational, context-aware answers. Monthly usage is tracked and a budget applies to keep the service fair for all premium users. You can ask beekeeping questions in plain language — from treatment timing and disease identification to feeding recommendations — and receive conversational, context-aware answers. Monthly usage is tracked and a budget applies to keep the service fair for all premium users.
 
 ### What is the temperature / GTS feature?
 

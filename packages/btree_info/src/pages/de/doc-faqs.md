@@ -103,7 +103,7 @@ Ja, neben der Standard-E-Mail- und Passwort-Anmeldung unterstützt b.tree die An
 
 ### Was ist WizBee?
 
-WizBee ist Ihr persönlicher KI-Imkerei-Assistent auf Basis von Mistral AI, exklusiv für Premium-Mitglieder unter [/wizbee](https://app.btree.at/wizbee). Stellen Sie Fragen in natürlicher Sprache – von Behandlungszeitpunkten und Krankheitserkennung bis hin zu Fütterungsempfehlungen – und erhalten Sie kontextbezogene Antworten. Der monatliche Verbrauch wird erfasst und ein Budget gilt, um den Dienst für alle Premium-Nutzer fair zu gestalten.
+WizBee ist Ihr persönlicher KI-Imkerei-Assistent auf Basis von Mistral AI, exklusiv für Premium-Mitglieder unter [/wizbee](https://app.btree.at/wizbee). Stellen Sie Fragen in natürlicher Sprache – von Behandlungszeitpunkten und Krankheitserkennung bis hin zu Fütterungsempfehlungen – und erhalten Sie kontextbezogene Antworten. Der monatliche Verbrauch wird erfasst und ein Budget gilt, um den Dienst für alle Premium-Nutzer fair zu gestalten. Stellen Sie Fragen in natürlicher Sprache – von Behandlungszeitpunkten und Krankheitserkennung bis hin zu Fütterungsempfehlungen – und erhalten Sie kontextbezogene Antworten. Der monatliche Verbrauch wird erfasst und ein Budget gilt, um den Dienst für alle Premium-Nutzer fair zu gestalten.
 
 ### Was ist das Temperatur- / GTS-Feature?
 
