@@ -1,0 +1,305 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'en' | 'de';
+  canonicalUrl?: string;
+}
+
+const { title, description, lang, canonicalUrl } = Astro.props;
+const otherLang = lang === 'en' ? 'de' : 'en';
+const otherLangUrl = lang === 'en' ? '/de/' : '/';
+const otherLangLabel = lang === 'en' ? 'Deutsch' : 'English';
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl ?? 'https://www.btree.tv'} />
+    <meta property="og:image" content="https://www.btree.tv/icons/icon-512x512.png" />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    <link rel="alternate" hreflang="en" href="https://www.btree.tv/" />
+    <link rel="alternate" hreflang="de" href="https://www.btree.tv/de/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f59e0b" />
+    <script is:inline>
+      function checkLanguageRedirect() {
+        const path = window.location.pathname;
+
+        if (path.startsWith('/de/') || path === '/de') {
+          return;
+        }
+
+        const hasLanguagePreference = localStorage.getItem('language-preference-set');
+        if (hasLanguagePreference) {
+          return;
+        }
+
+        const browserLanguages = navigator.languages || [navigator.language];
+        const hasGermanPreference = browserLanguages.some((lang) =>
+          lang.toLowerCase().startsWith('de')
+        );
+
+        if (hasGermanPreference) {
+          localStorage.setItem('language-preference-set', 'true');
+          window.location.href = '/de/';
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', checkLanguageRedirect);
+      } else {
+        checkLanguageRedirect();
+      }
+    </script>
+    <style is:global>
+      :root {
+        --amber: #f59e0b;
+        --amber-dark: #b45309;
+        --amber-light: #fef3c7;
+        --brown: #292524;
+        --brown-mid: #44403c;
+        --muted: #78716c;
+        --bg: #1c1917;
+        --card-bg: #292524;
+        --card-border: #3d3734;
+        --text: #f5f5f4;
+        --text-muted: #a8a29e;
+        --radius: 10px;
+        --max-w: 1100px;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a { color: var(--amber-dark); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      /* ── HEADER (light) ── */
+      header {
+        background: #fffbf5;
+        border-bottom: 1px solid #e7e5e4;
+        padding: 0 1.5rem;
+      }
+      .header-inner {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+        gap: 1rem;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--brown);
+        text-decoration: none;
+      }
+      .logo:hover { text-decoration: none; }
+      .logo-img {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        object-fit: contain;
+      }
+      .logo-name { color: var(--amber-dark); }
+
+      .lang-switch {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+      }
+      .lang-switch a {
+        color: var(--muted);
+        padding: 0.25rem 0.6rem;
+        border-radius: 6px;
+        border: 1px solid #e7e5e4;
+        transition: all 0.15s;
+      }
+      .lang-switch a:hover {
+        background: var(--amber-light);
+        color: var(--brown);
+        text-decoration: none;
+      }
+      .lang-current {
+        color: var(--amber-dark) !important;
+        border-color: var(--amber-dark) !important;
+        font-weight: 600;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        background: linear-gradient(135deg, var(--brown) 0%, var(--brown-mid) 100%);
+        color: white;
+        padding: 3.5rem 1.5rem 3rem;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: clamp(1.8rem, 5vw, 2.75rem);
+        font-weight: 800;
+        color: var(--amber);
+        margin-bottom: 0.6rem;
+      }
+      .hero p {
+        color: #d6d3d1;
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      /* ── MAIN ── */
+      main {
+        flex: 1;
+        padding: 3rem 1.5rem 4rem;
+      }
+      .inner {
+        max-width: var(--max-w);
+        margin: 0 auto;
+      }
+
+      /* ── INTRO ── */
+      .intro {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--radius);
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 2rem;
+        font-size: 0.975rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+      .intro strong { color: var(--text); }
+      .intro a { color: var(--amber); }
+      .intro a:hover { color: #fbbf24; }
+
+      /* ── VIDEO GRID ── */
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .video-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: border-color 0.2s, transform 0.2s;
+      }
+      .video-card:hover {
+        border-color: var(--amber-dark);
+        transform: translateY(-2px);
+      }
+
+      /* 16:9 responsive embed */
+      .video-wrapper {
+        position: relative;
+        padding-top: 56.25%;
+        background: #000;
+      }
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        border: 0;
+      }
+
+      .video-info {
+        padding: 1rem 1.1rem 1.2rem;
+      }
+      .video-info h2 {
+        font-size: 0.975rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 0.3rem;
+      }
+      .lang-badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        background: #3d3734;
+        border: 1px solid #57534e;
+        border-radius: 4px;
+        padding: 0.15rem 0.5rem;
+        margin-bottom: 0.4rem;
+      }
+      .video-info p {
+        font-size: 0.83rem;
+        color: var(--text-muted);
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--brown);
+        color: #a8a29e;
+        text-align: center;
+        padding: 1.75rem 1.5rem;
+        font-size: 0.82rem;
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.25rem;
+        margin-bottom: 0.6rem;
+      }
+      footer a { color: #a8a29e; }
+      footer a:hover { color: var(--amber); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a class="logo" href="/">
+          <Image src={logo} alt="b.tree logo" width={32} height={32} class="logo-img" />
+          <span>b.tree <span class="logo-name">TV</span></span>
+        </a>
+        <div class="lang-switch">
+          <a href="/" class:list={[{ 'lang-current': lang === 'en' }]}
+            onclick="localStorage.setItem('language-preference-set','true')">EN</a>
+          <a href="/de/" class:list={[{ 'lang-current': lang === 'de' }]}
+            onclick="localStorage.setItem('language-preference-set','true')">DE</a>
+        </div>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer>
+      <div class="footer-links">
+        <a href="https://www.btree.at/imprint/" target="_blank" rel="noopener">Imprint</a>
+        <a href="https://www.btree.at/data-privacy/" target="_blank" rel="noopener">Data Privacy</a>
+        <a href="https://www.btree.at" target="_blank" rel="noopener">btree.at</a>
+      </div>
+      <div>© {new Date().getFullYear()} Hannes Oberreiter, btree.at</div>
+    </footer>
+  </body>
+</html>

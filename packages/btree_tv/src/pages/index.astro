@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { videosForEnPage, BUNNY_LIBRARY_ID } from '../config';
+
+const lang = 'en' as const;
+const videos = videosForEnPage();
+---
+
+<Layout
+  lang={lang}
+  title="b.tree TV – Tutorial Videos"
+  description="Watch tutorial videos for the b.tree beekeeping app. Learn how to use NFC, QR codes, PWA installation, and more."
+  canonicalUrl="https://www.btree.tv/"
+>
+  <section class="hero">
+    <h1>b.tree Tutorials</h1>
+    <p>Short video guides to help you get the most out of the b.tree beekeeping app.</p>
+  </section>
+
+  <main>
+    <div class="inner">
+      <div class="intro">
+        <p>
+          Welcome to <strong>b.tree TV</strong> — your video help centre for the
+          <a href="https://www.btree.at" target="_blank" rel="noopener">b.tree beekeeping app</a>.
+          These tutorials walk you through the key features so you can manage your hives,
+          apiaries, and records with confidence. New to b.tree?
+          <a href="https://www.btree.at" target="_blank" rel="noopener">Get started at btree.at ↗</a>
+        </p>
+      </div>
+      <div class="video-grid">
+        {videos.map((video) => (
+          <article class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src={`https://player.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${video.id}?autoplay=false&loop=false&muted=false&preload=false&responsive=true`}
+                loading="lazy"
+                allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+                allowfullscreen
+                title={video.titleEn}
+              ></iframe>
+            </div>
+            <div class="video-info">
+              <h2>{video.titleEn}</h2>
+              {video.deOnly && (
+                <p class="lang-badge">🇦🇹 German audio — no English version available</p>
+              )}
+              <p>{video.descEn}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>

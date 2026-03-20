@@ -9,9 +9,11 @@
   "scripts": {
     "build:btree-info": "pnpm --filter @btree/info build",
     "build:wizbee-info": "pnpm --filter wizbee_info build",
+    "build:btree-tv": "pnpm --filter btree_tv build",
     "build": "pnpm -r build",
     "dev:btree-info": "pnpm --filter @btree/info dev",
-    "dev:wizbee-info": "pnpm --filter wizbee_info dev"
+    "dev:wizbee-info": "pnpm --filter wizbee_info dev",
+    "dev:btree-tv": "pnpm --filter btree_tv dev"
   },
   "pnpm": {
     "onlyBuiltDependencies": ["esbuild", "sharp"]

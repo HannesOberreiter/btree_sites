@@ -1,0 +1,84 @@
+name: Deploy btree_tv
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "packages/btree_tv/**"
+      - ".github/workflows/deploy-btree-tv.yml"
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm --filter btree_tv build
+
+      - name: Deploy to Bunny Storage
+        env:
+          STORAGE_PASSWORD: ${{ secrets.BTREE_TV_STORAGE_PASSWORD }}
+          STORAGE_ZONE_NAME: ${{ vars.BTREE_TV_STORAGE_ZONE_NAME }}
+        working-directory: packages/btree_tv
+        run: |
+          BASE_URL="https://storage.bunnycdn.com/${STORAGE_ZONE_NAME}/"
+
+          echo "Listing existing files..."
+          curl -s -w "\nHTTP_CODE:%{http_code}" \
+            -H "AccessKey: ${STORAGE_PASSWORD}" "${BASE_URL}" > /tmp/response.txt
+
+          http_code=$(grep "HTTP_CODE:" /tmp/response.txt | cut -d: -f2)
+          if [ "$http_code" != "200" ]; then
+            echo "ERROR: Failed to list storage (HTTP $http_code)"
+            exit 1
+          fi
+
+          echo "Deleting existing files..."
+          grep -o '"ObjectName":"[^"]*"' /tmp/response.txt | cut -d'"' -f4 > /tmp/objects.txt || true
+          if [ -s /tmp/objects.txt ]; then
+            while IFS= read -r name; do
+              if grep -q "\"ObjectName\":\"$name\".*\"IsDirectory\":true" /tmp/response.txt; then
+                suffix="/"
+              else
+                suffix=""
+              fi
+              curl -X DELETE -H "AccessKey: ${STORAGE_PASSWORD}" \
+                "${BASE_URL}${name}${suffix}" -s
+            done < /tmp/objects.txt
+          fi
+
+          echo "Uploading new files..."
+          cd dist
+          find . -type f > /tmp/files.txt
+          while IFS= read -r file; do
+            path="${file#./}"
+            echo "  -> $path"
+            curl -X PUT "${BASE_URL}${path}" \
+              -H "AccessKey: ${STORAGE_PASSWORD}" \
+              --data-binary "@$file" --fail -s || exit 1
+          done < /tmp/files.txt
+          echo "Upload complete!"
+
+      - name: Purge BunnyCDN cache
+        env:
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
+          PULL_ZONE_ID: ${{ vars.BTREE_TV_PULL_ZONE_ID }}
+        run: |
+          curl -X POST "https://api.bunny.net/pullzone/${PULL_ZONE_ID}/purgeCache" \
+            -H "AccessKey: ${BUNNY_API_KEY}" --fail -s
+          echo "Cache purged."
+
+# Required GitHub secrets / variables (set in repo Settings → Secrets and variables):
+#   Secrets:  BTREE_TV_STORAGE_PASSWORD, BUNNY_API_KEY (shared)
+#   Variables: BTREE_TV_STORAGE_ZONE_NAME, BTREE_TV_PULL_ZONE_ID
