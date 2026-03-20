@@ -5,15 +5,15 @@
  * not possible with simple Bunny Edge Rules. Everything else (HTTPS, www,
  * HSTS, cache headers, CORS) is configured in the pull zone settings.
  *
- * Linked to the pull zone via MiddlewareScriptId.
- * onOriginRequest short-circuits before the origin fetch, so redirects
- * fire on every request.
+ * Linked to the pull zone via MiddlewareScriptId (ID: 68801).
  */
 
 import * as BunnySDK from "https://esm.sh/@bunny.net/edgescript-sdk@0.11.2";
 
-BunnySDK.net.http.servePullZone().onOriginRequest(async (ctx) => {
-  const url = new URL(ctx.request.url);
+async function onOriginRequest(
+  context: { request: Request },
+): Promise<Response> | Response | Promise<Request> | Request | void {
+  const url = new URL(context.request.url);
   const { pathname } = url;
 
   // ── /app/detail/* → https://app.btree.at/detail/* ────────────────────────
@@ -33,7 +33,7 @@ BunnySDK.net.http.servePullZone().onOriginRequest(async (ctx) => {
     const rest = enMatch[1] || '/';
     return Response.redirect(`https://www.btree.at${rest}`, 301);
   }
+}
 
-  // Forward all other requests to origin
-  return ctx.request;
-});
+BunnySDK.net.http.servePullZone()
+  .onOriginRequest(onOriginRequest);
