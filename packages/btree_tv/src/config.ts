@@ -2,6 +2,7 @@ export const BUNNY_LIBRARY_ID = '621212';
 
 export interface Video {
   id: string;
+  slug: string;
   titleEn: string;
   titleDe: string;
   descEn: string;
@@ -12,6 +13,7 @@ export interface Video {
 export const videos: Video[] = [
   {
     id: '6f13ee0d-2d37-4559-91aa-7cfb0635ee1d',
+    slug: 'introduction',
     titleEn: 'Introduction',
     titleDe: 'Einführung',
     descEn: 'A first look at the b.tree beekeeping app.',
@@ -20,6 +22,7 @@ export const videos: Video[] = [
   },
   {
     id: 'e3fa2b58-82ce-475b-a85d-b9ff1a1b2a32',
+    slug: 'nfc-de',
     titleEn: 'NFC',
     titleDe: 'NFC',
     descEn: 'How to use NFC tags with b.tree.',
@@ -28,6 +31,7 @@ export const videos: Video[] = [
   },
   {
     id: 'c91c6977-5697-4d71-8980-2d9b4aa747ef',
+    slug: 'nfc',
     titleEn: 'NFC',
     titleDe: 'NFC',
     descEn: 'How to use NFC tags with b.tree.',
@@ -36,6 +40,7 @@ export const videos: Video[] = [
   },
   {
     id: '221c860b-c9a2-47d4-bfcb-5f56f4bedd84',
+    slug: 'pwa-android-de',
     titleEn: 'Install on Android (PWA)',
     titleDe: 'Installation auf Android (PWA)',
     descEn: 'Install b.tree as a Progressive Web App on Android.',
@@ -44,6 +49,7 @@ export const videos: Video[] = [
   },
   {
     id: '72b349b8-3c5f-4ace-9d40-f3f597ad808e',
+    slug: 'pwa-android',
     titleEn: 'Install on Android (PWA)',
     titleDe: 'Installation auf Android (PWA)',
     descEn: 'Install b.tree as a Progressive Web App on Android.',
@@ -52,6 +58,7 @@ export const videos: Video[] = [
   },
   {
     id: '691ff6c2-41f7-428c-b3fb-fc550b16818f',
+    slug: 'pwa-ios-de',
     titleEn: 'Install on iOS (PWA)',
     titleDe: 'Installation auf iOS (PWA)',
     descEn: 'Install b.tree as a Progressive Web App on iOS.',
@@ -60,6 +67,7 @@ export const videos: Video[] = [
   },
   {
     id: '51bb8491-46ef-4adb-aa87-4bdab4645a27',
+    slug: 'pwa-ios',
     titleEn: 'Install on iOS (PWA)',
     titleDe: 'Installation auf iOS (PWA)',
     descEn: 'Install b.tree as a Progressive Web App on iOS.',
@@ -68,6 +76,7 @@ export const videos: Video[] = [
   },
   {
     id: '43e4b12d-4997-438b-b719-fce50d4cb19c',
+    slug: 'qr-code-de',
     titleEn: 'QR Code',
     titleDe: 'QR Code',
     descEn: 'Using QR codes to quickly open hive records.',
@@ -76,6 +85,7 @@ export const videos: Video[] = [
   },
   {
     id: '85aee363-e5c9-49c1-9b92-8b68b743a7e0',
+    slug: 'qr-code',
     titleEn: 'QR Code',
     titleDe: 'QR Code',
     descEn: 'Using QR codes to quickly open hive records.',
@@ -84,6 +94,7 @@ export const videos: Video[] = [
   },
   {
     id: '3c9a7f6b-c18f-484a-9ebe-f6eec6e9e03e',
+    slug: 'business-user-management',
     titleEn: 'Business & User Management',
     titleDe: 'Betriebe und Benutzer Management',
     descEn: 'Manage multiple apiaries and user accounts.',
@@ -92,6 +103,7 @@ export const videos: Video[] = [
   },
   {
     id: '98b988c7-7f09-4f61-9069-53a21cb52374',
+    slug: 'dropbox',
     titleEn: 'Dropbox Data Management',
     titleDe: 'Dropbox als Datenverwaltung',
     descEn: 'Use Dropbox to back up and sync your b.tree data.',
@@ -100,6 +112,7 @@ export const videos: Video[] = [
   },
   {
     id: '6c58b27d-c1ae-4b95-b6ad-5ac6ae36e01b',
+    slug: 'ical',
     titleEn: 'Subscribe to iCal',
     titleDe: 'iCal Abonnieren',
     descEn: 'Subscribe to b.tree reminders in your calendar app.',
@@ -108,6 +121,7 @@ export const videos: Video[] = [
   },
   {
     id: '328a5549-7c5d-4acf-902c-4c4d7a034ff8',
+    slug: 'breeding',
     titleEn: 'Breeding Method & Breeding Series',
     titleDe: 'Zuchtmethode und Zuchtserie',
     descEn: 'Track queen breeding methods and series in b.tree.',
@@ -120,12 +134,6 @@ export function videosForLang(lang: 'en' | 'de'): Video[] {
   return videos.filter((v) => v.langs.includes(lang));
 }
 
-/**
- * Returns all videos for the EN page:
- * - EN videos come first, marked deOnly: false
- * - DE-only videos follow (no EN version exists), marked deOnly: true
- * Duplicate topics (same title, both EN+DE) are deduplicated — EN wins.
- */
 export function videosForEnPage(): (Video & { deOnly: boolean })[] {
   const enVideos = videos.filter((v) => v.langs.includes('en'));
   const enTitles = new Set(enVideos.map((v) => v.titleEn));

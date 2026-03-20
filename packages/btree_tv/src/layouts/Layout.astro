@@ -10,9 +10,19 @@ interface Props {
 }
 
 const { title, description, lang, canonicalUrl } = Astro.props;
-const otherLang = lang === 'en' ? 'de' : 'en';
-const otherLangUrl = lang === 'en' ? '/de/' : '/';
-const otherLangLabel = lang === 'en' ? 'Deutsch' : 'English';
+
+// Build language-switched URL by swapping the /de/ prefix on the current path
+const path = Astro.url.pathname;
+function switchLang(targetLang: 'en' | 'de'): string {
+  const isDe = path.startsWith('/de/') || path === '/de';
+  if (targetLang === 'de') {
+    return isDe ? path : `/de${path}`;
+  } else {
+    return isDe ? path.replace(/^\/de/, '') || '/' : path;
+  }
+}
+const enUrl = switchLang('en');
+const deUrl = switchLang('de');
 ---
 
 <!doctype html>
@@ -28,8 +38,8 @@ const otherLangLabel = lang === 'en' ? 'Deutsch' : 'English';
     <meta property="og:url" content={canonicalUrl ?? 'https://www.btree.tv'} />
     <meta property="og:image" content="https://www.btree.tv/icons/icon-512x512.png" />
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-    <link rel="alternate" hreflang="en" href="https://www.btree.tv/" />
-    <link rel="alternate" hreflang="de" href="https://www.btree.tv/de/" />
+    <link rel="alternate" hreflang="en" href={`https://www.btree.tv${enUrl}`} />
+    <link rel="alternate" hreflang="de" href={`https://www.btree.tv${deUrl}`} />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png" />
@@ -256,6 +266,31 @@ const otherLangLabel = lang === 'en' ? 'Deutsch' : 'English';
         color: var(--text-muted);
       }
 
+      /* ── WATCH PAGE ── */
+      .watch-inner {
+        max-width: 860px;
+      }
+      .lang-notice {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        background: #3d3734;
+        border: 1px solid #57534e;
+        border-radius: var(--radius);
+        padding: 0.6rem 1rem;
+        margin-bottom: 1.25rem;
+      }
+      .watch-player {
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--card-border);
+      }
+      .watch-nav {
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+      }
+      .watch-nav a { color: var(--text-muted); }
+      .watch-nav a:hover { color: var(--amber); text-decoration: none; }
+
       /* ── FOOTER ── */
       footer {
         background: var(--brown);
@@ -280,12 +315,12 @@ const otherLangLabel = lang === 'en' ? 'Deutsch' : 'English';
       <div class="header-inner">
         <a class="logo" href="/">
           <Image src={logo} alt="b.tree logo" width={32} height={32} class="logo-img" />
-          <span>b.tree <span class="logo-name">TV</span></span>
+          <span>b.tree <span class="logo-name">Tutorials</span></span>
         </a>
         <div class="lang-switch">
-          <a href="/" class:list={[{ 'lang-current': lang === 'en' }]}
+          <a href={enUrl} class:list={[{ 'lang-current': lang === 'en' }]}
             onclick="localStorage.setItem('language-preference-set','true')">EN</a>
-          <a href="/de/" class:list={[{ 'lang-current': lang === 'de' }]}
+          <a href={deUrl} class:list={[{ 'lang-current': lang === 'de' }]}
             onclick="localStorage.setItem('language-preference-set','true')">DE</a>
         </div>
       </div>

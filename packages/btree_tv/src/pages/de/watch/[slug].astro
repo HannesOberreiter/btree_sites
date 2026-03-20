@@ -1,0 +1,45 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { videos, BUNNY_LIBRARY_ID } from '../../../config';
+
+export function getStaticPaths() {
+  return videos.map((video) => ({
+    params: { slug: video.slug },
+    props: { video },
+  }));
+}
+
+const { video } = Astro.props;
+const lang = 'de' as const;
+const title = `${video.titleDe} – b.tree Tutorials`;
+---
+
+<Layout
+  lang={lang}
+  title={title}
+  description={video.descDe}
+  canonicalUrl={`https://www.btree.tv/de/watch/${video.slug}/`}
+>
+  <section class="hero">
+    <h1>{video.titleDe}</h1>
+    <p>{video.descDe}</p>
+  </section>
+
+  <main>
+    <div class="inner watch-inner">
+      <div class="watch-player">
+        <div class="video-wrapper">
+          <iframe
+            src={`https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${video.id}?autoplay=false&loop=false&muted=false&preload=true&responsive=true`}
+            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+            allowfullscreen
+            title={video.titleDe}
+          ></iframe>
+        </div>
+      </div>
+      <div class="watch-nav">
+        <a href="/de/">← Alle Tutorials</a>
+      </div>
+    </div>
+  </main>
+</Layout>
