@@ -76,7 +76,7 @@ jobs:
 
       - name: Purge BunnyCDN cache
         env:
-          BUNNY_API_KEY: ${{ secrets.BTREE_TV_BUNNY_API_KEY }}
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
           PULL_ZONE_ID: ${{ vars.BTREE_TV_PULL_ZONE_ID }}
         run: |
           curl -X POST "https://api.bunny.net/pullzone/${PULL_ZONE_ID}/purgeCache" \
@@ -84,5 +84,5 @@ jobs:
           echo "Cache purged."
 
 # Required GitHub secrets / variables (set in repo Settings → Secrets and variables):
-#   Secrets:  BTREE_TV_STORAGE_PASSWORD, BTREE_TV_BUNNY_API_KEY
+#   Secrets:  BTREE_TV_STORAGE_PASSWORD, BUNNY_API_KEY (shared across all sites)
 #   Variables: BTREE_TV_STORAGE_ZONE_NAME, BTREE_TV_PULL_ZONE_ID

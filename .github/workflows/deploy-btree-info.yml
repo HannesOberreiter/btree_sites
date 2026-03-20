@@ -76,7 +76,7 @@ jobs:
 
       - name: Purge BunnyCDN cache
         env:
-          BUNNY_API_KEY: ${{ secrets.BTREE_INFO_BUNNY_API_KEY }}
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
           PULL_ZONE_ID: ${{ vars.BTREE_INFO_PULL_ZONE_ID }}
         run: |
           curl -X POST "https://api.bunny.net/pullzone/${PULL_ZONE_ID}/purgeCache" \
@@ -84,7 +84,7 @@ jobs:
           echo "Cache purged."
 
 # Required GitHub secrets / variables (set in repo Settings → Secrets and variables):
-#   Secrets:  BTREE_INFO_STORAGE_PASSWORD, BTREE_INFO_BUNNY_API_KEY
+#   Secrets:  BTREE_INFO_STORAGE_PASSWORD, BUNNY_API_KEY (shared across all sites)
 #   Variables: BTREE_INFO_STORAGE_ZONE_NAME, BTREE_INFO_PULL_ZONE_ID
 #
 # Note: btree_info previously used Apache .htaccess for 10 redirects.
