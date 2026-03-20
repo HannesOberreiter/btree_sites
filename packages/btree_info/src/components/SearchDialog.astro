@@ -2,12 +2,14 @@
 import '@pagefind/modular-ui/css/ui.css';
 
 const bundlePath = `${import.meta.env.BASE_URL}pagefind/`;
+const isDev = import.meta.env.DEV;
 ---
 
 <dialog id="search-dialog" class="p-0 backdrop:backdrop-blur-sm backdrop:bg-black/30 bg-transparent w-full max-w-screen-sm rounded-lg mt-1 left-1/2 transform -translate-x-1/2">
     <div
       id="pagefindUiModular"
       data-bundle-path={bundlePath}
+      data-is-dev={isDev ? 'true' : 'false'}
       class="p-1 h-[100%] bg-white shadow-2xl not-prose"
     >
         <div id="pagefind-search-input"></div>
@@ -87,6 +89,15 @@ class SearchDialog {
 
   private initPageFind(): void {
     if (this.pagefindInstance) {
+      return;
+    }
+
+    const container = document.getElementById('pagefindUiModular');
+    if (container?.getAttribute('data-is-dev') === 'true') {
+      const notice = document.getElementById('pagefind-search-input');
+      if (notice) {
+        notice.innerHTML = '<p style="padding:1rem;color:#666;font-size:0.9rem">Search is only available in production builds.<br>Run <code>pnpm --filter @btree/info build</code> then <code>preview</code> to test it.</p>';
+      }
       return;
     }
 
