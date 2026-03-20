@@ -21,7 +21,7 @@ All packages use **Astro 6** static output. Keep these conventions when editing 
 - TailwindCSS 4 via Vite plugin (`@tailwindcss/vite`) — no `@tailwind` directives, use utility classes directly
 - Vue components live in `src/components/*.vue` — only use Vue for interactive/stateful UI
 
-## wizbee_info (packages/wizbee_info) & btree_tv (packages/btree_tv)
+## wizbee_info (packages/wizbee_info)
 
 - Single page, plain CSS, no frameworks — keep it minimal
 - All styles are in `<style>` blocks in `src/pages/index.astro`

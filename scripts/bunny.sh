@@ -10,7 +10,7 @@
 #   ./scripts/bunny.sh upload <site>   — upload dist/ (skip build)
 #   ./scripts/bunny.sh list   <site>   — list files in storage zone
 #
-# <site> is one of: btree_info | wizbee_info | btree_tv
+# <site> is one of: btree_info | wizbee_info
 # =============================================================================
 
 set -euo pipefail
@@ -57,15 +57,8 @@ resolve_site() {
       STORAGE_PASSWORD="${WIZBEE_INFO_STORAGE_PASSWORD:-}"
       PULL_ZONE_ID="${WIZBEE_INFO_PULL_ZONE_ID:-}"
       ;;
-    btree_tv)
-      PKG_DIR="$ROOT_DIR/packages/btree_tv"
-      PKG_FILTER="btree_tv"
-      STORAGE_ZONE_NAME="${BTREE_TV_STORAGE_ZONE_NAME:-}"
-      STORAGE_PASSWORD="${BTREE_TV_STORAGE_PASSWORD:-}"
-      PULL_ZONE_ID="${BTREE_TV_PULL_ZONE_ID:-}"
-      ;;
     *)
-      echo "ERROR: unknown site '$site'. Choose: btree_info | wizbee_info | btree_tv"
+      echo "ERROR: unknown site '$site'. Choose: btree_info | wizbee_info"
       exit 1
       ;;
   esac

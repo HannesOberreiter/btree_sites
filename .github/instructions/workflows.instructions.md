@@ -15,7 +15,6 @@ applyTo: ".github/workflows/*.yml"
 |---------|-----------------|
 | btree_info | `@btree/info` |
 | wizbee_info | `wizbee_info` |
-| btree_tv | `btree_tv` |
 
 ## Secrets & variables
 

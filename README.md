@@ -8,7 +8,6 @@ Static websites monorepo for the [btree](https://www.btree.at) ecosystem.
 |---------|--------|-------------|
 | `packages/btree_info` | btree.at | Main btree info & documentation site |
 | `packages/wizbee_info` | wiz-bee.com | WizBee AI assistant landing page |
-| `packages/btree_tv` | btree.tv *(planned)* | Example videos funnel site |
 
 ## Stack
 
@@ -26,7 +25,6 @@ pnpm install
 # Dev server for a specific package
 pnpm dev:btree-info
 pnpm dev:wizbee-info
-pnpm dev:btree-tv
 
 # Build a specific package
 pnpm build:btree-info
