@@ -20,7 +20,8 @@ lang: "en"
     <li>✅ 1.000 Hives!</li>
     <li>✅ 100 Apiaries!</li>
     <li>✅ API access for iCal and hive scales (10)</li>
-    <li>✅ Responsive statistics</li>
+    <li>✅ Responsive statistics (harvest, feed, treatment, varroa, queens)</li>
+    <li>✅ Queen statistics and pedigree tree</li>
     <li>✅ Access to WizBee your personal beekeeping knowledge AI, powered by Mistral</li>
     <li>✅ Automatic fetching data for temperature field on checkup</li>
     <li>✅ Apiary map with optional weather overlay</li>

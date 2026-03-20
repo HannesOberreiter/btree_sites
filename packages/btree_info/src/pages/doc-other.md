@@ -73,3 +73,30 @@ For users, there are three ranks which can be changed by clicking on the rank ic
 - Read-Only: This user can only look at the the data, but cannot make any changes.
 
 Hint: Premium membership is per company and not per user, ie. you only need pay premium once no matter how many users are active in your company.
+
+### WizBee AI Assistant (Premium)
+
+WizBee [/wizbee](https://app.btree.at/wizbee) is an AI-powered beekeeping knowledge assistant available to premium members. Ask questions in plain language and receive streaming answers covering topics like treatment timing, disease identification, queen rearing, and feeding. Each query counts toward a monthly usage budget. Access WizBee from the main navigation menu.
+
+### Helpers
+
+Two small utility tools are available from the navigation:
+
+- **Sugar Water Calculator** [/sugar_water_calculator](https://app.btree.at/sugar_water_calculator) — Enter a target volume and sugar concentration to get exact amounts of sugar and water needed for mixing feed.
+- **Bee Lifecycle** [/lifecycle](https://app.btree.at/lifecycle) — Reference table showing development durations (egg, open brood, capped brood, adult) for worker, drone and queen bees. Useful when timing treatments or planning rearing steps.
+
+### Queen Pedigree
+
+When queens are linked via the "Mother" field, b.tree builds a breeding lineage. You can view the full ancestry as a pedigree tree from the queen table [/table/queen](https://app.btree.at/table/queen) by clicking on a queen. This is particularly useful for queen breeders tracking genetic lines.
+
+### Public Maps
+
+The following maps are available publicly without login:
+
+- **Vespa velutina (Asian hornet)** [/pub/vespa-velutina/map](https://app.btree.at/pub/vespa-velutina/map) — Crowdsourced sighting map of the Asian hornet, an invasive predator of honeybees.
+- **Aethina tumida (Small hive beetle)** [/pub/aethina-tumida/map](https://app.btree.at/pub/aethina-tumida/map) — Sighting map for the small hive beetle.
+- **American Foulbrood (Austria)** — Map of known AFB outbreak locations in Austria, accessible within the app for monitoring disease spread.
+
+### Social Login
+
+In addition to email and password, b.tree supports sign-in with **Google** and **Apple** accounts. Use the respective buttons on the login page [/visitor/login](https://app.btree.at/visitor/login). If your social provider email matches an existing b.tree account the accounts are linked automatically.

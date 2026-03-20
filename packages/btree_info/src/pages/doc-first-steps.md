@@ -67,6 +67,35 @@ If you want to manage your queens in our beekeeping app is optional. Each hive c
 - Mating place: Custom selection field for example to differentiate between mating places or artificial insemination.
 - Mother: Open input field for mother breeding line or any other notes on ancestry. Optionally you can select one of your own queens in the next dropdown, if you used their eggs for crafting.
 
+If you linked queens via the mother field you can view the breeding lineage as a pedigree tree on the queen detail page [/table/queen](https://app.btree.at/table/queen).
+
 ### Charges
 
 Rudimentary tool to keep track of your stocks. We use it to keep track of our treatment material, sugar store and production amount. You can create a new good receipt or outgoing goods with the form [/new/charge](https://app.btree.at/new/charge) and have an overview of your stocks as table [/table/charge-stock](https://app.btree.at/table/charge-stock). If we create a new honey jar charge we write the distinct charge identification number in the corresponding field and in the note field the charge indent of the harvest we used. With this pattern we can follow the goods flow. As for sugar we use the charge ident field for the invoice number. As for outgoing charges we only to this twice a year when we make a stock count aka inventory in the storage. If you have a bigger operation there are better tools for this kind of job but for our small operation this works fine to keep track at least a little bit and fulfil the goods flow record keeping needed for our certification as organic beekeeper.
+
+### Print Hive Records
+
+For record keeping or field work you can print a summary sheet for any hive. Open the hive detail page and use the print button to generate a printer-friendly yearly overview of all tasks for that colony [/print/hive/:id](https://app.btree.at/table/hive).
+
+### Statistics (Premium)
+
+Premium members have access to a comprehensive statistics module [/statistic/](https://app.btree.at/statistic/hive_count) with responsive charts and tables for:
+
+- **Hive count** - colony count trends over time per apiary
+- **Harvest** - honey and resource yield by hive, apiary, year and type
+- **Feeding** - feed usage by hive, apiary, year and type
+- **Treatment** - treatment records by hive, apiary, year and type
+- **Queen performance** - rating trends per queen and hive
+- **Varroa** - mite load analysis per treatment cycle
+- **Scale data** - IoT hive weight analytics over time
+
+### Helpers
+
+The app includes a few small utility tools accessible from the navigation:
+
+- **Sugar Water Calculator** [/sugar_water_calculator](https://app.btree.at/sugar_water_calculator) - Calculates the required amounts of sugar and water for a target feed volume and concentration. Useful for mixing feed on the apiary.
+- **Bee Lifecycle** [/lifecycle](https://app.btree.at/lifecycle) - Reference chart for the development stages (egg, larva, pupa, adult) of worker, drone and queen bees. Handy when planning treatments or rearing.
+
+### WizBee AI Assistant (Premium)
+
+WizBee [/wizbee](https://app.btree.at/wizbee) is an AI-powered beekeeping assistant, powered by Mistral, available exclusively for premium members. You can ask beekeeping questions in natural language and receive context-aware answers. WizBee can help with treatment timing, disease identification, feeding recommendations and general beekeeping knowledge. Monthly usage is tracked and a budget limit applies to keep the service fair for all users.

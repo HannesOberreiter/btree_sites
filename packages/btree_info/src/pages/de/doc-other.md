@@ -77,3 +77,30 @@ Für Benutzer gibt es drei Ränge, die durch Klicken auf das Rangsymbol geänder
 - Read-Only: Dieser Benutzer kann sich die Daten nur ansehen, aber keine Änderungen vornehmen.
 
 Hinweis: Die Premium-Mitgliedschaft gilt pro Unternehmen und nicht pro Benutzer, d.h. Sie müssen nur einmal Premium bezahlen, egal wie viele Benutzer in Ihrer Imkerei aktiv sind.
+
+### WizBee KI-Assistent (Premium)
+
+WizBee [/wizbee](https://app.btree.at/wizbee) ist ein KI-gestützter Imkerei-Wissensassistent für Premium-Mitglieder. Stellen Sie Fragen in natürlicher Sprache und erhalten Sie Streaming-Antworten zu Themen wie Behandlungszeitpunkten, Krankheitserkennung, Königinnenzucht und Fütterung. Jede Anfrage zählt zum monatlichen Nutzungsbudget. WizBee ist über das Hauptnavigationsmenü erreichbar.
+
+### Hilfsprogramme
+
+Zwei kleine Hilfswerkzeuge sind über die Navigation verfügbar:
+
+- **Zuckerwasserrechner** [/sugar_water_calculator](https://app.btree.at/sugar_water_calculator) — Geben Sie ein Zielvolumen und eine Zuckerkonzentration ein, um die genauen Mengen an Zucker und Wasser für die Futtermischung zu erhalten.
+- **Bienenentwicklung** [/lifecycle](https://app.btree.at/lifecycle) — Referenztabelle mit den Entwicklungsdauern (Ei, offene Brut, verdeckelte Brut, Adulte) für Arbeiterin, Drohne und Königin. Nützlich bei der Planung von Behandlungen oder Zuchtschritten.
+
+### Königinnen-Stammbaum
+
+Wenn Königinnen über das Feld „Mutter" verknüpft sind, erstellt b.tree eine Zuchtabstammung. Sie können die vollständige Ahnenlinie als Stammbaum in der Königinnentabelle [/table/queen](https://app.btree.at/table/queen) einsehen. Dies ist besonders für Königinnenzüchter hilfreich, die genetische Linien verfolgen.
+
+### Öffentliche Karten
+
+Folgende Karten sind ohne Login öffentlich zugänglich:
+
+- **Vespa velutina (Asiatische Hornisse)** [/pub/vespa-velutina/map](https://app.btree.at/pub/vespa-velutina/map) — Gemeinschaftlich gepflegte Sichtungskarte der Asiatischen Hornisse, einem invasiven Räuber von Honigbienen.
+- **Aethina tumida (Kleiner Beutenkäfer)** [/pub/aethina-tumida/map](https://app.btree.at/pub/aethina-tumida/map) — Sichtungskarte des Kleinen Beutenkäfers.
+- **Amerikanische Faulbrut / AFB (Österreich)** — Karte bekannter AFB-Ausbrüche in Österreich, innerhalb der App abrufbar, um die Ausbreitung der Krankheit zu beobachten.
+
+### Soziale Anmeldung
+
+Neben E-Mail und Passwort unterstützt b.tree die Anmeldung mit **Google**- und **Apple**-Konten. Verwenden Sie die entsprechenden Schaltflächen auf der Anmeldeseite [/visitor/login](https://app.btree.at/visitor/login). Wenn die E-Mail-Adresse des sozialen Anbieters mit einem bestehenden b.tree-Konto übereinstimmt, werden die Konten automatisch verknüpft.

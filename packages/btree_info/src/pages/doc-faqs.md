@@ -94,3 +94,15 @@ The numbers for tasks and to-dos indicate the count of tasks still open / not co
 ### Tutorial video
 
 On YouTube you can find a collection of tutorial videos on different topics: [b.tree | Beekeeping App Tutorial | English](https://youtube.com/playlist?list=PLtd4fnhQMyZ34CSl0_vc4dMOP3BrVoXYK)
+
+### Can I sign in with Google or Apple?
+
+Yes, in addition to the standard email and password login, b.tree supports sign-in with Google and Apple. You can use these options on the login page [/visitor/login](https://app.btree.at/visitor/login). If you sign in with a social provider for the first time using an email address already registered with b.tree, the accounts will be linked automatically.
+
+### What is WizBee?
+
+WizBee is your personal AI beekeeping assistant, powered by Mistral AI. It is available exclusively for premium members at [/wizbee](https://app.btree.at/wizbee). You can ask beekeeping questions in plain language — from treatment timing and disease identification to feeding recommendations — and receive conversational, context-aware answers. Monthly usage is tracked and a budget applies to keep the service fair for all premium users.
+
+### What is the temperature / GTS feature?
+
+Premium members benefit from automatic weather data. When filling in a checkup, the temperature field is pre-filled with data for the apiary location. Additionally, the apiary map can display a weather overlay. The **Grünlandtemperatursumme (GTS)** — a growing-season heat sum used in central European beekeeping to estimate colony development and optimal treatment windows — is available to all users per apiary.

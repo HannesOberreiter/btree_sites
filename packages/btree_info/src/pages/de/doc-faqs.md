@@ -96,3 +96,15 @@ Die Zahlen bei Aufgaben und ToDo's kennzeichnet die Anzahl der noch offenen / ni
 ### Tutorial Videos
 
 Auf YouTube findet ihr eine Playlist mit Tutorial Videos: [b.tree | Imkerei App Tutorial | Deutsch](https://www.youtube.com/playlist?list=PLtd4fnhQMyZ0dz8fAT5rPUw4wnkznXXSX)
+
+### Kann ich mich mit Google oder Apple anmelden?
+
+Ja, neben der Standard-E-Mail- und Passwort-Anmeldung unterstützt b.tree die Anmeldung mit Google und Apple. Diese Optionen finden Sie auf der Login-Seite [/visitor/login](https://app.btree.at/visitor/login). Wenn Sie sich erstmals mit einem sozialen Anbieter mit einer bei b.tree bereits registrierten E-Mail-Adresse anmelden, werden die Konten automatisch verknüpft.
+
+### Was ist WizBee?
+
+WizBee ist Ihr persönlicher KI-Imkerei-Assistent auf Basis von Mistral AI, exklusiv für Premium-Mitglieder unter [/wizbee](https://app.btree.at/wizbee). Stellen Sie Fragen in natürlicher Sprache – von Behandlungszeitpunkten und Krankheitserkennung bis hin zu Fütterungsempfehlungen – und erhalten Sie kontextbezogene Antworten. Der monatliche Verbrauch wird erfasst und ein Budget gilt, um den Dienst für alle Premium-Nutzer fair zu gestalten.
+
+### Was ist das Temperatur- / GTS-Feature?
+
+Premium-Mitglieder profitieren von automatischen Wetterdaten: Beim Ausfüllen einer Kontrolle wird das Temperaturfeld automatisch mit Daten des jeweiligen Bienenstandorts befüllt. Zusätzlich kann die Standkarte eine Wetterüberlagerung anzeigen. Die **Grünlandtemperatursumme (GTS)** – ein in der mitteleuropäischen Imkerei genutzter Wärmesummenwert zur Einschätzung der Völkerstärke und optimaler Behandlungszeitpunkte – steht allen Nutzern je Bienenstand zur Verfügung.

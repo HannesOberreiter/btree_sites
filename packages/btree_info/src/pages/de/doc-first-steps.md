@@ -71,6 +71,35 @@ Ob Sie Ihre Königinnen in unserer Bienenzucht-App verwalten möchten, ist optio
 - Begattungsort: Benutzerdefiniertes Auswahlfeld, z. B. zur Unterscheidung zwischen Begattungsorten, Standbegattet oder künstlicher Besamung.
 - Mutter: Offenes Eingabefeld für die mütterliche Zuchtlinie oder andere Angaben zur Abstammung. Optional können Sie im nächsten Auswahlfeld eine Ihrer eigenen Königinnen auswählen, wenn Sie deren Nachkommen zum Umlarven verwendet haben.
 
+Wenn Sie Königinnen über das Mutterfeld miteinander verknüpft haben, können Sie die Zuchtabstammung als Stammbaum auf der Königinnen-Detailseite [/table/queen](https://app.btree.at/table/queen) anzeigen.
+
 ### Chargen
 
 Ein rudimentäres Werkzeug, um den Überblick über Ihre Vorräte zu behalten. Wir verwenden es, um den Überblick über unser Behandlungsmaterial, das Zuckerlager und die Produktionsmenge zu behalten. Sie können einen neuen Wareneingang oder Warenausgang mit dem Formular [/new/charge](https://app.btree.at/new/charge) erstellen und hast einen einfachen Überblick über deine Bestände als Tabelle [/table/charge-stock](https://app.btree.at/table/charge-stock). Wenn wir eine neue Charge für eine Honig-Abfüllung anlegen, schreiben wir die eindeutige Identifikationsnummer der Charge in das entsprechende Feld und in das Notizfeld den Charge-Indent der verwendeten Ernte. Mit diesem Muster können wir den Warenfluss verfolgen. Für Zucker verwenden wir das Feld "Chargennummer" für die Rechnungsnummer. Was die Ausgangschargen betrifft, so machen wir dies nur zweimal im Jahr, wenn wir eine Bestandszählung alias Inventur im Lager durchführen. Wenn Sie einen größeren Betrieb haben, gibt es bessere Werkzeuge für Warenmanagement, aber für unseren kleinen Betrieb funktioniert dies gut, um zumindest ein wenig den Überblick zu behalten und die Warenflussaufzeichnungen zu erfüllen, die für unsere Zertifizierung als Bio-Imker erforderlich sind.
+
+### Stockdaten drucken
+
+Zur Dokumentation oder für die Arbeit am Bienenstand können Sie für jeden Stock ein Übersichtsblatt drucken. Öffnen Sie die Stockdetailseite und verwenden Sie die Druckschaltfläche, um eine druckfreundliche Jahresübersicht aller Aufgaben für das Volk zu erstellen [/table/hive](https://app.btree.at/table/hive).
+
+### Statistiken (Premium)
+
+Premium-Mitglieder haben Zugang zu einem umfassenden Statistikmodul [/statistic/](https://app.btree.at/statistic/hive_count) mit responsiven Diagrammen und Tabellen für:
+
+- **Völkeranzahl** – Verlauf der Völkerzahl über die Zeit pro Bienenstand
+- **Ernte** – Honig- und Ressourcenertrag nach Volk, Stand, Jahr und Typ
+- **Fütterung** – Futtermengen nach Volk, Stand, Jahr und Typ
+- **Behandlung** – Behandlungsaufzeichnungen nach Volk, Stand, Jahr und Typ
+- **Königinnenleistung** – Bewertungstrends pro Königin und Volk
+- **Varroa** – Milbenbelastungsanalyse pro Behandlungszyklus
+- **Stockwaagedaten** – IoT Bienenstock-Gewichtsanalysen über die Zeit
+
+### Hilfsprogramme
+
+Die App enthält einige kleine Hilfswerkzeuge, die über die Navigation erreichbar sind:
+
+- **Zuckerwasserrechner** [/sugar_water_calculator](https://app.btree.at/sugar_water_calculator) – Berechnet die benötigten Mengen an Zucker und Wasser für ein gewünschtes Fütterungsvolumen und eine bestimmte Konzentration.
+- **Bienenentwicklung** [/lifecycle](https://app.btree.at/lifecycle) – Referenztabelle der Entwicklungsstadien (Ei, Larve, Puppe, Adulte) von Arbeiterin, Drohne und Königin. Hilfreich bei der Planung von Behandlungen oder Zuchtschritten.
+
+### WizBee KI-Assistent (Premium)
+
+WizBee [/wizbee](https://app.btree.at/wizbee) ist ein KI-gestützter Imkerei-Assistent auf Basis von Mistral AI, der ausschließlich für Premium-Mitglieder verfügbar ist. Stellen Sie Fragen in natürlicher Sprache und erhalten Sie kontextbezogene Antworten. WizBee hilft bei der Behandlungsplanung, Krankheitserkennung, Fütterungsempfehlungen und allgemeinem Imkereiwissen. Der monatliche Verbrauch wird erfasst und ein Budgetlimit gilt, um den Dienst für alle Nutzer fair zu gestalten.

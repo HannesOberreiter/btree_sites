@@ -20,7 +20,8 @@ lang: "de"
     <li>✅ 1.000 Stöcke!</li>
     <li>✅ 100 Stände!</li>
     <li>✅ API Zugriff für iCal und Stockwaagen (10)</li>
-    <li>✅ Responsive Statistiken</li>
+    <li>✅ Responsive Statistiken (Ernte, Fütterung, Behandlung, Varroa, Königinnen)</li>
+    <li>✅ Königinnen-Statistik und Stammbaum</li>
     <li>✅ Zugang zu WizBee deiner persönlichen Imkerei AI Wissensdatenbank, powered by Mistral</li>
     <li>✅ Temperaturfeld wird automatisch mit Standdaten befüllt</li>
     <li>✅ Standkarte mit optionaler Wetteranzeige</li>
