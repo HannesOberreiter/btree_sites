@@ -1,0 +1,344 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/wizbee-logo.png';
+import screenshot1 from '../assets/screenshot-1.png';
+import screenshot2 from '../assets/screenshot-2.png';
+
+const features = [
+  {
+    icon: "🪣",
+    title: "Hive & Apiary Management",
+    desc: "Ask WizBee about any of your hives or apiaries. Get instant summaries, queen status, neighbors, move history, and more.",
+  },
+  {
+    icon: "🍯",
+    title: "Feeding, Harvests & Treatments",
+    desc: "Log and update feeding rounds, honey harvests, and Varroa treatments in natural language. WizBee handles the records.",
+  },
+  {
+    icon: "🔍",
+    title: "Checkup Assistant",
+    desc: "Record full hive inspections — queen presence, brood ratings, Varroa counts, colony strength — all conversationally.",
+  },
+  {
+    icon: "📦",
+    title: "Stock & Inventory",
+    desc: "Track your supplies: sugar, medications, honey jars. WizBee manages charge records and shows your current stock.",
+  },
+  {
+    icon: "📊",
+    title: "Statistics & Analytics",
+    desc: "Query harvest totals, feeding averages, or treatment history by year and apiary. Get data-driven insights instantly.",
+  },
+  {
+    icon: "🌤️",
+    title: "Weather & Seasonal Advice",
+    desc: "WizBee knows the current season, checks apiary weather, and tailors advice to what's actually happening outside.",
+  },
+  {
+    icon: "🧮",
+    title: "Sugar-Water Calculator",
+    desc: "Calculate 1:1 or 3:2 sugar-water mixtures for spring or autumn feeding. Just tell WizBee how much you need.",
+  },
+  {
+    icon: "📋",
+    title: "Todos & Reminders",
+    desc: "Create repeating or one-off reminders for any apiary. Never forget a follow-up inspection or treatment due date.",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>WizBee – AI Beekeeping Assistant by btree.at</title>
+    <meta
+      name="description"
+      content="WizBee is the AI assistant built into b.tree, the beekeeping management platform. Manage hives, treatments, harvests and more – just by asking."
+    />
+    <meta property="og:title" content="WizBee – AI Beekeeping Assistant" />
+    <meta
+      property="og:description"
+      content="The conversational AI built for professional beekeepers. Powered by b.tree."
+    />
+    <meta property="og:url" content="https://wiz-bee.com" />
+    <meta property="og:image" content="https://wiz-bee.com/android-chrome-512x512.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <style>
+      :root {
+        --amber: #f59e0b;
+        --amber-dark: #b45309;
+        --amber-light: #fef3c7;
+        --brown: #292524;
+        --muted: #78716c;
+        --bg: #fffbf5;
+        --card-bg: #ffffff;
+        --radius: 12px;
+        --max-w: 960px;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--brown);
+        line-height: 1.6;
+      }
+
+      a { color: var(--amber-dark); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      /* ── HERO ── */
+      .hero {
+        background: linear-gradient(135deg, var(--brown) 0%, #44403c 100%);
+        color: white;
+        text-align: center;
+        padding: 5rem 1.5rem 4rem;
+      }
+      .hero-logo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 1.25rem;
+        display: block;
+        object-fit: contain;
+        background: white;
+        padding: 8px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 3.25rem);
+        font-weight: 800;
+        color: var(--amber);
+        margin-bottom: 0.5rem;
+      }
+      .hero .subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        color: #d6d3d1;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+      }
+      .btn {
+        display: inline-block;
+        background: var(--amber);
+        color: var(--brown);
+        font-weight: 700;
+        padding: 0.8rem 2rem;
+        border-radius: 9999px;
+        font-size: 1rem;
+        transition: background 0.2s;
+        text-decoration: none;
+      }
+      .btn:hover { background: #fbbf24; text-decoration: none; }
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--amber);
+        color: var(--amber);
+        margin-left: 0.75rem;
+      }
+      .btn-outline:hover { background: var(--amber); color: var(--brown); }
+
+      /* ── SECTION WRAPPER ── */
+      .section { padding: 4rem 1.5rem; }
+      .section-inner { max-width: var(--max-w); margin: 0 auto; }
+      .section-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      .section-lead {
+        color: var(--muted);
+        max-width: 640px;
+        margin-bottom: 2.5rem;
+      }
+
+      /* ── ABOUT ── */
+      .about { background: var(--amber-light); }
+      .about p {
+        font-size: 1.05rem;
+        max-width: 700px;
+        margin-bottom: 1rem;
+      }
+      .badge {
+        display: inline-block;
+        background: var(--amber);
+        color: var(--brown);
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.2rem 0.75rem;
+        border-radius: 9999px;
+        margin-right: 0.4rem;
+        margin-bottom: 0.4rem;
+      }
+
+      /* ── FEATURES GRID ── */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.25rem;
+      }
+      .card {
+        background: var(--card-bg);
+        border: 1px solid #e7e5e4;
+        border-radius: var(--radius);
+        padding: 1.5rem;
+      }
+      .card-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+      .card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+      .card p { font-size: 0.875rem; color: var(--muted); }
+
+      /* ── SCREENSHOTS ── */
+      .screenshots { background: var(--bg); }
+      .screenshots-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .screenshot-item img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius);
+        border: 1px solid #e7e5e4;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+      }
+
+      /* ── CTA ── */
+      .cta {
+        background: var(--brown);
+        color: white;
+        text-align: center;
+      }
+      .cta .section-title { color: var(--amber); }
+      .cta p { color: #d6d3d1; max-width: 520px; margin: 0 auto 2rem; }
+
+      /* ── FOOTER ── */
+      footer {
+        background: #1c1917;
+        color: #a8a29e;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        font-size: 0.85rem;
+      }
+      footer .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+      footer a { color: #a8a29e; }
+      footer a:hover { color: var(--amber); }
+      .no-cookie {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        color: #78716c;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- HERO -->
+    <section class="hero">
+      <Image class="hero-logo" src={logo} alt="WizBee logo" width={120} height={120} />
+      <h1>Meet WizBee</h1>
+      <p class="subtitle">
+        The AI assistant built for professional beekeepers — integrated directly into&nbsp;<strong>b.tree</strong>, your beekeeping management platform.
+      </p>
+      <a class="btn" href="https://www.btree.at" target="_blank" rel="noopener">Get started at b.tree.at</a>
+      <a class="btn btn-outline" href="#features">See features</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about">
+      <div class="section-inner">
+        <h2 class="section-title">What is WizBee?</h2>
+        <p>
+          WizBee is the conversational AI built into <a href="https://www.btree.at" target="_blank" rel="noopener">b.tree</a> — the beekeeping management software for serious hobbyists and professionals. Instead of clicking through menus, you simply <em>talk</em> to WizBee: ask questions, log inspections, create treatments, or pull statistics — all in plain language.
+        </p>
+        <p>
+          WizBee is context-aware. It knows the current season, your apiaries, your hives, and your history. It gives advice suited to experienced beekeepers, responds in your language, and always confirms before making any changes to your data.
+        </p>
+        <div>
+          <span class="badge">Mistral AI</span>
+          <span class="badge">Streaming</span>
+          <span class="badge">Tool Calling</span>
+          <span class="badge">Multi-language</span>
+          <span class="badge">Seasonal Awareness</span>
+          <span class="badge">Professional Focus</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="section-inner">
+        <h2 class="section-title">What WizBee can do</h2>
+        <p class="section-lead">
+          WizBee has access to all of your b.tree data and can read, create, or update records on your behalf — just by asking.
+        </p>
+        <div class="grid">
+          {features.map((f) => (
+            <div class="card">
+              <span class="card-icon">{f.icon}</span>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section class="section screenshots">
+      <div class="section-inner">
+        <h2 class="section-title">See it in action</h2>
+        <p class="section-lead">WizBee lives right inside b.tree — just open the chat and start asking.</p>
+        <div class="screenshots-stack">
+          <div class="screenshot-item">
+            <Image src={screenshot1} alt="WizBee chat screenshot 1" />
+          </div>
+          <div class="screenshot-item">
+            <Image src={screenshot2} alt="WizBee chat screenshot 2" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="section-inner">
+        <h2 class="section-title">Ready to try WizBee?</h2>
+        <p>WizBee is available as a premium feature inside b.tree. Sign up or log in to get started.</p>
+        <a class="btn" href="https://www.btree.at" target="_blank" rel="noopener">Go to b.tree.at ↗</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-links">
+        <a href="https://www.btree.at/imprint/" target="_blank" rel="noopener">Imprint</a>
+        <a href="https://www.btree.at/data-privacy/" target="_blank" rel="noopener">Data Privacy</a>
+        <a href="https://www.btree.at" target="_blank" rel="noopener">btree.at</a>
+      </div>
+      <div>© {new Date().getFullYear()} Hannes Oberreiter, btree.at</div>
+      <div class="no-cookie">
+        <span>🍪</span> This site uses no cookies.
+      </div>
+    </footer>
+
+  </body>
+</html>

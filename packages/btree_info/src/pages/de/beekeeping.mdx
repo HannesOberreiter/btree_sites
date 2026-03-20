@@ -1,0 +1,37 @@
+---
+title: "Imkerei"
+description: "Bio zertifizierte Imkerei b.tree"
+layout: "../../layouts/MainLayout.astro"
+lang: "de"
+---
+
+import { Image } from "astro:assets";
+import hannes from "../../images/hannes_bees.jpg";
+import bees from "../../images/bees.jpg";
+
+Kleine Imkerei, bio zertifizert seit 2014, im Murtal auf über 1.000m Seehöhe. Unser Ziel ist eine nachhaltige Landwirtschaft für Mensch, Insekt und Natur.
+
+<section class="hero container max-w-(--breakpoint-lg) mx-auto flex">
+  <Image
+    src={hannes}
+    class="mx-auto"
+    width={500}
+    alt="Foto von Hannes mit seinen Bienenvölkern"
+  />
+</section>
+
+### Verkauf auf Anfrage
+
+- (Wald)-Honig in Großgebinde
+- Kunstschwärme und Völker
+- Königinnen
+- Bienenwachs
+
+<section class="hero container max-w-(--breakpoint-lg) mx-auto flex">
+  <Image
+    src={bees}
+    class="mx-auto"
+    width={500}
+    alt="Hongbienen laufen auf Waben"
+  />
+</section>

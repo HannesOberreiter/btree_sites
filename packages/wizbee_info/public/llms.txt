@@ -1,0 +1,25 @@
+# WizBee – AI Beekeeping Assistant
+
+> WizBee is the conversational AI assistant built into b.tree (btree.at), a beekeeping management platform for professional beekeepers. It uses Mistral AI with tool calling to let beekeepers manage their hives, apiaries, treatments, harvests, and more through natural language.
+
+## About
+
+- **Product**: WizBee
+- **Website**: https://wiz-bee.com
+- **Parent platform**: b.tree – https://www.btree.at
+- **Author**: Hannes Oberreiter, btree.at
+- **Technology**: Mistral AI, streaming, tool calling
+- **Language support**: Multi-language (responds in the user's language)
+
+## What WizBee can do
+
+- Hive & apiary management: query hive details, queen status, move history
+- Feeding management: create and update feeding records
+- Harvest management: log honey harvests with type, amount, and water content
+- Treatment management: record and track Varroa and other treatments
+- Hive checkups: log full inspections including brood ratings and colony strength
+- Stock & inventory: manage supplies like sugar, medications, and honey jars
+- Statistics & analytics: harvest totals, feeding averages, treatment history
+- Weather & seasonal advice: context-aware guidance based on current season and apiary weather
+- Sugar-water calculator: 1:1 and 3:2 mixtures for spring and autumn feeding
+- Todos & reminders: create one-off or repeating reminders per apiary

@@ -1,0 +1,37 @@
+---
+title: "Beekeeping"
+description: "Certified organic beekeeping operation b.tree"
+layout: "../layouts/MainLayout.astro"
+lang: "en"
+---
+
+import { Image } from "astro:assets";
+import hannes from "../images/hannes_bees.jpg";
+import bees from "../images/bees.jpg";
+
+Small beekeeping operation, organic certified since 2014. Located in Murtal, Styria at 1.000m above sea level. Our goal is a sustainable agriculture for human, insect and nature.
+
+<section class="hero container max-w-(--breakpoint-lg) mx-auto flex">
+  <Image
+    src={hannes}
+    class="mx-auto"
+    width={500}
+    alt="Image of Hannes with his colonies, holding a frame with bees"
+  />
+</section>
+
+### Sale on request
+
+- Honey(dew) in bulk
+- Artificial swarms and nucs
+- Queens
+- Beeswax
+
+<section class="hero container max-w-(--breakpoint-lg) mx-auto flex">
+  <Image
+    src={bees}
+    class="mx-auto"
+    width={500}
+    alt="Honeybees on top of frames"
+  />
+</section>

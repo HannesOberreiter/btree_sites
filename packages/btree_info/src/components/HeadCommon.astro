@@ -1,0 +1,212 @@
+---
+import HeadSEO from './HeadSEO.astro';
+import '../styles/theme.css';
+import '../styles/index.css';
+
+const { frontmatter = {} } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+
+<meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://*.btree.at https://*.inaturalist.org; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.btree.at; style-src 'self' 'unsafe-inline';" />
+
+<link
+  rel="icon"
+  type="image/png"
+  sizes="128x128"
+  href="/icons/favicon-128x128.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="96x96"
+  href="/icons/favicon-96x96.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/icons/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/icons/favicon-16x16.png"
+/>
+<link rel="icon" type="image/ico" href="/favicon.ico" />
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)"
+  href="/icons/apple-launch-1284x2778.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)"
+  href="/icons/apple-launch-1170x2532.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+  href="/icons/apple-launch-828x1792.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+  href="/icons/apple-launch-1125x2436.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
+  href="/icons/apple-launch-1242x2688.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+  href="/icons/apple-launch-750x1334.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)"
+  href="/icons/apple-launch-1242x2208.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2)"
+  href="/icons/apple-launch-1620x2160.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 1080px) and (device-height: 810px) and (-webkit-device-pixel-ratio: 2)"
+  href="/icons/apple-launch-2160x1620.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+  href="/icons/apple-launch-1536x2048.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 1024px) and (device-height: 768px) and (-webkit-device-pixel-ratio: 2)"
+  href="/icons/apple-launch-2048x1536.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
+  href="/icons/apple-launch-1668x2224.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 1112px) and (device-height: 834px) and (-webkit-device-pixel-ratio: 2)"
+  href="/icons/apple-launch-2224x1668.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)"
+  href="/icons/apple-launch-1668x2388.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 1194px) and (device-height: 834px) and (-webkit-device-pixel-ratio: 2)"
+  href="/icons/apple-launch-2388x1668.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
+  href="/icons/apple-launch-2048x2732.png"
+/>
+<link
+  rel="apple-touch-startup-image"
+  media="(device-width: 1366px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+  href="/icons/apple-launch-2732x2048.png"
+/>
+
+<link rel="sitemap" href="/sitemap-index.xml" />
+<HeadSEO {frontmatter} canonicalURL={canonicalURL} />
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script is:inline>
+ const root = document.documentElement;
+ const theme = localStorage.getItem('local-color-scheme');
+ if (
+   theme === 'dark'
+   || ((!theme || theme === 'auto')
+     && window.matchMedia('(prefers-color-scheme: dark)').matches)
+ ) {
+   root.classList.add('dark');
+ }
+ else {
+   root.classList.remove('dark');
+ }
+</script>
+
+<script is:inline>
+ function checkLanguageRedirect() {
+   const path = window.location.pathname;
+   const isGermanPage = path.startsWith('/de/');
+
+   if (isGermanPage) {
+     return;
+   }
+
+   const hasLanguagePreference = localStorage.getItem('language-preference-set');
+   if (hasLanguagePreference) {
+     return;
+   }
+
+   const browserLanguages = navigator.languages || [navigator.language];
+   const hasGermanPreference = browserLanguages.some(lang =>
+     lang.toLowerCase().startsWith('de'),
+   );
+
+   if (hasGermanPreference) {
+     localStorage.setItem('language-preference-set', 'true');
+
+     let germanPath = `/de${path}`;
+
+     if (path === '/' || path === '') {
+       germanPath = '/de/';
+     }
+
+     window.location.href = germanPath;
+   }
+ }
+
+ if (document.readyState === 'loading') {
+   document.addEventListener('DOMContentLoaded', checkLanguageRedirect);
+ }
+ else {
+   checkLanguageRedirect();
+ }
+</script>
+
+<!-- Matomo -->
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+   if (window.location.hostname === 'localhost') {
+     console.log('Dev mode, analytics is not loaded');
+     return;
+   }
+
+   const _paq = ((window as any)._paq = (window as any)._paq || []);
+   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+   _paq.push(['disableCookies']);
+   _paq.push(['trackPageView']);
+   _paq.push(['enableLinkTracking']);
+   (function () {
+     const u = 'https://analytics.btree.at/';
+     _paq.push(['setTrackerUrl', `${u}matomo.php`]);
+     _paq.push(['setSiteId', '5']);
+     const d = document;
+     const g = d.createElement('script');
+     const s = d.getElementsByTagName('script')[0];
+     g.async = true;
+     g.src = `${u}matomo.js`;
+     s.parentNode.insertBefore(g, s);
+   })();
+ });
+</script>

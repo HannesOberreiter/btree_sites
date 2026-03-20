@@ -1,0 +1,102 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import IconBtree from '../assets/Btree.svg?raw';
+import * as CONFIG from '../config';
+import ButtonThemeToggle from './ButtonThemeToggle.astro';
+import LinkApp from './LinkApp.astro';
+import SearchButton from './SearchButton.astro';
+import SelectLanguage from './SelectLanguage.astro';
+import SidebarToggle from './SidebarToggle.astro';
+
+const curLoc = Astro.currentLocale;
+const rootUrl = getAbsoluteLocaleUrl(curLoc, '');
+---
+
+<header class="sticky top-0 z-50 border-amber-800 border-solid border-b-2 pl-1 pr-1">
+  <nav title="Top Navigation">
+    <div class="flex justify-between lg:pl-4 lg:pr-4">
+      <div class="menu-toggle">
+        <SidebarToggle />
+      </div>
+      <div class="hidden logo sm:block">
+        <a href={rootUrl} data-astro-reload>
+          <div class="w-10 h-10">
+            <Fragment set:html={IconBtree} alt="b.tree" />
+          </div>
+          <h1>{CONFIG.SITE.title ?? 'b.tree'}</h1>
+        </a>
+      </div>
+      <div>
+        <div class="flex justify-between gap-x-1">
+          <SelectLanguage />
+          <SearchButton />
+          <ButtonThemeToggle />
+          <div class="pl-1">
+            <LinkApp />
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    height: var(--theme-navbar-height);
+    width: 100%;
+    background-color: var(--theme-navbar-bg);
+    overflow: hidden;
+  }
+
+  .logo a {
+    display: flex;
+    padding: 0.5em 0.25em;
+    margin: -0.5em -0.25em;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .logo a {
+    transition: color 100ms ease-out;
+    color: var(--theme-text);
+  }
+
+  .logo a:hover,
+  .logo a:focus {
+    color: var(--theme-text-accent);
+  }
+
+  .logo h1 {
+    display: none;
+    font: inherit;
+    color: inherit;
+    margin: 0;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0em;
+    width: 100%;
+    max-width: 82em;
+    padding: 0 0.1rem;
+  }
+
+  @media (min-width: 50em) {
+    header {
+      position: static;
+      padding: 0rem 3rem;
+    }
+    .logo {
+      width: auto;
+      margin: 0;
+      z-index: 0;
+    }
+    .logo h1 {
+      display: initial;
+    }
+    .menu-toggle {
+      display: none;
+    }
+  }
+</style>
