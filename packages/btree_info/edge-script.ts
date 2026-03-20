@@ -1,16 +1,18 @@
 /**
- * Bunny Edge Script for www.btree.at
+ * Bunny Middleware Script for www.btree.at
  *
  * Handles redirects that require pattern matching with capture groups —
  * not possible with simple Bunny Edge Rules. Everything else (HTTPS, www,
  * HSTS, cache headers, CORS) is configured in the pull zone settings.
  *
- * Uses onBeforeRequest so it fires on every request (not just cache misses).
+ * Linked to the pull zone via MiddlewareScriptId.
+ * onOriginRequest short-circuits before the origin fetch, so redirects
+ * fire on every request.
  */
 
 import * as BunnySDK from "https://esm.sh/@bunny.net/edgescript-sdk@0.11.2";
 
-BunnySDK.net.http.servePullZone().onBeforeRequest(async (ctx) => {
+BunnySDK.net.http.servePullZone().onOriginRequest(async (ctx) => {
   const url = new URL(ctx.request.url);
   const { pathname } = url;
 
