@@ -4,7 +4,7 @@ applyTo: "packages/**/*.astro,packages/**/*.ts,packages/**/astro.config.mjs"
 
 # Astro conventions for btree_sites
 
-All packages use **Astro 6** static output. Keep these conventions when editing Astro files.
+All packages use **Astro** static output. Keep these conventions when editing Astro files.
 
 ## Builds
 

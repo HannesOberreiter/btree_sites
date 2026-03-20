@@ -7,7 +7,7 @@ applyTo: ".github/workflows/*.yml"
 ## Pattern all deploy workflows follow
 
 1. Trigger: `push` to `main` + `workflow_dispatch`, path-filtered to `packages/<name>/**`
-2. Steps: `actions/checkout@v6` → `pnpm/action-setup@v4` (v10) → `actions/setup-node@v6` (Node 24, pnpm cache) → `pnpm install` → `pnpm --filter <name> build` → Bunny Storage upload → Bunny cache purge
+2. Steps: `actions/checkout@v6` → `pnpm/action-setup@v5` (v10) → `actions/setup-node@v6` (Node 24, pnpm cache) → `pnpm install` → `pnpm --filter <name> build` → Bunny Storage upload → Bunny cache purge
 
 ## Package filter names
 
@@ -30,6 +30,5 @@ Cache purge uses `POST https://api.bunny.net/pullzone/{PULL_ZONE_ID}/purgeCache`
 
 ## Do not
 
-- Do not change `actions/checkout` or `actions/setup-node` to versions below v6
 - Do not use `npm` in workflows — always use `pnpm`
 - Do not add per-package CI files inside `packages/*/` — all workflows live in `.github/workflows/`

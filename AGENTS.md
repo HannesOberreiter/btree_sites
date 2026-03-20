@@ -3,21 +3,21 @@
 ## What this repo is
 
 A **pnpm workspace monorepo** for all static/marketing websites in the btree beekeeping app ecosystem.
-All packages are **Astro 6 static sites** deployed to **Bunny CDN** via GitHub Actions.
+All packages are **Astro static sites** deployed to **Bunny CDN** via GitHub Actions.
 
 ## Packages
 
 | Package | Filter name | Domain | Description |
 |---------|-------------|---------|-------------|
-| `packages/btree_info` | `@btree/info` | btree.at | Main info & documentation site. Astro 6 + Vue 3 + TailwindCSS 4. Bilingual EN/DE with Pagefind search. |
-| `packages/wizbee_info` | `wizbee_info` | wiz-bee.com | WizBee AI assistant landing page. Minimal Astro 6, plain CSS, single page. |
+| `packages/btree_info` | `@btree/info` | btree.at | Main info & documentation site. Astro + Vue + TailwindCSS. Bilingual EN/DE with Pagefind search. |
+| `packages/wizbee_info` | `wizbee_info` | wiz-bee.com | WizBee AI assistant landing page. Minimal Astro, plain CSS, single page. |
 
 ## Tech stack
 
-- **Astro 6** — static site generator for all packages
-- **pnpm workspaces** (v10) — monorepo management; always use `pnpm`, never `npm`
-- **TailwindCSS 4** — only in btree_info (via `@tailwindcss/vite`)
-- **Vue 3** — only in btree_info for interactive components
+- **Astro** — static site generator for all packages
+- **pnpm workspaces** — monorepo management; always use `pnpm`, never `npm`
+- **TailwindCSS** — only in btree_info (via `@tailwindcss/vite`)
+- **Vue** — only in btree_info for interactive components
 - **Pagefind** — search in btree_info; runs as CLI post-build (`astro build && pagefind --site dist`)
 - **Bunny CDN / Storage** — deployment target for all packages
 - **GitHub Actions** — CI/CD with per-package path-filtered workflows

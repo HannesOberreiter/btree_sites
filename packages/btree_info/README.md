@@ -1,24 +1,11 @@
 # b.tree Landing Page
 
-[![CI](https://github.com/HannesOberreiter/btree_info/actions/workflows/deploy.yml/badge.svg)](https://github.com/HannesOberreiter/btree_info/actions/workflows/deploy.yml)
-
-Info and landing page for b.tree application and personal information about Hannes Oberreiter.
-
-Made with @vue, @astro and @tailwindcss.
+Info and landing page for b.tree application.
 
 ## License
 
 [GNU AFFERO GENERAL PUBLIC LICENSE](LICENSE)
 
-## Commands Cheatsheet
+## Credits
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
+© Hannes Oberreiter, [btree.at](https://www.btree.at)
