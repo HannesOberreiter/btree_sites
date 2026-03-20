@@ -33,6 +33,9 @@ async function onOriginRequest(
     const rest = enMatch[1] || '/';
     return Response.redirect(`https://www.btree.at${rest}`, 301);
   }
+
+  // Pass all other requests through to origin
+  return context.request;
 }
 
 BunnySDK.net.http.servePullZone()
