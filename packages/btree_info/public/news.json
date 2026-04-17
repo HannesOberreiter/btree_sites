@@ -1,6 +1,16 @@
 {
   "en": [
     {
+      "version": "btree-server-7.0.0",
+      "date": "2026-04-17",
+      "items": [
+        {
+          "title": "Maintenance",
+          "description": "Internal improvements and maintenance updates."
+        }
+      ]
+    },
+    {
       "version": "6.5.8",
       "date": "2026-03-20",
       "items": [
@@ -4542,6 +4552,16 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-server-7.0.0",
+      "date": "2026-04-17",
+      "items": [
+        {
+          "title": "Wartung",
+          "description": "Interne Verbesserungen und Wartungsupdates."
+        }
+      ]
+    },
     {
       "version": "6.5.8",
       "date": "2026-03-20",
