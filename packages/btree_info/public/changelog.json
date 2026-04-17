@@ -7,6 +7,13 @@
     ]
   },
   {
+    "version": "btree-client-7.0.0",
+    "date": "2026-04-17",
+    "notes": [
+      "## [7.0.0](https://github.com/HannesOberreiter/btree_vue/compare/btree-client-v7.0.0...btree-client-v7.0.0) (2026-04-17)\n\n\n### Features\n\n* :sparkles: new auto changelog for updates logic and translation to german ([2dd24d9](https://github.com/HannesOberreiter/btree_vue/commit/2dd24d99e61583663495f4d20dd0044b89c7fbbe))\n\n\n\n### Bug Fixes\n\n* :bug: use new matomo library and remove deprecated next on router guard ([b8b7420](https://github.com/HannesOberreiter/btree_vue/commit/b8b7420eb02e43891a789bdde00bd47e2556500e))"
+    ]
+  },
+  {
     "version": "6.5.8",
     "date": "2026-03-20",
     "news": [

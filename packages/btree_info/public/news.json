@@ -11,6 +11,16 @@
       ]
     },
     {
+      "version": "btree-client-7.0.0",
+      "date": "2026-04-17",
+      "items": [
+        {
+          "title": "New Feature",
+          "description": "You’ll now see release notes automatically translated into German when you update the app."
+        }
+      ]
+    },
+    {
       "version": "6.5.8",
       "date": "2026-03-20",
       "items": [
@@ -4559,6 +4569,16 @@
         {
           "title": "Wartung",
           "description": "Interne Verbesserungen und Wartungsupdates."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.0.0",
+      "date": "2026-04-17",
+      "items": [
+        {
+          "title": "Neue Funktion",
+          "description": "Ab sofort werden dir die Versionshinweise nach einem App-Update automatisch auf Deutsch angezeigt."
         }
       ]
     },
