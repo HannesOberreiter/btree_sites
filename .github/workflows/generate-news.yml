@@ -1,0 +1,41 @@
+name: Generate News
+
+on:
+  repository_dispatch:
+    types: [release-published]
+  workflow_dispatch:
+
+jobs:
+  generate-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Generate news
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          GITHUB_OWNER: ${{ github.repository_owner }}
+        run: node scripts/generate-news.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet packages/btree_info/public/news.json packages/btree_info/public/changelog.json && echo "changed=false" >> "$GITHUB_OUTPUT" || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add packages/btree_info/public/news.json packages/btree_info/public/changelog.json
+          git commit -m "chore: update news and changelog from releases"
+          git push
+
+      # The push to main will trigger deploy-btree-info.yml automatically

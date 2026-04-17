@@ -13,7 +13,8 @@
     "build": "pnpm -r build",
     "dev:btree-info": "pnpm --filter @btree/info dev",
     "dev:wizbee-info": "pnpm --filter wizbee_info dev",
-    "dev:btree-tv": "pnpm --filter btree_tv dev"
+    "dev:btree-tv": "pnpm --filter btree_tv dev",
+    "generate-news": "node scripts/generate-news.js"
   },
   "pnpm": {
     "onlyBuiltDependencies": ["esbuild", "sharp"]

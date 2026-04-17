@@ -50,7 +50,7 @@ export const SIDEBAR = {
     { text: 'Ersten Schritte', link: 'de/doc-first-steps/' },
     { text: 'API', link: 'de/doc-api/' },
     { text: 'Sonstiges', link: 'de/doc-other/' },
-    { text: 'Updates (en)', link: 'de/updates/' },
+    { text: 'Updates', link: 'de/updates/' },
     { text: 'Externe Links', link: 'de/links/' },
 
     { text: 'Über uns', header: true },
