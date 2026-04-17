@@ -156,7 +156,11 @@ async function rewriteRelease(entry) {
   }
 
   if (!Array.isArray(enItems) || enItems.length === 0) {
-    return { en: [], de: [] };
+    // No user-facing changes, add a default entry so we don't retry
+    return {
+      en: [{ title: "Maintenance", description: "Internal improvements and maintenance updates." }],
+      de: [{ title: "Wartung", description: "Interne Verbesserungen und Wartungsupdates." }],
+    };
   }
 
   // Translate to DE
