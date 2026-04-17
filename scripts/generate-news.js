@@ -24,8 +24,8 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const MISTRAL_API_KEY = process.env.MISTRAL_API_KEY;
 
 const REPOS = [
-  { name: "btree_vue", tagPrefix: "client/v" },
-  { name: "btree_server", tagPrefix: "server/v" },
+  { name: "btree_vue", tagPrefix: "btree-client-v" },
+  { name: "btree_server", tagPrefix: "btree-server-v" },
 ];
 const OUTPUT_PATH = "packages/btree_info/public/news.json";
 const CHANGELOG_PATH = "packages/btree_info/public/changelog.json";
