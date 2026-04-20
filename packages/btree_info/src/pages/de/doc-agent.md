@@ -121,4 +121,4 @@ Auf der Agent Keys Seite in b.tree finden Sie einen gebrauchsfertigen **Skill-In
 
 ---
 
-*Die Agent API ist ein Premium-Feature. [Upgraden Sie Ihr Konto](https://app.btree.at/setting/company) um zu starten.*
+*Die Agent API ist ein Premium-Feature. [Upgraden Sie Ihr Konto](https://app.btree.at/premium) um zu starten.*
