@@ -7,6 +7,10 @@ lang: "de"
 
 Aktive Premium-Benutzer haben Zugang zu unseren externen API-Endpunkten. Bevor Sie diese nutzen können, müssen Sie diese in den Einstellungen [/setting/profile/api](https://app.btree.at/setting/profile/api) aktivieren. Obwohl sie auf Ihrer Profilebene verwaltet wird, ist die API auf Imkerei basis aktiv. Wenn Sie mehrere Imkereibetriebe verwalten, müssen Sie sie für jeden einzelnen Betrieb die API aktivieren, da Sie jedes Mal einen anderen Schlüssel erhalten.
 
+### Agent API (LLM / KI-Bot Zugriff)
+
+Möchten Sie einen KI-Agenten wie **Claude**, **ChatGPT** oder einen eigenen LLM-Bot mit Ihren Imkereidaten verbinden? Wir bieten eine dedizierte **[Agent API](/de/doc-agent)** mit eigenen API-Schlüsseln, Rate-Limiting und OpenAPI-Spezifikation. Die Agent API bietet vollen Lese-/Schreibzugriff auf Ihre Völker, Aufgaben, Statistiken und mehr. Weitere Informationen finden Sie in der [Agent API Dokumentation](/de/doc-agent).
+
 ### Kalender, iCal
 
 Um Ihre Aufgaben, Zuchtereignisse und ToDo's in Ihren lokalen Kalender auf Ihrem Handy, Google Kalender oder Computer zu übertragen, können Sie unseren iCal-Endpunkt abonnieren. iCal ist ein standardisiertes Format, das von den meisten Kalenderanwendungen verstanden wird. Der Kalender wird automatisch aktualisiert, abhängig von Ihren Kalendereinstellungen, und zeigt Ihnen die vergangenen und zukünftigen Ereignisse der letzten 6 Monate an. Sie müssen jede Aufgabe separat abonnieren, z. B. Fütterung, Ernte, ToDo. Das Kalenderabonnement ist schreibgeschützt, d. h. Sie können keine Aufgabe in Ihrem Kalender bearbeiten.

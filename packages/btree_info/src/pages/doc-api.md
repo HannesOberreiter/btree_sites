@@ -7,6 +7,10 @@ lang: "en"
 
 Active premium user do have access to our external API endpoints. Before you use it you need to activate it in the settings [/setting/profile/api](https://app.btree.at/setting/profile/api). Although it is managed at your profile level, the API will be active on company level. If you manage multiple beekeeping operations you need to activate it for each one separately, as you will also get a different key every time.
 
+### Agent API (LLM / AI Bot Access)
+
+Looking to connect an AI agent like **Claude**, **ChatGPT**, or a custom LLM bot to your beekeeping data? We offer a dedicated **[Agent API](/doc-agent)** with its own API keys, rate limiting, and OpenAPI specification. The Agent API provides full read/write access to your hives, tasks, statistics and more — designed specifically for AI tool use and function calling. Head to [Agent API documentation](/doc-agent) for setup instructions.
+
 ### Calender, iCal
 
 To get your tasks, breeding events and ToDo's onto your local calendar on your phone, Google Calendar or computer you can subscribe to our iCal endpoint. iCal is a standardized format understood by most calendar apps. The calendar will automatically update, dependent on your calendar settings, and will show you the past and future 6 months of events. You will need to subscribe to each task separately, eg. feeding, harvest, ToDo. The calendar subscription is read-only, that means you cannot edit any task in your calendar.
