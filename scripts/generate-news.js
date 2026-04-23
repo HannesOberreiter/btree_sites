@@ -29,30 +29,103 @@ const REPOS = [
 ];
 const OUTPUT_PATH = "packages/btree_info/public/news.json";
 const CHANGELOG_PATH = "packages/btree_info/public/changelog.json";
+const MAX_COMMITS_IN_CONTEXT = 20;
+const MAX_FILES_IN_CONTEXT = 40;
+const MIN_FALLBACK_LINE_LENGTH = 6;
+const MAX_FALLBACK_ITEMS = 6;
+const MAX_FALLBACK_DESCRIPTION_LENGTH = 240;
+
+function sanitizeUrl(url) {
+  try {
+    const parsed = new URL(url);
+    return `${parsed.origin}${parsed.pathname}${parsed.search}`;
+  } catch {
+    return "invalid-url";
+  }
+}
+
+function truncateAtWordBoundary(text, maxLength) {
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= maxLength) return clean;
+  const chunk = clean.slice(0, maxLength + 1);
+  const lastSpace = chunk.lastIndexOf(" ");
+  if (lastSpace > 0) return `${chunk.slice(0, lastSpace)}…`;
+  return `${clean.slice(0, maxLength)}…`;
+}
+
+async function fetchGitHubJson(url) {
+  const res = await fetch(url, {
+    headers: {
+      Accept: "application/vnd.github+json",
+      ...(GITHUB_TOKEN ? { Authorization: `Bearer ${GITHUB_TOKEN}` } : {}),
+    },
+  });
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    console.warn(
+      `GitHub API request failed (${res.status} ${res.statusText}): ${sanitizeUrl(url)}\n${text.slice(0, 400)}`,
+    );
+    return null;
+  }
+  return res.json();
+}
 
 async function fetchAllReleases(repo, tagPrefix) {
   const releases = [];
   let page = 1;
   while (true) {
     const url = `https://api.github.com/repos/${OWNER}/${repo}/releases?per_page=100&page=${page}`;
-    const res = await fetch(url, {
-      headers: {
-        Accept: "application/vnd.github+json",
-        ...(GITHUB_TOKEN ? { Authorization: `Bearer ${GITHUB_TOKEN}` } : {}),
-      },
-    });
-    if (!res.ok) {
+    const data = await fetchGitHubJson(url);
+    if (!data) {
       console.error(
-        `Failed to fetch releases for ${repo}: ${res.status} ${res.statusText}`,
+        `Failed to fetch releases for ${repo}`,
       );
       break;
     }
-    const data = await res.json();
     if (data.length === 0) break;
     releases.push(...data);
     page++;
   }
   return releases;
+}
+
+async function fetchCompareContext(repo, baseTag, headTag) {
+  // Empty string means "no compare context available" to callers.
+  if (!baseTag || !headTag) return "";
+  const base = encodeURIComponent(baseTag);
+  const head = encodeURIComponent(headTag);
+  const url = `https://api.github.com/repos/${OWNER}/${repo}/compare/${base}...${head}`;
+  const data = await fetchGitHubJson(url);
+  if (!data) return "";
+
+  const commitLines = (data.commits || [])
+    .slice(0, MAX_COMMITS_IN_CONTEXT)
+    .map((c) => {
+      const sha = (c.sha || "").slice(0, 7);
+      const message = (c.commit?.message || "").split("\n")[0].trim();
+      return `- ${sha}: ${message}`;
+    })
+    .filter(Boolean);
+
+  const fileLines = (data.files || [])
+    .slice(0, MAX_FILES_IN_CONTEXT)
+    .map((f) => {
+      const status = f.status || "modified";
+      const filename = f.filename || "unknown";
+      const additions = Number.isFinite(f.additions) ? f.additions : 0;
+      const deletions = Number.isFinite(f.deletions) ? f.deletions : 0;
+      return `- ${status}: ${filename} (+${additions}/-${deletions})`;
+    })
+    .filter(Boolean);
+
+  const sections = [];
+  if (commitLines.length > 0) {
+    sections.push(`Commit subjects:\n${commitLines.join("\n")}`);
+  }
+  if (fileLines.length > 0) {
+    sections.push(`Changed files:\n${fileLines.join("\n")}`);
+  }
+  return sections.join("\n\n");
 }
 
 function extractVersion(tagName, tagPrefix) {
@@ -76,7 +149,14 @@ function toEntries(allReleases) {
         release._tagPrefix,
       );
       const body = (release.body || "").trim();
-      return { date, version, notes: body ? [body] : [] };
+      return {
+        date,
+        version,
+        notes: body ? [body] : [],
+        repo: release._repo,
+        tagName: release.tag_name || "",
+        previousTag: release._previousTag || "",
+      };
     })
     .filter((e) => e.notes.length > 0)
     .sort((a, b) => b.date.localeCompare(a.date));
@@ -109,14 +189,15 @@ async function callMistral(systemPrompt, userPrompt, maxTokens = 4096) {
   return data.choices[0].message.content;
 }
 
-const SYSTEM_PROMPT_EN = `You are a friendly copywriter for b.tree, a beekeeping management web application.
-Your job is to rewrite technical release notes into clear, concise news items for beekeepers (non-technical end users).
+const SYSTEM_PROMPT_EN = `You are a release note editor for b.tree, a beekeeping management web application.
+Your job is to rewrite technical release notes into clear, concise news items while staying strictly faithful to the provided changelog and change context.
 
 Rules:
-- Each news item has a "title" (2-4 words, like a category: "New Feature", "Bug Fix", "Improvement", etc.) and a "description" (1-2 sentences, plain language).
-- Skip purely technical items (dependency updates, CI changes, refactors) unless they affect the user experience.
-- Combine related items if they describe the same feature.
-- Keep it warm and helpful. Beekeepers should understand what changed and why it matters.
+- Each news item has a "title" (2-4 words, category-like: "Feature", "Fix", "Improvement", "Technical Change") and a "description" (1-2 sentences).
+- Base every statement only on the provided release notes and code-change context.
+- If impact is not explicit, keep wording technical and close to the original changelog text.
+- Do not invent benefits, user impact, or motivations that are not clearly stated.
+- Combine related items only when they describe the same change.
 - Do NOT mention repository names, code, APIs (unless it's the user-facing hive scale API), or internal tooling.
 - Output ONLY a valid JSON array of objects with "title" and "description" fields. No markdown, no explanation.
 - If there are no user-facing changes, return an empty array [].`;
@@ -126,17 +207,66 @@ Keep the same JSON structure with "title" and "description" fields.
 Use natural, friendly German suitable for Austrian/German beekeepers.
 Output ONLY the translated JSON array. No markdown, no explanation.`;
 
+function buildFallbackItems(combinedNotes) {
+  const items = combinedNotes
+    .split("\n")
+    .map((line) =>
+      line
+        .replace(/^[-*]\s*/, "")
+        .replace(/^#+\s*/, "")
+        .replace(/\(#[0-9]+\)/g, "")
+        .trim(),
+    )
+    .filter((line) => line.length > MIN_FALLBACK_LINE_LENGTH)
+    .slice(0, MAX_FALLBACK_ITEMS)
+    .map((line) => ({
+      title: "Technical Change",
+      description: truncateAtWordBoundary(
+        line,
+        MAX_FALLBACK_DESCRIPTION_LENGTH,
+      ),
+    }));
+
+  if (items.length > 0) return items;
+  return [
+    {
+      title: "Technical Change",
+      description: truncateAtWordBoundary(
+        combinedNotes,
+        MAX_FALLBACK_DESCRIPTION_LENGTH,
+      ),
+    },
+  ];
+}
+
 async function rewriteRelease(entry) {
   const combinedNotes = entry.notes.join("\n\n");
+  const compareContext = await fetchCompareContext(
+    entry.repo,
+    entry.previousTag,
+    entry.tagName,
+  );
 
   if (!combinedNotes.trim()) {
     return { en: [], de: [] };
   }
 
+  const fallbackTechnicalItems = buildFallbackItems(combinedNotes);
+
   // Generate EN news
   const enRaw = await callMistral(
     SYSTEM_PROMPT_EN,
-    `Rewrite these release notes for version ${entry.version} (${entry.date}):\n\n${combinedNotes}`,
+    [
+      `Rewrite these release notes for version ${entry.version} (${entry.date}).`,
+      "",
+      "Release notes:",
+      combinedNotes,
+      "",
+      compareContext
+        ? `Code changes between ${entry.previousTag} and ${entry.tagName}:`
+        : "No compare context available for this release.",
+      compareContext || "",
+    ].join("\n"),
   );
 
   let enItems;
@@ -156,10 +286,10 @@ async function rewriteRelease(entry) {
   }
 
   if (!Array.isArray(enItems) || enItems.length === 0) {
-    // No user-facing changes, add a default entry so we don't retry
+    // Keep output technical and close to original release text.
     return {
-      en: [{ title: "Maintenance", description: "Internal improvements and maintenance updates." }],
-      de: [{ title: "Wartung", description: "Interne Verbesserungen und Wartungsupdates." }],
+      en: fallbackTechnicalItems,
+      de: fallbackTechnicalItems,
     };
   }
 
@@ -192,6 +322,9 @@ async function main() {
     console.error("MISTRAL_API_KEY is required");
     process.exit(1);
   }
+  if (!GITHUB_TOKEN) {
+    console.warn("GITHUB_TOKEN is not set, GitHub API calls may be rate-limited.");
+  }
 
   // Load existing news.json if it exists (to avoid re-processing)
   const fs = await import("node:fs");
@@ -217,6 +350,9 @@ async function main() {
   const allReleases = [];
   for (const { name: repo, tagPrefix } of REPOS) {
     const releases = await fetchAllReleases(repo, tagPrefix);
+    for (let i = 0; i < releases.length; i++) {
+      releases[i]._previousTag = releases[i + 1]?.tag_name || "";
+    }
     console.log(`  ${repo}: ${releases.length} releases`);
     for (const r of releases) {
       r._repo = repo;
@@ -243,6 +379,7 @@ async function main() {
   for (const entry of toProcess) {
     console.log(`  Rewriting ${entry.version} (${entry.date})...`);
     try {
+      // Intentionally sequential to stay within API rate limits.
       const { en, de } = await rewriteRelease(entry);
 
       if (en.length > 0) {
