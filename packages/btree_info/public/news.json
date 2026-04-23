@@ -1,7 +1,7 @@
 {
   "en": [
     {
-      "version": "7.1.0",
+      "version": "btree-client-7.1.0",
       "date": "2026-04-23",
       "items": [
         {
@@ -27,12 +27,12 @@
       ]
     },
     {
-      "version": "7.1.0",
+      "version": "btree-server-7.1.0",
       "date": "2026-04-23",
       "items": [
         {
           "title": "Feature",
-          "description": "Added voice transcription capability for beekeeping notes and observations."
+          "description": "Added voice transcription capability for beekeeping notes and observations via WizBee."
         },
         {
           "title": "Feature",
@@ -4615,7 +4615,7 @@
   ],
   "de": [
     {
-      "version": "7.1.0",
+      "version": "btree-client-7.1.0",
       "date": "2026-04-23",
       "items": [
         {
@@ -4641,12 +4641,12 @@
       ]
     },
     {
-      "version": "7.1.0",
+      "version": "btree-server-7.1.0",
       "date": "2026-04-23",
       "items": [
         {
           "title": "Neue Funktion",
-          "description": "Spracherkennung für Imker-Notizen und Beobachtungen hinzugefügt."
+          "description": "Spracherkennung für Imker-Notizen und Beobachtungen hinzugefügt via WizBee."
         },
         {
           "title": "Neue Funktion",
