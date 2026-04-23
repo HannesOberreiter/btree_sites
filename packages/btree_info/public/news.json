@@ -1,6 +1,58 @@
 {
   "en": [
     {
+      "version": "7.1.0",
+      "date": "2026-04-23",
+      "items": [
+        {
+          "title": "Agent Keys",
+          "description": "Added the ability to create agent keys for accessing WizBee tools."
+        },
+        {
+          "title": "Dropbox Media",
+          "description": "Dropbox now supports uploading videos and images."
+        },
+        {
+          "title": "Voice Transcription",
+          "description": "WizBee now allows voice transcription for messages."
+        },
+        {
+          "title": "Invoice Request",
+          "description": "Requesting an invoice via mail now automatically sends the invoice by email."
+        },
+        {
+          "title": "UI Defaults",
+          "description": "QR scanner and voice recognition buttons are now hidden by default and can be enabled in device settings."
+        }
+      ]
+    },
+    {
+      "version": "7.1.0",
+      "date": "2026-04-23",
+      "items": [
+        {
+          "title": "Feature",
+          "description": "Added voice transcription capability for beekeeping notes and observations."
+        },
+        {
+          "title": "Feature",
+          "description": "Invoices are now automatically created and sent as PDFs after premium payments."
+        },
+        {
+          "title": "Feature",
+          "description": "Improved pest monitoring with updated data for Velutina and Aethina in France."
+        },
+        {
+          "title": "Feature",
+          "description": "Austria’s AFB zones now use the official AGES map for accurate disease tracking."
+        },
+        {
+          "title": "Improvement",
+          "description": "Wizbee tool error recovery and task filtering have been enhanced."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.0.0",
       "date": "2026-04-17",
       "items": [
@@ -4562,6 +4614,58 @@
     }
   ],
   "de": [
+    {
+      "version": "7.1.0",
+      "date": "2026-04-23",
+      "items": [
+        {
+          "title": "Agenten-Schlüssel",
+          "description": "Es ist nun möglich, Agenten-Schlüssel für den Zugriff auf WizBee-Tools zu erstellen."
+        },
+        {
+          "title": "Dropbox-Medien",
+          "description": "Dropbox unterstützt jetzt das Hochladen von Videos und Bildern."
+        },
+        {
+          "title": "Sprachtranskription",
+          "description": "WizBee ermöglicht jetzt die Transkription von Sprachnachrichten."
+        },
+        {
+          "title": "Rechnungsanfrage",
+          "description": "Bei einer Rechnungsanfrage per E-Mail wird die Rechnung automatisch per E-Mail versendet."
+        },
+        {
+          "title": "Standard-UI-Einstellungen",
+          "description": "QR-Scanner und Spracherkennungs-Buttons sind nun standardmäßig ausgeblendet und können in den Geräteeinstellungen aktiviert werden."
+        }
+      ]
+    },
+    {
+      "version": "7.1.0",
+      "date": "2026-04-23",
+      "items": [
+        {
+          "title": "Neue Funktion",
+          "description": "Spracherkennung für Imker-Notizen und Beobachtungen hinzugefügt."
+        },
+        {
+          "title": "Neue Funktion",
+          "description": "Rechnungen werden nun automatisch als PDF erstellt und nach Premium-Zahlungen versendet."
+        },
+        {
+          "title": "Neue Funktion",
+          "description": "Verbesserte Schädlingsüberwachung mit aktualisierten Daten zu Velutina und Aethina in Frankreich."
+        },
+        {
+          "title": "Neue Funktion",
+          "description": "Österreichs AFB-Zonen nutzen nun die offizielle AGES-Karte für präzise Seuchenüberwachung."
+        },
+        {
+          "title": "Verbesserung",
+          "description": "Fehlerbehebung und Aufgabenfilterung im Wizbee-Tool wurden optimiert."
+        }
+      ]
+    },
     {
       "version": "btree-server-7.0.0",
       "date": "2026-04-17",
