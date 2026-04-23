@@ -1,5 +1,19 @@
 [
   {
+    "version": "7.1.0",
+    "date": "2026-04-23",
+    "notes": [
+      "## [7.1.0](https://github.com/HannesOberreiter/btree_vue/compare/v7.0.0...v7.1.0) (2026-04-23)\n\n### Features\n\n* :sparkles: create agent keys for your own agent to access wizbee tools ([2eef00b](https://github.com/HannesOberreiter/btree_vue/commit/2eef00b))\n* :sparkles: dropbox allow upload of videos and images ([2e983d1](https://github.com/HannesOberreiter/btree_vue/commit/2e983d1))\n* qr scanner and voice recognition buttons are now hidden by default ([90f007b](https://github.com/HannesOberreiter/btree_vue/commit/90f007b))\n* :sparkles: allow voice transcription in wizbee ([31ca92b](https://github.com/HannesOberreiter/btree_vue/commit/31ca92b))\n* :sparkles: request invoice via mail now automatically sends an email with invoice ([f4bf00d](https://github.com/HannesOberreiter/btree_vue/commit/f4bf00d))\n\n\n### Miscellaneous\n\n* remove versioning in package json ([0b07f61](https://github.com/HannesOberreiter/btree_vue/commit/0b07f61))\n* Merge branch 'main' into beta ([d349d18](https://github.com/HannesOberreiter/btree_vue/commit/d349d18))\n* fix package lock ([766465b](https://github.com/HannesOberreiter/btree_vue/commit/766465b))\n* :art: import order linting ([2dcba08](https://github.com/HannesOberreiter/btree_vue/commit/2dcba08))\n* remove recommendation for vscode extension ([d870b6f](https://github.com/HannesOberreiter/btree_vue/commit/d870b6f))"
+    ]
+  },
+  {
+    "version": "7.1.0",
+    "date": "2026-04-23",
+    "notes": [
+      "## [7.1.0](https://github.com/HannesOberreiter/btree_server/compare/v7.0.0...v7.1.0) (2026-04-23)\n\n\n### Features\n\n* :sparkles: new endpoint for llms agents\n ([bae57c8](https://github.com/HannesOberreiter/btree_server/commit/bae57c8))\n* :sparkles: improve pest (velutina, aethina) fetching and add new endpoint\n ([663661d](https://github.com/HannesOberreiter/btree_server/commit/663661d))\n* :sparkles: use AGES AFB map for austria zones\n ([50c5e00](https://github.com/HannesOberreiter/btree_server/commit/50c5e00))\n* :sparkles: allow voice transcription\n ([04d3910](https://github.com/HannesOberreiter/btree_server/commit/04d3910))\n* :sparkles: automatically send invoice as PDF after payment is received\n from service\n ([1c1f738](https://github.com/HannesOberreiter/btree_server/commit/1c1f738))\n* :sparkles: automatically create invoice for premium payment if requested\n by user\n ([240d8bc](https://github.com/HannesOberreiter/btree_server/commit/240d8bc))\n\n\n### Bug Fixes\n\n* :bug: improve hanging teardown of logger\n ([015af6b](https://github.com/HannesOberreiter/btree_server/commit/015af6b))\n* :bug: improve error logs serialize\n ([54c2dd3](https://github.com/HannesOberreiter/btree_server/commit/54c2dd3))\n* :bug: apiary wizbee tool call wrong key for apiary filter on tasks\n ([395360e](https://github.com/HannesOberreiter/btree_server/commit/395360e))\n* :zap: wizbee improve error recovery on tool calls\n ([4646d69](https://github.com/HannesOberreiter/btree_server/commit/4646d69))\n* :bug: improve wizbee overflow and tool calling\n ([aef8feb](https://github.com/HannesOberreiter/btree_server/commit/aef8feb))\n\n\n### Miscellaneous\n\n* :art: minor env changes\n ([c65c0ee](https://github.com/HannesOberreiter/btree_server/commit/c65c0ee))\n* types fix\n ([ea5907a](https://github.com/HannesOberreiter/btree_server/commit/ea5907a))\n* :mute: remove logs\n ([6714b28](https://github.com/HannesOberreiter/btree_server/commit/6714b28))\n* remove versioning in package json\n ([fabff16](https://github.com/HannesOberreiter/btree_server/commit/fabff16))\n* Merge branch 'main' into beta\n ([d24953f](https://github.com/HannesOberreiter/btree_server/commit/d24953f))\n* fix package lock\n ([5d082ab](https://github.com/HannesOberreiter/btree_server/commit/5d082ab))"
+    ]
+  },
+  {
     "version": "btree-server-7.0.0",
     "date": "2026-04-17",
     "notes": [
