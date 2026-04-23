@@ -1,58 +1,6 @@
 {
   "en": [
     {
-      "version": "btree-client-7.1.0",
-      "date": "2026-04-23",
-      "items": [
-        {
-          "title": "Agent Access",
-          "description": "Generate secure keys to connect your own devices or tools with b.tree’s WizBee features."
-        },
-        {
-          "title": "Media Uploads",
-          "description": "You can now upload videos and photos directly to Dropbox from your inspections."
-        },
-        {
-          "title": "Simpler Interface",
-          "description": "QR scanner and voice buttons are hidden by default, keeping the screen clean until you need them."
-        },
-        {
-          "title": "Voice Notes",
-          "description": "Dictate inspection notes hands-free—WizBee will transcribe them for you."
-        },
-        {
-          "title": "Invoicing Made Easy",
-          "description": "Request an invoice with one tap; it’s automatically emailed to you."
-        }
-      ]
-    },
-    {
-      "version": "btree-server-7.1.0",
-      "date": "2026-04-23",
-      "items": [
-        {
-          "title": "Pest Alerts",
-          "description": "We now pull the latest Asian hornet (V. velutina) and small hive beetle (A. tumida) sightings automatically, so your dashboard stays up-to-date."
-        },
-        {
-          "title": "Austrian AFB Zones",
-          "description": "The map for Austrian American foulbrood zones now uses official AGES data for more accurate risk areas."
-        },
-        {
-          "title": "Voice Notes",
-          "description": "Record quick voice memos during inspections and b.tree will transcribe them into your logbook."
-        },
-        {
-          "title": "Smarter Assistant",
-          "description": "Wizbee recovers faster from hiccups and gives clearer answers when you ask about hive tasks."
-        },
-        {
-          "title": "Automatic Invoices",
-          "description": "Premium subscriptions now generate and email your invoice as a PDF the moment payment is confirmed."
-        }
-      ]
-    },
-    {
       "version": "btree-server-7.0.0",
       "date": "2026-04-17",
       "items": [
@@ -4614,58 +4562,6 @@
     }
   ],
   "de": [
-    {
-      "version": "btree-client-7.1.0",
-      "date": "2026-04-23",
-      "items": [
-        {
-          "title": "Agenten-Zugriff",
-          "description": "Erstellen Sie sichere Schlüssel, um Ihre eigenen Geräte oder Tools mit den WizBee-Funktionen von b.tree zu verbinden."
-        },
-        {
-          "title": "Medien-Uploads",
-          "description": "Laden Sie jetzt Videos und Fotos direkt von Ihren Kontrollen in Ihre Dropbox hoch."
-        },
-        {
-          "title": "Vereinfachte Oberfläche",
-          "description": "QR-Scanner und Sprachbuttons sind standardmäßig ausgeblendet, sodass der Bildschirm übersichtlich bleibt, bis Sie sie benötigen."
-        },
-        {
-          "title": "Sprachnotizen",
-          "description": "Diktieren Sie Ihre Kontrollnotizen freihändig – WizBee schreibt sie für Sie auf."
-        },
-        {
-          "title": "Rechnungen leicht gemacht",
-          "description": "Fordern Sie mit einem Klick eine Rechnung an – sie wird Ihnen automatisch per E-Mail zugeschickt."
-        }
-      ]
-    },
-    {
-      "version": "btree-server-7.1.0",
-      "date": "2026-04-23",
-      "items": [
-        {
-          "title": "Schädlingswarnungen",
-          "description": "Wir erfassen nun automatisch die neuesten Sichtungen der Asiatischen Hornisse (V. velutina) und des Kleinen Beutenkäfers (A. tumida), damit dein Dashboard immer auf dem neuesten Stand ist."
-        },
-        {
-          "title": "Österreichische AFB-Zonen",
-          "description": "Die Karte für österreichische Faulbrut-Zonen (Amerikanische Faulbrut) nutzt jetzt offizielle AGES-Daten für präzisere Risikogebiete."
-        },
-        {
-          "title": "Sprachnotizen",
-          "description": "Nimm während der Kontrollen kurze Sprachnotizen auf – b.tree schreibt sie automatisch in dein Protokoll."
-        },
-        {
-          "title": "Intelligenterer Assistent",
-          "description": "Wizbee erholt sich schneller von kleinen Pannen und gibt dir klarere Antworten, wenn du Fragen zu Bienenstock-Aufgaben stellst."
-        },
-        {
-          "title": "Automatische Rechnungen",
-          "description": "Premium-Abonnements generieren und senden dir sofort nach der Zahlungsbestätigung deine Rechnung als PDF per E-Mail."
-        }
-      ]
-    },
     {
       "version": "btree-server-7.0.0",
       "date": "2026-04-17",
