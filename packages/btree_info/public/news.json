@@ -1,7 +1,7 @@
 {
   "en": [
     {
-      "version": "7.1.0",
+      "version": "btree-client-7.1.0",
       "date": "2026-04-23",
       "items": [
         {
@@ -27,7 +27,7 @@
       ]
     },
     {
-      "version": "7.1.0",
+      "version": "btree-server-7.1.0",
       "date": "2026-04-23",
       "items": [
         {
