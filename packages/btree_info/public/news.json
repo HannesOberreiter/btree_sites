@@ -11,6 +11,24 @@
       ]
     },
     {
+      "version": "btree-server-7.1.1",
+      "date": "2026-04-30",
+      "items": [
+        {
+          "title": "Fix",
+          "description": "Corrected the subject line in invoice emails."
+        },
+        {
+          "title": "Improvement",
+          "description": "Reduced token usage for the WizBee assistant by trimming the system prompt."
+        },
+        {
+          "title": "Technical Change",
+          "description": "Removed debug logs from the application."
+        }
+      ]
+    },
+    {
       "version": "btree-client-7.1.0",
       "date": "2026-04-23",
       "items": [
@@ -4631,6 +4649,24 @@
         {
           "title": "Behebung",
           "description": "Die Zahlung über den Dienst wurde für alle Geräte wieder aktiviert, nachdem sie versehentlich deaktiviert worden war."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.1.1",
+      "date": "2026-04-30",
+      "items": [
+        {
+          "title": "Korrektur",
+          "description": "Betreffzeile in Rechnungs-E-Mails berichtigt."
+        },
+        {
+          "title": "Verbesserung",
+          "description": "Token-Verbrauch des WizBee-Assistenten durch Kürzung des System-Prompts reduziert."
+        },
+        {
+          "title": "Technische Änderung",
+          "description": "Debug-Protokolle aus der Anwendung entfernt."
         }
       ]
     },
