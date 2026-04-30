@@ -1,6 +1,16 @@
 {
   "en": [
     {
+      "version": "btree-client-7.1.1",
+      "date": "2026-04-30",
+      "items": [
+        {
+          "title": "Fix",
+          "description": "Re-enabled payment via service for all devices after it was mistakenly disabled."
+        }
+      ]
+    },
+    {
       "version": "btree-client-7.1.0",
       "date": "2026-04-23",
       "items": [
@@ -4614,6 +4624,16 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-client-7.1.1",
+      "date": "2026-04-30",
+      "items": [
+        {
+          "title": "Behebung",
+          "description": "Die Zahlung über den Dienst wurde für alle Geräte wieder aktiviert, nachdem sie versehentlich deaktiviert worden war."
+        }
+      ]
+    },
     {
       "version": "btree-client-7.1.0",
       "date": "2026-04-23",
