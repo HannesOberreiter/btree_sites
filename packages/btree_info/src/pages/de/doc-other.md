@@ -51,11 +51,13 @@ Da Zuchtmethoden sich unterscheiden zwischen Imkerei Betrieben, bietet b.tree di
 
 Nachdem die Zuchtmethoden definiert sind können Zuchtserien einfach über folgendes Formular hinzugefügt werden: [/new/rearing](https://app.btree.at/new/rearing). Diese Zuchtserien werden auch im Kalender dargestellt und können als iCal abonniert werden. Achtung ein Löschen von Zuchtserien oder Methoden die bereits verwendet wurden führt zur unwiderruflichen Löschung und können nicht wiederhergestellt werden.
 
-### Spracherkennungsbefehle
+### QR-Code-Scanner
 
-> **Hinweis zur Einstellung:** Die Spracherkennung wird in einem zukünftigen Update als veraltet markiert und entfernt.
+Mit dem QR-Code-Scanner können Sie schnell Bienenstock- oder Bienenstand-QR-Codes scannen, um direkt zu deren Detailseiten zu navigieren. Die Scanner-Schaltfläche ist standardmäßig ausgeblendet und kann pro Gerät in den lokalen Geräteeinstellungen aktiviert werden [/setting/field/localSettings](https://app.btree.at/setting/field/localSettings).
 
-Dieses Feature funktioniert noch nicht in allen Browsern, bisher funktioniert es nur mit Chrome und Microsoft Edge. Die Spracherkennung soll Ihnen helfen, schneller und einfacher mit der App zu arbeiten. Folgende Befehle sind integriert:
+### Spracherkennung
+
+Dieses Feature funktioniert noch nicht in allen Browsern, bisher funktioniert es nur mit Chrome und Microsoft Edge. Die Spracherkennungs-Schaltfläche ist standardmäßig ausgeblendet und kann pro Gerät in den lokalen Geräteeinstellungen aktiviert werden [/setting/field/localSettings](https://app.btree.at/setting/field/localSettings). Die Spracherkennung soll Ihnen helfen, schneller und einfacher mit der App zu arbeiten. Folgende Befehle sind integriert:
 
 - Dashboard, Kalender: Weiterleitung zur Startseite mit Kalender
 - Fütterung: Weiterleitung zum Quicktool mit Fütterung als Aufgabe ausgewählt

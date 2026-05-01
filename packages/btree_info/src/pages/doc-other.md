@@ -49,11 +49,13 @@ Since breeding methods differ between beekeeping operations, b.tree offers the p
 
 After the breeding methods have been defined, breeding series can easily be added using the following form: [/new/rearing](https://app.btree.at/new/rearing). These breeding series are also displayed in the calendar and can be subscribed to as iCal. Attention: Deleting breeding series or methods that have already been used will lead to irrevocable deletion and cannot be restored.
 
-### Speak recognition commands
+### QR Code Scanner
 
-> **Deprecation Notice:** Speech recognition will be deprecated and removed in a future update.
+The QR code scanner lets you quickly scan hive or apiary QR codes to navigate directly to their detail pages. The scanner button is hidden by default and can be enabled per device in the local device settings [/setting/field/localSettings](https://app.btree.at/setting/field/localSettings).
 
-This Feature is not working in all Browsers, so far it works only with Chrome and Microsoft Edge. The speak recognition should help you to work faster and easier with the app. Following commands are integrated:
+### Speech Recognition
+
+This feature is not working in all browsers, so far it works only with Chrome and Microsoft Edge. The speech recognition button is hidden by default and can be enabled per device in the local device settings [/setting/field/localSettings](https://app.btree.at/setting/field/localSettings). The speech recognition should help you to work faster and easier with the app. Following commands are integrated:
 
 - dashboard, calendar: Redirect to starting page with calendar
 - feed, feeding: Redirect to Quicktool with feed as task selected
