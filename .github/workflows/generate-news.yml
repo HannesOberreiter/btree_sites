@@ -63,3 +63,14 @@ jobs:
           curl -X POST "https://api.bunny.net/pullzone/${PULL_ZONE_ID}/purgeCache" \
             -H "AccessKey: ${BUNNY_API_KEY}" --fail -s
           echo "Cache purged."
+
+      - name: Publish news to Facebook
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$FACEBOOK_PAGE_ACCESS_TOKEN" ]; then
+            echo "FACEBOOK_PAGE_ACCESS_TOKEN not set; skipping Facebook publish."
+            exit 0
+          fi
+          node scripts/publish-facebook-news.js
