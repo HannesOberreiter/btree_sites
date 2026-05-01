@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   generate-news:
@@ -39,30 +40,11 @@ jobs:
           git commit -m "chore: update news and changelog from releases"
           git push
 
-      - name: Upload to Bunny CDN
+      - name: Trigger btree_info deploy
         if: steps.changes.outputs.changed == 'true'
         env:
-          STORAGE_PASSWORD: ${{ secrets.BTREE_INFO_STORAGE_PASSWORD }}
-          STORAGE_ZONE_NAME: ${{ vars.BTREE_INFO_STORAGE_ZONE_NAME }}
-        run: |
-          BASE_URL="https://storage.bunnycdn.com/${STORAGE_ZONE_NAME}"
-          for file in news.json changelog.json; do
-            echo "Uploading $file..."
-            curl -X PUT "${BASE_URL}/${file}" \
-              -H "AccessKey: ${STORAGE_PASSWORD}" \
-              --data-binary "@packages/btree_info/public/${file}" --fail -s
-          done
-          echo "Upload complete!"
-
-      - name: Purge BunnyCDN cache
-        if: steps.changes.outputs.changed == 'true'
-        env:
-          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
-          PULL_ZONE_ID: ${{ vars.BTREE_INFO_PULL_ZONE_ID }}
-        run: |
-          curl -X POST "https://api.bunny.net/pullzone/${PULL_ZONE_ID}/purgeCache" \
-            -H "AccessKey: ${BUNNY_API_KEY}" --fail -s
-          echo "Cache purged."
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-btree-info.yml --ref main
 
       - name: Publish news to Facebook
         if: steps.changes.outputs.changed == 'true'

@@ -52,17 +52,21 @@
 
 ## Key Benefits
 - Time savings through centralized hive tracking
-- Remote access to colonie data from anywhere
+- Remote access to colony data from anywhere
 - Data analysis capabilities for productivity optimization
 - Streamlined hive management workflow
 - No syncing required between devices
 - Real-time collaboration between multiple users
-- Languages: English, German, Italian, Frech
+- Languages: English, German, Italian, French
 
 The application is accessed through web browsers and offers a comprehensive solution for modern beekeeping management needs.
 
 ## Links
 - [Login](https://app.btree.at)
 - [Register](https://app.btree.at/register)
+- [Pricing](https://www.btree.at/price/)
 - [FAQs](https://www.btree.at/doc-faqs/)
+- [API Documentation](https://www.btree.at/doc-api/)
+- [AI Agent API Documentation](https://www.btree.at/doc-agent/)
+- [Updates](https://www.btree.at/updates/)
 - [Full Documentation](https://www.btree.at/llms-full.txt)

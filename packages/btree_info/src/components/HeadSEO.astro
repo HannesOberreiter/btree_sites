@@ -17,15 +17,24 @@ const formattedContentTitle = frontmatter.title
 const imageSrc = frontmatter?.image?.src ?? OPEN_GRAPH.image.src;
 const canonicalImageSrc = new URL(imageSrc, Astro.site);
 const imageAlt = frontmatter?.image?.alt ?? OPEN_GRAPH.image.alt;
+const sameAs = [
+    'https://www.linkedin.com/in/hannes-oberreiter-214a30265/',
+    'https://github.com/HannesOberreiter',
+    'https://www.btree.tv/',
+    'https://www.facebook.com/btree.at',
+    'https://www.wiz-bee.com/',
+];
 
 /* Schema.org structured data for the page */
 const schemaEN: Graph['@graph'] = [
     {
         '@type': 'Organization',
+        '@id': 'https://www.btree.at/#organization',
         'name': 'b.tree',
         'description': SITE.description,
         'url': 'https://www.btree.at/',
         'logo': 'https://www.btree.at/logo.png',
+        'sameAs': sameAs,
         'areaServed': {
             '@type': 'Place',
             'name': 'Worldwide',
@@ -37,15 +46,37 @@ const schemaEN: Graph['@graph'] = [
             'url': 'https://www.btree.at/imprint/',
         },
     },
+    {
+        '@type': 'SoftwareApplication',
+        '@id': 'https://www.btree.at/#software',
+        'name': 'b.tree',
+        'description': 'Cloud-based beekeeping management software for apiaries, colonies, treatments, feedings, harvests, tasks, statistics, and AI agent integrations.',
+        'url': 'https://www.btree.at/',
+        'applicationCategory': 'BusinessApplication',
+        'operatingSystem': 'Web browser',
+        'softwareVersion': '7',
+        'inLanguage': ['en', 'de'],
+        'isAccessibleForFree': true,
+        'offers': {
+            '@type': 'Offer',
+            'url': 'https://www.btree.at/price/',
+            'availability': 'https://schema.org/InStock',
+        },
+        'publisher': {
+            '@id': 'https://www.btree.at/#organization',
+        },
+    },
 ];
 
 const schemaDE: Graph['@graph'] = [
     {
         '@type': 'Organization',
+        '@id': 'https://www.btree.at/#organization',
         'name': 'b.tree',
         'description': SITE.description,
         'url': 'https://www.btree.at/de/',
         'logo': 'https://www.btree.at/logo.png',
+        'sameAs': sameAs,
         'areaServed': {
             '@type': 'Place',
             'name': 'Worldwide',
@@ -54,7 +85,27 @@ const schemaDE: Graph['@graph'] = [
             '@type': 'ContactPoint',
             'contactType': 'Kundendienst',
             'availableLanguage': ['English', 'German'],
-            'url': 'https://www.btree.at/de/impressum/',
+            'url': 'https://www.btree.at/de/imprint/',
+        },
+    },
+    {
+        '@type': 'SoftwareApplication',
+        '@id': 'https://www.btree.at/#software',
+        'name': 'b.tree',
+        'description': 'Cloud-basierte Imkerei Software für Bienenstände, Bienenvölker, Behandlungen, Fütterungen, Ernten, Aufgaben, Statistiken und KI-Agent-Integrationen.',
+        'url': 'https://www.btree.at/de/',
+        'applicationCategory': 'BusinessApplication',
+        'operatingSystem': 'Web browser',
+        'softwareVersion': '7',
+        'inLanguage': ['en', 'de'],
+        'isAccessibleForFree': true,
+        'offers': {
+            '@type': 'Offer',
+            'url': 'https://www.btree.at/de/price/',
+            'availability': 'https://schema.org/InStock',
+        },
+        'publisher': {
+            '@id': 'https://www.btree.at/#organization',
         },
     },
 ];

@@ -5,6 +5,6 @@ layout: "../../layouts/MainLayout.astro"
 lang: "de"
 ---
 
-import ListNews from "../../components/ListNews.vue";
+import StaticNews from "../../components/StaticNews.astro";
 
-<ListNews lang="de" client:idle="vue"></ListNews>
+<StaticNews lang="de" page={1} pageSize={10} basePath="/de/updates/" />

@@ -1,0 +1,278 @@
+---
+import newsData from '../../public/news.json';
+
+interface NewsItem {
+  title: string;
+  description: string;
+}
+
+interface NewsEntry {
+  version: string;
+  date: string;
+  items: NewsItem[];
+}
+
+interface Props {
+  lang?: 'en' | 'de';
+  page?: number;
+  pageSize?: number;
+  basePath?: string;
+}
+
+const {
+  lang = 'en',
+  page = 1,
+  pageSize = 10,
+  basePath = lang === 'de' ? '/de/updates/' : '/updates/',
+} = Astro.props;
+
+const entries = (newsData as Record<'en' | 'de', NewsEntry[]>)[lang] ?? newsData.en;
+const totalPages = Math.max(1, Math.ceil(entries.length / pageSize));
+const currentPage = Math.min(Math.max(1, page), totalPages);
+const start = (currentPage - 1) * pageSize;
+const pageEntries = entries.slice(start, start + pageSize);
+const pageLabel = lang === 'de' ? 'Seite' : 'Page';
+const previousLabel = lang === 'de' ? 'Zurück' : 'Previous';
+const nextLabel = lang === 'de' ? 'Weiter' : 'Next';
+const pageHref = (targetPage: number) => targetPage <= 1 ? basePath : `${basePath}${targetPage}/`;
+
+function getReleaseType(version: string) {
+  if (version.startsWith('btree-client')) return 'client';
+  if (version.startsWith('btree-server')) return 'server';
+  return 'other';
+}
+
+function getReleaseLabel(version: string) {
+  if (version.startsWith('btree-client')) return 'Client';
+  if (version.startsWith('btree-server')) return 'Server';
+  return 'App';
+}
+
+function getDisplayVersion(version: string) {
+  return version.replace(/^btree-(client|server)-/, '');
+}
+
+function getPageNumbers() {
+  const pages = new Set<number>([1, totalPages]);
+  for (let index = currentPage - 2; index <= currentPage + 2; index++) {
+    if (index >= 1 && index <= totalPages) pages.add(index);
+  }
+  return [...pages].sort((a, b) => a - b);
+}
+
+const pages = getPageNumbers();
+---
+
+<section class="news-list">
+  <nav class="news-pagination news-pagination-top" aria-label="Updates pagination">
+    <span class="news-page-status">{pageLabel} {currentPage} / {totalPages}</span>
+    <div class="news-page-actions">
+      {currentPage > 1 && <a href={pageHref(currentPage - 1)}>{previousLabel}</a>}
+      {currentPage < totalPages && <a href={pageHref(currentPage + 1)}>{nextLabel}</a>}
+    </div>
+  </nav>
+
+  <ol class="news-entries">
+    {pageEntries.map(entry => (
+      <li class:list={['news-entry', `news-entry-${getReleaseType(entry.version)}`]}>
+        <article>
+          <header class="news-entry-header">
+            <h2>
+              <span class:list={['news-badge', `news-badge-${getReleaseType(entry.version)}`]}>{getReleaseLabel(entry.version)}</span>
+              <span>{getDisplayVersion(entry.version)}</span>
+            </h2>
+            <time datetime={entry.date}>{entry.date}</time>
+          </header>
+          <ul>
+            {entry.items.map(item => (
+              <li>
+                <strong>{item.title}</strong>
+                <span>{item.description}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      </li>
+    ))}
+  </ol>
+
+  <nav class="news-pagination" aria-label="Updates pagination">
+    {currentPage > 1 && <a href={pageHref(currentPage - 1)}>{previousLabel}</a>}
+    {pages.map((targetPage, index) => (
+      <>
+        {index > 0 && targetPage - pages[index - 1] > 1 && <span class="news-page-gap">…</span>}
+        <a
+          href={pageHref(targetPage)}
+          aria-current={targetPage === currentPage ? 'page' : undefined}
+        >
+          {targetPage}
+        </a>
+      </>
+    ))}
+    {currentPage < totalPages && <a href={pageHref(currentPage + 1)}>{nextLabel}</a>}
+  </nav>
+</section>
+
+<style>
+  .news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .news-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .news-pagination-top {
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--theme-divider);
+  }
+
+  .news-page-status {
+    color: var(--theme-text-light);
+    font-size: 0.9rem;
+  }
+
+  .news-page-actions {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .news-pagination a,
+  .news-page-gap {
+    display: inline-flex;
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--theme-divider);
+    border-radius: 999px;
+    padding: 0 0.75rem;
+    text-decoration: none;
+  }
+
+  .news-pagination a:hover {
+    border-color: var(--theme-accent);
+    color: var(--theme-accent);
+  }
+
+  .news-pagination a[aria-current='page'] {
+    border-color: var(--theme-accent);
+    background: var(--theme-accent);
+    color: var(--theme-bg);
+  }
+
+  .news-page-gap {
+    border-color: transparent;
+    color: var(--theme-text-light);
+  }
+
+  .news-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .news-entry {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--theme-divider);
+    border-radius: 0.75rem;
+    padding: 1rem 1rem 1rem 1.25rem;
+    background: var(--theme-bg-offset);
+  }
+
+  .news-entry::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0.35rem;
+    background: var(--news-accent, var(--theme-accent));
+  }
+
+  .news-entry-client {
+    --news-accent: #2563eb;
+  }
+
+  .news-entry-server {
+    --news-accent: #16a34a;
+  }
+
+  .news-entry-other {
+    --news-accent: var(--theme-accent);
+  }
+
+  .news-entry-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .news-entry-header h2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .news-badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 0.15rem 0.55rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .news-badge-client {
+    background: rgba(37, 99, 235, 0.12);
+    color: #2563eb;
+  }
+
+  .news-badge-server {
+    background: rgba(22, 163, 74, 0.12);
+    color: #16a34a;
+  }
+
+  .news-badge-other {
+    background: rgba(120, 120, 120, 0.12);
+    color: var(--theme-text-light);
+  }
+
+  .news-entry-header time {
+    color: var(--theme-text-light);
+    font-size: 0.9rem;
+  }
+
+  .news-entry ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .news-entry li {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .news-entry strong {
+    color: var(--theme-accent);
+  }
+</style>
