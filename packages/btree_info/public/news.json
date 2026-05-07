@@ -1,6 +1,24 @@
 {
   "en": [
     {
+      "version": "btree-server-7.2.0",
+      "date": "2026-05-07",
+      "items": [
+        {
+          "title": "Feature",
+          "description": "Added an elevation data endpoint for apiaries."
+        },
+        {
+          "title": "Fix",
+          "description": "Improved documentation fetching and response handling."
+        },
+        {
+          "title": "Fix",
+          "description": "Limited coupon usage to a 48-hour window per company."
+        }
+      ]
+    },
+    {
       "version": "btree-client-7.1.1",
       "date": "2026-04-30",
       "items": [
@@ -4642,6 +4660,24 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-server-7.2.0",
+      "date": "2026-05-07",
+      "items": [
+        {
+          "title": "Neue Funktion",
+          "description": "Ein Höhen-Datenendpunkt für Bienenstände wurde hinzugefügt."
+        },
+        {
+          "title": "Korrektur",
+          "description": "Dokumentenabruf und Antwortverarbeitung wurden verbessert."
+        },
+        {
+          "title": "Korrektur",
+          "description": "Die Nutzung von Gutscheinen wurde auf ein 48-Stunden-Fenster pro Betrieb beschränkt."
+        }
+      ]
+    },
     {
       "version": "btree-client-7.1.1",
       "date": "2026-04-30",
