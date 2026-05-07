@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   actions: write
+  issues: write
 
 jobs:
   generate-news:
@@ -22,9 +23,10 @@ jobs:
       - name: Generate news
         env:
           GITHUB_TOKEN: ${{ secrets.BTREE_RELEASES_READ_TOKEN }}
+          NEWS_PUBLISH_ISSUE_TOKEN: ${{ github.token }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
           GITHUB_OWNER: ${{ github.repository_owner }}
-        run: node scripts/generate-news.js
+        run: node scripts/generate-news.mjs
 
       - name: Check for changes
         id: changes
@@ -46,13 +48,3 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run deploy-btree-info.yml --ref main
 
-      - name: Publish news to Facebook
-        if: steps.changes.outputs.changed == 'true'
-        env:
-          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
-        run: |
-          if [ -z "$FACEBOOK_PAGE_ACCESS_TOKEN" ]; then
-            echo "FACEBOOK_PAGE_ACCESS_TOKEN not set; skipping Facebook publish."
-            exit 0
-          fi
-          node scripts/publish-facebook-news.js
