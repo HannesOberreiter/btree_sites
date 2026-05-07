@@ -19,6 +19,20 @@
       ]
     },
     {
+      "version": "btree-client-7.2.0",
+      "date": "2026-05-07",
+      "items": [
+        {
+          "title": "Feature",
+          "description": "Apiaries now include an elevation field for recording altitude."
+        },
+        {
+          "title": "Improvement",
+          "description": "Premium payment page layout improved for mobile devices."
+        }
+      ]
+    },
+    {
       "version": "btree-client-7.1.1",
       "date": "2026-04-30",
       "items": [
@@ -4675,6 +4689,20 @@
         {
           "title": "Korrektur",
           "description": "Die Nutzung von Gutscheinen wurde auf ein 48-Stunden-Fenster pro Betrieb beschränkt."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.2.0",
+      "date": "2026-05-07",
+      "items": [
+        {
+          "title": "Neue Funktion",
+          "description": "In den Bienenständen kann nun die Höhe über dem Meeresspiegel erfasst werden."
+        },
+        {
+          "title": "Verbesserung",
+          "description": "Die Premium-Zahlungsseite wurde für mobile Geräte optimiert."
         }
       ]
     },
