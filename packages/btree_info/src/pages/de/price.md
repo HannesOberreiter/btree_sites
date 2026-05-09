@@ -45,4 +45,4 @@ _Hannes Oberreiter_, Zeitvertreib Landwirt , Freizeit Programmierer, Hobby Biolo
 
 <hr/>
 
-[^1]: Wenn du zuvor Premium User warst kannst du trotzdem mit all deinen angelegten Bienenstöcken und Ständen arbeiten, nur keine neuen anlegen.
+[^1]: Wenn du zuvor Premium User warst kannst du trotzdem mit all deinen angelegten Bienenstöcken und Ständen arbeiten, nur keine neuen anlegen. Inaktive Völker/Stöcke werden auch zum Limit gezählt.

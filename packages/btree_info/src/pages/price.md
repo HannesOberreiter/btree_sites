@@ -45,4 +45,4 @@ _Hannes Oberreiter_, Pastime farmer and beekeeper, spare time programmer, hobby 
 
 <hr/>
 
-[^1]: If you were premium before you still can use all of your hives and apiaries! But you cannot add new ones.
+[^1]: If you were premium before you still can use all of your hives and apiaries! But you cannot add new ones. Inactive colonies/hives are also counted towards the limit.
