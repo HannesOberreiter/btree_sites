@@ -1,16 +1,15 @@
 export const SITE = {
   title: 'b.tree',
-  description: 'Professional Beekeeping Database',
+  description: 'Professional beekeeping software for digital hive records, apiary management, queen rearing, treatments, harvests, statistics, and AI-assisted data entry.',
   defaultLanguage: 'de_DE',
 };
 
 export const OPEN_GRAPH = {
+  facebook: 'https://www.facebook.com/btree.at',
   image: {
     src: 'https://www.btree.at/og-facebook.png',
-    srcTwitter: 'https://www.btree.at/og-twitter.png',
     alt: 'b.tree Professional Beekeeping Database serving since 2014.',
   },
-  twitter: 'btree_hannes',
 };
 
 export const KNOWN_LANGUAGES = {
@@ -24,6 +23,7 @@ export const SIDEBAR = {
     { text: 'Beekeeping Application', header: true },
     { text: '🐝 Login', link: 'https://app.btree.at' },
     { text: 'Introduction', link: 'introduction/' },
+    { text: 'Features', link: 'features/' },
     { text: 'Price', link: 'price/' },
     { text: 'FAQs', link: 'doc-faqs/' },
     { text: 'First Steps', link: 'doc-first-steps/' },
@@ -46,6 +46,7 @@ export const SIDEBAR = {
     { text: 'Imkerei Software', header: true },
     { text: '🐝 Login', link: 'https://app.btree.at' },
     { text: 'Einführung', link: 'de/introduction/' },
+    { text: 'Funktionen', link: 'de/features/' },
     { text: 'Preis', link: 'de/price/' },
     { text: 'FAQs', link: 'de/doc-faqs/' },
     { text: 'Ersten Schritte', link: 'de/doc-first-steps/' },

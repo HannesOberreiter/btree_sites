@@ -3,17 +3,27 @@ import type { Graph } from 'schema-dts';
 import { OPEN_GRAPH, SITE } from '../config';
 import Schema from './SchemaLD.astro';
 
+type Frontmatter = {
+  description?: string
+  image?: {
+    alt?: string
+    src?: string
+  }
+  ogLocale?: string
+  seoTitle?: string
+  title?: string
+};
+
 export interface Props {
-  frontmatter: any
-  site?: any
+  frontmatter?: Frontmatter
   canonicalURL: URL | string
 }
 const curLoc = Astro.currentLocale;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { frontmatter = {} } = Astro.props;
-const formattedContentTitle = frontmatter.title
+const formattedContentTitle = frontmatter.seoTitle ?? (frontmatter.title
   ? `${frontmatter.title} 🐝 ${SITE.title}`
-  : SITE.title;
+  : SITE.title);
 const imageSrc = frontmatter?.image?.src ?? OPEN_GRAPH.image.src;
 const canonicalImageSrc = new URL(imageSrc, Astro.site);
 const imageAlt = frontmatter?.image?.alt ?? OPEN_GRAPH.image.alt;
@@ -50,13 +60,32 @@ const schemaEN: Graph['@graph'] = [
         '@type': 'SoftwareApplication',
         '@id': 'https://www.btree.at/#software',
         'name': 'b.tree',
-        'description': 'Cloud-based beekeeping management software for apiaries, colonies, treatments, feedings, harvests, tasks, statistics, and AI agent integrations.',
+        'alternateName': ['b.tree beekeeping app', 'digital hive records', 'beekeeping management software'],
+        'description': 'Cloud-based beekeeping management software and digital hive record system for apiaries, colonies, treatments, feedings, harvests, tasks, queen rearing, statistics, NFC tag scanning on Android, WizBee AI helper powered by European Mistral AI, and AI agent integrations.',
+        'disambiguatingDescription': 'b.tree is beekeeping software for apiary management, not the B-tree database index data structure.',
         'url': 'https://www.btree.at/',
         'applicationCategory': 'BusinessApplication',
+        'applicationSubCategory': 'Beekeeping management software',
         'operatingSystem': 'Web browser',
         'softwareVersion': '7',
         'inLanguage': ['en', 'de'],
         'isAccessibleForFree': true,
+        'keywords': 'beekeeping software, digital hive records, apiary management, hive inspection app, organic beekeeping records, queen rearing software, migratory beekeeping software',
+        'featureList': [
+            'Digital hive records',
+            'Apiary and colony management',
+            'Treatment, feeding, harvest, and inspection logs',
+            'Queen rearing planner',
+            'NFC tag scanning on Android devices with Web NFC support',
+            'CSV export, iCal calendar export, and statistics',
+            'Multi-user cloud access',
+            'WizBee AI helper for Premium users powered by European Mistral AI',
+            'AI agent API with OpenAPI discovery',
+        ],
+        'audience': {
+            '@type': 'Audience',
+            'audienceType': 'Professional beekeepers, organic beekeepers, migratory beekeepers, and apiary teams',
+        },
         'offers': {
             '@type': 'Offer',
             'url': 'https://www.btree.at/price/',
@@ -92,13 +121,32 @@ const schemaDE: Graph['@graph'] = [
         '@type': 'SoftwareApplication',
         '@id': 'https://www.btree.at/#software',
         'name': 'b.tree',
-        'description': 'Cloud-basierte Imkerei Software für Bienenstände, Bienenvölker, Behandlungen, Fütterungen, Ernten, Aufgaben, Statistiken und KI-Agent-Integrationen.',
+        'alternateName': ['b.tree Imker App', 'Imkerei Management Software', 'digitale Stockkarte', 'Imkerei Software'],
+        'description': 'Cloud-basierte Imkerei Management Software für Bienenstandverwaltung, digitale Stockkarten, Bienenvölker, Behandlungen, Fütterungen, Ernten, Aufgaben, Königinnenzucht, Statistiken, NFC-Tag-Scanning auf Android, WizBee KI-Helfer mit europäischer Mistral AI und KI-Agent-Integrationen.',
+        'disambiguatingDescription': 'b.tree ist Imkerei Software für die Verwaltung von Bienenständen und Bienenvölkern, nicht die B-Tree-Datenstruktur aus der Informatik.',
         'url': 'https://www.btree.at/de/',
         'applicationCategory': 'BusinessApplication',
+        'applicationSubCategory': 'Imkerei Management Software',
         'operatingSystem': 'Web browser',
         'softwareVersion': '7',
         'inLanguage': ['en', 'de'],
         'isAccessibleForFree': true,
+        'keywords': 'Imkerei Management Software, Imkerei Software, digitale Stockkarte, Imker App, Bienenstand verwalten, Bienenvölker verwalten, Bio Imker Bestandsbuch, Wanderimker Software, Königinnenzucht Planer, NFC Tag Imkerei Android',
+        'featureList': [
+            'Digitale Stockkarte',
+            'Bienenstand- und Völkerverwaltung',
+            'Behandlungs-, Fütterungs-, Ernte- und Kontrollprotokolle',
+            'Königinnenzucht-Planer',
+            'NFC-Tag-Scanning auf Android-Geräten mit Web-NFC-Unterstützung',
+            'CSV-Export, iCal-Kalenderexport und Statistiken',
+            'Cloud-Zugriff für mehrere Benutzer',
+            'WizBee KI-Helfer für Premium-Benutzer mit europäischer Mistral AI',
+            'KI-Agent API mit OpenAPI-Discovery',
+        ],
+        'audience': {
+            '@type': 'Audience',
+            'audienceType': 'Berufsimker, Erwerbsimker, Bio-Imker, Wanderimker und Imkerei-Teams',
+        },
         'offers': {
             '@type': 'Offer',
             'url': 'https://www.btree.at/de/price/',
@@ -172,6 +220,7 @@ else {
 <meta property="og:site_name" content={SITE.title} />
 <meta property="og:type" content="article" />
 <meta property="og:url" content={canonicalURL} />
+<meta property="article:publisher" content={OPEN_GRAPH.facebook} />
 <meta
   property="og:locale"
   content={frontmatter.ogLocale ?? SITE.defaultLanguage}
@@ -181,7 +230,6 @@ else {
 
 <!-- Twitter Tags -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content={OPEN_GRAPH.twitter} />
 <meta name="twitter:title" content={formattedContentTitle} />
 <meta
   name="twitter:description"
@@ -189,4 +237,5 @@ else {
 />
 <meta name="twitter:image" content={canonicalImageSrc} />
 <meta name="twitter:image:alt" content={imageAlt} />
+
 <Schema item={schema} />

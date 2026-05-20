@@ -9,7 +9,15 @@ import SearchDialog from '../components/SearchDialog.astro';
 
 import * as CONFIG from '../config';
 
-const { frontmatter = {}, headings } = Astro.props;
+type Frontmatter = {
+  dir?: string
+  lang?: string
+  seoTitle?: string
+  title?: string
+};
+
+const { frontmatter = {}, headings } = Astro.props as { frontmatter?: Frontmatter, headings?: unknown[] };
+const pageTitle = frontmatter.seoTitle ?? (frontmatter.title ? `${frontmatter.title} 🐝 ${CONFIG.SITE.title}` : CONFIG.SITE.title);
 ---
 
 <html
@@ -18,13 +26,7 @@ const { frontmatter = {}, headings } = Astro.props;
   class="initial"
 >
   <head>
-    <title data-pagefind-meta="title">
-      {
-        frontmatter.title
-          ? `${frontmatter.title} 🐝 ${CONFIG.SITE.title}`
-          : CONFIG.SITE.title
-      }
-    </title>
+    <title data-pagefind-meta="title">{pageTitle}</title>
     <HeadCommon />
     <style>
       body {
