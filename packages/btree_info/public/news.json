@@ -1,6 +1,46 @@
 {
   "en": [
     {
+      "version": "btree-client-7.2.1",
+      "date": "2026-06-12",
+      "items": [
+        {
+          "title": "Fix",
+          "description": "Logout now works reliably on the first click."
+        },
+        {
+          "title": "Fix",
+          "description": "Table search placeholder is now properly translated."
+        },
+        {
+          "title": "Technical Change",
+          "description": "Updated OAuth redirect flow for ChatGPT integration."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.3.0",
+      "date": "2026-06-12",
+      "items": [
+        {
+          "title": "Feature",
+          "description": "Added OAuth endpoint for custom GPT integration."
+        },
+        {
+          "title": "Improvement",
+          "description": "Updated WizBee assistant model to Mistral Medium 3.5."
+        },
+        {
+          "title": "Performance",
+          "description": "Cached historical weather temperatures to improve response times."
+        },
+        {
+          "title": "Technical Change",
+          "description": "Expanded OAuth origin allow list to support additional integrations."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.2.0",
       "date": "2026-05-07",
       "items": [
@@ -4674,6 +4714,46 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-client-7.2.1",
+      "date": "2026-06-12",
+      "items": [
+        {
+          "title": "Korrektur",
+          "description": "Das Abmelden funktioniert jetzt zuverlässig mit dem ersten Klick."
+        },
+        {
+          "title": "Korrektur",
+          "description": "Der Platzhalter für die Tabellensuche wird nun korrekt übersetzt."
+        },
+        {
+          "title": "Technische Änderung",
+          "description": "Aktualisierter OAuth-Weiterleitungsablauf für die ChatGPT-Integration."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.3.0",
+      "date": "2026-06-12",
+      "items": [
+        {
+          "title": "Neue Funktion",
+          "description": "OAuth-Endpunkt für die Integration benutzerdefinierter GPTs hinzugefügt."
+        },
+        {
+          "title": "Verbesserung",
+          "description": "WizBee-Assistentenmodell auf Mistral Medium 3.5 aktualisiert."
+        },
+        {
+          "title": "Leistungsoptimierung",
+          "description": "Historische Wetterdaten zwischengespeichert, um die Antwortzeiten zu verbessern."
+        },
+        {
+          "title": "Technische Änderung",
+          "description": "OAuth-Ursprungsliste erweitert, um zusätzliche Integrationen zu unterstützen."
+        }
+      ]
+    },
     {
       "version": "btree-server-7.2.0",
       "date": "2026-05-07",

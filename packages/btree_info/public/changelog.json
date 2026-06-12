@@ -1,5 +1,19 @@
 [
   {
+    "version": "btree-client-7.2.1",
+    "date": "2026-06-12",
+    "notes": [
+      "## [7.2.1](https://github.com/HannesOberreiter/btree_vue/compare/btree-client-v7.2.0...btree-client-v7.2.1) (2026-06-12)\n\n\n### Bug Fixes\n\n* :bug: logout did sometimes fail on the first click ([c21acd5](https://github.com/HannesOberreiter/btree_vue/commit/c21acd57c1947ed8e379d063195d4ed86f5803da))\n* translate table search placeholder ([6ffab86](https://github.com/HannesOberreiter/btree_vue/commit/6ffab8656d8d3bd001d0a4d20bd01afb32441a41))\n\n\n### Miscellaneous\n\n* :arrow_up: upgraded to @quasar/app-vite^3 ([0ce98e4](https://github.com/HannesOberreiter/btree_vue/commit/0ce98e48c533a5892194f47de023a507c0ffb098))\n* add missing shim back in ([4191110](https://github.com/HannesOberreiter/btree_vue/commit/419111003db1a69c11f81c3fa7941767e12834f6))\n* change redirect oauth chatgpt flow ([607a2dc](https://github.com/HannesOberreiter/btree_vue/commit/607a2dc61294edeedea1f29c127d946ada4531b4))\n* ignore changelog fmt ([80f8573](https://github.com/HannesOberreiter/btree_vue/commit/80f857340b14a06b1b06ec38e1ebb05adc72df92))\n* migrate to pnpm and upgrade packages ([eb4285f](https://github.com/HannesOberreiter/btree_vue/commit/eb4285f6f4375d0ea87637ee60587314889a702f))\n* redirect to oauth ([566da0c](https://github.com/HannesOberreiter/btree_vue/commit/566da0cf486a7da6b31258ff1de60db173bb62dd))"
+    ]
+  },
+  {
+    "version": "btree-server-7.3.0",
+    "date": "2026-06-12",
+    "notes": [
+      "## [7.3.0](https://github.com/HannesOberreiter/btree_server/compare/btree-server-v7.2.0...btree-server-v7.3.0) (2026-06-12)\n\n\n### Features\n\n* :sparkles: add oauth endpoint for customGPT btree ([4377268](https://github.com/HannesOberreiter/btree_server/commit/4377268eeca10a58da5373ef9988dae50bd7f8df))\n* wizbee model changed to Mistral Medium 3.5 ([2277be6](https://github.com/HannesOberreiter/btree_server/commit/2277be64566c2c50f7f2a83be4588477bcd5fecb))\n\n\n### Performance\n\n* **weather:** cache historical temperatures ([3319ff3](https://github.com/HannesOberreiter/btree_server/commit/3319ff3cf13b61fd7f8953325829254ad341fde6))\n\n\n### Miscellaneous\n\n* add tools to schema ([7f0668c](https://github.com/HannesOberreiter/btree_server/commit/7f0668c802b10af494b009991d6e2faddd3f1878))\n* allow oauth with other origin ([e74e28f](https://github.com/HannesOberreiter/btree_server/commit/e74e28fef07e1054ad304f9013b23b071e018e79))\n* call tool endpoint ([3946096](https://github.com/HannesOberreiter/btree_server/commit/39460965bfd387ed5a306ead089041f32dcb7076))\n* change to custom chatgpt endpoint ([9153d79](https://github.com/HannesOberreiter/btree_server/commit/9153d79a0b7df9c1b7d1d9fd09e8a2fc5ba6c065))\n* fix oauth tokens ([cee2def](https://github.com/HannesOberreiter/btree_server/commit/cee2def68c2b5c95db58284cd3a3d01be1744d1f))\n* lint and internal fixes ([b35e722](https://github.com/HannesOberreiter/btree_server/commit/b35e722fffa757dd272b3c2261a34d4c77911713))\n* make oauth allow list less strict ([cb2bda2](https://github.com/HannesOberreiter/btree_server/commit/cb2bda243700d7626c6e1b15a18b857c3e052404))\n* migrate to pnpm, oxlint, oxfmt ([8de6127](https://github.com/HannesOberreiter/btree_server/commit/8de6127f3d5e4685afb56f0180d74a85a7d79d29))\n* type checks and test fixes ([01f4265](https://github.com/HannesOberreiter/btree_server/commit/01f4265780b1c4465cad00ab3bbeba7eaca0d8e2))"
+    ]
+  },
+  {
     "version": "btree-server-7.2.0",
     "date": "2026-05-07",
     "notes": [
