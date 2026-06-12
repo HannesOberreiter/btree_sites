@@ -104,6 +104,8 @@ Wenn Ihr Konto oder Ihre Imkerei gelöscht wird, werden alle zugehörigen Agent 
 
 Auf der Agent Keys Seite in b.tree finden Sie einen gebrauchsfertigen **Skill-Installations-Prompt**. Kopieren Sie ihn und fügen Sie ihn in Ihren KI-Agenten ein (Claude, ChatGPT oder jeden LLM, der Tool-Nutzung / Function Calling unterstützt). Der Prompt lehrt Ihren Agenten:
 
+> **Randnotiz:** Wenn Sie ChatGPT nutzen, können Sie auch den fertigen b.tree Custom GPT mit OAuth-Login verwenden: [b.tree Imkerei Manager DE](https://chatgpt.com/g/g-6a2bcc6afba881918b2d6f35d920d7c2-b-tree-imkerei-manager-de) oder [b.tree Beekeeping Manager EN](https://chatgpt.com/g/g-6a07eef786548191a55f6487827f9e5a-b-tree-beekeeping-manager-en). Das funktioniert aktuell nur mit dem EU-Server; der US-Server unterstützt noch keinen Custom GPT.
+
 - Wie man sich bei der b.tree API authentifiziert
 - Wie man verfügbare Tools über OpenAPI entdeckt
 - Die b.tree Datenmodell-Konventionen
