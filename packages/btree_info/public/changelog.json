@@ -14,6 +14,13 @@
     ]
   },
   {
+    "version": "btree-server-7.3.1",
+    "date": "2026-06-12",
+    "notes": [
+      "## [7.3.1](https://github.com/HannesOberreiter/btree_server/compare/btree-server-v7.3.0...btree-server-v7.3.1) (2026-06-12)\n\n\n### Bug Fixes\n\n* :bug: fix number string to number conversion ([c53ebe9](https://github.com/HannesOberreiter/btree_server/commit/c53ebe9143459631413b9dd9fb03432193c8b419))"
+    ]
+  },
+  {
     "version": "btree-server-7.2.0",
     "date": "2026-05-07",
     "notes": [

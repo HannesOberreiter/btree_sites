@@ -41,6 +41,16 @@
       ]
     },
     {
+      "version": "btree-server-7.3.1",
+      "date": "2026-06-12",
+      "items": [
+        {
+          "title": "Fix",
+          "description": "Fixed an issue where number strings were not correctly converted to numbers in observation data."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.2.0",
       "date": "2026-05-07",
       "items": [
@@ -4751,6 +4761,16 @@
         {
           "title": "Technische Änderung",
           "description": "OAuth-Ursprungsliste erweitert, um zusätzliche Integrationen zu unterstützen."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.3.1",
+      "date": "2026-06-12",
+      "items": [
+        {
+          "title": "Behoben",
+          "description": "Ein Problem wurde behoben, bei dem Zahlen in Textform in den Beobachtungsdaten nicht korrekt in Zahlen umgewandelt wurden."
         }
       ]
     },
