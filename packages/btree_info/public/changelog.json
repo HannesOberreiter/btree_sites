@@ -1,5 +1,12 @@
 [
   {
+    "version": "btree-client-7.3.0",
+    "date": "2026-07-18",
+    "notes": [
+      "## [7.3.0](https://github.com/HannesOberreiter/btree_vue/compare/btree-client-v7.2.1...btree-client-v7.3.0) (2026-07-18)\n\n\n### Features\n\n* remove unused US server to reduce costs ([ead9ff0](https://github.com/HannesOberreiter/btree_vue/commit/ead9ff099c5051f003486267cec07cb8bd910fd4))"
+    ]
+  },
+  {
     "version": "btree-client-7.2.1",
     "date": "2026-06-12",
     "notes": [
