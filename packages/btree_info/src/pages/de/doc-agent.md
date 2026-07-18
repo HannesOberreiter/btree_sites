@@ -100,16 +100,26 @@ Wenn Ihr Konto oder Ihre Imkerei gelöscht wird, werden alle zugehörigen Agent 
 
 ---
 
-### Ihren KI-Agenten einrichten
+### Ihren KI-Agenten oder Skill einrichten
 
-Auf der Agent Keys Seite in b.tree finden Sie einen gebrauchsfertigen **Skill-Installations-Prompt**. Kopieren Sie ihn und fügen Sie ihn in Ihren KI-Agenten ein (Claude, ChatGPT oder jeden LLM, der Tool-Nutzung / Function Calling unterstützt). Der Prompt lehrt Ihren Agenten:
-
-> **Randnotiz:** Wenn Sie ChatGPT nutzen, können Sie auch den fertigen b.tree Custom GPT mit OAuth-Login verwenden: [b.tree Imkerei Manager DE](https://chatgpt.com/g/g-6a2bcc6afba881918b2d6f35d920d7c2-b-tree-imkerei-manager-de) oder [b.tree Beekeeping Manager EN](https://chatgpt.com/g/g-6a07eef786548191a55f6487827f9e5a-b-tree-beekeeping-manager-en). Das funktioniert aktuell nur mit dem EU-Server; der US-Server unterstützt noch keinen Custom GPT.
+Auf der Agent Keys Seite in b.tree finden Sie einen gebrauchsfertigen **Skill-Installations-Prompt**. Kopieren Sie ihn und fügen Sie ihn in Ihren KI-Agenten oder Skill-Editor ein. Der Prompt erklärt:
 
 - Wie man sich bei der b.tree API authentifiziert
 - Wie man verfügbare Tools über OpenAPI entdeckt
 - Die b.tree Datenmodell-Konventionen
 - Best Practices für das Erstellen und Aktualisieren von Einträgen
+
+#### b.tree als Custom Skill installieren
+
+Anstatt einen Custom GPT oder einen eigenen Agenten zu erstellen, können Sie den Installations-Prompt auf einer unterstützten KI-Plattform in einen wiederverwendbaren Skill umwandeln:
+
+- [ChatGPT Skills Editor](https://chatgpt.com/skills/editor)
+- [Kimi Skills](https://www.kimi.com/skills)
+- [Claude Skill Creator](https://claude.ai/new?q=Let%27s+create+a+skill+together+using+your+skill-creator+skill.+First+ask+me+what+the+skill+should+do.)
+
+Öffnen Sie den gewünschten Skill-Editor. Kopieren Sie danach den **Skill-Installations-Prompt** von der b.tree Agent Keys Seite und fügen Sie ihn in den Editor ein. Folgen Sie den Anweisungen der Plattform, um den Skill zu erstellen.
+
+> **Alternative:** Wenn Sie ChatGPT nutzen, können Sie auch den fertigen b.tree Custom GPT mit OAuth-Login verwenden: [b.tree Imkerei Manager DE](https://chatgpt.com/g/g-6a2bcc6afba881918b2d6f35d920d7c2-b-tree-imkerei-manager-de) oder [b.tree Beekeeping Manager EN](https://chatgpt.com/g/g-6a07eef786548191a55f6487827f9e5a-b-tree-beekeeping-manager-en).
 
 ---
 

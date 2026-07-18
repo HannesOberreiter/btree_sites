@@ -33,7 +33,7 @@ The anonymous user data will be stored for the duration of three years.
 
 ### Hosting & Log Files (app.btree.at & btree.at)
 
-We, or our hosting provider (Hetzner Online GmbH Deutschland, tablegray gmbh Österreich), will automatically collect and store data on access to this website in so-called server log files in the sense of art. 6 Section 1 lit. f. GDPR. If the user chooses to use the US server, data is hosted with Hetzner Online GmbH in Hillsboro, OR, USA.
+We, or our hosting provider (Hetzner Online GmbH Deutschland, tablegray gmbh Österreich), will automatically collect and store data on access to this website in so-called server log files in the sense of art. 6 Section 1 lit. f. GDPR.
 
 These are: URL, Time and date of request to server, Data size, Browser type and version, Referrer, IP-address, Provider, Operating system of the user
 

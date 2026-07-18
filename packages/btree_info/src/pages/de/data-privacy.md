@@ -35,7 +35,7 @@ Die Nutzerdaten werden für die Dauer von 3 Jahren aufbewahrt.
 
 ### Hosting & Log Files (app.btree.at & btree.at)
 
-Wir, bzw. unser Hostinganbieter (Hetzner Online GmbH Deutschland, tablegray gmbh Österreich), erhebt auf Grundlage unserer berechtigten Interessen im Sinne des Art. 6 Abs. 1 lit. f. DSGVO Daten über jeden Zugriff auf den Server, auf dem sich dieser Dienst befindet (sogenannte Serverlogfiles). Wenn der Benutzer den US-Server wählt, werden die Daten bei Hetzner Online GmbH in Hillsboro, OR, USA gehostet.
+Wir, bzw. unser Hostinganbieter (Hetzner Online GmbH Deutschland, tablegray gmbh Österreich), erhebt auf Grundlage unserer berechtigten Interessen im Sinne des Art. 6 Abs. 1 lit. f. DSGVO Daten über jeden Zugriff auf den Server, auf dem sich dieser Dienst befindet (sogenannte Serverlogfiles).
 
 Gespeicherte Daten: Url, Datum, Uhrzeit, Datenmenge, Browsertyp und Version, Referrer, IP-Adresse, Provider, Betriebssystem vom Nutzer
 

@@ -100,16 +100,26 @@ When your account or company is deleted, all associated agent keys are automatic
 
 ---
 
-### Setting Up Your AI Agent
+### Setting Up Your AI Agent or Skill
 
-On the Agent Keys page in b.tree, you'll find a ready-to-use **skill installation prompt**. Copy it and paste it into your AI agent (Claude, ChatGPT, or any LLM that supports tool use / function calling). The prompt teaches your agent:
-
-> **Side note:** If you use ChatGPT, you can also try the ready-made b.tree custom GPT with OAuth login: [b.tree Beekeeping Manager EN](https://chatgpt.com/g/g-6a07eef786548191a55f6487827f9e5a-b-tree-beekeeping-manager-en) or [b.tree Imkerei Manager DE](https://chatgpt.com/g/g-6a2bcc6afba881918b2d6f35d920d7c2-b-tree-imkerei-manager-de). This currently works only with the EU server; the US server has no custom GPT support yet.
+On the Agent Keys page in b.tree, you'll find a ready-to-use **skill installation prompt**. Copy it and paste it into your AI agent or skill editor. The prompt teaches it:
 
 - How to authenticate with the b.tree API
 - How to discover available tools via OpenAPI
 - The b.tree data model conventions
 - Best practices for creating and updating records
+
+#### Install b.tree as a Custom Skill
+
+Instead of creating a custom GPT or building your own agent, you can turn the installation prompt into a reusable skill on a supported AI platform:
+
+- [ChatGPT Skills editor](https://chatgpt.com/skills/editor)
+- [Kimi Skills](https://www.kimi.com/skills)
+- [Claude skill creator](https://claude.ai/new?q=Let%27s+create+a+skill+together+using+your+skill-creator+skill.+First+ask+me+what+the+skill+should+do.)
+
+Open your preferred skill editor, then copy the **skill installation prompt** from the b.tree Agent Keys page and paste it into the editor. Follow the platform's instructions to create the skill.
+
+> **Alternative:** If you use ChatGPT, you can also try the ready-made b.tree custom GPT with OAuth login: [b.tree Beekeeping Manager EN](https://chatgpt.com/g/g-6a07eef786548191a55f6487827f9e5a-b-tree-beekeeping-manager-en) or [b.tree Imkerei Manager DE](https://chatgpt.com/g/g-6a2bcc6afba881918b2d6f35d920d7c2-b-tree-imkerei-manager-de).
 
 ---
 
