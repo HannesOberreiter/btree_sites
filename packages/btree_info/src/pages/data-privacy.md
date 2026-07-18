@@ -33,7 +33,7 @@ The anonymous user data will be stored for the duration of three years.
 
 ### Hosting & Log Files (app.btree.at & btree.at)
 
-We, or our hosting provider (Hetzner Online GmbH Deutschland, tablegray gmbh Österreich), will automatically collect and store data on access to this website in so-called server log files in the sense of art. 6 Section 1 lit. f. GDPR.
+Our backend, API, and database are hosted by Hetzner Online GmbH in Frankfurt, Germany. Our static websites, CDN, and encrypted backups are hosted by Bunny.net in Frankfurt, Germany. These providers automatically collect and store access data in server log files under art. 6 Section 1 lit. f. GDPR.
 
 These are: URL, Time and date of request to server, Data size, Browser type and version, Referrer, IP-address, Provider, Operating system of the user
 
@@ -90,8 +90,8 @@ The Website und Beekeeping Application uses, on basis of our legitimate interest
 Agreement on data processing according to art. 28 GDPR, with following companies we have a data processing agreement:
 
 - foxyoffice – DESEO IT Services Leibnitz GmbH, Österreich (Accounting)
-- tablegray – tablegray gmbh, St. Stefan ob Stainz, Österreich (Hosting)
-- Bunny.net - BunnyWay d.o.o., Cesta Komandanta Staneta 4a, 1215 Medvode, Slovenia (CDN, encrypted backups stored in Frankfurt)
+- Hetzner Online GmbH, Germany (backend, API, and database hosting in Frankfurt)
+- Bunny.net - BunnyWay d.o.o., Cesta Komandanta Staneta 4a, 1215 Medvode, Slovenia (static website hosting, CDN, and encrypted backups in Frankfurt)
 - Bunny Stream - Cesta Komandanta, Staneta 4a, 1215 Medvode, Slovenia (Video hosting, btree.tv)
 
 ### Your rights

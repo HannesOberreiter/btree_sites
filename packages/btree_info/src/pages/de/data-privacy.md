@@ -35,7 +35,7 @@ Die Nutzerdaten werden für die Dauer von 3 Jahren aufbewahrt.
 
 ### Hosting & Log Files (app.btree.at & btree.at)
 
-Wir, bzw. unser Hostinganbieter (Hetzner Online GmbH Deutschland, tablegray gmbh Österreich), erhebt auf Grundlage unserer berechtigten Interessen im Sinne des Art. 6 Abs. 1 lit. f. DSGVO Daten über jeden Zugriff auf den Server, auf dem sich dieser Dienst befindet (sogenannte Serverlogfiles).
+Unser Backend, unsere API und unsere Datenbank werden von Hetzner Online GmbH in Frankfurt, Deutschland, gehostet. Unsere statischen Websites, das CDN und die verschlüsselten Backups werden von Bunny.net in Frankfurt, Deutschland, gehostet. Diese Anbieter erheben und speichern Zugriffsdaten in Serverlogfiles auf Grundlage des Art. 6 Abs. 1 lit. f. DSGVO.
 
 Gespeicherte Daten: Url, Datum, Uhrzeit, Datenmenge, Browsertyp und Version, Referrer, IP-Adresse, Provider, Betriebssystem vom Nutzer
 
@@ -92,8 +92,8 @@ Vereinbarung über eine Auftragsverarbeitung gem. Art. 28 DSGVO
 Mit folgenden Firmen besteht eine Vereinbarung über eine Auftragsverarbeitung:
 
 - foxyoffice – DESEO IT Services Leibnitz GmbH, Österreich (Buchhaltung)
-- tablegray – tablegray gmbh, St. Stefan ob Stainz, Österreich (Hosting)
-- Bunny.net - BunnyWay d.o.o., Cesta Komandanta Staneta 4a, 1215 Medvode, Slowenien (CDN, verschlüsselte Backups in Frankfurt gespeichert)
+- Hetzner Online GmbH, Deutschland (Hosting von Backend, API und Datenbank in Frankfurt)
+- Bunny.net - BunnyWay d.o.o., Cesta Komandanta Staneta 4a, 1215 Medvode, Slowenien (Hosting der statischen Websites, CDN und verschlüsselte Backups in Frankfurt)
 - Bunny Stream - Cesta Komandanta, Staneta 4a, 1215 Medvode, Slowenien (Video Hosting, btree.tv)
 
 ### Ihre Rechte
