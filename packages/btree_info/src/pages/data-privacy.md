@@ -45,7 +45,7 @@ Personal data is processed when you visit our websites. Categories of data proce
 
 ### Database Backups (app.btree.at)
 
-Daily backups are saved on Amazon Werbservice (aws S3 cloud) and are GDPR ready. After 60 days backups are automatically delete.
+Daily backups are encrypted and stored with Bunny.net in Frankfurt, Germany. The backups are GDPR compliant and automatically deleted after 60 days.
 
 ### Payment Services (app.btree.at)
 
@@ -90,9 +90,8 @@ The Website und Beekeeping Application uses, on basis of our legitimate interest
 Agreement on data processing according to art. 28 GDPR, with following companies we have a data processing agreement:
 
 - foxyoffice – DESEO IT Services Leibnitz GmbH, Österreich (Accounting)
-- tablegray – tablegray gmbh, St. Stefan ob Stainz, Österreich (Hosting, Backup)
-- aws - Amazon Web Service (Backup)
-- Bunny CDN - Cesta Komandanta, Staneta 4a, 1215 Medvode, Slowenien (CDN)
+- tablegray – tablegray gmbh, St. Stefan ob Stainz, Österreich (Hosting)
+- Bunny.net - BunnyWay d.o.o., Cesta Komandanta Staneta 4a, 1215 Medvode, Slovenia (CDN, encrypted backups stored in Frankfurt)
 - Bunny Stream - Cesta Komandanta, Staneta 4a, 1215 Medvode, Slovenia (Video hosting, btree.tv)
 
 ### Your rights

@@ -47,7 +47,7 @@ Beim Besuch unserer Websites werden personenbezogene Daten verarbeitet. Dabei ve
 
 ### Datenbank Sicherungen (app.btree.at)
 
-Tägliche Backups werden auf einem Amazon Web Service verschlüsselt gespeichert (aws S3 cloud) und sind DSGVO konform sowie sind ISO27018-Standard zertifiziert. Nach 60 Tagen werden diese Backups unwiderruflich gelöscht.
+Tägliche Backups werden verschlüsselt bei Bunny.net in Frankfurt, Deutschland, gespeichert. Die Backups sind DSGVO-konform und werden nach 60 Tagen unwiderruflich gelöscht.
 
 ### Zahlungsdienstleister (app.btree.at)
 
@@ -93,8 +93,7 @@ Mit folgenden Firmen besteht eine Vereinbarung über eine Auftragsverarbeitung:
 
 - foxyoffice – DESEO IT Services Leibnitz GmbH, Österreich (Buchhaltung)
 - tablegray – tablegray gmbh, St. Stefan ob Stainz, Österreich (Hosting)
-- aws - Amazon Web Service (Backup)
-- Bunny CDN - Cesta Komandanta, Staneta 4a, 1215 Medvode, Slowenien (CDN)
+- Bunny.net - BunnyWay d.o.o., Cesta Komandanta Staneta 4a, 1215 Medvode, Slowenien (CDN, verschlüsselte Backups in Frankfurt gespeichert)
 - Bunny Stream - Cesta Komandanta, Staneta 4a, 1215 Medvode, Slowenien (Video Hosting, btree.tv)
 
 ### Ihre Rechte

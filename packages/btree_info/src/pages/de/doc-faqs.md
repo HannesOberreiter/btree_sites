@@ -79,7 +79,7 @@ Nein, b.tree funktioniert nur mit einer aktiven Internetverbindung. Eine Offline
 
 ### Wo werden meine Daten gespeichert und kann ich sie lokal speichern?
 
-Der Serverstandort ist in Deutschland und alle Daten werden in einer Online-Speicherdatenbank gespeichert. Verschlüsselte Backups werden auf Amazon Cloud Storage (Standort Deutschland) gespeichert. Sie können eine Kopie Ihrer Daten im csv-Format herunterladen [/setting/company](https://app.btree.at/setting/company), wir empfehlen Ihnen, mindestens einmal im Jahr eine Kopie zur sicheren Aufbewahrung herunterzuladen. In den Tabellenansichten ist es auch möglich, die Daten im csv-Format zu exportieren.
+Der Serverstandort ist in Deutschland und alle Daten werden in einer Online-Speicherdatenbank gespeichert. Verschlüsselte Backups werden bei Bunny.net in Frankfurt, Deutschland, gespeichert. Sie können eine Kopie Ihrer Daten im csv-Format herunterladen [/setting/company](https://app.btree.at/setting/company), wir empfehlen Ihnen, mindestens einmal im Jahr eine Kopie zur sicheren Aufbewahrung herunterzuladen. In den Tabellenansichten ist es auch möglich, die Daten im csv-Format zu exportieren.
 
 ### Wie lösche ich mein Konto und entferne alle meine Daten?
 

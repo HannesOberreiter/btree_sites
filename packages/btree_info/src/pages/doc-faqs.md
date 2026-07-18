@@ -77,7 +77,7 @@ No, b.tree only works with an internet connection. There is no offline version p
 
 ### Where is my data saved and can I save it local?
 
-The server is located in Germany and all data is saved in an online storage database. Encrypted backups are saved on Amazon Cloud Storage (location Germany). You can download a copy of your data in csv format [/setting/company](https://app.btree.at/setting/company), we encourage you to download a copy at least yearly for safe keeping. On the table views it is also possible to export the data in csv format.
+The server is located in Germany and all data is saved in an online storage database. Encrypted backups are stored with Bunny.net in Frankfurt, Germany. You can download a copy of your data in csv format [/setting/company](https://app.btree.at/setting/company), we encourage you to download a copy at least yearly for safe keeping. On the table views it is also possible to export the data in csv format.
 
 ### How do I delete my account and remove all my data?
 
