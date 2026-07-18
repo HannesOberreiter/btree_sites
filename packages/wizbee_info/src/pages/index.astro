@@ -146,6 +146,13 @@ const features = [
         margin-left: 0.75rem;
       }
       .btn-outline:hover { background: var(--amber); color: var(--brown); }
+      .agent-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+      }
+      .agent-actions .btn { margin: 0; }
 
       /* ── SECTION WRAPPER ── */
       .section { padding: 4rem 1.5rem; }
@@ -339,11 +346,11 @@ const features = [
           <span class="badge">Rate Limited</span>
           <span class="badge">SHA-256 Key Hashing</span>
         </div>
-        <p style="margin-top:1.5rem">
+        <div class="agent-actions">
           <a class="btn" href="https://www.btree.at/doc-agent/" target="_blank" rel="noopener">Agent API Docs ↗</a>
           <a class="btn btn-outline" href="https://chatgpt.com/g/g-6a07eef786548191a55f6487827f9e5a-b-tree-beekeeping-manager-en" target="_blank" rel="noopener">English custom GPT ↗</a>
           <a class="btn btn-outline" href="https://chatgpt.com/g/g-6a2bcc6afba881918b2d6f35d920d7c2-b-tree-imkerei-manager-de" target="_blank" rel="noopener">German custom GPT ↗</a>
-        </p>
+        </div>
       </div>
     </section>
 
