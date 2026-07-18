@@ -14,7 +14,8 @@
     "dev:btree-info": "pnpm --filter @btree/info dev",
     "dev:wizbee-info": "pnpm --filter wizbee_info dev",
     "dev:btree-tv": "pnpm --filter btree_tv dev",
-    "generate-news": "node scripts/generate-news.mjs"
+    "generate-news": "node scripts/generate-news.mjs",
+    "test": "node --test scripts/*.test.mjs"
   },
   "pnpm": {
     "onlyBuiltDependencies": ["esbuild", "sharp"]

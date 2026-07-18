@@ -24,6 +24,8 @@
 import fs from "node:fs";
 import path from "node:path";
 
+import { buildFallbackItems } from "./news-format.mjs";
+
 const OWNER = process.env.GITHUB_OWNER;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const MISTRAL_API_KEY = process.env.MISTRAL_API_KEY;
@@ -39,9 +41,6 @@ const OUTPUT_PATH = "packages/btree_info/public/news.json";
 const CHANGELOG_PATH = "packages/btree_info/public/changelog.json";
 const MAX_COMMITS_IN_CONTEXT = 20;
 const MAX_FILES_IN_CONTEXT = 40;
-const MIN_FALLBACK_LINE_LENGTH = 6;
-const MAX_FALLBACK_ITEMS = 6;
-const MAX_FALLBACK_DESCRIPTION_LENGTH = 240;
 
 function sanitizeUrl(url) {
   try {
@@ -50,15 +49,6 @@ function sanitizeUrl(url) {
   } catch {
     return "invalid-url";
   }
-}
-
-function truncateAtWordBoundary(text, maxLength) {
-  const clean = text.replace(/\s+/g, " ").trim();
-  if (clean.length <= maxLength) return clean;
-  const chunk = clean.slice(0, maxLength + 1);
-  const lastSpace = chunk.lastIndexOf(" ");
-  if (lastSpace > 0) return `${chunk.slice(0, lastSpace)}…`;
-  return `${clean.slice(0, maxLength)}…`;
 }
 
 async function fetchGitHubJson(url) {
@@ -201,51 +191,20 @@ const SYSTEM_PROMPT_EN = `You are a release note editor for b.tree, a beekeeping
 Your job is to rewrite technical release notes into clear, concise news items while staying strictly faithful to the provided changelog and change context.
 
 Rules:
-- Each news item has a "title" (2-4 words, category-like: "Feature", "Fix", "Improvement", "Technical Change") and a "description" (1-2 sentences).
+- Each news item has a descriptive "title" (2-5 words) and a plain-language "description" (1-2 sentences).
+- Do not use generic titles such as "Feature", "Fix", "Improvement", or "Technical Change".
 - Base every statement only on the provided release notes and code-change context.
-- If impact is not explicit, keep wording technical and close to the original changelog text.
-- Do not invent benefits, user impact, or motivations that are not clearly stated.
+- Treat every item under a Features section as publishable, including infrastructure or cost-saving changes.
+- Explain technical changes in language useful to customers without inventing unstated benefits or motivations.
 - Combine related items only when they describe the same change.
-- Do NOT mention repository names, code, APIs (unless it's the user-facing hive scale API), or internal tooling.
+- Never copy release headings, versions, Markdown, links, commit hashes, emoji codes, repository names, code, APIs (unless it's the user-facing hive scale API), or internal tooling into output.
 - Output ONLY a valid JSON array of objects with "title" and "description" fields. No markdown, no explanation.
-- If there are no user-facing changes, return an empty array [].`;
+- Return [] only when release contains maintenance irrelevant to customers, such as dependency updates, linting, formatting, CI, or test-only changes.`;
 
 const SYSTEM_PROMPT_TRANSLATE = `You are a professional translator. Translate the following JSON array of news items from English to German.
 Keep the same JSON structure with "title" and "description" fields.
 Use natural, friendly German suitable for Austrian/German beekeepers.
 Output ONLY the translated JSON array. No markdown, no explanation.`;
-
-function buildFallbackItems(combinedNotes) {
-  const items = combinedNotes
-    .split("\n")
-    .map((line) =>
-      line
-        .replace(/^[-*]\s*/, "")
-        .replace(/^#+\s*/, "")
-        .replace(/\(#[0-9]+\)/g, "")
-        .trim(),
-    )
-    .filter((line) => line.length > MIN_FALLBACK_LINE_LENGTH)
-    .slice(0, MAX_FALLBACK_ITEMS)
-    .map((line) => ({
-      title: "Technical Change",
-      description: truncateAtWordBoundary(
-        line,
-        MAX_FALLBACK_DESCRIPTION_LENGTH,
-      ),
-    }));
-
-  if (items.length > 0) return items;
-  return [
-    {
-      title: "Technical Change",
-      description: truncateAtWordBoundary(
-        combinedNotes,
-        MAX_FALLBACK_DESCRIPTION_LENGTH,
-      ),
-    },
-  ];
-}
 
 async function rewriteRelease(entry) {
   const combinedNotes = entry.notes.join("\n\n");
@@ -259,7 +218,7 @@ async function rewriteRelease(entry) {
     return { en: [], de: [] };
   }
 
-  const fallbackTechnicalItems = buildFallbackItems(combinedNotes);
+  const fallbackItems = buildFallbackItems(combinedNotes);
 
   // Generate EN news
   const enRaw = await callMistral(
@@ -294,11 +253,11 @@ async function rewriteRelease(entry) {
   }
 
   if (!Array.isArray(enItems) || enItems.length === 0) {
-    // Keep output technical and close to original release text.
-    return {
-      en: fallbackTechnicalItems,
-      de: fallbackTechnicalItems,
-    };
+    enItems = fallbackItems;
+  }
+
+  if (enItems.length === 0) {
+    return { en: [], de: [] };
   }
 
   // Translate to DE

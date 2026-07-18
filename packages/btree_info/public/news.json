@@ -5,16 +5,8 @@
       "date": "2026-07-18",
       "items": [
         {
-          "title": "Technical Change",
-          "description": "[7.3.0](https://github.com/HannesOberreiter/btree_vue/compare/btree-client-v7.2.1...btree-client-v7.3.0) (2026-07-18)"
-        },
-        {
-          "title": "Technical Change",
-          "description": "Features"
-        },
-        {
-          "title": "Technical Change",
-          "description": "remove unused US server to reduce costs ([ead9ff0](https://github.com/HannesOberreiter/btree_vue/commit/ead9ff099c5051f003486267cec07cb8bd910fd4))"
+          "title": "Streamlined Infrastructure",
+          "description": "We removed unused server infrastructure in the United States to reduce operating costs."
         }
       ]
     },
@@ -4747,16 +4739,8 @@
       "date": "2026-07-18",
       "items": [
         {
-          "title": "Technical Change",
-          "description": "[7.3.0](https://github.com/HannesOberreiter/btree_vue/compare/btree-client-v7.2.1...btree-client-v7.3.0) (2026-07-18)"
-        },
-        {
-          "title": "Technical Change",
-          "description": "Features"
-        },
-        {
-          "title": "Technical Change",
-          "description": "remove unused US server to reduce costs ([ead9ff0](https://github.com/HannesOberreiter/btree_vue/commit/ead9ff099c5051f003486267cec07cb8bd910fd4))"
+          "title": "Optimierte Infrastruktur",
+          "description": "Wir haben ungenutzte Server-Infrastruktur in den USA entfernt, um die Betriebskosten zu senken."
         }
       ]
     },
