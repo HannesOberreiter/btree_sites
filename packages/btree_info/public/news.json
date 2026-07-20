@@ -1,6 +1,24 @@
 {
   "en": [
     {
+      "version": "btree-server-7.4.0",
+      "date": "2026-07-20",
+      "items": [
+        {
+          "title": "WizBee integration",
+          "description": "Adds tools to record apiaries, hives, and hive movements directly from the WizBee mobile app."
+        },
+        {
+          "title": "Container logging",
+          "description": "Logs now include timestamps and severity levels in a format compatible with container platforms."
+        },
+        {
+          "title": "Faster container startup",
+          "description": "Child containers skip database migrations that were already run by the parent container."
+        }
+      ]
+    },
+    {
       "version": "btree-client-7.3.0",
       "date": "2026-07-18",
       "items": [
@@ -4734,6 +4752,24 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-server-7.4.0",
+      "date": "2026-07-20",
+      "items": [
+        {
+          "title": "WizBee-Integration",
+          "description": "Ermöglicht die Erfassung von Bienenständen, Völkern und Völkerbewegungen direkt über die WizBee-Mobil-App."
+        },
+        {
+          "title": "Protokollierung in Containern",
+          "description": "Protokolle enthalten jetzt Zeitstempel und Schweregrade in einem Format, das mit Container-Plattformen kompatibel ist."
+        },
+        {
+          "title": "Schnellerer Container-Start",
+          "description": "Untergeordnete Container überspringen Datenbankmigrationen, die bereits vom übergeordneten Container durchgeführt wurden."
+        }
+      ]
+    },
     {
       "version": "btree-client-7.3.0",
       "date": "2026-07-18",
