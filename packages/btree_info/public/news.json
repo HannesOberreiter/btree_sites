@@ -6,7 +6,7 @@
       "items": [
         {
           "title": "WizBee integration",
-          "description": "Adds tools to record apiaries, hives, and hive movements directly from the WizBee mobile app."
+          "description": "Adds tools to record apiaries, hives, and hive movements directly from the WizBee or via your custom agent."
         },
         {
           "title": "Container logging",
@@ -4758,7 +4758,7 @@
       "items": [
         {
           "title": "WizBee-Integration",
-          "description": "Ermöglicht die Erfassung von Bienenständen, Völkern und Völkerbewegungen direkt über die WizBee-Mobil-App."
+          "description": "Ermöglicht die Erfassung von Bienenständen, Völkern und Völkerbewegungen direkt über die WizBee oder deinem eigenen Agenten."
         },
         {
           "title": "Protokollierung in Containern",
