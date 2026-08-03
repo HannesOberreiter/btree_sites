@@ -1,7 +1,7 @@
 ---
 title: "Funktionen"
 seoTitle: "b.tree | Funktionen der Imkerei Management Software"
-description: "Funktionen von b.tree: tabellarische Imkereidaten, Bienenstandverwaltung, digitale Stockkarte, Kontrollen, Behandlungen, Fütterungen, Ernten, Königinnenzucht, Statistiken, NFC-Tag-Scanning auf Android, Datenexport, WizBee KI-Helfer mit europäischer Mistral AI und KI-Agent API."
+description: "Funktionen von b.tree: tabellarische Imkereidaten, Bienenstandverwaltung, digitale Stockkarte, Kontrollen, Behandlungen, Fütterungen, Ernten, Wachskreislauf, Königinnenzucht, Statistiken, Datenexport, WizBee KI-Helfer und KI-Agent API."
 layout: '../../layouts/MainLayout.astro'
 lang: "de"
 ---
@@ -29,6 +29,10 @@ b.tree ist so aufgebaut, dass Ihre Imkereidaten nicht eingeschlossen sind. Daten
 ### Behandlungen, Fütterungen, Ernten und Kontrollen
 
 Dokumentieren Sie wichtige Imkereiereignisse an einem Ort: Varroa-Behandlungen, Futtergaben, Honigernten, Kontrollen und Folgeaufgaben. Dadurch entsteht eine nachvollziehbare Historie für jedes Volk und jeden Bienenstand.
+
+### Wachskreislauf und Los-Rückverfolgbarkeit
+
+Der [Wachskreislauf](https://app.btree.at/table/wax) verwaltet Wachs getrennt vom allgemeinen Lager. Eigenwachs, Zukauf, Verarbeitung, Lohnverarbeitung, Verwendung und Verkauf werden über einzelne Lose dokumentiert. Ein- und Ausgänge lassen sich N:M verknüpfen, Verarbeitungsverluste werden automatisch berechnet und optional ausgewählte Völker erhalten die Herkunftsinformation. Produktübersicht, Belegnummern und CSV-Export unterstützen eine nachvollziehbare Dokumentation für Bio- und Erwerbsimkereien.
 
 ### Aufgaben, Kalender und iCal
 

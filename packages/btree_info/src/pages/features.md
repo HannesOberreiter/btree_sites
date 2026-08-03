@@ -1,7 +1,7 @@
 ---
 title: "Features"
 seoTitle: "b.tree | Beekeeping Management Software Features"
-description: "Features of b.tree beekeeping management software: tabular hive records, apiary management, inspections, treatments, feedings, harvests, queen rearing, statistics, NFC tag scanning on Android, exports, WizBee AI helper powered by European Mistral AI, and AI agent API."
+description: "Features of b.tree beekeeping management software: tabular hive records, apiary management, inspections, treatments, feedings, harvests, wax cycle traceability, queen rearing, statistics, exports, WizBee AI helper, and AI agent API."
 layout: '../layouts/MainLayout.astro'
 lang: "en"
 ---
@@ -29,6 +29,10 @@ b.tree is designed so your beekeeping data is not locked away. Data can be expor
 ### Treatments, feedings, harvests, and inspections
 
 Track the most important beekeeping events in one place. Document varroa treatments, feed amounts, honey harvests, checkups, and follow-up tasks. This creates a reliable history for each hive and apiary.
+
+### Wax cycle and lot traceability
+
+The [wax cycle](https://app.btree.at/table/wax) keeps wax records separate from general inventory. Track own wax, purchases, processing, contract processing, use, and sales across individual lots. Inputs and outputs can be connected many-to-many, processing losses are calculated automatically, and optional source colonies preserve origin information. Product summaries, document references, and CSV export support traceable records for organic and professional operations.
 
 ### Tasks, calendar, and iCal
 

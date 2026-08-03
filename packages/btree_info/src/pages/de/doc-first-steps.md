@@ -77,6 +77,18 @@ Wenn Sie Königinnen über das Mutterfeld miteinander verknüpft haben, können 
 
 Ein rudimentäres Werkzeug, um den Überblick über Ihre Vorräte zu behalten. Wir verwenden es, um den Überblick über unser Behandlungsmaterial, das Zuckerlager und die Produktionsmenge zu behalten. Sie können einen neuen Wareneingang oder Warenausgang mit dem Formular [/new/charge](https://app.btree.at/new/charge) erstellen und hast einen einfachen Überblick über deine Bestände als Tabelle [/table/charge-stock](https://app.btree.at/table/charge-stock). Wenn wir eine neue Charge für eine Honig-Abfüllung anlegen, schreiben wir die eindeutige Identifikationsnummer der Charge in das entsprechende Feld und in das Notizfeld den Charge-Indent der verwendeten Ernte. Mit diesem Muster können wir den Warenfluss verfolgen. Für Zucker verwenden wir das Feld "Chargennummer" für die Rechnungsnummer. Was die Ausgangschargen betrifft, so machen wir dies nur zweimal im Jahr, wenn wir eine Bestandszählung alias Inventur im Lager durchführen. Wenn Sie einen größeren Betrieb haben, gibt es bessere Werkzeuge für Warenmanagement, aber für unseren kleinen Betrieb funktioniert dies gut, um zumindest ein wenig den Überblick zu behalten und die Warenflussaufzeichnungen zu erfüllen, die für unsere Zertifizierung als Bio-Imker erforderlich sind.
 
+### Wachskreislauf
+
+Der separate [Wachskreislauf](https://app.btree.at/table/wax) dokumentiert Wachslose und deren Bewegungen unabhängig vom allgemeinen Lager. Ein typischer Ablauf für Eigenwachs ist:
+
+1. Ungewogenes Deckelwachs oder Altwaben bleiben eine Herkunftsangabe. Legen Sie das erste Los an, sobald eine messbare Wachsmenge vorhanden ist, normalerweise als gewogener Wachsblock.
+2. Buchen Sie **Eigenwachs einlagern**, wählen Sie die verpflichtende Herkunftsart und optional die Völker. Deren Bienenstand wird zum Buchungsdatum ermittelt.
+3. Buchen Sie eine Verarbeitung mit einem oder mehreren Eingangs- und Ausgangslosen. b.tree berechnet die Differenz zwischen Eingang und Ausgang als Verarbeitungsverlust. Mengen werden in Kilogramm mit maximal zwei Dezimalstellen erfasst.
+4. Verwenden Sie Zukauf und Lohnverarbeitung für externe Wachsflüsse, einschließlich Lieferant oder Verarbeiter und einer optionalen Beleg- oder Auftragsnummer. Verwendung und Verkauf reduzieren den Bestand vorhandener Lose.
+5. Korrigieren Sie Fehler nach Möglichkeit durch eine Storno-Gegenbuchung, statt Aufzeichnungen endgültig zu löschen.
+
+Wachsprodukte und Herkunftsarten können je Imkerei direkt über die Auswahlfelder angelegt werden. Die Produktübersicht zeigt Gesamtbestand und Losanzahl, leere Lose sind standardmäßig ausgeblendet und der vollständige Wachskreislauf kann als CSV exportiert werden.
+
 ### Stockdaten drucken
 
 Zur Dokumentation oder für die Arbeit am Bienenstand können Sie für jeden Stock ein Übersichtsblatt drucken. Öffnen Sie die Stockdetailseite und verwenden Sie die Druckschaltfläche, um eine druckfreundliche Jahresübersicht aller Aufgaben für das Volk zu erstellen [/table/hive](https://app.btree.at/table/hive).

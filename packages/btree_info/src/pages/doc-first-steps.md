@@ -73,6 +73,18 @@ If you linked queens via the mother field you can view the breeding lineage as a
 
 Rudimentary tool to keep track of your stocks. We use it to keep track of our treatment material, sugar store and production amount. You can create a new good receipt or outgoing goods with the form [/new/charge](https://app.btree.at/new/charge) and have an overview of your stocks as table [/table/charge-stock](https://app.btree.at/table/charge-stock). If we create a new honey jar charge we write the distinct charge identification number in the corresponding field and in the note field the charge indent of the harvest we used. With this pattern we can follow the goods flow. As for sugar we use the charge ident field for the invoice number. As for outgoing charges we only to this twice a year when we make a stock count aka inventory in the storage. If you have a bigger operation there are better tools for this kind of job but for our small operation this works fine to keep track at least a little bit and fulfil the goods flow record keeping needed for our certification as organic beekeeper.
 
+### Wax Cycle
+
+The separate [wax cycle](https://app.btree.at/table/wax) documents wax lots and their movements independently from general inventory. A typical own-wax workflow is:
+
+1. Unweighed cappings or old comb remain origin information. Create the first lot when measurable wax is available, usually as a weighed wax block.
+2. Book **Store own wax**, select the required origin type, and optionally select the source colonies. Their apiary locations are determined for the booking date.
+3. Book processing with one or more input and output lots. b.tree calculates the difference between input and output as processing loss. Quantities are entered in kilograms with up to two decimal places.
+4. Use purchases and contract processing for external wax flows, including the supplier or processor and an optional document or order reference. Use and sale operations reduce existing lot stock.
+5. Correct mistakes with a reversal entry whenever possible instead of permanently deleting records.
+
+Wax products and origin types can be defined for each operation directly from their dropdowns. The product summary shows total stock and lot counts, empty lots are hidden by default, and the complete wax ledger can be exported as CSV.
+
 ### Print Hive Records
 
 For record keeping or field work you can print a summary sheet for any hive. Open the hive detail page and use the print button to generate a printer-friendly yearly overview of all tasks for that colony [/print/hive/:id](https://app.btree.at/table/hive).
