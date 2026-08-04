@@ -31,6 +31,44 @@
       ]
     },
     {
+      "version": "btree-server-7.5.0",
+      "date": "2026-08-04",
+      "items": [
+        {
+          "title": "OpenAPI documentation",
+          "description": "The API now provides machine-readable OpenAPI contracts for all routes, enabling third-party integrations."
+        },
+        {
+          "title": "Wax ledger tracking",
+          "description": "Added a traceable ledger to record wax production, lot creation, and ownership details."
+        },
+        {
+          "title": "Tool error recovery",
+          "description": "Preserved details of tool recovery attempts when agents encounter errors."
+        },
+        {
+          "title": "Payment audit fixes",
+          "description": "Corrected miscellaneous errors in payment processing and membership records."
+        },
+        {
+          "title": "Stricter OAuth access",
+          "description": "Enforced access policies for OAuth logins to improve security."
+        },
+        {
+          "title": "WizBee tool roles",
+          "description": "Added role-based access control for WizBee tools within the application."
+        },
+        {
+          "title": "Location ownership checks",
+          "description": "Ensured users can only access hives and apiaries they own."
+        },
+        {
+          "title": "Removed Stripe support",
+          "description": "Payment processing no longer uses Stripe; alternative providers are now in place."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.4.0",
       "date": "2026-07-20",
       "items": [
@@ -4809,6 +4847,44 @@
         {
           "title": "Vereinfachte Zahlungen",
           "description": "Stripe-Checkout entfernt – alle Spenden werden jetzt direkt abgewickelt."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.5.0",
+      "date": "2026-08-04",
+      "items": [
+        {
+          "title": "OpenAPI-Dokumentation",
+          "description": "Die API bietet nun maschinenlesbare OpenAPI-Verträge für alle Routen, um Drittanbieter-Integrationen zu ermöglichen."
+        },
+        {
+          "title": "Wachs-Buchführung",
+          "description": "Es wurde ein nachverfolgbares Register hinzugefügt, um die Wachsproduktion, Chargenerstellung und Eigentumsdetails zu dokumentieren."
+        },
+        {
+          "title": "Wiederherstellung bei Werkzeugfehlern",
+          "description": "Details zu Wiederherstellungsversuchen bei Werkzeugfehlern werden nun gespeichert."
+        },
+        {
+          "title": "Korrekturen bei Zahlungsprüfungen",
+          "description": "Verschiedene Fehler in der Zahlungsabwicklung und bei Mitgliederdaten wurden behoben."
+        },
+        {
+          "title": "Strengere OAuth-Zugriffskontrolle",
+          "description": "Zugriffsrichtlinien für OAuth-Logins wurden verschärft, um die Sicherheit zu erhöhen."
+        },
+        {
+          "title": "WizBee-Werkzeugrollen",
+          "description": "Es wurde eine rollenbasierte Zugriffskontrolle für WizBee-Werkzeuge innerhalb der Anwendung eingeführt."
+        },
+        {
+          "title": "Prüfung des Standortbesitzes",
+          "description": "Nutzer können nun nur noch auf Bienenstöcke und Bienenstände zugreifen, die ihnen gehören."
+        },
+        {
+          "title": "Stripe-Unterstützung entfernt",
+          "description": "Die Zahlungsabwicklung erfolgt nicht mehr über Stripe; alternative Anbieter sind nun im Einsatz."
         }
       ]
     },
