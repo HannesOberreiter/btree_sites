@@ -69,6 +69,16 @@
       ]
     },
     {
+      "version": "btree-server-7.5.1",
+      "date": "2026-08-04",
+      "items": [
+        {
+          "title": "Faster hive reports",
+          "description": "Generating apiary and hive statistics now uses optimized database queries, reducing wait times for large operations."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.4.0",
       "date": "2026-07-20",
       "items": [
@@ -4885,6 +4895,16 @@
         {
           "title": "Stripe-Unterstützung entfernt",
           "description": "Die Zahlungsabwicklung erfolgt nicht mehr über Stripe; alternative Anbieter sind nun im Einsatz."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.5.1",
+      "date": "2026-08-04",
+      "items": [
+        {
+          "title": "Schnellere Bienenstock-Berichte",
+          "description": "Die Erstellung von Statistiken für Bienenstände und Völker erfolgt nun mit optimierten Datenbankabfragen, was die Wartezeit bei großen Vorgängen verkürzt."
         }
       ]
     },
