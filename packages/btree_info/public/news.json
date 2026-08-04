@@ -1,6 +1,36 @@
 {
   "en": [
     {
+      "version": "btree-client-7.4.0",
+      "date": "2026-08-04",
+      "items": [
+        {
+          "title": "Wax ledger tracking",
+          "description": "Record and track wax production, purchases, and usage directly in the app."
+        },
+        {
+          "title": "Colony count toggle",
+          "description": "Show or hide the number of colonies in statistics with a single toggle."
+        },
+        {
+          "title": "Mobile dialog fixes",
+          "description": "Dialogs now display correctly on mobile devices."
+        },
+        {
+          "title": "Error message clarity",
+          "description": "Error notifications now show clearer, more detailed messages."
+        },
+        {
+          "title": "Wax form sizing",
+          "description": "Fixed the sizing of wax-related forms for better usability."
+        },
+        {
+          "title": "Simplified payments",
+          "description": "Removed Stripe checkout; all donations are now processed directly."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.4.0",
       "date": "2026-07-20",
       "items": [
@@ -4752,6 +4782,36 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-client-7.4.0",
+      "date": "2026-08-04",
+      "items": [
+        {
+          "title": "Wachsbuchführung",
+          "description": "Erfassen und verfolgen Sie die Wachsproduktion, Käufe und den Verbrauch direkt in der App."
+        },
+        {
+          "title": "Völkeranzahl umschalten",
+          "description": "Zeigen oder verbergen Sie die Anzahl der Völker in den Statistiken mit einem einfachen Schalter."
+        },
+        {
+          "title": "Korrekturen für Mobilgeräte",
+          "description": "Dialogfenster werden jetzt korrekt auf mobilen Geräten angezeigt."
+        },
+        {
+          "title": "Klare Fehlermeldungen",
+          "description": "Fehlermeldungen sind jetzt verständlicher und detaillierter."
+        },
+        {
+          "title": "Optimierte Wachsformulare",
+          "description": "Die Größe der Wachs-Formulare wurde für eine bessere Bedienbarkeit angepasst."
+        },
+        {
+          "title": "Vereinfachte Zahlungen",
+          "description": "Stripe-Checkout entfernt – alle Spenden werden jetzt direkt abgewickelt."
+        }
+      ]
+    },
     {
       "version": "btree-server-7.4.0",
       "date": "2026-07-20",
