@@ -1,6 +1,16 @@
 {
   "en": [
     {
+      "version": "btree-server-7.5.2",
+      "date": "2026-08-05",
+      "items": [
+        {
+          "title": "Filter options restored",
+          "description": "Previously migrated filters for queen, charge, and statistic views are now available again in the web interface."
+        }
+      ]
+    },
+    {
       "version": "btree-client-7.4.0",
       "date": "2026-08-04",
       "items": [
@@ -4830,6 +4840,16 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-server-7.5.2",
+      "date": "2026-08-05",
+      "items": [
+        {
+          "title": "Filteroptionen wiederhergestellt",
+          "description": "Die zuvor migrierten Filter für Königinnen, Belastungen und Statistikansichten sind nun wieder in der Weboberfläche verfügbar."
+        }
+      ]
+    },
     {
       "version": "btree-client-7.4.0",
       "date": "2026-08-04",

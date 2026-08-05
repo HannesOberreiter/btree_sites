@@ -1,5 +1,12 @@
 [
   {
+    "version": "btree-server-7.5.2",
+    "date": "2026-08-05",
+    "notes": [
+      "## [7.5.2](https://github.com/HannesOberreiter/btree_server/compare/btree-server-v7.5.1...btree-server-v7.5.2) (2026-08-05)\n\n\n### Bug Fixes\n\n* **api:** restore migrated filters ([5e94440](https://github.com/HannesOberreiter/btree_server/commit/5e94440a3665be6022f8a2268e8752b0e9333279))"
+    ]
+  },
+  {
     "version": "btree-client-7.4.0",
     "date": "2026-08-04",
     "notes": [
