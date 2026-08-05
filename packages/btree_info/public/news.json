@@ -11,6 +11,16 @@
       ]
     },
     {
+      "version": "btree-client-7.4.1",
+      "date": "2026-08-05",
+      "items": [
+        {
+          "title": "Accurate hive data",
+          "description": "Fixed how the app reads and displays statistics so numbers and charts match the actual hive records."
+        }
+      ]
+    },
+    {
       "version": "btree-client-7.4.0",
       "date": "2026-08-04",
       "items": [
@@ -4847,6 +4857,16 @@
         {
           "title": "Filteroptionen wiederhergestellt",
           "description": "Die zuvor migrierten Filter für Königinnen, Belastungen und Statistikansichten sind nun wieder in der Weboberfläche verfügbar."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.4.1",
+      "date": "2026-08-05",
+      "items": [
+        {
+          "title": "Präzise Bienenstockdaten",
+          "description": "Behoben, wie die App Statistiken ausliest und anzeigt, sodass Zahlen und Diagramme nun mit den tatsächlichen Stockaufzeichnungen übereinstimmen."
         }
       ]
     },

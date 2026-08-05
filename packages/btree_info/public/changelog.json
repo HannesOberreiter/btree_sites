@@ -7,6 +7,13 @@
     ]
   },
   {
+    "version": "btree-client-7.4.1",
+    "date": "2026-08-05",
+    "notes": [
+      "## [7.4.1](https://github.com/HannesOberreiter/btree_vue/compare/btree-client-v7.4.0...btree-client-v7.4.1) (2026-08-05)\n\n\n### Bug Fixes\n\n* **statistics:** type API responses ([f911087](https://github.com/HannesOberreiter/btree_vue/commit/f91108718c555ebad9f9be74486ad6572b344396))"
+    ]
+  },
+  {
     "version": "btree-client-7.4.0",
     "date": "2026-08-04",
     "notes": [
