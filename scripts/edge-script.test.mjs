@@ -33,7 +33,11 @@ vm.runInNewContext(executableSource, {
 assert.equal(typeof handler, 'function');
 
 async function request(url) {
-  const originalRequest = new Request(url);
+  const publicURL = new URL(url);
+  const originURL = new URL(`${publicURL.pathname}${publicURL.search}`, 'http://origin.internal:9000');
+  const originalRequest = new Request(originURL, {
+    headers: { host: publicURL.host },
+  });
   return {
     originalRequest,
     response: await handler({ request: originalRequest }),

@@ -15,6 +15,9 @@ async function onOriginRequest(
 ): Promise<Response> | Response | Promise<Request> | Request | void {
   const url = new URL(context.request.url);
   const { pathname } = url;
+  url.protocol = 'https:';
+  url.hostname = 'www.btree.at';
+  url.port = '';
 
   // ── Legacy WordPress home URL → canonical home URL ──────────────────────
   if (url.searchParams.get('page_id') === '277') {
