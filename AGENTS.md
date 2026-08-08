@@ -64,7 +64,7 @@ See `.env.example` for required keys.
 
 - **i18n**: EN (default, no prefix) + DE (`/de/` prefix). Config in `astro.config.mjs` and `src/config.ts`.
 - **Search**: Pagefind — runs after `astro build`. Index is in `dist/pagefind/`.
-- **Edge Script**: `packages/btree_info/edge-script.ts` — deployed manually to Bunny CDN pull zone Edge Scripting. Handles `/app/*`, `/app/detail/*`, and `/en/*` redirects (pattern redirects not possible via simple Bunny Edge Rules).
+- **Edge Script**: `packages/btree_info/edge-script.ts` — deployed manually to Bunny CDN pull zone Edge Scripting. Handles canonical URL redirects plus `/app/*`, `/app/detail/*`, and `/en/*` redirects (pattern redirects not possible via simple Bunny Edge Rules).
 - **Redirects** (simple ones): defined in `astro.config.mjs` under `redirects`.
 
 ## Code style

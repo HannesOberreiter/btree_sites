@@ -52,6 +52,7 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      filter: page => page !== 'https://www.btree.at/en/',
       i18n: {
         defaultLocale: 'en',
         locales: {

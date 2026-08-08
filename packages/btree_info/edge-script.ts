@@ -16,6 +16,12 @@ async function onOriginRequest(
   const url = new URL(context.request.url);
   const { pathname } = url;
 
+  // ── Legacy WordPress home URL → canonical home URL ──────────────────────
+  if (url.searchParams.get('page_id') === '277') {
+    url.searchParams.delete('page_id');
+    return Response.redirect(url.toString(), 301);
+  }
+
   // ── /app/detail/* → https://app.btree.at/detail/* ────────────────────────
   const appDetailMatch = pathname.match(/^\/app\/detail\/(.*)$/);
   if (appDetailMatch) {
@@ -32,6 +38,12 @@ async function onOriginRequest(
   if (enMatch) {
     const rest = enMatch[1] || '/';
     return Response.redirect(`https://www.btree.at${rest}`, 301);
+  }
+
+  // ── Extensionless pages → trailing-slash canonical URLs ─────────────────
+  if (!pathname.endsWith('/') && !pathname.includes('.')) {
+    url.pathname = `${pathname}/`;
+    return Response.redirect(url.toString(), 301);
   }
 
   // Pass all other requests through to origin
