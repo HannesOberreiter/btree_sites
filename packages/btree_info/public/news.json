@@ -5,8 +5,8 @@
       "date": "2026-08-11",
       "items": [
         {
-          "title": "Adjust charge inventory",
-          "description": "You can now record manual adjustments to charge inventory levels directly in the app."
+          "title": "Counted inventory adjustments",
+          "description": "Enter stock physically counted in Charge Control; b.tree records the required difference as incoming or outgoing goods."
         },
         {
           "title": "Correct wax inventory",
@@ -31,8 +31,8 @@
           "description": "Inventory notes now appear in the wax table so you can see why corrections were made."
         },
         {
-          "title": "Charge totals view",
-          "description": "The charge form can now display a summary of all inventory items at once instead of individual batches."
+          "title": "Inventory count mode",
+          "description": "Charge Control now lets you enter the total stock physically counted; b.tree calculates the required incoming or outgoing goods entry."
         }
       ]
     },
@@ -42,7 +42,7 @@
       "items": [
         {
           "title": "Filter options restored",
-          "description": "Previously migrated filters for queen, charge, and statistic views are now available again in the web interface."
+          "description": "Previously migrated filters for queen, Charge Control, and statistics views are now available again in the web interface."
         }
       ]
     },
@@ -4891,12 +4891,12 @@
       "date": "2026-08-11",
       "items": [
         {
-          "title": "Ladungsbestand anpassen",
-          "description": "Sie können jetzt manuelle Anpassungen des Ladungsbestands direkt in der App erfassen."
+          "title": "Gezählten Bestand anpassen",
+          "description": "Geben Sie in der Chargenverwaltung den tatsächlich gezählten Bestand ein; b.tree erfasst die nötige Differenz als Wareneingang oder Warenausgang."
         },
         {
           "title": "Wachsbestand korrigieren",
-          "description": "Eine neue Bestands-Korrekturfunktion ermöglicht es Ihnen, die Wachsvorräte zu aktualisieren und Notizen in neue Chargen zu übernehmen."
+          "description": "Eine neue Bestands-Korrekturfunktion ermöglicht es Ihnen, die Wachsvorräte zu aktualisieren und Notizen in neue Wachslose zu übernehmen."
         },
         {
           "title": "Ruhigere Kalendereinträge",
@@ -4917,8 +4917,8 @@
           "description": "Bestandsnotizen werden jetzt in der Wachstabelle angezeigt, sodass Sie nachvollziehen können, warum Anpassungen vorgenommen wurden."
         },
         {
-          "title": "Gesamtansicht der Gebühren",
-          "description": "Das Gebührenformular kann nun eine Zusammenfassung aller Bestandspositionen auf einmal anzeigen, statt einzelner Chargen."
+          "title": "Inventur in der Chargenverwaltung",
+          "description": "Geben Sie den tatsächlich gezählten Gesamtbestand ein; b.tree berechnet daraus automatisch den erforderlichen Wareneingang oder Warenausgang."
         }
       ]
     },
@@ -4928,7 +4928,7 @@
       "items": [
         {
           "title": "Filteroptionen wiederhergestellt",
-          "description": "Die zuvor migrierten Filter für Königinnen, Belastungen und Statistikansichten sind nun wieder in der Weboberfläche verfügbar."
+          "description": "Die zuvor migrierten Filter für Königinnen, Chargen und Statistikansichten sind nun wieder in der Weboberfläche verfügbar."
         }
       ]
     },

@@ -24,7 +24,16 @@
 import fs from "node:fs";
 import path from "node:path";
 
+import { buildCompareContext } from "./news-context.mjs";
 import { buildFallbackItems } from "./news-format.mjs";
+import {
+  SYSTEM_PROMPT_EN,
+  SYSTEM_PROMPT_TRANSLATE,
+} from "./news-prompts.mjs";
+import {
+  parseJsonResponse,
+  translateGermanNewsItems,
+} from "./news-translation.mjs";
 
 const OWNER = process.env.GITHUB_OWNER;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
@@ -39,8 +48,6 @@ const REPOS = [
 ];
 const OUTPUT_PATH = "packages/btree_info/public/news.json";
 const CHANGELOG_PATH = "packages/btree_info/public/changelog.json";
-const MAX_COMMITS_IN_CONTEXT = 20;
-const MAX_FILES_IN_CONTEXT = 40;
 
 function sanitizeUrl(url) {
   try {
@@ -94,36 +101,7 @@ async function fetchCompareContext(repo, baseTag, headTag) {
   const head = encodeURIComponent(headTag);
   const url = `https://api.github.com/repos/${OWNER}/${repo}/compare/${base}...${head}`;
   const data = await fetchGitHubJson(url);
-  if (!data) return "";
-
-  const commitLines = (data.commits || [])
-    .slice(0, MAX_COMMITS_IN_CONTEXT)
-    .map((c) => {
-      const sha = (c.sha || "").slice(0, 7);
-      const message = (c.commit?.message || "").split("\n")[0].trim();
-      return `- ${sha}: ${message}`;
-    })
-    .filter(Boolean);
-
-  const fileLines = (data.files || [])
-    .slice(0, MAX_FILES_IN_CONTEXT)
-    .map((f) => {
-      const status = f.status || "modified";
-      const filename = f.filename || "unknown";
-      const additions = Number.isFinite(f.additions) ? f.additions : 0;
-      const deletions = Number.isFinite(f.deletions) ? f.deletions : 0;
-      return `- ${status}: ${filename} (+${additions}/-${deletions})`;
-    })
-    .filter(Boolean);
-
-  const sections = [];
-  if (commitLines.length > 0) {
-    sections.push(`Commit subjects:\n${commitLines.join("\n")}`);
-  }
-  if (fileLines.length > 0) {
-    sections.push(`Changed files:\n${fileLines.join("\n")}`);
-  }
-  return sections.join("\n\n");
+  return data ? buildCompareContext(data) : "";
 }
 
 function extractVersion(tagName, tagPrefix) {
@@ -187,25 +165,6 @@ async function callMistral(systemPrompt, userPrompt, maxTokens = 4096) {
   return data.choices[0].message.content;
 }
 
-const SYSTEM_PROMPT_EN = `You are a release note editor for b.tree, a beekeeping management web application.
-Your job is to rewrite technical release notes into clear, concise news items while staying strictly faithful to the provided changelog and change context.
-
-Rules:
-- Each news item has a descriptive "title" (2-5 words) and a plain-language "description" (1-2 sentences).
-- Do not use generic titles such as "Feature", "Fix", "Improvement", or "Technical Change".
-- Base every statement only on the provided release notes and code-change context.
-- Treat every item under a Features section as publishable, including infrastructure or cost-saving changes.
-- Explain technical changes in language useful to customers without inventing unstated benefits or motivations.
-- Combine related items only when they describe the same change.
-- Never copy release headings, versions, Markdown, links, commit hashes, emoji codes, repository names, code, APIs (unless it's the user-facing hive scale API), or internal tooling into output.
-- Output ONLY a valid JSON array of objects with "title" and "description" fields. No markdown, no explanation.
-- Return [] only when release contains maintenance irrelevant to customers, such as dependency updates, linting, formatting, CI, or test-only changes.`;
-
-const SYSTEM_PROMPT_TRANSLATE = `You are a professional translator. Translate the following JSON array of news items from English to German.
-Keep the same JSON structure with "title" and "description" fields.
-Use natural, friendly German suitable for Austrian/German beekeepers.
-Output ONLY the translated JSON array. No markdown, no explanation.`;
-
 async function rewriteRelease(entry) {
   const combinedNotes = entry.notes.join("\n\n");
   const compareContext = await fetchCompareContext(
@@ -238,12 +197,7 @@ async function rewriteRelease(entry) {
 
   let enItems;
   try {
-    enItems = JSON.parse(
-      enRaw
-        .replace(/```json\n?/g, "")
-        .replace(/```\n?/g, "")
-        .trim(),
-    );
+    enItems = parseJsonResponse(enRaw);
   } catch (e) {
     console.error(
       `Failed to parse EN response for ${entry.version}: ${e.message}`,
@@ -260,26 +214,12 @@ async function rewriteRelease(entry) {
     return { en: [], de: [] };
   }
 
-  // Translate to DE
-  const deRaw = await callMistral(
-    SYSTEM_PROMPT_TRANSLATE,
-    JSON.stringify(enItems, null, 2),
-  );
-
-  let deItems;
-  try {
-    deItems = JSON.parse(
-      deRaw
-        .replace(/```json\n?/g, "")
-        .replace(/```\n?/g, "")
-        .trim(),
-    );
-  } catch (e) {
-    console.error(
-      `Failed to parse DE response for ${entry.version}: ${e.message}`,
-    );
-    deItems = enItems; // fallback to EN
-  }
+  const deItems = await translateGermanNewsItems({
+    englishItems: enItems,
+    version: entry.version,
+    requestTranslation: (prompt) =>
+      callMistral(SYSTEM_PROMPT_TRANSLATE, prompt),
+  });
 
   return { en: enItems, de: deItems };
 }
