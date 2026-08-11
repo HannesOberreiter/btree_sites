@@ -19,6 +19,24 @@
       ]
     },
     {
+      "version": "btree-client-7.5.0",
+      "date": "2026-08-11",
+      "items": [
+        {
+          "title": "Wax stock corrections",
+          "description": "A new form lets you record adjustments to your wax inventory with notes explaining the change."
+        },
+        {
+          "title": "Wax notes visible",
+          "description": "Inventory notes now appear in the wax table so you can see why corrections were made."
+        },
+        {
+          "title": "Charge totals view",
+          "description": "The charge form can now display a summary of all inventory items at once instead of individual batches."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.5.2",
       "date": "2026-08-05",
       "items": [
@@ -4883,6 +4901,24 @@
         {
           "title": "Ruhigere Kalendereinträge",
           "description": "Fehlende Kalenderverknüpfungen lösen keine Fehlermeldungen mehr aus – sie werden als normale Informationen protokolliert."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.5.0",
+      "date": "2026-08-11",
+      "items": [
+        {
+          "title": "Wachsbestandsanpassungen",
+          "description": "Ein neues Formular ermöglicht es Ihnen, Anpassungen Ihres Wachsbestands mit Notizen zu dokumentieren, die die Änderung erklären."
+        },
+        {
+          "title": "Wachsnotizen sichtbar",
+          "description": "Bestandsnotizen werden jetzt in der Wachstabelle angezeigt, sodass Sie nachvollziehen können, warum Anpassungen vorgenommen wurden."
+        },
+        {
+          "title": "Gesamtansicht der Gebühren",
+          "description": "Das Gebührenformular kann nun eine Zusammenfassung aller Bestandspositionen auf einmal anzeigen, statt einzelner Chargen."
         }
       ]
     },
