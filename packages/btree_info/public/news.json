@@ -43,6 +43,24 @@
       ]
     },
     {
+      "version": "btree-client-7.5.1",
+      "date": "2026-08-16",
+      "items": [
+        {
+          "title": "Fixed table sorting",
+          "description": "Table columns now correctly sort in ascending or descending order as selected."
+        },
+        {
+          "title": "Aligned sortable columns",
+          "description": "Improved visual alignment of sortable columns across all tables."
+        },
+        {
+          "title": "Disabled unsupported sorting",
+          "description": "Removed sorting options for columns that do not support it in Charge Control, checkups, feedings, and harvests."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.6.0",
       "date": "2026-08-11",
       "items": [
@@ -4967,6 +4985,24 @@
         {
           "title": "Sortierbare Königinnenzucht",
           "description": "Aufzeichnungen zur Königinnenzucht können nun nach Symbol, Typ, Aufgabe, Larvenanzahl, Schlupfanzahl, Paarungsanzahl und Aktualisierungsdatum sortiert werden."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.5.1",
+      "date": "2026-08-16",
+      "items": [
+        {
+          "title": "Feste Tabellensortierung",
+          "description": "Tabellenspalten werden jetzt korrekt in aufsteigender oder absteigender Reihenfolge sortiert, wie ausgewählt."
+        },
+        {
+          "title": "Ausgerichtete sortierbare Spalten",
+          "description": "Verbesserte optische Ausrichtung sortierbarer Spalten in allen Tabellen."
+        },
+        {
+          "title": "Nicht unterstützte Sortierung deaktiviert",
+          "description": "Sortieroptionen für Spalten, die in der Chargenverwaltung, bei Kontrollen, Fütterungen und Ernten nicht unterstützt werden, wurden entfernt."
         }
       ]
     },
