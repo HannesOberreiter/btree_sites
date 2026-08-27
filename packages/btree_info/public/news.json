@@ -1,6 +1,16 @@
 {
   "en": [
     {
+      "version": "btree-server-7.7.0",
+      "date": "2026-08-27",
+      "items": [
+        {
+          "title": "Austrian Velutina reports",
+          "description": "b.tree now imports Asian hornet sightings from the Austrian Bienengesundheit.at service into the pest map."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.6.1",
       "date": "2026-08-16",
       "items": [
@@ -4946,6 +4956,16 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-server-7.7.0",
+      "date": "2026-08-27",
+      "items": [
+        {
+          "title": "Österreichische Velutina-Meldungen",
+          "description": "b.tree importiert nun Sichtungen der Asiatischen Hornisse vom österreichischen Dienst Bienengesundheit.at in die Schädlingskarte."
+        }
+      ]
+    },
     {
       "version": "btree-server-7.6.1",
       "date": "2026-08-16",
