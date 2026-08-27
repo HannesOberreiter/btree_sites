@@ -11,6 +11,16 @@
       ]
     },
     {
+      "version": "btree-client-7.6.0",
+      "date": "2026-08-27",
+      "items": [
+        {
+          "title": "New pest map source",
+          "description": "The Asian hornet (Vespa velutina) distribution map now includes data from bienengesundheit.at alongside the existing PatriNat source."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.6.1",
       "date": "2026-08-16",
       "items": [
@@ -4963,6 +4973,16 @@
         {
           "title": "Österreichische Velutina-Meldungen",
           "description": "b.tree importiert nun Sichtungen der Asiatischen Hornisse vom österreichischen Dienst Bienengesundheit.at in die Schädlingskarte."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.6.0",
+      "date": "2026-08-27",
+      "items": [
+        {
+          "title": "Neue Quelle für Schädlingskarte",
+          "description": "Die Verbreitungskarte der Asiatischen Hornisse (Vespa velutina) enthält nun auch Daten von bienengesundheit.at neben der bestehenden Quelle PatriNat."
         }
       ]
     },
