@@ -38,14 +38,10 @@ function changeLanguage(lang: string) {
   // Set flag to prevent automatic redirects after manual language selection
   localStorage.setItem('language-preference-set', 'true');
 
-  const [_leadingSlash, oldLang, ...rest]
-    = window.location.pathname.split('/');
-  if (lang === 'en') {
-    const slug = rest.join('/');
-    window.location.pathname = `/${slug}`;
-    return;
-  }
-  const slug = [oldLang, ...rest].join('/');
-  window.location.pathname = `/${lang}/${slug}`;
+  const contentPath = window.location.pathname
+    .replace(/^\/(?:en|de)(?=\/|$)/, '') || '/';
+  window.location.pathname = lang === 'en'
+    ? contentPath
+    : `/${lang}${contentPath}`;
 }
 </script>
