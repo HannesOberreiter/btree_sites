@@ -10,6 +10,8 @@
 - **Author**: Hannes Oberreiter, btree.at
 - **Technology**: Mistral AI, streaming, tool calling
 - **Language support**: Multi-language (responds in the user's language)
+- **Remote MCP server**: https://api.btree.at/api/v1/mcp
+- **MCP setup guide**: https://www.btree.at/doc-agent/#mcp
 
 ## What WizBee can do
 
@@ -23,3 +25,7 @@
 - Weather & seasonal advice: context-aware guidance based on current season and apiary weather
 - Sugar-water calculator: 1:1 and 3:2 mixtures for spring and autumn feeding
 - Todos & reminders: create one-off or repeating reminders per apiary
+
+## Remote MCP access
+
+ChatGPT, Claude, VS Code, and other compatible clients can use WizBee's b.tree tools through the remote Model Context Protocol server. Authentication uses b.tree OAuth, so users do not copy API keys into their AI client. Active MCP connections can be reviewed and revoked under Settings → Profile → MCP in the b.tree app.

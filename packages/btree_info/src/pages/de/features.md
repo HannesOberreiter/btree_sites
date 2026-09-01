@@ -62,4 +62,4 @@ Für diesen Dienst nutzt b.tree Mistral AI aus Europa. Im Vordergrund stehen eur
 
 ### KI-Agent API
 
-Die [Agent API](/de/doc-agent/) ermöglicht KI-Assistenten wie Claude, ChatGPT oder anderen LLM-Agenten, bei Dateneingabe, Völkerverwaltung, Fütterungsplänen und Statistiken über eine sichere API zu helfen.
+Die [Agent API und der Remote-MCP-Server](/de/doc-agent/#mcp) ermöglichen KI-Assistenten wie Claude, ChatGPT, VS Code oder anderen LLM-Agenten, bei Dateneingabe, Völkerverwaltung, Fütterungsplänen und Statistiken zu helfen. MCP verbindet sich sicher über OAuth, ohne einen API-Schlüssel zu kopieren.

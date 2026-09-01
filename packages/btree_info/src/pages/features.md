@@ -62,4 +62,4 @@ For this service, b.tree uses Mistral AI from Europe. The focus is European data
 
 ### AI agent API
 
-The [Agent API](/doc-agent/) lets AI assistants such as Claude, ChatGPT, or other LLM agents help with data entry, hive management, feeding plans, and statistics through a secure API.
+The [Agent API and remote MCP server](/doc-agent/#mcp) let AI assistants such as Claude, ChatGPT, VS Code, or other LLM agents help with data entry, hive management, feeding plans, and statistics. MCP connects through secure OAuth without copying an API key.

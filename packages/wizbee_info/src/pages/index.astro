@@ -45,6 +45,11 @@ const features = [
     title: "Todos & Reminders",
     desc: "Create repeating or one-off reminders for any apiary. Never forget a follow-up inspection or treatment due date.",
   },
+  {
+    icon: "🔌",
+    title: "Connect Any MCP Client",
+    desc: "Bring the same WizBee tools to ChatGPT, Claude, VS Code, and other remote MCP clients through secure OAuth — no API key copying.",
+  },
 ];
 ---
 
@@ -328,26 +333,26 @@ const features = [
     <!-- AGENT API -->
     <section class="section about" id="agent-api">
       <div class="section-inner">
-        <h2 class="section-title">🤖 Bring Your Own AI Agent</h2>
+        <h2 class="section-title">🤖 Bring Your Own AI with MCP</h2>
         <p>
-          Want to use <strong>Claude</strong>, <strong>ClawBot</strong>, or your own <strong>LLM agent</strong> with your beekeeping data? The <strong>b.tree Agent API</strong> gives any AI assistant direct access to the same powerful tools WizBee uses — feeds, treatments, harvests, checkups, statistics, weather, and more — through a secure, rate-limited endpoint with full <strong>OpenAPI discovery</strong>.
+          Connect <strong>ChatGPT</strong>, <strong>Claude</strong>, <strong>VS Code</strong>, or another remote <strong>MCP client</strong> directly to b.tree. The new b.tree MCP server provides the same powerful tools WizBee uses — feeds, treatments, harvests, checkups, statistics, weather, and more.
         </p>
         <p>
-          Generate an API key, copy the ready-made skill prompt, paste it into your favourite agent, and you're done. Compatible with <strong>Claude Desktop</strong>, <strong>ChatGPT custom actions</strong>, <strong>MCP agents</strong>, <strong>Zapier AI</strong>, and any tool that supports HTTP function calling.
+          Add one server URL to your AI client, sign in to b.tree, and approve access. Secure <strong>OAuth</strong> handles the connection, so you never need to copy an API key into the client. Connected clients can be reviewed or revoked from your b.tree profile at any time.
         </p>
         <p>
-          Prefer ChatGPT? Use our ready-made <strong>b.tree Beekeeping Manager custom GPT</strong>. It connects to b.tree through <strong>OAuth</strong>, so you can authorize access without copying API keys.
+          Building custom automation instead? The <strong>b.tree Agent API</strong> also provides direct, rate-limited HTTP access with full <strong>OpenAPI 3.1 discovery</strong> and ready-made agent skill instructions.
         </p>
         <div>
-          <span class="badge">Agent API</span>
+          <span class="badge">Remote MCP</span>
+          <span class="badge">OAuth</span>
+          <span class="badge">ChatGPT, Claude &amp; VS Code</span>
+          <span class="badge">All WizBee Tools</span>
           <span class="badge">OpenAPI 3.1</span>
-          <span class="badge">Claude &amp; ChatGPT</span>
-          <span class="badge">MCP Compatible</span>
-          <span class="badge">Rate Limited</span>
-          <span class="badge">SHA-256 Key Hashing</span>
+          <span class="badge">Revocable Access</span>
         </div>
         <div class="agent-actions">
-          <a class="btn" href="https://www.btree.at/doc-agent/" target="_blank" rel="noopener">Agent API Docs ↗</a>
+          <a class="btn" href="https://www.btree.at/doc-agent/#mcp" target="_blank" rel="noopener">MCP Setup Guide ↗</a>
           <a class="btn btn-outline" href="https://chatgpt.com/g/g-6a07eef786548191a55f6487827f9e5a-b-tree-beekeeping-manager-en" target="_blank" rel="noopener">English custom GPT ↗</a>
           <a class="btn btn-outline" href="https://chatgpt.com/g/g-6a2bcc6afba881918b2d6f35d920d7c2-b-tree-imkerei-manager-de" target="_blank" rel="noopener">German custom GPT ↗</a>
         </div>

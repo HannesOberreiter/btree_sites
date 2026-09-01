@@ -9,7 +9,31 @@ lang: "de"
 
 Die b.tree **Agent API** ist ein dedizierter Endpunkt, der externen **KI-Agenten** und **LLM-Assistenten** (Claude, ChatGPT, eigene Bots, ClawBot, MCP-kompatible Agenten) den programmatischen Zugriff auf Ihre Imkereidaten ermöglicht. Stellen Sie es sich so vor, als würden Sie Ihrem KI-Assistenten ein eigenes Set an Imkerei-Werkzeugen geben.
 
-Ob **Claude Desktop**, **ChatGPT mit Custom Actions**, ein **Zapier KI-Workflow** oder ein selbst gebauter Agent — die b.tree Agent API bietet vollen Lese- und Schreibzugriff auf Ihren Imkereibetrieb über einen sicheren, rate-limitierten, OpenAPI-dokumentierten Endpunkt.
+Ob **Claude Desktop**, **ChatGPT mit Custom Actions**, ein **Zapier KI-Workflow** oder ein selbst gebauter Agent — b.tree bietet vollen Lese- und Schreibzugriff auf Ihren Imkereibetrieb über sichere MCP- und OpenAPI-Schnittstellen.
+
+---
+
+### MCP
+
+Für ChatGPT, Claude, VS Code und andere Clients, die entfernte [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)-Server unterstützen, ist MCP der einfachste Verbindungsweg. Dabei stehen dieselben Werkzeuge wie in WizBee über Streamable HTTP bereit. Die Anmeldung erfolgt über OAuth—ein API-Schlüssel muss nicht in den KI-Client kopiert werden.
+
+#### MCP-Client verbinden
+
+1. Öffnen Sie in b.tree **Einstellungen → Profil → [MCP](https://app.btree.at/setting/profile/mcp)**.
+2. Kopieren Sie die MCP-Server-URL für Ihre ausgewählte b.tree-Region.
+3. Fügen Sie die URL in Ihrem KI-Client als **Remote-MCP-Server** hinzu.
+4. Ihr Browser öffnet b.tree. Melden Sie sich an, prüfen Sie den angeforderten Zugriff und stimmen Sie zu.
+5. Kehren Sie zu Ihrem KI-Client zurück und verwenden Sie die b.tree-Werkzeuge.
+
+Für die EU-Region lautet die Server-URL:
+
+```text
+https://api.btree.at/api/v1/mcp
+```
+
+Die MCP-Verbindung verwendet die Imkerei und die Rolle, die bei Ihrer Zustimmung aktiv sind. Benutzer mit Lesezugriff können keine schreibenden Werkzeuge verwenden. MCP ist ein Premium-Feature und kann jederzeit unter **Einstellungen → Profil → MCP** widerrufen werden.
+
+Verwenden Sie die Agent API unten, wenn Ihre Automatisierungsplattform statt MCP OpenAPI oder direkte HTTP-Aufrufe erwartet. Die Agent API nutzt einen manuell erstellten Schlüssel.
 
 ---
 
