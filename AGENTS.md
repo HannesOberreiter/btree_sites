@@ -1,82 +1,33 @@
-# btree_sites — Agent Instructions
+<!-- bmad:context -->
+<!-- Verified 2026-09-14 against f31dc9a08e7580ebb6a65a2bbb8976d349627f95. Managed by bmad-project-context; refreshes reconcile existing instructions before replacing this block. -->
 
-## What this repo is
+## btree_sites
 
-A **pnpm workspace monorepo** for all static/marketing websites in the btree beekeeping app ecosystem.
-All packages are **Astro static sites** deployed to **Bunny CDN** via GitHub Actions.
+Static documentation and marketing websites for the b.tree ecosystem.
+The pnpm workspace contains three Astro sites deployed to Bunny Storage/CDN.
+Development and deployment documentation lives in `README.md`.
 
-## Packages
+## Policy
 
-| Package | Filter name | Domain | Description |
-|---------|-------------|---------|-------------|
-| `packages/btree_info` | `@btree/info` | btree.at | Main info & documentation site. Astro + Vue + TailwindCSS. Bilingual EN/DE with Pagefind search. |
-| `packages/wizbee_info` | `wizbee_info` | wiz-bee.com | WizBee AI assistant landing page. Minimal Astro, plain CSS, single page. |
+- Work on `main`; do not introduce the application's beta promotion workflow.
+- Use pnpm, not npm, and run commands from the workspace root.
+- Keep sites separate; introduce a shared package only when a concrete need arises.
 
-## Tech stack
+## Where things are
 
-- **Astro** — static site generator for all packages
-- **pnpm workspaces** — monorepo management; always use `pnpm`, never `npm`
-- **TailwindCSS** — only in btree_info (via `@tailwindcss/vite`)
-- **Vue** — only in btree_info for interactive components
-- **Pagefind** — search in btree_info; runs as CLI post-build (`astro build && pagefind --site dist`)
-- **Bunny CDN / Storage** — deployment target for all packages
-- **GitHub Actions** — CI/CD with per-package path-filtered workflows
+- Use `packages/btree_info` (`@btree/info`) for btree.at documentation, `packages/wizbee_info` (`wizbee_info`) for wiz-bee.com, and `packages/btree_tv` (`btree_tv`) for btree.tv.
+- When editing site pages, Astro components, TypeScript, images, or Astro configuration, read `.github/instructions/astro.instructions.md`.
+- When editing GitHub Actions, read `.github/instructions/workflows.instructions.md`; keep workflows under `.github/workflows/`, not inside packages.
+- For btree_info redirects, check `packages/btree_info/astro.config.mjs` and `packages/btree_info/edge-script.ts`. The edge script is deployed separately to Bunny Edge Scripting, not by the static-site upload.
+- Coordinate application documentation with `HannesOberreiter/btree_vue` and `HannesOberreiter/btree_server`; coordinate database infrastructure documentation with `HannesOberreiter/btree_database`.
 
-## Common commands
+## Running and verifying
 
-```bash
-pnpm install                          # install all deps from workspace root
-pnpm --filter @btree/info dev         # dev server for btree_info
-pnpm --filter wizbee_info dev         # dev server for wizbee_info
-pnpm --filter @btree/info build       # build btree_info
-pnpm -r build                         # build all packages
-./scripts/bunny.sh purge btree_info   # purge Bunny CDN cache for btree_info
-./scripts/bunny.sh deploy btree_info  # build + deploy btree_info to Bunny
-```
+- Use Node `>=22.12.0` and pinned pnpm `10.32.1` from `package.json`; deployment workflows use Node 24.
+- Build btree_info through `pnpm --filter @btree/info build`; bare `astro build` skips its Pagefind indexing step.
+- Use `pnpm test` for the repository's script tests; it does not build the sites.
+- For local Bunny operations, use the root `.env` configuration described by `.env.example`.
+- Treat `scripts/bunny.sh upload` and `deploy` as destructive storage replacement operations. They delete existing files before uploading, unlike the btree_info and wizbee_info deployment workflows.
+- For release-news changes, inspect `scripts/generate-news.mjs` and `.github/workflows/generate-news.yml`; they consume frontend/backend releases and publish `packages/btree_info/public/news.json` and `packages/btree_info/public/changelog.json`.
 
-## Deployment
-
-Each package deploys independently via its own path-filtered GitHub Actions workflow:
-
-- `.github/workflows/deploy-btree-info.yml` — triggers on `packages/btree_info/**`
-- `.github/workflows/deploy-wizbee-info.yml` — triggers on `packages/wizbee_info/**`
-
-All workflows: checkout → pnpm install → pnpm build (package) → upload to Bunny Storage → purge CDN.
-
-### Required secrets / variables (GitHub repo settings)
-
-| Name | Type | Scope |
-|------|------|-------|
-| `BUNNY_API_KEY` | Secret | shared |
-| `BTREE_INFO_STORAGE_PASSWORD` | Secret | btree_info |
-| `WIZBEE_INFO_STORAGE_PASSWORD` | Secret | wizbee_info |
-| `BTREE_INFO_STORAGE_ZONE_NAME` | Variable | btree_info |
-| `BTREE_INFO_PULL_ZONE_ID` | Variable | btree_info |
-| `WIZBEE_INFO_STORAGE_ZONE_NAME` | Variable | wizbee_info |
-| `WIZBEE_INFO_PULL_ZONE_ID` | Variable | wizbee_info |
-
-### Local Bunny credentials
-
-Local Bunny operations (via `scripts/bunny.sh`) read from `.env` in the monorepo root.
-See `.env.example` for required keys.
-
-## btree_info specifics
-
-- **i18n**: EN (default, no prefix) + DE (`/de/` prefix). Config in `astro.config.mjs` and `src/config.ts`.
-- **Search**: Pagefind — runs after `astro build`. Index is in `dist/pagefind/`.
-- **Edge Script**: `packages/btree_info/edge-script.ts` — deployed manually to Bunny CDN pull zone Edge Scripting. Handles canonical URL redirects plus `/app/*`, `/app/detail/*`, and `/en/*` redirects (pattern redirects not possible via simple Bunny Edge Rules).
-- **Redirects** (simple ones): defined in `astro.config.mjs` under `redirects`.
-
-## Code style
-
-- TypeScript strict mode in all packages
-- Astro components (`.astro`) for layout/structure; Vue (`.vue`) only in btree_info for interactive components
-- Plain CSS in wizbee_info; TailwindCSS only in btree_info
-- No shared package between sites (visually too different); add one if a concrete need arises
-
-## Important notes
-
-- Always run commands from the **workspace root** (`btree_sites/`) to benefit from pnpm hoisting
-- `sharp` must be listed as an explicit devDependency in each package that builds images (pnpm strict isolation)
-- `pnpm.onlyBuiltDependencies` in root `package.json` allows `esbuild` and `sharp` build scripts
-- The btree_info package name is `@btree/info` (use this in `--filter` flags)
+<!-- /bmad:context -->

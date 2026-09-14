@@ -4,17 +4,12 @@ applyTo: ".github/workflows/*.yml"
 
 # GitHub Actions workflow conventions for btree_sites
 
-## Pattern all deploy workflows follow
+Use the [root instructions](../../AGENTS.md) for package filters, workspace commands, and workflow location.
 
-1. Trigger: `push` to `main` + `workflow_dispatch`, path-filtered to `packages/<name>/**`
-2. Steps: `actions/checkout@v6` → `pnpm/action-setup@v5` (v10) → `actions/setup-node@v6` (Node 24, pnpm cache) → `pnpm install` → `pnpm --filter <name> build` → Bunny Storage upload → Bunny cache purge
+## Deployment pattern
 
-## Package filter names
-
-| Package | `--filter` value |
-|---------|-----------------|
-| btree_info | `@btree/info` |
-| wizbee_info | `wizbee_info` |
+- Keep deployments independently path-filtered for each site, with `push` to `main` and `workflow_dispatch` triggers.
+- Preserve checkout, pnpm setup/install, package build, Bunny Storage upload, and cache purge ordering. Read the workflow for the current action versions.
 
 ## Secrets & variables
 
@@ -23,12 +18,8 @@ applyTo: ".github/workflows/*.yml"
 - `<SITE>_STORAGE_ZONE_NAME` — per-site variable
 - `<SITE>_PULL_ZONE_ID` — per-site variable
 
-## Bunny deploy script pattern
+## Bunny upload behavior
 
-The deploy step lists existing storage files, deletes them, then uploads `dist/` recursively via `curl PUT`.
-Cache purge uses `POST https://api.bunny.net/pullzone/{PULL_ZONE_ID}/purgeCache`.
-
-## Do not
-
-- Do not use `npm` in workflows — always use `pnpm`
-- Do not add per-package CI files inside `packages/*/` — all workflows live in `.github/workflows/`
+- For btree_info and wizbee_info, retain the per-site deployment concurrency groups and `scripts/upload-bunny.sh`. The script uploads non-HTML files first, HTML next, and root `index.html` last; it retains existing storage files for open clients. Upload failures must stop the workflow before cache purge.
+- Treat the btree_tv workflow separately: it still deletes existing storage files before uploading. Do not describe it as using the shared non-pruning uploader.
+- Preserve cache purge through `POST https://api.bunny.net/pullzone/{PULL_ZONE_ID}/purgeCache` after a successful upload.

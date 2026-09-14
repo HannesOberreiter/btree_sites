@@ -1,6 +1,6 @@
 # btree_sites
 
-Static websites monorepo for the [btree](https://www.btree.at) ecosystem.
+Static websites monorepo for the [btree](https://www.btree.at) ecosystem. Related repositories: [HannesOberreiter/btree_vue](https://github.com/HannesOberreiter/btree_vue) (frontend), [HannesOberreiter/btree_server](https://github.com/HannesOberreiter/btree_server) (backend), and [HannesOberreiter/btree_database](https://github.com/HannesOberreiter/btree_database) (database infrastructure).
 
 ## Packages
 
@@ -8,6 +8,7 @@ Static websites monorepo for the [btree](https://www.btree.at) ecosystem.
 |---------|--------|-------------|
 | `packages/btree_info` | btree.at | Main btree info & documentation site |
 | `packages/wizbee_info` | wiz-bee.com | WizBee AI assistant landing page |
+| `packages/btree_tv` | btree.tv | btree.tv static site |
 
 ## Stack
 
