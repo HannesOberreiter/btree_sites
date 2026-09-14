@@ -51,7 +51,7 @@ Daily backups are encrypted and stored with Bunny.net in Frankfurt, Germany. The
 
 In order to fulfil contracts, we use external payment service providers on the basis of art. 6 section 1 lit. b. GDPR. We use the external payment service providers on basis of our legitimate interests art. 6 section 1 lit. b. GDPR in order to offer our users effective and secure payment options.
 
-We use following external payment service providers: PayPal (<https://www.paypal.com/>), Stripe (<https://www.stripe.com/>) and Mollie (<https://www.mollie.com/>). Mollie is our preferred payment provider for European customers.
+We use following external payment service providers: PayPal (<https://www.paypal.com/>) and Mollie (<https://www.mollie.com/>). Mollie is our preferred payment provider for European customers.
 
 For payment transactions the terms and conditions and the privacy notices of the respective external payment service providers apply, which are available on their respective websites.
 

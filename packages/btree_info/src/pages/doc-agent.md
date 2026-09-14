@@ -9,31 +9,7 @@ lang: "en"
 
 The b.tree **Agent API** is a dedicated endpoint that lets external **AI agents** and **LLM-powered assistants** (Claude, ChatGPT, custom bots, ClawBot, MCP-compatible agents) interact with your beekeeping data programmatically. Think of it as giving your AI assistant its own set of beekeeping tools.
 
-Whether you're using **Claude Desktop**, **ChatGPT with custom actions**, a **Zapier AI workflow**, or building your own agent — b.tree provides full read and write access to your beekeeping operation through secure MCP and OpenAPI interfaces.
-
----
-
-### MCP
-
-For ChatGPT, Claude, VS Code, and other clients that support remote [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers, MCP is the easiest way to connect. It exposes the same tools used by WizBee through Streamable HTTP and uses OAuth login—no API key needs to be copied into the AI client.
-
-#### Connect an MCP client
-
-1. Open **Settings → Profile → [MCP](https://app.btree.at/setting/profile/mcp)** in b.tree.
-2. Copy the MCP server URL shown for your selected b.tree region.
-3. Add it as a **remote MCP server** in your AI client.
-4. Your browser opens b.tree. Sign in, review the requested access, and approve it.
-5. Return to your AI client and start using the b.tree tools.
-
-For the EU region, the server URL is:
-
-```text
-https://api.btree.at/api/v1/mcp
-```
-
-The MCP connection uses the company and role active when you approve it. Read-only users cannot use write tools. MCP access is a Premium feature and can be revoked at any time under **Settings → Profile → MCP**.
-
-Use the Agent API below when your automation platform expects OpenAPI or direct HTTP calls instead of MCP. Agent API authentication uses a manually generated key.
+Whether you're using **Claude Desktop**, **ChatGPT with custom actions**, a **Zapier AI workflow**, or building your own agent — b.tree provides full read and write access to your beekeeping operation through the secure Agent API (OpenAPI), with MCP available as an alternative.
 
 ---
 
@@ -154,6 +130,30 @@ Open your preferred skill editor, then copy the **skill installation prompt** fr
 - **Recurring Tasks** — Set up agents to create seasonal feeding or treatment schedules
 - **Weather-Aware Management** — Agents can check apiary weather before suggesting actions
 - **Multi-Platform** — Works with any AI agent that supports HTTP tool calls
+
+---
+
+### Alternative: MCP
+
+For ChatGPT, Claude, VS Code, and other clients that support remote [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers, MCP is an alternative connection option. It exposes the same tools used by WizBee through Streamable HTTP and uses OAuth login—no API key needs to be copied into the AI client.
+
+#### Connect an MCP client
+
+1. Open **Settings → Profile → [MCP](https://app.btree.at/setting/profile/mcp)** in b.tree.
+2. Copy the MCP server URL shown for your selected b.tree region.
+3. Add it as a **remote MCP server** in your AI client.
+4. Your browser opens b.tree. Sign in, review the requested access, and approve it.
+5. Return to your AI client and start using the b.tree tools.
+
+For the EU region, the server URL is:
+
+```text
+https://api.btree.at/api/v1/mcp
+```
+
+The MCP connection uses the company and role active when you approve it. Read-only users cannot use write tools. MCP access is a Premium feature and can be revoked at any time under **Settings → Profile → MCP**.
+
+The Agent API described above is the recommended starting point for automation with OpenAPI or direct HTTP calls. Agent API authentication uses a manually generated key.
 
 ---
 

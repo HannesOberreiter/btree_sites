@@ -53,7 +53,7 @@ Tägliche Backups werden verschlüsselt bei Bunny.net in Frankfurt, Deutschland,
 
 Im Rahmen der Erfüllung von Verträgen setzen wir externe Zahlungsdienstleister auf Grundlage des Art. 6 Abs. 1 lit. b. DSGVO ein. Im Übrigen setzen wir externe Zahlungsdienstleister auf Grundlage unserer berechtigten Interessen gem. Art. 6 Abs. 1 lit. b. DSGVO ein, um unseren Nutzern effektive und sichere Zahlungsmöglichkeit zu bieten.
 
-Folgende externe Zahlungsdienstleister werden verwendet: PayPal (<https://www.paypal.com/>), Stripe (<https://www.stripe.com/>) und Mollie (<https://www.mollie.com/>). Mollie ist unser bevorzugter Zahlungsdienstleister für europäische Kunden.
+Folgende externe Zahlungsdienstleister werden verwendet: PayPal (<https://www.paypal.com/>) und Mollie (<https://www.mollie.com/>). Mollie ist unser bevorzugter Zahlungsdienstleister für europäische Kunden.
 
 Für die Zahlungsgeschäfte gelten die Geschäftsbedingungen und die Datenschutzhinweise der jeweiligen externen Zahlungsdienstleister, welche innerhalb der jeweiligen Webseiten, bzw. Transaktionsapplikationen abrufbar sind.
 
