@@ -1,6 +1,28 @@
 {
   "en": [
     {
+      "version": "btree-client-7.7.0",
+      "date": "2026-09-14",
+      "items": [
+        {
+          "title": "MCP client access",
+          "description": "Connect AI clients like ChatGPT, Claude, or VS Code to b.tree using the Model Context Protocol (MCP). Manage active connections and revoke access in your profile settings."
+        },
+        {
+          "title": "Bunny CDN hosting",
+          "description": "Production and beta frontends now deploy to Bunny Storage and Bunny CDN for improved availability and performance."
+        },
+        {
+          "title": "Sequential deployments",
+          "description": "Production deployments are now serialized to prevent overlapping updates."
+        },
+        {
+          "title": "Asset caching",
+          "description": "Content-hashed assets receive long-term caching; other files use no-cache to ensure users receive updates."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.7.0",
       "date": "2026-08-27",
       "items": [
@@ -4966,6 +4988,28 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-client-7.7.0",
+      "date": "2026-09-14",
+      "items": [
+        {
+          "title": "MCP-Client-Zugriff",
+          "description": "Verbinden Sie KI-Clients wie ChatGPT, Claude oder VS Code über das Model Context Protocol (MCP) mit b.tree. Verwalten Sie aktive Verbindungen und widerrufen Sie Zugriffe in Ihren Profileinstellungen."
+        },
+        {
+          "title": "Bunny-CDN-Hosting",
+          "description": "Produktions- und Beta-Frontends werden nun auf Bunny Storage und Bunny CDN bereitgestellt, um Verfügbarkeit und Performance zu verbessern."
+        },
+        {
+          "title": "Sequentielle Deployments",
+          "description": "Produktions-Deployments werden nun nacheinander durchgeführt, um überlappende Aktualisierungen zu vermeiden."
+        },
+        {
+          "title": "Asset-Caching",
+          "description": "Inhaltsgehashte Assets erhalten eine langfristige Zwischenspeicherung; andere Dateien nutzen kein Caching, um sicherzustellen, dass Nutzer Updates erhalten."
+        }
+      ]
+    },
     {
       "version": "btree-server-7.7.0",
       "date": "2026-08-27",
