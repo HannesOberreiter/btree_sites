@@ -23,6 +23,32 @@
       ]
     },
     {
+      "version": "btree-server-7.8.0",
+      "date": "2026-09-14",
+      "items": [
+        {
+          "title": "Remote MCP access",
+          "description": "Added OAuth-secured remote server for Model Context Protocol (MCP) integration, allowing external tools to securely access b.tree beekeeping data."
+        },
+        {
+          "title": "MCP setup guidance",
+          "description": "Added user prompts and guidance for connecting external MCP-compatible tools to b.tree."
+        },
+        {
+          "title": "OAuth client registration",
+          "description": "Added persistent OAuth client registrations and resource-bound refresh tokens for MCP integrations."
+        },
+        {
+          "title": "MCP consent workflow",
+          "description": "Enabled OAuth consent forms from sandboxed environments and allowed redirect callbacks after user approval."
+        },
+        {
+          "title": "MCP environment settings",
+          "description": "Added configuration options for MCP access token secrets, allowed hosts, and origins in environment files."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.7.0",
       "date": "2026-08-27",
       "items": [
@@ -5007,6 +5033,32 @@
         {
           "title": "Asset-Caching",
           "description": "Inhaltsgehashte Assets erhalten eine langfristige Zwischenspeicherung; andere Dateien nutzen kein Caching, um sicherzustellen, dass Nutzer Updates erhalten."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.8.0",
+      "date": "2026-09-14",
+      "items": [
+        {
+          "title": "Remote MCP-Zugriff",
+          "description": "Hinzugefügt: OAuth-gesicherter Remote-Server für die Integration des Model Context Protocol (MCP), der externen Tools sicheren Zugriff auf b.tree-Imkerdaten ermöglicht."
+        },
+        {
+          "title": "MCP-Einrichtungsanleitung",
+          "description": "Hinzugefügt: Benutzerhinweise und Anleitung zum Verbinden externer MCP-kompatibler Tools mit b.tree."
+        },
+        {
+          "title": "OAuth-Client-Registrierung",
+          "description": "Hinzugefügt: Dauerhafte OAuth-Client-Registrierungen und ressourcengebundene Refresh-Tokens für MCP-Integrationen."
+        },
+        {
+          "title": "MCP-Einwilligungsworkflow",
+          "description": "Ermöglicht OAuth-Einwilligungsformulare aus Sandbox-Umgebungen und erlaubt Redirect-Callbacks nach Nutzerbestätigung."
+        },
+        {
+          "title": "MCP-Umgebungseinstellungen",
+          "description": "Hinzugefügt: Konfigurationsoptionen für MCP-Zugriffstoken-Secrets, erlaubte Hosts und Ursprünge in Umgebungsdateien."
         }
       ]
     },

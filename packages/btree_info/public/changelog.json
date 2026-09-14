@@ -7,6 +7,13 @@
     ]
   },
   {
+    "version": "btree-server-7.8.0",
+    "date": "2026-09-14",
+    "notes": [
+      "## [7.8.0](https://github.com/HannesOberreiter/btree_server/compare/btree-server-v7.7.0...btree-server-v7.8.0) (2026-09-14)\n\n\n### Features\n\n* **mcp:** add guidance and prompts ([ddebf46](https://github.com/HannesOberreiter/btree_server/commit/ddebf465e1e06c3cc9c0873334bbe304c2057580))\n* **mcp:** add OAuth-secured remote server ([3416dc4](https://github.com/HannesOberreiter/btree_server/commit/3416dc4942862b95d245fadf2085dc3f76577748))\n\n\n### Bug Fixes\n\n* **mcp:** allow consent callback redirect ([91a4cf5](https://github.com/HannesOberreiter/btree_server/commit/91a4cf5749345863e5c412ab13b093240ded66c6))\n* **mcp:** allow consent form from sandbox ([733be77](https://github.com/HannesOberreiter/btree_server/commit/733be77b807cd2b69fae8d2f7011215b14e3269b))\n* **mcp:** scope origin check to transport ([f1e1c0e](https://github.com/HannesOberreiter/btree_server/commit/f1e1c0efd57f443acc48ad25b734339ceb305e58))\n* **mcp:** support omitted OAuth resource ([75c1eca](https://github.com/HannesOberreiter/btree_server/commit/75c1eca3c2d510c8e0d57533a46543ea730fd6de))"
+    ]
+  },
+  {
     "version": "btree-server-7.7.0",
     "date": "2026-08-27",
     "notes": [
