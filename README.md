@@ -40,3 +40,7 @@ Workflows are path-filtered — a push to `packages/btree_info/**` only triggers
 the `deploy-btree-info` workflow, and so on.
 
 All sites deploy to Bunny Storage and are served via BunnyCDN pull zones.
+
+The btree_info and wizbee_info GitHub workflows serialize deployments per site and use `scripts/upload-bunny.sh`. Non-HTML files are uploaded first, HTML pages next, and the root `index.html` last. Existing storage files are retained so open clients can finish loading older assets. A failed upload stops the deployment before the CDN purge. Removed pages and obsolete assets require deliberate cleanup; these workflows do not prune storage.
+
+Cache rules are managed in the separate `infra` repository under `bunny/sites/`. Successful hashed `/_astro/*` assets use one-year immutable caching. HTML and mutable files, including Pagefind search files and news/changelog JSON, revalidate. The existing site redirects and real 404 behavior are preserved.
