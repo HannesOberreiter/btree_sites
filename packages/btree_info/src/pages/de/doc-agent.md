@@ -153,6 +153,12 @@ https://api.btree.at/api/v1/mcp
 
 Die MCP-Verbindung verwendet die Imkerei und die Rolle, die bei Ihrer Zustimmung aktiv sind. Benutzer mit Lesezugriff können keine schreibenden Werkzeuge verwenden. MCP ist ein Premium-Feature und kann jederzeit unter **Einstellungen → Profil → MCP** widerrufen werden.
 
+#### Beispiel: Mistral AI
+
+Wenn Sie einen europäischen KI-Anbieter bevorzugen, können Sie mit **Mistral AI** Ihre Imkerei über b.tree MCP verwalten. Öffnen Sie [Verbindungen in Le Chat](https://chat.mistral.ai/connections), fügen Sie die oben angegebene b.tree-MCP-Server-URL hinzu und bestätigen Sie den Zugriff über die b.tree-OAuth-Anmeldung.
+
+Nach der Verbindung können Sie Mistral beispielsweise bitten, Ihre Bienenstände aufzulisten, eine Fütterung zu erfassen oder Ihre letzten Durchsichten auszuwerten.
+
 Die oben beschriebene Agent API ist der empfohlene Einstieg für Automatisierungen mit OpenAPI oder direkten HTTP-Aufrufen. Die Agent API nutzt einen manuell erstellten Schlüssel.
 
 ---
