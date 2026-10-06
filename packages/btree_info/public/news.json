@@ -69,6 +69,20 @@
       ]
     },
     {
+      "version": "btree-server-7.9.1",
+      "date": "2026-10-06",
+      "items": [
+        {
+          "title": "CDN origin setup",
+          "description": "API requests now route through Bunny CDN origins with secret-key authentication for improved performance and security."
+        },
+        {
+          "title": "Soft-delete timestamp fix",
+          "description": "Fixed misleading deletion timestamps on active records. Only actual deletions now set the deleted_at timestamp."
+        }
+      ]
+    },
+    {
       "version": "btree-client-7.7.0",
       "date": "2026-09-14",
       "items": [
@@ -5147,6 +5161,20 @@
         {
           "title": "VueUse-Upgrade",
           "description": "VueUse wurde auf Version 15 aktualisiert, um die Leistung und neue Funktionen zu verbessern."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.9.1",
+      "date": "2026-10-06",
+      "items": [
+        {
+          "title": "CDN-Ursprungseinrichtung",
+          "description": "API-Anfragen werden nun über Bunny-CDN-Ursprünge mit Geheimschlüssel-Authentifizierung geleitet, um Leistung und Sicherheit zu verbessern."
+        },
+        {
+          "title": "Korrektur des Soft-Delete-Zeitstempels",
+          "description": "Fehlerhafte Löschzeitstempel bei aktiven Datensätzen wurden behoben. Nur tatsächliche Löschungen setzen nun den deleted_at-Zeitstempel."
         }
       ]
     },
