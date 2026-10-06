@@ -35,6 +35,40 @@
       ]
     },
     {
+      "version": "btree-client-7.8.0",
+      "date": "2026-10-06",
+      "items": [
+        {
+          "title": "Calendar upgrade",
+          "description": "Updated the calendar view to FullCalendar 7 for improved performance and compatibility."
+        },
+        {
+          "title": "Vespa velutina reports",
+          "description": "The pest map now shows different types of Vespa velutina observations, such as hornets, nests, or both."
+        },
+        {
+          "title": "WizBee keyboard support",
+          "description": "The WizBee chat dialog now keeps input fields visible above the keyboard on mobile devices."
+        },
+        {
+          "title": "Login error clarity",
+          "description": "Improved error messages and language handling during login."
+        },
+        {
+          "title": "Recent map observations",
+          "description": "The pest map now labels the 'recent observations' window as two months instead of one week."
+        },
+        {
+          "title": "Public map data access",
+          "description": "Public pest observation datasets no longer require authentication, even for signed-in users."
+        },
+        {
+          "title": "VueUse upgrade",
+          "description": "Upgraded VueUse to version 15 for better performance and new features."
+        }
+      ]
+    },
+    {
       "version": "btree-client-7.7.0",
       "date": "2026-09-14",
       "items": [
@@ -5079,6 +5113,40 @@
         {
           "title": "Aktuelle Kartendarstellung von Beobachtungen",
           "description": "Die Karte zeigt nun nur noch Beobachtungen der letzten 60 Tage an."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.8.0",
+      "date": "2026-10-06",
+      "items": [
+        {
+          "title": "Kalender-Upgrade",
+          "description": "Die Kalenderansicht wurde auf FullCalendar 7 aktualisiert, um die Leistung und Kompatibilität zu verbessern."
+        },
+        {
+          "title": "Meldungen zu Vespa velutina",
+          "description": "Die Schädlingskarte zeigt nun verschiedene Arten von Vespa-velutina-Beobachtungen an, wie z. B. Hornissen, Nester oder beides."
+        },
+        {
+          "title": "WizBee-Tastaturunterstützung",
+          "description": "Der WizBee-Chat-Dialog hält Eingabefelder nun auf mobilen Geräten oberhalb der Tastatur sichtbar."
+        },
+        {
+          "title": "Klarere Login-Fehlermeldungen",
+          "description": "Fehlermeldungen und Sprachbehandlung während des Logins wurden verbessert."
+        },
+        {
+          "title": "Aktuelle Karteneinträge",
+          "description": "Das Fenster „Aktuelle Beobachtungen“ in der Schädlingskarte ist nun mit zwei Monaten statt einer Woche beschriftet."
+        },
+        {
+          "title": "Öffentlicher Kartenzugriff",
+          "description": "Öffentliche Datensätze zu Schädlingsbeobachtungen erfordern keine Authentifizierung mehr, auch nicht für angemeldete Nutzer."
+        },
+        {
+          "title": "VueUse-Upgrade",
+          "description": "VueUse wurde auf Version 15 aktualisiert, um die Leistung und neue Funktionen zu verbessern."
         }
       ]
     },
