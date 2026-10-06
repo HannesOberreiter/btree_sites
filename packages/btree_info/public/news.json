@@ -1,6 +1,40 @@
 {
   "en": [
     {
+      "version": "btree-server-7.9.0",
+      "date": "2026-10-06",
+      "items": [
+        {
+          "title": "CDN-ready public data",
+          "description": "Public hive observations are now prepared for delivery through a content delivery network."
+        },
+        {
+          "title": "Manual cron job control",
+          "description": "Added a manual trigger and an off switch for scheduled tasks, including the daily and monthly observation syncs."
+        },
+        {
+          "title": "Expanded Vespa velutina sources",
+          "description": "Added direct observation sources for Switzerland (asiatischehornisse.ch) and France (frelonasiatique.fr, stopvelutina.fr, stopvespa.fr)."
+        },
+        {
+          "title": "Hardened observation caching",
+          "description": "Improved reliability of cached public hive observations."
+        },
+        {
+          "title": "Company name length fix",
+          "description": "Company names now match the database character limit."
+        },
+        {
+          "title": "Dropbox token refresh",
+          "description": "Fixed token refresh timing to ensure Dropbox connections use valid credentials."
+        },
+        {
+          "title": "Recent map observations",
+          "description": "Map displays now show only observations from the last 60 days."
+        }
+      ]
+    },
+    {
       "version": "btree-client-7.7.0",
       "date": "2026-09-14",
       "items": [
@@ -5014,6 +5048,40 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-server-7.9.0",
+      "date": "2026-10-06",
+      "items": [
+        {
+          "title": "Öffentliche Daten CDN-bereit",
+          "description": "Öffentliche Stockbeobachtungen sind nun für die Auslieferung über ein Content Delivery Network vorbereitet."
+        },
+        {
+          "title": "Manuelle Steuerung von Cron-Jobs",
+          "description": "Manueller Auslöser und Ausschalter für geplante Aufgaben hinzugefügt, einschließlich der täglichen und monatlichen Synchronisation von Beobachtungen."
+        },
+        {
+          "title": "Erweiterte Quellen für Vespa velutina",
+          "description": "Direkte Beobachtungsquellen für die Schweiz (asiatischehornisse.ch) und Frankreich (frelonasiatique.fr, stopvelutina.fr, stopvespa.fr) hinzugefügt."
+        },
+        {
+          "title": "Optimierter Beobachtungs-Cache",
+          "description": "Verbesserte Zuverlässigkeit des Caches für öffentliche Stockbeobachtungen."
+        },
+        {
+          "title": "Korrektur der Firmennamen-Länge",
+          "description": "Firmennamen entsprechen nun der maximalen Zeichenanzahl in der Datenbank."
+        },
+        {
+          "title": "Aktualisierung des Dropbox-Tokens",
+          "description": "Zeitpunkt der Token-Aktualisierung korrigiert, um gültige Anmeldedaten für Dropbox-Verbindungen sicherzustellen."
+        },
+        {
+          "title": "Aktuelle Kartendarstellung von Beobachtungen",
+          "description": "Die Karte zeigt nun nur noch Beobachtungen der letzten 60 Tage an."
+        }
+      ]
+    },
     {
       "version": "btree-client-7.7.0",
       "date": "2026-09-14",
