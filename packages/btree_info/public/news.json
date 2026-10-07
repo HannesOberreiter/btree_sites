@@ -1,6 +1,20 @@
 {
   "en": [
     {
+      "version": "btree-server-7.9.2",
+      "date": "2026-10-07",
+      "items": [
+        {
+          "title": "Session refresh stability",
+          "description": "Session refresh no longer regenerates the session, preventing disruptions to concurrent requests using the same session."
+        },
+        {
+          "title": "Destroyed session handling",
+          "description": "The system now detects and rejects attempts to refresh a session that was destroyed during the process."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.9.0",
       "date": "2026-10-06",
       "items": [
@@ -5096,6 +5110,20 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-server-7.9.2",
+      "date": "2026-10-07",
+      "items": [
+        {
+          "title": "Stabilität der Sitzungsaktualisierung",
+          "description": "Die Sitzungsaktualisierung erzeugt die Sitzung nicht mehr neu, wodurch Unterbrechungen bei gleichzeitigen Anfragen derselben Sitzung verhindert werden."
+        },
+        {
+          "title": "Behandlung zerstörter Sitzungen",
+          "description": "Das System erkennt und blockiert nun Versuche, eine Sitzung zu aktualisieren, die während des Vorgangs zerstört wurde."
+        }
+      ]
+    },
     {
       "version": "btree-server-7.9.0",
       "date": "2026-10-06",
