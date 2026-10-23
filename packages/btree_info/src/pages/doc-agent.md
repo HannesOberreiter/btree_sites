@@ -17,7 +17,7 @@ Whether you're using **Claude Desktop**, **ChatGPT with custom actions**, a **Za
 
 - **Natural Language Beekeeping** — Ask your AI to "create a feeding record for all hives in the forest apiary" and it just works
 - **Automation** — Build workflows that automatically log inspections, schedule treatments, or analyse harvest data
-- **Multi-Tool Access** — Your AI agent gets access to 25+ tools: create/read/update/delete for feeds, treatments, harvests, checkups, todos, charges, statistics, weather, and more
+- **Multi-Tool Access** — Your AI agent gets access to 40+ tools: create/read/update/delete for feeds, treatments, harvests, checkups, todos, charges, statistics, weather, and more, plus a read-only queen list with birth dates (for example to find colonies with a queen from 2024)
 - **OpenAPI Discovery** — Your agent can auto-discover all available endpoints and their schemas
 - **Secure** — API keys are SHA-256 hashed, per-user, with optional expiry dates
 

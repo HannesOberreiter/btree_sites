@@ -17,7 +17,7 @@ Ob **Claude Desktop**, **ChatGPT mit Custom Actions**, ein **Zapier KI-Workflow*
 
 - **Imkerei in natürlicher Sprache** — Bitten Sie Ihre KI „erstelle einen Fütterungseintrag für alle Völker am Waldstand" und es funktioniert einfach
 - **Automatisierung** — Erstellen Sie Workflows, die automatisch Kontrollen protokollieren, Behandlungen planen oder Erntedaten analysieren
-- **Zugriff auf 25+ Werkzeuge** — Ihr KI-Agent kann erstellen, lesen, aktualisieren und löschen: Fütterungen, Behandlungen, Ernten, Kontrollen, Todos, Kosten, Statistiken, Wetter und mehr
+- **Zugriff auf 40+ Werkzeuge** — Ihr KI-Agent kann erstellen, lesen, aktualisieren und löschen: Fütterungen, Behandlungen, Ernten, Kontrollen, Todos, Kosten, Statistiken, Wetter und mehr, dazu eine Königinnenliste mit Geburtsdatum (nur lesend, z. B. um Völker mit einer Königin aus 2024 zu finden)
 - **OpenAPI Discovery** — Ihr Agent kann alle verfügbaren Endpunkte und deren Schemas automatisch erkennen
 - **Sicher** — API-Schlüssel werden mit SHA-256 gehasht, pro Benutzer, mit optionalem Ablaufdatum
 
