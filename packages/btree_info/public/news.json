@@ -1,6 +1,20 @@
 {
   "en": [
     {
+      "version": "btree-server-7.10.0",
+      "date": "2026-10-23",
+      "items": [
+        {
+          "title": "Queen list tool",
+          "description": "Added a WizBee tool to list queens with filters for location, birth date, apiary, hive, race, mating, and search text."
+        },
+        {
+          "title": "Queen count accuracy",
+          "description": "Fixed the total count in queen lists to respect the 'latest' filter."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.9.2",
       "date": "2026-10-07",
       "items": [
@@ -5110,6 +5124,20 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-server-7.10.0",
+      "date": "2026-10-23",
+      "items": [
+        {
+          "title": "Königinnenlisten-Tool",
+          "description": "Ein neues WizBee-Tool zum Auflisten von Königinnen mit Filtern für Standort, Geburtsdatum, Bienenstand, Stock, Rasse, Begattung und Suchtext hinzugefügt."
+        },
+        {
+          "title": "Genauigkeit der Königinnenzählung",
+          "description": "Die Gesamtanzahl in Königinnenlisten wurde korrigiert, um den Filter 'aktuellste' zu berücksichtigen."
+        }
+      ]
+    },
     {
       "version": "btree-server-7.9.2",
       "date": "2026-10-07",
