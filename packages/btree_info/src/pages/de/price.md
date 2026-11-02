@@ -22,10 +22,23 @@ lang: "de"
     <li>✅ API Zugriff für iCal und Stockwaagen (10)</li>
     <li>✅ Responsive Statistiken (Ernte, Fütterung, Behandlung, Varroa, Königinnen)</li>
     <li>✅ Königinnen-Statistik und Stammbaum</li>
-    <li>✅ Zugang zu <a href="https://www.wiz-bee.com/">WizBee</a> deiner persönlichen Imkerei AI Wissensdatenbank, powered by Mistral</li>
+    <li>✅ <a href="https://www.wiz-bee.com/">WizBee</a>, dein KI-Imkerei-Assistent auf Basis von Mistral: Fütterungen, Behandlungen, Ernten, Kontrollen und Aufgaben per Text oder Sprache erfassen und Fragen zu deinen eigenen Daten stellen</li>
+    <li>✅ <a href="/de/doc-agent">Agent API und MCP</a> zur Anbindung deines eigenen KI-Agenten (ChatGPT, Claude und andere)</li>
     <li>✅ Temperaturfeld wird automatisch mit Standdaten befüllt</li>
     <li>✅ Standkarte mit optionaler Wetteranzeige</li>
 </ul>
+
+### Deine Daten
+
+<ul style="list-style: none">
+    <li>✅ Backend, API und Datenbank auf Hetzner Servern in Frankfurt, Deutschland</li>
+    <li>✅ Webseiten, CDN und verschlüsselte Backups bei Bunny.net in Frankfurt, Deutschland</li>
+    <li>✅ WizBee KI vom europäischen Anbieter Mistral AI (Frankreich)</li>
+    <li>✅ CSV-Export deiner Daten jederzeit möglich</li>
+    <li>✅ Konto und Daten jederzeit löschbar</li>
+</ul>
+
+Mehr Details findest du in der [Datenschutzerklärung](/de/data-privacy).
 
 ### Unterstütze die App Entwicklung
 

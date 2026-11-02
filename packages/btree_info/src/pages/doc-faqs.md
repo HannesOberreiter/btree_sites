@@ -2,6 +2,7 @@
 title: "FAQs"
 description: "Documentation and Help for Beekeeping Software and Application"
 layout: "../layouts/IndexLayout.astro"
+faq: true
 lang: "en"
 ---
 
@@ -81,7 +82,7 @@ The server is located in Germany and all data is saved in an online storage data
 
 ### How do I delete my account and remove all my data?
 
-If you are one of many users in a beekeeping operation you can delete your profile and user data in the profile settings [/setting/profile](https://app.btree.at/setting/profile). If you are the only user in the beekeeping operation all the data of the operation, e.g. colonies, apiary location will also be deleted. If you only want to delete one of your operations you can delete it in the company settings [/setting/company](https://app.btree.at/setting/company). This is only possible if you are the last user in this company. In the main database backup the data will be removed after 3 months (auto deletion of backups older than 3 months). Possible invoices or mail conservations with \*@btree.at will be deleted after 7 years. If you write me an email to delete your account, please present some proof that the account belongs to you (e.g. company name).
+If you are one of many users in a beekeeping operation you can delete your profile and user data in the profile settings [/setting/profile](https://app.btree.at/setting/profile). If you are the only user in the beekeeping operation all the data of the operation, e.g. colonies, apiary location will also be deleted. If you only want to delete one of your operations you can delete it in the company settings [/setting/company](https://app.btree.at/setting/company). This is only possible if you are the last user in this company. In the main database backup the data will be removed after 60 days (auto deletion of backups older than 60 days). Possible invoices or mail conservations with \*@btree.at will be deleted after 7 years. If you write me an email to delete your account, please present some proof that the account belongs to you (e.g. company name).
 
 ### The hive count statistic is wrong
 
@@ -101,7 +102,7 @@ Yes, in addition to the standard email and password login, b.tree supports sign-
 
 ### What is WizBee?
 
-WizBee is your personal AI beekeeping assistant, powered by Mistral AI. It is available exclusively for premium members at [/wizbee](https://app.btree.at/wizbee). You can ask beekeeping questions in plain language — from treatment timing and disease identification to feeding recommendations — and receive conversational, context-aware answers. Monthly usage is tracked and a budget applies to keep the service fair for all premium users. You can ask beekeeping questions in plain language — from treatment timing and disease identification to feeding recommendations — and receive conversational, context-aware answers. Monthly usage is tracked and a budget applies to keep the service fair for all premium users.
+WizBee is your personal AI beekeeping assistant, powered by Mistral AI. It is available exclusively for premium members at [/wizbee](https://app.btree.at/wizbee). You can ask beekeeping questions in plain language, and WizBee can also work with your own records: create and update feedings, treatments, harvests, checkups, todos and stock, show statistics, and check the apiary weather. You can type or use voice input. Monthly usage is tracked and a budget applies to keep the service fair for all premium users.
 
 ### What is the temperature / GTS feature?
 

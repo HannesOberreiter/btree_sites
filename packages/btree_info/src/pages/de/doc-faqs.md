@@ -2,6 +2,7 @@
 title: "FAQs"
 description: "Dokumentation und Hilfe zur Imkerei Software"
 layout: "../../layouts/IndexLayout.astro"
+faq: true
 lang: "de"
 ---
 
@@ -83,7 +84,7 @@ Der Serverstandort ist in Deutschland und alle Daten werden in einer Online-Spei
 
 ### Wie lösche ich mein Konto und entferne alle meine Daten?
 
-Wenn Sie einer von vielen Benutzern in einem Imkereibetrieb sind, können Sie Ihr Profil und Ihre Benutzerdaten in den Profileinstellungen [/setting/profile](https://app.btree.at/setting/profile) löschen. Wenn Sie der einzige Benutzer in einem Betrieb sind, werden alle Daten des Betriebs, z.B. Bienenvölker, Standort des Bienenstocks, ebenfalls gelöscht. Wenn Sie nur einen Ihrer Betriebe löschen möchten, können Sie diesen in den Betriebseinstellungen [/setting/company](https://app.btree.at/setting/company) löschen. Dies ist nur möglich, wenn Sie der letzte Benutzer in diesem Betrieb sind. In der Hauptsicherung der Datenbank werden die Daten nach 3 Monaten entfernt (automatische Löschung von Sicherungen, die älter als 3 Monate sind). Eventuelle Rechnungen oder Mail Verkehr mit \*@btree.at werden nach 7 Jahren gelöscht. Wenn Sie uns eine E-Mail schreiben, um Ihren Account zu löschen, legen Sie bitte einen Nachweis vor, dass der Account Ihnen gehört (z.B. Imkerei Namen).
+Wenn Sie einer von vielen Benutzern in einem Imkereibetrieb sind, können Sie Ihr Profil und Ihre Benutzerdaten in den Profileinstellungen [/setting/profile](https://app.btree.at/setting/profile) löschen. Wenn Sie der einzige Benutzer in einem Betrieb sind, werden alle Daten des Betriebs, z.B. Bienenvölker, Standort des Bienenstocks, ebenfalls gelöscht. Wenn Sie nur einen Ihrer Betriebe löschen möchten, können Sie diesen in den Betriebseinstellungen [/setting/company](https://app.btree.at/setting/company) löschen. Dies ist nur möglich, wenn Sie der letzte Benutzer in diesem Betrieb sind. In der Hauptsicherung der Datenbank werden die Daten nach 60 Tagen entfernt (automatische Löschung von Sicherungen, die älter als 60 Tage sind). Eventuelle Rechnungen oder Mail Verkehr mit \*@btree.at werden nach 7 Jahren gelöscht. Wenn Sie uns eine E-Mail schreiben, um Ihren Account zu löschen, legen Sie bitte einen Nachweis vor, dass der Account Ihnen gehört (z.B. Imkerei Namen).
 
 ### Die Bienenstockzählung ist falsch
 
@@ -103,7 +104,7 @@ Ja, neben der Standard-E-Mail- und Passwort-Anmeldung unterstützt b.tree die An
 
 ### Was ist WizBee?
 
-WizBee ist Ihr persönlicher KI-Imkerei-Assistent auf Basis von Mistral AI, exklusiv für Premium-Mitglieder unter [/wizbee](https://app.btree.at/wizbee). Stellen Sie Fragen in natürlicher Sprache – von Behandlungszeitpunkten und Krankheitserkennung bis hin zu Fütterungsempfehlungen – und erhalten Sie kontextbezogene Antworten. Der monatliche Verbrauch wird erfasst und ein Budget gilt, um den Dienst für alle Premium-Nutzer fair zu gestalten. Stellen Sie Fragen in natürlicher Sprache – von Behandlungszeitpunkten und Krankheitserkennung bis hin zu Fütterungsempfehlungen – und erhalten Sie kontextbezogene Antworten. Der monatliche Verbrauch wird erfasst und ein Budget gilt, um den Dienst für alle Premium-Nutzer fair zu gestalten.
+WizBee ist Ihr persönlicher KI-Imkerei-Assistent auf Basis von Mistral AI, exklusiv für Premium-Mitglieder unter [/wizbee](https://app.btree.at/wizbee). Stellen Sie Imkerei-Fragen in natürlicher Sprache. WizBee arbeitet auch mit Ihren eigenen Daten: Fütterungen, Behandlungen, Ernten, Kontrollen, Aufgaben und Lagerbestand anlegen und ändern, Statistiken anzeigen und das Wetter am Bienenstand abfragen. Sie können tippen oder die Spracheingabe verwenden. Der monatliche Verbrauch wird erfasst und ein Budget gilt, um den Dienst für alle Premium-Nutzer fair zu gestalten.
 
 ### Was ist das Temperatur- / GTS-Feature?
 

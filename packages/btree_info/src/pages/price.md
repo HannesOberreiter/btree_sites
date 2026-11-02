@@ -22,10 +22,23 @@ lang: "en"
     <li>✅ API access for iCal and hive scales (10)</li>
     <li>✅ Responsive statistics (harvest, feed, treatment, varroa, queens)</li>
     <li>✅ Queen statistics and pedigree tree</li>
-    <li>✅ Access to <a href="https://www.wiz-bee.com/">WizBee</a> your personal beekeeping knowledge AI, powered by Mistral</li>
+    <li>✅ <a href="https://www.wiz-bee.com/">WizBee</a>, your AI beekeeping assistant powered by Mistral: record feedings, treatments, harvests, checkups and todos in plain text or by voice, and ask questions about your own data</li>
+    <li>✅ <a href="/doc-agent">Agent API and MCP</a> to connect your own AI agent (ChatGPT, Claude and others)</li>
     <li>✅ Automatic fetching data for temperature field on checkup</li>
     <li>✅ Apiary map with optional weather overlay</li>
 </ul>
+
+### Your data
+
+<ul style="list-style: none">
+    <li>✅ Backend, API and database on Hetzner servers in Frankfurt, Germany</li>
+    <li>✅ Websites, CDN and encrypted backups on Bunny.net in Frankfurt, Germany</li>
+    <li>✅ WizBee AI from the European provider Mistral AI (France)</li>
+    <li>✅ CSV export of your data at any time</li>
+    <li>✅ Delete your account and data at any time</li>
+</ul>
+
+More details are in the [data privacy statement](/data-privacy).
 
 ### Support the app development
 

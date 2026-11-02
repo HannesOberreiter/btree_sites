@@ -110,4 +110,4 @@ The app includes a few small utility tools accessible from the navigation:
 
 ### WizBee AI Assistant (Premium)
 
-WizBee [/wizbee](https://app.btree.at/wizbee) is an AI-powered beekeeping assistant, powered by Mistral, available exclusively for premium members. You can ask beekeeping questions in natural language and receive context-aware answers. WizBee can help with treatment timing, disease identification, feeding recommendations and general beekeeping knowledge. Monthly usage is tracked and a budget limit applies to keep the service fair for all users.
+WizBee [/wizbee](https://app.btree.at/wizbee) is an AI-powered beekeeping assistant, powered by Mistral, available exclusively for premium members. You can ask beekeeping questions in plain language, and WizBee can also work with your own records: create and update feedings, treatments, harvests, checkups, todos and stock, show statistics, and check the apiary weather. You can type or use voice input. Monthly usage is tracked and a budget limit applies to keep the service fair for all users.
