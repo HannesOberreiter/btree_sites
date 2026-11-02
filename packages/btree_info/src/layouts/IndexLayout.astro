@@ -1,4 +1,5 @@
 ---
+import type { FAQPage, WithContext } from 'schema-dts';
 import ButtonBackToTop from '../components/ButtonBackToTop.astro';
 import Footer from '../components/Footer.astro';
 import HeadCommon from '../components/HeadCommon.astro';
@@ -6,11 +7,30 @@ import Header from '../components/Header.astro';
 import LeftSideBar from '../components/LeftSidebar.astro';
 import PageContent from '../components/PageContent.astro';
 import RightSideBar from '../components/RightSidebar.astro';
+import Schema from '../components/SchemaLD.astro';
 import SearchDialog from '../components/SearchDialog.astro';
 
 import * as CONFIG from '../config';
+import { faqFromMarkdown } from '../utils';
 
-const { frontmatter = {}, headings } = Astro.props;
+const { frontmatter = {}, headings, rawContent } = Astro.props;
+
+/* FAQPage structured data for pages with `faq: true` in the frontmatter */
+const faqSchema: WithContext<FAQPage> | undefined = frontmatter.faq && rawContent
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'inLanguage': frontmatter.lang,
+      'mainEntity': faqFromMarkdown(rawContent()).map(entry => ({
+        '@type': 'Question',
+        'name': entry.question,
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': entry.answer,
+        },
+      })),
+    }
+  : undefined;
 
 const title = frontmatter.title
   ? `${frontmatter.title} 🐝 ${CONFIG.SITE.title}`
@@ -25,6 +45,7 @@ const title = frontmatter.title
   <head>
     <title data-pagefind-meta="title">{title}</title>
     <HeadCommon />
+    {faqSchema && <Schema item={faqSchema} />}
     <style>
       body {
         width: 100%;
