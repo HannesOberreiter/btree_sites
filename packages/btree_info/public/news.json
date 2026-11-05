@@ -1,6 +1,36 @@
 {
   "en": [
     {
+      "version": "btree-server-7.11.0",
+      "date": "2026-11-05",
+      "items": [
+        {
+          "title": "Apiary weather forecast",
+          "description": "View a 48-hour hourly and 8-day daily weather forecast for each apiary, including bee flight conditions, frost and heat warnings."
+        },
+        {
+          "title": "Field settings update",
+          "description": "Update field settings by sending either a settings object or a JSON string."
+        },
+        {
+          "title": "Forecast time zones",
+          "description": "Forecast times now display with the apiary’s time zone name to handle daylight saving time changes."
+        },
+        {
+          "title": "Orphan WizBee cleanup",
+          "description": "Daily cleanup removes WizBee requests that reference deleted users or hives."
+        },
+        {
+          "title": "Legacy WizBee tokens removed",
+          "description": "Dropped the unused WizBee token usage table from the database."
+        },
+        {
+          "title": "Cron task logging",
+          "description": "Each scheduled task now logs its duration to help monitor performance."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.10.0",
       "date": "2026-10-23",
       "items": [
@@ -5124,6 +5154,36 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-server-7.11.0",
+      "date": "2026-11-05",
+      "items": [
+        {
+          "title": "Wettervorhersage für Bienenstände",
+          "description": "48-Stunden-Stunden- und 8-Tage-Tageswettervorhersage für jeden Bienenstand anzeigen, inklusive Bedingungen für Bienenflug, Frost- und Hitzewarnungen."
+        },
+        {
+          "title": "Feldeinstellungen aktualisieren",
+          "description": "Feldeinstellungen durch Senden eines Einstellungsobjekts oder einer JSON-Zeichenfolge aktualisieren."
+        },
+        {
+          "title": "Vorhersage-Zeitzonen",
+          "description": "Vorhersagezeiten werden nun mit dem Zeitzonennamen des Bienenstands angezeigt, um Zeitumstellungen durch Sommerzeit zu berücksichtigen."
+        },
+        {
+          "title": "Bereinigung verwaister WizBee-Anfragen",
+          "description": "Tägliche Bereinigung entfernt WizBee-Anfragen, die auf gelöschte Benutzer oder Stöcke verweisen."
+        },
+        {
+          "title": "Veraltete WizBee-Tokens entfernt",
+          "description": "Die ungenutzte WizBee-Token-Nutzungstabelle wurde aus der Datenbank entfernt."
+        },
+        {
+          "title": "Protokollierung von Cron-Aufgaben",
+          "description": "Jede geplante Aufgabe protokolliert nun ihre Dauer, um die Leistung zu überwachen."
+        }
+      ]
+    },
     {
       "version": "btree-server-7.10.0",
       "date": "2026-10-23",
