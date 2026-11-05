@@ -54,6 +54,10 @@ NFC tag scanning can speed up work at the apiary by linking physical hives to th
 
 b.tree runs in the cloud and supports multiple users. Teams can work on one shared database from different devices without manual syncing.
 
+### Beekeeping weather forecast for Premium users
+
+Each apiary has a weather forecast for its location: the current weather, the next 48 hours by the hour, and 8 days ahead. b.tree marks the hours and days with flight weather for bees (12 °C or more, low rain probability, little wind, and daylight). It also shows frost and heat warnings and official weather alerts. The forecast loads through the b.tree server, so your browser does not connect to a third-party weather service.
+
 ### WizBee AI helper for Premium users
 
 [WizBee](https://www.wiz-bee.com/) is the small AI helper for b.tree Premium users. You can record tasks and notes with plain text or voice-style messages instead of filling every field manually. WizBee can also help analyse your beekeeping data and answer questions about your own records.

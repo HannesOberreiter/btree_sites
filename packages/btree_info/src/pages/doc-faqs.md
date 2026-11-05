@@ -106,4 +106,4 @@ WizBee is your personal AI beekeeping assistant, powered by Mistral AI. It is av
 
 ### What is the temperature / GTS feature?
 
-Premium members benefit from automatic weather data. When filling in a checkup, the temperature field is pre-filled with data for the apiary location. Additionally, the apiary map can display a weather overlay. The **Grünlandtemperatursumme (GTS)** — a growing-season heat sum used in central European beekeeping to estimate colony development and optimal treatment windows — is available to all users per apiary.
+Premium members benefit from automatic weather data. When filling in a checkup, the temperature field is pre-filled with data for the apiary location. Each apiary also has a beekeeping weather forecast with flight weather for bees, frost and heat warnings, and official weather alerts. Additionally, the apiary map can display a weather overlay. The **Grünlandtemperatursumme (GTS)** — a growing-season heat sum used in central European beekeeping to estimate colony development and optimal treatment windows — is available to all users per apiary.

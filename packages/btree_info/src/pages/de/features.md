@@ -54,6 +54,10 @@ NFC-Tag-Scanning kann die Arbeit am Bienenstand beschleunigen, indem physische B
 
 b.tree läuft in der Cloud und unterstützt mehrere Benutzer. Teams können von verschiedenen Geräten aus mit derselben Datenbasis arbeiten, ohne manuelle Synchronisation.
 
+### Imker-Wettervorhersage für Premium-Benutzer
+
+Jeder Bienenstand hat eine Wettervorhersage für seinen Standort: das aktuelle Wetter, die nächsten 48 Stunden stündlich und 8 Tage im Voraus. b.tree markiert die Stunden und Tage mit Flugwetter für Bienen (ab 12 °C, geringe Regenwahrscheinlichkeit, wenig Wind und Tageslicht). Zusätzlich zeigt b.tree Frost- und Hitzewarnungen sowie amtliche Unwetterwarnungen. Die Vorhersage wird über den b.tree Server geladen, Ihr Browser verbindet sich dafür nicht mit einem externen Wetterdienst.
+
 ### WizBee KI-Helfer für Premium-Benutzer
 
 [WizBee](https://www.wiz-bee.com/) ist der kleine KI-Helfer für b.tree Premium-Benutzer. Aufgaben und Notizen können als normale Textnachricht oder per sprachähnlicher Eingabe erfasst werden, ohne jedes Feld manuell auszufüllen. WizBee kann außerdem helfen, eigene Imkereidaten auszuwerten und Fragen zu den eigenen Aufzeichnungen zu beantworten.

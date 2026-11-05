@@ -25,6 +25,7 @@ lang: "en"
     <li>✅ <a href="https://www.wiz-bee.com/">WizBee</a>, your AI beekeeping assistant powered by Mistral: record feedings, treatments, harvests, checkups and todos in plain text or by voice, and ask questions about your own data</li>
     <li>✅ <a href="/doc-agent">Agent API and MCP</a> to connect your own AI agent (ChatGPT, Claude and others)</li>
     <li>✅ Automatic fetching data for temperature field on checkup</li>
+    <li>✅ Beekeeping weather forecast per apiary: flight weather, frost and heat warnings, official weather alerts</li>
     <li>✅ Apiary map with optional weather overlay</li>
 </ul>
 
