@@ -31,6 +31,32 @@
       ]
     },
     {
+      "version": "btree-client-7.9.0",
+      "date": "2026-11-05",
+      "items": [
+        {
+          "title": "Sugar water calculator",
+          "description": "Enter sugar-water solutions by specifying the ratio of sugar to water directly."
+        },
+        {
+          "title": "Weather forecast panel",
+          "description": "View apiary weather forecasts in a new panel with flight conditions, temperature, and wind details."
+        },
+        {
+          "title": "Premium weather data",
+          "description": "Weather forecasts are now a premium feature and require an active subscription."
+        },
+        {
+          "title": "Daylight saving time fix",
+          "description": "Apiary clock times remain consistent across daylight saving time changes."
+        },
+        {
+          "title": "Agent tool updates",
+          "description": "The AI agent now supports inventory charges and improved error handling for beekeeping tasks."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.10.0",
       "date": "2026-10-23",
       "items": [
@@ -5181,6 +5207,32 @@
         {
           "title": "Protokollierung von Cron-Aufgaben",
           "description": "Jede geplante Aufgabe protokolliert nun ihre Dauer, um die Leistung zu überwachen."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.9.0",
+      "date": "2026-11-05",
+      "items": [
+        {
+          "title": "Zuckerwasser-Rechner",
+          "description": "Geben Sie Zuckerwasser-Lösungen ein, indem Sie das Verhältnis von Zucker zu Wasser direkt angeben."
+        },
+        {
+          "title": "Wettervorhersage-Panel",
+          "description": "Sehen Sie Wettervorhersagen für Ihre Bienenstände in einem neuen Panel mit Flugbedingungen, Temperatur und Winddetails."
+        },
+        {
+          "title": "Premium-Wetterdaten",
+          "description": "Wettervorhersagen sind nun ein Premium-Feature und erfordern ein aktives Abonnement."
+        },
+        {
+          "title": "Sommerzeit-Korrektur",
+          "description": "Die Uhrzeiten für Bienenstände bleiben auch bei Zeitumstellungen durch die Sommerzeit konsistent."
+        },
+        {
+          "title": "Aktualisierungen des Agenten-Tools",
+          "description": "Der KI-Agent unterstützt nun Chargen in der Chargenverwaltung und bietet verbesserte Fehlerbehandlung für imkerliche Aufgaben."
         }
       ]
     },
