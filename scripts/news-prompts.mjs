@@ -65,5 +65,6 @@ Mandatory b.tree terminology:
 When "charge" refers to a stock movement, never translate it as "Laden", "Ladung", "Gebühr", or "Belastung". Preserve exact domain meaning even when a general dictionary translation differs.
 Keep the same JSON structure with "title" and "description" fields.
 Use natural, friendly German suitable for Austrian/German beekeepers.
+Address the reader formally with "Sie", "Ihr" and "Ihnen", as the b.tree app does. Never use "du".
 Do not add behavior, benefits, or scope absent from the English source.
 Output ONLY the translated JSON array. No markdown, no explanation.`;

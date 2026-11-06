@@ -3,6 +3,8 @@ import test from "node:test";
 
 import {
   buildFallbackItems,
+  buildDayLabel,
+  entryVersions,
   responseText,
   sortNewsEntries,
 } from "./news-format.mjs";
@@ -78,5 +80,44 @@ test("news entries of one day are sorted newest first by publish time", () => {
       "btree-client-7.10.0",
       "btree-server-7.11.0",
     ],
+  );
+});
+
+test("day label lists the version range of each app", () => {
+  const versions = [
+    "btree-server-7.12.2",
+    "btree-client-7.10.10",
+    "btree-client-7.10.4",
+    "btree-server-7.12.0",
+  ];
+  assert.equal(
+    buildDayLabel(versions, "en"),
+    "Web app 7.10.4–7.10.10 · Server 7.12.0–7.12.2",
+  );
+  assert.equal(buildDayLabel(["btree-client-7.10.4"], "de"), "Web-App 7.10.4");
+});
+
+test("entry versions fall back to the single version of old entries", () => {
+  assert.deepEqual(entryVersions({ version: "btree-client-7.9.0" }), [
+    "btree-client-7.9.0",
+  ]);
+  assert.deepEqual(
+    entryVersions({ version: "Web app 7.10.4", versions: ["btree-client-7.10.4"] }),
+    ["btree-client-7.10.4"],
+  );
+});
+
+test("day entries sort by the publish time of their newest release", () => {
+  const publishedAt = new Map([
+    ["1.0.6", "2014-03-02T08:00:00Z"],
+    ["1.0.7", "2014-03-02T09:00:00Z"],
+  ]);
+  const entries = [
+    { version: "1.0.6", date: "2014-03-02" },
+    { version: "x", versions: ["1.0.6", "1.0.7"], date: "2014-03-02" },
+  ];
+  assert.deepEqual(
+    sortNewsEntries(entries, publishedAt).map((e) => e.version),
+    ["x", "1.0.6"],
   );
 });

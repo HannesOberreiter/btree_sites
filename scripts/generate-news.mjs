@@ -6,7 +6,7 @@
  * Fetches GitHub releases from btree (and the archived btree_vue),
  * calls Mistral LLM to rewrite technical release notes into
  * user-friendly news (EN), then translates to DE.
- * Each release becomes its own entry (no grouping by date).
+ * All releases of one day become one entry.
  *
  * Outputs: packages/btree_info/public/news.json
  *
@@ -26,7 +26,9 @@ import path from "node:path";
 
 import { buildCompareContext, scopeCompareToPath } from "./news-context.mjs";
 import {
+  buildDayLabel,
   buildFallbackItems,
+  entryVersions,
   responseText,
   sortNewsEntries,
 } from "./news-format.mjs";
@@ -191,34 +193,46 @@ async function callMistral(systemPrompt, userPrompt, maxTokens = 4096) {
   return responseText(data.choices[0].message.content);
 }
 
-async function rewriteRelease(entry) {
-  const combinedNotes = entry.notes.join("\n\n");
-  const compareContext = await fetchCompareContext(
-    entry.repo,
-    entry.previousTag,
-    entry.tagName,
-    entry.componentPath,
-  );
+// All releases of one day become one news entry. Both apps often release
+// the same change, and a feature can reach the server and the web app in two
+// release runs of one day.
+async function rewriteDay(date, releases) {
+  const notes = releases
+    .map((release) => `Release ${release.version}:\n${release.notes.join("\n\n")}`)
+    .join("\n\n");
+  if (!notes.trim()) return { en: [], de: [] };
 
-  if (!combinedNotes.trim()) {
-    return { en: [], de: [] };
+  const contexts = [];
+  for (const release of releases) {
+    const context = await fetchCompareContext(
+      release.repo,
+      release.previousTag,
+      release.tagName,
+      release.componentPath,
+    );
+    if (context) {
+      contexts.push(
+        `Code changes between ${release.previousTag} and ${release.tagName}:\n${context}`,
+      );
+    }
   }
 
-  const fallbackItems = buildFallbackItems(combinedNotes);
+  const fallbackItems = buildFallbackItems(
+    releases.map((release) => release.notes.join("\n\n")).join("\n\n"),
+  );
 
-  // Generate EN news
   const enRaw = await callMistral(
     SYSTEM_PROMPT_EN,
     [
-      `Rewrite these release notes for version ${entry.version} (${entry.date}).`,
+      `Rewrite the release notes of all b.tree releases on ${date} into one list of news items.`,
+      "The releases are parts of one update of the web app and the server. Write each change only once, also when several releases mention it.",
       "",
       "Release notes:",
-      combinedNotes,
+      notes,
       "",
-      compareContext
-        ? `Code changes between ${entry.previousTag} and ${entry.tagName}:`
-        : "No compare context available for this release.",
-      compareContext || "",
+      contexts.length > 0
+        ? contexts.join("\n\n")
+        : "No compare context available for these releases.",
     ].join("\n"),
   );
 
@@ -226,9 +240,7 @@ async function rewriteRelease(entry) {
   try {
     enItems = parseJsonResponse(enRaw);
   } catch (e) {
-    console.error(
-      `Failed to parse EN response for ${entry.version}: ${e.message}`,
-    );
+    console.error(`Failed to parse EN response for ${date}: ${e.message}`);
     console.error("Raw:", enRaw);
     enItems = [];
   }
@@ -243,7 +255,7 @@ async function rewriteRelease(entry) {
 
   const deItems = await translateGermanNewsItems({
     englishItems: enItems,
-    version: entry.version,
+    version: buildDayLabel(releases.map((release) => release.version)),
     requestTranslation: (prompt) =>
       callMistral(SYSTEM_PROMPT_TRANSLATE, prompt),
   });
@@ -251,51 +263,36 @@ async function rewriteRelease(entry) {
   return { en: enItems, de: deItems };
 }
 
-function issueEntryKey(entry) {
-  return `${entry.version}|${entry.date}`;
-}
-
 function formatIssueItems(items = []) {
   return items.map((item) => `- ${item.title}: ${item.description}`).join("\n");
 }
 
-function formatIssueDraft(entry) {
-  const parts = [`## ${entry.version} (${entry.date})`];
+function publishIssueMarker(date) {
+  return `<!-- news-day:${date} -->`;
+}
 
-  if (entry.en?.items?.length > 0) {
+function buildPublishIssueBody(entry) {
+  const parts = [`## ${entry.en.version} (${entry.date})`];
+
+  if (entry.en.items.length > 0) {
     parts.push(`### English\n${formatIssueItems(entry.en.items)}`);
   }
 
-  if (entry.de?.items?.length > 0) {
+  if (entry.de.items.length > 0) {
     parts.push(`### Deutsch\n${formatIssueItems(entry.de.items)}`);
   }
 
   parts.push(`Updates: ${NEWS_PUBLISH_SITE_URL}`);
 
-  return parts.join("\n\n");
-}
-
-function buildPublishIssueTitle(entries) {
-  if (entries.length === 1) return `News to publish: ${entries[0].version}`;
-
-  const dates = [...new Set(entries.map((entry) => entry.date))];
-  const suffix = dates.length === 1 ? dates[0] : `${entries.length} releases`;
-  return `News to publish: ${suffix}`;
-}
-
-function buildPublishIssueBody(entries) {
-  const marker = `<!-- news-to-publish:${entries.map(issueEntryKey).join(",")} -->`;
-  const drafts = entries.map(formatIssueDraft).join("\n\n---\n\n");
-
-  return `${marker}
+  return `${publishIssueMarker(entry.date)}
 # News to publish
 
-These news items were generated by scripts/generate-news.mjs. Please publish them on the relevant channels, then close this issue.
+These news items were generated by scripts/generate-news.mjs. A later release on the same day updates this issue. Please publish them on the relevant channels, then close this issue.
 
 - [ ] Publish news
 - [ ] Verify published content
 
-${drafts}
+${parts.join("\n\n")}
 `;
 }
 
@@ -327,9 +324,8 @@ async function findExistingPublishIssue(marker) {
   return issues.find((issue) => issue.body && issue.body.includes(marker));
 }
 
-async function createPublishIssue(entries) {
-  if (entries.length === 0) return;
-
+// One open issue per day. A later release on the same day updates it.
+async function upsertPublishIssue(entry) {
   if (!NEWS_PUBLISH_ISSUE_TOKEN) {
     throw new Error("NEWS_PUBLISH_ISSUE_TOKEN is required to create news publishing issue");
   }
@@ -338,13 +334,17 @@ async function createPublishIssue(entries) {
     throw new Error("GITHUB_REPOSITORY is required to create news publishing issue");
   }
 
-  const title = buildPublishIssueTitle(entries);
-  const body = buildPublishIssueBody(entries);
-  const marker = body.match(/<!-- news-to-publish:[^>]+ -->/)[0];
-  const existingIssue = await findExistingPublishIssue(marker);
+  const title = `News to publish: ${entry.date}`;
+  const body = buildPublishIssueBody(entry);
+  const existingIssue = await findExistingPublishIssue(publishIssueMarker(entry.date));
 
   if (existingIssue) {
-    console.log(`News publishing issue already exists: ${existingIssue.html_url}`);
+    await githubApi(`/repos/${GITHUB_REPOSITORY}/issues/${existingIssue.number}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title, body }),
+    });
+    console.log(`Updated news publishing issue: ${existingIssue.html_url}`);
     return;
   }
 
@@ -379,8 +379,8 @@ async function main() {
   }
 
   const existingVersions = new Set([
-    ...existingNews.en.map((e) => e.version),
-    ...existingNews.de.map((e) => e.version),
+    ...existingNews.en.flatMap(entryVersions),
+    ...existingNews.de.flatMap(entryVersions),
   ]);
 
   // Fetch GitHub releases
@@ -425,43 +425,46 @@ async function main() {
     return;
   }
 
-  console.log(`Processing ${toProcess.length} new release(s) with Mistral...`);
+  const days = [...new Set(toProcess.map((entry) => entry.date))];
+  console.log(`Processing ${toProcess.length} new release(s) on ${days.length} day(s) with Mistral...`);
 
-  const newEnEntries = [...existingNews.en];
-  const newDeEntries = [...existingNews.de];
-  const generatedPublishEntries = [];
+  let newEnEntries = [...existingNews.en];
+  let newDeEntries = [...existingNews.de];
+  const publishEntries = [];
 
-  for (const entry of toProcess) {
-    console.log(`  Rewriting ${entry.version} (${entry.date})...`);
+  for (const date of days) {
+    // Already published releases of the day are generated again with the
+    // new ones, so the day keeps one entry.
+    const dayReleases = entries
+      .filter((entry) => entry.date === date)
+      .sort((a, b) =>
+        (publishedAtByVersion.get(a.version) || "").localeCompare(
+          publishedAtByVersion.get(b.version) || "",
+        ),
+      );
+    const versions = dayReleases.map((entry) => entry.version);
+    console.log(`  Rewriting ${date}: ${versions.join(", ")}...`);
     try {
       // Intentionally sequential to stay within API rate limits.
-      const { en, de } = await rewriteRelease(entry);
+      const { en, de } = await rewriteDay(date, dayReleases);
 
       if (en.length > 0) {
-        const enEntry = {
-          version: entry.version,
-          date: entry.date,
-          items: en,
-        };
-        const deEntry = {
-          version: entry.version,
-          date: entry.date,
-          items: de,
-        };
+        const inDay = (entry) =>
+          entryVersions(entry).some((version) => versions.includes(version));
+        newEnEntries = newEnEntries.filter((entry) => !inDay(entry));
+        newDeEntries = newDeEntries.filter((entry) => !inDay(entry));
+
+        const enEntry = { version: buildDayLabel(versions, "en"), versions, date, items: en };
+        const deEntry = { version: buildDayLabel(versions, "de"), versions, date, items: de };
         newEnEntries.push(enEntry);
         newDeEntries.push(deEntry);
-        generatedPublishEntries.push({
-          version: entry.version,
-          date: entry.date,
-          en: enEntry,
-          de: deEntry,
-        });
+        publishEntries.push({ date, en: enEntry, de: deEntry });
       }
 
       // Rate limit: ~1 req/sec to be safe with Mistral
       await new Promise((r) => setTimeout(r, 1500));
     } catch (e) {
-      console.error(`  Error processing ${entry.version}: ${e.message}`);
+      console.error(`  Error processing ${date}: ${e.message}`);
     }
   }
 
@@ -510,7 +513,9 @@ async function main() {
     console.log(`Added ${changelogAdded} entries to ${CHANGELOG_PATH}`);
   }
 
-  await createPublishIssue(generatedPublishEntries);
+  for (const entry of publishEntries) {
+    await upsertPublishIssue(entry);
+  }
 }
 
 main().catch((e) => {

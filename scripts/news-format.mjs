@@ -75,13 +75,61 @@ export function responseText(content) {
     .join("");
 }
 
-// Newest first. Releases of one day are ordered by their publish time.
+// Day entries list their releases in "versions". Older entries have one
+// release in "version" only.
+export function entryVersions(entry) {
+  return Array.isArray(entry.versions) && entry.versions.length > 0
+    ? entry.versions
+    : [entry.version];
+}
+
+const COMPONENT_LABELS = {
+  en: { client: "Web app", server: "Server" },
+  de: { client: "Web-App", server: "Server" },
+};
+
+function compareSemver(a, b) {
+  const pa = a.split(".").map(Number);
+  const pb = b.split(".").map(Number);
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const diff = (pa[i] || 0) - (pb[i] || 0);
+    if (diff !== 0) return diff;
+  }
+  return 0;
+}
+
+// "btree-client-7.10.0", "btree-client-7.10.4", "btree-server-7.12.2"
+// -> "Web app 7.10.0–7.10.4 · Server 7.12.2"
+export function buildDayLabel(versions, lang = "en") {
+  const labels = COMPONENT_LABELS[lang] || COMPONENT_LABELS.en;
+  const parts = [];
+  for (const component of ["client", "server"]) {
+    const semvers = versions
+      .filter((version) => version.startsWith(`btree-${component}-`))
+      .map((version) => version.slice(`btree-${component}-`.length))
+      .sort(compareSemver);
+    if (semvers.length === 0) continue;
+    const first = semvers[0];
+    const last = semvers[semvers.length - 1];
+    parts.push(
+      `${labels[component]} ${first === last ? first : `${first}–${last}`}`,
+    );
+  }
+  const other = versions.filter((version) => !/^btree-(client|server)-/.test(version));
+  return [...parts, ...other].join(" · ");
+}
+
+// Newest first. Entries of one day are ordered by the publish time of their
+// newest release.
 export function sortNewsEntries(entries, publishedAtByVersion) {
+  const newestPublish = (entry) =>
+    entryVersions(entry)
+      .map((version) => publishedAtByVersion.get(version) || "")
+      .sort()
+      .at(-1) || "";
   return entries.sort(
     (a, b) =>
       b.date.localeCompare(a.date) ||
-      (publishedAtByVersion.get(b.version) || "").localeCompare(
-        publishedAtByVersion.get(a.version) || "",
-      ),
+      newestPublish(b).localeCompare(newestPublish(a)),
   );
 }

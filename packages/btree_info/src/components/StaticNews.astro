@@ -1,4 +1,5 @@
 ---
+import { entryVersions } from '../../../../scripts/news-format.mjs';
 import newsData from '../../public/news.json';
 
 interface NewsItem {
@@ -8,6 +9,7 @@ interface NewsItem {
 
 interface NewsEntry {
   version: string;
+  versions?: string[];
   date: string;
   items: NewsItem[];
 }
@@ -42,14 +44,34 @@ function getReleaseType(version: string) {
   return 'other';
 }
 
-function getReleaseLabel(version: string) {
-  if (version.startsWith('btree-client')) return 'Client';
-  if (version.startsWith('btree-server')) return 'Server';
+function getReleaseLabel(type: string) {
+  if (type === 'client') return 'Client';
+  if (type === 'server') return 'Server';
   return 'App';
 }
 
 function getDisplayVersion(version: string) {
   return version.replace(/^btree-(client|server)-/, '');
+}
+
+// One badge per app, with the version range of the day.
+function getReleaseGroups(entry: NewsEntry) {
+  const groups = new Map<string, string[]>();
+  for (const version of entryVersions(entry)) {
+    const type = getReleaseType(version);
+    groups.set(type, [...(groups.get(type) ?? []), getDisplayVersion(version)]);
+  }
+  const order = ['client', 'server', 'other'];
+  return [...groups].sort(([a], [b]) => order.indexOf(a) - order.indexOf(b)).map(([type, versions]) => ({
+    type,
+    label: getReleaseLabel(type),
+    range: versions.length === 1 ? versions[0] : `${versions[0]}–${versions[versions.length - 1]}`,
+  }));
+}
+
+function getEntryType(entry: NewsEntry) {
+  const types = new Set(entryVersions(entry).map(getReleaseType));
+  return types.size === 1 ? [...types][0] : 'other';
 }
 
 function getPageNumbers() {
@@ -74,12 +96,16 @@ const pages = getPageNumbers();
 
   <ol class="news-entries">
     {pageEntries.map(entry => (
-      <li class:list={['news-entry', `news-entry-${getReleaseType(entry.version)}`]}>
+      <li class:list={['news-entry', `news-entry-${getEntryType(entry)}`]}>
         <article>
           <header class="news-entry-header">
             <h2>
-              <span class:list={['news-badge', `news-badge-${getReleaseType(entry.version)}`]}>{getReleaseLabel(entry.version)}</span>
-              <span>{getDisplayVersion(entry.version)}</span>
+              {getReleaseGroups(entry).map(group => (
+                <>
+                  <span class:list={['news-badge', `news-badge-${group.type}`]}>{group.label}</span>
+                  <span>{group.range}</span>
+                </>
+              ))}
             </h2>
             <time datetime={entry.date}>{entry.date}</time>
           </header>
