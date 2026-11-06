@@ -196,7 +196,7 @@ function compactContent(content: string): string {
     .trim();
 }
 
-function generateLatestNews(limit = 10): string {
+function generateLatestNews(limit = 5): string {
   const entries = (newsData as Record<'en' | 'de', NewsEntry[]>).en.slice(0, limit);
 
   return entries
@@ -226,8 +226,35 @@ function generateLlmsFullTxt(): string {
   return output.replace(/\n---\n\n$/, '\n');
 }
 
+// WizBee (btreeDocumentation tool in apps/server of the btree repo) returns
+// at most 8 sections that match a query, and at most 40,000 characters.
+// Sections below MAX_SECTION_CHARS keep 8 sections inside that limit.
+// External agents read the whole file, so it stays below MAX_LLMS_FULL_CHARS.
+const MAX_SECTION_CHARS = 5_000;
+const MAX_LLMS_FULL_CHARS = 60_000;
+
+function checkSize(content: string): void {
+  if (content.length > MAX_LLMS_FULL_CHARS) {
+    throw new Error(
+      `llms-full.txt has ${content.length} characters, the limit is ${MAX_LLMS_FULL_CHARS}. Shorten the docs.`,
+    );
+  }
+  // Split the same way as the WizBee tool: at each ## or ### heading.
+  const headings = [...content.matchAll(/^#{2,3} .+$/gm)];
+  headings.forEach((heading, index) => {
+    const end = headings[index + 1]?.index ?? content.length;
+    const size = end - (heading.index ?? 0);
+    if (size > MAX_SECTION_CHARS) {
+      throw new Error(
+        `llms-full.txt section "${heading[0]}" has ${size} characters, the limit is ${MAX_SECTION_CHARS}. Split it with ### headings.`,
+      );
+    }
+  });
+}
+
 export const GET: APIRoute = async () => {
   const content = generateLlmsFullTxt();
+  checkSize(content);
   return new Response(content, {
     headers: {
       'Content-Type': 'text/plain; charset=utf-8',
