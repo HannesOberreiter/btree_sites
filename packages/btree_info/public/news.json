@@ -65,6 +65,20 @@
       ]
     },
     {
+      "version": "btree-client-7.10.1",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Active Status in Option Edit Form",
+          "description": "The option edit form now displays the active status checkbox, so you can see and change whether a type is active."
+        },
+        {
+          "title": "Inactive Types Hidden in Selection Lists",
+          "description": "Inactive option types are now hidden from dropdowns and selection lists, such as stock items when creating task recipes."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.11.0",
       "date": "2026-11-05",
       "items": [
@@ -5305,6 +5319,20 @@
         {
           "title": "Bearbeitungsberechtigungen für Lagerbuchungen",
           "description": "Benutzerrollen mit Lesezugriff können Lagerbuchungen nicht mehr aktualisieren; nur Admin- und Benutzerrollen behalten den Bearbeitungszugriff."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.10.1",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Aktiv-Status im Options-Bearbeitungsformular",
+          "description": "Das Bearbeitungsformular für Optionen zeigt jetzt das Kontrollkästchen für den aktiven Status an, sodass Sie sehen und ändern können, ob ein Typ aktiv ist."
+        },
+        {
+          "title": "Inaktive Typen in Auswahllisten ausgeblendet",
+          "description": "Inaktive Optionstypen werden jetzt in Dropdowns und Auswahllisten ausgeblendet, zum Beispiel Lagerartikel beim Erstellen von Aufgabenrezepten."
         }
       ]
     },
