@@ -3,7 +3,7 @@
 /**
  * generate-news.mjs
  *
- * Fetches GitHub releases from btree_vue and btree_server,
+ * Fetches GitHub releases from btree (and the archived btree_vue),
  * calls Mistral LLM to rewrite technical release notes into
  * user-friendly news (EN), then translates to DE.
  * Each release becomes its own entry (no grouping by date).
@@ -42,9 +42,12 @@ const NEWS_PUBLISH_ISSUE_TOKEN = process.env.NEWS_PUBLISH_ISSUE_TOKEN || GITHUB_
 const GITHUB_REPOSITORY = process.env.GITHUB_REPOSITORY;
 const NEWS_PUBLISH_SITE_URL = process.env.NEWS_PUBLISH_SITE_URL || "https://btree.at/updates/";
 
+// btree contains the server and the web app. The web app releases up to
+// btree-client-v7.10.1 stay in the archived btree_vue repository.
 const REPOS = [
   { name: "btree_vue", tagPrefix: "btree-client-v" },
-  { name: "btree_server", tagPrefix: "btree-server-v" },
+  { name: "btree", tagPrefix: "btree-client-v" },
+  { name: "btree", tagPrefix: "btree-server-v" },
 ];
 const OUTPUT_PATH = "packages/btree_info/public/news.json";
 const CHANGELOG_PATH = "packages/btree_info/public/changelog.json";
@@ -88,7 +91,9 @@ async function fetchAllReleases(repo, tagPrefix) {
       break;
     }
     if (data.length === 0) break;
-    releases.push(...data);
+    releases.push(
+      ...data.filter((release) => release.tag_name?.startsWith(tagPrefix)),
+    );
     page++;
   }
   return releases;
@@ -363,15 +368,24 @@ async function main() {
   const allReleases = [];
   for (const { name: repo, tagPrefix } of REPOS) {
     const releases = await fetchAllReleases(repo, tagPrefix);
-    for (let i = 0; i < releases.length; i++) {
-      releases[i]._previousTag = releases[i + 1]?.tag_name || "";
-    }
-    console.log(`  ${repo}: ${releases.length} releases`);
+    console.log(`  ${repo} (${tagPrefix}): ${releases.length} releases`);
     for (const r of releases) {
       r._repo = repo;
       r._tagPrefix = tagPrefix;
     }
     allReleases.push(...releases);
+  }
+
+  // The previous tag of a component can be in another repository, so link
+  // the releases of each tag prefix across all repositories. btree has all
+  // btree-client tags, so the compare also works for its first release.
+  for (const tagPrefix of new Set(REPOS.map((r) => r.tagPrefix))) {
+    const releases = allReleases
+      .filter((r) => r._tagPrefix === tagPrefix)
+      .sort((a, b) => b.created_at.localeCompare(a.created_at));
+    for (let i = 0; i < releases.length; i++) {
+      releases[i]._previousTag = releases[i + 1]?.tag_name || "";
+    }
   }
 
   const entries = toEntries(allReleases);

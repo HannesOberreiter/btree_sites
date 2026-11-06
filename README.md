@@ -1,6 +1,6 @@
 # btree_sites
 
-Static websites monorepo for the [btree](https://www.btree.at) ecosystem. Related repositories: [HannesOberreiter/btree_vue](https://github.com/HannesOberreiter/btree_vue) (frontend), [HannesOberreiter/btree_server](https://github.com/HannesOberreiter/btree_server) (backend), and [HannesOberreiter/btree_database](https://github.com/HannesOberreiter/btree_database) (database infrastructure).
+Static websites monorepo for the [btree](https://www.btree.at) ecosystem. Related repositories: [HannesOberreiter/btree](https://github.com/HannesOberreiter/btree) (backend and frontend) and [HannesOberreiter/btree_database](https://github.com/HannesOberreiter/btree_database) (database infrastructure).
 
 ## Packages
 
