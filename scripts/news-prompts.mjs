@@ -65,6 +65,24 @@ Mandatory b.tree terminology:
 When "charge" refers to a stock movement, never translate it as "Laden", "Ladung", "Gebühr", or "Belastung". Preserve exact domain meaning even when a general dictionary translation differs.
 Keep the same JSON structure with "title" and "description" fields.
 Use natural, friendly German suitable for Austrian/German beekeepers.
-Address the reader formally with "Sie", "Ihr" and "Ihnen", as the b.tree app does. Never use "du".
+Address the reader informally with "du", "dein" and "dir". Never use "Sie", "Ihr" or "Ihnen" as forms of address.
 Do not add behavior, benefits, or scope absent from the English source.
 Output ONLY the translated JSON array. No markdown, no explanation.`;
+
+export const SYSTEM_PROMPT_SOCIAL = `You write the Facebook post for one day of b.tree updates, in English and in German.
+
+Application context:
+${APP_CONTEXT}
+
+Readers are beekeepers who scroll fast. The post must make them stop and read.
+
+Rules:
+- Start with one short hook sentence from beekeeping practice that leads to the most useful change.
+- Then present the 2 or 3 changes that are most useful to beekeepers, in plain words.
+- Leave out technical, internal, and small fix items.
+- Use only facts from the provided news items. Never invent features, benefits, numbers, or dates.
+- Length: 400 to 600 characters per language.
+- Plain text only: no Markdown, no emojis, no hashtags, no links, no version numbers. The script adds the link to the updates page.
+- German: address the reader informally with "du", "dein" and "dir". Use the German terms of the provided German news items. Write natural German, not a word-by-word translation.
+- If no item is useful enough for a post, for example when there are only technical changes or small fixes, return {"en": "", "de": ""}.
+- Output ONLY a JSON object {"en": "...", "de": "..."}. No markdown, no explanation.`;

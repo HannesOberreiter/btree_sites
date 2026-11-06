@@ -5227,7 +5227,7 @@
         },
         {
           "title": "Aktiv-Status im Options-Bearbeitungsformular",
-          "description": "Das Bearbeitungsformular für Optionen zeigt jetzt das Kontrollkästchen für den aktiven Status an, sodass Sie sehen und ändern können, ob ein Typ aktiv ist."
+          "description": "Das Bearbeitungsformular für Optionen zeigt jetzt das Kontrollkästchen für den aktiven Status an, sodass du sehen und ändern kannst, ob ein Typ aktiv ist."
         },
         {
           "title": "Inaktive Typen in Auswahllisten ausgeblendet",
@@ -5235,7 +5235,7 @@
         },
         {
           "title": "Korrektur beim Neuladen von Web-Chunks",
-          "description": "Die Webanwendung lädt jetzt einmal neu, wenn ein Chunk nicht geladen werden kann. So sehen Sie immer die neueste Version, ohne manuell aktualisieren zu müssen."
+          "description": "Die Webanwendung lädt jetzt einmal neu, wenn ein Chunk nicht geladen werden kann. So siehst du immer die neueste Version, ohne manuell aktualisieren zu müssen."
         },
         {
           "title": "Begrenzung der WizBee-Dokumentationsgröße",
@@ -5285,7 +5285,7 @@
         },
         {
           "title": "Zuckerwasser-Rechner",
-          "description": "Geben Sie Zuckerwasser-Lösungen ein, indem Sie das Verhältnis von Zucker zu Wasser direkt angeben."
+          "description": "Gib Zuckerwasser-Lösungen ein, indem du das Verhältnis von Zucker zu Wasser direkt angibst."
         },
         {
           "title": "Premium-Wetterdaten",
@@ -5293,7 +5293,7 @@
         },
         {
           "title": "Agenten-Prompt aktualisiert",
-          "description": "Der Prompt für Ihren eigenen KI-Agenten auf der Seite der Agenten-Schlüssel enthält jetzt alle aktuellen Werkzeuge, auch Lagerbuchungen, Wanderungen, das Wachsbuch und den Zuckerwasserrechner."
+          "description": "Der Prompt für deinen eigenen KI-Agenten auf der Seite der Agenten-Schlüssel enthält jetzt alle aktuellen Werkzeuge, auch Lagerbuchungen, Wanderungen, das Wachsbuch und den Zuckerwasserrechner."
         }
       ]
     },
@@ -5406,7 +5406,7 @@
       "items": [
         {
           "title": "MCP-Client-Zugriff",
-          "description": "Verbinden Sie KI-Clients wie ChatGPT, Claude oder VS Code über das Model Context Protocol (MCP) mit b.tree. Verwalten Sie aktive Verbindungen und widerrufen Sie Zugriffe in Ihren Profileinstellungen."
+          "description": "Verbinde KI-Clients wie ChatGPT, Claude oder VS Code über das Model Context Protocol (MCP) mit b.tree. Aktive Verbindungen verwaltest und widerrufst du in deinen Profileinstellungen."
         },
         {
           "title": "Bunny-CDN-Hosting",
@@ -5520,11 +5520,11 @@
       "items": [
         {
           "title": "Inventur",
-          "description": "Geben Sie im Lager den tatsächlich gezählten Bestand ein; b.tree erfasst die Differenz als Wareneingang oder Warenausgang."
+          "description": "Gib im Lager den tatsächlich gezählten Bestand ein; b.tree erfasst die Differenz als Wareneingang oder Warenausgang."
         },
         {
           "title": "Wachsbestand korrigieren",
-          "description": "Eine neue Bestands-Korrekturfunktion ermöglicht es Ihnen, die Wachsvorräte zu aktualisieren und Notizen in neue Wachslose zu übernehmen."
+          "description": "Mit einer neuen Bestands-Korrekturfunktion kannst du die Wachsvorräte aktualisieren und Notizen in neue Wachslose übernehmen."
         },
         {
           "title": "Ruhigere Kalendereinträge",
@@ -5532,7 +5532,7 @@
         },
         {
           "title": "Wachsnotizen sichtbar",
-          "description": "Bestandsnotizen werden jetzt in der Wachstabelle angezeigt, sodass Sie nachvollziehen können, warum Anpassungen vorgenommen wurden."
+          "description": "Bestandsnotizen werden jetzt in der Wachstabelle angezeigt, sodass du nachvollziehen kannst, warum Anpassungen vorgenommen wurden."
         }
       ]
     },
@@ -5565,11 +5565,11 @@
       "items": [
         {
           "title": "Wachsbuchführung",
-          "description": "Erfassen und verfolgen Sie die Wachsproduktion, Käufe und den Verbrauch direkt in der App."
+          "description": "Erfasse und verfolge die Wachsproduktion, Käufe und den Verbrauch direkt in der App."
         },
         {
           "title": "Völkeranzahl umschalten",
-          "description": "Zeigen oder verbergen Sie die Anzahl der Völker in den Statistiken mit einem einfachen Schalter."
+          "description": "Zeige oder verbirg die Anzahl der Völker in den Statistiken mit einem einfachen Schalter."
         },
         {
           "title": "Korrekturen für Mobilgeräte",
@@ -5623,7 +5623,7 @@
       "items": [
         {
           "title": "WizBee-Integration",
-          "description": "Ermöglicht die Erfassung von Bienenständen, Völkern und Wanderungen direkt über WizBee oder Ihren eigenen Agenten."
+          "description": "Ermöglicht die Erfassung von Bienenständen, Völkern und Wanderungen direkt über WizBee oder deinen eigenen Agenten."
         },
         {
           "title": "Protokollierung in Containern",
@@ -5656,7 +5656,7 @@
       "items": [
         {
           "title": "ChatGPT-Anbindung",
-          "description": "Mit einem neuen OAuth-Login können Sie sich im b.tree Custom GPT in ChatGPT bei b.tree anmelden."
+          "description": "Mit einem neuen OAuth-Login kannst du dich im b.tree Custom GPT in ChatGPT bei b.tree anmelden."
         },
         {
           "title": "WizBee-Modell aktualisiert",
@@ -5672,7 +5672,7 @@
         },
         {
           "title": "Übersetzte Tabellensuche",
-          "description": "Das Suchfeld in Tabellen zeigt den Platzhaltertext jetzt in Ihrer Sprache."
+          "description": "Das Suchfeld in Tabellen zeigt den Platzhaltertext jetzt in deiner Sprache."
         },
         {
           "title": "Korrekte Zahlen in Beobachtungen",
@@ -5738,15 +5738,15 @@
       "items": [
         {
           "title": "Spracheingabe für WizBee",
-          "description": "Sie können WizBee jetzt Nachrichten diktieren, und WizBee wandelt sie in Text um."
+          "description": "Du kannst WizBee jetzt Nachrichten diktieren, und WizBee wandelt sie in Text um."
         },
         {
           "title": "Automatische Rechnungen",
-          "description": "Wenn Sie eine Rechnung anfordern, erstellt b.tree sie nach Ihrer Premium-Zahlung jetzt als PDF und sendet sie Ihnen per E-Mail."
+          "description": "Wenn du eine Rechnung anforderst, erstellt b.tree sie nach deiner Premium-Zahlung jetzt als PDF und sendet sie dir per E-Mail."
         },
         {
           "title": "Agenten-Schlüssel",
-          "description": "Sie können jetzt Agenten-Schlüssel erstellen, damit Ihr eigener KI-Agent die WizBee-Werkzeuge verwenden kann."
+          "description": "Du kannst jetzt Agenten-Schlüssel erstellen, damit dein eigener KI-Agent die WizBee-Werkzeuge verwenden kann."
         },
         {
           "title": "Dropbox-Medien",

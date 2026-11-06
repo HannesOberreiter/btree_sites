@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   APP_CONTEXT,
   SYSTEM_PROMPT_EN,
+  SYSTEM_PROMPT_SOCIAL,
   SYSTEM_PROMPT_TRANSLATE,
 } from "./news-prompts.mjs";
 
@@ -35,4 +36,15 @@ test("German prompt requires b.tree charge terminology", () => {
     SYSTEM_PROMPT_TRANSLATE,
     /never translate it as "Laden", "Ladung", "Gebühr", or "Belastung"/,
   );
+});
+
+test("German texts address the reader with du", () => {
+  assert.match(SYSTEM_PROMPT_TRANSLATE, /informally with "du"/);
+  assert.match(SYSTEM_PROMPT_SOCIAL, /informally with "du"/);
+});
+
+test("Facebook post prompt forbids emojis, hashtags and links", () => {
+  assert.match(SYSTEM_PROMPT_SOCIAL, /no emojis, no hashtags, no links/);
+  assert.match(SYSTEM_PROMPT_SOCIAL, /Never invent features/);
+  assert.match(SYSTEM_PROMPT_SOCIAL, /\{"en": "", "de": ""\}/);
 });

@@ -34,8 +34,10 @@ import {
 } from "./news-format.mjs";
 import {
   SYSTEM_PROMPT_EN,
+  SYSTEM_PROMPT_SOCIAL,
   SYSTEM_PROMPT_TRANSLATE,
 } from "./news-prompts.mjs";
+import { generateSocialPost } from "./news-social.mjs";
 import {
   parseJsonResponse,
   translateGermanNewsItems,
@@ -284,6 +286,16 @@ function buildPublishIssueBody(entry) {
 
   parts.push(`Updates: ${NEWS_PUBLISH_SITE_URL}`);
 
+  if (entry.social) {
+    parts.push(
+      `## Facebook post\n\n### English\n\n\`\`\`text\n${entry.social.en}\n\`\`\`\n\n### Deutsch\n\n\`\`\`text\n${entry.social.de}\n\`\`\``,
+    );
+  } else {
+    parts.push(
+      "## Facebook post\n\nNo draft: the day has only technical changes, or the draft failed. See the workflow log.",
+    );
+  }
+
   return `${publishIssueMarker(entry.date)}
 # News to publish
 
@@ -458,7 +470,14 @@ async function main() {
         const deEntry = { version: buildDayLabel(versions, "de"), versions, date, items: de };
         newEnEntries.push(enEntry);
         newDeEntries.push(deEntry);
-        publishEntries.push({ date, en: enEntry, de: deEntry });
+        const social = await generateSocialPost({
+          date,
+          englishItems: en,
+          germanItems: de,
+          updatesUrl: NEWS_PUBLISH_SITE_URL,
+          requestPost: (prompt) => callMistral(SYSTEM_PROMPT_SOCIAL, prompt),
+        });
+        publishEntries.push({ date, en: enEntry, de: deEntry, social });
       }
 
       // Rate limit: ~1 req/sec to be safe with Mistral
