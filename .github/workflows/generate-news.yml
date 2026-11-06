@@ -5,6 +5,12 @@ on:
     types: [release-published]
   workflow_dispatch:
 
+# Release events of several repositories can arrive at the same time. Run one
+# at a time, so each run starts from the news of the run before.
+concurrency:
+  group: generate-news
+  cancel-in-progress: false
+
 permissions:
   contents: write
   actions: write
@@ -14,7 +20,11 @@ jobs:
   generate-news:
     runs-on: ubuntu-latest
     steps:
+      # Check out the current main, not the commit of the event, so a queued
+      # run sees the news of the run before.
       - uses: actions/checkout@v6
+        with:
+          ref: main
 
       - uses: actions/setup-node@v6
         with:
@@ -40,6 +50,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add packages/btree_info/public/news.json packages/btree_info/public/changelog.json
           git commit -m "chore: update news and changelog from releases"
+          git pull --rebase origin main
           git push
 
       - name: Trigger btree_info deploy
