@@ -21,6 +21,13 @@
     ]
   },
   {
+    "version": "btree-client-7.10.2",
+    "date": "2026-11-06",
+    "notes": [
+      "## [7.10.2](https://github.com/HannesOberreiter/btree/compare/btree-client-v7.10.1...btree-client-v7.10.2) (2026-11-06)\n\n\n### Bug Fixes\n\n* **web:** reload once when a chunk fails to load ([#275](https://github.com/HannesOberreiter/btree/issues/275)) ([d153008](https://github.com/HannesOberreiter/btree/commit/d1530080be517f26e415b12b640f8b773aa77734))"
+    ]
+  },
+  {
     "version": "btree-server-7.11.0",
     "date": "2026-11-05",
     "notes": [

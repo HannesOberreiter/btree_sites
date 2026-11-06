@@ -79,6 +79,16 @@
       ]
     },
     {
+      "version": "btree-client-7.10.2",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Web Chunk Reload Fix",
+          "description": "The web application now reloads once when a chunk fails to load, ensuring you always see the latest version without manual refresh."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.11.0",
       "date": "2026-11-05",
       "items": [
@@ -5333,6 +5343,16 @@
         {
           "title": "Inaktive Typen in Auswahllisten ausgeblendet",
           "description": "Inaktive Optionstypen werden jetzt in Dropdowns und Auswahllisten ausgeblendet, zum Beispiel Lagerartikel beim Erstellen von Aufgabenrezepten."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.10.2",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Korrektur beim Neuladen von Web-Chunks",
+          "description": "Die Webanwendung lädt jetzt einmal neu, wenn ein Chunk nicht geladen werden kann. So sehen Sie immer die neueste Version, ohne manuell aktualisieren zu müssen."
         }
       ]
     },
