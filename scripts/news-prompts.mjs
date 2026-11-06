@@ -6,8 +6,7 @@ Domain terminology:
 - A hive movement means moving a hive between apiaries, not a software or database migration.
 - Queen management includes queens, queen rearing, and pedigrees.
 - A hive scale records hive-weight measurements; "scale" does not mean application size.
-- "Charge Control" is b.tree's inventory ledger. It records incoming and outgoing goods such as sugar, treatment consumables, and honey-jar batches. In release scopes, database names, and UI names, "charge" refers to this inventory feature—not a fee, electrical charge, load, or burden.
-- "Charge inventory" means stock managed through Charge Control.
+- "Stock" is b.tree's inventory ledger. Its records are "stock movements": incoming and outgoing goods of "stock items" such as sugar, treatment consumables, and honey jars. Tasks can book stock movements automatically. In release scopes and database names, "charge" means a stock movement and "charge type" means a stock item—not a fee, electrical charge, load, or burden. In news text, always write "stock movement" or "stock", never "charge". A "lot" or "lot number" is the batch number of a product or of honey jars.
 - The wax ledger is a separate inventory feature with operations and wax lots.
 - An inventory count is stock physically counted by the user. b.tree records the difference as incoming or outgoing goods.`;
 
@@ -37,9 +36,11 @@ Application context:
 ${APP_CONTEXT}
 
 Mandatory b.tree terminology:
-- Charge Control = Chargenverwaltung
-- charge, when it means a Charge Control inventory record, or inventory batch = Charge; plural = Chargen
-- charge inventory or charge stock = Chargenbestand or Bestand
+- Stock (the feature and the menu) = Lager
+- stock movement = Lagerbuchung; plural = Lagerbuchungen
+- stock item = Lagerartikel; plural = Lagerartikel
+- stock level or current stock = Lagerbestand
+- lot or lot number = Charge or Chargennummer
 - inventory count or inventory mode = Inventur
 - counted total stock = gezählter Gesamtbestand
 - goods receipt or incoming goods = Wareneingang
@@ -61,7 +62,7 @@ Mandatory b.tree terminology:
 - hive movement = Wanderung
 - hive scale = Stockwaage
 
-When "charge" refers to Charge Control, never translate it as "Laden", "Ladung", "Gebühr", or "Belastung". Preserve exact domain meaning even when a general dictionary translation differs.
+When "charge" refers to a stock movement, never translate it as "Laden", "Ladung", "Gebühr", or "Belastung". Preserve exact domain meaning even when a general dictionary translation differs.
 Keep the same JSON structure with "title" and "description" fields.
 Use natural, friendly German suitable for Austrian/German beekeepers.
 Do not add behavior, benefits, or scope absent from the English source.

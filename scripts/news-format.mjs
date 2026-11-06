@@ -61,3 +61,16 @@ export function buildFallbackItems(notes) {
 
   return items;
 }
+
+/**
+ * Get the answer text of a Mistral message. Reasoning models return chunks:
+ * thinking first, then the answer text. The thinking is dropped.
+ */
+export function responseText(content) {
+  if (typeof content === "string") return content;
+  if (!Array.isArray(content)) return "";
+  return content
+    .filter((chunk) => chunk.type === "text")
+    .map((chunk) => chunk.text)
+    .join("");
+}

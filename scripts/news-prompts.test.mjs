@@ -7,8 +7,9 @@ import {
   SYSTEM_PROMPT_TRANSLATE,
 } from "./news-prompts.mjs";
 
-test("English prompt defines Charge Control as inventory", () => {
-  assert.match(APP_CONTEXT, /Charge Control/);
+test("English prompt defines stock movements as inventory", () => {
+  assert.match(APP_CONTEXT, /"stock movements"/);
+  assert.match(APP_CONTEXT, /never "charge"/);
   assert.match(APP_CONTEXT, /incoming and outgoing goods/);
   assert.match(APP_CONTEXT, /not a fee, electrical charge, load, or burden/);
   assert.match(SYSTEM_PROMPT_EN, /Do not reinterpret domain terms/);
@@ -19,11 +20,9 @@ test("English prompt defines Charge Control as inventory", () => {
 });
 
 test("German prompt requires b.tree charge terminology", () => {
-  assert.match(SYSTEM_PROMPT_TRANSLATE, /Charge Control = Chargenverwaltung/);
-  assert.match(
-    SYSTEM_PROMPT_TRANSLATE,
-    /charge, when it means a Charge Control inventory record/,
-  );
+  assert.match(SYSTEM_PROMPT_TRANSLATE, /stock movement = Lagerbuchung/);
+  assert.match(SYSTEM_PROMPT_TRANSLATE, /stock item = Lagerartikel/);
+  assert.match(SYSTEM_PROMPT_TRANSLATE, /lot or lot number = Charge or Chargennummer/);
   assert.match(SYSTEM_PROMPT_TRANSLATE, /goods receipt or incoming goods = Wareneingang/);
   assert.match(SYSTEM_PROMPT_TRANSLATE, /outgoing goods = Warenausgang/);
   assert.match(SYSTEM_PROMPT_TRANSLATE, /apiary = Stand; plural = Stände/);

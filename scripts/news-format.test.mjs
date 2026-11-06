@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { buildFallbackItems } from "./news-format.mjs";
+import { buildFallbackItems, responseText } from "./news-format.mjs";
 
 test("feature fallback publishes one clean user-facing item", () => {
   const notes = `## [7.3.0](https://github.com/HannesOberreiter/btree_vue/compare/btree-client-v7.2.1...btree-client-v7.3.0) (2026-07-18)
@@ -22,4 +22,32 @@ test("fallback skips irrelevant maintenance sections", () => {
   const notes = `## 7.3.1\n\n### Miscellaneous\n\n* update dependencies ([abc1234](https://example.com/commit/abc1234))\n* fix linting`;
 
   assert.deepEqual(buildFallbackItems(notes), []);
+});
+
+test("response text keeps string content", () => {
+  assert.equal(responseText('[{"title":"A"}]'), '[{"title":"A"}]');
+});
+
+test("response text drops thinking chunks", () => {
+  assert.equal(
+    responseText([
+      {
+        type: "thinking",
+        thinking: [{ type: "text", text: "Plan the release notes." }],
+      },
+      { type: "text", text: '[{"title":' },
+      { type: "text", text: '"A"}]' },
+    ]),
+    '[{"title":"A"}]',
+  );
+});
+
+test("response text is empty without text chunks", () => {
+  assert.equal(
+    responseText([
+      { type: "thinking", thinking: [{ type: "text", text: "Plan" }] },
+    ]),
+    "",
+  );
+  assert.equal(responseText(null), "");
 });

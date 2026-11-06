@@ -25,7 +25,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 import { buildCompareContext } from "./news-context.mjs";
-import { buildFallbackItems } from "./news-format.mjs";
+import { buildFallbackItems, responseText } from "./news-format.mjs";
 import {
   SYSTEM_PROMPT_EN,
   SYSTEM_PROMPT_TRANSLATE,
@@ -146,13 +146,15 @@ async function callMistral(systemPrompt, userPrompt, maxTokens = 4096) {
       Authorization: `Bearer ${MISTRAL_API_KEY}`,
     },
     body: JSON.stringify({
-      model: "mistral-large-latest",
+      model: "mistral-large-4-0",
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
       ],
       max_tokens: maxTokens,
       temperature: 0.3,
+      // The model always reasons; "none" is not supported.
+      reasoning_effort: "low",
     }),
   });
 
@@ -162,7 +164,7 @@ async function callMistral(systemPrompt, userPrompt, maxTokens = 4096) {
   }
 
   const data = await res.json();
-  return data.choices[0].message.content;
+  return responseText(data.choices[0].message.content);
 }
 
 async function rewriteRelease(entry) {
