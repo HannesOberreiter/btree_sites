@@ -1,32 +1,66 @@
 {
   "en": [
     {
-      "version": "btree-client-7.10.0",
+      "version": "btree-client-7.10.4",
       "date": "2026-11-06",
       "items": [
         {
-          "title": "Book Stock from Tasks",
-          "description": "Tasks can now automatically book stock movements when saved."
+          "title": "Calendar Form Double Click",
+          "description": "The calendar form now opens only when double-clicking a date, preventing accidental openings from single clicks."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.12.2",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "PayPal Order ID Validation",
+          "description": "Payment capture now accepts only properly formatted PayPal order IDs, rejecting invalid or malformed IDs before they reach PayPal."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.10.3",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Limit WizBee Documentation Size",
+          "description": "Documentation results returned by WizBee are now kept below a maximum size limit, with large sections truncated and section overviews provided when queries do not match specific content."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.12.1",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Documentation Result Size Limit",
+          "description": "Wizbee now keeps documentation results below the size limit to prevent oversized responses."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.10.2",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Web Chunk Reload Fix",
+          "description": "The web application now reloads once when a chunk fails to load, ensuring you always see the latest version without manual refresh."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.10.1",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Active Status in Option Edit Form",
+          "description": "The option edit form now displays the active status checkbox, so you can see and change whether a type is active."
         },
         {
-          "title": "Stock Movements Renamed",
-          "description": "Stock entries are now labeled as stock movements throughout the interface."
-        },
-        {
-          "title": "Stock in Multi-Edit",
-          "description": "Stock booking is now available when editing multiple tasks simultaneously."
-        },
-        {
-          "title": "Stock Change Confirmation",
-          "description": "The save confirmation message now displays the stock change that was booked."
-        },
-        {
-          "title": "Optional Best Before Date",
-          "description": "The best before date is now optional when recording stock movements."
-        },
-        {
-          "title": "Stock Menu Position",
-          "description": "The stock selection menu now opens below the type field."
+          "title": "Inactive Types Hidden in Selection Lists",
+          "description": "Inactive option types are now hidden from dropdowns and selection lists, such as stock items when creating task recipes."
         }
       ]
     },
@@ -65,36 +99,58 @@
       ]
     },
     {
-      "version": "btree-client-7.10.1",
+      "version": "btree-client-7.10.0",
       "date": "2026-11-06",
       "items": [
         {
-          "title": "Active Status in Option Edit Form",
-          "description": "The option edit form now displays the active status checkbox, so you can see and change whether a type is active."
+          "title": "Book Stock from Tasks",
+          "description": "Tasks can now automatically book stock movements when saved."
         },
         {
-          "title": "Inactive Types Hidden in Selection Lists",
-          "description": "Inactive option types are now hidden from dropdowns and selection lists, such as stock items when creating task recipes."
+          "title": "Stock Movements Renamed",
+          "description": "Stock entries are now labeled as stock movements throughout the interface."
+        },
+        {
+          "title": "Stock in Multi-Edit",
+          "description": "Stock booking is now available when editing multiple tasks simultaneously."
+        },
+        {
+          "title": "Stock Change Confirmation",
+          "description": "The save confirmation message now displays the stock change that was booked."
+        },
+        {
+          "title": "Optional Best Before Date",
+          "description": "The best before date is now optional when recording stock movements."
+        },
+        {
+          "title": "Stock Menu Position",
+          "description": "The stock selection menu now opens below the type field."
         }
       ]
     },
     {
-      "version": "btree-client-7.10.2",
-      "date": "2026-11-06",
+      "version": "btree-client-7.9.0",
+      "date": "2026-11-05",
       "items": [
         {
-          "title": "Web Chunk Reload Fix",
-          "description": "The web application now reloads once when a chunk fails to load, ensuring you always see the latest version without manual refresh."
-        }
-      ]
-    },
-    {
-      "version": "btree-client-7.10.3",
-      "date": "2026-11-06",
-      "items": [
+          "title": "Sugar water calculator",
+          "description": "Enter sugar-water solutions by specifying the ratio of sugar to water directly."
+        },
         {
-          "title": "Limit WizBee Documentation Size",
-          "description": "Documentation results returned by WizBee are now kept below a maximum size limit, with large sections truncated and section overviews provided when queries do not match specific content."
+          "title": "Weather forecast panel",
+          "description": "View apiary weather forecasts in a new panel with flight conditions, temperature, and wind details."
+        },
+        {
+          "title": "Premium weather data",
+          "description": "Weather forecasts are now a premium feature and require an active subscription."
+        },
+        {
+          "title": "Daylight saving time fix",
+          "description": "Apiary clock times remain consistent across daylight saving time changes."
+        },
+        {
+          "title": "Agent tool updates",
+          "description": "The AI agent now supports inventory charges and improved error handling for beekeeping tasks."
         }
       ]
     },
@@ -129,32 +185,6 @@
       ]
     },
     {
-      "version": "btree-client-7.9.0",
-      "date": "2026-11-05",
-      "items": [
-        {
-          "title": "Sugar water calculator",
-          "description": "Enter sugar-water solutions by specifying the ratio of sugar to water directly."
-        },
-        {
-          "title": "Weather forecast panel",
-          "description": "View apiary weather forecasts in a new panel with flight conditions, temperature, and wind details."
-        },
-        {
-          "title": "Premium weather data",
-          "description": "Weather forecasts are now a premium feature and require an active subscription."
-        },
-        {
-          "title": "Daylight saving time fix",
-          "description": "Apiary clock times remain consistent across daylight saving time changes."
-        },
-        {
-          "title": "Agent tool updates",
-          "description": "The AI agent now supports inventory charges and improved error handling for beekeeping tasks."
-        }
-      ]
-    },
-    {
       "version": "btree-server-7.10.0",
       "date": "2026-10-23",
       "items": [
@@ -183,36 +213,16 @@
       ]
     },
     {
-      "version": "btree-server-7.9.0",
+      "version": "btree-server-7.9.1",
       "date": "2026-10-06",
       "items": [
         {
-          "title": "CDN-ready public data",
-          "description": "Public hive observations are now prepared for delivery through a content delivery network."
+          "title": "CDN origin setup",
+          "description": "API requests now route through Bunny CDN origins with secret-key authentication for improved performance and security."
         },
         {
-          "title": "Manual cron job control",
-          "description": "Added a manual trigger and an off switch for scheduled tasks, including the daily and monthly observation syncs."
-        },
-        {
-          "title": "Expanded Vespa velutina sources",
-          "description": "Added direct observation sources for Switzerland (asiatischehornisse.ch) and France (frelonasiatique.fr, stopvelutina.fr, stopvespa.fr)."
-        },
-        {
-          "title": "Hardened observation caching",
-          "description": "Improved reliability of cached public hive observations."
-        },
-        {
-          "title": "Company name length fix",
-          "description": "Company names now match the database character limit."
-        },
-        {
-          "title": "Dropbox token refresh",
-          "description": "Fixed token refresh timing to ensure Dropbox connections use valid credentials."
-        },
-        {
-          "title": "Recent map observations",
-          "description": "Map displays now show only observations from the last 60 days."
+          "title": "Soft-delete timestamp fix",
+          "description": "Fixed misleading deletion timestamps on active records. Only actual deletions now set the deleted_at timestamp."
         }
       ]
     },
@@ -251,38 +261,36 @@
       ]
     },
     {
-      "version": "btree-server-7.9.1",
+      "version": "btree-server-7.9.0",
       "date": "2026-10-06",
       "items": [
         {
-          "title": "CDN origin setup",
-          "description": "API requests now route through Bunny CDN origins with secret-key authentication for improved performance and security."
+          "title": "CDN-ready public data",
+          "description": "Public hive observations are now prepared for delivery through a content delivery network."
         },
         {
-          "title": "Soft-delete timestamp fix",
-          "description": "Fixed misleading deletion timestamps on active records. Only actual deletions now set the deleted_at timestamp."
-        }
-      ]
-    },
-    {
-      "version": "btree-client-7.7.0",
-      "date": "2026-09-14",
-      "items": [
-        {
-          "title": "MCP client access",
-          "description": "Connect AI clients like ChatGPT, Claude, or VS Code to b.tree using the Model Context Protocol (MCP). Manage active connections and revoke access in your profile settings."
+          "title": "Manual cron job control",
+          "description": "Added a manual trigger and an off switch for scheduled tasks, including the daily and monthly observation syncs."
         },
         {
-          "title": "Bunny CDN hosting",
-          "description": "Production and beta frontends now deploy to Bunny Storage and Bunny CDN for improved availability and performance."
+          "title": "Expanded Vespa velutina sources",
+          "description": "Added direct observation sources for Switzerland (asiatischehornisse.ch) and France (frelonasiatique.fr, stopvelutina.fr, stopvespa.fr)."
         },
         {
-          "title": "Sequential deployments",
-          "description": "Production deployments are now serialized to prevent overlapping updates."
+          "title": "Hardened observation caching",
+          "description": "Improved reliability of cached public hive observations."
         },
         {
-          "title": "Asset caching",
-          "description": "Content-hashed assets receive long-term caching; other files use no-cache to ensure users receive updates."
+          "title": "Company name length fix",
+          "description": "Company names now match the database character limit."
+        },
+        {
+          "title": "Dropbox token refresh",
+          "description": "Fixed token refresh timing to ensure Dropbox connections use valid credentials."
+        },
+        {
+          "title": "Recent map observations",
+          "description": "Map displays now show only observations from the last 60 days."
         }
       ]
     },
@@ -313,12 +321,24 @@
       ]
     },
     {
-      "version": "btree-server-7.7.0",
-      "date": "2026-08-27",
+      "version": "btree-client-7.7.0",
+      "date": "2026-09-14",
       "items": [
         {
-          "title": "Austrian Velutina reports",
-          "description": "b.tree now imports Asian hornet sightings from the Austrian Bienengesundheit.at service into the pest map."
+          "title": "MCP client access",
+          "description": "Connect AI clients like ChatGPT, Claude, or VS Code to b.tree using the Model Context Protocol (MCP). Manage active connections and revoke access in your profile settings."
+        },
+        {
+          "title": "Bunny CDN hosting",
+          "description": "Production and beta frontends now deploy to Bunny Storage and Bunny CDN for improved availability and performance."
+        },
+        {
+          "title": "Sequential deployments",
+          "description": "Production deployments are now serialized to prevent overlapping updates."
+        },
+        {
+          "title": "Asset caching",
+          "description": "Content-hashed assets receive long-term caching; other files use no-cache to ensure users receive updates."
         }
       ]
     },
@@ -329,6 +349,34 @@
         {
           "title": "New pest map source",
           "description": "The Asian hornet (Vespa velutina) distribution map now includes data from bienengesundheit.at alongside the existing PatriNat source."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.7.0",
+      "date": "2026-08-27",
+      "items": [
+        {
+          "title": "Austrian Velutina reports",
+          "description": "b.tree now imports Asian hornet sightings from the Austrian Bienengesundheit.at service into the pest map."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.5.1",
+      "date": "2026-08-16",
+      "items": [
+        {
+          "title": "Fixed table sorting",
+          "description": "Table columns now correctly sort in ascending or descending order as selected."
+        },
+        {
+          "title": "Aligned sortable columns",
+          "description": "Improved visual alignment of sortable columns across all tables."
+        },
+        {
+          "title": "Disabled unsupported sorting",
+          "description": "Removed sorting options for columns that do not support it in Charge Control, checkups, feedings, and harvests."
         }
       ]
     },
@@ -375,20 +423,20 @@
       ]
     },
     {
-      "version": "btree-client-7.5.1",
-      "date": "2026-08-16",
+      "version": "btree-client-7.5.0",
+      "date": "2026-08-11",
       "items": [
         {
-          "title": "Fixed table sorting",
-          "description": "Table columns now correctly sort in ascending or descending order as selected."
+          "title": "Wax stock corrections",
+          "description": "A new form lets you record adjustments to your wax inventory with notes explaining the change."
         },
         {
-          "title": "Aligned sortable columns",
-          "description": "Improved visual alignment of sortable columns across all tables."
+          "title": "Wax notes visible",
+          "description": "Inventory notes now appear in the wax table so you can see why corrections were made."
         },
         {
-          "title": "Disabled unsupported sorting",
-          "description": "Removed sorting options for columns that do not support it in Charge Control, checkups, feedings, and harvests."
+          "title": "Inventory count mode",
+          "description": "Charge Control now lets you enter the total stock physically counted; b.tree calculates the required incoming or outgoing goods entry."
         }
       ]
     },
@@ -411,20 +459,12 @@
       ]
     },
     {
-      "version": "btree-client-7.5.0",
-      "date": "2026-08-11",
+      "version": "btree-client-7.4.1",
+      "date": "2026-08-05",
       "items": [
         {
-          "title": "Wax stock corrections",
-          "description": "A new form lets you record adjustments to your wax inventory with notes explaining the change."
-        },
-        {
-          "title": "Wax notes visible",
-          "description": "Inventory notes now appear in the wax table so you can see why corrections were made."
-        },
-        {
-          "title": "Inventory count mode",
-          "description": "Charge Control now lets you enter the total stock physically counted; b.tree calculates the required incoming or outgoing goods entry."
+          "title": "Accurate hive data",
+          "description": "Fixed how the app reads and displays statistics so numbers and charts match the actual hive records."
         }
       ]
     },
@@ -439,42 +479,12 @@
       ]
     },
     {
-      "version": "btree-client-7.4.1",
-      "date": "2026-08-05",
-      "items": [
-        {
-          "title": "Accurate hive data",
-          "description": "Fixed how the app reads and displays statistics so numbers and charts match the actual hive records."
-        }
-      ]
-    },
-    {
-      "version": "btree-client-7.4.0",
+      "version": "btree-server-7.5.1",
       "date": "2026-08-04",
       "items": [
         {
-          "title": "Wax ledger tracking",
-          "description": "Record and track wax production, purchases, and usage directly in the app."
-        },
-        {
-          "title": "Colony count toggle",
-          "description": "Show or hide the number of colonies in statistics with a single toggle."
-        },
-        {
-          "title": "Mobile dialog fixes",
-          "description": "Dialogs now display correctly on mobile devices."
-        },
-        {
-          "title": "Error message clarity",
-          "description": "Error notifications now show clearer, more detailed messages."
-        },
-        {
-          "title": "Wax form sizing",
-          "description": "Fixed the sizing of wax-related forms for better usability."
-        },
-        {
-          "title": "Simplified payments",
-          "description": "Removed Stripe checkout; all donations are now processed directly."
+          "title": "Faster hive reports",
+          "description": "Generating apiary and hive statistics now uses optimized database queries, reducing wait times for large operations."
         }
       ]
     },
@@ -517,12 +527,32 @@
       ]
     },
     {
-      "version": "btree-server-7.5.1",
+      "version": "btree-client-7.4.0",
       "date": "2026-08-04",
       "items": [
         {
-          "title": "Faster hive reports",
-          "description": "Generating apiary and hive statistics now uses optimized database queries, reducing wait times for large operations."
+          "title": "Wax ledger tracking",
+          "description": "Record and track wax production, purchases, and usage directly in the app."
+        },
+        {
+          "title": "Colony count toggle",
+          "description": "Show or hide the number of colonies in statistics with a single toggle."
+        },
+        {
+          "title": "Mobile dialog fixes",
+          "description": "Dialogs now display correctly on mobile devices."
+        },
+        {
+          "title": "Error message clarity",
+          "description": "Error notifications now show clearer, more detailed messages."
+        },
+        {
+          "title": "Wax form sizing",
+          "description": "Fixed the sizing of wax-related forms for better usability."
+        },
+        {
+          "title": "Simplified payments",
+          "description": "Removed Stripe checkout; all donations are now processed directly."
         }
       ]
     },
@@ -551,6 +581,16 @@
         {
           "title": "Streamlined Infrastructure",
           "description": "We removed unused server infrastructure in the United States to reduce operating costs."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.3.1",
+      "date": "2026-06-12",
+      "items": [
+        {
+          "title": "Fix",
+          "description": "Fixed an issue where number strings were not correctly converted to numbers in observation data."
         }
       ]
     },
@@ -595,12 +635,16 @@
       ]
     },
     {
-      "version": "btree-server-7.3.1",
-      "date": "2026-06-12",
+      "version": "btree-client-7.2.0",
+      "date": "2026-05-07",
       "items": [
         {
-          "title": "Fix",
-          "description": "Fixed an issue where number strings were not correctly converted to numbers in observation data."
+          "title": "Feature",
+          "description": "Apiaries now include an elevation field for recording altitude."
+        },
+        {
+          "title": "Improvement",
+          "description": "Premium payment page layout improved for mobile devices."
         }
       ]
     },
@@ -623,30 +667,6 @@
       ]
     },
     {
-      "version": "btree-client-7.2.0",
-      "date": "2026-05-07",
-      "items": [
-        {
-          "title": "Feature",
-          "description": "Apiaries now include an elevation field for recording altitude."
-        },
-        {
-          "title": "Improvement",
-          "description": "Premium payment page layout improved for mobile devices."
-        }
-      ]
-    },
-    {
-      "version": "btree-client-7.1.1",
-      "date": "2026-04-30",
-      "items": [
-        {
-          "title": "Fix",
-          "description": "Re-enabled payment via service for all devices after it was mistakenly disabled."
-        }
-      ]
-    },
-    {
       "version": "btree-server-7.1.1",
       "date": "2026-04-30",
       "items": [
@@ -661,6 +681,16 @@
         {
           "title": "Technical Change",
           "description": "Removed debug logs from the application."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.1.1",
+      "date": "2026-04-30",
+      "items": [
+        {
+          "title": "Fix",
+          "description": "Re-enabled payment via service for all devices after it was mistakenly disabled."
         }
       ]
     },
@@ -717,22 +747,22 @@
       ]
     },
     {
-      "version": "btree-server-7.0.0",
-      "date": "2026-04-17",
-      "items": [
-        {
-          "title": "Maintenance",
-          "description": "Internal improvements and maintenance updates."
-        }
-      ]
-    },
-    {
       "version": "btree-client-7.0.0",
       "date": "2026-04-17",
       "items": [
         {
           "title": "New Feature",
           "description": "You’ll now see release notes automatically translated into German when you update the app."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.0.0",
+      "date": "2026-04-17",
+      "items": [
+        {
+          "title": "Maintenance",
+          "description": "Internal improvements and maintenance updates."
         }
       ]
     },
@@ -5279,32 +5309,66 @@
   ],
   "de": [
     {
-      "version": "btree-client-7.10.0",
+      "version": "btree-client-7.10.4",
       "date": "2026-11-06",
       "items": [
         {
-          "title": "Lagerbuchungen aus Aufgaben",
-          "description": "Aufgaben können jetzt beim Speichern automatisch Lagerbuchungen vornehmen."
+          "title": "Kalenderformular bei Doppelklick",
+          "description": "Das Kalenderformular öffnet sich nun nur noch beim Doppelklick auf ein Datum. Dadurch werden versehentliche Öffnungen durch einzelne Klicks verhindert."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.12.2",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Validierung der PayPal-Bestell-ID",
+          "description": "Die Zahlungsabwicklung akzeptiert jetzt nur korrekt formatierte PayPal-Bestell-IDs und lehnt ungültige oder fehlerhafte IDs ab, bevor sie PayPal erreichen."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.10.3",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Begrenzung der WizBee-Dokumentationsgröße",
+          "description": "Die von WizBee zurückgegebenen Dokumentationsergebnisse bleiben jetzt unter einem maximalen Größenlimit, wobei große Abschnitte gekürzt und Abschnittsübersichten angezeigt werden, wenn Anfragen nicht auf spezifische Inhalte zutreffen."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.12.1",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Größenlimit für Dokumentationsergebnisse",
+          "description": "Wizbee hält Dokumentationsergebnisse jetzt unter dem Größenlimit, um übergroße Antworten zu vermeiden."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.10.2",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Korrektur beim Neuladen von Web-Chunks",
+          "description": "Die Webanwendung lädt jetzt einmal neu, wenn ein Chunk nicht geladen werden kann. So sehen Sie immer die neueste Version, ohne manuell aktualisieren zu müssen."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.10.1",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Aktiv-Status im Options-Bearbeitungsformular",
+          "description": "Das Bearbeitungsformular für Optionen zeigt jetzt das Kontrollkästchen für den aktiven Status an, sodass Sie sehen und ändern können, ob ein Typ aktiv ist."
         },
         {
-          "title": "Lagerbuchungen umbenannt",
-          "description": "Lagereinträge werden jetzt in der gesamten Oberfläche als Lagerbuchungen bezeichnet."
-        },
-        {
-          "title": "Lager im Mehrfach-Edit",
-          "description": "Die Lagerbuchung ist jetzt verfügbar, wenn mehrere Aufgaben gleichzeitig bearbeitet werden."
-        },
-        {
-          "title": "Bestätigung der Lagerbuchung",
-          "description": "Die Speicherbestätigung zeigt jetzt die vorgenommene Lagerbuchung an."
-        },
-        {
-          "title": "Optionales Mindesthaltbarkeitsdatum",
-          "description": "Das Mindesthaltbarkeitsdatum ist jetzt beim Erfassen von Lagerbuchungen optional."
-        },
-        {
-          "title": "Position des Lagermenüs",
-          "description": "Das Lagerauswahlmenü öffnet sich jetzt unterhalb des Typfelds."
+          "title": "Inaktive Typen in Auswahllisten ausgeblendet",
+          "description": "Inaktive Optionstypen werden jetzt in Dropdowns und Auswahllisten ausgeblendet, zum Beispiel Lagerartikel beim Erstellen von Aufgabenrezepten."
         }
       ]
     },
@@ -5343,36 +5407,58 @@
       ]
     },
     {
-      "version": "btree-client-7.10.1",
+      "version": "btree-client-7.10.0",
       "date": "2026-11-06",
       "items": [
         {
-          "title": "Aktiv-Status im Options-Bearbeitungsformular",
-          "description": "Das Bearbeitungsformular für Optionen zeigt jetzt das Kontrollkästchen für den aktiven Status an, sodass Sie sehen und ändern können, ob ein Typ aktiv ist."
+          "title": "Lagerbuchungen aus Aufgaben",
+          "description": "Aufgaben können jetzt beim Speichern automatisch Lagerbuchungen vornehmen."
         },
         {
-          "title": "Inaktive Typen in Auswahllisten ausgeblendet",
-          "description": "Inaktive Optionstypen werden jetzt in Dropdowns und Auswahllisten ausgeblendet, zum Beispiel Lagerartikel beim Erstellen von Aufgabenrezepten."
+          "title": "Lagerbuchungen umbenannt",
+          "description": "Lagereinträge werden jetzt in der gesamten Oberfläche als Lagerbuchungen bezeichnet."
+        },
+        {
+          "title": "Lager im Mehrfach-Edit",
+          "description": "Die Lagerbuchung ist jetzt verfügbar, wenn mehrere Aufgaben gleichzeitig bearbeitet werden."
+        },
+        {
+          "title": "Bestätigung der Lagerbuchung",
+          "description": "Die Speicherbestätigung zeigt jetzt die vorgenommene Lagerbuchung an."
+        },
+        {
+          "title": "Optionales Mindesthaltbarkeitsdatum",
+          "description": "Das Mindesthaltbarkeitsdatum ist jetzt beim Erfassen von Lagerbuchungen optional."
+        },
+        {
+          "title": "Position des Lagermenüs",
+          "description": "Das Lagerauswahlmenü öffnet sich jetzt unterhalb des Typfelds."
         }
       ]
     },
     {
-      "version": "btree-client-7.10.2",
-      "date": "2026-11-06",
+      "version": "btree-client-7.9.0",
+      "date": "2026-11-05",
       "items": [
         {
-          "title": "Korrektur beim Neuladen von Web-Chunks",
-          "description": "Die Webanwendung lädt jetzt einmal neu, wenn ein Chunk nicht geladen werden kann. So sehen Sie immer die neueste Version, ohne manuell aktualisieren zu müssen."
-        }
-      ]
-    },
-    {
-      "version": "btree-client-7.10.3",
-      "date": "2026-11-06",
-      "items": [
+          "title": "Zuckerwasser-Rechner",
+          "description": "Geben Sie Zuckerwasser-Lösungen ein, indem Sie das Verhältnis von Zucker zu Wasser direkt angeben."
+        },
         {
-          "title": "Begrenzung der WizBee-Dokumentationsgröße",
-          "description": "Die von WizBee zurückgegebenen Dokumentationsergebnisse bleiben jetzt unter einem maximalen Größenlimit, wobei große Abschnitte gekürzt und Abschnittsübersichten angezeigt werden, wenn Anfragen nicht auf spezifische Inhalte zutreffen."
+          "title": "Wettervorhersage-Panel",
+          "description": "Sehen Sie Wettervorhersagen für Ihre Bienenstände in einem neuen Panel mit Flugbedingungen, Temperatur und Winddetails."
+        },
+        {
+          "title": "Premium-Wetterdaten",
+          "description": "Wettervorhersagen sind nun ein Premium-Feature und erfordern ein aktives Abonnement."
+        },
+        {
+          "title": "Sommerzeit-Korrektur",
+          "description": "Die Uhrzeiten für Bienenstände bleiben auch bei Zeitumstellungen durch die Sommerzeit konsistent."
+        },
+        {
+          "title": "Aktualisierungen des Agenten-Tools",
+          "description": "Der KI-Agent unterstützt nun Chargen in der Chargenverwaltung und bietet verbesserte Fehlerbehandlung für imkerliche Aufgaben."
         }
       ]
     },
@@ -5407,32 +5493,6 @@
       ]
     },
     {
-      "version": "btree-client-7.9.0",
-      "date": "2026-11-05",
-      "items": [
-        {
-          "title": "Zuckerwasser-Rechner",
-          "description": "Geben Sie Zuckerwasser-Lösungen ein, indem Sie das Verhältnis von Zucker zu Wasser direkt angeben."
-        },
-        {
-          "title": "Wettervorhersage-Panel",
-          "description": "Sehen Sie Wettervorhersagen für Ihre Bienenstände in einem neuen Panel mit Flugbedingungen, Temperatur und Winddetails."
-        },
-        {
-          "title": "Premium-Wetterdaten",
-          "description": "Wettervorhersagen sind nun ein Premium-Feature und erfordern ein aktives Abonnement."
-        },
-        {
-          "title": "Sommerzeit-Korrektur",
-          "description": "Die Uhrzeiten für Bienenstände bleiben auch bei Zeitumstellungen durch die Sommerzeit konsistent."
-        },
-        {
-          "title": "Aktualisierungen des Agenten-Tools",
-          "description": "Der KI-Agent unterstützt nun Chargen in der Chargenverwaltung und bietet verbesserte Fehlerbehandlung für imkerliche Aufgaben."
-        }
-      ]
-    },
-    {
       "version": "btree-server-7.10.0",
       "date": "2026-10-23",
       "items": [
@@ -5461,36 +5521,16 @@
       ]
     },
     {
-      "version": "btree-server-7.9.0",
+      "version": "btree-server-7.9.1",
       "date": "2026-10-06",
       "items": [
         {
-          "title": "Öffentliche Daten CDN-bereit",
-          "description": "Öffentliche Stockbeobachtungen sind nun für die Auslieferung über ein Content Delivery Network vorbereitet."
+          "title": "CDN-Ursprungseinrichtung",
+          "description": "API-Anfragen werden nun über Bunny-CDN-Ursprünge mit Geheimschlüssel-Authentifizierung geleitet, um Leistung und Sicherheit zu verbessern."
         },
         {
-          "title": "Manuelle Steuerung von Cron-Jobs",
-          "description": "Manueller Auslöser und Ausschalter für geplante Aufgaben hinzugefügt, einschließlich der täglichen und monatlichen Synchronisation von Beobachtungen."
-        },
-        {
-          "title": "Erweiterte Quellen für Vespa velutina",
-          "description": "Direkte Beobachtungsquellen für die Schweiz (asiatischehornisse.ch) und Frankreich (frelonasiatique.fr, stopvelutina.fr, stopvespa.fr) hinzugefügt."
-        },
-        {
-          "title": "Optimierter Beobachtungs-Cache",
-          "description": "Verbesserte Zuverlässigkeit des Caches für öffentliche Stockbeobachtungen."
-        },
-        {
-          "title": "Korrektur der Firmennamen-Länge",
-          "description": "Firmennamen entsprechen nun der maximalen Zeichenanzahl in der Datenbank."
-        },
-        {
-          "title": "Aktualisierung des Dropbox-Tokens",
-          "description": "Zeitpunkt der Token-Aktualisierung korrigiert, um gültige Anmeldedaten für Dropbox-Verbindungen sicherzustellen."
-        },
-        {
-          "title": "Aktuelle Kartendarstellung von Beobachtungen",
-          "description": "Die Karte zeigt nun nur noch Beobachtungen der letzten 60 Tage an."
+          "title": "Korrektur des Soft-Delete-Zeitstempels",
+          "description": "Fehlerhafte Löschzeitstempel bei aktiven Datensätzen wurden behoben. Nur tatsächliche Löschungen setzen nun den deleted_at-Zeitstempel."
         }
       ]
     },
@@ -5529,38 +5569,36 @@
       ]
     },
     {
-      "version": "btree-server-7.9.1",
+      "version": "btree-server-7.9.0",
       "date": "2026-10-06",
       "items": [
         {
-          "title": "CDN-Ursprungseinrichtung",
-          "description": "API-Anfragen werden nun über Bunny-CDN-Ursprünge mit Geheimschlüssel-Authentifizierung geleitet, um Leistung und Sicherheit zu verbessern."
+          "title": "Öffentliche Daten CDN-bereit",
+          "description": "Öffentliche Stockbeobachtungen sind nun für die Auslieferung über ein Content Delivery Network vorbereitet."
         },
         {
-          "title": "Korrektur des Soft-Delete-Zeitstempels",
-          "description": "Fehlerhafte Löschzeitstempel bei aktiven Datensätzen wurden behoben. Nur tatsächliche Löschungen setzen nun den deleted_at-Zeitstempel."
-        }
-      ]
-    },
-    {
-      "version": "btree-client-7.7.0",
-      "date": "2026-09-14",
-      "items": [
-        {
-          "title": "MCP-Client-Zugriff",
-          "description": "Verbinden Sie KI-Clients wie ChatGPT, Claude oder VS Code über das Model Context Protocol (MCP) mit b.tree. Verwalten Sie aktive Verbindungen und widerrufen Sie Zugriffe in Ihren Profileinstellungen."
+          "title": "Manuelle Steuerung von Cron-Jobs",
+          "description": "Manueller Auslöser und Ausschalter für geplante Aufgaben hinzugefügt, einschließlich der täglichen und monatlichen Synchronisation von Beobachtungen."
         },
         {
-          "title": "Bunny-CDN-Hosting",
-          "description": "Produktions- und Beta-Frontends werden nun auf Bunny Storage und Bunny CDN bereitgestellt, um Verfügbarkeit und Performance zu verbessern."
+          "title": "Erweiterte Quellen für Vespa velutina",
+          "description": "Direkte Beobachtungsquellen für die Schweiz (asiatischehornisse.ch) und Frankreich (frelonasiatique.fr, stopvelutina.fr, stopvespa.fr) hinzugefügt."
         },
         {
-          "title": "Sequentielle Deployments",
-          "description": "Produktions-Deployments werden nun nacheinander durchgeführt, um überlappende Aktualisierungen zu vermeiden."
+          "title": "Optimierter Beobachtungs-Cache",
+          "description": "Verbesserte Zuverlässigkeit des Caches für öffentliche Stockbeobachtungen."
         },
         {
-          "title": "Asset-Caching",
-          "description": "Inhaltsgehashte Assets erhalten eine langfristige Zwischenspeicherung; andere Dateien nutzen kein Caching, um sicherzustellen, dass Nutzer Updates erhalten."
+          "title": "Korrektur der Firmennamen-Länge",
+          "description": "Firmennamen entsprechen nun der maximalen Zeichenanzahl in der Datenbank."
+        },
+        {
+          "title": "Aktualisierung des Dropbox-Tokens",
+          "description": "Zeitpunkt der Token-Aktualisierung korrigiert, um gültige Anmeldedaten für Dropbox-Verbindungen sicherzustellen."
+        },
+        {
+          "title": "Aktuelle Kartendarstellung von Beobachtungen",
+          "description": "Die Karte zeigt nun nur noch Beobachtungen der letzten 60 Tage an."
         }
       ]
     },
@@ -5591,12 +5629,24 @@
       ]
     },
     {
-      "version": "btree-server-7.7.0",
-      "date": "2026-08-27",
+      "version": "btree-client-7.7.0",
+      "date": "2026-09-14",
       "items": [
         {
-          "title": "Österreichische Velutina-Meldungen",
-          "description": "b.tree importiert nun Sichtungen der Asiatischen Hornisse vom österreichischen Dienst Bienengesundheit.at in die Schädlingskarte."
+          "title": "MCP-Client-Zugriff",
+          "description": "Verbinden Sie KI-Clients wie ChatGPT, Claude oder VS Code über das Model Context Protocol (MCP) mit b.tree. Verwalten Sie aktive Verbindungen und widerrufen Sie Zugriffe in Ihren Profileinstellungen."
+        },
+        {
+          "title": "Bunny-CDN-Hosting",
+          "description": "Produktions- und Beta-Frontends werden nun auf Bunny Storage und Bunny CDN bereitgestellt, um Verfügbarkeit und Performance zu verbessern."
+        },
+        {
+          "title": "Sequentielle Deployments",
+          "description": "Produktions-Deployments werden nun nacheinander durchgeführt, um überlappende Aktualisierungen zu vermeiden."
+        },
+        {
+          "title": "Asset-Caching",
+          "description": "Inhaltsgehashte Assets erhalten eine langfristige Zwischenspeicherung; andere Dateien nutzen kein Caching, um sicherzustellen, dass Nutzer Updates erhalten."
         }
       ]
     },
@@ -5607,6 +5657,34 @@
         {
           "title": "Neue Quelle für Schädlingskarte",
           "description": "Die Verbreitungskarte der Asiatischen Hornisse (Vespa velutina) enthält nun auch Daten von bienengesundheit.at neben der bestehenden Quelle PatriNat."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.7.0",
+      "date": "2026-08-27",
+      "items": [
+        {
+          "title": "Österreichische Velutina-Meldungen",
+          "description": "b.tree importiert nun Sichtungen der Asiatischen Hornisse vom österreichischen Dienst Bienengesundheit.at in die Schädlingskarte."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.5.1",
+      "date": "2026-08-16",
+      "items": [
+        {
+          "title": "Feste Tabellensortierung",
+          "description": "Tabellenspalten werden jetzt korrekt in aufsteigender oder absteigender Reihenfolge sortiert, wie ausgewählt."
+        },
+        {
+          "title": "Ausgerichtete sortierbare Spalten",
+          "description": "Verbesserte optische Ausrichtung sortierbarer Spalten in allen Tabellen."
+        },
+        {
+          "title": "Nicht unterstützte Sortierung deaktiviert",
+          "description": "Sortieroptionen für Spalten, die in der Chargenverwaltung, bei Kontrollen, Fütterungen und Ernten nicht unterstützt werden, wurden entfernt."
         }
       ]
     },
@@ -5653,20 +5731,20 @@
       ]
     },
     {
-      "version": "btree-client-7.5.1",
-      "date": "2026-08-16",
+      "version": "btree-client-7.5.0",
+      "date": "2026-08-11",
       "items": [
         {
-          "title": "Feste Tabellensortierung",
-          "description": "Tabellenspalten werden jetzt korrekt in aufsteigender oder absteigender Reihenfolge sortiert, wie ausgewählt."
+          "title": "Wachsbestandsanpassungen",
+          "description": "Ein neues Formular ermöglicht es Ihnen, Anpassungen Ihres Wachsbestands mit Notizen zu dokumentieren, die die Änderung erklären."
         },
         {
-          "title": "Ausgerichtete sortierbare Spalten",
-          "description": "Verbesserte optische Ausrichtung sortierbarer Spalten in allen Tabellen."
+          "title": "Wachsnotizen sichtbar",
+          "description": "Bestandsnotizen werden jetzt in der Wachstabelle angezeigt, sodass Sie nachvollziehen können, warum Anpassungen vorgenommen wurden."
         },
         {
-          "title": "Nicht unterstützte Sortierung deaktiviert",
-          "description": "Sortieroptionen für Spalten, die in der Chargenverwaltung, bei Kontrollen, Fütterungen und Ernten nicht unterstützt werden, wurden entfernt."
+          "title": "Inventur in der Chargenverwaltung",
+          "description": "Geben Sie den tatsächlich gezählten Gesamtbestand ein; b.tree berechnet daraus automatisch den erforderlichen Wareneingang oder Warenausgang."
         }
       ]
     },
@@ -5689,20 +5767,12 @@
       ]
     },
     {
-      "version": "btree-client-7.5.0",
-      "date": "2026-08-11",
+      "version": "btree-client-7.4.1",
+      "date": "2026-08-05",
       "items": [
         {
-          "title": "Wachsbestandsanpassungen",
-          "description": "Ein neues Formular ermöglicht es Ihnen, Anpassungen Ihres Wachsbestands mit Notizen zu dokumentieren, die die Änderung erklären."
-        },
-        {
-          "title": "Wachsnotizen sichtbar",
-          "description": "Bestandsnotizen werden jetzt in der Wachstabelle angezeigt, sodass Sie nachvollziehen können, warum Anpassungen vorgenommen wurden."
-        },
-        {
-          "title": "Inventur in der Chargenverwaltung",
-          "description": "Geben Sie den tatsächlich gezählten Gesamtbestand ein; b.tree berechnet daraus automatisch den erforderlichen Wareneingang oder Warenausgang."
+          "title": "Präzise Bienenstockdaten",
+          "description": "Behoben, wie die App Statistiken ausliest und anzeigt, sodass Zahlen und Diagramme nun mit den tatsächlichen Stockaufzeichnungen übereinstimmen."
         }
       ]
     },
@@ -5717,42 +5787,12 @@
       ]
     },
     {
-      "version": "btree-client-7.4.1",
-      "date": "2026-08-05",
-      "items": [
-        {
-          "title": "Präzise Bienenstockdaten",
-          "description": "Behoben, wie die App Statistiken ausliest und anzeigt, sodass Zahlen und Diagramme nun mit den tatsächlichen Stockaufzeichnungen übereinstimmen."
-        }
-      ]
-    },
-    {
-      "version": "btree-client-7.4.0",
+      "version": "btree-server-7.5.1",
       "date": "2026-08-04",
       "items": [
         {
-          "title": "Wachsbuchführung",
-          "description": "Erfassen und verfolgen Sie die Wachsproduktion, Käufe und den Verbrauch direkt in der App."
-        },
-        {
-          "title": "Völkeranzahl umschalten",
-          "description": "Zeigen oder verbergen Sie die Anzahl der Völker in den Statistiken mit einem einfachen Schalter."
-        },
-        {
-          "title": "Korrekturen für Mobilgeräte",
-          "description": "Dialogfenster werden jetzt korrekt auf mobilen Geräten angezeigt."
-        },
-        {
-          "title": "Klare Fehlermeldungen",
-          "description": "Fehlermeldungen sind jetzt verständlicher und detaillierter."
-        },
-        {
-          "title": "Optimierte Wachsformulare",
-          "description": "Die Größe der Wachs-Formulare wurde für eine bessere Bedienbarkeit angepasst."
-        },
-        {
-          "title": "Vereinfachte Zahlungen",
-          "description": "Stripe-Checkout entfernt – alle Spenden werden jetzt direkt abgewickelt."
+          "title": "Schnellere Bienenstock-Berichte",
+          "description": "Die Erstellung von Statistiken für Bienenstände und Völker erfolgt nun mit optimierten Datenbankabfragen, was die Wartezeit bei großen Vorgängen verkürzt."
         }
       ]
     },
@@ -5795,12 +5835,32 @@
       ]
     },
     {
-      "version": "btree-server-7.5.1",
+      "version": "btree-client-7.4.0",
       "date": "2026-08-04",
       "items": [
         {
-          "title": "Schnellere Bienenstock-Berichte",
-          "description": "Die Erstellung von Statistiken für Bienenstände und Völker erfolgt nun mit optimierten Datenbankabfragen, was die Wartezeit bei großen Vorgängen verkürzt."
+          "title": "Wachsbuchführung",
+          "description": "Erfassen und verfolgen Sie die Wachsproduktion, Käufe und den Verbrauch direkt in der App."
+        },
+        {
+          "title": "Völkeranzahl umschalten",
+          "description": "Zeigen oder verbergen Sie die Anzahl der Völker in den Statistiken mit einem einfachen Schalter."
+        },
+        {
+          "title": "Korrekturen für Mobilgeräte",
+          "description": "Dialogfenster werden jetzt korrekt auf mobilen Geräten angezeigt."
+        },
+        {
+          "title": "Klare Fehlermeldungen",
+          "description": "Fehlermeldungen sind jetzt verständlicher und detaillierter."
+        },
+        {
+          "title": "Optimierte Wachsformulare",
+          "description": "Die Größe der Wachs-Formulare wurde für eine bessere Bedienbarkeit angepasst."
+        },
+        {
+          "title": "Vereinfachte Zahlungen",
+          "description": "Stripe-Checkout entfernt – alle Spenden werden jetzt direkt abgewickelt."
         }
       ]
     },
@@ -5829,6 +5889,16 @@
         {
           "title": "Optimierte Infrastruktur",
           "description": "Wir haben ungenutzte Server-Infrastruktur in den USA entfernt, um die Betriebskosten zu senken."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.3.1",
+      "date": "2026-06-12",
+      "items": [
+        {
+          "title": "Behoben",
+          "description": "Ein Problem wurde behoben, bei dem Zahlen in Textform in den Beobachtungsdaten nicht korrekt in Zahlen umgewandelt wurden."
         }
       ]
     },
@@ -5873,12 +5943,16 @@
       ]
     },
     {
-      "version": "btree-server-7.3.1",
-      "date": "2026-06-12",
+      "version": "btree-client-7.2.0",
+      "date": "2026-05-07",
       "items": [
         {
-          "title": "Behoben",
-          "description": "Ein Problem wurde behoben, bei dem Zahlen in Textform in den Beobachtungsdaten nicht korrekt in Zahlen umgewandelt wurden."
+          "title": "Neue Funktion",
+          "description": "In den Bienenständen kann nun die Höhe über dem Meeresspiegel erfasst werden."
+        },
+        {
+          "title": "Verbesserung",
+          "description": "Die Premium-Zahlungsseite wurde für mobile Geräte optimiert."
         }
       ]
     },
@@ -5901,30 +5975,6 @@
       ]
     },
     {
-      "version": "btree-client-7.2.0",
-      "date": "2026-05-07",
-      "items": [
-        {
-          "title": "Neue Funktion",
-          "description": "In den Bienenständen kann nun die Höhe über dem Meeresspiegel erfasst werden."
-        },
-        {
-          "title": "Verbesserung",
-          "description": "Die Premium-Zahlungsseite wurde für mobile Geräte optimiert."
-        }
-      ]
-    },
-    {
-      "version": "btree-client-7.1.1",
-      "date": "2026-04-30",
-      "items": [
-        {
-          "title": "Behebung",
-          "description": "Die Zahlung über den Dienst wurde für alle Geräte wieder aktiviert, nachdem sie versehentlich deaktiviert worden war."
-        }
-      ]
-    },
-    {
       "version": "btree-server-7.1.1",
       "date": "2026-04-30",
       "items": [
@@ -5939,6 +5989,16 @@
         {
           "title": "Technische Änderung",
           "description": "Debug-Protokolle aus der Anwendung entfernt."
+        }
+      ]
+    },
+    {
+      "version": "btree-client-7.1.1",
+      "date": "2026-04-30",
+      "items": [
+        {
+          "title": "Behebung",
+          "description": "Die Zahlung über den Dienst wurde für alle Geräte wieder aktiviert, nachdem sie versehentlich deaktiviert worden war."
         }
       ]
     },
@@ -5995,22 +6055,22 @@
       ]
     },
     {
-      "version": "btree-server-7.0.0",
-      "date": "2026-04-17",
-      "items": [
-        {
-          "title": "Wartung",
-          "description": "Interne Verbesserungen und Wartungsupdates."
-        }
-      ]
-    },
-    {
       "version": "btree-client-7.0.0",
       "date": "2026-04-17",
       "items": [
         {
           "title": "Neue Funktion",
           "description": "Ab sofort werden dir die Versionshinweise nach einem App-Update automatisch auf Deutsch angezeigt."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.0.0",
+      "date": "2026-04-17",
+      "items": [
+        {
+          "title": "Wartung",
+          "description": "Interne Verbesserungen und Wartungsupdates."
         }
       ]
     },
