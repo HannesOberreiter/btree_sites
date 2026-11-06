@@ -1,6 +1,36 @@
 {
   "en": [
     {
+      "version": "btree-client-7.10.0",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Book Stock from Tasks",
+          "description": "Tasks can now automatically book stock movements when saved."
+        },
+        {
+          "title": "Stock Movements Renamed",
+          "description": "Stock entries are now labeled as stock movements throughout the interface."
+        },
+        {
+          "title": "Stock in Multi-Edit",
+          "description": "Stock booking is now available when editing multiple tasks simultaneously."
+        },
+        {
+          "title": "Stock Change Confirmation",
+          "description": "The save confirmation message now displays the stock change that was booked."
+        },
+        {
+          "title": "Optional Best Before Date",
+          "description": "The best before date is now optional when recording stock movements."
+        },
+        {
+          "title": "Stock Menu Position",
+          "description": "The stock selection menu now opens below the type field."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.11.0",
       "date": "2026-11-05",
       "items": [
@@ -5180,6 +5210,36 @@
     }
   ],
   "de": [
+    {
+      "version": "btree-client-7.10.0",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Lagerbuchungen aus Aufgaben",
+          "description": "Aufgaben können jetzt beim Speichern automatisch Lagerbuchungen vornehmen."
+        },
+        {
+          "title": "Lagerbuchungen umbenannt",
+          "description": "Lagereinträge werden jetzt in der gesamten Oberfläche als Lagerbuchungen bezeichnet."
+        },
+        {
+          "title": "Lager im Mehrfach-Edit",
+          "description": "Die Lagerbuchung ist jetzt verfügbar, wenn mehrere Aufgaben gleichzeitig bearbeitet werden."
+        },
+        {
+          "title": "Bestätigung der Lagerbuchung",
+          "description": "Die Speicherbestätigung zeigt jetzt die vorgenommene Lagerbuchung an."
+        },
+        {
+          "title": "Optionales Mindesthaltbarkeitsdatum",
+          "description": "Das Mindesthaltbarkeitsdatum ist jetzt beim Erfassen von Lagerbuchungen optional."
+        },
+        {
+          "title": "Position des Lagermenüs",
+          "description": "Das Lagerauswahlmenü öffnet sich jetzt unterhalb des Typfelds."
+        }
+      ]
+    },
     {
       "version": "btree-server-7.11.0",
       "date": "2026-11-05",
