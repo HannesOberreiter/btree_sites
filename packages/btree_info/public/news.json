@@ -31,6 +31,40 @@
       ]
     },
     {
+      "version": "btree-server-7.12.0",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Automatic Stock Booking from Tasks",
+          "description": "Completed tasks can now automatically book stock movements into or out of inventory based on recipes configured for each task type."
+        },
+        {
+          "title": "Stock Movements Linked to Tasks",
+          "description": "Stock movements now show which task (checkup, feeding, harvest, or treatment) created them, and editing a stock movement manually removes this link."
+        },
+        {
+          "title": "Custom Units for Task Types",
+          "description": "Feed, treatment, and harvest types now support an optional custom unit that appears next to the task amount."
+        },
+        {
+          "title": "WizBee AI Model Upgrade",
+          "description": "WizBee now uses Mistral Large 4 for conversations and Voxtral Transcribe 3 for voice note transcription."
+        },
+        {
+          "title": "WizBee Reports Task Amounts",
+          "description": "WizBee tool results now include the stored amounts from hive tasks when answering questions."
+        },
+        {
+          "title": "Voice Notes Billed by Minute",
+          "description": "WizBee voice note transcription costs are now calculated per minute of audio instead of by token usage."
+        },
+        {
+          "title": "Stock Movement Edit Permissions",
+          "description": "Read-only user roles can no longer update stock movements; only admin and user roles retain edit access."
+        }
+      ]
+    },
+    {
       "version": "btree-server-7.11.0",
       "date": "2026-11-05",
       "items": [
@@ -5237,6 +5271,40 @@
         {
           "title": "Position des Lagermenüs",
           "description": "Das Lagerauswahlmenü öffnet sich jetzt unterhalb des Typfelds."
+        }
+      ]
+    },
+    {
+      "version": "btree-server-7.12.0",
+      "date": "2026-11-06",
+      "items": [
+        {
+          "title": "Automatische Lagerbuchung aus Aufgaben",
+          "description": "Abgeschlossene Aufgaben können jetzt automatisch Lagerbuchungen in das Lager hinein oder heraus vornehmen, basierend auf Rezepten, die für jeden Aufgabentyp konfiguriert sind."
+        },
+        {
+          "title": "Lagerbuchungen mit Aufgaben verknüpft",
+          "description": "Lagerbuchungen zeigen jetzt, welche Aufgabe (Kontrolle, Fütterung, Ernte oder Behandlung) sie erstellt hat, und das manuelle Bearbeiten einer Lagerbuchung entfernt diese Verknüpfung."
+        },
+        {
+          "title": "Benutzerdefinierte Einheiten für Aufgabentypen",
+          "description": "Fütterungs-, Behandlungs- und Erntetypen unterstützen jetzt eine optionale benutzerdefinierte Einheit, die neben der Aufgabenmenge angezeigt wird."
+        },
+        {
+          "title": "WizBee KI-Modell-Upgrade",
+          "description": "WizBee verwendet jetzt Mistral Large 4 für Gespräche und Voxtral Transcribe 3 für die Transkription von Sprachnotizen."
+        },
+        {
+          "title": "WizBee meldet Aufgabenmengen",
+          "description": "WizBee-Tool-Ergebnisse enthalten jetzt die gespeicherten Mengen aus Stockaufgaben bei der Beantwortung von Fragen."
+        },
+        {
+          "title": "Sprachnotizen pro Minute abgerechnet",
+          "description": "Die Kosten für die Transkription von WizBee-Sprachnotizen werden jetzt pro Minute Audio statt nach Token-Verbrauch berechnet."
+        },
+        {
+          "title": "Bearbeitungsberechtigungen für Lagerbuchungen",
+          "description": "Benutzerrollen mit Lesezugriff können Lagerbuchungen nicht mehr aktualisieren; nur Admin- und Benutzerrollen behalten den Bearbeitungszugriff."
         }
       ]
     },
