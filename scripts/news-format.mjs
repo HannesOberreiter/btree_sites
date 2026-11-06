@@ -74,3 +74,14 @@ export function responseText(content) {
     .map((chunk) => chunk.text)
     .join("");
 }
+
+// Newest first. Releases of one day are ordered by their publish time.
+export function sortNewsEntries(entries, publishedAtByVersion) {
+  return entries.sort(
+    (a, b) =>
+      b.date.localeCompare(a.date) ||
+      (publishedAtByVersion.get(b.version) || "").localeCompare(
+        publishedAtByVersion.get(a.version) || "",
+      ),
+  );
+}

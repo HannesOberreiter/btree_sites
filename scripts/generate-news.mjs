@@ -24,8 +24,12 @@
 import fs from "node:fs";
 import path from "node:path";
 
-import { buildCompareContext } from "./news-context.mjs";
-import { buildFallbackItems, responseText } from "./news-format.mjs";
+import { buildCompareContext, scopeCompareToPath } from "./news-context.mjs";
+import {
+  buildFallbackItems,
+  responseText,
+  sortNewsEntries,
+} from "./news-format.mjs";
 import {
   SYSTEM_PROMPT_EN,
   SYSTEM_PROMPT_TRANSLATE,
@@ -46,8 +50,8 @@ const NEWS_PUBLISH_SITE_URL = process.env.NEWS_PUBLISH_SITE_URL || "https://btre
 // btree-client-v7.10.1 stay in the archived btree_vue repository.
 const REPOS = [
   { name: "btree_vue", tagPrefix: "btree-client-v" },
-  { name: "btree", tagPrefix: "btree-client-v" },
-  { name: "btree", tagPrefix: "btree-server-v" },
+  { name: "btree", tagPrefix: "btree-client-v", path: "apps/web" },
+  { name: "btree", tagPrefix: "btree-server-v", path: "apps/server" },
 ];
 const OUTPUT_PATH = "packages/btree_info/public/news.json";
 const CHANGELOG_PATH = "packages/btree_info/public/changelog.json";
@@ -99,14 +103,28 @@ async function fetchAllReleases(repo, tagPrefix) {
   return releases;
 }
 
-async function fetchCompareContext(repo, baseTag, headTag) {
+async function fetchCompareContext(repo, baseTag, headTag, componentPath) {
   // Empty string means "no compare context available" to callers.
   if (!baseTag || !headTag) return "";
   const base = encodeURIComponent(baseTag);
   const head = encodeURIComponent(headTag);
   const url = `https://api.github.com/repos/${OWNER}/${repo}/compare/${base}...${head}`;
   const data = await fetchGitHubJson(url);
-  return data ? buildCompareContext(data) : "";
+  if (!data) return "";
+  if (!componentPath) return buildCompareContext(data);
+
+  // The compare returns its commits in pages.
+  const commits = [];
+  for (let page = 1; commits.length < data.total_commits && page <= 30; page++) {
+    const next = await fetchGitHubJson(`${url}?per_page=100&page=${page}`);
+    if (!next?.commits?.length) break;
+    commits.push(...next.commits);
+  }
+  const commitsUrl = `https://api.github.com/repos/${OWNER}/${repo}/commits?sha=${head}&path=${encodeURIComponent(componentPath)}&per_page=100`;
+  const pathCommits = (await fetchGitHubJson(commitsUrl)) || [];
+  return buildCompareContext(
+    scopeCompareToPath({ ...data, commits }, componentPath, pathCommits),
+  );
 }
 
 function extractVersion(tagName, tagPrefix) {
@@ -137,6 +155,7 @@ function toEntries(allReleases) {
         repo: release._repo,
         tagName: release.tag_name || "",
         previousTag: release._previousTag || "",
+        componentPath: release._path,
       };
     })
     .filter((e) => e.notes.length > 0)
@@ -178,6 +197,7 @@ async function rewriteRelease(entry) {
     entry.repo,
     entry.previousTag,
     entry.tagName,
+    entry.componentPath,
   );
 
   if (!combinedNotes.trim()) {
@@ -366,12 +386,13 @@ async function main() {
   // Fetch GitHub releases
   console.log("Fetching releases from GitHub...");
   const allReleases = [];
-  for (const { name: repo, tagPrefix } of REPOS) {
+  for (const { name: repo, tagPrefix, path: componentPath } of REPOS) {
     const releases = await fetchAllReleases(repo, tagPrefix);
     console.log(`  ${repo} (${tagPrefix}): ${releases.length} releases`);
     for (const r of releases) {
       r._repo = repo;
       r._tagPrefix = tagPrefix;
+      r._path = componentPath;
     }
     allReleases.push(...releases);
   }
@@ -389,6 +410,12 @@ async function main() {
   }
 
   const entries = toEntries(allReleases);
+  const publishedAtByVersion = new Map(
+    allReleases.map((release) => [
+      extractVersion(release.tag_name || "unknown", release._tagPrefix),
+      release.published_at || release.created_at || "",
+    ]),
+  );
 
   // Filter out already processed versions
   const toProcess = entries.filter((e) => !existingVersions.has(e.version));
@@ -438,9 +465,8 @@ async function main() {
     }
   }
 
-  // Sort by date descending
-  newEnEntries.sort((a, b) => b.date.localeCompare(a.date));
-  newDeEntries.sort((a, b) => b.date.localeCompare(a.date));
+  sortNewsEntries(newEnEntries, publishedAtByVersion);
+  sortNewsEntries(newDeEntries, publishedAtByVersion);
 
   const output = {
     en: newEnEntries,
@@ -479,7 +505,7 @@ async function main() {
   }
 
   if (changelogAdded > 0) {
-    changelog.sort((a, b) => b.date.localeCompare(a.date));
+    sortNewsEntries(changelog, publishedAtByVersion);
     fs.writeFileSync(changelogFile, JSON.stringify(changelog, null, 2) + "\n");
     console.log(`Added ${changelogAdded} entries to ${CHANGELOG_PATH}`);
   }

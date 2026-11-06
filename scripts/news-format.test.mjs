@@ -1,7 +1,11 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { buildFallbackItems, responseText } from "./news-format.mjs";
+import {
+  buildFallbackItems,
+  responseText,
+  sortNewsEntries,
+} from "./news-format.mjs";
 
 test("feature fallback publishes one clean user-facing item", () => {
   const notes = `## [7.3.0](https://github.com/HannesOberreiter/btree_vue/compare/btree-client-v7.2.1...btree-client-v7.3.0) (2026-07-18)
@@ -50,4 +54,29 @@ test("response text is empty without text chunks", () => {
     "",
   );
   assert.equal(responseText(null), "");
+});
+
+test("news entries of one day are sorted newest first by publish time", () => {
+  const entries = [
+    { version: "btree-server-7.11.0", date: "2026-11-05" },
+    { version: "btree-client-7.10.0", date: "2026-11-06" },
+    { version: "btree-client-7.10.3", date: "2026-11-06" },
+    { version: "btree-server-7.12.1", date: "2026-11-06" },
+  ];
+  const publishedAt = new Map([
+    ["btree-server-7.11.0", "2026-11-05T11:19:00Z"],
+    ["btree-client-7.10.0", "2026-11-06T07:19:00Z"],
+    ["btree-client-7.10.3", "2026-11-06T15:00:05Z"],
+    ["btree-server-7.12.1", "2026-11-06T15:00:03Z"],
+  ]);
+
+  assert.deepEqual(
+    sortNewsEntries(entries, publishedAt).map((e) => e.version),
+    [
+      "btree-client-7.10.3",
+      "btree-server-7.12.1",
+      "btree-client-7.10.0",
+      "btree-server-7.11.0",
+    ],
+  );
 });

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { buildCompareContext } from "./news-context.mjs";
+import { buildCompareContext, scopeCompareToPath } from "./news-context.mjs";
 
 test("compare context includes source patches and skips generated files", () => {
   const context = buildCompareContext({
@@ -88,4 +88,34 @@ test("compare context continues after a patch exceeds remaining budget", () => {
 
   assert.doesNotMatch(context, /src\/too-large\.ts\n\+y/);
   assert.match(context, /src\/later-small\.ts\n\+important later evidence/);
+});
+
+test("compare scope keeps only commits and files of the app path", () => {
+  const commit = (sha, message) => ({ sha, commit: { message } });
+  const scoped = scopeCompareToPath(
+    {
+      commits: [
+        commit("old-web", "feat: sign in with Apple"),
+        commit("server-fix", "fix(wizbee): keep results small"),
+        commit("release", "Merge pull request #283"),
+      ],
+      files: [
+        { filename: "apps/web/src/App.vue" },
+        { filename: "apps/server/src/app.ts" },
+        { filename: "apps/server-tools/x.ts" },
+      ],
+    },
+    "apps/server",
+    // Path history lists commits outside the compare range too.
+    [commit("server-fix"), commit("older-server", "fix: older")],
+  );
+
+  assert.deepEqual(
+    scoped.commits.map((c) => c.sha),
+    ["server-fix"],
+  );
+  assert.deepEqual(
+    scoped.files.map((f) => f.filename),
+    ["apps/server/src/app.ts"],
+  );
 });

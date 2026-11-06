@@ -99,44 +99,6 @@
       ]
     },
     {
-      "version": "btree-server-7.12.1",
-      "date": "2026-11-06",
-      "items": [
-        {
-          "title": "Limit WizBee Documentation Results",
-          "description": "WizBee now keeps documentation search results below the size limit to prevent errors."
-        },
-        {
-          "title": "Mollie Payment Provider",
-          "description": "Added Mollie as a new payment provider option."
-        },
-        {
-          "title": "PWA Install Support",
-          "description": "The web app can now be installed as a Progressive Web App on supported devices."
-        },
-        {
-          "title": "Fix Keyboard Navigation",
-          "description": "Prevented unintended keyboard navigation on detail pages."
-        },
-        {
-          "title": "Hide Inactive Queens",
-          "description": "The virgin queen table no longer displays inactive queens."
-        },
-        {
-          "title": "Longer Hive and Queen Names",
-          "description": "Increased the maximum character length allowed for hive and queen names."
-        },
-        {
-          "title": "Sign in with Apple",
-          "description": "Added Sign in with Apple as a login option."
-        },
-        {
-          "title": "Reordered Interface Buttons",
-          "description": "Changed the order of buttons in the user interface."
-        }
-      ]
-    },
-    {
       "version": "btree-server-7.11.0",
       "date": "2026-11-05",
       "items": [
@@ -5411,44 +5373,6 @@
         {
           "title": "Begrenzung der WizBee-Dokumentationsgröße",
           "description": "Die von WizBee zurückgegebenen Dokumentationsergebnisse bleiben jetzt unter einem maximalen Größenlimit, wobei große Abschnitte gekürzt und Abschnittsübersichten angezeigt werden, wenn Anfragen nicht auf spezifische Inhalte zutreffen."
-        }
-      ]
-    },
-    {
-      "version": "btree-server-7.12.1",
-      "date": "2026-11-06",
-      "items": [
-        {
-          "title": "WizBee-Dokumentationsergebnisse begrenzen",
-          "description": "WizBee hält die Dokumentationssuchergebnisse jetzt unter dem Größenlimit, um Fehler zu vermeiden."
-        },
-        {
-          "title": "Mollie-Zahlungsanbieter",
-          "description": "Mollie wurde als neue Zahlungsanbieter-Option hinzugefügt."
-        },
-        {
-          "title": "PWA-Installationsunterstützung",
-          "description": "Die Web-App kann jetzt als Progressive Web App auf unterstützten Geräten installiert werden."
-        },
-        {
-          "title": "Tastaturnavigation korrigieren",
-          "description": "Unbeabsichtigte Tastaturnavigation auf Detailseiten wurde verhindert."
-        },
-        {
-          "title": "Inaktive Königinnen ausblenden",
-          "description": "Die Jungköniginnen-Tabelle zeigt keine inaktiven Königinnen mehr an."
-        },
-        {
-          "title": "Längere Stock- und Königinnennamen",
-          "description": "Die maximal zulässige Zeichenlänge für Stock- und Königinnennamen wurde erhöht."
-        },
-        {
-          "title": "Mit Apple anmelden",
-          "description": "Mit Apple anmelden wurde als Anmeldeoption hinzugefügt."
-        },
-        {
-          "title": "Schaltflächen neu angeordnet",
-          "description": "Die Reihenfolge der Schaltflächen in der Benutzeroberfläche wurde geändert."
         }
       ]
     },

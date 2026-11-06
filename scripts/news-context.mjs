@@ -71,3 +71,20 @@ export function buildCompareContext(data) {
   }
   return sections.join("\n\n");
 }
+
+// In the monorepo, a compare between two tags of one app also holds commits
+// and files of the other app, and the btree_vue history that was merged in.
+// Keep only the files under the app path, and the commits of the compare that
+// the path-filtered history also lists. data.commits must hold all commits of
+// the compare, not only the first page.
+export function scopeCompareToPath(data, componentPath, pathCommits) {
+  const prefix = `${componentPath.replace(/\/$/, "")}/`;
+  const files = Array.isArray(data?.files) ? data.files : [];
+  const commits = Array.isArray(data?.commits) ? data.commits : [];
+  const pathShas = new Set(pathCommits.map((commit) => commit.sha));
+  return {
+    ...data,
+    commits: commits.filter((commit) => pathShas.has(commit.sha)),
+    files: files.filter((file) => (file.filename || "").startsWith(prefix)),
+  };
+}
