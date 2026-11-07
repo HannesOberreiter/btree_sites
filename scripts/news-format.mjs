@@ -83,6 +83,15 @@ export function entryVersions(entry) {
     : [entry.version];
 }
 
+// Stable HTML id of a news entry. RSS readers use it to tell entries apart.
+// A day entry keeps its id when later releases of the day join it.
+export function newsAnchor(entry) {
+  const id = Array.isArray(entry.versions)
+    ? entry.date
+    : `${entry.date}-${entry.version}`;
+  return `news-${id}`.replace(/[^A-Za-z0-9-]+/g, '-');
+}
+
 const COMPONENT_LABELS = {
   en: { client: 'Web app', server: 'Server' },
   de: { client: 'Web-App', server: 'Server' },

@@ -1,5 +1,5 @@
 ---
-import { entryVersions } from '../../../../scripts/news-format.mjs';
+import { entryVersions, newsAnchor } from '../../../../scripts/news-format.mjs';
 import newsData from '../../public/news.json';
 
 interface NewsItem {
@@ -112,7 +112,10 @@ const pages = getPageNumbers();
 
   <ol class="news-entries">
     {pageEntries.map((entry) => (
-      <li class:list={['news-entry', `news-entry-${getEntryType(entry)}`]}>
+      <li
+        id={newsAnchor(entry)}
+        class:list={['news-entry', `news-entry-${getEntryType(entry)}`]}
+      >
         <article>
           <header class="news-entry-header">
             <h2>

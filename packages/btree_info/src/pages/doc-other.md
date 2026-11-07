@@ -1,6 +1,6 @@
 ---
 title: Other
-description: 'Dokumentation und Hilfe zur Imkerei Software'
+description: 'Documentation and Help for Beekeeping Software and Application'
 layout: '../layouts/IndexLayout.astro'
 lang: 'en'
 ---

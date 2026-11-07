@@ -1,7 +1,8 @@
 ---
-import type { Graph } from 'schema-dts';
+import type { BreadcrumbList, Graph, Offer } from 'schema-dts';
 
 import { OPEN_GRAPH, SITE } from '../config';
+import { FEEDS } from '../news-feed';
 import Schema from './SchemaLD.astro';
 
 type Frontmatter = {
@@ -35,6 +36,34 @@ const sameAs = [
   'https://www.facebook.com/btree.at',
   'https://www.wiz-bee.com/',
 ];
+
+/* Prices of the price page (price.md and de/price.md). Keep them in sync. */
+function offers(priceURL: string): Offer[] {
+  return [
+    {
+      '@type': 'Offer',
+      name: 'Basic',
+      price: '0',
+      priceCurrency: 'EUR',
+      url: priceURL,
+      availability: 'https://schema.org/InStock',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Premium',
+      price: '55.00',
+      priceCurrency: 'EUR',
+      url: priceURL,
+      availability: 'https://schema.org/InStock',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '55.00',
+        priceCurrency: 'EUR',
+        billingDuration: 'P1Y',
+      },
+    },
+  ];
+}
 
 /* Schema.org structured data for the page */
 const schemaEN: Graph['@graph'] = [
@@ -95,11 +124,7 @@ const schemaEN: Graph['@graph'] = [
       audienceType:
         'Professional beekeepers, organic beekeepers, migratory beekeepers, and apiary teams',
     },
-    offers: {
-      '@type': 'Offer',
-      url: 'https://www.btree.at/price/',
-      availability: 'https://schema.org/InStock',
-    },
+    offers: offers('https://www.btree.at/price/'),
     publisher: {
       '@id': 'https://www.btree.at/#organization',
     },
@@ -165,30 +190,12 @@ const schemaDE: Graph['@graph'] = [
       audienceType:
         'Berufsimker, Erwerbsimker, Bio-Imker, Wanderimker und Imkerei-Teams',
     },
-    offers: {
-      '@type': 'Offer',
-      url: 'https://www.btree.at/de/price/',
-      availability: 'https://schema.org/InStock',
-    },
+    offers: offers('https://www.btree.at/de/price/'),
     publisher: {
       '@id': 'https://www.btree.at/#organization',
     },
   },
 ];
-
-const schema: Graph = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    ...(curLoc === 'de' ? schemaDE : schemaEN),
-    {
-      '@type': 'WebPage',
-      name: formattedContentTitle,
-      description: frontmatter.description,
-      url: Astro.url.toString(),
-      inLanguage: curLoc,
-    },
-  ],
-};
 
 /* Generate alternate language URLs for hreflang tags */
 const pathname = Astro.url.pathname;
@@ -212,10 +219,70 @@ if (isGermanPage) {
   const germanPath = pathname === '/' ? '/de/' : `/de${pathname}`;
   germanURL = new URL(germanPath, Astro.site).toString();
 }
+
+/* Breadcrumbs: home page, then one item per path segment */
+const homeURL = new URL(isGermanPage ? '/de/' : '/', Astro.site);
+const segments = pathname
+  .replace(/^\/de(\/|$)/, '/')
+  .split('/')
+  .filter(Boolean);
+const breadcrumb: BreadcrumbList | undefined =
+  segments.length === 0
+    ? undefined
+    : {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: SITE.title,
+            item: homeURL.toString(),
+          },
+          ...segments.map((segment, index) => {
+            const isLast = index === segments.length - 1;
+            return {
+              '@type': 'ListItem' as const,
+              position: index + 2,
+              name: isLast
+                ? (frontmatter.title ?? SITE.title)
+                : segment.charAt(0).toUpperCase() + segment.slice(1),
+              item: isLast
+                ? canonicalURL.toString()
+                : new URL(
+                    `${segments.slice(0, index + 1).join('/')}/`,
+                    homeURL,
+                  ).toString(),
+            };
+          }),
+        ],
+      };
+
+const schema: Graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    ...(curLoc === 'de' ? schemaDE : schemaEN),
+    {
+      '@type': 'WebPage',
+      name: formattedContentTitle,
+      description: frontmatter.description,
+      url: Astro.url.toString(),
+      inLanguage: curLoc,
+    },
+    ...(breadcrumb ? [breadcrumb] : []),
+  ],
+};
+
+const feed = FEEDS[isGermanPage ? 'de' : 'en'];
 ---
 
 <!-- Page Metadata -->
 <link rel="canonical" href={canonicalURL} />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={feed.title}
+  href={new URL(feed.feedPath, Astro.site)}
+/>
 
 <!-- Hreflang Tags for multilingual SEO -->
 <link rel="alternate" hreflang="en" href={englishURL} />

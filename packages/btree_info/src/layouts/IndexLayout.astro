@@ -45,7 +45,7 @@ const title = frontmatter.title
 >
   <head>
     <title data-pagefind-meta="title">{title}</title>
-    <HeadCommon />
+    <HeadCommon frontmatter={frontmatter} />
     {faqSchema && <Schema item={faqSchema} />}
     <style>
       body {

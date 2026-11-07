@@ -5,6 +5,7 @@ import {
   buildFallbackItems,
   buildDayLabel,
   entryVersions,
+  newsAnchor,
   responseText,
   sortNewsEntries,
 } from './news-format.mjs';
@@ -122,5 +123,20 @@ test('day entries sort by the publish time of their newest release', () => {
   assert.deepEqual(
     sortNewsEntries(entries, publishedAt).map((e) => e.version),
     ['x', '1.0.6'],
+  );
+});
+
+test('news anchors stay stable for day entries and unique for old entries', () => {
+  assert.equal(
+    newsAnchor({
+      version: 'Web app 7.10.4',
+      versions: ['btree-client-7.10.4'],
+      date: '2026-11-06',
+    }),
+    'news-2026-11-06',
+  );
+  assert.equal(
+    newsAnchor({ version: 'btree-client-7.9.0', date: '2026-10-01' }),
+    'news-2026-10-01-btree-client-7-9-0',
   );
 });

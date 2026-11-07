@@ -1,6 +1,6 @@
 ---
 title: 'Costs & Price'
-description: 'Premium Membership costs for the Applikation.'
+description: 'Prices of b.tree beekeeping software: Basic for free, Premium for 55 euros per year.'
 layout: '../layouts/MainLayout.astro'
 lang: 'en'
 ---
