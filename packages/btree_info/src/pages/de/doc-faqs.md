@@ -1,9 +1,9 @@
 ---
-title: "FAQs"
-description: "Dokumentation und Hilfe zur Imkerei Software"
-layout: "../../layouts/IndexLayout.astro"
+title: 'FAQs'
+description: 'Dokumentation und Hilfe zur Imkerei Software'
+layout: '../../layouts/IndexLayout.astro'
 faq: true
-lang: "de"
+lang: 'de'
 ---
 
 ### Ich kann die App nicht im Apple iOS AppStore oder Google PlayStore finden
@@ -22,6 +22,7 @@ Die b.tree Imkerei-Applikation ist eine reine Web-Lösung und kann als PWA ([wik
 #### Store Links
 
 - [Android PlayStore](https://play.google.com/store/apps/details?id=com.bnative)
+
 <!-- - [iOS AppStore](https://apps.apple.com/us/app/btree-app-professional-beekeeping-software/id1115267587) -->
 
 ### Aufgabe ist in der Tabelle nicht sichtbar

@@ -1,10 +1,10 @@
 ---
+import BtreeTV from '../assets/BtreeTV.svg?raw';
 import GitHub from '../assets/Github.svg?raw';
 import LinkedIn from '../assets/LinkedIn.svg?raw';
-import BtreeTV from '../assets/BtreeTV.svg?raw';
 
 interface Props {
-  socialclass: string
+  socialclass: string;
 }
 
 const { socialclass } = Astro.props;
@@ -32,7 +32,7 @@ const socialLinks = [
 ---
 
 <div class={`${socialclass} flex flex-row gap-1`} style="list-style: none">
-  {socialLinks.map(link => (
+  {socialLinks.map((link) => (
     <div class="hover:text-green-500 cursor-pointer">
       <a
         href={link.href}

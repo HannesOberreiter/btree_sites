@@ -28,7 +28,8 @@ const {
   basePath = lang === 'de' ? '/de/updates/' : '/updates/',
 } = Astro.props;
 
-const entries = (newsData as Record<'en' | 'de', NewsEntry[]>)[lang] ?? newsData.en;
+const entries =
+  (newsData as Record<'en' | 'de', NewsEntry[]>)[lang] ?? newsData.en;
 const totalPages = Math.max(1, Math.ceil(entries.length / pageSize));
 const currentPage = Math.min(Math.max(1, page), totalPages);
 const start = (currentPage - 1) * pageSize;
@@ -36,7 +37,8 @@ const pageEntries = entries.slice(start, start + pageSize);
 const pageLabel = lang === 'de' ? 'Seite' : 'Page';
 const previousLabel = lang === 'de' ? 'Zurück' : 'Previous';
 const nextLabel = lang === 'de' ? 'Weiter' : 'Next';
-const pageHref = (targetPage: number) => targetPage <= 1 ? basePath : `${basePath}${targetPage}/`;
+const pageHref = (targetPage: number) =>
+  targetPage <= 1 ? basePath : `${basePath}${targetPage}/`;
 
 function getReleaseType(version: string) {
   if (version.startsWith('btree-client')) return 'client';
@@ -62,11 +64,16 @@ function getReleaseGroups(entry: NewsEntry) {
     groups.set(type, [...(groups.get(type) ?? []), getDisplayVersion(version)]);
   }
   const order = ['client', 'server', 'other'];
-  return [...groups].sort(([a], [b]) => order.indexOf(a) - order.indexOf(b)).map(([type, versions]) => ({
-    type,
-    label: getReleaseLabel(type),
-    range: versions.length === 1 ? versions[0] : `${versions[0]}–${versions[versions.length - 1]}`,
-  }));
+  return [...groups]
+    .sort(([a], [b]) => order.indexOf(a) - order.indexOf(b))
+    .map(([type, versions]) => ({
+      type,
+      label: getReleaseLabel(type),
+      range:
+        versions.length === 1
+          ? versions[0]
+          : `${versions[0]}–${versions[versions.length - 1]}`,
+    }));
 }
 
 function getEntryType(entry: NewsEntry) {
@@ -86,23 +93,34 @@ const pages = getPageNumbers();
 ---
 
 <section class="news-list">
-  <nav class="news-pagination news-pagination-top" aria-label="Updates pagination">
-    <span class="news-page-status">{pageLabel} {currentPage} / {totalPages}</span>
+  <nav
+    class="news-pagination news-pagination-top"
+    aria-label="Updates pagination"
+  >
+    <span class="news-page-status">
+      {pageLabel} {currentPage} / {totalPages}
+    </span>
     <div class="news-page-actions">
-      {currentPage > 1 && <a href={pageHref(currentPage - 1)}>{previousLabel}</a>}
-      {currentPage < totalPages && <a href={pageHref(currentPage + 1)}>{nextLabel}</a>}
+      {currentPage > 1 && (
+        <a href={pageHref(currentPage - 1)}>{previousLabel}</a>
+      )}
+      {currentPage < totalPages && (
+        <a href={pageHref(currentPage + 1)}>{nextLabel}</a>
+      )}
     </div>
   </nav>
 
   <ol class="news-entries">
-    {pageEntries.map(entry => (
+    {pageEntries.map((entry) => (
       <li class:list={['news-entry', `news-entry-${getEntryType(entry)}`]}>
         <article>
           <header class="news-entry-header">
             <h2>
-              {getReleaseGroups(entry).map(group => (
+              {getReleaseGroups(entry).map((group) => (
                 <>
-                  <span class:list={['news-badge', `news-badge-${group.type}`]}>{group.label}</span>
+                  <span class:list={['news-badge', `news-badge-${group.type}`]}>
+                    {group.label}
+                  </span>
                   <span>{group.range}</span>
                 </>
               ))}
@@ -110,7 +128,7 @@ const pages = getPageNumbers();
             <time datetime={entry.date}>{entry.date}</time>
           </header>
           <ul>
-            {entry.items.map(item => (
+            {entry.items.map((item) => (
               <li>
                 <strong>{item.title}</strong>
                 <span>{item.description}</span>
@@ -126,7 +144,9 @@ const pages = getPageNumbers();
     {currentPage > 1 && <a href={pageHref(currentPage - 1)}>{previousLabel}</a>}
     {pages.map((targetPage, index) => (
       <>
-        {index > 0 && targetPage - pages[index - 1] > 1 && <span class="news-page-gap">…</span>}
+        {index > 0 && targetPage - pages[index - 1] > 1 && (
+          <span class="news-page-gap">…</span>
+        )}
         <a
           href={pageHref(targetPage)}
           aria-current={targetPage === currentPage ? 'page' : undefined}
@@ -135,7 +155,9 @@ const pages = getPageNumbers();
         </a>
       </>
     ))}
-    {currentPage < totalPages && <a href={pageHref(currentPage + 1)}>{nextLabel}</a>}
+    {currentPage < totalPages && (
+      <a href={pageHref(currentPage + 1)}>{nextLabel}</a>
+    )}
   </nav>
 </section>
 

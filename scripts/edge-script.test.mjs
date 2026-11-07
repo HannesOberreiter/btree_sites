@@ -4,7 +4,10 @@ import { stripTypeScriptTypes } from 'node:module';
 import test from 'node:test';
 import vm from 'node:vm';
 
-const edgeScriptPath = new URL('../packages/btree_info/edge-script.ts', import.meta.url);
+const edgeScriptPath = new URL(
+  '../packages/btree_info/edge-script.ts',
+  import.meta.url,
+);
 const source = await readFile(edgeScriptPath, 'utf8');
 let handler;
 const BunnySDK = {
@@ -18,10 +21,12 @@ const BunnySDK = {
     },
   },
 };
-const executableSource = stripTypeScriptTypes(source.replace(
-  /^import \* as BunnySDK from .*;$/m,
-  'const BunnySDK = globalThis.BunnySDK;',
-));
+const executableSource = stripTypeScriptTypes(
+  source.replace(
+    /^import \* as BunnySDK from .*;$/m,
+    'const BunnySDK = globalThis.BunnySDK;',
+  ),
+);
 
 vm.runInNewContext(executableSource, {
   BunnySDK,
@@ -34,7 +39,10 @@ assert.equal(typeof handler, 'function');
 
 async function request(url) {
   const publicURL = new URL(url);
-  const originURL = new URL(`${publicURL.pathname}${publicURL.search}`, 'http://origin.internal:9000');
+  const originURL = new URL(
+    `${publicURL.pathname}${publicURL.search}`,
+    'http://origin.internal:9000',
+  );
   const originalRequest = new Request(originURL, {
     headers: { host: publicURL.host },
   });
@@ -57,7 +65,9 @@ test('redirects extensionless page URLs to trailing-slash canonicals', async () 
 });
 
 test('preserves query parameters while adding trailing slash', async () => {
-  const { response } = await request('https://www.btree.at/doc-agent?mtm_campaign=test');
+  const { response } = await request(
+    'https://www.btree.at/doc-agent?mtm_campaign=test',
+  );
 
   assert.equal(response.status, 301);
   assert.equal(

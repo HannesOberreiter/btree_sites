@@ -5,7 +5,9 @@ const curLoc = Astro.currentLocale;
 <div class="flex items-center gap-1">
   <button
     class={`bg-transparent border-none px-1 py-1 cursor-pointer text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-300 ${
-      curLoc === 'en' || !curLoc ? 'text-gray-900 dark:text-gray-100 font-bold' : ''
+      curLoc === 'en' || !curLoc
+        ? 'text-gray-900 dark:text-gray-100 font-bold'
+        : ''
     }`}
     data-lang="en"
     title="Switch to English"
@@ -27,21 +29,22 @@ const curLoc = Astro.currentLocale;
 </div>
 
 <script>
-const buttons = document.querySelectorAll('[data-lang]') as NodeListOf<HTMLButtonElement>;
-buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-    changeLanguage(button.dataset.lang!);
+  const buttons = document.querySelectorAll(
+    '[data-lang]',
+  ) as NodeListOf<HTMLButtonElement>;
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      changeLanguage(button.dataset.lang!);
+    });
   });
-});
 
-function changeLanguage(lang: string) {
-  // Set flag to prevent automatic redirects after manual language selection
-  localStorage.setItem('language-preference-set', 'true');
+  function changeLanguage(lang: string) {
+    // Set flag to prevent automatic redirects after manual language selection
+    localStorage.setItem('language-preference-set', 'true');
 
-  const contentPath = window.location.pathname
-    .replace(/^\/(?:en|de)(?=\/|$)/, '') || '/';
-  window.location.pathname = lang === 'en'
-    ? contentPath
-    : `/${lang}${contentPath}`;
-}
+    const contentPath =
+      window.location.pathname.replace(/^\/(?:en|de)(?=\/|$)/, '') || '/';
+    window.location.pathname =
+      lang === 'en' ? contentPath : `/${lang}${contentPath}`;
+  }
 </script>

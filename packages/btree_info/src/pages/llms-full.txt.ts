@@ -1,29 +1,29 @@
 import type { APIRoute } from 'astro';
 
+import newsData from '../../public/news.json';
 // Import raw content of documentation files at build time
 import agentContent from './doc-agent.md?raw';
 import apiContent from './doc-api.md?raw';
 import faqsContent from './doc-faqs.md?raw';
 import firstStepsContent from './doc-first-steps.md?raw';
-import newsData from '../../public/news.json';
 import otherContent from './doc-other.md?raw';
 import indexContent from './index.mdx?raw';
 import priceContent from './price.md?raw';
 
 interface DocFile {
-  rawContent: string
-  title: string
+  rawContent: string;
+  title: string;
 }
 
 interface NewsItem {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
 interface NewsEntry {
-  version: string
-  date: string
-  items: NewsItem[]
+  version: string;
+  date: string;
+  items: NewsItem[];
 }
 
 const SYSTEM_MESSAGE = `# b.tree agent docs
@@ -69,9 +69,15 @@ const PHRASE_REPLACEMENTS: Array<[RegExp, string]> = [
   [/\bvery\b/gi, ''],
   [/\breally\b/gi, ''],
   [/\bfull read and write access\b/gi, 'read/write access'],
-  [/\bthrough a secure, rate-limited, OpenAPI-documented endpoint\b/gi, 'via secure rate-limited OpenAPI endpoint'],
+  [
+    /\bthrough a secure, rate-limited, OpenAPI-documented endpoint\b/gi,
+    'via secure rate-limited OpenAPI endpoint',
+  ],
   [/\bIf you exceed the limit, you'll receive\b/gi, 'Over limit returns'],
-  [/\bThe API key is only displayed once after creation\./g, 'API key shown once after creation.'],
+  [
+    /\bThe API key is only displayed once after creation\./g,
+    'API key shown once after creation.',
+  ],
   [/\bIt cannot be retrieved later\./g, 'Cannot retrieve later.'],
   [/\bNavigate to\b/g, 'Go to'],
   [/\bClick\b/g, 'Select'],
@@ -123,7 +129,10 @@ function extractContent(content: string): string {
   cleanContent = cleanContent.replace(/<ul[^>]*>/g, '');
   cleanContent = cleanContent.replace(/<\/ul>/g, '');
   cleanContent = cleanContent.replace(/<li>([\s\S]*?)<\/li>/g, '- $1');
-  cleanContent = cleanContent.replace(/<a\s+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g, '$2 ($1)');
+  cleanContent = cleanContent.replace(
+    /<a\s+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g,
+    '$2 ($1)',
+  );
   cleanContent = cleanContent.replace(/<!--[\s\S]*?-->/g, '');
   cleanContent = cleanContent.replace(/<hr\s*\/?>/g, '---');
   cleanContent = cleanContent.replace(/<[^>]+>/g, '');
@@ -149,18 +158,23 @@ function compactText(text: string): string {
 
 function compactProseBlock(block: string): string {
   const lines = block.split('\n');
-  const isStructured = lines.some(line => /^\s*(?:#{1,6}\s+|[-*]\s+|\d+\.\s+|>\s*)/.test(line));
+  const isStructured = lines.some((line) =>
+    /^\s*(?:#{1,6}\s+|[-*]\s+|\d+\.\s+|>\s*)/.test(line),
+  );
 
   if (isStructured) {
     return lines
-      .map(line => compactText(line))
+      .map((line) => compactText(line))
       .filter(Boolean)
       .join('\n');
   }
 
   return block
     .split(/(?<=[.!?])\s+/)
-    .filter(sentence => !DROP_SENTENCE_PATTERNS.some(pattern => pattern.test(sentence)))
+    .filter(
+      (sentence) =>
+        !DROP_SENTENCE_PATTERNS.some((pattern) => pattern.test(sentence)),
+    )
     .map(compactText)
     .filter(Boolean)
     .join(' ');
@@ -197,12 +211,18 @@ function compactContent(content: string): string {
 }
 
 function generateLatestNews(limit = 5): string {
-  const entries = (newsData as Record<'en' | 'de', NewsEntry[]>).en.slice(0, limit);
+  const entries = (newsData as Record<'en' | 'de', NewsEntry[]>).en.slice(
+    0,
+    limit,
+  );
 
   return entries
     .map((entry) => {
       const items = entry.items
-        .map(item => `- ${compactText(item.title)}: ${compactText(item.description)}`)
+        .map(
+          (item) =>
+            `- ${compactText(item.title)}: ${compactText(item.description)}`,
+        )
         .join('\n');
       return `### ${entry.version} [${entry.date}]\n${items}`;
     })

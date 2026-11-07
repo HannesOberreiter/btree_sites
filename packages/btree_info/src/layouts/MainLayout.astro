@@ -6,18 +6,24 @@ import Header from '../components/Header.astro';
 import LeftSideBar from '../components/LeftSidebar.astro';
 import PageContent from '../components/PageContent.astro';
 import SearchDialog from '../components/SearchDialog.astro';
-
 import * as CONFIG from '../config';
 
 type Frontmatter = {
-  dir?: string
-  lang?: string
-  seoTitle?: string
-  title?: string
+  dir?: string;
+  lang?: string;
+  seoTitle?: string;
+  title?: string;
 };
 
-const { frontmatter = {}, headings } = Astro.props as { frontmatter?: Frontmatter, headings?: unknown[] };
-const pageTitle = frontmatter.seoTitle ?? (frontmatter.title ? `${frontmatter.title} 🐝 ${CONFIG.SITE.title}` : CONFIG.SITE.title);
+const { frontmatter = {}, headings } = Astro.props as {
+  frontmatter?: Frontmatter;
+  headings?: unknown[];
+};
+const pageTitle =
+  frontmatter.seoTitle ??
+  (frontmatter.title
+    ? `${frontmatter.title} 🐝 ${CONFIG.SITE.title}`
+    : CONFIG.SITE.title);
 ---
 
 <html

@@ -21,63 +21,65 @@
  *   node scripts/generate-news.mjs
  */
 
-import fs from "node:fs";
-import path from "node:path";
+import fs from 'node:fs';
+import path from 'node:path';
 
-import { buildCompareContext, scopeCompareToPath } from "./news-context.mjs";
+import { buildCompareContext, scopeCompareToPath } from './news-context.mjs';
 import {
   buildDayLabel,
   buildFallbackItems,
   entryVersions,
   responseText,
   sortNewsEntries,
-} from "./news-format.mjs";
+} from './news-format.mjs';
 import {
   SYSTEM_PROMPT_EN,
   SYSTEM_PROMPT_SOCIAL,
   SYSTEM_PROMPT_TRANSLATE,
-} from "./news-prompts.mjs";
-import { generateSocialPost } from "./news-social.mjs";
+} from './news-prompts.mjs';
+import { generateSocialPost } from './news-social.mjs';
 import {
   parseJsonResponse,
   translateGermanNewsItems,
-} from "./news-translation.mjs";
+} from './news-translation.mjs';
 
 const OWNER = process.env.GITHUB_OWNER;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const MISTRAL_API_KEY = process.env.MISTRAL_API_KEY;
-const NEWS_PUBLISH_ISSUE_TOKEN = process.env.NEWS_PUBLISH_ISSUE_TOKEN || GITHUB_TOKEN;
+const NEWS_PUBLISH_ISSUE_TOKEN =
+  process.env.NEWS_PUBLISH_ISSUE_TOKEN || GITHUB_TOKEN;
 const GITHUB_REPOSITORY = process.env.GITHUB_REPOSITORY;
-const NEWS_PUBLISH_SITE_URL = process.env.NEWS_PUBLISH_SITE_URL || "https://btree.at/updates/";
+const NEWS_PUBLISH_SITE_URL =
+  process.env.NEWS_PUBLISH_SITE_URL || 'https://btree.at/updates/';
 
 // btree contains the server and the web app. The web app releases up to
 // btree-client-v7.10.1 stay in the archived btree_vue repository.
 const REPOS = [
-  { name: "btree_vue", tagPrefix: "btree-client-v" },
-  { name: "btree", tagPrefix: "btree-client-v", path: "apps/web" },
-  { name: "btree", tagPrefix: "btree-server-v", path: "apps/server" },
+  { name: 'btree_vue', tagPrefix: 'btree-client-v' },
+  { name: 'btree', tagPrefix: 'btree-client-v', path: 'apps/web' },
+  { name: 'btree', tagPrefix: 'btree-server-v', path: 'apps/server' },
 ];
-const OUTPUT_PATH = "packages/btree_info/public/news.json";
-const CHANGELOG_PATH = "packages/btree_info/public/changelog.json";
+const OUTPUT_PATH = 'packages/btree_info/public/news.json';
+const CHANGELOG_PATH = 'packages/btree_info/public/changelog.json';
 
 function sanitizeUrl(url) {
   try {
     const parsed = new URL(url);
     return `${parsed.origin}${parsed.pathname}${parsed.search}`;
   } catch {
-    return "invalid-url";
+    return 'invalid-url';
   }
 }
 
 async function fetchGitHubJson(url) {
   const res = await fetch(url, {
     headers: {
-      Accept: "application/vnd.github+json",
+      Accept: 'application/vnd.github+json',
       ...(GITHUB_TOKEN ? { Authorization: `Bearer ${GITHUB_TOKEN}` } : {}),
     },
   });
   if (!res.ok) {
-    const text = await res.text().catch(() => "");
+    const text = await res.text().catch(() => '');
     console.warn(
       `GitHub API request failed (${res.status} ${res.statusText}): ${sanitizeUrl(url)}\n${text.slice(0, 400)}`,
     );
@@ -93,9 +95,7 @@ async function fetchAllReleases(repo, tagPrefix) {
     const url = `https://api.github.com/repos/${OWNER}/${repo}/releases?per_page=100&page=${page}`;
     const data = await fetchGitHubJson(url);
     if (!data) {
-      console.error(
-        `Failed to fetch releases for ${repo}`,
-      );
+      console.error(`Failed to fetch releases for ${repo}`);
       break;
     }
     if (data.length === 0) break;
@@ -109,17 +109,21 @@ async function fetchAllReleases(repo, tagPrefix) {
 
 async function fetchCompareContext(repo, baseTag, headTag, componentPath) {
   // Empty string means "no compare context available" to callers.
-  if (!baseTag || !headTag) return "";
+  if (!baseTag || !headTag) return '';
   const base = encodeURIComponent(baseTag);
   const head = encodeURIComponent(headTag);
   const url = `https://api.github.com/repos/${OWNER}/${repo}/compare/${base}...${head}`;
   const data = await fetchGitHubJson(url);
-  if (!data) return "";
+  if (!data) return '';
   if (!componentPath) return buildCompareContext(data);
 
   // The compare returns its commits in pages.
   const commits = [];
-  for (let page = 1; commits.length < data.total_commits && page <= 30; page++) {
+  for (
+    let page = 1;
+    commits.length < data.total_commits && page <= 30;
+    page++
+  ) {
     const next = await fetchGitHubJson(`${url}?per_page=100&page=${page}`);
     if (!next?.commits?.length) break;
     commits.push(...next.commits);
@@ -134,31 +138,32 @@ async function fetchCompareContext(repo, baseTag, headTag, componentPath) {
 function extractVersion(tagName, tagPrefix) {
   // e.g. "client/v7.1.0" -> "client/7.1.0", "server/v7.0.1" -> "server/7.0.1"
   if (tagName.startsWith(tagPrefix)) {
-    const label = tagPrefix.replace(/v$/, ""); // "client/v" -> "client/"
+    const label = tagPrefix.replace(/v$/, ''); // "client/v" -> "client/"
     const semver = tagName.slice(tagPrefix.length);
     return `${label}${semver}`;
   }
   // Fallback for tags without expected prefix
-  return tagName.replace(/^v/, "");
+  return tagName.replace(/^v/, '');
 }
 
 function toEntries(allReleases) {
   return allReleases
     .map((release) => {
       const date =
-        release.published_at?.split("T")[0] || release.created_at?.split("T")[0];
+        release.published_at?.split('T')[0] ||
+        release.created_at?.split('T')[0];
       const version = extractVersion(
-        release.tag_name || "unknown",
+        release.tag_name || 'unknown',
         release._tagPrefix,
       );
-      const body = (release.body || "").trim();
+      const body = (release.body || '').trim();
       return {
         date,
         version,
         notes: body ? [body] : [],
         repo: release._repo,
-        tagName: release.tag_name || "",
-        previousTag: release._previousTag || "",
+        tagName: release.tag_name || '',
+        previousTag: release._previousTag || '',
         componentPath: release._path,
       };
     })
@@ -167,22 +172,22 @@ function toEntries(allReleases) {
 }
 
 async function callMistral(systemPrompt, userPrompt, maxTokens = 4096) {
-  const res = await fetch("https://api.mistral.ai/v1/chat/completions", {
-    method: "POST",
+  const res = await fetch('https://api.mistral.ai/v1/chat/completions', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${MISTRAL_API_KEY}`,
     },
     body: JSON.stringify({
-      model: "mistral-large-4-0",
+      model: 'mistral-large-4-0',
       messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userPrompt },
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt },
       ],
       max_tokens: maxTokens,
       temperature: 0.3,
       // The model always reasons; "none" is not supported.
-      reasoning_effort: "low",
+      reasoning_effort: 'low',
     }),
   });
 
@@ -200,8 +205,10 @@ async function callMistral(systemPrompt, userPrompt, maxTokens = 4096) {
 // release runs of one day.
 async function rewriteDay(date, releases) {
   const notes = releases
-    .map((release) => `Release ${release.version}:\n${release.notes.join("\n\n")}`)
-    .join("\n\n");
+    .map(
+      (release) => `Release ${release.version}:\n${release.notes.join('\n\n')}`,
+    )
+    .join('\n\n');
   if (!notes.trim()) return { en: [], de: [] };
 
   const contexts = [];
@@ -220,22 +227,22 @@ async function rewriteDay(date, releases) {
   }
 
   const fallbackItems = buildFallbackItems(
-    releases.map((release) => release.notes.join("\n\n")).join("\n\n"),
+    releases.map((release) => release.notes.join('\n\n')).join('\n\n'),
   );
 
   const enRaw = await callMistral(
     SYSTEM_PROMPT_EN,
     [
       `Rewrite the release notes of all b.tree releases on ${date} into one list of news items.`,
-      "The releases are parts of one update of the web app and the server. Write each change only once, also when several releases mention it.",
-      "",
-      "Release notes:",
+      'The releases are parts of one update of the web app and the server. Write each change only once, also when several releases mention it.',
+      '',
+      'Release notes:',
       notes,
-      "",
+      '',
       contexts.length > 0
-        ? contexts.join("\n\n")
-        : "No compare context available for these releases.",
-    ].join("\n"),
+        ? contexts.join('\n\n')
+        : 'No compare context available for these releases.',
+    ].join('\n'),
   );
 
   let enItems;
@@ -243,7 +250,7 @@ async function rewriteDay(date, releases) {
     enItems = parseJsonResponse(enRaw);
   } catch (e) {
     console.error(`Failed to parse EN response for ${date}: ${e.message}`);
-    console.error("Raw:", enRaw);
+    console.error('Raw:', enRaw);
     enItems = [];
   }
 
@@ -266,7 +273,7 @@ async function rewriteDay(date, releases) {
 }
 
 function formatIssueItems(items = []) {
-  return items.map((item) => `- ${item.title}: ${item.description}`).join("\n");
+  return items.map((item) => `- ${item.title}: ${item.description}`).join('\n');
 }
 
 function publishIssueMarker(date) {
@@ -287,12 +294,10 @@ function buildPublishIssueBody(entry) {
   parts.push(`Updates: ${NEWS_PUBLISH_SITE_URL}`);
 
   if (entry.social) {
-    parts.push(
-      `## Facebook post\n\n\`\`\`text\n${entry.social}\n\`\`\``,
-    );
+    parts.push(`## Facebook post\n\n\`\`\`text\n${entry.social}\n\`\`\``);
   } else {
     parts.push(
-      "## Facebook post\n\nNo draft: the day has only technical changes, or the draft failed. See the workflow log.",
+      '## Facebook post\n\nNo draft: the day has only technical changes, or the draft failed. See the workflow log.',
     );
   }
 
@@ -304,7 +309,7 @@ These news items were generated by scripts/generate-news.mjs. A later release on
 - [ ] Publish news
 - [ ] Verify published content
 
-${parts.join("\n\n")}
+${parts.join('\n\n')}
 `;
 }
 
@@ -312,10 +317,10 @@ async function githubApi(pathname, options = {}) {
   const res = await fetch(`https://api.github.com${pathname}`, {
     ...options,
     headers: {
-      Accept: "application/vnd.github+json",
+      Accept: 'application/vnd.github+json',
       Authorization: `Bearer ${NEWS_PUBLISH_ISSUE_TOKEN}`,
-      "X-GitHub-Api-Version": "2022-11-28",
-      ...(options.headers || {}),
+      'X-GitHub-Api-Version': '2022-11-28',
+      ...options.headers,
     },
   });
 
@@ -339,30 +344,39 @@ async function findExistingPublishIssue(marker) {
 // One open issue per day. A later release on the same day updates it.
 async function upsertPublishIssue(entry) {
   if (!NEWS_PUBLISH_ISSUE_TOKEN) {
-    throw new Error("NEWS_PUBLISH_ISSUE_TOKEN is required to create news publishing issue");
+    throw new Error(
+      'NEWS_PUBLISH_ISSUE_TOKEN is required to create news publishing issue',
+    );
   }
 
   if (!GITHUB_REPOSITORY) {
-    throw new Error("GITHUB_REPOSITORY is required to create news publishing issue");
+    throw new Error(
+      'GITHUB_REPOSITORY is required to create news publishing issue',
+    );
   }
 
   const title = `News to publish: ${entry.date}`;
   const body = buildPublishIssueBody(entry);
-  const existingIssue = await findExistingPublishIssue(publishIssueMarker(entry.date));
+  const existingIssue = await findExistingPublishIssue(
+    publishIssueMarker(entry.date),
+  );
 
   if (existingIssue) {
-    await githubApi(`/repos/${GITHUB_REPOSITORY}/issues/${existingIssue.number}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title, body }),
-    });
+    await githubApi(
+      `/repos/${GITHUB_REPOSITORY}/issues/${existingIssue.number}`,
+      {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, body }),
+      },
+    );
     console.log(`Updated news publishing issue: ${existingIssue.html_url}`);
     return;
   }
 
   const issue = await githubApi(`/repos/${GITHUB_REPOSITORY}/issues`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ title, body }),
   });
 
@@ -371,11 +385,13 @@ async function upsertPublishIssue(entry) {
 
 async function main() {
   if (!MISTRAL_API_KEY) {
-    console.error("MISTRAL_API_KEY is required");
+    console.error('MISTRAL_API_KEY is required');
     process.exit(1);
   }
   if (!GITHUB_TOKEN) {
-    console.warn("GITHUB_TOKEN is not set, GitHub API calls may be rate-limited.");
+    console.warn(
+      'GITHUB_TOKEN is not set, GitHub API calls may be rate-limited.',
+    );
   }
 
   // Load existing news.json if it exists (to avoid re-processing)
@@ -384,9 +400,9 @@ async function main() {
 
   if (fs.existsSync(outputFile)) {
     try {
-      existingNews = JSON.parse(fs.readFileSync(outputFile, "utf-8"));
-    } catch (e) {
-      console.warn("Could not parse existing news.json, starting fresh");
+      existingNews = JSON.parse(fs.readFileSync(outputFile, 'utf-8'));
+    } catch {
+      console.warn('Could not parse existing news.json, starting fresh');
     }
   }
 
@@ -396,7 +412,7 @@ async function main() {
   ]);
 
   // Fetch GitHub releases
-  console.log("Fetching releases from GitHub...");
+  console.log('Fetching releases from GitHub...');
   const allReleases = [];
   for (const { name: repo, tagPrefix, path: componentPath } of REPOS) {
     const releases = await fetchAllReleases(repo, tagPrefix);
@@ -417,15 +433,15 @@ async function main() {
       .filter((r) => r._tagPrefix === tagPrefix)
       .sort((a, b) => b.created_at.localeCompare(a.created_at));
     for (let i = 0; i < releases.length; i++) {
-      releases[i]._previousTag = releases[i + 1]?.tag_name || "";
+      releases[i]._previousTag = releases[i + 1]?.tag_name || '';
     }
   }
 
   const entries = toEntries(allReleases);
   const publishedAtByVersion = new Map(
     allReleases.map((release) => [
-      extractVersion(release.tag_name || "unknown", release._tagPrefix),
-      release.published_at || release.created_at || "",
+      extractVersion(release.tag_name || 'unknown', release._tagPrefix),
+      release.published_at || release.created_at || '',
     ]),
   );
 
@@ -433,12 +449,14 @@ async function main() {
   const toProcess = entries.filter((e) => !existingVersions.has(e.version));
 
   if (toProcess.length === 0) {
-    console.log("No new releases to process.");
+    console.log('No new releases to process.');
     return;
   }
 
   const days = [...new Set(toProcess.map((entry) => entry.date))];
-  console.log(`Processing ${toProcess.length} new release(s) on ${days.length} day(s) with Mistral...`);
+  console.log(
+    `Processing ${toProcess.length} new release(s) on ${days.length} day(s) with Mistral...`,
+  );
 
   let newEnEntries = [...existingNews.en];
   let newDeEntries = [...existingNews.de];
@@ -450,12 +468,12 @@ async function main() {
     const dayReleases = entries
       .filter((entry) => entry.date === date)
       .sort((a, b) =>
-        (publishedAtByVersion.get(a.version) || "").localeCompare(
-          publishedAtByVersion.get(b.version) || "",
+        (publishedAtByVersion.get(a.version) || '').localeCompare(
+          publishedAtByVersion.get(b.version) || '',
         ),
       );
     const versions = dayReleases.map((entry) => entry.version);
-    console.log(`  Rewriting ${date}: ${versions.join(", ")}...`);
+    console.log(`  Rewriting ${date}: ${versions.join(', ')}...`);
     try {
       // Intentionally sequential to stay within API rate limits.
       const { en, de } = await rewriteDay(date, dayReleases);
@@ -466,8 +484,18 @@ async function main() {
         newEnEntries = newEnEntries.filter((entry) => !inDay(entry));
         newDeEntries = newDeEntries.filter((entry) => !inDay(entry));
 
-        const enEntry = { version: buildDayLabel(versions, "en"), versions, date, items: en };
-        const deEntry = { version: buildDayLabel(versions, "de"), versions, date, items: de };
+        const enEntry = {
+          version: buildDayLabel(versions, 'en'),
+          versions,
+          date,
+          items: en,
+        };
+        const deEntry = {
+          version: buildDayLabel(versions, 'de'),
+          versions,
+          date,
+          items: de,
+        };
         newEnEntries.push(enEntry);
         newDeEntries.push(deEntry);
         const social = await generateSocialPost({
@@ -496,7 +524,7 @@ async function main() {
 
   // Write news.json
   fs.mkdirSync(path.dirname(outputFile), { recursive: true });
-  fs.writeFileSync(outputFile, JSON.stringify(output, null, 2) + "\n");
+  fs.writeFileSync(outputFile, JSON.stringify(output, null, 2) + '\n');
   console.log(`Written ${newEnEntries.length} entries to ${OUTPUT_PATH}`);
 
   // Append raw release notes to changelog.json
@@ -504,9 +532,9 @@ async function main() {
   let changelog = [];
   if (fs.existsSync(changelogFile)) {
     try {
-      changelog = JSON.parse(fs.readFileSync(changelogFile, "utf-8"));
-    } catch (e) {
-      console.warn("Could not parse existing changelog.json, starting fresh");
+      changelog = JSON.parse(fs.readFileSync(changelogFile, 'utf-8'));
+    } catch {
+      console.warn('Could not parse existing changelog.json, starting fresh');
     }
   }
 
@@ -527,7 +555,7 @@ async function main() {
 
   if (changelogAdded > 0) {
     sortNewsEntries(changelog, publishedAtByVersion);
-    fs.writeFileSync(changelogFile, JSON.stringify(changelog, null, 2) + "\n");
+    fs.writeFileSync(changelogFile, JSON.stringify(changelog, null, 2) + '\n');
     console.log(`Added ${changelogAdded} entries to ${CHANGELOG_PATH}`);
   }
 

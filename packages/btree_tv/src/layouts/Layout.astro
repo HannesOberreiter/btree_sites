@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+
 import logo from '../assets/logo.png';
 
 interface Props {
@@ -36,14 +37,31 @@ const deUrl = switchLang('de');
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl ?? 'https://www.btree.tv'} />
-    <meta property="og:image" content="https://www.btree.tv/icons/icon-512x512.png" />
+    <meta
+      property="og:image"
+      content="https://www.btree.tv/icons/icon-512x512.png"
+    />
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <link rel="alternate" hreflang="en" href={`https://www.btree.tv${enUrl}`} />
     <link rel="alternate" hreflang="de" href={`https://www.btree.tv${deUrl}`} />
     <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96x96.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/icons/apple-icon-180x180.png"
+    />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f59e0b" />
     <script is:inline>
       function checkLanguageRedirect() {
@@ -53,14 +71,16 @@ const deUrl = switchLang('de');
           return;
         }
 
-        const hasLanguagePreference = localStorage.getItem('language-preference-set');
+        const hasLanguagePreference = localStorage.getItem(
+          'language-preference-set',
+        );
         if (hasLanguagePreference) {
           return;
         }
 
         const browserLanguages = navigator.languages || [navigator.language];
         const hasGermanPreference = browserLanguages.some((lang) =>
-          lang.toLowerCase().startsWith('de')
+          lang.toLowerCase().startsWith('de'),
         );
 
         if (hasGermanPreference) {
@@ -92,11 +112,22 @@ const deUrl = switchLang('de');
         --max-w: 1100px;
       }
 
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      html { scroll-behavior: smooth; }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
 
       body {
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
         background: var(--bg);
         color: var(--text);
         line-height: 1.6;
@@ -105,8 +136,13 @@ const deUrl = switchLang('de');
         flex-direction: column;
       }
 
-      a { color: var(--amber-dark); text-decoration: none; }
-      a:hover { text-decoration: underline; }
+      a {
+        color: var(--amber-dark);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
 
       /* ── HEADER (light) ── */
       header {
@@ -132,14 +168,18 @@ const deUrl = switchLang('de');
         color: var(--brown);
         text-decoration: none;
       }
-      .logo:hover { text-decoration: none; }
+      .logo:hover {
+        text-decoration: none;
+      }
       .logo-img {
         width: 32px;
         height: 32px;
         border-radius: 6px;
         object-fit: contain;
       }
-      .logo-name { color: var(--amber-dark); }
+      .logo-name {
+        color: var(--amber-dark);
+      }
 
       .lang-switch {
         display: flex;
@@ -167,7 +207,11 @@ const deUrl = switchLang('de');
 
       /* ── HERO ── */
       .hero {
-        background: linear-gradient(135deg, var(--brown) 0%, var(--brown-mid) 100%);
+        background: linear-gradient(
+          135deg,
+          var(--brown) 0%,
+          var(--brown-mid) 100%
+        );
         color: white;
         padding: 3.5rem 1.5rem 3rem;
         text-align: center;
@@ -206,9 +250,15 @@ const deUrl = switchLang('de');
         color: var(--text-muted);
         line-height: 1.7;
       }
-      .intro strong { color: var(--text); }
-      .intro a { color: var(--amber); }
-      .intro a:hover { color: #fbbf24; }
+      .intro strong {
+        color: var(--text);
+      }
+      .intro a {
+        color: var(--amber);
+      }
+      .intro a:hover {
+        color: #fbbf24;
+      }
 
       /* ── VIDEO GRID ── */
       .video-grid {
@@ -222,7 +272,9 @@ const deUrl = switchLang('de');
         border: 1px solid var(--card-border);
         border-radius: var(--radius);
         overflow: hidden;
-        transition: border-color 0.2s, transform 0.2s;
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
       }
       .video-card:hover {
         border-color: var(--amber-dark);
@@ -237,8 +289,10 @@ const deUrl = switchLang('de');
       }
       .video-wrapper iframe {
         position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         border: 0;
       }
 
@@ -288,8 +342,13 @@ const deUrl = switchLang('de');
         margin-top: 1.5rem;
         font-size: 0.9rem;
       }
-      .watch-nav a { color: var(--text-muted); }
-      .watch-nav a:hover { color: var(--amber); text-decoration: none; }
+      .watch-nav a {
+        color: var(--text-muted);
+      }
+      .watch-nav a:hover {
+        color: var(--amber);
+        text-decoration: none;
+      }
 
       /* ── FOOTER ── */
       footer {
@@ -306,8 +365,12 @@ const deUrl = switchLang('de');
         gap: 1.25rem;
         margin-bottom: 0.6rem;
       }
-      footer a { color: #a8a29e; }
-      footer a:hover { color: var(--amber); }
+      footer a {
+        color: #a8a29e;
+      }
+      footer a:hover {
+        color: var(--amber);
+      }
     </style>
     <!-- Matomo -->
     <script>
@@ -338,14 +401,32 @@ const deUrl = switchLang('de');
     <header>
       <div class="header-inner">
         <a class="logo" href="/">
-          <Image src={logo} alt="b.tree logo" width={32} height={32} class="logo-img" />
-          <span>b.tree <span class="logo-name">Tutorials</span></span>
+          <Image
+            src={logo}
+            alt="b.tree logo"
+            width={32}
+            height={32}
+            class="logo-img"
+          />
+          <span>
+            b.tree <span class="logo-name">Tutorials</span>
+          </span>
         </a>
         <div class="lang-switch">
-          <a href={enUrl} class:list={[{ 'lang-current': lang === 'en' }]}
-            onclick="localStorage.setItem('language-preference-set','true')">EN</a>
-          <a href={deUrl} class:list={[{ 'lang-current': lang === 'de' }]}
-            onclick="localStorage.setItem('language-preference-set','true')">DE</a>
+          <a
+            href={enUrl}
+            class:list={[{ 'lang-current': lang === 'en' }]}
+            onclick="localStorage.setItem('language-preference-set','true')"
+          >
+            EN
+          </a>
+          <a
+            href={deUrl}
+            class:list={[{ 'lang-current': lang === 'de' }]}
+            onclick="localStorage.setItem('language-preference-set','true')"
+          >
+            DE
+          </a>
         </div>
       </div>
     </header>
@@ -354,9 +435,19 @@ const deUrl = switchLang('de');
 
     <footer>
       <div class="footer-links">
-        <a href="https://www.btree.at/imprint/" target="_blank" rel="noopener">Imprint</a>
-        <a href="https://www.btree.at/data-privacy/" target="_blank" rel="noopener">Data Privacy</a>
-        <a href="https://www.btree.at" target="_blank" rel="noopener">btree.at</a>
+        <a href="https://www.btree.at/imprint/" target="_blank" rel="noopener">
+          Imprint
+        </a>
+        <a
+          href="https://www.btree.at/data-privacy/"
+          target="_blank"
+          rel="noopener"
+        >
+          Data Privacy
+        </a>
+        <a href="https://www.btree.at" target="_blank" rel="noopener">
+          btree.at
+        </a>
       </div>
       <div>© {new Date().getFullYear()} Hannes Oberreiter, btree.at</div>
     </footer>

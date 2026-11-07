@@ -20,18 +20,17 @@
 </button>
 
 <script>
- const searchButtons = document.getElementsByClassName('search-button');
- const dialog = document.getElementById('search-dialog') as HTMLDialogElement;
- if (searchButtons) {
-   for (let i = 0; i < searchButtons.length; i++) {
-     searchButtons[i].addEventListener('click', () => {
-       if (dialog) {
-         dialog.showModal();
-       }
-       else {
-         console.error('Search dialog not found');
-       }
-     });
-   }
- }
+  const searchButtons = document.getElementsByClassName('search-button');
+  const dialog = document.getElementById('search-dialog') as HTMLDialogElement;
+  if (searchButtons) {
+    for (let i = 0; i < searchButtons.length; i++) {
+      searchButtons[i].addEventListener('click', () => {
+        if (dialog) {
+          dialog.showModal();
+        } else {
+          console.error('Search dialog not found');
+        }
+      });
+    }
+  }
 </script>

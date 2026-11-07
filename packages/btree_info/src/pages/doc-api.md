@@ -1,8 +1,8 @@
 ---
 title: API (Premium Feature)
-description: "Documentation and Help for Beekeeping Software and Application"
-layout: "../layouts/IndexLayout.astro"
-lang: "en"
+description: 'Documentation and Help for Beekeeping Software and Application'
+layout: '../layouts/IndexLayout.astro'
+lang: 'en'
 ---
 
 Active premium user do have access to our external API endpoints. Before you use it you need to activate it in the settings [/setting/profile/api](https://app.btree.at/setting/profile/api). Although it is managed at your profile level, the API will be active on company level. If you manage multiple beekeeping operations you need to activate it for each one separately, as you will also get a different key every time.

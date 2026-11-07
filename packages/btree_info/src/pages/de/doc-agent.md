@@ -1,8 +1,8 @@
 ---
 title: KI-gestützte Imkerei-Automatisierung
-description: "Verbinden Sie Ihren KI-Agenten (Claude, ChatGPT, LLM-Bots) mit der b.tree Imkereisoftware über eine sichere API. Automatisieren Sie Stockverwaltung, Kontrollen und Datenanalyse."
-layout: "../../layouts/IndexLayout.astro"
-lang: "de"
+description: 'Verbinden Sie Ihren KI-Agenten (Claude, ChatGPT, LLM-Bots) mit der b.tree Imkereisoftware über eine sichere API. Automatisieren Sie Stockverwaltung, Kontrollen und Datenanalyse.'
+layout: '../../layouts/IndexLayout.astro'
+lang: 'de'
 ---
 
 ## b.tree Agent API — KI für Ihre Imkerei
@@ -163,4 +163,4 @@ Die oben beschriebene Agent API ist der empfohlene Einstieg für Automatisierung
 
 ---
 
-*Die Agent API ist ein Premium-Feature. [Upgraden Sie Ihr Konto](https://app.btree.at/premium) um zu starten.*
+_Die Agent API ist ein Premium-Feature. [Upgraden Sie Ihr Konto](https://app.btree.at/premium) um zu starten._

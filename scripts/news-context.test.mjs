@@ -1,27 +1,29 @@
-import assert from "node:assert/strict";
-import test from "node:test";
+import assert from 'node:assert/strict';
+import test from 'node:test';
 
-import { buildCompareContext, scopeCompareToPath } from "./news-context.mjs";
+import { buildCompareContext, scopeCompareToPath } from './news-context.mjs';
 
-test("compare context includes source patches and skips generated files", () => {
+test('compare context includes source patches and skips generated files', () => {
   const context = buildCompareContext({
     commits: [
       {
-        sha: "e80ee30fb138",
-        commit: { message: "feat(charge): add inventory total mode\n\nDetails" },
+        sha: 'e80ee30fb138',
+        commit: {
+          message: 'feat(charge): add inventory total mode\n\nDetails',
+        },
       },
     ],
     files: [
       {
-        filename: "src/api/generated/schema.d.ts",
-        status: "modified",
+        filename: 'src/api/generated/schema.d.ts',
+        status: 'modified',
         additions: 300,
         deletions: 2,
-        patch: "+generated noise",
+        patch: '+generated noise',
       },
       {
-        filename: "src/i18n/de/index.json",
-        status: "modified",
+        filename: 'src/i18n/de/index.json',
+        status: 'modified',
         additions: 3,
         deletions: 0,
         patch:
@@ -37,12 +39,12 @@ test("compare context includes source patches and skips generated files", () => 
   assert.match(context, /tatsächlich gezählten Gesamtbestand/);
 });
 
-test("compare context bounds each patch excerpt", () => {
+test('compare context bounds each patch excerpt', () => {
   const context = buildCompareContext({
     files: [
       {
-        filename: "src/component.vue",
-        patch: `+${"x".repeat(4000)}`,
+        filename: 'src/component.vue',
+        patch: `+${'x'.repeat(4000)}`,
       },
     ],
   });
@@ -51,20 +53,20 @@ test("compare context bounds each patch excerpt", () => {
   assert.ok(context.length < 3000);
 });
 
-test("compare context skips release metadata patches", () => {
+test('compare context skips release metadata patches', () => {
   const context = buildCompareContext({
     files: [
       {
-        filename: "CHANGELOG.md",
-        patch: "+release metadata noise",
+        filename: 'CHANGELOG.md',
+        patch: '+release metadata noise',
       },
       {
-        filename: ".release-please-manifest.json",
-        patch: "+manifest noise",
+        filename: '.release-please-manifest.json',
+        patch: '+manifest noise',
       },
       {
-        filename: "src/feature.ts",
-        patch: "+behavior evidence",
+        filename: 'src/feature.ts',
+        patch: '+behavior evidence',
       },
     ],
   });
@@ -73,16 +75,16 @@ test("compare context skips release metadata patches", () => {
   assert.match(context, /behavior evidence/);
 });
 
-test("compare context continues after a patch exceeds remaining budget", () => {
+test('compare context continues after a patch exceeds remaining budget', () => {
   const largeFiles = Array.from({ length: 6 }, (_, index) => ({
     filename: `src/large-${index}.ts`,
-    patch: `+${"x".repeat(4000)}`,
+    patch: `+${'x'.repeat(4000)}`,
   }));
   const context = buildCompareContext({
     files: [
       ...largeFiles,
-      { filename: "src/too-large.ts", patch: `+${"y".repeat(4000)}` },
-      { filename: "src/later-small.ts", patch: "+important later evidence" },
+      { filename: 'src/too-large.ts', patch: `+${'y'.repeat(4000)}` },
+      { filename: 'src/later-small.ts', patch: '+important later evidence' },
     ],
   });
 
@@ -90,32 +92,32 @@ test("compare context continues after a patch exceeds remaining budget", () => {
   assert.match(context, /src\/later-small\.ts\n\+important later evidence/);
 });
 
-test("compare scope keeps only commits and files of the app path", () => {
+test('compare scope keeps only commits and files of the app path', () => {
   const commit = (sha, message) => ({ sha, commit: { message } });
   const scoped = scopeCompareToPath(
     {
       commits: [
-        commit("old-web", "feat: sign in with Apple"),
-        commit("server-fix", "fix(wizbee): keep results small"),
-        commit("release", "Merge pull request #283"),
+        commit('old-web', 'feat: sign in with Apple'),
+        commit('server-fix', 'fix(wizbee): keep results small'),
+        commit('release', 'Merge pull request #283'),
       ],
       files: [
-        { filename: "apps/web/src/App.vue" },
-        { filename: "apps/server/src/app.ts" },
-        { filename: "apps/server-tools/x.ts" },
+        { filename: 'apps/web/src/App.vue' },
+        { filename: 'apps/server/src/app.ts' },
+        { filename: 'apps/server-tools/x.ts' },
       ],
     },
-    "apps/server",
+    'apps/server',
     // Path history lists commits outside the compare range too.
-    [commit("server-fix"), commit("older-server", "fix: older")],
+    [commit('server-fix'), commit('older-server', 'fix: older')],
   );
 
   assert.deepEqual(
     scoped.commits.map((c) => c.sha),
-    ["server-fix"],
+    ['server-fix'],
   );
   assert.deepEqual(
     scoped.files.map((f) => f.filename),
-    ["apps/server/src/app.ts"],
+    ['apps/server/src/app.ts'],
   );
 });

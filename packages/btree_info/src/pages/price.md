@@ -1,8 +1,8 @@
 ---
-title: "Costs & Price"
+title: 'Costs & Price'
 description: 'Premium Membership costs for the Applikation.'
 layout: '../layouts/MainLayout.astro'
-lang: "en"
+lang: 'en'
 ---
 
 ### Basic[^1] - Free

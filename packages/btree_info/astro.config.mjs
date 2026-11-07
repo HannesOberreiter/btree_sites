@@ -5,7 +5,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-
   redirects: {
     '/cv': {
       destination: 'https://www.oberreiter.or.at/hannes',
@@ -52,7 +51,9 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: page => page !== 'https://www.btree.at/en/',
+      filter: (page) =>
+        page !== 'https://www.btree.at/en/' &&
+        page !== 'https://www.btree.at/de/en/',
       i18n: {
         defaultLocale: 'en',
         locales: {

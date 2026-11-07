@@ -1,14 +1,14 @@
-import assert from "node:assert/strict";
-import test from "node:test";
+import assert from 'node:assert/strict';
+import test from 'node:test';
 
 import {
   APP_CONTEXT,
   SYSTEM_PROMPT_EN,
   SYSTEM_PROMPT_SOCIAL,
   SYSTEM_PROMPT_TRANSLATE,
-} from "./news-prompts.mjs";
+} from './news-prompts.mjs';
 
-test("English prompt defines stock movements as inventory", () => {
+test('English prompt defines stock movements as inventory', () => {
   assert.match(APP_CONTEXT, /"stock movements"/);
   assert.match(APP_CONTEXT, /never "charge"/);
   assert.match(APP_CONTEXT, /incoming and outgoing goods/);
@@ -20,11 +20,17 @@ test("English prompt defines stock movements as inventory", () => {
   );
 });
 
-test("German prompt requires b.tree charge terminology", () => {
+test('German prompt requires b.tree charge terminology', () => {
   assert.match(SYSTEM_PROMPT_TRANSLATE, /stock movement = Lagerbuchung/);
   assert.match(SYSTEM_PROMPT_TRANSLATE, /stock item = Lagerartikel/);
-  assert.match(SYSTEM_PROMPT_TRANSLATE, /lot or lot number = Charge or Chargennummer/);
-  assert.match(SYSTEM_PROMPT_TRANSLATE, /goods receipt or incoming goods = Wareneingang/);
+  assert.match(
+    SYSTEM_PROMPT_TRANSLATE,
+    /lot or lot number = Charge or Chargennummer/,
+  );
+  assert.match(
+    SYSTEM_PROMPT_TRANSLATE,
+    /goods receipt or incoming goods = Wareneingang/,
+  );
   assert.match(SYSTEM_PROMPT_TRANSLATE, /outgoing goods = Warenausgang/);
   assert.match(SYSTEM_PROMPT_TRANSLATE, /apiary = Stand; plural = Stände/);
   assert.match(SYSTEM_PROMPT_TRANSLATE, /hive = Stock; plural = Stöcke/);
@@ -38,11 +44,11 @@ test("German prompt requires b.tree charge terminology", () => {
   );
 });
 
-test("German news address the reader with du", () => {
+test('German news address the reader with du', () => {
   assert.match(SYSTEM_PROMPT_TRANSLATE, /informally with "du"/);
 });
 
-test("Facebook post prompt forbids emojis, hashtags and links", () => {
+test('Facebook post prompt forbids emojis, hashtags and links', () => {
   assert.match(SYSTEM_PROMPT_SOCIAL, /no emojis, no hashtags, no links/);
   assert.match(SYSTEM_PROMPT_SOCIAL, /Never invent features/);
   assert.match(SYSTEM_PROMPT_SOCIAL, /in English\./);

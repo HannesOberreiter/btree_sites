@@ -27,69 +27,79 @@ const themeConfig = {
 </button>
 
 <script define:vars={{ themeConfig }}>
-    let currentTheme = 'light';
+  let currentTheme = 'light';
 
-    function setTheme(mode) {
-      localStorage.setItem('local-color-scheme', mode);
-      currentTheme = mode;
+  function setTheme(mode) {
+    localStorage.setItem('local-color-scheme', mode);
+    currentTheme = mode;
 
-      const htmlElement = document.documentElement;
-      htmlElement.classList.remove('light', 'dark', 'auto');
+    const htmlElement = document.documentElement;
+    htmlElement.classList.remove('light', 'dark', 'auto');
 
-      let modeClass = mode;
-      if (mode === 'auto') {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        modeClass = prefersDark ? 'dark' : 'light';
-      }
-      htmlElement.classList.add(modeClass);
+    let modeClass = mode;
+    if (mode === 'auto') {
+      const prefersDark = window.matchMedia(
+        '(prefers-color-scheme: dark)',
+      ).matches;
+      modeClass = prefersDark ? 'dark' : 'light';
+    }
+    htmlElement.classList.add(modeClass);
 
-      updateIcon();
+    updateIcon();
+  }
+
+  function updateIcon() {
+    const iconElement = document.getElementById('theme-icon');
+    const toggleButton = document.getElementById('theme-toggle');
+
+    if (iconElement && toggleButton && themeConfig[currentTheme]) {
+      iconElement.innerHTML = themeConfig[currentTheme].icon;
+      toggleButton.setAttribute('aria-label', themeConfig[currentTheme].label);
+    }
+  }
+
+  function cycleTheme() {
+    const nextTheme = themeConfig[currentTheme].next;
+    setTheme(nextTheme);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches;
+    const savedMode =
+      localStorage.getItem('local-color-scheme') ||
+      (prefersDark ? 'dark' : 'light');
+    setTheme(savedMode);
+
+    const toggleButton = document.getElementById('theme-toggle');
+    if (toggleButton) {
+      toggleButton.addEventListener('click', cycleTheme);
     }
 
-    function updateIcon() {
-      const iconElement = document.getElementById('theme-icon');
-      const toggleButton = document.getElementById('theme-toggle');
-
-      if (iconElement && toggleButton && themeConfig[currentTheme]) {
-        iconElement.innerHTML = themeConfig[currentTheme].icon;
-        toggleButton.setAttribute('aria-label', themeConfig[currentTheme].label);
-      }
-    }
-
-    function cycleTheme() {
-      const nextTheme = themeConfig[currentTheme].next;
-      setTheme(nextTheme);
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const savedMode = localStorage.getItem('local-color-scheme') || (prefersDark ? 'dark' : 'light');
-      setTheme(savedMode);
-
-      const toggleButton = document.getElementById('theme-toggle');
-      if (toggleButton) {
-        toggleButton.addEventListener('click', cycleTheme);
-      }
-
-      // Listen for system theme changes when in auto mode
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    // Listen for system theme changes when in auto mode
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', () => {
         if (currentTheme === 'auto') {
           setTheme('auto'); // Re-apply auto theme to update the class
         }
       });
-    });
+  });
 </script>
 
 <style>
-    .theme-toggle {
-      cursor: pointer;
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
+  .theme-toggle {
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
 
-    #theme-icon {
-      display: flex;
-      align-items: center;
-      width: 20px;
-      height: 20px;
-    }
+  #theme-icon {
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+  }
 </style>

@@ -9,57 +9,54 @@ if (currentPageMatch === '' || currentPageMatch === 'de/') {
   currentPageMatch += 'introduction/';
 }
 
-
 // SIDEBAR is a flat array. Group it by sections to properly render.
-const sidebarSections = SIDEBAR[currentLocale ?? 'en'].reduce((col, item, i) => {
-  // If the first item is not a section header, create a new container section.
-  if (i === 0) {
-    if (!item.header) {
-      const pseudoSection = { text: '' };
-      col.push({ ...pseudoSection, children: [] });
+const sidebarSections = SIDEBAR[currentLocale ?? 'en'].reduce(
+  (col, item, i) => {
+    // If the first item is not a section header, create a new container section.
+    if (i === 0) {
+      if (!item.header) {
+        const pseudoSection = { text: '' };
+        col.push({ ...pseudoSection, children: [] });
+      }
     }
-  }
-  if (item.header) {
-    col.push({ ...item, children: [] });
-  }
- else {
-    col[col.length - 1].children.push(item);
-  }
-  return col;
-}, []);
+    if (item.header) {
+      col.push({ ...item, children: [] });
+    } else {
+      col[col.length - 1].children.push(item);
+    }
+    return col;
+  },
+  [],
+);
 ---
 
 <nav aria-labelledby="grid-left">
   <ul class="nav-groups">
-    {
-      sidebarSections.map(section => (
-        <li>
-          <div class="nav-group">
-            <h2 class="nav-group-title">{section.text}</h2>
-            <ul>
-              {section.children.map(child => (
-                <li class="nav-link">
-                  {child.link.substring(0, 5) === 'https'
-? (
-                    <LinkApp text={child.text} url={child.link} />
-                  )
-: (
-                    <a
-                      href={`/${child.link}`}
-                      aria-current={`${
-                        currentPageMatch === child.link ? 'page' : 'false'
-                      }`}
-                    >
-                      {child.text}
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </li>
-      ))
-    }
+    {sidebarSections.map((section) => (
+      <li>
+        <div class="nav-group">
+          <h2 class="nav-group-title">{section.text}</h2>
+          <ul>
+            {section.children.map((child) => (
+              <li class="nav-link">
+                {child.link.substring(0, 5) === 'https' ? (
+                  <LinkApp text={child.text} url={child.link} />
+                ) : (
+                  <a
+                    href={`/${child.link}`}
+                    aria-current={`${
+                      currentPageMatch === child.link ? 'page' : 'false'
+                    }`}
+                  >
+                    {child.text}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </li>
+    ))}
   </ul>
 </nav>
 
@@ -116,13 +113,13 @@ const sidebarSections = SIDEBAR[currentLocale ?? 'en'].reduce((col, item, i) => 
     background-color: var(--theme-bg-hover);
   }
 
-  .nav-link a[aria-current="page"] {
+  .nav-link a[aria-current='page'] {
     color: var(--theme-text-accent);
     background-color: var(--theme-bg-accent);
     font-weight: 600;
   }
 
-  :global(:root.dark) .nav-link a[aria-current="page"] {
+  :global(:root.dark) .nav-link a[aria-current='page'] {
     color: hsla(var(--color-base-white), 100%, 1);
   }
 

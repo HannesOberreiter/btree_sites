@@ -4,10 +4,10 @@ on:
   push:
     branches: [main]
     paths:
-      - "packages/wizbee_info/**"
-      - ".github/workflows/deploy-wizbee-info.yml"
-      - "scripts/upload-bunny.sh"
-      - "scripts/upload-bunny.test.mjs"
+      - 'packages/wizbee_info/**'
+      - '.github/workflows/deploy-wizbee-info.yml'
+      - 'scripts/upload-bunny.sh'
+      - 'scripts/upload-bunny.test.mjs'
   workflow_dispatch:
 
 concurrency:

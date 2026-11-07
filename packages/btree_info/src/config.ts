@@ -1,6 +1,7 @@
 export const SITE = {
   title: 'b.tree',
-  description: 'Professional beekeeping software for digital hive records, apiary management, queen rearing, treatments, harvests, statistics, and AI-assisted data entry.',
+  description:
+    'Professional beekeeping software for digital hive records, apiary management, queen rearing, treatments, harvests, statistics, and AI-assisted data entry.',
   defaultLanguage: 'de_DE',
 };
 

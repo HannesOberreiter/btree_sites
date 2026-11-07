@@ -1,6 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro';
 import { videos, BUNNY_LIBRARY_ID } from '../../config';
+import Layout from '../../layouts/Layout.astro';
 
 export function getStaticPaths() {
   return videos.map((video) => ({
@@ -29,7 +29,9 @@ const title = `${video.titleEn} – b.tree Tutorials`;
   <main>
     <div class="inner watch-inner">
       {deOnly && (
-        <p class="lang-notice">🇦🇹 This video is only available in German (Austrian).</p>
+        <p class="lang-notice">
+          🇦🇹 This video is only available in German (Austrian).
+        </p>
       )}
       <div class="watch-player">
         <div class="video-wrapper">

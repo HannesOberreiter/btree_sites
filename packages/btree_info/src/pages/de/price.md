@@ -1,8 +1,8 @@
 ---
-title: "Kosten & Preis"
+title: 'Kosten & Preis'
 description: 'Preis und Kosten der Imkerei Applikation.'
 layout: '../../layouts/MainLayout.astro'
-lang: "de"
+lang: 'de'
 ---
 
 ### Basic[^1] - Gratis

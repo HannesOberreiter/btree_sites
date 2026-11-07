@@ -2,7 +2,7 @@
 title: Datenschutz
 description: 'b.tree Datenschutz'
 layout: ../../layouts/IndexLayout.astro
-lang: "de"
+lang: 'de'
 ---
 
 Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003). In diesen Datenschutzinformationen informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.

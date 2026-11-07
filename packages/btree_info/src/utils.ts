@@ -16,12 +16,15 @@ export function stringifyJsonLd(
   structuredData: Graph | WithContext<Thing>,
   formatting?: string | number,
 ): string {
-  return JSON.stringify(structuredData, removeNullValues, formatting).replace(/</g, '\\u003c');
+  return JSON.stringify(structuredData, removeNullValues, formatting).replace(
+    /</g,
+    '\\u003c',
+  );
 }
 
 export interface FaqEntry {
-  question: string
-  answer: string
+  question: string;
+  answer: string;
 }
 
 /**
@@ -50,7 +53,10 @@ export function faqFromMarkdown(markdown: string): FaqEntry[] {
     .slice(1)
     .map((section) => {
       const [question = '', ...lines] = section.split('\n');
-      return { question: question.trim(), answer: markdownToText(lines.join('\n')) };
+      return {
+        question: question.trim(),
+        answer: markdownToText(lines.join('\n')),
+      };
     })
-    .filter(entry => entry.question && entry.answer);
+    .filter((entry) => entry.question && entry.answer);
 }

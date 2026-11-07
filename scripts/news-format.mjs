@@ -2,33 +2,33 @@ const MAX_FALLBACK_ITEMS = 6;
 const MAX_FALLBACK_DESCRIPTION_LENGTH = 240;
 
 const PUBLISHABLE_SECTIONS = new Map([
-  ["features", "Feature"],
-  ["bug fixes", "Fix"],
-  ["fixes", "Fix"],
-  ["improvements", "Improvement"],
-  ["performance", "Performance"],
+  ['features', 'Feature'],
+  ['bug fixes', 'Fix'],
+  ['fixes', 'Fix'],
+  ['improvements', 'Improvement'],
+  ['performance', 'Performance'],
 ]);
 
 function truncateAtWordBoundary(text, maxLength) {
-  const clean = text.replace(/\s+/g, " ").trim();
+  const clean = text.replace(/\s+/g, ' ').trim();
   if (clean.length <= maxLength) return clean;
   const chunk = clean.slice(0, maxLength + 1);
-  const lastSpace = chunk.lastIndexOf(" ");
+  const lastSpace = chunk.lastIndexOf(' ');
   if (lastSpace > 0) return `${chunk.slice(0, lastSpace)}…`;
   return `${clean.slice(0, maxLength)}…`;
 }
 
 function cleanDescription(line) {
   const clean = line
-    .replace(/^[-*]\s*/, "")
-    .replace(/:[a-z0-9_+-]+:/gi, "")
-    .replace(/\[([^\]]+)]\([^)]*\)/g, "$1")
-    .replace(/\s*\((?:#[0-9]+|[0-9a-f]{7,40})\)\s*$/i, "")
-    .replace(/[*_`]/g, "")
-    .replace(/\s+/g, " ")
+    .replace(/^[-*]\s*/, '')
+    .replace(/:[a-z0-9_+-]+:/gi, '')
+    .replace(/\[([^\]]+)]\([^)]*\)/g, '$1')
+    .replace(/\s*\((?:#[0-9]+|[0-9a-f]{7,40})\)\s*$/i, '')
+    .replace(/[*_`]/g, '')
+    .replace(/\s+/g, ' ')
     .trim();
 
-  if (!clean) return "";
+  if (!clean) return '';
   const sentence = `${clean[0].toUpperCase()}${clean.slice(1)}`;
   return /[.!?…]$/.test(sentence) ? sentence : `${sentence}.`;
 }
@@ -67,12 +67,12 @@ export function buildFallbackItems(notes) {
  * thinking first, then the answer text. The thinking is dropped.
  */
 export function responseText(content) {
-  if (typeof content === "string") return content;
-  if (!Array.isArray(content)) return "";
+  if (typeof content === 'string') return content;
+  if (!Array.isArray(content)) return '';
   return content
-    .filter((chunk) => chunk.type === "text")
+    .filter((chunk) => chunk.type === 'text')
     .map((chunk) => chunk.text)
-    .join("");
+    .join('');
 }
 
 // Day entries list their releases in "versions". Older entries have one
@@ -84,13 +84,13 @@ export function entryVersions(entry) {
 }
 
 const COMPONENT_LABELS = {
-  en: { client: "Web app", server: "Server" },
-  de: { client: "Web-App", server: "Server" },
+  en: { client: 'Web app', server: 'Server' },
+  de: { client: 'Web-App', server: 'Server' },
 };
 
 function compareSemver(a, b) {
-  const pa = a.split(".").map(Number);
-  const pb = b.split(".").map(Number);
+  const pa = a.split('.').map(Number);
+  const pb = b.split('.').map(Number);
   for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
     const diff = (pa[i] || 0) - (pb[i] || 0);
     if (diff !== 0) return diff;
@@ -100,10 +100,10 @@ function compareSemver(a, b) {
 
 // "btree-client-7.10.0", "btree-client-7.10.4", "btree-server-7.12.2"
 // -> "Web app 7.10.0–7.10.4 · Server 7.12.2"
-export function buildDayLabel(versions, lang = "en") {
+export function buildDayLabel(versions, lang = 'en') {
   const labels = COMPONENT_LABELS[lang] || COMPONENT_LABELS.en;
   const parts = [];
-  for (const component of ["client", "server"]) {
+  for (const component of ['client', 'server']) {
     const semvers = versions
       .filter((version) => version.startsWith(`btree-${component}-`))
       .map((version) => version.slice(`btree-${component}-`.length))
@@ -115,8 +115,10 @@ export function buildDayLabel(versions, lang = "en") {
       `${labels[component]} ${first === last ? first : `${first}–${last}`}`,
     );
   }
-  const other = versions.filter((version) => !/^btree-(client|server)-/.test(version));
-  return [...parts, ...other].join(" · ");
+  const other = versions.filter(
+    (version) => !/^btree-(client|server)-/.test(version),
+  );
+  return [...parts, ...other].join(' · ');
 }
 
 // Newest first. Entries of one day are ordered by the publish time of their
@@ -124,9 +126,9 @@ export function buildDayLabel(versions, lang = "en") {
 export function sortNewsEntries(entries, publishedAtByVersion) {
   const newestPublish = (entry) =>
     entryVersions(entry)
-      .map((version) => publishedAtByVersion.get(version) || "")
+      .map((version) => publishedAtByVersion.get(version) || '')
       .sort()
-      .at(-1) || "";
+      .at(-1) || '';
   return entries.sort(
     (a, b) =>
       b.date.localeCompare(a.date) ||

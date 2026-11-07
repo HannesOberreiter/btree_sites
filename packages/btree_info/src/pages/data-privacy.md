@@ -2,7 +2,7 @@
 title: Privacy Notice (Data privacy statement)
 description: 'b.tree Data privacy statement'
 layout: ../layouts/IndexLayout.astro
-lang: "en"
+lang: 'en'
 ---
 
 The protection of your data is a special concern of ours. Therefore we process your data only according to legal requirements the EU General Data Protection Regulation GDPR and Telekommunikationsgesetzes (Austria) 2003. The following privacy statement will inform you about the most important aspects of data handling by our website.

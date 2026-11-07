@@ -1,9 +1,9 @@
 ---
-title: "Funktionen"
-seoTitle: "b.tree | Funktionen der Imkerei Management Software"
-description: "Funktionen von b.tree: tabellarische Imkereidaten, Bienenstandverwaltung, digitale Stockkarte, Kontrollen, Behandlungen, Fütterungen, Ernten, Wachskreislauf, Königinnenzucht, Statistiken, Datenexport, WizBee KI-Helfer und KI-Agent API."
+title: 'Funktionen'
+seoTitle: 'b.tree | Funktionen der Imkerei Management Software'
+description: 'Funktionen von b.tree: tabellarische Imkereidaten, Bienenstandverwaltung, digitale Stockkarte, Kontrollen, Behandlungen, Fütterungen, Ernten, Wachskreislauf, Königinnenzucht, Statistiken, Datenexport, WizBee KI-Helfer und KI-Agent API.'
 layout: '../../layouts/MainLayout.astro'
-lang: "de"
+lang: 'de'
 ---
 
 b.tree ist ein Management-Tool für Imkerinnen und Imker, die mehr brauchen als eine einfache digitale Stockkarte. Die Software ist auf strukturierte, tabellarische Daten ausgelegt. So behalten Sie auch bei vielen Bienenständen, Bienenvölkern, Kontrollen, Behandlungen, Fütterungen, Ernten, Königinnen und Aufgaben den Überblick.

@@ -134,14 +134,14 @@ export function videosForLang(lang: 'en' | 'de'): Video[] {
   return videos.filter((v) => v.langs.includes(lang));
 }
 
-export function videosForEnPage(): (Video & { deOnly: boolean })[] {
+export function videosForEnPage(): Video[] {
   const enVideos = videos.filter((v) => v.langs.includes('en'));
   const enTitles = new Set(enVideos.map((v) => v.titleEn));
   const deOnlyVideos = videos.filter(
-    (v) => v.langs.includes('de') && !v.langs.includes('en') && !enTitles.has(v.titleEn)
+    (v) =>
+      v.langs.includes('de') &&
+      !v.langs.includes('en') &&
+      !enTitles.has(v.titleEn),
   );
-  return [
-    ...enVideos.map((v) => ({ ...v, deOnly: false })),
-    ...deOnlyVideos.map((v) => ({ ...v, deOnly: true })),
-  ];
+  return [...enVideos, ...deOnlyVideos];
 }

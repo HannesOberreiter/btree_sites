@@ -1,8 +1,8 @@
 ---
 title: API (Premium Feature)
-description: "Dokumentation und Hilfe zur Imkerei Software"
-layout: "../../layouts/IndexLayout.astro"
-lang: "de"
+description: 'Dokumentation und Hilfe zur Imkerei Software'
+layout: '../../layouts/IndexLayout.astro'
+lang: 'de'
 ---
 
 Aktive Premium-Benutzer haben Zugang zu unseren externen API-Endpunkten. Bevor Sie diese nutzen können, müssen Sie diese in den Einstellungen [/setting/profile/api](https://app.btree.at/setting/profile/api) aktivieren. Obwohl sie auf Ihrer Profilebene verwaltet wird, ist die API auf Imkerei basis aktiv. Wenn Sie mehrere Imkereibetriebe verwalten, müssen Sie sie für jeden einzelnen Betrieb die API aktivieren, da Sie jedes Mal einen anderen Schlüssel erhalten.

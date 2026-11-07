@@ -1,9 +1,9 @@
 ---
-title: "FAQs"
-description: "Documentation and Help for Beekeeping Software and Application"
-layout: "../layouts/IndexLayout.astro"
+title: 'FAQs'
+description: 'Documentation and Help for Beekeeping Software and Application'
+layout: '../layouts/IndexLayout.astro'
 faq: true
-lang: "en"
+lang: 'en'
 ---
 
 ### I cannot find the app in the Apple iOS AppStore or Google PlayStore
@@ -22,6 +22,7 @@ The b.tree beekeeping application is a pure web solution and can be installed as
 #### Mobile store links
 
 - [Android PlayStore](https://play.google.com/store/apps/details?id=com.bnative)
+
 <!-- - [iOS AppStore](https://apps.apple.com/us/app/btree-app-professional-beekeeping-software/id1115267587) -->
 
 ### Task is not visible in table

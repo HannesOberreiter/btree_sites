@@ -1,8 +1,8 @@
 ---
 title: First Steps
-description: "Documentation and Help for Beekeeping Software and Application"
-layout: "../layouts/IndexLayout.astro"
-lang: "en"
+description: 'Documentation and Help for Beekeeping Software and Application'
+layout: '../layouts/IndexLayout.astro'
+lang: 'en'
 ---
 
 ### Why should I use this app?

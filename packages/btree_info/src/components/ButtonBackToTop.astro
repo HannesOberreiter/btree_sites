@@ -20,40 +20,42 @@
 </button>
 
 <script>
- function initBackToTop() {
-   const scrollTopButton = document.getElementById('btn-back-to-top');
+  function initBackToTop() {
+    const scrollTopButton = document.getElementById('btn-back-to-top');
 
-   if (!scrollTopButton) {
-     console.error('Back to top button not found');
-     return;
-   }
+    if (!scrollTopButton) {
+      console.error('Back to top button not found');
+      return;
+    }
 
-   window.onscroll = function () {
-     scrollFunction();
-   };
+    // Assignment replaces the handler from the previous page load; addEventListener would stack them.
+    // oxlint-disable-next-line unicorn/prefer-add-event-listener
+    window.onscroll = function () {
+      scrollFunction();
+    };
 
-   scrollTopButton.addEventListener('click', backToTop);
+    scrollTopButton.addEventListener('click', backToTop);
 
-   function scrollFunction() {
-     if (
-       document.body.scrollTop > 20
-       || document.documentElement.scrollTop > 20
-     ) {
-       scrollTopButton.classList.remove('hidden');
-       scrollTopButton.classList.add('inline-block');
-       return;
-     }
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        scrollTopButton.classList.remove('hidden');
+        scrollTopButton.classList.add('inline-block');
+        return;
+      }
 
-     scrollTopButton.classList.add('hidden');
-     scrollTopButton.classList.remove('inline-block');
-   }
+      scrollTopButton.classList.add('hidden');
+      scrollTopButton.classList.remove('inline-block');
+    }
 
-   function backToTop() {
-     document.body.scrollTop = 0;
-     document.documentElement.scrollTop = 0;
-   }
- }
+    function backToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  }
 
- document.addEventListener('astro:page-load', initBackToTop);
- document.addEventListener('DOMContentLoaded', initBackToTop);
+  document.addEventListener('astro:page-load', initBackToTop);
+  document.addEventListener('DOMContentLoaded', initBackToTop);
 </script>

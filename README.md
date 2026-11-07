@@ -4,11 +4,11 @@ Static websites monorepo for the [btree](https://www.btree.at) ecosystem. Relate
 
 ## Packages
 
-| Package | Domain | Description |
-|---------|--------|-------------|
-| `packages/btree_info` | btree.at | Main btree info & documentation site |
-| `packages/wizbee_info` | wiz-bee.com | WizBee AI assistant landing page |
-| `packages/btree_tv` | btree.tv | btree.tv static site |
+| Package                | Domain      | Description                          |
+| ---------------------- | ----------- | ------------------------------------ |
+| `packages/btree_info`  | btree.at    | Main btree info & documentation site |
+| `packages/wizbee_info` | wiz-bee.com | WizBee AI assistant landing page     |
+| `packages/btree_tv`    | btree.tv    | btree.tv static site                 |
 
 ## Stack
 
@@ -32,6 +32,12 @@ pnpm build:btree-info
 
 # Build all packages
 pnpm build
+
+# Lint (oxlint) and check formatting (oxfmt) for all packages
+pnpm lint
+
+# Fix lint findings and format all files
+pnpm lint:fix
 ```
 
 ## Deployment

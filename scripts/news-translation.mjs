@@ -6,10 +6,10 @@ const FORBIDDEN_CHARGE_TRANSLATION =
 
 function isNewsItem(item) {
   return (
-    typeof item === "object" &&
+    typeof item === 'object' &&
     item !== null &&
-    typeof item.title === "string" &&
-    typeof item.description === "string"
+    typeof item.title === 'string' &&
+    typeof item.description === 'string'
   );
 }
 
@@ -23,15 +23,15 @@ function refersToChargeControl(text) {
 export function parseJsonResponse(raw) {
   return JSON.parse(
     raw
-      .replace(/```json\n?/g, "")
-      .replace(/```\n?/g, "")
+      .replace(/```json\n?/g, '')
+      .replace(/```\n?/g, '')
       .trim(),
   );
 }
 
 export function validateGermanNewsItems(englishItems, germanItems) {
   if (!Array.isArray(germanItems)) {
-    return ["Translation must be a JSON array."];
+    return ['Translation must be a JSON array.'];
   }
   if (germanItems.length !== englishItems.length) {
     return [
@@ -44,7 +44,9 @@ export function validateGermanNewsItems(englishItems, germanItems) {
     const english = englishItems[index];
     const german = germanItems[index];
     if (!isNewsItem(german)) {
-      errors.push(`Item ${index + 1} must contain string title and description fields.`);
+      errors.push(
+        `Item ${index + 1} must contain string title and description fields.`,
+      );
       continue;
     }
 
@@ -66,7 +68,7 @@ export function buildTranslationRetryPrompt(englishItems, errors) {
   return `Translate the complete JSON array again. Correct every validation error and preserve item count and order.
 
 Validation errors:
-${errors.map((error) => `- ${error}`).join("\n")}
+${errors.map((error) => `- ${error}`).join('\n')}
 
 English source:
 ${JSON.stringify(englishItems, null, 2)}`;
@@ -96,7 +98,7 @@ export async function translateGermanNewsItems({
     if (errors.length === 0) return germanItems;
 
     logger.warn(
-      `German translation validation failed for ${version} (attempt ${attempt}): ${errors.join(" ")}`,
+      `German translation validation failed for ${version} (attempt ${attempt}): ${errors.join(' ')}`,
     );
     prompt = buildTranslationRetryPrompt(englishItems, errors);
   }

@@ -1,199 +1,216 @@
 ---
 import type { Graph } from 'schema-dts';
+
 import { OPEN_GRAPH, SITE } from '../config';
 import Schema from './SchemaLD.astro';
 
 type Frontmatter = {
-  description?: string
+  description?: string;
   image?: {
-    alt?: string
-    src?: string
-  }
-  ogLocale?: string
-  seoTitle?: string
-  title?: string
+    alt?: string;
+    src?: string;
+  };
+  ogLocale?: string;
+  seoTitle?: string;
+  title?: string;
 };
 
 export interface Props {
-  frontmatter?: Frontmatter
-  canonicalURL: URL | string
+  frontmatter?: Frontmatter;
+  canonicalURL: URL | string;
 }
 const curLoc = Astro.currentLocale;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { frontmatter = {} } = Astro.props;
-const formattedContentTitle = frontmatter.seoTitle ?? (frontmatter.title
-  ? `${frontmatter.title} 🐝 ${SITE.title}`
-  : SITE.title);
+const formattedContentTitle =
+  frontmatter.seoTitle ??
+  (frontmatter.title ? `${frontmatter.title} 🐝 ${SITE.title}` : SITE.title);
 const imageSrc = frontmatter?.image?.src ?? OPEN_GRAPH.image.src;
 const canonicalImageSrc = new URL(imageSrc, Astro.site);
 const imageAlt = frontmatter?.image?.alt ?? OPEN_GRAPH.image.alt;
 const sameAs = [
-    'https://www.linkedin.com/in/hannes-oberreiter-214a30265/',
-    'https://github.com/HannesOberreiter',
-    'https://www.btree.tv/',
-    'https://www.facebook.com/btree.at',
-    'https://www.wiz-bee.com/',
+  'https://www.linkedin.com/in/hannes-oberreiter-214a30265/',
+  'https://github.com/HannesOberreiter',
+  'https://www.btree.tv/',
+  'https://www.facebook.com/btree.at',
+  'https://www.wiz-bee.com/',
 ];
 
 /* Schema.org structured data for the page */
 const schemaEN: Graph['@graph'] = [
-    {
-        '@type': 'Organization',
-        '@id': 'https://www.btree.at/#organization',
-        'name': 'b.tree',
-        'description': SITE.description,
-        'url': 'https://www.btree.at/',
-        'logo': 'https://www.btree.at/logo.png',
-        'sameAs': sameAs,
-        'areaServed': {
-            '@type': 'Place',
-            'name': 'Worldwide',
-        },
-        'contactPoint': {
-            '@type': 'ContactPoint',
-            'contactType': 'Customer Service',
-            'availableLanguage': ['English', 'German'],
-            'url': 'https://www.btree.at/imprint/',
-        },
+  {
+    '@type': 'Organization',
+    '@id': 'https://www.btree.at/#organization',
+    name: 'b.tree',
+    description: SITE.description,
+    url: 'https://www.btree.at/',
+    logo: 'https://www.btree.at/logo.png',
+    sameAs: sameAs,
+    areaServed: {
+      '@type': 'Place',
+      name: 'Worldwide',
     },
-    {
-        '@type': 'SoftwareApplication',
-        '@id': 'https://www.btree.at/#software',
-        'name': 'b.tree',
-        'alternateName': ['b.tree beekeeping app', 'digital hive records', 'beekeeping management software'],
-        'description': 'Cloud-based beekeeping management software and digital hive record system for apiaries, colonies, treatments, feedings, harvests, tasks, queen rearing, statistics, NFC tag scanning on Android, WizBee AI helper powered by European Mistral AI, and AI agent integrations.',
-        'disambiguatingDescription': 'b.tree is beekeeping software for apiary management, not the B-tree database index data structure.',
-        'url': 'https://www.btree.at/',
-        'applicationCategory': 'BusinessApplication',
-        'applicationSubCategory': 'Beekeeping management software',
-        'operatingSystem': 'Web browser',
-        'softwareVersion': '7',
-        'inLanguage': ['en', 'de'],
-        'isAccessibleForFree': true,
-        'keywords': 'beekeeping software, digital hive records, apiary management, hive inspection app, organic beekeeping records, queen rearing software, migratory beekeeping software',
-        'featureList': [
-            'Digital hive records',
-            'Apiary and colony management',
-            'Treatment, feeding, harvest, and inspection logs',
-            'Queen rearing planner',
-            'NFC tag scanning on Android devices with Web NFC support',
-            'CSV export, iCal calendar export, and statistics',
-            'Multi-user cloud access',
-            'WizBee AI helper for Premium users powered by European Mistral AI',
-            'AI agent API with OpenAPI discovery',
-        ],
-        'audience': {
-            '@type': 'Audience',
-            'audienceType': 'Professional beekeepers, organic beekeepers, migratory beekeepers, and apiary teams',
-        },
-        'offers': {
-            '@type': 'Offer',
-            'url': 'https://www.btree.at/price/',
-            'availability': 'https://schema.org/InStock',
-        },
-        'publisher': {
-            '@id': 'https://www.btree.at/#organization',
-        },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Service',
+      availableLanguage: ['English', 'German'],
+      url: 'https://www.btree.at/imprint/',
     },
+  },
+  {
+    '@type': 'SoftwareApplication',
+    '@id': 'https://www.btree.at/#software',
+    name: 'b.tree',
+    alternateName: [
+      'b.tree beekeeping app',
+      'digital hive records',
+      'beekeeping management software',
+    ],
+    description:
+      'Cloud-based beekeeping management software and digital hive record system for apiaries, colonies, treatments, feedings, harvests, tasks, queen rearing, statistics, NFC tag scanning on Android, WizBee AI helper powered by European Mistral AI, and AI agent integrations.',
+    disambiguatingDescription:
+      'b.tree is beekeeping software for apiary management, not the B-tree database index data structure.',
+    url: 'https://www.btree.at/',
+    applicationCategory: 'BusinessApplication',
+    applicationSubCategory: 'Beekeeping management software',
+    operatingSystem: 'Web browser',
+    softwareVersion: '7',
+    inLanguage: ['en', 'de'],
+    isAccessibleForFree: true,
+    keywords:
+      'beekeeping software, digital hive records, apiary management, hive inspection app, organic beekeeping records, queen rearing software, migratory beekeeping software',
+    featureList: [
+      'Digital hive records',
+      'Apiary and colony management',
+      'Treatment, feeding, harvest, and inspection logs',
+      'Queen rearing planner',
+      'NFC tag scanning on Android devices with Web NFC support',
+      'CSV export, iCal calendar export, and statistics',
+      'Multi-user cloud access',
+      'WizBee AI helper for Premium users powered by European Mistral AI',
+      'AI agent API with OpenAPI discovery',
+    ],
+    audience: {
+      '@type': 'Audience',
+      audienceType:
+        'Professional beekeepers, organic beekeepers, migratory beekeepers, and apiary teams',
+    },
+    offers: {
+      '@type': 'Offer',
+      url: 'https://www.btree.at/price/',
+      availability: 'https://schema.org/InStock',
+    },
+    publisher: {
+      '@id': 'https://www.btree.at/#organization',
+    },
+  },
 ];
 
 const schemaDE: Graph['@graph'] = [
-    {
-        '@type': 'Organization',
-        '@id': 'https://www.btree.at/#organization',
-        'name': 'b.tree',
-        'description': SITE.description,
-        'url': 'https://www.btree.at/de/',
-        'logo': 'https://www.btree.at/logo.png',
-        'sameAs': sameAs,
-        'areaServed': {
-            '@type': 'Place',
-            'name': 'Worldwide',
-        },
-        'contactPoint': {
-            '@type': 'ContactPoint',
-            'contactType': 'Kundendienst',
-            'availableLanguage': ['English', 'German'],
-            'url': 'https://www.btree.at/de/imprint/',
-        },
+  {
+    '@type': 'Organization',
+    '@id': 'https://www.btree.at/#organization',
+    name: 'b.tree',
+    description: SITE.description,
+    url: 'https://www.btree.at/de/',
+    logo: 'https://www.btree.at/logo.png',
+    sameAs: sameAs,
+    areaServed: {
+      '@type': 'Place',
+      name: 'Worldwide',
     },
-    {
-        '@type': 'SoftwareApplication',
-        '@id': 'https://www.btree.at/#software',
-        'name': 'b.tree',
-        'alternateName': ['b.tree Imker App', 'Imkerei Management Software', 'digitale Stockkarte', 'Imkerei Software'],
-        'description': 'Cloud-basierte Imkerei Management Software für Bienenstandverwaltung, digitale Stockkarten, Bienenvölker, Behandlungen, Fütterungen, Ernten, Aufgaben, Königinnenzucht, Statistiken, NFC-Tag-Scanning auf Android, WizBee KI-Helfer mit europäischer Mistral AI und KI-Agent-Integrationen.',
-        'disambiguatingDescription': 'b.tree ist Imkerei Software für die Verwaltung von Bienenständen und Bienenvölkern, nicht die B-Tree-Datenstruktur aus der Informatik.',
-        'url': 'https://www.btree.at/de/',
-        'applicationCategory': 'BusinessApplication',
-        'applicationSubCategory': 'Imkerei Management Software',
-        'operatingSystem': 'Web browser',
-        'softwareVersion': '7',
-        'inLanguage': ['en', 'de'],
-        'isAccessibleForFree': true,
-        'keywords': 'Imkerei Management Software, Imkerei Software, digitale Stockkarte, Imker App, Bienenstand verwalten, Bienenvölker verwalten, Bio Imker Bestandsbuch, Wanderimker Software, Königinnenzucht Planer, NFC Tag Imkerei Android',
-        'featureList': [
-            'Digitale Stockkarte',
-            'Bienenstand- und Völkerverwaltung',
-            'Behandlungs-, Fütterungs-, Ernte- und Kontrollprotokolle',
-            'Königinnenzucht-Planer',
-            'NFC-Tag-Scanning auf Android-Geräten mit Web-NFC-Unterstützung',
-            'CSV-Export, iCal-Kalenderexport und Statistiken',
-            'Cloud-Zugriff für mehrere Benutzer',
-            'WizBee KI-Helfer für Premium-Benutzer mit europäischer Mistral AI',
-            'KI-Agent API mit OpenAPI-Discovery',
-        ],
-        'audience': {
-            '@type': 'Audience',
-            'audienceType': 'Berufsimker, Erwerbsimker, Bio-Imker, Wanderimker und Imkerei-Teams',
-        },
-        'offers': {
-            '@type': 'Offer',
-            'url': 'https://www.btree.at/de/price/',
-            'availability': 'https://schema.org/InStock',
-        },
-        'publisher': {
-            '@id': 'https://www.btree.at/#organization',
-        },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Kundendienst',
+      availableLanguage: ['English', 'German'],
+      url: 'https://www.btree.at/de/imprint/',
     },
+  },
+  {
+    '@type': 'SoftwareApplication',
+    '@id': 'https://www.btree.at/#software',
+    name: 'b.tree',
+    alternateName: [
+      'b.tree Imker App',
+      'Imkerei Management Software',
+      'digitale Stockkarte',
+      'Imkerei Software',
+    ],
+    description:
+      'Cloud-basierte Imkerei Management Software für Bienenstandverwaltung, digitale Stockkarten, Bienenvölker, Behandlungen, Fütterungen, Ernten, Aufgaben, Königinnenzucht, Statistiken, NFC-Tag-Scanning auf Android, WizBee KI-Helfer mit europäischer Mistral AI und KI-Agent-Integrationen.',
+    disambiguatingDescription:
+      'b.tree ist Imkerei Software für die Verwaltung von Bienenständen und Bienenvölkern, nicht die B-Tree-Datenstruktur aus der Informatik.',
+    url: 'https://www.btree.at/de/',
+    applicationCategory: 'BusinessApplication',
+    applicationSubCategory: 'Imkerei Management Software',
+    operatingSystem: 'Web browser',
+    softwareVersion: '7',
+    inLanguage: ['en', 'de'],
+    isAccessibleForFree: true,
+    keywords:
+      'Imkerei Management Software, Imkerei Software, digitale Stockkarte, Imker App, Bienenstand verwalten, Bienenvölker verwalten, Bio Imker Bestandsbuch, Wanderimker Software, Königinnenzucht Planer, NFC Tag Imkerei Android',
+    featureList: [
+      'Digitale Stockkarte',
+      'Bienenstand- und Völkerverwaltung',
+      'Behandlungs-, Fütterungs-, Ernte- und Kontrollprotokolle',
+      'Königinnenzucht-Planer',
+      'NFC-Tag-Scanning auf Android-Geräten mit Web-NFC-Unterstützung',
+      'CSV-Export, iCal-Kalenderexport und Statistiken',
+      'Cloud-Zugriff für mehrere Benutzer',
+      'WizBee KI-Helfer für Premium-Benutzer mit europäischer Mistral AI',
+      'KI-Agent API mit OpenAPI-Discovery',
+    ],
+    audience: {
+      '@type': 'Audience',
+      audienceType:
+        'Berufsimker, Erwerbsimker, Bio-Imker, Wanderimker und Imkerei-Teams',
+    },
+    offers: {
+      '@type': 'Offer',
+      url: 'https://www.btree.at/de/price/',
+      availability: 'https://schema.org/InStock',
+    },
+    publisher: {
+      '@id': 'https://www.btree.at/#organization',
+    },
+  },
 ];
 
-
 const schema: Graph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-        ...(curLoc === 'de' ? schemaDE : schemaEN),
-        {
-            '@type': 'WebPage',
-            'name': formattedContentTitle,
-            'description': frontmatter.description,
-            'url': Astro.url.toString(),
-            'inLanguage': curLoc,
-        },
-    ],
+  '@context': 'https://schema.org',
+  '@graph': [
+    ...(curLoc === 'de' ? schemaDE : schemaEN),
+    {
+      '@type': 'WebPage',
+      name: formattedContentTitle,
+      description: frontmatter.description,
+      url: Astro.url.toString(),
+      inLanguage: curLoc,
+    },
+  ],
 };
 
 /* Generate alternate language URLs for hreflang tags */
 const pathname = Astro.url.pathname;
-const isGermanPage = curLoc === 'de' || pathname.startsWith('/de/') || pathname === '/de';
+const isGermanPage =
+  curLoc === 'de' || pathname.startsWith('/de/') || pathname === '/de';
 
 // Generate the English and German URLs
 let englishURL: string;
 let germanURL: string;
 
 if (isGermanPage) {
-    // Current page is German, remove /de/ prefix for English
-    let englishPath = pathname.replace(/^\/de(\/|$)/, '/');
-    // Normalize path to avoid double slashes
-    englishPath = englishPath.replace(/\/+/g, '/');
-    englishURL = new URL(englishPath, Astro.site).toString();
-    germanURL = canonicalURL.toString();
-}
-else {
-    // Current page is English, add /de/ prefix for German
-    englishURL = canonicalURL.toString();
-    const germanPath = pathname === '/' ? '/de/' : `/de${pathname}`;
-    germanURL = new URL(germanPath, Astro.site).toString();
+  // Current page is German, remove /de/ prefix for English
+  let englishPath = pathname.replace(/^\/de(\/|$)/, '/');
+  // Normalize path to avoid double slashes
+  englishPath = englishPath.replace(/\/+/g, '/');
+  englishURL = new URL(englishPath, Astro.site).toString();
+  germanURL = canonicalURL.toString();
+} else {
+  // Current page is English, add /de/ prefix for German
+  englishURL = canonicalURL.toString();
+  const germanPath = pathname === '/' ? '/de/' : `/de${pathname}`;
+  germanURL = new URL(germanPath, Astro.site).toString();
 }
 ---
 

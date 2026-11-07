@@ -8,11 +8,11 @@
  * Linked to the pull zone via MiddlewareScriptId (ID: 68801).
  */
 
-import * as BunnySDK from "https://esm.sh/@bunny.net/edgescript-sdk@0.11.2";
+import * as BunnySDK from 'https://esm.sh/@bunny.net/edgescript-sdk@0.11.2';
 
-async function onOriginRequest(
-  context: { request: Request },
-): Promise<Response> | Response | Promise<Request> | Request | void {
+async function onOriginRequest(context: {
+  request: Request;
+}): Promise<Response> | Response | Promise<Request> | Request | void {
   const url = new URL(context.request.url);
   const { pathname } = url;
   url.protocol = 'https:';
@@ -28,7 +28,10 @@ async function onOriginRequest(
   // ── /app/detail/* → https://app.btree.at/detail/* ────────────────────────
   const appDetailMatch = pathname.match(/^\/app\/detail\/(.*)$/);
   if (appDetailMatch) {
-    return Response.redirect(`https://app.btree.at/detail/${appDetailMatch[1]}`, 301);
+    return Response.redirect(
+      `https://app.btree.at/detail/${appDetailMatch[1]}`,
+      301,
+    );
   }
 
   // ── /app/* → https://app.btree.at/ ───────────────────────────────────────
@@ -53,5 +56,4 @@ async function onOriginRequest(
   return context.request;
 }
 
-BunnySDK.net.http.servePullZone()
-  .onOriginRequest(onOriginRequest);
+BunnySDK.net.http.servePullZone().onOriginRequest(onOriginRequest);

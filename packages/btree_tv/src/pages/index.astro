@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
 import { videosForEnPage, BUNNY_LIBRARY_ID } from '../config';
+import Layout from '../layouts/Layout.astro';
 
 const lang = 'en' as const;
 const videos = videosForEnPage();
@@ -14,12 +14,16 @@ const videos = videosForEnPage();
 >
   <section class="hero">
     <h1>b.tree Tutorials</h1>
-    <p>Short video guides to help you get the most out of the b.tree beekeeping app.</p>
+    <p>
+      Short video guides to help you get the most out of the b.tree beekeeping
+      app.
+    </p>
   </section>
 
   <main>
     <div class="inner">
       <div class="intro">
+        <!-- prettier-ignore -->
         <p>
           Welcome to <strong>b.tree Tutorials</strong> — your video help centre for the
           <a href="https://www.btree.at" target="_blank" rel="noopener">b.tree beekeeping app</a>.
@@ -42,8 +46,10 @@ const videos = videosForEnPage();
             </div>
             <div class="video-info">
               <h2>{video.titleEn}</h2>
-              {video.deOnly && (
-                <p class="lang-badge">🇦🇹 German audio — no English version available</p>
+              {!video.langs.includes('en') && (
+                <p class="lang-badge">
+                  🇦🇹 German audio — no English version available
+                </p>
               )}
               <p>{video.descEn}</p>
             </div>

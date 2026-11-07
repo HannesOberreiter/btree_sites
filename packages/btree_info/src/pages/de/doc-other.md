@@ -1,8 +1,8 @@
 ---
 title: Other
-description: "Dokumentation und Hilfe zur Imkerei Software"
-layout: "../../layouts/IndexLayout.astro"
-lang: "de"
+description: 'Dokumentation und Hilfe zur Imkerei Software'
+layout: '../../layouts/IndexLayout.astro'
+lang: 'de'
 ---
 
 ### Tastaturkurzbefehle

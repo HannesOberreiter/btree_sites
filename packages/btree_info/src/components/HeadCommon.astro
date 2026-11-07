@@ -1,5 +1,6 @@
 ---
 import HeadSEO from './HeadSEO.astro';
+
 import '../styles/theme.css';
 import '../styles/index.css';
 
@@ -12,7 +13,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 
-<meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://*.btree.at https://*.inaturalist.org; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.btree.at; style-src 'self' 'unsafe-inline';" />
+<meta
+  http-equiv="Content-Security-Policy"
+  content="connect-src 'self' https://*.btree.at https://*.inaturalist.org; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.btree.at; style-src 'self' 'unsafe-inline';"
+/>
 
 <link
   rel="icon"
@@ -130,83 +134,83 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <!-- This is intentionally inlined to avoid FOUC -->
 <script is:inline>
- const root = document.documentElement;
- const theme = localStorage.getItem('local-color-scheme');
- if (
-   theme === 'dark'
-   || ((!theme || theme === 'auto')
-     && window.matchMedia('(prefers-color-scheme: dark)').matches)
- ) {
-   root.classList.add('dark');
- }
- else {
-   root.classList.remove('dark');
- }
+  const root = document.documentElement;
+  const theme = localStorage.getItem('local-color-scheme');
+  if (
+    theme === 'dark' ||
+    ((!theme || theme === 'auto') &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    root.classList.add('dark');
+  } else {
+    root.classList.remove('dark');
+  }
 </script>
 
 <script is:inline>
- function checkLanguageRedirect() {
-   const path = window.location.pathname;
-   const isGermanPage = path.startsWith('/de/');
+  function checkLanguageRedirect() {
+    const path = window.location.pathname;
+    const isGermanPage = path.startsWith('/de/');
 
-   if (isGermanPage) {
-     return;
-   }
+    if (isGermanPage) {
+      return;
+    }
 
-   const hasLanguagePreference = localStorage.getItem('language-preference-set');
-   if (hasLanguagePreference) {
-     return;
-   }
+    const hasLanguagePreference = localStorage.getItem(
+      'language-preference-set',
+    );
+    if (hasLanguagePreference) {
+      return;
+    }
 
-   const browserLanguages = navigator.languages || [navigator.language];
-   const hasGermanPreference = browserLanguages.some(lang =>
-     lang.toLowerCase().startsWith('de'),
-   );
+    const browserLanguages = navigator.languages || [navigator.language];
+    const hasGermanPreference = browserLanguages.some((lang) =>
+      lang.toLowerCase().startsWith('de'),
+    );
 
-   if (hasGermanPreference) {
-     localStorage.setItem('language-preference-set', 'true');
+    if (hasGermanPreference) {
+      localStorage.setItem('language-preference-set', 'true');
 
-     let germanPath = `/de${path}`;
+      let germanPath = `/de${path}`;
 
-     if (path === '/' || path === '') {
-       germanPath = '/de/';
-     }
+      if (path === '/' || path === '') {
+        germanPath = '/de/';
+      }
 
-     window.location.href = germanPath;
-   }
- }
+      window.location.href = germanPath;
+    }
+  }
 
- if (document.readyState === 'loading') {
-   document.addEventListener('DOMContentLoaded', checkLanguageRedirect);
- }
- else {
-   checkLanguageRedirect();
- }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkLanguageRedirect);
+  } else {
+    checkLanguageRedirect();
+  }
 </script>
 
 <!-- Matomo -->
 <script>
- document.addEventListener('DOMContentLoaded', () => {
-   if (window.location.hostname === 'localhost') {
-     console.log('Dev mode, analytics is not loaded');
-     return;
-   }
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hostname === 'localhost') {
+      console.log('Dev mode, analytics is not loaded');
+      return;
+    }
 
-   const _paq = ((window as any)._paq = (window as any)._paq || []);
-   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-   _paq.push(['disableCookies']);
-   _paq.push(['trackPageView']);
-   _paq.push(['enableLinkTracking']);
-   (function () {
-     const u = 'https://analytics.btree.at/';
-     _paq.push(['setTrackerUrl', `${u}matomo.php`]);
-     _paq.push(['setSiteId', '5']);
-     const d = document;
-     const g = d.createElement('script');
-     const s = d.getElementsByTagName('script')[0];
-     g.async = true;
-     g.src = `${u}matomo.js`;
-     s.parentNode.insertBefore(g, s);
-   })();
- });
+    const _paq = ((window as any)._paq = (window as any)._paq || []);
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['disableCookies']);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+      const u = 'https://analytics.btree.at/';
+      _paq.push(['setTrackerUrl', `${u}matomo.php`]);
+      _paq.push(['setSiteId', '5']);
+      const d = document;
+      const g = d.createElement('script');
+      const s = d.getElementsByTagName('script')[0];
+      g.async = true;
+      g.src = `${u}matomo.js`;
+      s.parentNode.insertBefore(g, s);
+    })();
+  });
 </script>

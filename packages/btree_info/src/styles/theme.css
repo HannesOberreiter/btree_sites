@@ -1,9 +1,9 @@
 :root {
-  --font-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  --font-fallback:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --font-body: system-ui, var(--font-fallback);
-  --font-mono: Courier, Monaco, "Courier New", monospace, var(--font-fallback);
+  --font-mono: Courier, Monaco, 'Courier New', monospace, var(--font-fallback);
 
   /*
    * Variables with --color-base prefix define

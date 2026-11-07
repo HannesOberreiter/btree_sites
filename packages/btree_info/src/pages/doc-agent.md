@@ -1,8 +1,8 @@
 ---
 title: AI-Powered Beekeeping Automation
-description: "Connect your AI agent (Claude, ChatGPT, LLM bots) to b.tree beekeeping software via a secure API. Automate hive management, inspections, and data analysis."
-layout: "../layouts/IndexLayout.astro"
-lang: "en"
+description: 'Connect your AI agent (Claude, ChatGPT, LLM bots) to b.tree beekeeping software via a secure API. Automate hive management, inspections, and data analysis.'
+layout: '../layouts/IndexLayout.astro'
+lang: 'en'
 ---
 
 ## b.tree Agent API — Let AI Manage Your Hives
@@ -163,4 +163,4 @@ The Agent API described above is the recommended starting point for automation w
 
 ---
 
-*The Agent API is a Premium feature. [Upgrade your account](https://app.btree.at/premium) to get started.*
+_The Agent API is a Premium feature. [Upgrade your account](https://app.btree.at/premium) to get started._

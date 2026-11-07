@@ -4,10 +4,10 @@ on:
   push:
     branches: [main]
     paths:
-      - "packages/btree_tv/**"
-      - ".github/workflows/deploy-btree-tv.yml"
-      - "scripts/upload-bunny.sh"
-      - "scripts/upload-bunny.test.mjs"
+      - 'packages/btree_tv/**'
+      - '.github/workflows/deploy-btree-tv.yml'
+      - 'scripts/upload-bunny.sh'
+      - 'scripts/upload-bunny.test.mjs'
   workflow_dispatch:
 
 concurrency:

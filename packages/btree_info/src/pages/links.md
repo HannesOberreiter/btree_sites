@@ -1,8 +1,8 @@
 ---
-title: "Beekeeping link collection"
-description: "List of helpful links and good resources for beekeeper"
-layout: "../layouts/MainLayout.astro"
-lang: "en"
+title: 'Beekeeping link collection'
+description: 'List of helpful links and good resources for beekeeper'
+layout: '../layouts/MainLayout.astro'
+lang: 'en'
 ---
 
 Last update: 2025-02-15
@@ -15,9 +15,9 @@ Last update: 2025-02-15
   - A curated selection of worldwide feeds related around the topic of beekeeping and honeybees.
   - Alternative: [app.btree.at/pub/beekeeping-news](https://app.btree.at/pub/beekeeping-news)
 - [app.btree.at/pub/vespa-velutina/map](https://app.btree.at/pub/vespa-velutina/map)
-  - Map of the *Vespa velutina* sightings.
+  - Map of the _Vespa velutina_ sightings.
 - [app.btree.at/pub/aethina-tumida/map](https://app.btree.at/pub/aethina-tumida/map)
-  - Map of the *Aethina tumida* sightings.
+  - Map of the _Aethina tumida_ sightings.
 
 ## International
 

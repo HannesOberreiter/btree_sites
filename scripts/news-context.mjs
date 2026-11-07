@@ -7,11 +7,13 @@ const MAX_PATCH_CHARS_TOTAL = 16000;
 function isUsefulPatchFile(filename) {
   return !(
     /(?:^|\/)(?:dist|generated|vendor)\//.test(filename) ||
-    /(?:^|\/)(?:package-lock\.json|pnpm-lock\.yaml|yarn\.lock)$/.test(filename) ||
+    /(?:^|\/)(?:package-lock\.json|pnpm-lock\.yaml|yarn\.lock)$/.test(
+      filename,
+    ) ||
     /(?:^|\/)(?:CHANGELOG\.md|\.release-please-manifest\.json|release-please-config\.json)$/i.test(
       filename,
     ) ||
-    /\.d\.ts$/.test(filename)
+    filename.endsWith('.d.ts')
   );
 }
 
@@ -27,28 +29,26 @@ export function buildCompareContext(data) {
   const commitLines = commits
     .slice(0, MAX_COMMITS)
     .map((commit) => {
-      const sha = (commit.sha || "").slice(0, 7);
-      const message = (commit.commit?.message || "").split("\n")[0].trim();
-      return message ? `- ${sha}: ${message}` : "";
+      const sha = (commit.sha || '').slice(0, 7);
+      const message = (commit.commit?.message || '').split('\n')[0].trim();
+      return message ? `- ${sha}: ${message}` : '';
     })
     .filter(Boolean);
 
-  const fileLines = files
-    .slice(0, MAX_FILES)
-    .map((file) => {
-      const status = file.status || "modified";
-      const filename = file.filename || "unknown";
-      const additions = Number.isFinite(file.additions) ? file.additions : 0;
-      const deletions = Number.isFinite(file.deletions) ? file.deletions : 0;
-      return `- ${status}: ${filename} (+${additions}/-${deletions})`;
-    });
+  const fileLines = files.slice(0, MAX_FILES).map((file) => {
+    const status = file.status || 'modified';
+    const filename = file.filename || 'unknown';
+    const additions = Number.isFinite(file.additions) ? file.additions : 0;
+    const deletions = Number.isFinite(file.deletions) ? file.deletions : 0;
+    return `- ${status}: ${filename} (+${additions}/-${deletions})`;
+  });
 
   const patchExcerpts = [];
   let patchChars = 0;
   for (const file of files) {
     if (patchExcerpts.length === MAX_PATCH_FILES) break;
-    if (typeof file.patch !== "string" || !file.patch.trim()) continue;
-    const filename = file.filename || "unknown";
+    if (typeof file.patch !== 'string' || !file.patch.trim()) continue;
+    const filename = file.filename || 'unknown';
     if (!isUsefulPatchFile(filename)) continue;
 
     const excerpt = `--- ${filename}\n${truncatePatch(file.patch.trim())}`;
@@ -59,17 +59,17 @@ export function buildCompareContext(data) {
 
   const sections = [];
   if (commitLines.length > 0) {
-    sections.push(`Commit subjects:\n${commitLines.join("\n")}`);
+    sections.push(`Commit subjects:\n${commitLines.join('\n')}`);
   }
   if (fileLines.length > 0) {
-    sections.push(`Changed files:\n${fileLines.join("\n")}`);
+    sections.push(`Changed files:\n${fileLines.join('\n')}`);
   }
   if (patchExcerpts.length > 0) {
     sections.push(
-      `Patch excerpts (source evidence; excerpts may be incomplete):\n${patchExcerpts.join("\n\n")}`,
+      `Patch excerpts (source evidence; excerpts may be incomplete):\n${patchExcerpts.join('\n\n')}`,
     );
   }
-  return sections.join("\n\n");
+  return sections.join('\n\n');
 }
 
 // In the monorepo, a compare between two tags of one app also holds commits
@@ -78,13 +78,13 @@ export function buildCompareContext(data) {
 // the path-filtered history also lists. data.commits must hold all commits of
 // the compare, not only the first page.
 export function scopeCompareToPath(data, componentPath, pathCommits) {
-  const prefix = `${componentPath.replace(/\/$/, "")}/`;
+  const prefix = `${componentPath.replace(/\/$/, '')}/`;
   const files = Array.isArray(data?.files) ? data.files : [];
   const commits = Array.isArray(data?.commits) ? data.commits : [];
   const pathShas = new Set(pathCommits.map((commit) => commit.sha));
   return {
     ...data,
     commits: commits.filter((commit) => pathShas.has(commit.sha)),
-    files: files.filter((file) => (file.filename || "").startsWith(prefix)),
+    files: files.filter((file) => (file.filename || '').startsWith(prefix)),
   };
 }

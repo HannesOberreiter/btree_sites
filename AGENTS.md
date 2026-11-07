@@ -42,6 +42,7 @@ Development and deployment documentation lives in `README.md`.
 - Use Node `>=22.12.0` and pinned pnpm `10.32.1` from `package.json`; deployment workflows use Node 24.
 - Build btree_info through `pnpm --filter @btree/info build`; bare `astro build` skips its Pagefind indexing step.
 - Use `pnpm test` for the repository's script tests; it does not build the sites.
+- Use `pnpm lint` (oxlint and oxfmt, configured at the workspace root) for all packages. The oxfmt Astro formatter moves text that follows an inline element, such as `</a>.`, to a new line, which adds a visible space; protect such paragraphs with `<!-- prettier-ignore -->`.
 - For local Bunny operations, use the root `.env` configuration described by `.env.example`.
 - For release-news changes, inspect `scripts/generate-news.mjs` and `.github/workflows/generate-news.yml`; they consume frontend/backend releases and publish `packages/btree_info/public/news.json` and `packages/btree_info/public/changelog.json`.
 

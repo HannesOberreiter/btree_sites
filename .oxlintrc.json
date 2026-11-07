@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "node", "promise"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "warn"
+  },
+  "env": {
+    "builtin": true,
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "eslint/no-await-in-loop": "off",
+    "eslint/no-underscore-dangle": "off",
+    "unicorn/consistent-function-scoping": "off",
+    "unicorn/no-array-sort": "off"
+  },
+  "ignorePatterns": ["**/dist/**", "**/.astro/**", "**/public/**"]
+}

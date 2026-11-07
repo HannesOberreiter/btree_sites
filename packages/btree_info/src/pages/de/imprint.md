@@ -2,7 +2,7 @@
 title: Impressum
 description: 'b.tree Impressum'
 layout: ../../layouts/MainLayout.astro
-lang: "de"
+lang: 'de'
 ---
 
 ### btree.at

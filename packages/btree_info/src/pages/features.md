@@ -1,9 +1,9 @@
 ---
-title: "Features"
-seoTitle: "b.tree | Beekeeping Management Software Features"
-description: "Features of b.tree beekeeping management software: tabular hive records, apiary management, inspections, treatments, feedings, harvests, wax cycle traceability, queen rearing, statistics, exports, WizBee AI helper, and AI agent API."
+title: 'Features'
+seoTitle: 'b.tree | Beekeeping Management Software Features'
+description: 'Features of b.tree beekeeping management software: tabular hive records, apiary management, inspections, treatments, feedings, harvests, wax cycle traceability, queen rearing, statistics, exports, WizBee AI helper, and AI agent API.'
 layout: '../layouts/MainLayout.astro'
-lang: "en"
+lang: 'en'
 ---
 
 b.tree is a beekeeping management tool for people who need more than a simple hive note app. It is built around structured, tabular data so beekeepers can keep an overview even with many apiaries, colonies, years of inspections, treatments, feedings, harvests, queens, and tasks.
