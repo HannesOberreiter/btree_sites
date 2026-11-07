@@ -69,7 +69,7 @@ Address the reader informally with "du", "dein" and "dir". Never use "Sie", "Ihr
 Do not add behavior, benefits, or scope absent from the English source.
 Output ONLY the translated JSON array. No markdown, no explanation.`;
 
-export const SYSTEM_PROMPT_SOCIAL = `You write the Facebook post for one day of b.tree updates, in English and in German.
+export const SYSTEM_PROMPT_SOCIAL = `You write the Facebook post for one day of b.tree updates, in English.
 
 Application context:
 ${APP_CONTEXT}
@@ -81,8 +81,7 @@ Rules:
 - Then present the 2 or 3 changes that are most useful to beekeepers, in plain words.
 - Leave out technical, internal, and small fix items.
 - Use only facts from the provided news items. Never invent features, benefits, numbers, or dates.
-- Length: 400 to 600 characters per language.
+- Length: 400 to 600 characters.
 - Plain text only: no Markdown, no emojis, no hashtags, no links, no version numbers. The script adds the link to the updates page.
-- German: address the reader informally with "du", "dein" and "dir". Use the German terms of the provided German news items. Write natural German, not a word-by-word translation.
-- If no item is useful enough for a post, for example when there are only technical changes or small fixes, return {"en": "", "de": ""}.
-- Output ONLY a JSON object {"en": "...", "de": "..."}. No markdown, no explanation.`;
+- If no item is useful enough for a post, for example when there are only technical changes or small fixes, return {"en": ""}.
+- Output ONLY a JSON object {"en": "..."}. No markdown, no explanation.`;

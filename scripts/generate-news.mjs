@@ -288,7 +288,7 @@ function buildPublishIssueBody(entry) {
 
   if (entry.social) {
     parts.push(
-      `## Facebook post\n\n### English\n\n\`\`\`text\n${entry.social.en}\n\`\`\`\n\n### Deutsch\n\n\`\`\`text\n${entry.social.de}\n\`\`\``,
+      `## Facebook post\n\n\`\`\`text\n${entry.social}\n\`\`\``,
     );
   } else {
     parts.push(
@@ -473,7 +473,6 @@ async function main() {
         const social = await generateSocialPost({
           date,
           englishItems: en,
-          germanItems: de,
           updatesUrl: NEWS_PUBLISH_SITE_URL,
           requestPost: (prompt) => callMistral(SYSTEM_PROMPT_SOCIAL, prompt),
         });

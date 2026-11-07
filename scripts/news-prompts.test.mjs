@@ -38,13 +38,13 @@ test("German prompt requires b.tree charge terminology", () => {
   );
 });
 
-test("German texts address the reader with du", () => {
+test("German news address the reader with du", () => {
   assert.match(SYSTEM_PROMPT_TRANSLATE, /informally with "du"/);
-  assert.match(SYSTEM_PROMPT_SOCIAL, /informally with "du"/);
 });
 
 test("Facebook post prompt forbids emojis, hashtags and links", () => {
   assert.match(SYSTEM_PROMPT_SOCIAL, /no emojis, no hashtags, no links/);
   assert.match(SYSTEM_PROMPT_SOCIAL, /Never invent features/);
-  assert.match(SYSTEM_PROMPT_SOCIAL, /\{"en": "", "de": ""\}/);
+  assert.match(SYSTEM_PROMPT_SOCIAL, /in English\./);
+  assert.match(SYSTEM_PROMPT_SOCIAL, /\{"en": ""\}/);
 });
