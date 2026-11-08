@@ -21,7 +21,7 @@ lang: 'de'
 
 ### Passwort ändern
 
-Auf der Profilseite Registerkarte Anmeldedaten können Sie Ihr Passwort ändern [/setting/profile/credentials](https://app.btree.at/setting/profile/credentials). Aus Sicherheitsgründen müssen Sie auch Ihr altes Passwort angeben. Auf der Registerkarte Benutzer können Sie die Sprache ändern, Profileinstellungen vornehmen und Ihr Konto löschen [/setting/profile/user](https://app.btree.at/setting/profile/user) (keine Wiederherstellung möglich!).
+Auf der Profilseite Registerkarte Anmeldedaten kannst du dein Passwort ändern [/setting/profile/credentials](https://app.btree.at/setting/profile/credentials). Aus Sicherheitsgründen musst du auch dein altes Passwort angeben. Auf der Registerkarte Benutzer kannst du die Sprache ändern, Profileinstellungen vornehmen und dein Konto löschen [/setting/profile/user](https://app.btree.at/setting/profile/user) (keine Wiederherstellung möglich!).
 
 ### Aufgelöster Filemanager
 
@@ -31,19 +31,19 @@ In unserer Vorgängerversion 5.x.x war es möglich, Dateien auf unseren Server h
 
 Eine Video Erklärung findet man auf b.tree Tutorials: [b.tree - Tutorial - Dropbox als Datenverwaltung - Deutsch](https://www.btree.tv/de/watch/dropbox/)
 
-Um Fotos oder Dateien zu Aufgaben etc. hinzuzufügen, können Sie ein Dropbox-Konto verbinden [/setting/dropbox](https://app.btree.at/setting/dropbox). Dropbox ist zwar nicht kostenlos, bietet aber einen einfach zu bedienenden Cloud-Dienst für die Dateiverwaltung. Wenn die Verbindung zu Ihrem Dropbox-Konto authentifiziert ist, wird ein spezieller Ordner (b.tree - Beekeeping) in Ihrem Dropbox-Konto erstellt. Der Zugriff auf diesen Ordner ist dann für Sie und **alle Ihre Benutzer auf demselben Imkereibetrieb** verfügbar. Um den Zugriff zu entfernen, können Sie die entsprechende Schaltfläche auf der Einstellungsseite verwenden oder [dropbox.com/account/connected_apps](https://www.dropbox.com/account/connected_apps) besuchen.
+Um Fotos oder Dateien zu Aufgaben etc. hinzuzufügen, kannst du ein Dropbox-Konto verbinden [/setting/dropbox](https://app.btree.at/setting/dropbox). Dropbox ist zwar nicht kostenlos, bietet aber einen einfach zu bedienenden Cloud-Dienst für die Dateiverwaltung. Wenn die Verbindung zu deinem Dropbox-Konto authentifiziert ist, wird ein spezieller Ordner (b.tree - Beekeeping) in deinem Dropbox-Konto erstellt. Der Zugriff auf diesen Ordner ist dann für dich und **alle deine Benutzer auf demselben Imkereibetrieb** verfügbar. Um den Zugriff zu entfernen, kannst du die entsprechende Schaltfläche auf der Einstellungsseite verwenden oder [dropbox.com/account/connected_apps](https://www.dropbox.com/account/connected_apps) besuchen.
 
-Nachdem Sie Ihr Dropbox-Konto verbunden haben, können Sie Ihre Dateien und Ordner auf der Einstellungsseite [/setting/dropbox](https://app.btree.at/setting/dropbox) verwalten. Um auf den Dropbox-Ordner zuzugreifen oder neue Bilder und Dateien hochzuladen, wenn Sie neue Aufgaben erstellen, aktivieren Sie die Schaltfläche "Link" in den Feldeinstellungen [/setting/field](https://app.btree.at/setting/field). Beim Speichern eines Bildes oder einer Datei zu Ihrer Aufgabe wird eine ID mitgespeichert und Sie können darauf klicken, um den Inhalt in einem kleinen Fenster anzuzeigen.
+Nachdem du dein Dropbox-Konto verbunden hast, kannst du deine Dateien und Ordner auf der Einstellungsseite [/setting/dropbox](https://app.btree.at/setting/dropbox) verwalten. Um auf den Dropbox-Ordner zuzugreifen oder neue Bilder und Dateien hochzuladen, wenn du neue Aufgaben erstellst, aktiviere die Schaltfläche "Link" in den Feldeinstellungen [/setting/field](https://app.btree.at/setting/field). Beim Speichern eines Bildes oder einer Datei zu deiner Aufgabe wird eine ID mitgespeichert und du kannst darauf klicken, um den Inhalt in einem kleinen Fenster anzuzeigen.
 
 ### Kalender
 
-Auf dem Haupt-Seite soll ein Kalender einen guten Überblick über die aktuellen, vergangenen und zukünftigen Aufgaben geben [/](https://app.btree.at/). Hier können Sie auch Aufgaben per Drag and Drop verschieben, wenn Sie schnell ein Datum ändern wollen oder eine Aufgabe anklicken, um mehr Details zu erfahren. Bei Königinnenzucht-Serien bekommen Sie alle Schritte entsprechend der Aufzuchtmethode aufgelistet. ToDo's sind im Kalendar auch sichtbar und Sie können neue erstellen, indem Sie auf das gleiche Datum doppelklicken.
+Auf dem Haupt-Seite soll ein Kalender einen guten Überblick über die aktuellen, vergangenen und zukünftigen Aufgaben geben [/](https://app.btree.at/). Hier kannst du auch Aufgaben per Drag and Drop verschieben, wenn du schnell ein Datum ändern willst oder eine Aufgabe anklicken, um mehr Details zu erfahren. Bei Königinnenzucht-Serien bekommst du alle Schritte entsprechend der Aufzuchtmethode aufgelistet. ToDo's sind im Kalendar auch sichtbar und du kannst neue erstellen, indem du auf das gleiche Datum doppelklicken.
 
-Wenn Sie eine eigene Bienenstockwaage haben, die mit unserer API verbunden ist, wird der tägliche Gewichtsdurchschnitt in einem separaten Kalender [/calendar_scale](https://app.btree.at/calendar_scale) angezeigt.
+Wenn du eine eigene Bienenstockwaage hast, die mit unserer API verbunden ist, wird der tägliche Gewichtsdurchschnitt in einem separaten Kalender [/calendar_scale](https://app.btree.at/calendar_scale) angezeigt.
 
 ### Suche / Schnellzugriff
 
-Wenn Sie in der oberen Menüleiste auf das Lupensymbol klicken, können Sie schnell auf einzelne Bienenstöcke oder Stände zugreifen. Sie werden auf die jeweilige Detailübersicht des Bienenstandes oder Bienenstocks weitergeleitet, was ein guter Ausgangspunkt für die Suche nach schnellen Informationen ist.
+Wenn du in der oberen Menüleiste auf das Lupensymbol klickst, kannst du schnell auf einzelne Bienenstöcke oder Stände zugreifen. Du wirst auf die jeweilige Detailübersicht des Bienenstandes oder Bienenstocks weitergeleitet, was ein guter Ausgangspunkt für die Suche nach schnellen Informationen ist.
 
 ### Zuchtserien
 
@@ -53,11 +53,11 @@ Nachdem die Zuchtmethoden definiert sind können Zuchtserien einfach über folge
 
 ### QR-Code-Scanner
 
-Mit dem QR-Code-Scanner können Sie schnell Bienenstock- oder Bienenstand-QR-Codes scannen, um direkt zu deren Detailseiten zu navigieren. Die Scanner-Schaltfläche ist standardmäßig ausgeblendet und kann pro Gerät in den lokalen Geräteeinstellungen aktiviert werden [/setting/field/localSettings](https://app.btree.at/setting/field/localSettings).
+Mit dem QR-Code-Scanner kannst du schnell Bienenstock- oder Bienenstand-QR-Codes scannen, um direkt zu deren Detailseiten zu navigieren. Die Scanner-Schaltfläche ist standardmäßig ausgeblendet und kann pro Gerät in den lokalen Geräteeinstellungen aktiviert werden [/setting/field/localSettings](https://app.btree.at/setting/field/localSettings).
 
 ### Spracherkennung
 
-Dieses Feature funktioniert noch nicht in allen Browsern, bisher funktioniert es nur mit Chrome und Microsoft Edge. Die Spracherkennungs-Schaltfläche ist standardmäßig ausgeblendet und kann pro Gerät in den lokalen Geräteeinstellungen aktiviert werden [/setting/field/localSettings](https://app.btree.at/setting/field/localSettings). Die Spracherkennung soll Ihnen helfen, schneller und einfacher mit der App zu arbeiten. Folgende Befehle sind integriert:
+Dieses Feature funktioniert noch nicht in allen Browsern, bisher funktioniert es nur mit Chrome und Microsoft Edge. Die Spracherkennungs-Schaltfläche ist standardmäßig ausgeblendet und kann pro Gerät in den lokalen Geräteeinstellungen aktiviert werden [/setting/field/localSettings](https://app.btree.at/setting/field/localSettings). Die Spracherkennung soll dir helfen, schneller und einfacher mit der App zu arbeiten. Folgende Befehle sind integriert:
 
 - Dashboard, Kalender: Weiterleitung zur Startseite mit Kalender
 - Fütterung: Weiterleitung zum Quicktool mit Fütterung als Aufgabe ausgewählt
@@ -68,32 +68,32 @@ Dieses Feature funktioniert noch nicht in allen Browsern, bisher funktioniert es
 
 ### Mehrere Benutzer / Imker
 
-Wenn Sie einen weiteren Benutzer zu Ihrem Imkereibetrieb hinzufügen möchten, besuchen Sie die Seite mit den Unternehmenseinstellungen [/setting/company](https://app.btree.at/setting/company). Wenn die E-Mail Adresse noch nicht bei uns registriert ist, wird automatisch ein Konto erstellt und eine E-Mail an den neuen Benutzer geschickt, in der er aufgefordert wird, sein Passwort zurückzusetzen, da wir keine Passwörter per E-Mail verschicken.
+Wenn du einen weiteren Benutzer zu deinem Imkereibetrieb hinzufügen möchtest, besuche die Seite mit den Unternehmenseinstellungen [/setting/company](https://app.btree.at/setting/company). Wenn die E-Mail Adresse noch nicht bei uns registriert ist, wird automatisch ein Konto erstellt und eine E-Mail an den neuen Benutzer geschickt, in der er aufgefordert wird, sein Passwort zurückzusetzen, da wir keine Passwörter per E-Mail verschicken.
 
-Eine Video Erklärung zum Thema Imkereien und User findet ihr auf b.tree Tutorials: [b.tree - Tutorial - Betriebe und Benutzer Management - Deutsch](https://www.btree.tv/de/watch/business-user-management/)
+Eine Video Erklärung zum Thema Imkereien und User findest du auf b.tree Tutorials: [b.tree - Tutorial - Betriebe und Benutzer Management - Deutsch](https://www.btree.tv/de/watch/business-user-management/)
 
-Für Benutzer gibt es drei Ränge, die durch Klicken auf das Rangsymbol geändert werden können. Um Benutzer zu entfernen, klicken Sie auf das Symbol "Benutzer entfernen".
+Für Benutzer gibt es drei Ränge, die durch Klicken auf das Rangsymbol geändert werden können. Um Benutzer zu entfernen, klicke auf das Symbol "Benutzer entfernen".
 
 - Admin: Kann alles hinzufügen, ändern und löschen und Benutzer hinzufügen oder entfernen.
 - User: Kann keine Bienenstöcke löschen, den API-Zugang nicht ändern und die Benutzer nicht ändern.
 - Read-Only: Dieser Benutzer kann sich die Daten nur ansehen, aber keine Änderungen vornehmen.
 
-Hinweis: Die Premium-Mitgliedschaft gilt pro Unternehmen und nicht pro Benutzer, d.h. Sie müssen nur einmal Premium bezahlen, egal wie viele Benutzer in Ihrer Imkerei aktiv sind.
+Hinweis: Die Premium-Mitgliedschaft gilt pro Unternehmen und nicht pro Benutzer, d.h. du musst nur einmal Premium bezahlen, egal wie viele Benutzer in deiner Imkerei aktiv sind.
 
 ### WizBee KI-Assistent (Premium)
 
-WizBee [/wizbee](https://app.btree.at/wizbee) ist ein KI-gestützter Imkerei-Assistent für Premium-Mitglieder. Stellen Sie Imkerei-Fragen in natürlicher Sprache. WizBee arbeitet auch mit Ihren eigenen Daten: Fütterungen, Behandlungen, Ernten, Kontrollen, Aufgaben und Lagerbestand anlegen und ändern, Statistiken anzeigen und das Wetter am Bienenstand abfragen. Sie können tippen oder die Spracheingabe verwenden. Jede Anfrage zählt zum monatlichen Nutzungsbudget. WizBee ist über das Hauptnavigationsmenü erreichbar.
+WizBee [/wizbee](https://app.btree.at/wizbee) ist ein KI-gestützter Imkerei-Assistent für Premium-Mitglieder. Stelle Imkerei-Fragen in natürlicher Sprache. WizBee arbeitet auch mit deinen eigenen Daten: Fütterungen, Behandlungen, Ernten, Kontrollen, Aufgaben und Lagerbestand anlegen und ändern, Statistiken anzeigen und das Wetter am Bienenstand abfragen. Du kannst tippen oder die Spracheingabe verwenden. Jede Anfrage zählt zum monatlichen Nutzungsbudget. WizBee ist über das Hauptnavigationsmenü erreichbar.
 
 ### Hilfsprogramme
 
 Zwei kleine Hilfswerkzeuge sind über die Navigation verfügbar:
 
-- **Zuckerwasserrechner** [/sugar_water_calculator](https://app.btree.at/sugar_water_calculator) — Geben Sie ein Zielvolumen und eine Zuckerkonzentration ein, um die genauen Mengen an Zucker und Wasser für die Futtermischung zu erhalten.
+- **Zuckerwasserrechner** [/sugar_water_calculator](https://app.btree.at/sugar_water_calculator) — Gib ein Zielvolumen und eine Zuckerkonzentration ein, um die genauen Mengen an Zucker und Wasser für die Futtermischung zu erhalten.
 - **Bienenentwicklung** [/lifecycle](https://app.btree.at/lifecycle) — Referenztabelle mit den Entwicklungsdauern (Ei, offene Brut, verdeckelte Brut, Adulte) für Arbeiterin, Drohne und Königin. Nützlich bei der Planung von Behandlungen oder Zuchtschritten.
 
 ### Königinnen-Stammbaum
 
-Wenn Königinnen über das Feld „Mutter" verknüpft sind, erstellt b.tree eine Zuchtabstammung. Sie können die vollständige Ahnenlinie als Stammbaum in der Königinnentabelle [/table/queen](https://app.btree.at/table/queen) einsehen. Dies ist besonders für Königinnenzüchter hilfreich, die genetische Linien verfolgen.
+Wenn Königinnen über das Feld „Mutter" verknüpft sind, erstellt b.tree eine Zuchtabstammung. Du kannst die vollständige Ahnenlinie als Stammbaum in der Königinnentabelle [/table/queen](https://app.btree.at/table/queen) einsehen. Dies ist besonders für Königinnenzüchter hilfreich, die genetische Linien verfolgen.
 
 ### Öffentliche Karten
 
@@ -105,4 +105,4 @@ Folgende Karten sind ohne Login öffentlich zugänglich:
 
 ### Soziale Anmeldung
 
-Neben E-Mail und Passwort unterstützt b.tree die Anmeldung mit **Google**- und **Apple**-Konten. Verwenden Sie die entsprechenden Schaltflächen auf der Anmeldeseite [/visitor/login](https://app.btree.at/visitor/login). Wenn die E-Mail-Adresse des sozialen Anbieters mit einem bestehenden b.tree-Konto übereinstimmt, werden die Konten automatisch verknüpft.
+Neben E-Mail und Passwort unterstützt b.tree die Anmeldung mit **Google**- und **Apple**-Konten. Verwende die entsprechenden Schaltflächen auf der Anmeldeseite [/visitor/login](https://app.btree.at/visitor/login). Wenn die E-Mail-Adresse des sozialen Anbieters mit einem bestehenden b.tree-Konto übereinstimmt, werden die Konten automatisch verknüpft.

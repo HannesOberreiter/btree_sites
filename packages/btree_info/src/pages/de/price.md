@@ -43,9 +43,9 @@ Mehr Details findest du in der [Datenschutzerklärung](/de/data-privacy/).
 
 ### Unterstütze die App Entwicklung
 
-Als Premium Member unterstützt ihr die Betreuung und Entwicklung der Applikation und die Kosten für den Server. Es werden laufend neue Features integriert sowie die bestehenden aktualisiert und verbessert. Die komplette Applikation wurde von mir, Hannes Oberreiter, alleine erstellt und wird auch von mir betreut. Ich arbeite daran in meiner Freizeit, deswegen können Updates etwas dauern. Dennoch bemühe ich mich so schnell wie möglich Fragen und Anregungen zu erfüllen.
+Als Premium Member unterstützt du die Betreuung und Entwicklung der Applikation und die Kosten für den Server. Es werden laufend neue Features integriert sowie die bestehenden aktualisiert und verbessert. Die komplette Applikation wurde von mir, Hannes Oberreiter, alleine erstellt und wird auch von mir betreut. Ich arbeite daran in meiner Freizeit, deswegen können Updates etwas dauern. Dennoch bemühe ich mich so schnell wie möglich Fragen und Anregungen zu erfüllen.
 
-Mein Ziel: Die Applikation soll jeden einzelnen von euch bestmöglich bei euren Imkerarbeiten unterstützen.
+Mein Ziel: Die Applikation soll dich bestmöglich bei deinen Imkerarbeiten unterstützen.
 
 Mit besten Grüßen
 

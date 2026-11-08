@@ -5,26 +5,26 @@ layout: ../../layouts/IndexLayout.astro
 lang: 'de'
 ---
 
-Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003). In diesen Datenschutzinformationen informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.
+Der Schutz deiner persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten deine Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003). In diesen Datenschutzinformationen informieren wir dich über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.
 
 ### Kontakt mit uns
 
-Wenn Sie per E-Mail Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+Wenn du per E-Mail Kontakt mit uns aufnimmst, werden deine angegebenen Daten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne deine Einwilligung weiter.
 
 ### Cookies (app.btree.at)
 
-Unsere Website verwendet so genannte Cookies. Dabei handelt es sich um kleine Textdateien, die mit Hilfe des Browsers auf Ihrem Endgerät abgelegt werden. Sie richten keinen Schaden an.
+Unsere Website verwendet so genannte Cookies. Dabei handelt es sich um kleine Textdateien, die mit Hilfe des Browsers auf deinem Endgerät abgelegt werden. Sie richten keinen Schaden an.
 
-Wir nutzen Cookies dazu, unser Angebot nutzerfreundlich zu gestalten. Einige Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese löschen. Sie ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen.
+Wir nutzen Cookies dazu, unser Angebot nutzerfreundlich zu gestalten. Einige Cookies bleiben auf deinem Endgerät gespeichert, bis du diese löschst. Sie ermöglichen es uns, deinen Browser beim nächsten Besuch wiederzuerkennen.
 
-Wenn Sie dies nicht wünschen, so können Sie Ihren Browser so einrichten, dass er Sie über das Setzen von Cookies informiert und Sie dies nur im Einzelfall erlauben.
+Wenn du dies nicht wünschst, so kannst du deinen Browser so einrichten, dass er dich über das Setzen von Cookies informiert und du dies nur im Einzelfall erlaubst.
 
 Bei der Deaktivierung von Cookies kann die Funktionalität unserer Website eingeschränkt sein.
 
 ### Web-Analyse (app.btree.at & btree.at)
 
 Wir verwenden AWStats und Report Magic, bei den Statistikprogrammen werden die Logfiles ausgewertet. Ein Personenbezug ist nicht herstellbar. Zusätzlich verwenden wir Matomo (app.btree.at) für eine genauere Auswertung und auch per User Basis in der App. Die Statistiken werden mit bereits anonymisierten Daten erstellt. Die Analyse Programme laufen auf unserem eigenen Server.
-Zusätzlich wird Ihre IP-Adresse erfasst, aber umgehend, durch Löschung der letzten 8 Bit pseudonymisiert. Dadurch ist nur mehr eine grobe Lokalisierung möglich.
+Zusätzlich wird deine IP-Adresse erfasst, aber umgehend, durch Löschung der letzten 8 Bit pseudonymisiert. Dadurch ist nur mehr eine grobe Lokalisierung möglich.
 Folgende Daten werden ausgewertet: Browsertyp und die Browserversion, (sofern vom Benutzer übermittelt!), das Betriebssystem, Datum und Uhrzeit der Serveranfrage, die Anzahl der Besuche, die Verweildauer auf der Website, die vorher besuchte Website, (sofern vom Benutzer übermittelt!), die IP-Adresse der Nutzer wird anonymisiert, bevor sie gespeichert wird.
 
 Die Datenverarbeitung erfolgt auf Basis der gesetzlichen Bestimmungen des § 96 Abs 3 TKG sowie des Art 6 Abs 1 lit a (Einwilligung) und/oder f (berechtigtes Interesse) der DSGVO.
@@ -87,7 +87,7 @@ Die Imkerei Applikation benutzt auf Grundlage unserer berechtigten Interessen (A
   - Dropbox (Dropbox Inc., https:/www.dropbox.com) (Speicher von Dateien, Optional)
   - WizBee KI-Assistent – Wenn der Benutzer WizBee, unseren integrierten KI-Imkerei-Assistenten, nutzt, wird der Dienst von Mistral AI (Mistral AI, Paris, Frankreich, <https://mistral.ai/>) bereitgestellt. Wenn der Benutzer WizBee nutzt, werden folgende Daten zur Verarbeitung an Mistral AI gesendet: die Nachrichten des Benutzers, der Gesprächsverlauf des aktuellen Chats und die Imkereidaten, die WizBee zur Beantwortung der Anfrage liest oder ändert (zum Beispiel Bienenstände, Völker, Kontrollen, Behandlungen, Fütterungen, Ernten, Aufgaben und Lagerbestand). Wenn der Benutzer die Spracheingabe verwendet, wird die Audioaufnahme zur Transkription an Mistral AI gesendet. Der Text jeder Anfrage und der Tokenverbrauch werden in unserer Datenbank gespeichert, um das monatliche Nutzungsbudget zu berechnen. Wenn das Benutzerkonto oder der Imkereibetrieb gelöscht wird, löscht die tägliche Bereinigung diese gespeicherten Anfragen. Die Nutzung von WizBee ist optional und erfordert ein aktives Premium-Abonnement.
 - btree.at
-  - Bunny Stream – Tutorial-Videos auf [btree.tv](https://www.btree.tv/) werden über Bunny Stream gehostet und gestreamt (BunnyWay d.o.o., Cesta Komandanta Staneta 4a, 1215 Medvode, Slowenien, <https://bunny.net/>). Beim Abspielen eines Videos wird Ihre IP-Adresse und technische Verbindungsdaten zur Auslieferung an die Server von Bunny übermittelt. Zur Wiedergabe von Videos sind keine persönlichen Kontodaten erforderlich.
+  - Bunny Stream – Tutorial-Videos auf [btree.tv](https://www.btree.tv/) werden über Bunny Stream gehostet und gestreamt (BunnyWay d.o.o., Cesta Komandanta Staneta 4a, 1215 Medvode, Slowenien, <https://bunny.net/>). Beim Abspielen eines Videos wird deine IP-Adresse und technische Verbindungsdaten zur Auslieferung an die Server von Bunny übermittelt. Zur Wiedergabe von Videos sind keine persönlichen Kontodaten erforderlich.
 
 ### Auftragsverarbeitung
 
@@ -99,12 +99,12 @@ Mit folgenden Firmen besteht eine Vereinbarung über eine Auftragsverarbeitung:
 - Bunny.net - BunnyWay d.o.o., Cesta Komandanta Staneta 4a, 1215 Medvode, Slowenien (Hosting der statischen Websites, CDN und verschlüsselte Backups in Frankfurt)
 - Bunny Stream - Cesta Komandanta, Staneta 4a, 1215 Medvode, Slowenien (Video Hosting, btree.tv)
 
-### Ihre Rechte
+### Deine Rechte
 
-Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der Aufsichtsbehörde beschweren. In Österreich ist dies die Datenschutzbehörde.
+Dir stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn du glaubst, dass die Verarbeitung deiner Daten gegen das Datenschutzrecht verstößt oder deine datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, kannst du dich bei der Aufsichtsbehörde beschweren. In Österreich ist dies die Datenschutzbehörde.
 
 Beantwortung von Anfragen zum Datenschutz
 
-Wir ersuchen Sie Ihre Anfrage per E-Mail mit einer beigelegten Ausweiskopie an folgende Adresse zu senden: office[at]btree.at
+Wir ersuchen dich, deine Anfrage per E-Mail mit einer beigelegten Ausweiskopie an folgende Adresse zu senden: office[at]btree.at
 
-Wir werden Ihre Anfrage dann entsprechend der gesetzlichen Vorschriften bearbeiten.
+Wir werden deine Anfrage dann entsprechend der gesetzlichen Vorschriften bearbeiten.
