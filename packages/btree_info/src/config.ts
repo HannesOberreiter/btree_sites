@@ -2,7 +2,6 @@ export const SITE = {
   title: 'b.tree',
   description:
     'Professional beekeeping software for digital hive records, apiary management, queen rearing, treatments, harvests, statistics, and AI-assisted data entry.',
-  defaultLanguage: 'de_DE',
 };
 
 export const OPEN_GRAPH = {
@@ -23,7 +22,7 @@ export const SIDEBAR = {
     { text: '', header: true },
     { text: 'Beekeeping Application', header: true },
     { text: '🐝 Login', link: 'https://app.btree.at' },
-    { text: 'Introduction', link: 'introduction/' },
+    { text: 'Introduction', link: '' },
     { text: 'Features', link: 'features/' },
     { text: 'Price', link: 'price/' },
     { text: 'FAQs', link: 'doc-faqs/' },
@@ -46,15 +45,15 @@ export const SIDEBAR = {
     { text: '', header: true },
     { text: 'Imkerei Software', header: true },
     { text: '🐝 Login', link: 'https://app.btree.at' },
-    { text: 'Einführung', link: 'de/introduction/' },
+    { text: 'Einführung', link: 'de/' },
     { text: 'Funktionen', link: 'de/features/' },
     { text: 'Preis', link: 'de/price/' },
     { text: 'FAQs', link: 'de/doc-faqs/' },
-    { text: 'Ersten Schritte', link: 'de/doc-first-steps/' },
+    { text: 'Erste Schritte', link: 'de/doc-first-steps/' },
     { text: 'API', link: 'de/doc-api/' },
     { text: 'Agent API', link: 'de/doc-agent/' },
     { text: 'Sonstiges', link: 'de/doc-other/' },
-    { text: 'Updates', link: 'de/updates/' },
+    { text: 'Neuerungen', link: 'de/updates/' },
     { text: 'Externe Links', link: 'de/links/' },
 
     { text: 'Über uns', header: true },

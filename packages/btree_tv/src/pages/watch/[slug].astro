@@ -12,13 +12,15 @@ export function getStaticPaths() {
 const { video } = Astro.props;
 const lang = 'en' as const;
 const deOnly = !video.langs.includes('en');
-const title = `${video.titleEn} – b.tree Tutorials`;
+const pageTitle = deOnly ? `${video.titleEn} (German)` : video.titleEn;
+const title = `${pageTitle} – b.tree Tutorials`;
+const description = deOnly ? `${video.descEn} Video in German.` : video.descEn;
 ---
 
 <Layout
   lang={lang}
   title={title}
-  description={video.descEn}
+  description={description}
   canonicalUrl={`https://www.btree.tv/watch/${video.slug}/`}
 >
   <section class="hero">

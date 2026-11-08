@@ -37,6 +37,11 @@ const deUrl = switchLang('de');
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl ?? 'https://www.btree.tv'} />
+    <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
+    <meta
+      property="og:locale:alternate"
+      content={lang === 'de' ? 'en_US' : 'de_DE'}
+    />
     <meta
       property="og:image"
       content="https://www.btree.tv/icons/icon-512x512.png"

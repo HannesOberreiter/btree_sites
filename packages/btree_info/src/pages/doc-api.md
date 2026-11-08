@@ -1,6 +1,6 @@
 ---
 title: API (Premium Feature)
-description: 'Documentation and Help for Beekeeping Software and Application'
+description: 'Use the b.tree API (Premium): subscribe to your tasks with iCal in any calendar, send hive scale data, and connect AI agents to your beekeeping records.'
 layout: '../layouts/IndexLayout.astro'
 lang: 'en'
 ---
@@ -9,7 +9,7 @@ Active premium user do have access to our external API endpoints. Before you use
 
 ### Agent API (LLM / AI Bot Access)
 
-Looking to connect an AI agent like **Claude**, **ChatGPT**, or a custom LLM bot to your beekeeping data? We offer a dedicated **[Agent API](/doc-agent)** with its own API keys, rate limiting, and OpenAPI specification. The Agent API provides full read/write access to your hives, tasks, statistics and more — designed specifically for AI tool use and function calling. Head to [Agent API documentation](/doc-agent) for setup instructions.
+Looking to connect an AI agent like **Claude**, **ChatGPT**, or a custom LLM bot to your beekeeping data? We offer a dedicated **[Agent API](/doc-agent/)** with its own API keys, rate limiting, and OpenAPI specification. The Agent API provides full read/write access to your hives, tasks, statistics and more — designed specifically for AI tool use and function calling. Head to [Agent API documentation](/doc-agent/) for setup instructions.
 
 ### Calender, iCal
 

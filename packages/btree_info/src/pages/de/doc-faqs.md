@@ -1,6 +1,6 @@
 ---
-title: 'FAQs'
-description: 'Dokumentation und Hilfe zur Imkerei Software'
+title: 'Häufige Fragen'
+description: 'Antworten auf häufige Fragen zu b.tree: App Stores, Offline-Nutzung, NFC und QR-Scanner, Spracherkennung, Premium-Mitgliedschaft, Datenspeicherung und Löschen des Kontos.'
 layout: '../../layouts/IndexLayout.astro'
 faq: true
 lang: 'de'

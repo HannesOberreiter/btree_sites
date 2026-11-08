@@ -15,7 +15,7 @@ export function getStaticPaths() {
 const page = Number(Astro.params.page ?? '1');
 const frontmatter = {
   title: `Updates - Page ${page}`,
-  description: 'Changelog for b.tree software',
+  description: `Changelog for b.tree software, page ${page}`,
   lang: 'en',
 };
 ---

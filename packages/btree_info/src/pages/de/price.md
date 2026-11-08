@@ -1,6 +1,6 @@
 ---
 title: 'Kosten & Preis'
-description: 'Preis und Kosten der Imkerei Applikation.'
+description: 'Preise der b.tree Imkerei Software: Basic kostenlos, Premium um 55 Euro pro Jahr.'
 layout: '../../layouts/MainLayout.astro'
 lang: 'de'
 ---
@@ -23,7 +23,7 @@ lang: 'de'
     <li>✅ Responsive Statistiken (Ernte, Fütterung, Behandlung, Varroa, Königinnen)</li>
     <li>✅ Königinnen-Statistik und Stammbaum</li>
     <li>✅ <a href="https://www.wiz-bee.com/">WizBee</a>, dein KI-Imkerei-Assistent auf Basis von Mistral: Fütterungen, Behandlungen, Ernten, Kontrollen und Aufgaben per Text oder Sprache erfassen und Fragen zu deinen eigenen Daten stellen</li>
-    <li>✅ <a href="/de/doc-agent">Agent API und MCP</a> zur Anbindung deines eigenen KI-Agenten (ChatGPT, Claude und andere)</li>
+    <li>✅ <a href="/de/doc-agent/">Agent API und MCP</a> zur Anbindung deines eigenen KI-Agenten (ChatGPT, Claude und andere)</li>
     <li>✅ Temperaturfeld wird automatisch mit Standdaten befüllt</li>
     <li>✅ Imker-Wettervorhersage je Stand: Flugwetter, Frost- und Hitzewarnungen, amtliche Unwetterwarnungen</li>
     <li>✅ Standkarte mit optionaler Wetteranzeige</li>
@@ -39,7 +39,7 @@ lang: 'de'
     <li>✅ Konto und Daten jederzeit löschbar</li>
 </ul>
 
-Mehr Details findest du in der [Datenschutzerklärung](/de/data-privacy).
+Mehr Details findest du in der [Datenschutzerklärung](/de/data-privacy/).
 
 ### Unterstütze die App Entwicklung
 

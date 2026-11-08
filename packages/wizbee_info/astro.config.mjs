@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://wiz-bee.com',
+  site: 'https://www.wiz-bee.com',
   output: 'static',
   integrations: [sitemap()],
 });

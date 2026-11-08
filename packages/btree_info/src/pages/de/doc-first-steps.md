@@ -1,6 +1,6 @@
 ---
-title: Ersten Schritte
-description: 'Dokumentation und Hilfe zur Imkerei Software'
+title: Erste Schritte
+description: 'Erste Schritte mit der b.tree Imkerei Software: Optionen und Felder einrichten, Bienenstände und Völker anlegen, Aufgaben und ToDos erfassen, Königinnen, Lager und Wachskreislauf verwalten.'
 layout: '../../layouts/IndexLayout.astro'
 lang: 'de'
 ---

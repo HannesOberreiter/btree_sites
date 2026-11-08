@@ -5,7 +5,7 @@
 ## About
 
 - **Product**: WizBee
-- **Website**: https://wiz-bee.com
+- **Website**: https://www.wiz-bee.com/
 - **Parent platform**: b.tree – https://www.btree.at
 - **Author**: Hannes Oberreiter, btree.at
 - **Technology**: Mistral AI, streaming, tool calling

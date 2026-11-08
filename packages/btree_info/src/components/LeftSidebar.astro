@@ -4,10 +4,7 @@ import LinkApp from './LinkApp.astro';
 
 const currentPage = Astro.url.pathname;
 const currentLocale = Astro.currentLocale;
-let currentPageMatch = currentPage.slice(1);
-if (currentPageMatch === '' || currentPageMatch === 'de/') {
-  currentPageMatch += 'introduction/';
-}
+const currentPageMatch = currentPage.slice(1);
 
 // SIDEBAR is a flat array. Group it by sections to properly render.
 const sidebarSections = SIDEBAR[currentLocale ?? 'en'].reduce(

@@ -1,6 +1,6 @@
 ---
-title: Other
-description: 'Dokumentation und Hilfe zur Imkerei Software'
+title: Sonstiges
+description: 'Weitere Funktionen von b.tree: Tastaturkurzbefehle, Dropbox, Kalender, Schnellsuche, Zuchtserien, QR-Code-Scanner, Spracherkennung, mehrere Benutzer, Königinnen-Stammbaum und öffentliche Karten.'
 layout: '../../layouts/IndexLayout.astro'
 lang: 'de'
 ---

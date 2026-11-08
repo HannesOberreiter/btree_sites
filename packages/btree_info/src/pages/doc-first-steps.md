@@ -1,6 +1,6 @@
 ---
 title: First Steps
-description: 'Documentation and Help for Beekeeping Software and Application'
+description: 'First steps with b.tree beekeeping software: set up options and fields, create apiaries and hives, record tasks and to-dos, and manage queens, stock, and the wax cycle.'
 layout: '../layouts/IndexLayout.astro'
 lang: 'en'
 ---

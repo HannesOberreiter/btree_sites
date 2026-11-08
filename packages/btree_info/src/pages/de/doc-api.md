@@ -1,6 +1,6 @@
 ---
-title: API (Premium Feature)
-description: 'Dokumentation und Hilfe zur Imkerei Software'
+title: API (Premium-Funktion)
+description: 'Die b.tree API (Premium): Abonniere deine Aufgaben per iCal in jedem Kalender, sende Daten deiner Stockwaagen und verbinde KI-Agenten mit deinen Imkereidaten.'
 layout: '../../layouts/IndexLayout.astro'
 lang: 'de'
 ---
@@ -9,7 +9,7 @@ Aktive Premium-Benutzer haben Zugang zu unseren externen API-Endpunkten. Bevor S
 
 ### Agent API (LLM / KI-Bot Zugriff)
 
-Möchten Sie einen KI-Agenten wie **Claude**, **ChatGPT** oder einen eigenen LLM-Bot mit Ihren Imkereidaten verbinden? Wir bieten eine dedizierte **[Agent API](/de/doc-agent)** mit eigenen API-Schlüsseln, Rate-Limiting und OpenAPI-Spezifikation. Die Agent API bietet vollen Lese-/Schreibzugriff auf Ihre Völker, Aufgaben, Statistiken und mehr. Weitere Informationen finden Sie in der [Agent API Dokumentation](/de/doc-agent).
+Möchten Sie einen KI-Agenten wie **Claude**, **ChatGPT** oder einen eigenen LLM-Bot mit Ihren Imkereidaten verbinden? Wir bieten eine dedizierte **[Agent API](/de/doc-agent/)** mit eigenen API-Schlüsseln, Rate-Limiting und OpenAPI-Spezifikation. Die Agent API bietet vollen Lese-/Schreibzugriff auf Ihre Völker, Aufgaben, Statistiken und mehr. Weitere Informationen finden Sie in der [Agent API Dokumentation](/de/doc-agent/).
 
 ### Kalender, iCal
 

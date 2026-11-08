@@ -1,6 +1,6 @@
 ---
 title: Other
-description: 'Documentation and Help for Beekeeping Software and Application'
+description: 'More b.tree features: keyboard shortcuts, Dropbox, calendar, quick search, breeding series, QR code scanner, speech recognition, multiple users, queen pedigree, and public maps.'
 layout: '../layouts/IndexLayout.astro'
 lang: 'en'
 ---

@@ -6,6 +6,14 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   redirects: {
+    '/introduction': {
+      destination: '/',
+      status: 301,
+    },
+    '/de/introduction': {
+      destination: '/de/',
+      status: 301,
+    },
     '/cv': {
       destination: 'https://www.oberreiter.or.at/hannes',
       status: 301,
@@ -31,19 +39,19 @@ export default defineConfig({
       status: 301,
     },
     '/impressum': {
-      destination: '/imprint',
+      destination: '/imprint/',
       status: 301,
     },
     '/de/impressum': {
-      destination: '/de/imprint',
+      destination: '/de/imprint/',
       status: 301,
     },
     '/datenschutz': {
-      destination: '/data-privacy',
+      destination: '/data-privacy/',
       status: 301,
     },
     '/de/datenschutz': {
-      destination: '/de/data-privacy',
+      destination: '/de/data-privacy/',
       status: 301,
     },
   },
@@ -51,9 +59,6 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) =>
-        page !== 'https://www.btree.at/en/' &&
-        page !== 'https://www.btree.at/de/en/',
       i18n: {
         defaultLocale: 'en',
         locales: {

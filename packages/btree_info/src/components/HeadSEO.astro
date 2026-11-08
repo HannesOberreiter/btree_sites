@@ -11,7 +11,7 @@ type Frontmatter = {
     alt?: string;
     src?: string;
   };
-  ogLocale?: string;
+  noindex?: boolean;
   seoTitle?: string;
   title?: string;
 };
@@ -276,7 +276,11 @@ const feed = FEEDS[isGermanPage ? 'de' : 'en'];
 ---
 
 <!-- Page Metadata -->
-<link rel="canonical" href={canonicalURL} />
+{frontmatter.noindex ? (
+  <meta name="robots" content="noindex" />
+) : (
+  <link rel="canonical" href={canonicalURL} />
+)}
 <link
   rel="alternate"
   type="application/rss+xml"
@@ -285,9 +289,13 @@ const feed = FEEDS[isGermanPage ? 'de' : 'en'];
 />
 
 <!-- Hreflang Tags for multilingual SEO -->
-<link rel="alternate" hreflang="en" href={englishURL} />
-<link rel="alternate" hreflang="de" href={germanURL} />
-<link rel="alternate" hreflang="x-default" href={englishURL} />
+{!frontmatter.noindex && (
+  <>
+    <link rel="alternate" hreflang="en" href={englishURL} />
+    <link rel="alternate" hreflang="de" href={germanURL} />
+    <link rel="alternate" hreflang="x-default" href={englishURL} />
+  </>
+)}
 
 <!-- OpenGraph Tags -->
 <meta property="og:title" content={formattedContentTitle} />
@@ -305,12 +313,11 @@ const feed = FEEDS[isGermanPage ? 'de' : 'en'];
 <meta property="og:type" content="article" />
 <meta property="og:url" content={canonicalURL} />
 <meta property="article:publisher" content={OPEN_GRAPH.facebook} />
+<meta property="og:locale" content={isGermanPage ? 'de_DE' : 'en_US'} />
 <meta
-  property="og:locale"
-  content={frontmatter.ogLocale ?? SITE.defaultLanguage}
+  property="og:locale:alternate"
+  content={isGermanPage ? 'en_US' : 'de_DE'}
 />
-<meta property="og:locale:alternate" content="en_EN" />
-<meta property="og:locale:alternate" content="de_DE" />
 
 <!-- Twitter Tags -->
 <meta name="twitter:card" content="summary_large_image" />

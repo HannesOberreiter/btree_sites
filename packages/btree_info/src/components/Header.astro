@@ -24,7 +24,7 @@ const rootUrl = getAbsoluteLocaleUrl(curLoc, '');
           <div class="w-10 h-10">
             <Fragment set:html={IconBtree} alt="b.tree" />
           </div>
-          <h1>{CONFIG.SITE.title ?? 'b.tree'}</h1>
+          <span class="logo-title">{CONFIG.SITE.title ?? 'b.tree'}</span>
         </a>
       </div>
       <div>
@@ -67,7 +67,7 @@ const rootUrl = getAbsoluteLocaleUrl(curLoc, '');
     color: var(--theme-text-accent);
   }
 
-  .logo h1 {
+  .logo .logo-title {
     display: none;
     font: inherit;
     color: inherit;
@@ -93,7 +93,7 @@ const rootUrl = getAbsoluteLocaleUrl(curLoc, '');
       margin: 0;
       z-index: 0;
     }
-    .logo h1 {
+    .logo .logo-title {
       display: initial;
     }
     .menu-toggle {

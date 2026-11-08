@@ -1,6 +1,6 @@
 ---
 title: 'FAQs'
-description: 'Documentation and Help for Beekeeping Software and Application'
+description: 'Answers to common questions about b.tree: app stores, offline use, NFC and QR scanner, speech recognition, Premium membership, data storage, and account deletion.'
 layout: '../layouts/IndexLayout.astro'
 faq: true
 lang: 'en'
