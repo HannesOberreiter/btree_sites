@@ -6,6 +6,14 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   redirects: {
+    '/links': {
+      destination: '/',
+      status: 301,
+    },
+    '/de/links': {
+      destination: '/de/',
+      status: 301,
+    },
     '/introduction': {
       destination: '/',
       status: 301,

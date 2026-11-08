@@ -31,7 +31,6 @@ export const SIDEBAR = {
     { text: 'Agent API', link: 'doc-agent/' },
     { text: 'Other', link: 'doc-other/' },
     { text: 'Updates', link: 'updates/' },
-    { text: 'External Links', link: 'links/' },
 
     { text: 'About Us', header: true },
     { text: 'Beekeeping', link: 'beekeeping/' },
@@ -54,7 +53,6 @@ export const SIDEBAR = {
     { text: 'Agent API', link: 'de/doc-agent/' },
     { text: 'Sonstiges', link: 'de/doc-other/' },
     { text: 'Neuerungen', link: 'de/updates/' },
-    { text: 'Externe Links', link: 'de/links/' },
 
     { text: 'Über uns', header: true },
     { text: 'Imkerei', link: 'de/beekeeping/' },
