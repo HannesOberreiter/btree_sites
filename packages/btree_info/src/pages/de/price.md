@@ -9,17 +9,17 @@ lang: 'de'
 
 <ul style="list-style: none">
     <li>❌ Limitierte Anzahl an Bienenstöcken (5)</li>
-    <li>❌ Limitierte Anzahl an Bienenstände (2)</li>
-    <li>❌ Kein API Zugriff und limitierte Anzahl Stockwaagen (2)</li>
+    <li>❌ Limitierte Anzahl an Bienenständen (2)</li>
+    <li>❌ Kein API-Zugriff und limitierte Anzahl Stockwaagen (2)</li>
     <li>❌ Keine Statistiken</li>
 </ul>
 
-### Premium - 55,00€ pro Jahr
+### Premium - 55,00 € pro Jahr
 
 <ul style="list-style: none">
     <li>✅ 1.000 Stöcke!</li>
     <li>✅ 100 Stände!</li>
-    <li>✅ API Zugriff für iCal und Stockwaagen (10)</li>
+    <li>✅ API-Zugriff für iCal und Stockwaagen (10)</li>
     <li>✅ Responsive Statistiken (Ernte, Fütterung, Behandlung, Varroa, Königinnen)</li>
     <li>✅ Königinnen-Statistik und Stammbaum</li>
     <li>✅ <a href="https://www.wiz-bee.com/">WizBee</a>, dein KI-Imkerei-Assistent auf Basis von Mistral: Fütterungen, Behandlungen, Ernten, Kontrollen und Aufgaben per Text oder Sprache erfassen und Fragen zu deinen eigenen Daten stellen</li>
@@ -32,7 +32,7 @@ lang: 'de'
 ### Deine Daten
 
 <ul style="list-style: none">
-    <li>✅ Backend, API und Datenbank auf Hetzner Servern in Frankfurt, Deutschland</li>
+    <li>✅ Backend, API und Datenbank auf Hetzner-Servern in Frankfurt, Deutschland</li>
     <li>✅ Webseiten, CDN und verschlüsselte Backups bei Bunny.net in Frankfurt, Deutschland</li>
     <li>✅ WizBee KI vom europäischen Anbieter Mistral AI (Frankreich)</li>
     <li>✅ CSV-Export deiner Daten jederzeit möglich</li>
@@ -41,15 +41,15 @@ lang: 'de'
 
 Mehr Details findest du in der [Datenschutzerklärung](/de/data-privacy/).
 
-### Unterstütze die App Entwicklung
+### Unterstütze die App-Entwicklung
 
-Als Premium Member unterstützt ihr die Betreuung und Entwicklung der Applikation und die Kosten für den Server. Es werden laufend neue Features integriert sowie die bestehenden aktualisiert und verbessert. Die komplette Applikation wurde von mir, Hannes Oberreiter, alleine erstellt und wird auch von mir betreut. Ich arbeite daran in meiner Freizeit, deswegen können Updates etwas dauern. Dennoch bemühe ich mich so schnell wie möglich Fragen und Anregungen zu erfüllen.
+Als Premium-Member unterstützt du die Betreuung und Entwicklung der Applikation und die Kosten für den Server. Es werden laufend neue Features integriert sowie die bestehenden aktualisiert und verbessert. Die komplette Applikation wurde von mir, Hannes Oberreiter, alleine erstellt und wird auch von mir betreut. Ich arbeite daran in meiner Freizeit, deswegen können Updates etwas dauern. Dennoch bemühe ich mich, so schnell wie möglich Fragen und Anregungen zu erfüllen.
 
-Mein Ziel: Die Applikation soll jeden einzelnen von euch bestmöglich bei euren Imkerarbeiten unterstützen.
+Mein Ziel: Die Applikation soll dich bestmöglich bei deinen Imkerarbeiten unterstützen.
 
 Mit besten Grüßen
 
-_Hannes Oberreiter_, Zeitvertreib Landwirt , Freizeit Programmierer, Hobby Biologe
+_Hannes Oberreiter_, Zeitvertreib-Landwirt, Freizeitprogrammierer, Hobbybiologe
 
 ### Unser Preisverlauf und bevorstehende Änderungen
 
@@ -59,4 +59,4 @@ _Hannes Oberreiter_, Zeitvertreib Landwirt , Freizeit Programmierer, Hobby Biolo
 
 <hr/>
 
-[^1]: Wenn du zuvor Premium User warst kannst du trotzdem mit all deinen angelegten Bienenstöcken und Ständen arbeiten, nur keine neuen anlegen. Inaktive Völker/Stöcke werden auch zum Limit gezählt.
+[^1]: Wenn du zuvor Premium-User warst, kannst du trotzdem mit all deinen angelegten Bienenstöcken und Ständen arbeiten, nur keine neuen anlegen. Inaktive Völker/Stöcke werden auch zum Limit gezählt.

@@ -6,13 +6,13 @@ layout: '../../layouts/MainLayout.astro'
 lang: 'de'
 ---
 
-b.tree ist ein Management-Tool für Imkerinnen und Imker, die mehr brauchen als eine einfache digitale Stockkarte. Die Software ist auf strukturierte, tabellarische Daten ausgelegt. So behalten Sie auch bei vielen Bienenständen, Bienenvölkern, Kontrollen, Behandlungen, Fütterungen, Ernten, Königinnen und Aufgaben den Überblick.
+b.tree ist ein Management-Tool für Imkerinnen und Imker, die mehr brauchen als eine einfache digitale Stockkarte. Die Software ist auf strukturierte, tabellarische Daten ausgelegt. So behältst du auch bei vielen Bienenständen, Bienenvölkern, Kontrollen, Behandlungen, Fütterungen, Ernten, Königinnen und Aufgaben den Überblick.
 
-Ein wichtiger Grundsatz: **Ihre Daten bleiben für Sie verfügbar**. Wichtige Aufzeichnungen können exportiert, in eigenen Statistiken weiterverwendet, archiviert oder außerhalb von b.tree verarbeitet werden.
+Ein wichtiger Grundsatz: **Deine Daten bleiben für dich verfügbar**. Wichtige Aufzeichnungen können exportiert, in eigenen Statistiken weiterverwendet, archiviert oder außerhalb von b.tree verarbeitet werden.
 
 ### Bienenstand- und Völkerverwaltung
 
-Erstellen Sie Bienenstände, verwalten Sie Bienenvölker, verschieben Sie Völker zwischen Standorten und ordnen Sie Königinnen zu. b.tree unterstützt die Dokumentation echter Imkereiarbeit über Standorte, Teams und Saisonen hinweg.
+Erstelle Bienenstände, verwalte Bienenvölker, verschiebe Völker zwischen Standorten und ordne Königinnen zu. b.tree unterstützt die Dokumentation echter Imkereiarbeit über Standorte, Teams und Saisonen hinweg.
 
 ### Digitale Stockkarte
 
@@ -20,15 +20,15 @@ b.tree kann als digitale Stockkarte für Kontrollen, Beobachtungen, Maßnahmen, 
 
 ### Tabellarische Daten für größere Imkereien
 
-Viele Bereiche in b.tree arbeiten mit Tabellen, weil Tabellen bei vielen Datensätzen besonders effizient sind. Sie können Imkereidaten schnell überblicken, sortieren, filtern und vergleichen. Das ist hilfreich für Erwerbsimker, Bio-Imker und Wanderimker mit vielen Völkern.
+Viele Bereiche in b.tree arbeiten mit Tabellen, weil Tabellen bei vielen Datensätzen besonders effizient sind. Du kannst Imkereidaten schnell überblicken, sortieren, filtern und vergleichen. Das ist hilfreich für Erwerbsimker, Bio-Imker und Wanderimker mit vielen Völkern.
 
 ### Daten jederzeit exportieren
 
-b.tree ist so aufgebaut, dass Ihre Imkereidaten nicht eingeschlossen sind. Daten können als CSV exportiert und in Tabellenkalkulationen, Archiven, Berichten oder eigenen Analysen weiterverwendet werden. Premium-Benutzer können zusätzlich API-Zugriff und Kalenderexporte nutzen.
+b.tree ist so aufgebaut, dass deine Imkereidaten nicht eingeschlossen sind. Daten können als CSV exportiert und in Tabellenkalkulationen, Archiven, Berichten oder eigenen Analysen weiterverwendet werden. Premium-Benutzer können zusätzlich API-Zugriff und Kalenderexporte nutzen.
 
 ### Behandlungen, Fütterungen, Ernten und Kontrollen
 
-Dokumentieren Sie wichtige Imkereiereignisse an einem Ort: Varroa-Behandlungen, Futtergaben, Honigernten, Kontrollen und Folgeaufgaben. Dadurch entsteht eine nachvollziehbare Historie für jedes Volk und jeden Bienenstand.
+Dokumentiere wichtige Imkereiereignisse an einem Ort: Varroa-Behandlungen, Futtergaben, Honigernten, Kontrollen und Folgeaufgaben. Dadurch entsteht eine nachvollziehbare Historie für jedes Volk und jeden Bienenstand.
 
 ### Wachskreislauf und Los-Rückverfolgbarkeit
 
@@ -36,15 +36,15 @@ Der [Wachskreislauf](https://app.btree.at/table/wax) verwaltet Wachs getrennt vo
 
 ### Aufgaben, Kalender und iCal
 
-Planen Sie anstehende Arbeiten mit Aufgaben und Kalendereinträgen. Premium-Benutzer können Kalenderdaten per iCal abonnieren und wichtige Imkereitermine im Handy- oder Desktop-Kalender anzeigen lassen.
+Plane anstehende Arbeiten mit Aufgaben und Kalendereinträgen. Premium-Benutzer können Kalenderdaten per iCal abonnieren und wichtige Imkereitermine im Handy- oder Desktop-Kalender anzeigen lassen.
 
 ### Königinnenzucht und Zuchtserien
 
-Erstellen Sie eigene Zuchtmethoden, planen Sie Zuchtserien, ordnen Sie Königinnen Völkern zu und behalten Sie wichtige Termine im Kalender. b.tree unterstützt strukturierte Königinnen-Dokumentation statt verstreuter Papiernotizen.
+Erstelle eigene Zuchtmethoden, plane Zuchtserien, ordne Königinnen Völkern zu und behalte wichtige Termine im Kalender. b.tree unterstützt strukturierte Königinnen-Dokumentation statt verstreuter Papiernotizen.
 
 ### Statistiken und Vergleiche
 
-Nutzen Sie responsive Statistiken für Ernten, Fütterungen, Behandlungen, Varroa-Daten, Königinnen und Völkerleistung. Aus strukturierten Aufzeichnungen wird ein Datenvorteil für zukünftige Entscheidungen.
+Nutze responsive Statistiken für Ernten, Fütterungen, Behandlungen, Varroa-Daten, Königinnen und Völkerleistung. Aus strukturierten Aufzeichnungen wird ein Datenvorteil für zukünftige Entscheidungen.
 
 ### NFC-Tag-Scanning auf Android
 
@@ -56,7 +56,7 @@ b.tree läuft in der Cloud und unterstützt mehrere Benutzer. Teams können von 
 
 ### Imker-Wettervorhersage für Premium-Benutzer
 
-Jeder Bienenstand hat eine Wettervorhersage für seinen Standort: das aktuelle Wetter, die nächsten 48 Stunden stündlich und 8 Tage im Voraus. b.tree markiert die Stunden und Tage mit Flugwetter für Bienen (ab 12 °C, geringe Regenwahrscheinlichkeit, wenig Wind und Tageslicht). Zusätzlich zeigt b.tree Frost- und Hitzewarnungen sowie amtliche Unwetterwarnungen. Die Vorhersage wird über den b.tree Server geladen, Ihr Browser verbindet sich dafür nicht mit einem externen Wetterdienst.
+Jeder Bienenstand hat eine Wettervorhersage für seinen Standort: das aktuelle Wetter, die nächsten 48 Stunden stündlich und 8 Tage im Voraus. b.tree markiert die Stunden und Tage mit Flugwetter für Bienen (ab 12 °C, geringe Regenwahrscheinlichkeit, wenig Wind und Tageslicht). Zusätzlich zeigt b.tree Frost- und Hitzewarnungen sowie amtliche Unwetterwarnungen. Die Vorhersage wird über den b.tree Server geladen, dein Browser verbindet sich dafür nicht mit einem externen Wetterdienst.
 
 ### WizBee KI-Helfer für Premium-Benutzer
 
