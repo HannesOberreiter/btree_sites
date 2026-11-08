@@ -18,6 +18,8 @@ Erstelle Bienenstände, verwalte Bienenvölker, verschiebe Völker zwischen Stan
 
 b.tree kann als digitale Stockkarte für Kontrollen, Beobachtungen, Maßnahmen, Behandlungen, Fütterungen, Ernten und Notizen genutzt werden. Die Einträge sind strukturiert, damit Völker verglichen und ältere Informationen schnell gefunden werden können.
 
+[Mehr zur digitalen Stockkarte](/de/features/hive-records/)
+
 ### Tabellarische Daten für größere Imkereien
 
 Viele Bereiche in b.tree arbeiten mit Tabellen, weil Tabellen bei vielen Datensätzen besonders effizient sind. Du kannst Imkereidaten schnell überblicken, sortieren, filtern und vergleichen. Das ist hilfreich für Erwerbsimker, Bio-Imker und Wanderimker mit vielen Völkern.

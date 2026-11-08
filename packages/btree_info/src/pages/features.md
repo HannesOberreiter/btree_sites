@@ -18,6 +18,8 @@ Create apiaries, manage colonies, move hives between locations, assign queens, a
 
 Use b.tree as a digital hive record system for inspections, observations, actions, treatments, feedings, harvests, and notes. Records are structured so you can compare colonies and find older information quickly.
 
+[More about digital hive records](/features/hive-records/)
+
 ### Tabular data for large operations
 
 Many parts of b.tree use tables because tables are still the fastest way to work with many records. You can scan, sort, filter, and compare hive data without losing context. This is useful for professional beekeepers, organic beekeepers, and migratory operations with many colonies.
