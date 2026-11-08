@@ -24,6 +24,8 @@ Development and deployment documentation lives in `README.md`.
 
 - Keep all sites statically generated. Use Astro components for layout and structure.
 - For btree_info documentation, keep English and German pages paired: English URLs have no locale prefix; German URLs use `/de/`.
+- Give paired pages the same English slug, for example `/features/hive-records/` and `/de/features/hive-records/`. HeadSEO links the hreflang pairs only through the `/de` prefix.
+- Do not edit the app screenshots in `packages/btree_info/src/images/features/` by hand. Regenerate them with `scripts/screenshots/start-app.sh <btree checkout>`, `node scripts/screenshots/take.mjs`, then `scripts/screenshots/stop-app.sh`. The scripts use their own `shots-*` containers.
 - Keep TailwindCSS limited to btree_info. Use its existing TailwindCSS 4 Vite integration and utility classes.
 - Keep wizbee_info minimal: plain CSS in Astro `<style>` blocks, using the existing CSS custom properties rather than adding a framework.
 - Use Astro's `<Image>` component for processed images in `src/assets/`; files in `public/` are copied as-is. Each package that builds images needs its own direct `sharp` dependency for pnpm resolution.

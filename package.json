@@ -18,7 +18,8 @@
   "devDependencies": {
     "@astrojs/compiler-rs": "^0.5.2",
     "oxfmt": "^0.77.0",
-    "oxlint": "^1.92.0"
+    "oxlint": "^1.92.0",
+    "playwright": "1.63.0"
   },
   "engines": {
     "node": ">=22.12.0",
