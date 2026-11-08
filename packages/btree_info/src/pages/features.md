@@ -36,6 +36,8 @@ Track the most important beekeeping events in one place. Document varroa treatme
 
 The [wax cycle](https://app.btree.at/table/wax) keeps wax records separate from general inventory. Track own wax, purchases, processing, contract processing, use, and sales across individual lots. Inputs and outputs can be connected many-to-many, processing losses are calculated automatically, and optional source colonies preserve origin information. Product summaries, document references, and CSV export support traceable records for organic and professional operations.
 
+[More about records for organic beekeeping](/features/organic-beekeeping/)
+
 ### Tasks, calendar, and iCal
 
 Plan upcoming work with tasks and calendar entries. Premium users can subscribe to calendar data through iCal and see important beekeeping work in their phone or desktop calendar.

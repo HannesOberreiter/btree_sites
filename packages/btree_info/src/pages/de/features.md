@@ -36,6 +36,8 @@ Dokumentiere wichtige Imkereiereignisse an einem Ort: Varroa-Behandlungen, Futte
 
 Der [Wachskreislauf](https://app.btree.at/table/wax) verwaltet Wachs getrennt vom allgemeinen Lager. Eigenwachs, Zukauf, Verarbeitung, Lohnverarbeitung, Verwendung und Verkauf werden über einzelne Lose dokumentiert. Ein- und Ausgänge lassen sich N:M verknüpfen, Verarbeitungsverluste werden automatisch berechnet und optional ausgewählte Völker erhalten die Herkunftsinformation. Produktübersicht, Belegnummern und CSV-Export unterstützen eine nachvollziehbare Dokumentation für Bio- und Erwerbsimkereien.
 
+[Mehr zur Dokumentation für die Bio-Imkerei](/de/features/organic-beekeeping/)
+
 ### Aufgaben, Kalender und iCal
 
 Plane anstehende Arbeiten mit Aufgaben und Kalendereinträgen. Premium-Benutzer können Kalenderdaten per iCal abonnieren und wichtige Imkereitermine im Handy- oder Desktop-Kalender anzeigen lassen.
