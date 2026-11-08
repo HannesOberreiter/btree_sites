@@ -9,13 +9,13 @@ lang: 'de'
 
 Die b.tree **Agent API** ist ein dedizierter Endpunkt, der externen **KI-Agenten** und **LLM-Assistenten** (Claude, ChatGPT, eigene Bots, ClawBot, MCP-kompatible Agenten) den programmatischen Zugriff auf deine Imkereidaten ermöglicht. Stell es dir so vor, als würdest du deinem KI-Assistenten ein eigenes Set an Imkerei-Werkzeugen geben.
 
-Ob **Claude Desktop**, **ChatGPT mit Custom Actions**, ein **Zapier KI-Workflow** oder ein selbst gebauter Agent — b.tree bietet vollen Lese- und Schreibzugriff auf deinen Imkereibetrieb über die sichere Agent API (OpenAPI), mit MCP als Alternative.
+Ob **Claude Desktop**, **ChatGPT mit Custom Actions**, ein **Zapier-KI-Workflow** oder ein selbst gebauter Agent — b.tree bietet vollen Lese- und Schreibzugriff auf deinen Imkereibetrieb über die sichere Agent API (OpenAPI), mit MCP als Alternative.
 
 ---
 
 ### Warum die Agent API nutzen?
 
-- **Imkerei in natürlicher Sprache** — Bitte deine KI „erstelle einen Fütterungseintrag für alle Völker am Waldstand" und es funktioniert einfach
+- **Imkerei in natürlicher Sprache** — Bitte deine KI „erstelle einen Fütterungseintrag für alle Völker am Waldstand“ und es funktioniert einfach
 - **Automatisierung** — Erstelle Workflows, die automatisch Kontrollen protokollieren, Behandlungen planen oder Erntedaten analysieren
 - **Zugriff auf 40+ Werkzeuge** — Dein KI-Agent kann erstellen, lesen, aktualisieren und löschen: Fütterungen, Behandlungen, Ernten, Kontrollen, Todos, Kosten, Statistiken, Wetter und mehr, dazu eine Königinnenliste mit Geburtsdatum (nur lesend, z. B. um Völker mit einer Königin aus 2024 zu finden)
 - **OpenAPI Discovery** — Dein Agent kann alle verfügbaren Endpunkte und deren Schemas automatisch erkennen
@@ -31,7 +31,7 @@ Navigiere zu **Einstellungen → Profil → [Agent Keys](https://app.btree.at/se
 
 Klicke auf **"Agent Key erstellen"** und setze optional:
 
-- Eine **Bezeichnung** (z.B. "Claude Desktop", "Meine Automatisierung")
+- Eine **Bezeichnung** (z. B. "Claude Desktop", "Meine Automatisierung")
 - Ein **Ablaufdatum** (leer lassen für permanenten Zugang)
 
 ⚠️ **Wichtig**: Der API-Schlüssel wird nur einmal nach der Erstellung angezeigt. Kopiere ihn sofort und speichere ihn sicher. Er kann später nicht mehr abgerufen werden.
@@ -91,7 +91,7 @@ Bei Überschreitung erhältst du einen `429 Too Many Requests`-Status mit einem 
 - **Schlüssel regelmäßig rotieren** — Erstelle neue Schlüssel und lösche alte periodisch
 - **Ablaufdaten verwenden** — Setze `valid_to`, wenn der Schlüssel nur temporär aktiv sein soll
 - **Schlüssel beschriften** — Benenne sie nach dem Agenten oder Dienst, der sie verwendet
-- **Letzte Nutzung prüfen** — Kontrolliere den „Zuletzt verwendet"-Zeitstempel, um ungenutzte Schlüssel zu identifizieren
+- **Letzte Nutzung prüfen** — Kontrolliere den „Zuletzt verwendet“-Zeitstempel, um ungenutzte Schlüssel zu identifizieren
 - **Ungenutzte Schlüssel löschen** — Wenn ein Agent nicht mehr verwendet wird, widerrufe den Schlüssel sofort
 
 Schlüssel werden vor der Speicherung mit **SHA-256 + individuellem Salt gehasht**. Selbst im unwahrscheinlichen Fall eines Datenbankeinbruchs können deine Klartext-Schlüssel nicht wiederhergestellt werden.
@@ -102,7 +102,7 @@ Wenn dein Konto oder deine Imkerei gelöscht wird, werden alle zugehörigen Agen
 
 ### Deinen KI-Agenten oder Skill einrichten
 
-Auf der Agent Keys Seite in b.tree findest du einen gebrauchsfertigen **Skill-Installations-Prompt**. Kopiere ihn und füge ihn in deinen KI-Agenten oder Skill-Editor ein. Der Prompt erklärt:
+Auf der Agent-Keys-Seite in b.tree findest du einen gebrauchsfertigen **Skill-Installations-Prompt**. Kopiere ihn und füge ihn in deinen KI-Agenten oder Skill-Editor ein. Der Prompt erklärt:
 
 - Wie man sich bei der b.tree API authentifiziert
 - Wie man verfügbare Tools über OpenAPI entdeckt
@@ -117,7 +117,7 @@ Anstatt einen Custom GPT oder einen eigenen Agenten zu erstellen, kannst du den 
 - [Kimi Skills](https://www.kimi.com/skills)
 - [Claude Skill Creator](https://claude.ai/new?q=Let%27s+create+a+skill+together+using+your+skill-creator+skill.+First+ask+me+what+the+skill+should+do.)
 
-Öffne den gewünschten Skill-Editor. Kopiere danach den **Skill-Installations-Prompt** von der b.tree Agent Keys Seite und füge ihn in den Editor ein. Folge den Anweisungen der Plattform, um den Skill zu erstellen.
+Öffne den gewünschten Skill-Editor. Kopiere danach den **Skill-Installations-Prompt** von der b.tree Agent-Keys-Seite und füge ihn in den Editor ein. Folge den Anweisungen der Plattform, um den Skill zu erstellen.
 
 > **Alternative:** Wenn du ChatGPT nutzt, kannst du auch den fertigen b.tree Custom GPT mit OAuth-Login verwenden: [b.tree Imkerei Manager DE](https://chatgpt.com/g/g-6a2bcc6afba881918b2d6f35d920d7c2-b-tree-imkerei-manager-de) oder [b.tree Beekeeping Manager EN](https://chatgpt.com/g/g-6a07eef786548191a55f6487827f9e5a-b-tree-beekeeping-manager-en).
 
@@ -125,7 +125,7 @@ Anstatt einen Custom GPT oder einen eigenen Agenten zu erstellen, kannst du den 
 
 ### Anwendungsfälle
 
-- **Sprachgesteuerte Imkerei** — „Hey Claude, protokolliere eine Fütterung mit 3:2 Zuckerwasser für alle Völker am Wiesenstand"
+- **Sprachgesteuerte Imkerei** — „Hey Claude, protokolliere eine Fütterung mit 3:2 Zuckerwasser für alle Völker am Wiesenstand“
 - **Automatische Berichte** — Lass deinen Agenten wöchentliche Zusammenfassungen von Behandlungen und Kontrollen erstellen
 - **Wiederkehrende Aufgaben** — Richte Agenten ein, die saisonale Fütterungs- oder Behandlungspläne erstellen
 - **Wetterbasierte Verwaltung** — Agenten können das Standwetter prüfen, bevor sie Maßnahmen vorschlagen
@@ -135,7 +135,7 @@ Anstatt einen Custom GPT oder einen eigenen Agenten zu erstellen, kannst du den 
 
 ### Alternative: MCP
 
-Für ChatGPT, Claude, VS Code und andere Clients, die entfernte [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)-Server unterstützen, ist MCP eine alternative Verbindungsmöglichkeit. Dabei stehen dieselben Werkzeuge wie in WizBee über Streamable HTTP bereit. Die Anmeldung erfolgt über OAuth—ein API-Schlüssel muss nicht in den KI-Client kopiert werden.
+Für ChatGPT, Claude, VS Code und andere Clients, die entfernte [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)-Server unterstützen, ist MCP eine alternative Verbindungsmöglichkeit. Dabei stehen dieselben Werkzeuge wie in WizBee über Streamable HTTP bereit. Die Anmeldung erfolgt über OAuth — ein API-Schlüssel muss nicht in den KI-Client kopiert werden.
 
 #### MCP-Client verbinden
 
@@ -163,4 +163,4 @@ Die oben beschriebene Agent API ist der empfohlene Einstieg für Automatisierung
 
 ---
 
-_Die Agent API ist ein Premium-Feature. [Upgrade dein Konto](https://app.btree.at/premium) um zu starten._
+_Die Agent API ist ein Premium-Feature. [Upgrade dein Konto](https://app.btree.at/premium), um zu starten._
