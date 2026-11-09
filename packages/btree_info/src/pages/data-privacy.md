@@ -19,9 +19,9 @@ If you do not agree with this, you can change your browser settings to be notifi
 
 If you deactivate cookies, this may have implications on the full functionality of our website.
 
-### Web Analysis (app.btree.at & btree.at)
+### Web Analysis (app.btree.at, btree.at, btree.tv & wiz-bee.com)
 
-We use AWStats and Report Magic; the software only uses pseudonymised server log files as a source for the statistics. Additionally, we use Matomo (app.btree.at) for more in-depth analysis and on a per-user basis inside the app. Each software runs on our own server and is not used by third parties. Your IP address will be used only in parts (the last 8 bits will be deleted) to determine your rough location.
+We use AWStats and Report Magic; the software only uses pseudonymised server log files as a source for the statistics. Additionally, we use Matomo for more in-depth analysis: inside the app (app.btree.at) on a per-user basis, and without cookies on our websites btree.at, btree.tv and wiz-bee.com. On btree.at, Matomo also records the search terms entered in the site search. Each software runs on our own server and is not used by third parties. Your IP address will be used only in parts (the last 8 bits will be deleted) to determine your rough location.
 
 The following data will be used: browser type and browser version (if transferred by the user!), operating system, date and time of connection, number of visits, time of visits on homepage, previously visited pages (if transferred by the user!), pseudonymised IP.
 
