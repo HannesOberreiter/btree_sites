@@ -5,6 +5,8 @@ import LinkApp from './LinkApp.astro';
 const currentPage = Astro.url.pathname;
 const currentLocale = Astro.currentLocale;
 const currentPageMatch = currentPage.slice(1);
+const current = (link: string) =>
+  currentPageMatch === link ? 'page' : 'false';
 
 // SIDEBAR is a flat array. Group it by sections to properly render.
 const sidebarSections = SIDEBAR[currentLocale ?? 'en'].reduce(
@@ -38,13 +40,32 @@ const sidebarSections = SIDEBAR[currentLocale ?? 'en'].reduce(
               <li class="nav-link">
                 {child.link.substring(0, 5) === 'https' ? (
                   <LinkApp text={child.text} url={child.link} />
+                ) : child.children ? (
+                  // A group stays in the HTML when closed, so search engines still see its links.
+                  <details open={currentPageMatch.startsWith(child.link)}>
+                    <summary>
+                      <a
+                        href={`/${child.link}`}
+                        aria-current={current(child.link)}
+                      >
+                        {child.text}
+                      </a>
+                    </summary>
+                    <ul class="nav-sub">
+                      {child.children.map((sub) => (
+                        <li class="nav-link">
+                          <a
+                            href={`/${sub.link}`}
+                            aria-current={current(sub.link)}
+                          >
+                            {sub.text}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
                 ) : (
-                  <a
-                    href={`/${child.link}`}
-                    aria-current={`${
-                      currentPageMatch === child.link ? 'page' : 'false'
-                    }`}
-                  >
+                  <a href={`/${child.link}`} aria-current={current(child.link)}>
                     {child.text}
                   </a>
                 )}
@@ -108,6 +129,35 @@ const sidebarSections = SIDEBAR[currentLocale ?? 'en'].reduce(
   .nav-link a:hover,
   .nav-link a:focus {
     background-color: var(--theme-bg-hover);
+  }
+
+  .nav-link summary {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+  }
+  .nav-link summary::-webkit-details-marker {
+    display: none;
+  }
+  .nav-link summary a {
+    flex: 1;
+  }
+  .nav-link summary::after {
+    content: '';
+    width: 0.45rem;
+    height: 0.45rem;
+    margin: 0 1rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(-45deg);
+    transition: transform 0.15s;
+  }
+  .nav-link details[open] > summary::after {
+    transform: rotate(45deg);
+  }
+  .nav-sub .nav-link a {
+    padding-left: 2rem;
   }
 
   .nav-link a[aria-current='page'] {
