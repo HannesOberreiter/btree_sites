@@ -177,6 +177,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         germanPath = '/de/';
       }
 
+      // Matomo on the German page would record this page as referrer, so keep the real one.
+      sessionStorage.setItem('redirect-referrer', document.referrer);
+      window.languageRedirect = true;
       window.location.href = germanPath;
     }
   }
@@ -191,14 +194,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <!-- Matomo -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.hostname === 'localhost') {
-      console.log('Dev mode, analytics is not loaded');
+    if (window.location.hostname !== 'www.btree.at') {
+      console.log('Analytics is only loaded on www.btree.at');
+      return;
+    }
+    if ((window as any).languageRedirect) {
       return;
     }
 
     const _paq = ((window as any)._paq = (window as any)._paq || []);
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(['disableCookies']);
+    const redirectReferrer = sessionStorage.getItem('redirect-referrer');
+    if (redirectReferrer !== null) {
+      sessionStorage.removeItem('redirect-referrer');
+      _paq.push(['setReferrerUrl', redirectReferrer]);
+    }
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function () {
