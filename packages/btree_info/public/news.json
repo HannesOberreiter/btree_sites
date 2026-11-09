@@ -1,6 +1,64 @@
 {
   "en": [
     {
+      "version": "Web app 7.11.0 · Server 7.12.3",
+      "versions": [
+        "btree-server-7.12.3",
+        "btree-client-7.11.0"
+      ],
+      "date": "2026-11-09",
+      "items": [
+        {
+          "title": "Feature Usage Tracking",
+          "description": "b.tree now tracks which features you use in the web app to help improve the product."
+        },
+        {
+          "title": "German Text Improvements",
+          "description": "German emails and app texts now use the informal 'du' form and spelling has been corrected."
+        },
+        {
+          "title": "Italian Text Improvements",
+          "description": "Italian emails and app texts now use the informal 'tu' form and incorrect translations have been fixed."
+        },
+        {
+          "title": "Security Patch Updates",
+          "description": "Applied the latest security patches to protect your data."
+        },
+        {
+          "title": "English Spelling Fixes",
+          "description": "Corrected spelling errors in English texts in the app and emails."
+        },
+        {
+          "title": "French Text Fixes",
+          "description": "Fixed incorrect French translations in the app and emails."
+        },
+        {
+          "title": "Pest Map Time Limit",
+          "description": "The map now only displays pest observations from the past month."
+        },
+        {
+          "title": "Server Data Corrections",
+          "description": "Fixed permission checks, hive default values, varroa mite count averages, and hive movement deletion on the server."
+        },
+        {
+          "title": "Translation Fixes",
+          "description": "Fixed missing and incorrect translation keys in the web interface."
+        },
+        {
+          "title": "Web App Stability Fixes",
+          "description": "Resolved issues with page refresh, QR code scanning, notifications, caching, and date displays."
+        },
+        {
+          "title": "CSV Import Fixes",
+          "description": "CSV imports now correctly preserve zero values, temperature readings, and semicolon-separated files."
+        },
+        {
+          "title": "Analytics Accuracy Fix",
+          "description": "User identification for analytics is now set before the first page loads for more accurate tracking."
+        }
+      ]
+    },
+    {
       "version": "Web app 7.10.0–7.10.4 · Server 7.12.0–7.12.2",
       "versions": [
         "btree-client-7.10.0",
@@ -5163,6 +5221,64 @@
     }
   ],
   "de": [
+    {
+      "version": "Web-App 7.11.0 · Server 7.12.3",
+      "versions": [
+        "btree-server-7.12.3",
+        "btree-client-7.11.0"
+      ],
+      "date": "2026-11-09",
+      "items": [
+        {
+          "title": "Nutzungs-Tracking von Funktionen",
+          "description": "b.tree erfasst jetzt, welche Funktionen du in der Web-App nutzt, um das Produkt zu verbessern."
+        },
+        {
+          "title": "Verbesserungen der deutschen Texte",
+          "description": "Deutsche E-Mails und App-Texte verwenden jetzt die informelle 'du'-Form und die Rechtschreibung wurde korrigiert."
+        },
+        {
+          "title": "Verbesserungen der italienischen Texte",
+          "description": "Italienische E-Mails und App-Texte verwenden jetzt die informelle 'tu'-Form und falsche Übersetzungen wurden korrigiert."
+        },
+        {
+          "title": "Sicherheits-Patch-Updates",
+          "description": "Die neuesten Sicherheitspatches wurden angewendet, um deine Daten zu schützen."
+        },
+        {
+          "title": "Korrekturen der englischen Rechtschreibung",
+          "description": "Rechtschreibfehler in englischen Texten in der App und in E-Mails wurden korrigiert."
+        },
+        {
+          "title": "Korrekturen der französischen Texte",
+          "description": "Falsche französische Übersetzungen in der App und in E-Mails wurden behoben."
+        },
+        {
+          "title": "Zeitlimit für die Schädlingskarte",
+          "description": "Die Karte zeigt jetzt nur noch Schädlingsbeobachtungen aus dem letzten Monat an."
+        },
+        {
+          "title": "Korrekturen der Serverdaten",
+          "description": "Berechtigungsprüfungen, Standardwerte für Stöcke, Durchschnittswerte der Varroamilben-Zählungen und das Löschen von Wanderungen wurden auf dem Server korrigiert."
+        },
+        {
+          "title": "Übersetzungskorrekturen",
+          "description": "Fehlende und falsche Übersetzungsschlüssel in der Weboberfläche wurden behoben."
+        },
+        {
+          "title": "Stabilitätskorrekturen der Web-App",
+          "description": "Probleme mit dem Seiten-Neuladen, dem Scannen von QR-Codes, Benachrichtigungen, Caching und Datumsanzeigen wurden behoben."
+        },
+        {
+          "title": "CSV-Import-Korrekturen",
+          "description": "CSV-Importe bewahren jetzt korrekt Nullwerte, Temperaturmesswerte und Dateien mit Semikolon-Trennzeichen."
+        },
+        {
+          "title": "Korrektur der Analysegenauigkeit",
+          "description": "Die Benutzeridentifikation für Analysen wird jetzt vor dem Laden der ersten Seite festgelegt, um ein genaueres Tracking zu ermöglichen."
+        }
+      ]
+    },
     {
       "version": "Web-App 7.10.0–7.10.4 · Server 7.12.0–7.12.2",
       "versions": [
