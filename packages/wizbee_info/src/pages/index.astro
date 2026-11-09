@@ -324,8 +324,8 @@ const features = [
     <!-- Matomo -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        if (window.location.hostname === 'localhost') {
-          console.log('Dev mode, analytics is not loaded');
+        if (window.location.hostname !== 'www.wiz-bee.com') {
+          console.log('Analytics is only loaded on www.wiz-bee.com');
           return;
         }
         const _paq = ((window as any)._paq = (window as any)._paq || []);
