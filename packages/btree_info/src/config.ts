@@ -23,7 +23,14 @@ export const SIDEBAR = {
     { text: 'Beekeeping Application', header: true },
     { text: '🐝 Login', link: 'https://app.btree.at' },
     { text: 'Introduction', link: '' },
-    { text: 'Features', link: 'features/' },
+    {
+      text: 'Features',
+      link: 'features/',
+      children: [
+        { text: 'Digital Hive Records', link: 'features/hive-records/' },
+        { text: 'Organic Beekeeping', link: 'features/organic-beekeeping/' },
+      ],
+    },
     { text: 'Price', link: 'price/' },
     { text: 'FAQs', link: 'doc-faqs/' },
     { text: 'First Steps', link: 'doc-first-steps/' },
@@ -45,7 +52,14 @@ export const SIDEBAR = {
     { text: 'Imkerei Software', header: true },
     { text: '🐝 Login', link: 'https://app.btree.at' },
     { text: 'Einführung', link: 'de/' },
-    { text: 'Funktionen', link: 'de/features/' },
+    {
+      text: 'Funktionen',
+      link: 'de/features/',
+      children: [
+        { text: 'Digitale Stockkarte', link: 'de/features/hive-records/' },
+        { text: 'Bio-Imkerei', link: 'de/features/organic-beekeeping/' },
+      ],
+    },
     { text: 'Preis', link: 'de/price/' },
     { text: 'FAQs', link: 'de/doc-faqs/' },
     { text: 'Erste Schritte', link: 'de/doc-first-steps/' },
