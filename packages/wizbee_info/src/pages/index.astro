@@ -341,11 +341,13 @@ const features = [
         const optOut = document.getElementById(
           'matomo-opt-out',
         ) as HTMLInputElement | null;
+        let optOutReady = false;
         if (optOut) {
           _paq.push([
             function (this: any) {
               optOut.checked = !this.isUserOptedOut();
               optOut.disabled = false;
+              optOutReady = true;
             },
           ]);
           optOut.addEventListener('change', () => {
@@ -366,6 +368,16 @@ const features = [
           const s = d.getElementsByTagName('script')[0];
           g.async = true;
           g.src = `${u}matomo.js`;
+          // If a blocker stops matomo.js, the tracker never runs, so tell it at the checkbox.
+          const showBlocked = () => {
+            if (optOut && !optOutReady) {
+              optOut.checked = false;
+              (optOut.nextElementSibling as HTMLElement).textContent =
+                optOut.dataset.blocked ?? '';
+            }
+          };
+          g.addEventListener('error', showBlocked);
+          g.addEventListener('load', showBlocked);
           s.parentNode.insertBefore(g, s);
         })();
       });
@@ -562,8 +574,13 @@ const features = [
       </div>
       <div>© {new Date().getFullYear()} Hannes Oberreiter, btree.at</div>
       <label class="opt-out">
-        <input type="checkbox" id="matomo-opt-out" checked disabled />
-        Matomo may record my visits to wiz-bee.com.
+        <input
+          type="checkbox"
+          id="matomo-opt-out"
+          disabled
+          data-blocked="Your browser blocks Matomo, so your visits to wiz-bee.com are not recorded."
+        />
+        <span>Matomo may record my visits to wiz-bee.com.</span>
       </label>
     </footer>
   </body>
