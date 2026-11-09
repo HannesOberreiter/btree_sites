@@ -12,8 +12,8 @@ Wir führen unsere eigene Bio-Dokumentation mit b.tree. Lager, Behandlungen, Fü
 
 ## So funktioniert es
 
-- **Lager mit Chargennummern:** Buche jeden Wareneingang mit Chargennummer, Mindesthaltbarkeitsdatum, Preis und Notiz, zum Beispiel Zucker, Behandlungsmittel oder Honiggläser. Die Lagertabelle zeigt Lagerbestand, Wareneingang und Warenausgang.
-- **Lagerbuchungen aus deinen Aufgaben:** Gib einer Fütterungs-, Behandlungs- oder Ernteart einen Lagerverbrauch, zum Beispiel 0,79 kg Zucker pro Liter 3:2-Zuckerwasser oder 0,2 l Ameisensäure pro Volk. Jede erledigte Aufgabe bucht ihre Lagerbuchung, und die Lagerbuchung verlinkt auf die Aufgabe und das Volk.
+- **Lager mit Chargennummern:** Buche jeden Wareneingang mit Chargennummer, Mindesthaltbarkeitsdatum, Preis und Notiz, zum Beispiel Zucker oder Behandlungsmittel. Die Lagertabelle zeigt Lagerbestand, Wareneingang und Warenausgang.
+- **Lagerbuchungen aus deinen Aufgaben:** Gib einer Fütterungs- oder Behandlungsart einen Lagerverbrauch, zum Beispiel 0,79 kg Zucker pro Liter 3:2-Zuckerwasser oder 0,2 l Ameisensäure pro Volk. Gib einer Ernteart einen Lagerverbrauch, und der geerntete Rohhonig kommt ins Lager. Jede erledigte Aufgabe bucht ihre Lagerbuchung, und die Lagerbuchung verlinkt auf die Aufgabe und das Volk.
 - **Inventur:** Zähle dein Lager und trage den gezählten Bestand als Inventur ein. b.tree bucht die Differenz.
 - **Behandlungen und Fütterungen pro Volk:** Datum, Menge, Krankheit und Wartezeit werden für jedes Volk erfasst und auf seiner [digitalen Stockkarte](/de/features/hive-records/) angezeigt.
 - **Wachskreislauf mit Losen:** Lagere Eigenwachs aus Deckelwachs oder Altwaben mit Herkunft und Herkunftsvölkern ein. Buche Verarbeitung oder Lohnverarbeitung zu Mittelwänden mit Verarbeiter und Auftragsnummer. b.tree berechnet den Verarbeitungsverlust. Fehler korrigierst du mit einer Gegenbuchung, statt sie zu löschen.
@@ -25,15 +25,15 @@ Die Lagerübersicht mit Lagerbestand, Wareneingang und Warenausgang:
 
 <div class="shots">
 
-![Lagertabelle mit Zucker, Ameisensäure und Honiggläsern](../../../images/features/stock-de-desktop.png)
+![Lagertabelle mit Zucker, Ameisensäure und Rohhonig](../../../images/features/stock-de-desktop.png)
 
 </div>
 
-Lagerbuchungen: Lieferungen mit Chargennummer und MHD und die Buchungen aus Ernten und Behandlungen mit Link zum jeweiligen Volk:
+Lagerbuchungen für Zucker: die Lieferung mit Chargennummer und MHD und die Fütterungen, die den Zucker ausbuchen, mit Link zum jeweiligen Volk:
 
 <div class="shots">
 
-![Lagerbuchungen mit Chargennummern, MHD und der Aufgabe jeder Buchung](../../../images/features/stock-movements-de-desktop.png)
+![Lagerbuchungen für Zucker mit Chargennummer, MHD und der Fütterung jedes Volkes](../../../images/features/stock-movements-de-desktop.png)
 
 </div>
 

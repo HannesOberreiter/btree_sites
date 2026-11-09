@@ -54,9 +54,9 @@ const DEMO = {
     waxProducts: ['Wax block', 'Foundation'],
     waxProcessor: 'Wax Processing Ltd.',
     sugar: 'Feed-Sugar',
+    sugarSearch: 'Sugar',
     formic: 'Formic acid 60 %',
-    jars: 'Honey jars 500 g',
-    pieces: 'Pcs.',
+    honey: 'Honey, raw',
     mating: 'Mating Place',
     colours: ['blue', 'white', 'yellow', 'red', 'green'],
     notes: {
@@ -65,7 +65,6 @@ const DEMO = {
       swarm: 'Removed two swarm cells.',
       sugar: 'Sugar delivery',
       formic: 'Formic acid, organic approved',
-      jars: 'Jar delivery',
     },
   },
   de: {
@@ -80,9 +79,9 @@ const DEMO = {
     waxProducts: ['Wachsblock', 'Mittelwände'],
     waxProcessor: 'Wachsverarbeitung Muster',
     sugar: 'Futter - Zucker',
+    sugarSearch: 'Zucker',
     formic: 'Ameisensäure 60 %',
-    jars: 'Honiggläser 500 g',
-    pieces: 'Stk.',
+    honey: 'Rohhonig',
     mating: 'Belegstelle',
     colours: ['blau', 'weiß', 'gelb', 'rot', 'grün'],
     notes: {
@@ -91,7 +90,6 @@ const DEMO = {
       swarm: 'Zwei Schwarmzellen gebrochen.',
       sugar: 'Zuckerlieferung',
       formic: 'Ameisensäure, Bio zugelassen',
-      jars: 'Glaslieferung',
     },
   },
 };
@@ -249,20 +247,15 @@ async function createData(api, t) {
     ids: [checkupTypes[t.checkup]],
   });
 
-  // Stock. Tasks book their material out through recipes:
-  // 0.79 kg sugar per liter of 3:2 sugar water, 0.2 l formic acid per hive,
-  // 2 jars (500 g) per kg of honey.
+  // Stock. Feedings and treatments book their material out through recipes:
+  // 0.79 kg sugar per liter of 3:2 sugar water, 0.2 l formic acid per hive.
+  // Harvests book their raw honey in, 1 kg per kg harvested.
   await call(api, 'POST', 'option/charge_types', { name: t.formic, unit: 'l' });
-  await call(api, 'POST', 'option/charge_types', {
-    name: t.jars,
-    unit: t.pieces,
-  });
+  await call(api, 'POST', 'option/charge_types', { name: t.honey, unit: 'kg' });
   const stockTypes = await optionIds(api, 'charge_types');
-  const recipe = (table, typeId, chargeType, mode, factor) =>
+  const recipe = (table, typeId, chargeType, mode, factor, kind = 'out') =>
     call(api, 'PATCH', `option/${table}/${typeId}/recipe`, {
-      lines: [
-        { charge_type_id: stockTypes[chargeType], kind: 'out', mode, factor },
-      ],
+      lines: [{ charge_type_id: stockTypes[chargeType], kind, mode, factor }],
     });
   await recipe('feed_types', feedTypes[t.feed], t.sugar, 'per_amount', 0.79);
   await recipe(
@@ -276,9 +269,10 @@ async function createData(api, t) {
     await recipe(
       'harvest_types',
       harvestTypes[harvest],
-      t.jars,
+      t.honey,
       'per_amount',
-      2,
+      1,
+      'in',
     );
   }
   const stockIn = (date, type, amount, price, name, charge, bestbefore) =>
@@ -292,7 +286,6 @@ async function createData(api, t) {
       charge,
       bestbefore,
     });
-  await stockIn('05-20', t.jars, 800, 336, t.notes.jars, null, null);
   await stockIn(
     '07-20',
     t.sugar,
@@ -522,6 +515,18 @@ const SHOTS = [
         'bestbefore',
         'source',
       ],
+    },
+    // Only sugar: the delivery and the feedings that book it out.
+    prepare: async (page, ctx) => {
+      const loaded = page.waitForResponse((r) => r.url().includes('/charge?'));
+      await page
+        .locator(
+          '.q-table__container input[type="search"], .q-table__container input',
+        )
+        .first()
+        .fill(DEMO[ctx.lang].sugarSearch);
+      await loaded;
+      await page.waitForTimeout(300);
     },
   },
   {

@@ -12,8 +12,8 @@ We keep our own organic beekeeping records with b.tree. Stock, treatments, feedi
 
 ## How it works
 
-- **Stock with lot numbers:** Book each goods receipt with lot number, best-before date, price and note, for example sugar, treatment agents or honey jars. The stock table shows the current stock, goods receipts and outgoing goods.
-- **Stock movements from your tasks:** Give a feeding, treatment or harvest type a stock use, for example 0.79 kg sugar per liter of 3:2 sugar water or 0.2 l formic acid per hive. Each done task books its stock movement, and the movement links back to the task and the hive.
+- **Stock with lot numbers:** Book each goods receipt with lot number, best-before date, price and note, for example sugar or treatment agents. The stock table shows the current stock, goods receipts and outgoing goods.
+- **Stock movements from your tasks:** Give a feeding or treatment type a stock use, for example 0.79 kg sugar per liter of 3:2 sugar water or 0.2 l formic acid per hive. Give a harvest type a stock use, and the harvested raw honey goes into stock. Each done task books its stock movement, and the movement links back to the task and the hive.
 - **Inventory:** Count your storage and enter the counted total as an inventory. b.tree books the difference.
 - **Treatments and feedings per hive:** Date, amount, disease and waiting time are recorded for each colony and shown on its [digital hive record](/features/hive-records/).
 - **Wax cycle with lots:** Store own wax from cappings or old combs with origin and source colonies. Book processing or contract processing into foundation with the processor and the order number. b.tree calculates the processing loss. Mistakes are reversed with a correction entry, not deleted.
@@ -25,15 +25,15 @@ The stock overview with current stock, goods receipts and outgoing goods:
 
 <div class="shots">
 
-![Stock table with sugar, formic acid and honey jars](../../images/features/stock-en-desktop.png)
+![Stock table with sugar, formic acid and raw honey](../../images/features/stock-en-desktop.png)
 
 </div>
 
-Stock movements: deliveries with lot number and best-before date, and the bookings from harvests and treatments with a link to each hive:
+Stock movements of sugar: the delivery with lot number and best-before date, and the feedings that book the sugar out, with a link to each hive:
 
 <div class="shots">
 
-![Stock movements with lot numbers, best-before dates and the source task of each booking](../../images/features/stock-movements-en-desktop.png)
+![Stock movements of sugar with lot number, best-before date and the feeding of each hive](../../images/features/stock-movements-en-desktop.png)
 
 </div>
 
