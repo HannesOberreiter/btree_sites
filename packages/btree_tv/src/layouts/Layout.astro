@@ -92,6 +92,9 @@ const btreeAtPrefix = lang === 'de' ? '/de' : '';
 
         if (hasGermanPreference) {
           localStorage.setItem('language-preference-set', 'true');
+          // Matomo on the German page would record this page as referrer, so keep the real one.
+          sessionStorage.setItem('redirect-referrer', document.referrer);
+          window.languageRedirect = true;
           window.location.href = '/de/';
         }
       }
@@ -382,12 +385,20 @@ const btreeAtPrefix = lang === 'de' ? '/de' : '';
     <!-- Matomo -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        if (window.location.hostname === 'localhost') {
-          console.log('Dev mode, analytics is not loaded');
+        if (window.location.hostname !== 'www.btree.tv') {
+          console.log('Analytics is only loaded on www.btree.tv');
+          return;
+        }
+        if ((window as any).languageRedirect) {
           return;
         }
         const _paq = ((window as any)._paq = (window as any)._paq || []);
         _paq.push(['disableCookies']);
+        const redirectReferrer = sessionStorage.getItem('redirect-referrer');
+        if (redirectReferrer !== null) {
+          sessionStorage.removeItem('redirect-referrer');
+          _paq.push(['setReferrerUrl', redirectReferrer]);
+        }
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
         (function () {
