@@ -21,6 +21,14 @@ Wenn du dies nicht wünschst, so kannst du deinen Browser so einrichten, dass er
 
 Bei der Deaktivierung von Cookies kann die Funktionalität unserer Website eingeschränkt sein.
 
+### Cookies und Browser-Speicher (btree.at, btree.tv & wiz-bee.com)
+
+Unsere Websites btree.at, btree.tv und wiz-bee.com setzen nur ein Cookie, und nur wenn du der Matomo-Analyse widersprichst: `mtm_consent_removed`. Es speichert deinen Widerspruch und gilt nur für die Website, auf der du ihn eingestellt hast. Zusätzlich speichern die Websites folgende Einträge im Local Storage oder Session Storage deines Browsers:
+
+- `language-preference-set`: dass die Website deine Sprache bereits gewählt hat, damit sie dich nicht erneut weiterleitet
+- `local-color-scheme` (nur btree.at): das helle oder dunkle Farbschema, das du gewählt hast
+- `redirect-referrer`: nach der automatischen Weiterleitung auf die deutsche Seite die Seite, von der du gekommen bist, für einen Seitenaufruf, damit Matomo die richtige Quelle deines Besuchs erfasst. Die Website löscht den Eintrag direkt nach diesem Seitenaufruf.
+
 ### Web-Analyse (app.btree.at, btree.at, btree.tv & wiz-bee.com)
 
 Wir verwenden AWStats und Report Magic, bei den Statistikprogrammen werden die Logfiles ausgewertet. Ein Personenbezug ist nicht herstellbar. Zusätzlich verwenden wir Matomo für eine genauere Auswertung: in der App (app.btree.at) auch per User-Basis und ohne Cookies auf unseren Websites btree.at, btree.tv und wiz-bee.com. Auf btree.at erfasst Matomo auch die Suchbegriffe der Seitensuche. Die Statistiken werden mit bereits anonymisierten Daten erstellt. Die Analyseprogramme laufen auf unserem eigenen Server.
@@ -33,7 +41,7 @@ Unser Anliegen im Sinne der DSGVO (berechtigtes Interesse) ist die Verbesserung 
 
 Die Nutzerdaten werden für die Dauer von 3 Jahren aufbewahrt.
 
-Mit dem folgenden Kästchen kannst du der Matomo-Analyse auf btree.at widersprechen. Wenn du das Häkchen entfernst, speichert Matomo das Cookie `mtm_consent_removed` in deinem Browser, und deine Besuche auf btree.at werden nicht mehr erfasst.
+Mit dem folgenden Kästchen kannst du der Matomo-Analyse auf btree.at widersprechen. Wenn du das Häkchen entfernst, speichert Matomo das Cookie `mtm_consent_removed` in deinem Browser, und deine Besuche auf btree.at werden nicht mehr erfasst. btree.tv und wiz-bee.com haben dasselbe Kästchen in der Fußzeile.
 
 <p><label><input type="checkbox" id="matomo-opt-out" checked disabled /> Matomo darf meine Besuche auf btree.at erfassen.</label></p>
 

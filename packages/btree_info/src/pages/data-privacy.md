@@ -19,6 +19,14 @@ If you do not agree with this, you can change your browser settings to be notifi
 
 If you deactivate cookies, this may have implications on the full functionality of our website.
 
+### Cookies and Browser Storage (btree.at, btree.tv & wiz-bee.com)
+
+Our websites btree.at, btree.tv and wiz-bee.com set only one cookie, and only if you object to the Matomo analysis: `mtm_consent_removed`. It stores that you objected and applies only to the website on which you set it. The websites also store the following entries in the local storage or session storage of your browser:
+
+- `language-preference-set`: that the website has already chosen your language, so that it does not redirect you again
+- `local-color-scheme` (btree.at only): the light or dark color scheme you chose
+- `redirect-referrer`: after the automatic redirect to the German page, the page that referred you, for one page view, so that Matomo records the correct source of your visit. The website deletes it right after this page view.
+
 ### Web Analysis (app.btree.at, btree.at, btree.tv & wiz-bee.com)
 
 We use AWStats and Report Magic; the software only uses pseudonymised server log files as a source for the statistics. Additionally, we use Matomo for more in-depth analysis: inside the app (app.btree.at) on a per-user basis, and without cookies on our websites btree.at, btree.tv and wiz-bee.com. On btree.at, Matomo also records the search terms entered in the site search. Each software runs on our own server and is not used by third parties. Your IP address will be used only in parts (the last 16 bits will be deleted) to determine your rough location.
@@ -31,7 +39,7 @@ Our concern in the sense of the GDPR (legitimate interests) is the improvement o
 
 The anonymous user data will be stored for the duration of three years.
 
-You can object to the Matomo analysis on btree.at with the following checkbox. If you clear it, Matomo stores the cookie `mtm_consent_removed` in your browser, and your visits to btree.at are no longer recorded.
+You can object to the Matomo analysis on btree.at with the following checkbox. If you clear it, Matomo stores the cookie `mtm_consent_removed` in your browser, and your visits to btree.at are no longer recorded. btree.tv and wiz-bee.com have the same checkbox in the page footer.
 
 <p><label><input type="checkbox" id="matomo-opt-out" checked disabled /> Matomo may record my visits to btree.at.</label></p>
 
