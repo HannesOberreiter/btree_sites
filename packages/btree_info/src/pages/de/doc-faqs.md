@@ -93,7 +93,7 @@ Der Hauptgrund, warum deine Zählung falsch sein kann, ist die Verwendung von Gr
 
 ### Was bedeuten die Zahlen im Navigationsmenü?
 
-Die Zahlen bei Aufgaben und ToDo's kennzeichnen die Anzahl der noch offenen / nicht erledigten Aufgaben. Bei Stand, Stock und Königin stehen die Zahlen für die jeweilige Anzahl. Bei Stock ist die Zahl inklusive möglicher Gruppenstöcke. Die Zahlen werden alle 5 Minuten aktualisiert, d. h. Änderungen sind sofort erkennbar.
+Die Zahlen bei Aufgaben und ToDo's kennzeichnen die Anzahl der noch offenen / nicht erledigten Aufgaben. Bei Stand, Stock und Königin stehen die Zahlen für die jeweilige Anzahl. Bei Stock ist die Zahl inklusive möglicher Gruppenstöcke. Die Zahlen werden beim Laden der App, danach alle 30 Minuten und beim Klick auf „Daten aktualisieren“ aktualisiert. Neue Einträge können daher bis zu 30 Minuten brauchen, bis sie in den Zahlen erscheinen.
 
 ### Tutorial-Videos
 

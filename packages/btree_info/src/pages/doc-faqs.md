@@ -91,7 +91,7 @@ The main reasons why your count may be off are if you use group hives, as they d
 
 ### About the numbers visible in the navigation
 
-The numbers for tasks and to-dos indicate the count of tasks still open / not completed. For apiary, hive and queen, the numbers represent the respective count. For hive, the number includes possible group hives. The numbers are updated every 5 minutes, i.e. changes are immediately visible.
+The numbers for tasks and to-dos indicate the count of tasks still open / not completed. For apiary, hive and queen, the numbers represent the respective count. For hive, the number includes possible group hives. The numbers are updated when the app loads, then every 30 minutes, and when you click "Refresh Data". New entries can therefore take up to 30 minutes to show in the numbers.
 
 ### Tutorial video
 
