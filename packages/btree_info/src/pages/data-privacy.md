@@ -5,7 +5,7 @@ layout: ../layouts/IndexLayout.astro
 lang: 'en'
 ---
 
-The protection of your data is a special concern of ours. Therefore, we process your data only according to the legal requirements of the EU General Data Protection Regulation GDPR and the Telekommunikationsgesetz (Austria) 2003. The following privacy statement will inform you about the most important aspects of data handling by our website.
+The protection of your data is a special concern of ours. Therefore, we process your data only according to the legal requirements of the EU General Data Protection Regulation GDPR and the Telekommunikationsgesetz 2021 (TKG 2021, Austria). The following privacy statement will inform you about the most important aspects of data handling by our website.
 
 ### Contact us
 
@@ -21,11 +21,11 @@ If you deactivate cookies, this may have implications on the full functionality 
 
 ### Web Analysis (app.btree.at, btree.at, btree.tv & wiz-bee.com)
 
-We use AWStats and Report Magic; the software only uses pseudonymised server log files as a source for the statistics. Additionally, we use Matomo for more in-depth analysis: inside the app (app.btree.at) on a per-user basis, and without cookies on our websites btree.at, btree.tv and wiz-bee.com. On btree.at, Matomo also records the search terms entered in the site search. Each software runs on our own server and is not used by third parties. Your IP address will be used only in parts (the last 8 bits will be deleted) to determine your rough location.
+We use AWStats and Report Magic; the software only uses pseudonymised server log files as a source for the statistics. Additionally, we use Matomo for more in-depth analysis: inside the app (app.btree.at) on a per-user basis, and without cookies on our websites btree.at, btree.tv and wiz-bee.com. On btree.at, Matomo also records the search terms entered in the site search. Each software runs on our own server and is not used by third parties. Your IP address will be used only in parts (the last 16 bits will be deleted) to determine your rough location.
 
 The following data will be used: browser type and browser version (if transferred by the user!), operating system, date and time of connection, number of visits, time of visits on homepage, previously visited pages (if transferred by the user!), pseudonymised IP.
 
-Data processing is based on the following § 96 Section 3 TKG and art. 6 Section 1 lit. a (consent) and/or f (legitimate interest) of GDPR.
+Data processing is based on the following § 165 Section 3 TKG 2021 and art. 6 Section 1 lit. a (consent) and/or f (legitimate interest) of GDPR.
 
 Our concern in the sense of the GDPR (legitimate interests) is the improvement of our offer and our website. Since the privacy of our users is important to us, the user data is pseudonymised according to technical possibilities.
 

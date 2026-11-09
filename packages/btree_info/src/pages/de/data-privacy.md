@@ -5,7 +5,7 @@ layout: ../../layouts/IndexLayout.astro
 lang: 'de'
 ---
 
-Der Schutz deiner persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten deine Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003). In diesen Datenschutzinformationen informieren wir dich über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.
+Der Schutz deiner persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten deine Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2021). In diesen Datenschutzinformationen informieren wir dich über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.
 
 ### Kontakt mit uns
 
@@ -24,10 +24,10 @@ Bei der Deaktivierung von Cookies kann die Funktionalität unserer Website einge
 ### Web-Analyse (app.btree.at, btree.at, btree.tv & wiz-bee.com)
 
 Wir verwenden AWStats und Report Magic, bei den Statistikprogrammen werden die Logfiles ausgewertet. Ein Personenbezug ist nicht herstellbar. Zusätzlich verwenden wir Matomo für eine genauere Auswertung: in der App (app.btree.at) auch per User-Basis und ohne Cookies auf unseren Websites btree.at, btree.tv und wiz-bee.com. Auf btree.at erfasst Matomo auch die Suchbegriffe der Seitensuche. Die Statistiken werden mit bereits anonymisierten Daten erstellt. Die Analyseprogramme laufen auf unserem eigenen Server.
-Zusätzlich wird deine IP-Adresse erfasst, aber umgehend durch Löschung der letzten 8 Bit pseudonymisiert. Dadurch ist nur mehr eine grobe Lokalisierung möglich.
+Zusätzlich wird deine IP-Adresse erfasst, aber umgehend durch Löschung der letzten 16 Bit pseudonymisiert. Dadurch ist nur mehr eine grobe Lokalisierung möglich.
 Folgende Daten werden ausgewertet: Browsertyp und die Browserversion, (sofern vom Benutzer übermittelt!), das Betriebssystem, Datum und Uhrzeit der Serveranfrage, die Anzahl der Besuche, die Verweildauer auf der Website, die vorher besuchte Website, (sofern vom Benutzer übermittelt!), die IP-Adresse der Nutzer wird anonymisiert, bevor sie gespeichert wird.
 
-Die Datenverarbeitung erfolgt auf Basis der gesetzlichen Bestimmungen des § 96 Abs 3 TKG sowie des Art 6 Abs 1 lit a (Einwilligung) und/oder f (berechtigtes Interesse) der DSGVO.
+Die Datenverarbeitung erfolgt auf Basis der gesetzlichen Bestimmungen des § 165 Abs 3 TKG 2021 sowie des Art 6 Abs 1 lit a (Einwilligung) und/oder f (berechtigtes Interesse) der DSGVO.
 
 Unser Anliegen im Sinne der DSGVO (berechtigtes Interesse) ist die Verbesserung unseres Angebotes und unseres Webauftritts. Da uns die Privatsphäre unserer Nutzer wichtig ist, werden die Nutzerdaten nach technischer Möglichkeit pseudonymisiert.
 
