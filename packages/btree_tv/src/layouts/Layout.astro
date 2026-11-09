@@ -381,6 +381,13 @@ const btreeAtPrefix = lang === 'de' ? '/de' : '';
       footer a:hover {
         color: var(--amber);
       }
+      footer .opt-out {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-top: 0.6rem;
+        cursor: pointer;
+      }
     </style>
     <!-- Matomo -->
     <script>
@@ -398,6 +405,24 @@ const btreeAtPrefix = lang === 'de' ? '/de' : '';
         if (redirectReferrer !== null) {
           sessionStorage.removeItem('redirect-referrer');
           _paq.push(['setReferrerUrl', redirectReferrer]);
+        }
+        // Opt-out checkbox in the footer.
+        const optOut = document.getElementById(
+          'matomo-opt-out',
+        ) as HTMLInputElement | null;
+        if (optOut) {
+          _paq.push([
+            function (this: any) {
+              optOut.checked = !this.isUserOptedOut();
+              optOut.disabled = false;
+            },
+          ]);
+          optOut.addEventListener('change', () => {
+            // matomo.js replaces window._paq when it loads, so read it again here.
+            (window as any)._paq.push([
+              optOut.checked ? 'forgetUserOptOut' : 'optUserOut',
+            ]);
+          });
         }
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
@@ -476,6 +501,12 @@ const btreeAtPrefix = lang === 'de' ? '/de' : '';
         </a>
       </div>
       <div>© {new Date().getFullYear()} Hannes Oberreiter, btree.at</div>
+      <label class="opt-out">
+        <input type="checkbox" id="matomo-opt-out" checked disabled />
+        {lang === 'de'
+          ? 'Matomo darf meine Besuche auf btree.tv erfassen.'
+          : 'Matomo may record my visits to btree.tv.'}
+      </label>
     </footer>
   </body>
 </html>
