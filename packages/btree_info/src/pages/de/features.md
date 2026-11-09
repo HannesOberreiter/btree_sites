@@ -18,6 +18,8 @@ Erstelle Bienenstände, verwalte Bienenvölker, verschiebe Völker zwischen Stan
 
 b.tree kann als digitale Stockkarte für Kontrollen, Beobachtungen, Maßnahmen, Behandlungen, Fütterungen, Ernten und Notizen genutzt werden. Die Einträge sind strukturiert, damit Völker verglichen und ältere Informationen schnell gefunden werden können.
 
+[Mehr zur digitalen Stockkarte](/de/features/hive-records/)
+
 ### Tabellarische Daten für größere Imkereien
 
 Viele Bereiche in b.tree arbeiten mit Tabellen, weil Tabellen bei vielen Datensätzen besonders effizient sind. Du kannst Imkereidaten schnell überblicken, sortieren, filtern und vergleichen. Das ist hilfreich für Erwerbsimker, Bio-Imker und Wanderimker mit vielen Völkern.
@@ -33,6 +35,8 @@ Dokumentiere wichtige Imkereiereignisse an einem Ort: Varroa-Behandlungen, Futte
 ### Wachskreislauf und Los-Rückverfolgbarkeit
 
 Der [Wachskreislauf](https://app.btree.at/table/wax) verwaltet Wachs getrennt vom allgemeinen Lager. Eigenwachs, Zukauf, Verarbeitung, Lohnverarbeitung, Verwendung und Verkauf werden über einzelne Lose dokumentiert. Ein- und Ausgänge lassen sich N:M verknüpfen, Verarbeitungsverluste werden automatisch berechnet und optional ausgewählte Völker erhalten die Herkunftsinformation. Produktübersicht, Belegnummern und CSV-Export unterstützen eine nachvollziehbare Dokumentation für Bio- und Erwerbsimkereien.
+
+[Mehr zur Dokumentation für die Bio-Imkerei](/de/features/organic-beekeeping/)
 
 ### Aufgaben, Kalender und iCal
 

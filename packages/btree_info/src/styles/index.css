@@ -362,6 +362,47 @@ img {
   max-width: 100%;
 }
 
+/* Screenshot of the app: desktop and optional mobile view side by side, same height. */
+.shots p {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.shots img {
+  min-width: 0;
+  height: auto;
+  border: 1px solid var(--theme-divider);
+  border-radius: 0.25rem;
+}
+
+/* 1280 x 900 desktop next to 390 x 844 mobile: the width ratio 3.08 gives the same height. */
+.shots img:first-child {
+  flex: 3.08;
+}
+
+.shots img:last-child:not(:first-child) {
+  flex: 1;
+}
+
+/* On a phone, show the desktop view at full width with the mobile view below it. */
+@media (max-width: 40em) {
+  .shots p {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shots img:first-child,
+  .shots img:last-child:not(:first-child) {
+    flex: none;
+    width: 100%;
+  }
+
+  .shots img:last-child:not(:first-child) {
+    width: 60%;
+  }
+}
+
 .flex {
   display: flex;
   align-items: center;

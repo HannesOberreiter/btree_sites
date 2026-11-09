@@ -18,6 +18,8 @@ Create apiaries, manage colonies, move hives between locations, assign queens, a
 
 Use b.tree as a digital hive record system for inspections, observations, actions, treatments, feedings, harvests, and notes. Records are structured so you can compare colonies and find older information quickly.
 
+[More about digital hive records](/features/hive-records/)
+
 ### Tabular data for large operations
 
 Many parts of b.tree use tables because tables are still the fastest way to work with many records. You can scan, sort, filter, and compare hive data without losing context. This is useful for professional beekeepers, organic beekeepers, and migratory operations with many colonies.
@@ -33,6 +35,8 @@ Track the most important beekeeping events in one place. Document varroa treatme
 ### Wax cycle and lot traceability
 
 The [wax cycle](https://app.btree.at/table/wax) keeps wax records separate from general inventory. Track own wax, purchases, processing, contract processing, use, and sales across individual lots. Inputs and outputs can be connected many-to-many, processing losses are calculated automatically, and optional source colonies preserve origin information. Product summaries, document references, and CSV export support traceable records for organic and professional operations.
+
+[More about records for organic beekeeping](/features/organic-beekeeping/)
 
 ### Tasks, calendar, and iCal
 
