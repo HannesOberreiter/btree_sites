@@ -14,17 +14,17 @@ lang: 'en'
     <li>❌ No statistics</li>
 </ul>
 
-### Premium - 55,00€ per year
+### Premium - 55.00 € per year
 
 <ul style="list-style: none">
-    <li>✅ 1.000 Hives!</li>
+    <li>✅ 1,000 Hives!</li>
     <li>✅ 100 Apiaries!</li>
     <li>✅ API access for iCal and hive scales (10)</li>
     <li>✅ Responsive statistics (harvest, feed, treatment, varroa, queens)</li>
     <li>✅ Queen statistics and pedigree tree</li>
     <li>✅ <a href="https://www.wiz-bee.com/">WizBee</a>, your AI beekeeping assistant powered by Mistral: record feedings, treatments, harvests, checkups and todos in plain text or by voice, and ask questions about your own data</li>
     <li>✅ <a href="/doc-agent/">Agent API and MCP</a> to connect your own AI agent (ChatGPT, Claude and others)</li>
-    <li>✅ Automatic fetching data for temperature field on checkup</li>
+    <li>✅ Automatic fetching of data for the temperature field on checkups</li>
     <li>✅ Beekeeping weather forecast per apiary: flight weather, frost and heat warnings, official weather alerts</li>
     <li>✅ Apiary map with optional weather overlay</li>
 </ul>
@@ -43,13 +43,13 @@ More details are in the [data privacy statement](/data-privacy/).
 
 ### Support the app development
 
-As premium member you support me to keep the database and homepage running. There are more features and functions already planned and I will try to improve the old ones. I want to say thanks to all user and hope you like my beekeeping software. I manage this homepage in my free time beneath my job and beekeeping and other hobbies.
+As a premium member, you support me in keeping the database and homepage running. There are more features and functions already planned, and I will try to improve the old ones. I want to say thanks to all users and hope you like my beekeeping software. I manage this homepage in my free time besides my job and beekeeping and other hobbies.
 
 My goal is to support beekeepers in their beekeeping with a simple but efficient beekeeping app.
 
-All kind of feedback are more than welcome!
+All kinds of feedback are more than welcome!
 
-_Hannes Oberreiter_, Pastime farmer and beekeeper, spare time programmer, hobby biologist
+_Hannes Oberreiter_, pastime farmer and beekeeper, spare time programmer, hobby biologist
 
 ### Price history and upcoming changes
 
@@ -59,4 +59,4 @@ _Hannes Oberreiter_, Pastime farmer and beekeeper, spare time programmer, hobby 
 
 <hr/>
 
-[^1]: If you were premium before you still can use all of your hives and apiaries! But you cannot add new ones. Inactive colonies/hives are also counted towards the limit.
+[^1]: If you were premium before, you can still use all of your hives and apiaries! But you cannot add new ones. Inactive colonies/hives are also counted towards the limit.

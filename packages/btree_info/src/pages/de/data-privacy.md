@@ -51,7 +51,7 @@ Tägliche Backups werden verschlüsselt bei Bunny.net in Frankfurt, Deutschland,
 
 ### Zahlungsdienstleister (app.btree.at)
 
-Im Rahmen der Erfüllung von Verträgen setzen wir externe Zahlungsdienstleister auf Grundlage des Art. 6 Abs. 1 lit. b. DSGVO ein. Im Übrigen setzen wir externe Zahlungsdienstleister auf Grundlage unserer berechtigten Interessen gem. Art. 6 Abs. 1 lit. b. DSGVO ein, um unseren Nutzern effektive und sichere Zahlungsmöglichkeiten zu bieten.
+Im Rahmen der Erfüllung von Verträgen setzen wir externe Zahlungsdienstleister auf Grundlage des Art. 6 Abs. 1 lit. b. DSGVO ein. Im Übrigen setzen wir externe Zahlungsdienstleister auf Grundlage unserer berechtigten Interessen gem. Art. 6 Abs. 1 lit. f. DSGVO ein, um unseren Nutzern effektive und sichere Zahlungsmöglichkeiten zu bieten.
 
 Folgende externe Zahlungsdienstleister werden verwendet: PayPal (<https://www.paypal.com/>) und Mollie (<https://www.mollie.com/>). Mollie ist unser bevorzugter Zahlungsdienstleister für europäische Kunden.
 

@@ -24,6 +24,8 @@ function switchLang(targetLang: 'en' | 'de'): string {
 }
 const enUrl = switchLang('en');
 const deUrl = switchLang('de');
+// The footer links to the btree.at pages in the page language.
+const btreeAtPrefix = lang === 'de' ? '/de' : '';
 ---
 
 <!doctype html>
@@ -440,17 +442,25 @@ const deUrl = switchLang('de');
 
     <footer>
       <div class="footer-links">
-        <a href="https://www.btree.at/imprint/" target="_blank" rel="noopener">
-          Imprint
-        </a>
         <a
-          href="https://www.btree.at/data-privacy/"
+          href={`https://www.btree.at${btreeAtPrefix}/imprint/`}
           target="_blank"
           rel="noopener"
         >
-          Data Privacy
+          {lang === 'de' ? 'Impressum' : 'Imprint'}
         </a>
-        <a href="https://www.btree.at" target="_blank" rel="noopener">
+        <a
+          href={`https://www.btree.at${btreeAtPrefix}/data-privacy/`}
+          target="_blank"
+          rel="noopener"
+        >
+          {lang === 'de' ? 'Datenschutz' : 'Data Privacy'}
+        </a>
+        <a
+          href={`https://www.btree.at${btreeAtPrefix}/`}
+          target="_blank"
+          rel="noopener"
+        >
           btree.at
         </a>
       </div>
