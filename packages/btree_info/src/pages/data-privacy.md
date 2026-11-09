@@ -49,7 +49,7 @@ Daily backups are encrypted and stored with Bunny.net in Frankfurt, Germany. The
 
 ### Payment Services (app.btree.at)
 
-In order to fulfil contracts, we use external payment service providers on the basis of art. 6 section 1 lit. b. GDPR. We use the external payment service providers on the basis of our legitimate interests art. 6 section 1 lit. b. GDPR in order to offer our users effective and secure payment options.
+In order to fulfil contracts, we use external payment service providers on the basis of art. 6 section 1 lit. b. GDPR. We use the external payment service providers on the basis of our legitimate interests art. 6 section 1 lit. f. GDPR in order to offer our users effective and secure payment options.
 
 We use the following external payment service providers: PayPal (<https://www.paypal.com/>) and Mollie (<https://www.mollie.com/>). Mollie is our preferred payment provider for European customers.
 
