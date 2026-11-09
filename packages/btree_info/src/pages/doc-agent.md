@@ -135,7 +135,7 @@ Open your preferred skill editor, then copy the **skill installation prompt** fr
 
 ### Alternative: MCP
 
-For ChatGPT, Claude, VS Code, and other clients that support remote [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers, MCP is an alternative connection option. It exposes the same tools used by WizBee through Streamable HTTP and uses OAuth login—no API key needs to be copied into the AI client.
+For ChatGPT, Claude, VS Code, and other clients that support remote [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers, MCP is an alternative connection option. It exposes the same tools used by WizBee through Streamable HTTP and uses OAuth login — no API key needs to be copied into the AI client.
 
 #### Connect an MCP client
 
