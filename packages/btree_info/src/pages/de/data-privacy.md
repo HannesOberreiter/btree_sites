@@ -23,11 +23,10 @@ Bei der Deaktivierung von Cookies kann die Funktionalität unserer Website einge
 
 ### Cookies und Browser-Speicher (btree.at, btree.tv & wiz-bee.com)
 
-Unsere Websites btree.at, btree.tv und wiz-bee.com setzen nur ein Cookie, und nur wenn du der Matomo-Analyse widersprichst: `mtm_consent_removed`. Es speichert deinen Widerspruch und gilt nur für die Website, auf der du ihn eingestellt hast. Zusätzlich speichern die Websites folgende Einträge im Local Storage oder Session Storage deines Browsers:
+Unsere Websites btree.at, btree.tv und wiz-bee.com setzen nur ein Cookie, und nur wenn du der Matomo-Analyse widersprichst: `mtm_consent_removed`. Es speichert deinen Widerspruch und gilt nur für die Website, auf der du ihn eingestellt hast. Zusätzlich speichern die Websites folgende Einträge im Local Storage deines Browsers:
 
 - `language-preference-set`: dass die Website deine Sprache bereits gewählt hat, damit sie dich nicht erneut weiterleitet
-- `local-color-scheme` (nur btree.at): das helle oder dunkle Farbschema, das du gewählt hast
-- `redirect-referrer`: nach der automatischen Weiterleitung auf die deutsche Seite die Seite, von der du gekommen bist, für einen Seitenaufruf, damit Matomo die richtige Quelle deines Besuchs erfasst. Die Website löscht den Eintrag direkt nach diesem Seitenaufruf.
+- `local-color-scheme` (nur btree.at): das helle oder dunkle Farbschema: deine Wahl oder sonst die Einstellung deines Systems
 
 ### Web-Analyse (app.btree.at, btree.at, btree.tv & wiz-bee.com)
 

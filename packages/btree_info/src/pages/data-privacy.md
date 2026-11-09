@@ -21,11 +21,10 @@ If you deactivate cookies, this may have implications on the full functionality 
 
 ### Cookies and Browser Storage (btree.at, btree.tv & wiz-bee.com)
 
-Our websites btree.at, btree.tv and wiz-bee.com set only one cookie, and only if you object to the Matomo analysis: `mtm_consent_removed`. It stores that you objected and applies only to the website on which you set it. The websites also store the following entries in the local storage or session storage of your browser:
+Our websites btree.at, btree.tv and wiz-bee.com set only one cookie, and only if you object to the Matomo analysis: `mtm_consent_removed`. It stores that you objected and applies only to the website on which you set it. The websites also store the following entries in the local storage of your browser:
 
 - `language-preference-set`: that the website has already chosen your language, so that it does not redirect you again
-- `local-color-scheme` (btree.at only): the light or dark color scheme you chose
-- `redirect-referrer`: after the automatic redirect to the German page, the page that referred you, for one page view, so that Matomo records the correct source of your visit. The website deletes it right after this page view.
+- `local-color-scheme` (btree.at only): the light or dark color scheme: your choice, or else the setting of your system
 
 ### Web Analysis (app.btree.at, btree.at, btree.tv & wiz-bee.com)
 
