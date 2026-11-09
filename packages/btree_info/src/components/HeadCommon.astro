@@ -177,7 +177,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         germanPath = '/de/';
       }
 
-      window.location.href = germanPath;
+      // Matomo on the German page would record this page as referrer, so pass the real one in the URL.
+      window.languageRedirect = true;
+      window.location.href = `${germanPath}?ref=${encodeURIComponent(document.referrer)}`;
     }
   }
 
@@ -191,14 +193,50 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <!-- Matomo -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.hostname === 'localhost') {
-      console.log('Dev mode, analytics is not loaded');
+    // The language redirect adds ?ref= with the real referrer. Remove it from the URL before Matomo reads it.
+    const params = new URLSearchParams(window.location.search);
+    const redirectReferrer = params.get('ref');
+    if (redirectReferrer !== null) {
+      params.delete('ref');
+      const query = params.toString();
+      history.replaceState(
+        history.state,
+        '',
+        `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`,
+      );
+    }
+    if (window.location.hostname !== 'www.btree.at') {
+      console.log('Analytics is only loaded on www.btree.at');
+      return;
+    }
+    if ((window as any).languageRedirect) {
       return;
     }
 
     const _paq = ((window as any)._paq = (window as any)._paq || []);
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(['disableCookies']);
+    if (redirectReferrer !== null) {
+      _paq.push(['setReferrerUrl', redirectReferrer]);
+    }
+    // Opt-out checkbox on the privacy policy page.
+    const optOut = document.getElementById(
+      'matomo-opt-out',
+    ) as HTMLInputElement | null;
+    if (optOut) {
+      _paq.push([
+        function (this: any) {
+          optOut.checked = !this.isUserOptedOut();
+          optOut.disabled = false;
+        },
+      ]);
+      optOut.addEventListener('change', () => {
+        // matomo.js replaces window._paq when it loads, so read it again here.
+        (window as any)._paq.push([
+          optOut.checked ? 'forgetUserOptOut' : 'optUserOut',
+        ]);
+      });
+    }
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function () {

@@ -33,6 +33,9 @@ const isDev = import.meta.env.DEV;
   class SearchDialog {
     private pagefindInstance: Instance | null = null;
     private searchString = '';
+    private resultSearch = '';
+    private resultCount = 0;
+    private trackedSearch = '';
     private dialog: HTMLDialogElement;
     private bundlePath: string = '';
 
@@ -58,8 +61,15 @@ const isDev = import.meta.env.DEV;
       this.dialog.addEventListener('click', (event) => {
         if (event.target === this.dialog) {
           this.dialog.close();
+          return;
+        }
+        if ((event.target as HTMLElement).closest('a')) {
+          this.trackSearch();
         }
       });
+      // Track only the final search term, not each step while typing.
+      this.dialog.addEventListener('close', () => this.trackSearch());
+      window.addEventListener('pagehide', () => this.trackSearch());
 
       const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
@@ -85,22 +95,25 @@ const isDev = import.meta.env.DEV;
       observer.observe(this.dialog, { attributes: true });
     }
 
-    private updateAnalytics(count: number): void {
+    private trackSearch(): void {
+      if (this.resultSearch === this.trackedSearch) {
+        return;
+      }
       if (typeof window._paq === 'undefined') {
         console.warn(
           'Matomo (_paq) is not defined. Analytics will not be updated.',
         );
         return;
       }
-      if (this.searchString === '') {
-        console.warn('Search string is empty. Analytics will not be updated.');
+      if (this.resultSearch === '') {
         return;
       }
+      this.trackedSearch = this.resultSearch;
       window._paq.push([
         'trackSiteSearch',
-        this.searchString,
+        this.resultSearch,
         undefined,
-        count,
+        this.resultCount,
       ]);
     }
 
@@ -150,9 +163,7 @@ const isDev = import.meta.env.DEV;
             const link = document.createElement('a');
             link.className = 'pagefind-modular-list-link';
             link.textContent = result.meta?.title ?? null;
-            link.href = this.searchString
-              ? `${url}?search=${encodeURIComponent(this.searchString)}`
-              : url;
+            link.href = url;
             title.appendChild(link);
 
             const excerpt = document.createElement('p');
@@ -172,10 +183,15 @@ const isDev = import.meta.env.DEV;
       );
 
       this.pagefindInstance.on('results', (results: any) => {
-        this.updateAnalytics(results.unfilteredResultCount);
+        this.resultSearch = this.searchString;
+        this.resultCount = results.unfilteredResultCount;
       });
 
       this.pagefindInstance.on('search', (query: any) => {
+        // Escape and the clear button empty the input, which ends the search.
+        if (query === '') {
+          this.trackSearch();
+        }
         this.searchString = query;
       });
     }

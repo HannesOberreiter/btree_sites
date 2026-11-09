@@ -5,7 +5,7 @@ layout: ../../layouts/IndexLayout.astro
 lang: 'de'
 ---
 
-Der Schutz deiner persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten deine Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003). In diesen Datenschutzinformationen informieren wir dich über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.
+Der Schutz deiner persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten deine Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2021). In diesen Datenschutzinformationen informieren wir dich über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.
 
 ### Kontakt mit uns
 
@@ -21,17 +21,28 @@ Wenn du dies nicht wünschst, so kannst du deinen Browser so einrichten, dass er
 
 Bei der Deaktivierung von Cookies kann die Funktionalität unserer Website eingeschränkt sein.
 
-### Web-Analyse (app.btree.at & btree.at)
+### Cookies und Browser-Speicher (btree.at, btree.tv & wiz-bee.com)
 
-Wir verwenden AWStats und Report Magic, bei den Statistikprogrammen werden die Logfiles ausgewertet. Ein Personenbezug ist nicht herstellbar. Zusätzlich verwenden wir Matomo (app.btree.at) für eine genauere Auswertung und auch per User-Basis in der App. Die Statistiken werden mit bereits anonymisierten Daten erstellt. Die Analyseprogramme laufen auf unserem eigenen Server.
-Zusätzlich wird deine IP-Adresse erfasst, aber umgehend durch Löschung der letzten 8 Bit pseudonymisiert. Dadurch ist nur mehr eine grobe Lokalisierung möglich.
+Unsere Websites btree.at, btree.tv und wiz-bee.com setzen nur ein Cookie, und nur wenn du der Matomo-Analyse widersprichst: `mtm_consent_removed`. Es speichert deinen Widerspruch und gilt nur für die Website, auf der du ihn eingestellt hast. Zusätzlich speichern die Websites folgende Einträge im Local Storage deines Browsers:
+
+- `language-preference-set`: dass die Website deine Sprache bereits gewählt hat, damit sie dich nicht erneut weiterleitet
+- `local-color-scheme` (nur btree.at): das helle oder dunkle Farbschema: deine Wahl oder sonst die Einstellung deines Systems
+
+### Web-Analyse (app.btree.at, btree.at, btree.tv & wiz-bee.com)
+
+Wir verwenden AWStats und Report Magic, bei den Statistikprogrammen werden die Logfiles ausgewertet. Ein Personenbezug ist nicht herstellbar. Zusätzlich verwenden wir Matomo für eine genauere Auswertung: in der App (app.btree.at) auch per User-Basis und ohne Cookies auf unseren Websites btree.at, btree.tv und wiz-bee.com. Auf btree.at erfasst Matomo auch die Suchbegriffe der Seitensuche. Die Statistiken werden mit bereits anonymisierten Daten erstellt. Die Analyseprogramme laufen auf unserem eigenen Server.
+Zusätzlich wird deine IP-Adresse erfasst, aber umgehend durch Löschung der letzten 16 Bit pseudonymisiert. Dadurch ist nur mehr eine grobe Lokalisierung möglich.
 Folgende Daten werden ausgewertet: Browsertyp und die Browserversion, (sofern vom Benutzer übermittelt!), das Betriebssystem, Datum und Uhrzeit der Serveranfrage, die Anzahl der Besuche, die Verweildauer auf der Website, die vorher besuchte Website, (sofern vom Benutzer übermittelt!), die IP-Adresse der Nutzer wird anonymisiert, bevor sie gespeichert wird.
 
-Die Datenverarbeitung erfolgt auf Basis der gesetzlichen Bestimmungen des § 96 Abs 3 TKG sowie des Art 6 Abs 1 lit a (Einwilligung) und/oder f (berechtigtes Interesse) der DSGVO.
+Die Datenverarbeitung erfolgt auf Basis der gesetzlichen Bestimmungen des § 165 Abs 3 TKG 2021 sowie des Art 6 Abs 1 lit a (Einwilligung) und/oder f (berechtigtes Interesse) der DSGVO.
 
 Unser Anliegen im Sinne der DSGVO (berechtigtes Interesse) ist die Verbesserung unseres Angebotes und unseres Webauftritts. Da uns die Privatsphäre unserer Nutzer wichtig ist, werden die Nutzerdaten nach technischer Möglichkeit pseudonymisiert.
 
 Die Nutzerdaten werden für die Dauer von 3 Jahren aufbewahrt.
+
+Mit dem folgenden Kästchen kannst du der Matomo-Analyse auf btree.at widersprechen. Wenn du das Häkchen entfernst, speichert Matomo das Cookie `mtm_consent_removed` in deinem Browser, und deine Besuche auf btree.at werden nicht mehr erfasst. btree.tv und wiz-bee.com haben dasselbe Kästchen in der Fußzeile.
+
+<p><label><input type="checkbox" id="matomo-opt-out" checked disabled /> Matomo darf meine Besuche auf btree.at erfassen.</label></p>
 
 ### Hosting & Log Files (app.btree.at & btree.at)
 
