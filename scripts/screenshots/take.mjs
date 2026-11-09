@@ -13,7 +13,7 @@ import { mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { chromium, request } from 'playwright';
+import { chromium, devices, request } from 'playwright';
 
 const APP_URL = process.env.SHOTS_APP_URL ?? 'http://localhost:9000';
 const API_URL = process.env.SHOTS_API_URL ?? 'http://localhost:8102/api/v1/';
@@ -34,6 +34,8 @@ const SIZES = {
     deviceScaleFactor: 2,
     isMobile: true,
     hasTouch: true,
+    // The app detects a phone from the user agent, not from the viewport.
+    userAgent: devices['Pixel 7'].userAgent,
   },
 };
 
@@ -539,7 +541,7 @@ const SHOTS = [
         .filter({ has: page.locator('.fa-location-dot') })
         .click();
       await page
-        .locator('.q-menu .q-item')
+        .locator('.q-menu .q-item, .q-dialog .q-item')
         .filter({ hasText: DEMO[ctx.lang].apiaries[0] })
         .click();
       await page.keyboard.press('Escape');
