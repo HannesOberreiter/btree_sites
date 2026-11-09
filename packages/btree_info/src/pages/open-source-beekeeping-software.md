@@ -1,6 +1,6 @@
 ---
 title: 'Open Source Beekeeping Software Compared'
-description: 'Comparison of open source beekeeping apps: b.tree, BEEP, Hive Pal, Gratheon and Openbeehive. License, price, offline use, languages, hive scales and AI, checked in November 2026.'
+description: 'Comparison of open source beekeeping apps: b.tree, BEEP, Hive Pal, Gratheon and Openbeehive. Price, offline use, app stores, login, integrated AI, APIs and hive scales, checked in November 2026.'
 layout: '../layouts/IndexLayout.astro'
 faq: true
 lang: 'en'
@@ -8,7 +8,7 @@ lang: 'en'
 
 Many comparisons of beekeeping apps exist, but most of them list closed apps. This page compares only beekeeping software with open source code. With open source code, you can read how the app works, your data format is not a secret, and the software can continue when the original developer stops.
 
-**Disclosure:** I, Hannes Oberreiter, make b.tree. I tried to be fair and to show where the other apps are better. All facts come from the websites and source code repositories of the projects. I checked them on 9 November 2026. If something is wrong or out of date, [edit this page on GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/open-source-beekeeping-software.md) and I will correct it.
+**Disclosure:** I, Hannes Oberreiter, make b.tree. I tried to be fair and to show where the other apps are better. All facts come from the websites, documentation and source code repositories of the projects. I checked them on 9 November 2026. If something is wrong or out of date, [edit this page on GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/open-source-beekeeping-software.md) and I will correct it.
 
 ## Which apps are in the comparison
 
@@ -21,59 +21,71 @@ An app is in the comparison when:
 
 Monitoring systems for hive scales and sensors are in a [separate section](#hive-scales-and-monitoring).
 
-## Comparison table
+## Overview
 
-|               | b.tree                                              | BEEP                                     | Hive Pal                                         | Gratheon                                      | Openbeehive                                                  |
-| ------------- | --------------------------------------------------- | ---------------------------------------- | ------------------------------------------------ | --------------------------------------------- | ------------------------------------------------------------ |
-| Website       | [btree.at](https://www.btree.at)                    | [beep.nl](https://beep.nl/home-english)  | [hivepal.app](https://hivepal.app)               | [gratheon.com](https://gratheon.com)          | [openbeehive.org](https://openbeehive.org)                   |
-| Source code   | [GitHub](https://github.com/HannesOberreiter/btree) | [GitHub](https://github.com/beepnl/BEEP) | [GitHub](https://github.com/martinhrvn/hive-pal) | [GitHub](https://github.com/Gratheon/web-app) | [GitHub](https://github.com/openbeehive-org/openbeehive-app) |
-| License       | AGPL-3.0                                            | AGPL-3.0 (API), MIT (app)                | MIT                                              | AGPL-3.0                                      | AGPL-3.0                                                     |
-| Since         | 2014                                                | 2017                                     | 2024                                             | 2022                                          | 2026                                                         |
-| Made by       | One beekeeper, Austria                              | BEEP foundation, Netherlands             | Developer and community                          | Gratheon OÜ, Estonia                          | One beekeeper                                                |
-| Price         | Free up to 5 hives, 55 € per year                   | Free                                     | Free                                             | Free up to 3 hives, 7 to 55 € per month       | Free                                                         |
-| Works offline | No                                                  | No                                       | Yes                                              | Not stated                                    | Yes                                                          |
-| Languages     | 4                                                   | 17                                       | 10                                               | 23                                            | 5                                                            |
-| German        | Yes                                                 | Yes                                      | Yes                                              | Yes                                           | Yes                                                          |
-| Hive scales   | API for own scales                                  | BEEP base, API                           | HiveHub devices                                  | Own sensors                                   | API                                                          |
-| AI            | WizBee assistant, MCP                               | No                                       | Voice inspections, MCP                           | Frame photo analysis                          | No                                                           |
-| Data export   | CSV, full backup                                    | API                                      | Import and export                                | Not stated                                    | API                                                          |
+<div class="compare">
+
+|                   | b.tree                                                    | BEEP                                  | Hive Pal                        | Gratheon                                | Openbeehive                         |
+| ----------------- | --------------------------------------------------------- | ------------------------------------- | ------------------------------- | --------------------------------------- | ----------------------------------- |
+| Made for          | Medium and large operations, organic beekeepers           | Beekeepers with hive scales, research | Beekeepers who want voice input | AI analysis of frame photos             | Apiaries without mobile signal      |
+| Price             | Free up to 5 hives, 55 € per year                         | Free                                  | Free                            | Free up to 3 hives, 7 to 55 € per month | Free, invite only                   |
+| Works offline     | No                                                        | No                                    | Yes                             | Not stated                              | Yes                                 |
+| Install as app    | PWA, Google Play, App Store                               | PWA                                   | PWA                             | PWA                                     | PWA                                 |
+| Social login      | Google, Apple                                             | No                                    | Google, Facebook                | Google                                  | No                                  |
+| Multiple users    | Yes, with roles                                           | Share hives in groups                 | Share apiaries                  | Professional plan, up to 5 users        | Shared workspaces                   |
+| Integrated AI     | WizBee: entry by text or voice, questions about your data | No                                    | Voice inspections               | Frame photo analysis, assistant         | No                                  |
+| API for AI agents | Agent API (OpenAPI) and MCP                               | No                                    | MCP                             | No                                      | No                                  |
+| Calendar          | iCal feed                                                 | Add single events                     | iCal feed                       | Not stated                              | Not stated                          |
+| Hive scales       | API for own scales                                        | BEEP base, API                        | HiveHub devices                 | Own sensors                             | API                                 |
+| Data export       | CSV, full backup                                          | Excel, CSV, API                       | Import and export               | Not stated                              | JSON, Excel, CSV, BeeXML            |
+| Languages         | 4                                                         | 15                                    | 10                              | 23                                      | 5                                   |
+| License           | AGPL-3.0                                                  | AGPL-3.0 (API), MIT (app)             | MIT                             | AGPL-3.0 or commercial                  | AGPL-3.0                            |
+| Since             | 2014                                                      | 2017                                  | 2024                            | 2022                                    | 2026                                |
+| Tech stack        | Vue, Quasar, Node.js, MariaDB                             | Vue, Laravel (PHP), MySQL, InfluxDB   | React, NestJS, PostgreSQL       | React, Go, Node.js, MySQL               | SvelteKit, Go, PostgreSQL or SQLite |
+
+</div>
 
 The prices and limits of the hosted versions are from November 2026.
 
 ## b.tree
 
-b.tree is a web app for hive records, made in Austria since 2014. It is designed around tables, so you can compare many colonies, years and apiaries. It records inspections, feedings, treatments, harvests, queens with pedigree, wax lots for organic beekeeping, and tasks. Each apiary has a beekeeping weather forecast. The AI assistant [WizBee](https://www.wiz-bee.com/) records tasks from text or voice. With the [Agent API and MCP](/doc-agent/), you can connect your own AI agent.
+[Website](https://www.btree.at) · [Source code](https://github.com/HannesOberreiter/btree)
 
-- **Good for:** beekeepers with many colonies, organic beekeepers, and beekeepers in German-speaking countries.
-- **Limits:** no offline mode. The free plan allows 5 hives and 2 apiaries.
+b.tree is a web app for hive records, available since 2014. It is designed around tables, so you can compare many colonies, years and apiaries. One entry with the Quicktool records a task for all hives of an apiary. b.tree records the wax cycle in lots, which helps with the records for organic beekeeping. Several users can work in one operation with the roles Admin, User and Read-Only. The AI assistant [WizBee](https://www.wiz-bee.com/) records feedings, treatments, harvests, inspections and tasks from text or voice, and answers questions about your own data. With the [Agent API (OpenAPI) and MCP](/doc-agent/), you connect your own AI agent, for example Claude or ChatGPT. An [iCal feed](/doc-api/) shows your tasks in your calendar. b.tree is available as a web app and in Google Play and the App Store, and you can sign in with Google or Apple.
+
+- **Limits:** no offline mode. The free plan allows 5 hives and 2 apiaries. WizBee, the APIs, iCal, statistics and the weather forecast need Premium.
 
 ## BEEP
 
-BEEP is made by the non-profit BEEP foundation in the Netherlands. The app combines hive inspections with sensor data from the BEEP base, a scale that measures weight, temperature and sound and sends the data over LoRaWAN. You can design your own inspection checklists, which is useful for research projects.
+[Website](https://beep.nl/home-english) · [Source code](https://github.com/beepnl/BEEP)
 
-- **Good for:** beekeepers who want a scale and inspections in one system, and research groups.
+BEEP is made by the non-profit BEEP foundation in the Netherlands. The app combines hive inspections with sensor data from the BEEP base, a scale that measures weight, temperature and sound and sends the data over LoRaWAN. You design your own inspection checklists from standard categories, which is useful for research projects.
+
 - **Limits:** no offline mode. The BEEP base is produced in yearly batches.
 
 ## Hive Pal
 
-Hive Pal is a young, mobile-first app with a fast development pace. You can record voice notes at the hive, and AI makes a draft of the inspection from them. The AI uses open models that you can also run yourself. Hive Pal has batch inspections, queen records, QR codes, and an installable app that works offline.
+[Website](https://hivepal.app) · [Source code](https://github.com/martinhrvn/hive-pal)
 
-- **Good for:** beekeepers who want voice input in the apiary and a free hosted service.
+Hive Pal is a young, mobile-first app with a fast development pace. You record voice notes at the hive, and AI makes a draft of the inspection from them. The AI uses open models that you can also run yourself. Hive Pal has batch inspections, queen records, a calendar with iCal feed, QR codes, MCP for AI assistants, and an installable app that works offline.
+
 - **Limits:** the project is still at version 0.x. The hosted service gives community support through GitHub and best-effort uptime.
 
 ## Gratheon
 
-Gratheon is a company in Estonia that works on automation of beekeeping. The app analyses frame photos: it counts bees, finds the queen, estimates cells and counts Varroa mites. Gratheon also develops hive sensors and an entrance camera.
+[Website](https://gratheon.com) · [Source code](https://github.com/Gratheon/web-app)
 
-- **Good for:** beekeepers who want to analyse frame photos with AI.
-- **Limits:** the free plan allows 3 hives. The AI functions start with the Starter plan at 22 € per month.
+Gratheon is a company in Estonia that works on automation of beekeeping. The app analyses frame photos: it counts bees, finds the queen, estimates cells and counts Varroa mites. Gratheon also develops hive sensors and an entrance camera. The code is available under the AGPL-3.0 or a commercial license.
+
+- **Limits:** the free plan allows 3 hives. The AI functions start with the Starter plan at 22 € per month. More than one user needs the Professional plan.
 
 ## Openbeehive
 
+[Website](https://openbeehive.org) · [Source code](https://github.com/openbeehive-org/openbeehive-app)
+
 Openbeehive started in 2026. Its data stays on the device first and synchronises when a connection is available, so it works in apiaries without mobile signal. It records queens with breeding values, treatments with batch numbers and withdrawal periods, and honey lots.
 
-- **Good for:** beekeepers who need a fully offline app and a free service.
-- **Limits:** the project describes itself as "early releases" with rough edges.
+- **Limits:** the project describes itself as "early releases" with rough edges. On 9 November 2026, the hosted service accepted new users only with an invite.
 
 ## Hive scales and monitoring
 
@@ -89,15 +101,23 @@ b.tree can receive data from hive scales through its [API](/doc-api/).
 
 ### Which open source beekeeping app is free?
 
-BEEP, Hive Pal and Openbeehive are free without hive limits. b.tree is free for up to 5 hives and 2 apiaries, and Premium costs 55 € per year. Gratheon is free for up to 3 hives.
+BEEP, Hive Pal and Openbeehive are free without hive limits. Openbeehive accepted new users only with an invite when I checked. b.tree is free for up to 5 hives and 2 apiaries, and Premium costs 55 € per year. Gratheon is free for up to 3 hives.
 
 ### Which open source beekeeping app works offline?
 
 Hive Pal and Openbeehive work without an internet connection and synchronise later. b.tree and BEEP need an internet connection.
 
-### Which open source beekeeping app is available in German?
+### Can several beekeepers use the same records?
 
-All five apps in the comparison have a German user interface. b.tree is made in Austria, and German is its first language.
+Yes, in all five apps. b.tree has the roles Admin, User and Read-Only, and Premium is paid once per operation, not per user. BEEP shares hives in groups, Hive Pal shares apiaries, and Openbeehive has shared workspaces. Gratheon allows more than one user in the Professional plan.
+
+### Which open source beekeeping app has integrated AI?
+
+b.tree has WizBee, which records tasks from text or voice and answers questions about your data. Hive Pal makes drafts of inspections from voice notes. Gratheon analyses frame photos. b.tree and Hive Pal also connect to your own AI agent through MCP, and b.tree has an Agent API with an OpenAPI description.
+
+### Is there an app in Google Play or the App Store?
+
+b.tree is in Google Play and the App Store. All five apps run in the browser and can be installed on the home screen as a PWA.
 
 ### Can I connect a hive scale?
 

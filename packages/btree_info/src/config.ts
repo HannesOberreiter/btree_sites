@@ -32,10 +32,7 @@ export const SIDEBAR = {
       ],
     },
     { text: 'Price', link: 'price/' },
-    {
-      text: 'Open Source Comparison',
-      link: 'open-source-beekeeping-software/',
-    },
+    { text: 'Comparison', link: 'open-source-beekeeping-software/' },
     { text: 'FAQs', link: 'doc-faqs/' },
     { text: 'First Steps', link: 'doc-first-steps/' },
     { text: 'API', link: 'doc-api/' },
@@ -65,10 +62,7 @@ export const SIDEBAR = {
       ],
     },
     { text: 'Preis', link: 'de/price/' },
-    {
-      text: 'Open-Source-Vergleich',
-      link: 'de/open-source-beekeeping-software/',
-    },
+    { text: 'Vergleich', link: 'de/open-source-beekeeping-software/' },
     { text: 'FAQs', link: 'de/doc-faqs/' },
     { text: 'Erste Schritte', link: 'de/doc-first-steps/' },
     { text: 'API', link: 'de/doc-api/' },

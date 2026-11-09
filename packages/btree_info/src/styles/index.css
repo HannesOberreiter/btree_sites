@@ -321,14 +321,80 @@ tr:nth-of-type(odd) {
   background: var(--theme-bg-hover);
 }
 th {
-  background: var(--color-black);
-  color: var(--theme-color);
+  background: var(--theme-bg-offset);
+  color: var(--theme-text);
   font-weight: bold;
 }
 td,
 th {
   padding: 6px;
   text-align: left;
+}
+
+/* Comparison tables: the first column holds the criterion, one column per app. */
+.compare {
+  overflow-x: auto;
+}
+.compare table {
+  font-family: inherit;
+}
+.compare td:first-child {
+  font-weight: bold;
+}
+
+/*
+  On a phone, each row becomes a block: the criterion first, then one line per app.
+  The app labels must match the column order of the comparison tables.
+*/
+@media (max-width: 40em) {
+  .compare table,
+  .compare tbody,
+  .compare tr,
+  .compare td {
+    display: block;
+  }
+  .compare table {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+  }
+  .compare thead {
+    display: none;
+  }
+  .compare tr,
+  .compare tr:nth-of-type(odd) {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--theme-divider);
+    background: none;
+  }
+  .compare td {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 0.5rem;
+    padding: 2px 0;
+  }
+  .compare td:first-child {
+    display: block;
+    padding-bottom: 0.25rem;
+  }
+  .compare td:nth-child(n + 2)::before {
+    color: var(--theme-text-light);
+  }
+  .compare td:nth-child(2)::before {
+    content: 'b.tree';
+  }
+  .compare td:nth-child(3)::before {
+    content: 'BEEP';
+  }
+  .compare td:nth-child(4)::before {
+    content: 'Hive Pal';
+  }
+  .compare td:nth-child(5)::before {
+    content: 'Gratheon';
+  }
+  .compare td:nth-child(6)::before {
+    content: 'Openbeehive';
+  }
 }
 
 pre {
