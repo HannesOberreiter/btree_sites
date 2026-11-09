@@ -42,7 +42,7 @@ Die Nutzerdaten werden für die Dauer von 3 Jahren aufbewahrt.
 
 Mit dem folgenden Kästchen kannst du der Matomo-Analyse auf btree.at widersprechen. Wenn du das Häkchen entfernst, speichert Matomo das Cookie `mtm_consent_removed` in deinem Browser, und deine Besuche auf btree.at werden nicht mehr erfasst. btree.tv und wiz-bee.com haben dasselbe Kästchen in der Fußzeile.
 
-<p><label><input type="checkbox" id="matomo-opt-out" checked disabled /> Matomo darf meine Besuche auf btree.at erfassen.</label></p>
+<p><label><input type="checkbox" id="matomo-opt-out" disabled data-blocked="Dein Browser blockiert Matomo, deshalb werden deine Besuche auf btree.at nicht erfasst." /> <span>Matomo darf meine Besuche auf btree.at erfassen.</span></label></p>
 
 ### Hosting & Log Files (app.btree.at & btree.at)
 

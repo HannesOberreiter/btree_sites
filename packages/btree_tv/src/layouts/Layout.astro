@@ -419,11 +419,13 @@ const btreeAtPrefix = lang === 'de' ? '/de' : '';
         const optOut = document.getElementById(
           'matomo-opt-out',
         ) as HTMLInputElement | null;
+        let optOutReady = false;
         if (optOut) {
           _paq.push([
             function (this: any) {
               optOut.checked = !this.isUserOptedOut();
               optOut.disabled = false;
+              optOutReady = true;
             },
           ]);
           optOut.addEventListener('change', () => {
@@ -444,6 +446,16 @@ const btreeAtPrefix = lang === 'de' ? '/de' : '';
           const s = d.getElementsByTagName('script')[0];
           g.async = true;
           g.src = `${u}matomo.js`;
+          // If a blocker stops matomo.js, the tracker never runs, so tell it at the checkbox.
+          const showBlocked = () => {
+            if (optOut && !optOutReady) {
+              optOut.checked = false;
+              (optOut.nextElementSibling as HTMLElement).textContent =
+                optOut.dataset.blocked ?? '';
+            }
+          };
+          g.addEventListener('error', showBlocked);
+          g.addEventListener('load', showBlocked);
           s.parentNode.insertBefore(g, s);
         })();
       });
@@ -511,10 +523,21 @@ const btreeAtPrefix = lang === 'de' ? '/de' : '';
       </div>
       <div>© {new Date().getFullYear()} Hannes Oberreiter, btree.at</div>
       <label class="opt-out">
-        <input type="checkbox" id="matomo-opt-out" checked disabled />
-        {lang === 'de'
-          ? 'Matomo darf meine Besuche auf btree.tv erfassen.'
-          : 'Matomo may record my visits to btree.tv.'}
+        <input
+          type="checkbox"
+          id="matomo-opt-out"
+          disabled
+          data-blocked={
+            lang === 'de'
+              ? 'Dein Browser blockiert Matomo, deshalb werden deine Besuche auf btree.tv nicht erfasst.'
+              : 'Your browser blocks Matomo, so your visits to btree.tv are not recorded.'
+          }
+        />
+        <span>
+          {lang === 'de'
+            ? 'Matomo darf meine Besuche auf btree.tv erfassen.'
+            : 'Matomo may record my visits to btree.tv.'}
+        </span>
       </label>
     </footer>
   </body>

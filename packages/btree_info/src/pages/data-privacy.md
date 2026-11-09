@@ -40,7 +40,7 @@ The anonymous user data will be stored for the duration of three years.
 
 You can object to the Matomo analysis on btree.at with the following checkbox. If you clear it, Matomo stores the cookie `mtm_consent_removed` in your browser, and your visits to btree.at are no longer recorded. btree.tv and wiz-bee.com have the same checkbox in the page footer.
 
-<p><label><input type="checkbox" id="matomo-opt-out" checked disabled /> Matomo may record my visits to btree.at.</label></p>
+<p><label><input type="checkbox" id="matomo-opt-out" disabled data-blocked="Your browser blocks Matomo, so your visits to btree.at are not recorded." /> <span>Matomo may record my visits to btree.at.</span></label></p>
 
 ### Hosting & Log Files (app.btree.at & btree.at)
 
