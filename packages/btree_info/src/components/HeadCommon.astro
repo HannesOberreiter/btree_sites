@@ -210,6 +210,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       sessionStorage.removeItem('redirect-referrer');
       _paq.push(['setReferrerUrl', redirectReferrer]);
     }
+    // Opt-out checkbox on the privacy policy page.
+    const optOut = document.getElementById(
+      'matomo-opt-out',
+    ) as HTMLInputElement | null;
+    if (optOut) {
+      _paq.push([
+        function (this: any) {
+          optOut.checked = !this.isUserOptedOut();
+          optOut.disabled = false;
+        },
+      ]);
+      optOut.addEventListener('change', () => {
+        // matomo.js replaces window._paq when it loads, so read it again here.
+        (window as any)._paq.push([
+          optOut.checked ? 'forgetUserOptOut' : 'optUserOut',
+        ]);
+      });
+    }
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function () {

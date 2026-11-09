@@ -33,6 +33,10 @@ Unser Anliegen im Sinne der DSGVO (berechtigtes Interesse) ist die Verbesserung 
 
 Die Nutzerdaten werden für die Dauer von 3 Jahren aufbewahrt.
 
+Mit dem folgenden Kästchen kannst du der Matomo-Analyse auf btree.at widersprechen. Wenn du das Häkchen entfernst, speichert Matomo das Cookie `mtm_consent_removed` in deinem Browser, und deine Besuche auf btree.at werden nicht mehr erfasst.
+
+<p><label><input type="checkbox" id="matomo-opt-out" checked disabled /> Matomo darf meine Besuche auf btree.at erfassen.</label></p>
+
 ### Hosting & Log Files (app.btree.at & btree.at)
 
 Unser Backend, unsere API und unsere Datenbank werden von Hetzner Online GmbH in Frankfurt, Deutschland, gehostet. Unsere statischen Websites, das CDN und die verschlüsselten Backups werden von Bunny.net in Frankfurt, Deutschland, gehostet. Diese Anbieter erheben und speichern Zugriffsdaten in Serverlogfiles auf Grundlage des Art. 6 Abs. 1 lit. f. DSGVO.

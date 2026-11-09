@@ -31,6 +31,10 @@ Our concern in the sense of the GDPR (legitimate interests) is the improvement o
 
 The anonymous user data will be stored for the duration of three years.
 
+You can object to the Matomo analysis on btree.at with the following checkbox. If you clear it, Matomo stores the cookie `mtm_consent_removed` in your browser, and your visits to btree.at are no longer recorded.
+
+<p><label><input type="checkbox" id="matomo-opt-out" checked disabled /> Matomo may record my visits to btree.at.</label></p>
+
 ### Hosting & Log Files (app.btree.at & btree.at)
 
 Our backend, API, and database are hosted by Hetzner Online GmbH in Frankfurt, Germany. Our static websites, CDN, and encrypted backups are hosted by Bunny.net in Frankfurt, Germany. These providers automatically collect and store access data in server log files under art. 6 Section 1 lit. f. GDPR.
