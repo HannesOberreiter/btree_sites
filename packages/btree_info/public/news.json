@@ -1,6 +1,48 @@
 {
   "en": [
     {
+      "version": "Web app 7.12.0 · Server 7.13.0",
+      "versions": [
+        "btree-server-7.13.0",
+        "btree-client-7.12.0"
+      ],
+      "date": "2026-11-10",
+      "items": [
+        {
+          "title": "List Company Members Tool",
+          "description": "The AI assistant can now list company members to resolve beekeeper and editor references."
+        },
+        {
+          "title": "Paginate Assistant Task Results",
+          "description": "The AI assistant's task queries now return results in pages with compact format options for easier reading."
+        },
+        {
+          "title": "Paginate Movement Queen Apiary Lists",
+          "description": "The AI assistant can now page through hive movements, queens, and apiary hive lists instead of loading everything at once."
+        },
+        {
+          "title": "Paginate Stock Movement Lists",
+          "description": "The AI assistant's stock tools now support paged results for inventory records and stock movements."
+        },
+        {
+          "title": "Track Logout Reasons",
+          "description": "The web app now records why a user logged out (manual, session expired, or account deleted) for analytics."
+        },
+        {
+          "title": "Require Date on Stock Movements",
+          "description": "Stock movements now require a date to be set when created."
+        },
+        {
+          "title": "Fix Hive Search for Assistants",
+          "description": "The AI assistant's hive search now works correctly and properly handles deleted hive filters."
+        },
+        {
+          "title": "Faster Task List Loading",
+          "description": "Task lists now load faster by using optimized database indexes for company and date filtering."
+        }
+      ]
+    },
+    {
       "version": "Web app 7.11.0 · Server 7.12.3",
       "versions": [
         "btree-server-7.12.3",
@@ -5221,6 +5263,48 @@
     }
   ],
   "de": [
+    {
+      "version": "Web-App 7.12.0 · Server 7.13.0",
+      "versions": [
+        "btree-server-7.13.0",
+        "btree-client-7.12.0"
+      ],
+      "date": "2026-11-10",
+      "items": [
+        {
+          "title": "Tool zum Auflisten von Firmenmitgliedern",
+          "description": "Der KI-Assistent kann jetzt die Mitglieder deines Unternehmens auflisten, um Imker- und Bearbeiterverweise aufzulösen."
+        },
+        {
+          "title": "Assistenten-Aufgabenergebnisse seitenweise anzeigen",
+          "description": "Die Aufgabenabfragen des KI-Assistenten liefern jetzt seitenweise Ergebnisse mit kompakten Formatoptionen für bessere Lesbarkeit."
+        },
+        {
+          "title": "Wanderungen, Königinnen und Stand-Stocklisten seitenweise laden",
+          "description": "Der KI-Assistent kann jetzt durch Wanderungen, Königinnen und Stocklisten der Stände blättern, statt alles auf einmal zu laden."
+        },
+        {
+          "title": "Lagerbuchungen seitenweise darstellen",
+          "description": "Die Lager-Tools des KI-Assistenten unterstützen jetzt seitenweise Ergebnisse für Bestandsdaten und Lagerbuchungen."
+        },
+        {
+          "title": "Abmeldegründe erfassen",
+          "description": "Die Web-App erfasst jetzt, warum du dich abgemeldet hast (manuell, Sitzung abgelaufen oder Konto gelöscht) – für Analysen."
+        },
+        {
+          "title": "Datum bei Lagerbuchungen erforderlich",
+          "description": "Lagerbuchungen erfordern jetzt beim Erstellen ein Datum."
+        },
+        {
+          "title": "Stock-Suche für Assistenten korrigiert",
+          "description": "Die Stock-Suche des KI-Assistenten funktioniert jetzt korrekt und behandelt gelöschte Stock-Filter richtig."
+        },
+        {
+          "title": "Aufgabenlisten laden schneller",
+          "description": "Aufgabenlisten laden jetzt schneller, indem optimierte Datenbankindizes für Firmen- und Datumsfilter verwendet werden."
+        }
+      ]
+    },
     {
       "version": "Web-App 7.11.0 · Server 7.12.3",
       "versions": [
