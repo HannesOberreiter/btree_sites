@@ -78,6 +78,36 @@ POST /api/v1/agent/tools/listApiariesHives
 
 ---
 
+### Ergebnisgröße und Seiten
+
+Ein Tool-Ergebnis hat höchstens **60.000 Zeichen** JSON (etwa 60 KB bei Text in lateinischer Schrift). `fetchTasks` und `fetchCharges` liefern Einträge in Seiten, die in diese Grenze passen:
+
+- `sort`: `newest` (Standard) oder `oldest`. Die Sortierung ist nach Datum, dann nach ID.
+- `format`: `compact` (Standard) liefert flache Einträge mit IDs und Namen, zum Beispiel `hive_id`, `hive_name`, `apiary_name` und `type_name`. `csv` liefert dieselben Einträge als einen CSV-Text. `full` liefert die Einträge mit den verschachtelten Objekten für Volk, Art, Stand, Ersteller und Bearbeiter.
+- `limit`: optional, höchstens 1000. Ohne `limit` füllt der Server die Seite bis zur Grenze.
+- Das Ergebnis enthält `total`, `count`, `hasMore` und `nextCursor`. Solange `hasMore` true ist, sende dieselbe Anfrage noch einmal mit `cursor` gleich `nextCursor`.
+
+Beispiel — alle Behandlungen seit August, Seite für Seite:
+
+```json
+POST /api/v1/agent/tools/fetchTasks
+{ "task": "treatment", "dateStart": "2026-08-01", "dateEnd": "2026-11-10" }
+```
+
+Für die letzte Fütterung verwende `{ "task": "feed", "sort": "newest", "limit": 1, "dateEnd": "<heute>" }`. Um `bee_id` und `edit_id` den Benutzern der Imkerei zuzuordnen, rufe `listCompanyUsers` auf.
+
+`fetchCharges` (Lagerbuchungen) akzeptiert auch `q`, `dateStart`, `dateEnd` und `includeDeleted`. Jede Seite enthält `stockSummary` mit dem aktuellen Lagerbestand pro Lagerartikel.
+
+`fetchWaxLedger` (Wachsbuch) liefert zwei Listen, `lots` (Wachslose) und `operations` (Buchungen). Jede Liste hat `total`, `count`, `hasMore` und `nextCursor`. Der erste Aufruf liefert auch `productSummary` über alle passenden Wachslose. Sende den `nextCursor` einer Liste als `cursor`, um die nächste Seite nur dieser Liste zu bekommen.
+
+Auch `listMovements`, `listQueens` und `listApiariesHives` liefern Seiten mit `total`, `count`, `hasMore`, `nextCursor` und `items`:
+
+- `listMovements` (Wanderungen) akzeptiert `sort`, `format` und `limit` wie `fetchTasks`. `dateStart` und `dateEnd` wirken auch einzeln; `dateEnd` schließt den ganzen Tag ein.
+- `listQueens` sortiert die Königinnen nach Geburtsdatum, dann nach ID. Königinnen ohne Geburtsdatum kommen zuerst.
+- `listApiariesHives` sortiert die Stände nach ID. Jeder Stand enthält seine aktiven Völker.
+
+---
+
 ### Rate-Limits
 
 Die Agent API ist auf **60 Anfragen pro Minute** pro API-Schlüssel limitiert. Das ist großzügig für interaktive KI-Nutzung und Automatisierung, verhindert aber Missbrauch.

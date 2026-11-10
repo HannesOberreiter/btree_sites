@@ -78,6 +78,36 @@ POST /api/v1/agent/tools/listApiariesHives
 
 ---
 
+### Result Size and Paging
+
+A tool result is at most **60,000 characters** of JSON (about 60 KB for Latin-script data). `fetchTasks` and `fetchCharges` return records in pages that fit into this limit:
+
+- `sort`: `newest` (default) or `oldest`. Records are ordered by date, then id.
+- `format`: `compact` (default) returns flat records with ids and names, for example `hive_id`, `hive_name`, `apiary_name` and `type_name`. `csv` returns the same records as one CSV string. `full` returns the records with the nested hive, type, apiary, creator and editor objects.
+- `limit`: optional, at most 1000. Without `limit`, the server fills the page up to the limit.
+- The result contains `total`, `count`, `hasMore` and `nextCursor`. While `hasMore` is true, send the same request again with `cursor` set to `nextCursor`.
+
+Example — all treatments since August, page by page:
+
+```json
+POST /api/v1/agent/tools/fetchTasks
+{ "task": "treatment", "dateStart": "2026-08-01", "dateEnd": "2026-11-10" }
+```
+
+For the last feeding, use `{ "task": "feed", "sort": "newest", "limit": 1, "dateEnd": "<today>" }`. To resolve `bee_id` and `edit_id` to company members, call `listCompanyUsers`.
+
+`fetchCharges` (warehouse stock movements) also accepts `q`, `dateStart`, `dateEnd` and `includeDeleted`. Every page contains `stockSummary` with the current stock per stock item.
+
+`fetchWaxLedger` returns two lists, `lots` and `operations`. Each list has `total`, `count`, `hasMore` and `nextCursor`. The first call also returns `productSummary` over all matching lots. Send the `nextCursor` of one list as `cursor` to get the next page of that list only.
+
+`listMovements`, `listQueens` and `listApiariesHives` also return pages with `total`, `count`, `hasMore`, `nextCursor` and `items`:
+
+- `listMovements` (hive movements) accepts `sort`, `format` and `limit` like `fetchTasks`. `dateStart` and `dateEnd` each work alone; `dateEnd` includes the whole day.
+- `listQueens` orders the queens by birth date, then id. Queens without a birth date come first.
+- `listApiariesHives` orders the apiaries by id. Each apiary contains its active hives.
+
+---
+
 ### Rate Limits
 
 The Agent API is rate-limited to **60 requests per minute** per API key. This is generous for interactive AI use and automation, but prevents abuse.
