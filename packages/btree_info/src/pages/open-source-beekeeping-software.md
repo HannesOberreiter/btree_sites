@@ -1,6 +1,6 @@
 ---
 title: 'Open Source Beekeeping Software Compared'
-description: 'Comparison of open source beekeeping apps: b.tree, BEEP, Hive Pal, Gratheon and Openbeehive. Price, offline use, app stores, login, integrated AI, APIs and hive scales, checked in November 2026.'
+description: 'Comparison of open source beekeeping apps: b.tree, BEEP, Hive Pal, Gratheon and Openbeehive. Price, offline use, app stores, login, integrated AI, APIs and hive scales, plus open source hardware for beekeeping. Checked in November 2026.'
 layout: '../layouts/IndexLayout.astro'
 faq: true
 lang: 'en'
@@ -19,7 +19,7 @@ An app is in the comparison when:
 - Beekeepers can use a hosted version without own servers.
 - Its main purpose is beekeeping records.
 
-Monitoring systems for hive scales and sensors are in a [separate section](#hive-scales-and-monitoring).
+Open source hardware, for example hive scales and a honey filling machine, is in a [separate section](#open-source-hardware-for-beekeeping).
 
 ## Overview
 
@@ -87,15 +87,37 @@ Openbeehive started in 2026. Its data stays on the device first and synchronises
 
 - **Limits:** the project describes itself as "early releases" with rough edges. On 9 November 2026, the hosted service accepted new users only with an invite.
 
-## Hive scales and monitoring
+## Open source hardware for beekeeping
 
-These projects measure weight, temperature and other data at the hive. They do not replace hive records, but you can use them together with an app.
+These projects are hardware that you can build yourself. Their design files or firmware have an open source license. They do not replace hive records, but you can use them together with an app. I checked them on 11 November 2026.
+
+### Hive scales and monitoring
+
+These projects measure weight, temperature and other data at the hive.
 
 - **[Hiveeyes](https://www.hiveeyes.org/):** an open source toolkit for beehive monitoring from a group of beekeepers in Berlin. It uses Arduino hardware, MQTT, InfluxDB and Grafana. You can use their shared platform or run it on a Raspberry Pi.
 - **[BEEP base](https://beep.nl/home-english):** the scale of the BEEP foundation, connected to the BEEP app.
 - **[HoneyPi](https://honey-pi.de/en/):** a do-it-yourself scale based on a Raspberry Pi. Its license (CC BY-NC-SA) does not allow commercial use, so it is not open source in the strict sense.
 
 b.tree can receive data from hive scales through its [API](/doc-api/).
+
+### Honey filling
+
+- **[HaniMandl](https://hanimandl.de/):** a semi-automatic machine that fills honey jars. A load cell weighs the jar, and a servo opens and closes the valve of the honey bucket. It uses an ESP32 board and 3D printed parts. The [firmware](https://github.com/hiveeyes/hanimandl) has the GPL-3.0 license, and the [hardware files](https://github.com/hiveeyes/hanimandl-hardware) have the CERN-OHL-S-2.0 license.
+
+### Asian hornet
+
+- **[Waspinator](https://github.com/gitDew/waspinator):** a 3D printed trap with a Raspberry Pi 5 and a camera. An AI model detects the Asian hornet (Vespa velutina) and closes the trap. It does not close for the European hornet. License: AGPL-3.0.
+- **[vespCV](https://github.com/vespCV/vespcv):** a camera on a Raspberry Pi watches a bait station and sends an alert when it detects an Asian hornet. License: GPL-3.0.
+
+### Bee counters
+
+- **[Easy Bee Counter](https://github.com/hydronics2/2019-easy-bee-counter):** a board at the hive entrance with 24 gates and 48 infrared sensors. It counts the bees that fly in and out. The board design has the CERN-OHL-1.2 license.
+- **[Bee Health Monitor](https://github.com/boortel/Bee-Health-Monitor):** a 3D printed unit for the hive entrance from Brno University of Technology. A Raspberry Pi 4 counts the bees with a camera and records sound, CO2, temperature and humidity. License: GPL-3.0.
+
+### 3D printed parts
+
+[Printables](https://www.printables.com/) has many beekeeping models, for example an [entrance reducer](https://www.printables.com/model/218694-beehive-entrance-reducer) (CC0) and a [queen cage](https://www.printables.com/model/344756-cage-for-queen-bee) (CC BY). Each model has its own license. Many models do not allow commercial use (NC), so check the license before you sell printed parts.
 
 ## Frequently asked questions
 

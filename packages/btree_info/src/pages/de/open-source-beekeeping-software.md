@@ -1,6 +1,6 @@
 ---
 title: 'Open-Source-Imkersoftware im Vergleich'
-description: 'Vergleich von Open-Source-Imker-Apps: b.tree, BEEP, Hive Pal, Gratheon und Openbeehive. Preis, Offline-Nutzung, App Stores, Login, integrierte KI, APIs und Stockwaagen, geprüft im November 2026.'
+description: 'Vergleich von Open-Source-Imker-Apps: b.tree, BEEP, Hive Pal, Gratheon und Openbeehive. Preis, Offline-Nutzung, App Stores, Login, integrierte KI, APIs und Stockwaagen, dazu Open-Source-Hardware für die Imkerei. Geprüft im November 2026.'
 layout: '../../layouts/IndexLayout.astro'
 faq: true
 lang: 'de'
@@ -19,7 +19,7 @@ Eine App ist im Vergleich, wenn:
 - Imkerinnen und Imker eine gehostete Version ohne eigenen Server nutzen können.
 - ihr Hauptzweck die Aufzeichnungen der Imkerei sind (Stockkarte, Bestandsbuch).
 
-Messsysteme für Stockwaagen und Sensoren stehen in einem [eigenen Abschnitt](#stockwaagen-und-monitoring).
+Open-Source-Hardware, zum Beispiel Stockwaagen und eine Abfüllmaschine für Honig, steht in einem [eigenen Abschnitt](#open-source-hardware-für-die-imkerei).
 
 ## Überblick
 
@@ -87,15 +87,37 @@ Openbeehive gibt es seit 2026. Die Daten bleiben zuerst auf dem Gerät und werde
 
 - **Grenzen:** das Projekt bezeichnet sich selbst als frühe Version mit Ecken und Kanten. Am 9. November 2026 nahm der gehostete Dienst neue Benutzer nur mit Einladung an.
 
-## Stockwaagen und Monitoring
+## Open-Source-Hardware für die Imkerei
 
-Diese Projekte messen Gewicht, Temperatur und andere Werte am Bienenstock. Sie ersetzen keine Stockkarte, aber du kannst sie zusammen mit einer App verwenden.
+Diese Projekte sind Hardware, die du selbst bauen kannst. Ihre Baupläne oder ihre Firmware haben eine Open-Source-Lizenz. Sie ersetzen keine Stockkarte, aber du kannst sie zusammen mit einer App verwenden. Ich habe sie am 11. November 2026 geprüft.
+
+### Stockwaagen und Monitoring
+
+Diese Projekte messen Gewicht, Temperatur und andere Werte am Bienenstock.
 
 - **[Hiveeyes](https://www.hiveeyes.org/):** ein Open-Source-Baukasten für das Monitoring von Bienenstöcken von einer Gruppe Imker aus Berlin. Er verwendet Arduino-Hardware, MQTT, InfluxDB und Grafana. Du kannst ihre gemeinsame Plattform nutzen oder alles auf einem Raspberry Pi betreiben.
 - **[BEEP base](https://beep.nl):** die Stockwaage der BEEP-Stiftung, verbunden mit der BEEP-App.
 - **[HoneyPi](https://honey-pi.de/):** eine Stockwaage zum Selbstbauen auf Basis eines Raspberry Pi. Ihre Lizenz (CC BY-NC-SA) verbietet die kommerzielle Nutzung, daher ist sie im strengen Sinn nicht Open Source.
 
 b.tree kann Daten von Stockwaagen über seine [API](/de/doc-api/) empfangen.
+
+### Honig abfüllen
+
+- **[HaniMandl](https://hanimandl.de/):** eine halbautomatische Abfüllmaschine für Honiggläser. Eine Wägezelle wiegt das Glas, und ein Servo öffnet und schließt den Quetschhahn des Honigeimers. Sie verwendet ein ESP32-Board und Teile aus dem 3D-Drucker. Die [Firmware](https://github.com/hiveeyes/hanimandl) hat die Lizenz GPL-3.0, die [Hardware-Dateien](https://github.com/hiveeyes/hanimandl-hardware) haben die Lizenz CERN-OHL-S-2.0.
+
+### Asiatische Hornisse
+
+- **[Waspinator](https://github.com/gitDew/waspinator):** eine Falle aus dem 3D-Drucker mit einem Raspberry Pi 5 und einer Kamera. Ein KI-Modell erkennt die Asiatische Hornisse (Vespa velutina) und schließt die Falle. Bei der Europäischen Hornisse schließt sie nicht. Lizenz: AGPL-3.0.
+- **[vespCV](https://github.com/vespCV/vespcv):** eine Kamera an einem Raspberry Pi beobachtet eine Köderstation und sendet eine Warnung, wenn sie eine Asiatische Hornisse erkennt. Lizenz: GPL-3.0.
+
+### Bienenzähler
+
+- **[Easy Bee Counter](https://github.com/hydronics2/2019-easy-bee-counter):** eine Platine am Flugloch mit 24 Durchgängen und 48 Infrarotsensoren. Sie zählt die Bienen, die ein- und ausfliegen. Der Platinenentwurf hat die Lizenz CERN-OHL-1.2.
+- **[Bee Health Monitor](https://github.com/boortel/Bee-Health-Monitor):** ein Aufsatz für das Flugloch aus dem 3D-Drucker von der Technischen Universität Brünn. Ein Raspberry Pi 4 zählt die Bienen mit einer Kamera und zeichnet Geräusche, CO2, Temperatur und Luftfeuchtigkeit auf. Lizenz: GPL-3.0.
+
+### Teile aus dem 3D-Drucker
+
+Auf [Printables](https://www.printables.com/) gibt es viele Modelle für die Imkerei, zum Beispiel einen [Fluglochkeil](https://www.printables.com/model/218694-beehive-entrance-reducer) (CC0) und einen [Königinnenkäfig](https://www.printables.com/model/344756-cage-for-queen-bee) (CC BY). Jedes Modell hat eine eigene Lizenz. Viele Modelle verbieten die kommerzielle Nutzung (NC). Prüfe daher die Lizenz, bevor du gedruckte Teile verkaufst.
 
 ## Häufige Fragen
 
