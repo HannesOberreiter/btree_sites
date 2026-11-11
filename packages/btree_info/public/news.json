@@ -1,40 +1,6 @@
 {
   "en": [
     {
-      "version": "Web app 7.12.1 · Server 7.13.1",
-      "versions": [
-        "btree-server-7.13.1",
-        "btree-client-7.12.1"
-      ],
-      "date": "2026-11-11",
-      "items": [
-        {
-          "title": "Fix",
-          "description": "Require a birth date on queens (#329)."
-        },
-        {
-          "title": "Fix",
-          "description": "Require dates on tasks, todos and movements (#331)."
-        },
-        {
-          "title": "Fix",
-          "description": "Server: keep a new queen active outside UTC (#333)."
-        },
-        {
-          "title": "Fix",
-          "description": "Server: make queen and charge dates NOT NULL (#330)."
-        },
-        {
-          "title": "Fix",
-          "description": "Server: return apiary fields only for apiary groups (#328)."
-        },
-        {
-          "title": "Fix",
-          "description": "Require a birth date on queens (#329)."
-        }
-      ]
-    },
-    {
       "version": "Web app 7.12.0 · Server 7.13.0",
       "versions": [
         "btree-server-7.13.0",
@@ -5297,40 +5263,6 @@
     }
   ],
   "de": [
-    {
-      "version": "Web-App 7.12.1 · Server 7.13.1",
-      "versions": [
-        "btree-server-7.13.1",
-        "btree-client-7.12.1"
-      ],
-      "date": "2026-11-11",
-      "items": [
-        {
-          "title": "Fix",
-          "description": "Geburtsdatum bei Königinnen als Pflichtfeld (#329)."
-        },
-        {
-          "title": "Fix",
-          "description": "Datum bei Aufgaben, To-dos und Wanderungen erforderlich machen (#331)."
-        },
-        {
-          "title": "Fix",
-          "description": "Server: Neue Königin außerhalb von UTC aktiv halten (#333)."
-        },
-        {
-          "title": "Fix",
-          "description": "Server: Datumsfelder für Königinnen und Lagerbuchungen auf NOT NULL setzen (#330)."
-        },
-        {
-          "title": "Fix",
-          "description": "Server: Stand-Felder nur für Standgruppen zurückgeben (#328)."
-        },
-        {
-          "title": "Fix",
-          "description": "Geburtsdatum bei Königinnen als Pflichtfeld (#329)."
-        }
-      ]
-    },
     {
       "version": "Web-App 7.12.0 · Server 7.13.0",
       "versions": [
