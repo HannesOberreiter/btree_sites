@@ -34,7 +34,7 @@
         },
         {
           "title": "Queen Birth Date in Print",
-          "description": "The hive print view now shows the queen's birth date, and the German label for queen type has been updated."
+          "description": "The hive print view now shows the queen's birth date. In the German stock movements table, the column for incoming and outgoing goods is now called Art, so the table no longer has two columns named Typ."
         },
         {
           "title": "Newest First Sorting",
@@ -5339,7 +5339,7 @@
         },
         {
           "title": "Geburtsdatum der Königin im Druck",
-          "description": "Die Druckansicht des Stocks zeigt jetzt das Geburtsdatum der Königin, und das deutsche Label für den Königinnentyp wurde aktualisiert."
+          "description": "Die Druckansicht des Stocks zeigt jetzt das Geburtsdatum der Königin. In der Tabelle der Lagerbuchungen heißt die Spalte für Wareneingang und Warenausgang jetzt Art, damit es keine zwei Spalten mit dem Namen Typ mehr gibt."
         },
         {
           "title": "Sortierung Neueste zuerst",
