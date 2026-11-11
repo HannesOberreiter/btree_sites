@@ -8,7 +8,7 @@ lang: 'de'
 
 Es gibt viele Vergleiche von Imker-Apps, aber die meisten zeigen Apps mit geschlossenem Quellcode. Diese Seite vergleicht nur Imkersoftware mit offenem Quellcode. Bei Open Source kannst du nachlesen, wie die App arbeitet, das Datenformat ist kein Geheimnis, und die Software kann weiterleben, wenn der ursprüngliche Entwickler aufhört.
 
-**Offenlegung:** Ich, Hannes Oberreiter, entwickle b.tree. Ich habe versucht, fair zu bleiben und zu zeigen, wo die anderen Apps besser sind. Alle Angaben stammen von den Webseiten, Dokumentationen und Quellcode-Repositories der Projekte. Ich habe sie am 9. November 2026 geprüft. Wenn etwas falsch oder veraltet ist, [bearbeite diese Seite auf GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/de/open-source-beekeeping-software.md), und ich korrigiere es.
+**Offenlegung:** Ich, Hannes Oberreiter, entwickle b.tree. Ich habe versucht, fair zu bleiben und zu zeigen, wo die anderen Apps besser sind. Alle Angaben stammen von den Webseiten, Dokumentationen und Quellcode-Repositories der Projekte. Ich habe die Apps am 9. November 2026 und die Hardware-Projekte am 11. November 2026 geprüft. Wenn etwas falsch oder veraltet ist, [bearbeite diese Seite auf GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/de/open-source-beekeeping-software.md), und ich korrigiere es.
 
 ## Welche Apps im Vergleich sind
 
@@ -89,7 +89,7 @@ Openbeehive gibt es seit 2026. Die Daten bleiben zuerst auf dem Gerät und werde
 
 ## Open-Source-Hardware für die Imkerei
 
-Diese Projekte sind Hardware, die du selbst bauen kannst. Ihre Baupläne oder ihre Firmware haben eine Open-Source-Lizenz. Sie ersetzen keine Stockkarte, aber du kannst sie zusammen mit einer App verwenden. Ich habe sie am 11. November 2026 geprüft.
+Diese Projekte sind Hardware, die du selbst bauen kannst. Ihre Baupläne oder ihre Firmware haben eine Open-Source-Lizenz. Sie ersetzen keine Stockkarte, aber du kannst sie zusammen mit einer App verwenden.
 
 ### Stockwaagen und Monitoring
 

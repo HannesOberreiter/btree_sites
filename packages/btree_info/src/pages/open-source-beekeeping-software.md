@@ -8,7 +8,7 @@ lang: 'en'
 
 Many comparisons of beekeeping apps exist, but most of them list closed apps. This page compares only beekeeping software with open source code. With open source code, you can read how the app works, your data format is not a secret, and the software can continue when the original developer stops.
 
-**Disclosure:** I, Hannes Oberreiter, make b.tree. I tried to be fair and to show where the other apps are better. All facts come from the websites, documentation and source code repositories of the projects. I checked them on 9 November 2026. If something is wrong or out of date, [edit this page on GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/open-source-beekeeping-software.md) and I will correct it.
+**Disclosure:** I, Hannes Oberreiter, make b.tree. I tried to be fair and to show where the other apps are better. All facts come from the websites, documentation and source code repositories of the projects. I checked the apps on 9 November 2026 and the hardware projects on 11 November 2026. If something is wrong or out of date, [edit this page on GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/open-source-beekeeping-software.md) and I will correct it.
 
 ## Which apps are in the comparison
 
@@ -89,7 +89,7 @@ Openbeehive started in 2026. Its data stays on the device first and synchronises
 
 ## Open source hardware for beekeeping
 
-These projects are hardware that you can build yourself. Their design files or firmware have an open source license. They do not replace hive records, but you can use them together with an app. I checked them on 11 November 2026.
+These projects are hardware that you can build yourself. Their design files or firmware have an open source license. They do not replace hive records, but you can use them together with an app.
 
 ### Hive scales and monitoring
 
