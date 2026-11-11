@@ -1,6 +1,48 @@
 {
   "en": [
     {
+      "version": "Web app 7.12.1 · Server 7.13.1",
+      "versions": [
+        "btree-server-7.13.1",
+        "btree-client-7.12.1"
+      ],
+      "date": "2026-11-11",
+      "items": [
+        {
+          "title": "Require Queen Birth Date",
+          "description": "Queens now require a birth date when created."
+        },
+        {
+          "title": "Require Dates on Tasks",
+          "description": "Tasks, todos, and hive movements now require a date."
+        },
+        {
+          "title": "Fix Queen Status Outside UTC",
+          "description": "New queens now remain active correctly when created outside the UTC timezone."
+        },
+        {
+          "title": "Enforce Date Requirements",
+          "description": "The database now requires birth dates on queens and dates on stock movements."
+        },
+        {
+          "title": "Fix Apiary Statistics",
+          "description": "Task statistics now return apiary details only when grouped by apiary."
+        },
+        {
+          "title": "Dark Mode Premium Summary",
+          "description": "The premium summary note is now readable in dark mode."
+        },
+        {
+          "title": "Queen Birth Date in Print",
+          "description": "The hive print view now shows the queen's birth date, and the German label for queen type has been updated."
+        },
+        {
+          "title": "Newest First Sorting",
+          "description": "Date tables now sort newest first by default, and the checkup rating maximum slider saves automatically."
+        }
+      ]
+    },
+    {
       "version": "Web app 7.12.0 · Server 7.13.0",
       "versions": [
         "btree-server-7.13.0",
@@ -5263,6 +5305,48 @@
     }
   ],
   "de": [
+    {
+      "version": "Web-App 7.12.1 · Server 7.13.1",
+      "versions": [
+        "btree-server-7.13.1",
+        "btree-client-7.12.1"
+      ],
+      "date": "2026-11-11",
+      "items": [
+        {
+          "title": "Geburtsdatum der Königin erforderlich",
+          "description": "Königinnen benötigen jetzt beim Anlegen ein Geburtsdatum."
+        },
+        {
+          "title": "Datum bei Aufgaben erforderlich",
+          "description": "Aufgaben, To-dos und Wanderungen benötigen jetzt ein Datum."
+        },
+        {
+          "title": "Korrektur des Königinnen-Status außerhalb UTC",
+          "description": "Neue Königinnen bleiben jetzt auch außerhalb der UTC-Zeitzone korrekt aktiv."
+        },
+        {
+          "title": "Datumsanforderungen erzwingen",
+          "description": "Die Datenbank verlangt jetzt Geburtsdaten bei Königinnen und Daten bei Lagerbuchungen."
+        },
+        {
+          "title": "Korrektur der Stand-Statistiken",
+          "description": "Aufgabenstatistiken liefern jetzt nur dann Stand-Details, wenn nach Stand gruppiert wird."
+        },
+        {
+          "title": "Premium-Zusammenfassung im Dunkelmodus",
+          "description": "Der Premium-Hinweis ist jetzt im Dunkelmodus lesbar."
+        },
+        {
+          "title": "Geburtsdatum der Königin im Druck",
+          "description": "Die Druckansicht des Stocks zeigt jetzt das Geburtsdatum der Königin, und das deutsche Label für den Königinnentyp wurde aktualisiert."
+        },
+        {
+          "title": "Sortierung Neueste zuerst",
+          "description": "Datumstabellen sortieren jetzt standardmäßig neueste zuerst, und der Maximalwert-Schieberegler der Kontrollbewertung speichert automatisch."
+        }
+      ]
+    },
     {
       "version": "Web-App 7.12.0 · Server 7.13.0",
       "versions": [
