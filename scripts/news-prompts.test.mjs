@@ -18,6 +18,7 @@ test('English prompt defines stock movements as inventory', () => {
     SYSTEM_PROMPT_EN,
     /Use application context only to interpret terminology/,
   );
+  assert.match(SYSTEM_PROMPT_EN, /base its news item on that text/);
 });
 
 test('German prompt requires b.tree charge terminology', () => {

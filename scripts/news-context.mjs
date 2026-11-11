@@ -3,6 +3,7 @@ const MAX_FILES = 40;
 const MAX_PATCH_FILES = 12;
 const MAX_PATCH_CHARS_PER_FILE = 2500;
 const MAX_PATCH_CHARS_TOTAL = 16000;
+const MAX_USER_IMPACT_CHARS = 600;
 
 function isUsefulPatchFile(filename) {
   return !(
@@ -87,4 +88,39 @@ export function scopeCompareToPath(data, componentPath, pathCommits) {
     commits: commits.filter((commit) => pathShas.has(commit.sha)),
     files: files.filter((file) => (file.filename || '').startsWith(prefix)),
   };
+}
+
+// release-please links the pull request of a squash commit as
+// [#332](https://github.com/<owner>/<repo>/issues/332).
+export function pullRequestRefs(notes) {
+  const refs = new Map();
+  const link =
+    /\[#(\d+)\]\(https:\/\/github\.com\/([\w.-]+)\/([\w.-]+)\/(?:issues|pull)\/\1\)/g;
+  for (const [, number, owner, repo] of notes.matchAll(link)) {
+    refs.set(`${owner}/${repo}#${number}`, {
+      owner,
+      repo,
+      number: Number(number),
+    });
+  }
+  return [...refs.values()];
+}
+
+// The "## User impact" section of a btree pull request description, in one
+// line. Empty when the section is missing or says "None."
+export function extractUserImpact(body) {
+  if (typeof body !== 'string') return '';
+  const lines = body.replace(/<!--[\s\S]*?-->/g, '').split(/\r?\n/);
+  const start = lines.findIndex((line) =>
+    /^##\s+user impact\s*$/i.test(line.trim()),
+  );
+  if (start === -1) return '';
+  const rest = lines.slice(start + 1);
+  const end = rest.findIndex((line) => /^#{1,2}\s/.test(line.trim()));
+  const text = (end === -1 ? rest : rest.slice(0, end))
+    .join(' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (/^none\.?$/i.test(text)) return '';
+  return text.slice(0, MAX_USER_IMPACT_CHARS);
 }

@@ -24,7 +24,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { buildCompareContext, scopeCompareToPath } from './news-context.mjs';
+import {
+  buildCompareContext,
+  extractUserImpact,
+  pullRequestRefs,
+  scopeCompareToPath,
+} from './news-context.mjs';
 import {
   buildDayLabel,
   buildFallbackItems,
@@ -247,6 +252,22 @@ async function rewriteDay(date, releases) {
     }
   }
 
+  // Plain-language text that the pull request authors wrote for users.
+  const impacts = [];
+  const seenRefs = new Set();
+  for (const release of releases) {
+    for (const ref of pullRequestRefs(release.notes.join('\n'))) {
+      const key = `${ref.owner}/${ref.repo}#${ref.number}`;
+      if (seenRefs.has(key)) continue;
+      seenRefs.add(key);
+      const pr = await fetchGitHubJson(
+        `https://api.github.com/repos/${ref.owner}/${ref.repo}/pulls/${ref.number}`,
+      );
+      const impact = extractUserImpact(pr?.body);
+      if (impact) impacts.push(`- #${ref.number} (${pr.title}): ${impact}`);
+    }
+  }
+
   const fallbackItems = buildFallbackItems(
     releases.map((release) => release.notes.join('\n\n')).join('\n\n'),
   );
@@ -259,6 +280,10 @@ async function rewriteDay(date, releases) {
       '',
       'Release notes:',
       notes,
+      '',
+      impacts.length > 0
+        ? `User impact from the pull requests (main source for what users notice):\n${impacts.join('\n')}`
+        : 'No user impact texts available for these releases.',
       '',
       contexts.length > 0
         ? contexts.join('\n\n')

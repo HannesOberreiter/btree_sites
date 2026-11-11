@@ -1,7 +1,12 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { buildCompareContext, scopeCompareToPath } from './news-context.mjs';
+import {
+  buildCompareContext,
+  extractUserImpact,
+  pullRequestRefs,
+  scopeCompareToPath,
+} from './news-context.mjs';
 
 test('compare context includes source patches and skips generated files', () => {
   const context = buildCompareContext({
@@ -120,4 +125,36 @@ test('compare scope keeps only commits and files of the app path', () => {
     scoped.files.map((f) => f.filename),
     ['apps/server/src/app.ts'],
   );
+});
+
+test('pull request refs come from release-please links, once each', () => {
+  const notes = `* show queen birth date ([#332](https://github.com/HannesOberreiter/btree/issues/332)) ([e723b0e](https://github.com/HannesOberreiter/btree/commit/e723b0e))
+* same change ([#332](https://github.com/HannesOberreiter/btree/issues/332))
+* text without a link (#331)`;
+
+  assert.deepEqual(pullRequestRefs(notes), [
+    { owner: 'HannesOberreiter', repo: 'btree', number: 332 },
+  ]);
+});
+
+test('user impact is the section text without comments', () => {
+  const body = `## User impact
+
+<!-- One or two plain sentences. -->
+The stock movements table no longer has two columns named Typ.
+
+## What and why
+
+Details.`;
+
+  assert.equal(
+    extractUserImpact(body),
+    'The stock movements table no longer has two columns named Typ.',
+  );
+});
+
+test('user impact is empty for None, a missing section, or no body', () => {
+  assert.equal(extractUserImpact('## User impact\n\nNone.\n\n## What'), '');
+  assert.equal(extractUserImpact('## What and why\n\nDetails.'), '');
+  assert.equal(extractUserImpact(null), '');
 });
