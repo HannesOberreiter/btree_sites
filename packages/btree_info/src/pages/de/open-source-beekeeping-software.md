@@ -1,6 +1,6 @@
 ---
 title: 'Open-Source-Imkersoftware im Vergleich'
-description: 'Vergleich von Open-Source-Imker-Apps: b.tree, BEEP, Hive Pal, Gratheon und Openbeehive. Preis, Offline-Nutzung, App Stores, Login, integrierte KI, APIs und Stockwaagen, geprüft im November 2026.'
+description: 'Vergleich von Open-Source-Imker-Apps: b.tree, BEEP, Hive Pal, Gratheon und Openbeehive. Preis, Offline-Nutzung, App Stores, Login, integrierte KI, APIs und Stockwaagen, dazu Open-Source-Hardware für die Imkerei. Geprüft im November 2026.'
 layout: '../../layouts/IndexLayout.astro'
 faq: true
 lang: 'de'
@@ -8,7 +8,7 @@ lang: 'de'
 
 Es gibt viele Vergleiche von Imker-Apps, aber die meisten zeigen Apps mit geschlossenem Quellcode. Diese Seite vergleicht nur Imkersoftware mit offenem Quellcode. Bei Open Source kannst du nachlesen, wie die App arbeitet, das Datenformat ist kein Geheimnis, und die Software kann weiterleben, wenn der ursprüngliche Entwickler aufhört.
 
-**Offenlegung:** Ich, Hannes Oberreiter, entwickle b.tree. Ich habe versucht, fair zu bleiben und zu zeigen, wo die anderen Apps besser sind. Alle Angaben stammen von den Webseiten, Dokumentationen und Quellcode-Repositories der Projekte. Ich habe sie am 9. November 2026 geprüft. Wenn etwas falsch oder veraltet ist, [bearbeite diese Seite auf GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/de/open-source-beekeeping-software.md), und ich korrigiere es.
+**Offenlegung:** Ich, Hannes Oberreiter, entwickle b.tree. Ich habe versucht, fair zu bleiben und zu zeigen, wo die anderen Apps besser sind. Alle Angaben stammen von den Webseiten, Dokumentationen und Quellcode-Repositories der Projekte. Ich habe die Apps am 9. November 2026 und die Hardware-Projekte am 11. November 2026 geprüft. Wenn etwas falsch oder veraltet ist, [bearbeite diese Seite auf GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/de/open-source-beekeeping-software.md), und ich korrigiere es.
 
 ## Welche Apps im Vergleich sind
 
@@ -19,7 +19,7 @@ Eine App ist im Vergleich, wenn:
 - Imkerinnen und Imker eine gehostete Version ohne eigenen Server nutzen können.
 - ihr Hauptzweck die Aufzeichnungen der Imkerei sind (Stockkarte, Bestandsbuch).
 
-Messsysteme für Stockwaagen und Sensoren stehen in einem [eigenen Abschnitt](#stockwaagen-und-monitoring).
+Open-Source-Hardware, zum Beispiel Stockwaagen und eine Abfüllmaschine für Honig, steht in einem [eigenen Abschnitt](#open-source-hardware-für-die-imkerei).
 
 ## Überblick
 
@@ -37,7 +37,7 @@ Messsysteme für Stockwaagen und Sensoren stehen in einem [eigenen Abschnitt](#s
 | API für KI-Agenten   | Agent API (OpenAPI) und MCP                                     | Nein                                | MCP                       | Nein                                      | Nein                                  |
 | Kalender             | iCal-Feed                                                       | Einzelne Termine                    | iCal-Feed                 | Keine Angabe                              | Keine Angabe                          |
 | Stockwaagen          | API für eigene Waagen                                           | BEEP base, API                      | HiveHub-Geräte            | Eigene Sensoren                           | API                                   |
-| Datenexport          | CSV, komplettes Backup                                          | Excel, CSV, API                     | Import und Export         | Keine Angabe                              | JSON, Excel, CSV, BeeXML              |
+| Datenexport          | CSV, komplettes Backup, Import von beidem                       | Excel, CSV, API                     | Import und Export         | Keine Angabe                              | JSON, Excel, CSV, BeeXML              |
 | Sprachen             | 4                                                               | 15                                  | 10                        | 23                                        | 5                                     |
 | Lizenz               | AGPL-3.0                                                        | AGPL-3.0 (API), MIT (App)           | MIT                       | AGPL-3.0 oder kommerziell                 | AGPL-3.0                              |
 | Seit                 | 2014                                                            | 2017                                | 2024                      | 2022                                      | 2026                                  |
@@ -51,7 +51,7 @@ Die Preise und Grenzen der gehosteten Versionen sind vom November 2026.
 
 [Webseite](https://www.btree.at/de/) · [Quellcode](https://github.com/HannesOberreiter/btree)
 
-b.tree ist eine Web-App für die Stockkarte und die Imkereiverwaltung, verfügbar seit 2014. Sie ist um Tabellen aufgebaut, damit du viele Völker, Jahre und Bienenstände vergleichen kannst. Mit einem Eintrag im Quicktool erfasst du eine Aufgabe für alle Völker eines Bienenstands. b.tree zeichnet den Wachskreislauf in Chargen auf, was bei den Aufzeichnungen für die Bio-Imkerei hilft. Mehrere Benutzer arbeiten mit den Rängen Admin, User und Read-Only in einer Imkerei. Der KI-Assistent [WizBee](https://www.wiz-bee.com/) erfasst Fütterungen, Behandlungen, Ernten, Kontrollen und Aufgaben aus Text oder Sprache und beantwortet Fragen zu deinen eigenen Daten. Mit der [Agent API (OpenAPI) und MCP](/de/doc-agent/) verbindest du deinen eigenen KI-Agenten, zum Beispiel Claude oder ChatGPT. Ein [iCal-Feed](/de/doc-api/) zeigt deine Aufgaben in deinem Kalender. b.tree gibt es als Web-App sowie in Google Play und im App Store, und du kannst dich mit Google oder Apple anmelden.
+b.tree ist eine Web-App für die Stockkarte und die Imkereiverwaltung, verfügbar seit 2014. Sie ist um Tabellen aufgebaut, damit du viele Völker, Jahre und Bienenstände vergleichen kannst. Mit einem Eintrag im Quicktool erfasst du eine Aufgabe für alle Völker eines Bienenstands. Fütterungen, Ernten, Behandlungen und Kontrollen importierst du aus CSV-Dateien, und ein komplettes Backup importierst du als neue Imkerei. b.tree zeichnet den Wachskreislauf in Chargen auf, was bei den Aufzeichnungen für die Bio-Imkerei hilft. Mehrere Benutzer arbeiten mit den Rängen Admin, User und Read-Only in einer Imkerei. Der KI-Assistent [WizBee](https://www.wiz-bee.com/) erfasst Fütterungen, Behandlungen, Ernten, Kontrollen und Aufgaben aus Text oder Sprache und beantwortet Fragen zu deinen eigenen Daten. Mit der [Agent API (OpenAPI) und MCP](/de/doc-agent/) verbindest du deinen eigenen KI-Agenten, zum Beispiel Claude oder ChatGPT. Ein [iCal-Feed](/de/doc-api/) zeigt deine Aufgaben in deinem Kalender. b.tree gibt es als Web-App sowie in Google Play und im App Store. Die Apps aus den Stores öffnen dieselbe Web-App: unter Android als Trusted Web Activity (TWA), unter iOS in einer Web-Ansicht. Du kannst dich mit Google oder Apple anmelden.
 
 - **Grenzen:** kein Offline-Modus. Der Gratis-Tarif erlaubt 5 Völker und 2 Bienenstände. WizBee, die APIs, iCal, Statistiken und die Wettervorhersage brauchen Premium.
 
@@ -87,15 +87,37 @@ Openbeehive gibt es seit 2026. Die Daten bleiben zuerst auf dem Gerät und werde
 
 - **Grenzen:** das Projekt bezeichnet sich selbst als frühe Version mit Ecken und Kanten. Am 9. November 2026 nahm der gehostete Dienst neue Benutzer nur mit Einladung an.
 
-## Stockwaagen und Monitoring
+## Open-Source-Hardware für die Imkerei
 
-Diese Projekte messen Gewicht, Temperatur und andere Werte am Bienenstock. Sie ersetzen keine Stockkarte, aber du kannst sie zusammen mit einer App verwenden.
+Diese Projekte sind Hardware, die du selbst bauen kannst. Ihre Baupläne oder ihre Firmware haben eine Open-Source-Lizenz. Sie ersetzen keine Stockkarte, aber du kannst sie zusammen mit einer App verwenden.
+
+### Stockwaagen und Monitoring
+
+Diese Projekte messen Gewicht, Temperatur und andere Werte am Bienenstock.
 
 - **[Hiveeyes](https://www.hiveeyes.org/):** ein Open-Source-Baukasten für das Monitoring von Bienenstöcken von einer Gruppe Imker aus Berlin. Er verwendet Arduino-Hardware, MQTT, InfluxDB und Grafana. Du kannst ihre gemeinsame Plattform nutzen oder alles auf einem Raspberry Pi betreiben.
 - **[BEEP base](https://beep.nl):** die Stockwaage der BEEP-Stiftung, verbunden mit der BEEP-App.
 - **[HoneyPi](https://honey-pi.de/):** eine Stockwaage zum Selbstbauen auf Basis eines Raspberry Pi. Ihre Lizenz (CC BY-NC-SA) verbietet die kommerzielle Nutzung, daher ist sie im strengen Sinn nicht Open Source.
 
 b.tree kann Daten von Stockwaagen über seine [API](/de/doc-api/) empfangen.
+
+### Honig abfüllen
+
+- **[HaniMandl](https://hanimandl.de/):** eine halbautomatische Abfüllmaschine für Honiggläser. Eine Wägezelle wiegt das Glas, und ein Servo öffnet und schließt den Quetschhahn des Honigeimers. Sie verwendet ein ESP32-Board und Teile aus dem 3D-Drucker. Die [Firmware](https://github.com/hiveeyes/hanimandl) hat die Lizenz GPL-3.0, die [Hardware-Dateien](https://github.com/hiveeyes/hanimandl-hardware) haben die Lizenz CERN-OHL-S-2.0.
+
+### Asiatische Hornisse
+
+- **[Waspinator](https://github.com/gitDew/waspinator):** eine Falle aus dem 3D-Drucker mit einem Raspberry Pi 5 und einer Kamera. Ein KI-Modell erkennt die Asiatische Hornisse (Vespa velutina) und schließt die Falle. Bei der Europäischen Hornisse schließt sie nicht. Lizenz: AGPL-3.0.
+- **[vespCV](https://github.com/vespCV/vespcv):** eine Kamera an einem Raspberry Pi beobachtet eine Köderstation und sendet eine Warnung, wenn sie eine Asiatische Hornisse erkennt. Lizenz: GPL-3.0.
+
+### Bienenzähler
+
+- **[Easy Bee Counter](https://github.com/hydronics2/2019-easy-bee-counter):** eine Platine am Flugloch mit 24 Durchgängen und 48 Infrarotsensoren. Sie zählt die Bienen, die ein- und ausfliegen. Der Platinenentwurf hat die Lizenz CERN-OHL-1.2.
+- **[Bee Health Monitor](https://github.com/boortel/Bee-Health-Monitor):** ein Aufsatz für das Flugloch aus dem 3D-Drucker von der Technischen Universität Brünn. Ein Raspberry Pi 4 zählt die Bienen mit einer Kamera und zeichnet Geräusche, CO2, Temperatur und Luftfeuchtigkeit auf. Lizenz: GPL-3.0.
+
+### Teile aus dem 3D-Drucker
+
+Auf [Printables](https://www.printables.com/) gibt es viele Modelle für die Imkerei, zum Beispiel einen [Fluglochkeil](https://www.printables.com/model/218694-beehive-entrance-reducer) (CC0) und einen [Königinnenkäfig](https://www.printables.com/model/344756-cage-for-queen-bee) (CC BY). Jedes Modell hat eine eigene Lizenz. Viele Modelle verbieten die kommerzielle Nutzung (NC). Prüfe daher die Lizenz, bevor du gedruckte Teile verkaufst.
 
 ## Häufige Fragen
 

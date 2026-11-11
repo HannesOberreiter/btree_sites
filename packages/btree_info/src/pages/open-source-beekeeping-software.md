@@ -1,6 +1,6 @@
 ---
 title: 'Open Source Beekeeping Software Compared'
-description: 'Comparison of open source beekeeping apps: b.tree, BEEP, Hive Pal, Gratheon and Openbeehive. Price, offline use, app stores, login, integrated AI, APIs and hive scales, checked in November 2026.'
+description: 'Comparison of open source beekeeping apps: b.tree, BEEP, Hive Pal, Gratheon and Openbeehive. Price, offline use, app stores, login, integrated AI, APIs and hive scales, plus open source hardware for beekeeping. Checked in November 2026.'
 layout: '../layouts/IndexLayout.astro'
 faq: true
 lang: 'en'
@@ -8,7 +8,7 @@ lang: 'en'
 
 Many comparisons of beekeeping apps exist, but most of them list closed apps. This page compares only beekeeping software with open source code. With open source code, you can read how the app works, your data format is not a secret, and the software can continue when the original developer stops.
 
-**Disclosure:** I, Hannes Oberreiter, make b.tree. I tried to be fair and to show where the other apps are better. All facts come from the websites, documentation and source code repositories of the projects. I checked them on 9 November 2026. If something is wrong or out of date, [edit this page on GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/open-source-beekeeping-software.md) and I will correct it.
+**Disclosure:** I, Hannes Oberreiter, make b.tree. I tried to be fair and to show where the other apps are better. All facts come from the websites, documentation and source code repositories of the projects. I checked the apps on 9 November 2026 and the hardware projects on 11 November 2026. If something is wrong or out of date, [edit this page on GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/open-source-beekeeping-software.md) and I will correct it.
 
 ## Which apps are in the comparison
 
@@ -19,7 +19,7 @@ An app is in the comparison when:
 - Beekeepers can use a hosted version without own servers.
 - Its main purpose is beekeeping records.
 
-Monitoring systems for hive scales and sensors are in a [separate section](#hive-scales-and-monitoring).
+Open source hardware, for example hive scales and a honey filling machine, is in a [separate section](#open-source-hardware-for-beekeeping).
 
 ## Overview
 
@@ -37,7 +37,7 @@ Monitoring systems for hive scales and sensors are in a [separate section](#hive
 | API for AI agents | Agent API (OpenAPI) and MCP                               | No                                    | MCP                             | No                                      | No                                  |
 | Calendar          | iCal feed                                                 | Add single events                     | iCal feed                       | Not stated                              | Not stated                          |
 | Hive scales       | API for own scales                                        | BEEP base, API                        | HiveHub devices                 | Own sensors                             | API                                 |
-| Data export       | CSV, full backup                                          | Excel, CSV, API                       | Import and export               | Not stated                              | JSON, Excel, CSV, BeeXML            |
+| Data export       | CSV, full backup, import of both                          | Excel, CSV, API                       | Import and export               | Not stated                              | JSON, Excel, CSV, BeeXML            |
 | Languages         | 4                                                         | 15                                    | 10                              | 23                                      | 5                                   |
 | License           | AGPL-3.0                                                  | AGPL-3.0 (API), MIT (app)             | MIT                             | AGPL-3.0 or commercial                  | AGPL-3.0                            |
 | Since             | 2014                                                      | 2017                                  | 2024                            | 2022                                    | 2026                                |
@@ -51,7 +51,7 @@ The prices and limits of the hosted versions are from November 2026.
 
 [Website](https://www.btree.at) · [Source code](https://github.com/HannesOberreiter/btree)
 
-b.tree is a web app for hive records, available since 2014. It is designed around tables, so you can compare many colonies, years and apiaries. One entry with the Quicktool records a task for all hives of an apiary. b.tree records the wax cycle in lots, which helps with the records for organic beekeeping. Several users can work in one operation with the roles Admin, User and Read-Only. The AI assistant [WizBee](https://www.wiz-bee.com/) records feedings, treatments, harvests, inspections and tasks from text or voice, and answers questions about your own data. With the [Agent API (OpenAPI) and MCP](/doc-agent/), you connect your own AI agent, for example Claude or ChatGPT. An [iCal feed](/doc-api/) shows your tasks in your calendar. b.tree is available as a web app and in Google Play and the App Store, and you can sign in with Google or Apple.
+b.tree is a web app for hive records, available since 2014. It is designed around tables, so you can compare many colonies, years and apiaries. One entry with the Quicktool records a task for all hives of an apiary. You can import feedings, harvests, treatments and inspections from CSV files, and a full backup as a new operation. b.tree records the wax cycle in lots, which helps with the records for organic beekeeping. Several users can work in one operation with the roles Admin, User and Read-Only. The AI assistant [WizBee](https://www.wiz-bee.com/) records feedings, treatments, harvests, inspections and tasks from text or voice, and answers questions about your own data. With the [Agent API (OpenAPI) and MCP](/doc-agent/), you connect your own AI agent, for example Claude or ChatGPT. An [iCal feed](/doc-api/) shows your tasks in your calendar. b.tree is available as a web app and in Google Play and the App Store. The store apps open the same web app: on Android as a Trusted Web Activity (TWA), on iOS in a web view. You can sign in with Google or Apple.
 
 - **Limits:** no offline mode. The free plan allows 5 hives and 2 apiaries. WizBee, the APIs, iCal, statistics and the weather forecast need Premium.
 
@@ -87,15 +87,37 @@ Openbeehive started in 2026. Its data stays on the device first and synchronises
 
 - **Limits:** the project describes itself as "early releases" with rough edges. On 9 November 2026, the hosted service accepted new users only with an invite.
 
-## Hive scales and monitoring
+## Open source hardware for beekeeping
 
-These projects measure weight, temperature and other data at the hive. They do not replace hive records, but you can use them together with an app.
+These projects are hardware that you can build yourself. Their design files or firmware have an open source license. They do not replace hive records, but you can use them together with an app.
+
+### Hive scales and monitoring
+
+These projects measure weight, temperature and other data at the hive.
 
 - **[Hiveeyes](https://www.hiveeyes.org/):** an open source toolkit for beehive monitoring from a group of beekeepers in Berlin. It uses Arduino hardware, MQTT, InfluxDB and Grafana. You can use their shared platform or run it on a Raspberry Pi.
 - **[BEEP base](https://beep.nl/home-english):** the scale of the BEEP foundation, connected to the BEEP app.
 - **[HoneyPi](https://honey-pi.de/en/):** a do-it-yourself scale based on a Raspberry Pi. Its license (CC BY-NC-SA) does not allow commercial use, so it is not open source in the strict sense.
 
 b.tree can receive data from hive scales through its [API](/doc-api/).
+
+### Honey filling
+
+- **[HaniMandl](https://hanimandl.de/):** a semi-automatic machine that fills honey jars. A load cell weighs the jar, and a servo opens and closes the valve of the honey bucket. It uses an ESP32 board and 3D printed parts. The [firmware](https://github.com/hiveeyes/hanimandl) has the GPL-3.0 license, and the [hardware files](https://github.com/hiveeyes/hanimandl-hardware) have the CERN-OHL-S-2.0 license.
+
+### Asian hornet
+
+- **[Waspinator](https://github.com/gitDew/waspinator):** a 3D printed trap with a Raspberry Pi 5 and a camera. An AI model detects the Asian hornet (Vespa velutina) and closes the trap. It does not close for the European hornet. License: AGPL-3.0.
+- **[vespCV](https://github.com/vespCV/vespcv):** a camera on a Raspberry Pi watches a bait station and sends an alert when it detects an Asian hornet. License: GPL-3.0.
+
+### Bee counters
+
+- **[Easy Bee Counter](https://github.com/hydronics2/2019-easy-bee-counter):** a board at the hive entrance with 24 gates and 48 infrared sensors. It counts the bees that fly in and out. The board design has the CERN-OHL-1.2 license.
+- **[Bee Health Monitor](https://github.com/boortel/Bee-Health-Monitor):** a 3D printed unit for the hive entrance from Brno University of Technology. A Raspberry Pi 4 counts the bees with a camera and records sound, CO2, temperature and humidity. License: GPL-3.0.
+
+### 3D printed parts
+
+[Printables](https://www.printables.com/) has many beekeeping models, for example an [entrance reducer](https://www.printables.com/model/218694-beehive-entrance-reducer) (CC0) and a [queen cage](https://www.printables.com/model/344756-cage-for-queen-bee) (CC BY). Each model has its own license. Many models do not allow commercial use (NC), so check the license before you sell printed parts.
 
 ## Frequently asked questions
 
