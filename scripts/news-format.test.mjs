@@ -25,6 +25,14 @@ test('feature fallback publishes one clean user-facing item', () => {
   ]);
 });
 
+test('fallback lists a change of two releases once', () => {
+  const notes = `### Bug Fixes\n\n* require a birth date on queens (#329) ([abc1234](https://example.com/commit/abc1234))\n\n### Bug Fixes\n\n* require a birth date on queens (#329) ([abc1234](https://example.com/commit/abc1234))`;
+
+  assert.deepEqual(buildFallbackItems(notes), [
+    { title: 'Fix', description: 'Require a birth date on queens (#329).' },
+  ]);
+});
+
 test('fallback skips irrelevant maintenance sections', () => {
   const notes = `## 7.3.1\n\n### Miscellaneous\n\n* update dependencies ([abc1234](https://example.com/commit/abc1234))\n* fix linting`;
 
