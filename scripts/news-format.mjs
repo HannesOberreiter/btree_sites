@@ -35,6 +35,8 @@ function cleanDescription(line) {
 
 export function buildFallbackItems(notes) {
   const items = [];
+  // A change that reaches both apps is in the notes of both releases.
+  const seen = new Set();
   let title = null;
 
   for (const line of notes.split(/\r?\n/)) {
@@ -46,7 +48,8 @@ export function buildFallbackItems(notes) {
 
     if (!title || !/^[-*]\s+/.test(line)) continue;
     const description = cleanDescription(line);
-    if (!description) continue;
+    if (!description || seen.has(description)) continue;
+    seen.add(description);
 
     items.push({
       title,

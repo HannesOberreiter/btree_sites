@@ -171,7 +171,24 @@ function toEntries(allReleases) {
     .sort((a, b) => b.date.localeCompare(a.date));
 }
 
-async function callMistral(systemPrompt, userPrompt, maxTokens = 4096) {
+// max_tokens leaves room for the reasoning chunk. On 2026-11-11 an answer
+// with 4096 tokens had no text (unverified: reasoning used all tokens).
+async function callMistral(systemPrompt, userPrompt, maxTokens = 16384) {
+  for (let attempt = 1; ; attempt++) {
+    const { text, finishReason, usage } = await requestMistral(
+      systemPrompt,
+      userPrompt,
+      maxTokens,
+    );
+    if (text.trim()) return text;
+    console.error(
+      `Mistral answer has no text (attempt ${attempt}, finish_reason: ${finishReason}, usage: ${JSON.stringify(usage)})`,
+    );
+    if (attempt === 2) return text;
+  }
+}
+
+async function requestMistral(systemPrompt, userPrompt, maxTokens) {
   const res = await fetch('https://api.mistral.ai/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -197,7 +214,11 @@ async function callMistral(systemPrompt, userPrompt, maxTokens = 4096) {
   }
 
   const data = await res.json();
-  return responseText(data.choices[0].message.content);
+  return {
+    text: responseText(data.choices[0].message.content),
+    finishReason: data.choices[0].finish_reason,
+    usage: data.usage,
+  };
 }
 
 // All releases of one day become one news entry. Both apps often release
