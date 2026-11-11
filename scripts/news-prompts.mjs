@@ -21,6 +21,7 @@ Rules:
 - Each news item has a descriptive "title" (2-5 words) and a plain-language "description" (1-2 sentences).
 - Do not use generic titles such as "Feature", "Fix", "Improvement", or "Technical Change".
 - Base every statement only on the provided release notes and code-change context.
+- When a change has a user impact text from its pull request, base its news item on that text. Use the code-change context only to confirm it.
 - Use application context only to interpret terminology. Never treat it as evidence that a release added or changed behavior.
 - Treat every item under a Features section as publishable, including infrastructure or cost-saving changes.
 - Explain technical changes in language useful to customers without inventing unstated benefits, motivations, behavior, or scope.
