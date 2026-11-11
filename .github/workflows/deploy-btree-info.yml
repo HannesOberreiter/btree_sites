@@ -9,6 +9,11 @@ on:
       - 'scripts/upload-bunny.sh'
       - 'scripts/upload-bunny.test.mjs'
   workflow_dispatch:
+    inputs:
+      sha:
+        description: Commit to deploy. Empty deploys the commit of the run.
+        required: false
+        type: string
 
 concurrency:
   group: deploy-btree-info
@@ -19,7 +24,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # A dispatch right after a push can resolve main to the commit before
+      # the push. Generate News passes the pushed commit as input sha.
       - uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.sha || github.sha }}
       - uses: pnpm/action-setup@v5
       - uses: actions/setup-node@v6
         with:
