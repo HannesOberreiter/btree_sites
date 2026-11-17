@@ -2,7 +2,9 @@
  * Bunny Middleware Script for www.btree.at
  *
  * Handles redirects that require pattern matching with capture groups —
- * not possible with simple Bunny Edge Rules. Everything else (HTTPS, www,
+ * not possible with simple Bunny Edge Rules. It also sets the Content-Type
+ * of Markdown copies and the API catalog, and the discovery Link header of
+ * the home page. Everything else (HTTPS, www,
  * HSTS, cache headers, CORS) is configured in the pull zone settings.
  *
  * Linked to the pull zone via MiddlewareScriptId (ID: 68801).
@@ -56,4 +58,42 @@ async function onOriginRequest(context: {
   return context.request;
 }
 
-BunnySDK.net.http.servePullZone().onOriginRequest(onOriginRequest);
+// Link header of the home page (RFC 8288), for agent discovery.
+const HOME_LINK_HEADER = [
+  '</.well-known/api-catalog>; rel="api-catalog"',
+  '</.well-known/ai-catalog.json>; rel="ai-catalog"',
+  '</doc-agent/>; rel="service-doc"',
+  '</index.md>; rel="alternate"; type="text/markdown"',
+  '</llms.txt>; rel="describedby"; type="text/plain"',
+].join(', ');
+
+async function onOriginResponse(context: {
+  request: Request;
+  response: Response;
+}): Promise<Response> {
+  const { pathname } = new URL(context.request.url);
+  const { response } = context;
+
+  // Bunny Storage serves unknown file types as application/octet-stream.
+  let contentType: string | undefined;
+  if (pathname.endsWith('.md')) {
+    contentType = 'text/markdown; charset=utf-8';
+  } else if (pathname === '/.well-known/api-catalog') {
+    contentType =
+      'application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"';
+  }
+  const isHome = pathname === '/';
+  if (!response.ok || (!contentType && !isHome)) {
+    return response;
+  }
+
+  const modified = new Response(response.body, response);
+  if (contentType) modified.headers.set('Content-Type', contentType);
+  if (isHome) modified.headers.set('Link', HOME_LINK_HEADER);
+  return modified;
+}
+
+BunnySDK.net.http
+  .servePullZone()
+  .onOriginRequest(onOriginRequest)
+  .onOriginResponse(onOriginResponse);

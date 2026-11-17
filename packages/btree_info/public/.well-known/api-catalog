@@ -1,0 +1,34 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://api.btree.at/api/v1/agent",
+      "service-desc": [
+        {
+          "href": "https://api.btree.at/api/v1/agent/openapi.json",
+          "type": "application/vnd.oai.openapi+json"
+        }
+      ],
+      "service-doc": [
+        { "href": "https://www.btree.at/doc-agent/", "type": "text/html" }
+      ]
+    },
+    {
+      "anchor": "https://api.btree.at/api/v1/mcp",
+      "service-doc": [
+        { "href": "https://www.btree.at/doc-agent/", "type": "text/html" }
+      ],
+      "service-meta": [
+        {
+          "href": "https://api.btree.at/.well-known/oauth-protected-resource/api/v1/mcp",
+          "type": "application/json"
+        }
+      ]
+    },
+    {
+      "anchor": "https://api.btree.at/api/v1/external",
+      "service-doc": [
+        { "href": "https://www.btree.at/doc-api/", "type": "text/html" }
+      ]
+    }
+  ]
+}

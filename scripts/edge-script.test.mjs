@@ -10,14 +10,21 @@ const edgeScriptPath = new URL(
 );
 const source = await readFile(edgeScriptPath, 'utf8');
 let handler;
+let responseHandler;
+const pullZone = {
+  onOriginRequest: (callback) => {
+    handler = callback;
+    return pullZone;
+  },
+  onOriginResponse: (callback) => {
+    responseHandler = callback;
+    return pullZone;
+  },
+};
 const BunnySDK = {
   net: {
     http: {
-      servePullZone: () => ({
-        onOriginRequest: (callback) => {
-          handler = callback;
-        },
-      }),
+      servePullZone: () => pullZone,
     },
   },
 };
@@ -36,6 +43,19 @@ vm.runInNewContext(executableSource, {
 });
 
 assert.equal(typeof handler, 'function');
+assert.equal(typeof responseHandler, 'function');
+
+async function originResponse(path, init = {}) {
+  const originRequest = new Request(
+    new URL(path, 'http://origin.internal:9000'),
+  );
+  const response = new Response('body', {
+    status: 200,
+    headers: { 'content-type': 'application/octet-stream' },
+    ...init,
+  });
+  return responseHandler({ request: originRequest, response });
+}
 
 async function request(url) {
   const publicURL = new URL(url);
@@ -93,4 +113,49 @@ test('passes canonical pages, files, and campaign home URL through', async () =>
     const { originalRequest, response } = await request(url);
     assert.equal(response, originalRequest);
   }
+});
+
+test('serves Markdown copies as text/markdown', async () => {
+  const response = await originResponse('/features/index.md');
+
+  assert.equal(
+    response.headers.get('content-type'),
+    'text/markdown; charset=utf-8',
+  );
+  assert.equal(await response.text(), 'body');
+});
+
+test('serves the API catalog as linkset JSON', async () => {
+  const response = await originResponse('/.well-known/api-catalog');
+
+  assert.match(
+    response.headers.get('content-type'),
+    /^application\/linkset\+json; profile=/,
+  );
+});
+
+test('adds discovery Link header to the home page only', async () => {
+  const home = await originResponse('/', {
+    headers: { 'content-type': 'text/html' },
+  });
+  const link = home.headers.get('link');
+  assert.match(link, /<\/\.well-known\/api-catalog>; rel="api-catalog"/);
+  assert.match(link, /<\/\.well-known\/ai-catalog\.json>; rel="ai-catalog"/);
+  assert.match(link, /<\/index\.md>; rel="alternate"; type="text\/markdown"/);
+  assert.equal(home.headers.get('content-type'), 'text/html');
+
+  const page = await originResponse('/doc-agent/', {
+    headers: { 'content-type': 'text/html' },
+  });
+  assert.equal(page.headers.get('link'), null);
+});
+
+test('passes error responses through unchanged', async () => {
+  const response = await originResponse('/missing/index.md', { status: 404 });
+
+  assert.equal(response.status, 404);
+  assert.equal(
+    response.headers.get('content-type'),
+    'application/octet-stream',
+  );
 });

@@ -2,6 +2,7 @@
 import type { BreadcrumbList, Graph, Offer } from 'schema-dts';
 
 import { OPEN_GRAPH, SITE } from '../config';
+import { markdownPathFor } from '../markdown-pages';
 import { FEEDS } from '../news-feed';
 import Schema from './SchemaLD.astro';
 
@@ -274,6 +275,7 @@ const schema: Graph = {
 };
 
 const feed = FEEDS[isGermanPage ? 'de' : 'en'];
+const markdownPath = markdownPathFor(pathname);
 ---
 
 <!-- Page Metadata -->
@@ -288,6 +290,19 @@ const feed = FEEDS[isGermanPage ? 'de' : 'en'];
   title={feed.title}
   href={new URL(feed.feedPath, Astro.site)}
 />
+
+<link
+  rel="ai-catalog"
+  type="application/json"
+  href={new URL('/.well-known/ai-catalog.json', Astro.site)}
+/>
+{markdownPath && (
+  <link
+    rel="alternate"
+    type="text/markdown"
+    href={new URL(markdownPath, Astro.site)}
+  />
+)}
 
 <!-- Hreflang Tags for multilingual SEO -->
 {!frontmatter.noindex && (

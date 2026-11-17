@@ -29,6 +29,7 @@ Development and deployment documentation lives in `README.md`.
 - Keep TailwindCSS limited to btree_info. Use its existing TailwindCSS 4 Vite integration and utility classes.
 - Keep wizbee_info minimal: plain CSS in Astro `<style>` blocks, using the existing CSS custom properties rather than adding a framework.
 - Use Astro's `<Image>` component for processed images in `src/assets/`; files in `public/` are copied as-is. Each package that builds images needs its own direct `sharp` dependency for pnpm resolution.
+- btree_info writes a Markdown copy of each Markdown/MDX page to `<page URL>index.md` for AI agents (`src/markdown-pages.ts`). Text inside MDX components does not get into the copy.
 - Preserve Pagefind indexing in btree_info: searchable content belongs inside an `<article data-pagefind-body>`, and page titles use `<title data-pagefind-meta="title">`.
 
 ## Deployment safety

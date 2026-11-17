@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 
 import newsData from '../../public/news.json';
+import { extractContent } from '../markdown-pages';
 // Import raw content of documentation files at build time
 import agentContent from './doc-agent.md?raw';
 import apiContent from './doc-api.md?raw';
@@ -114,31 +115,6 @@ const DROP_SENTENCE_PATTERNS = [
   /my goal is/i,
   /i want to say thanks/i,
 ];
-
-/**
- * Extract content from markdown/mdx, removing frontmatter, imports, images, and page-only HTML.
- * Keep links/code/URLs because agents need exact references.
- */
-function extractContent(content: string): string {
-  let cleanContent = content.replace(/^---[\s\S]*?---\n*/, '');
-
-  cleanContent = cleanContent.replace(/^import\s[^\n]+\n/gm, '');
-  cleanContent = cleanContent.replace(/<Image[^>]*\/>/g, '');
-  cleanContent = cleanContent.replace(/<Image[^>]*>[\s\S]*?<\/Image>/g, '');
-  cleanContent = cleanContent.replace(/<section[^>]*>[\s\S]*?<\/section>/g, '');
-  cleanContent = cleanContent.replace(/<ul[^>]*>/g, '');
-  cleanContent = cleanContent.replace(/<\/ul>/g, '');
-  cleanContent = cleanContent.replace(/<li>([\s\S]*?)<\/li>/g, '- $1');
-  cleanContent = cleanContent.replace(
-    /<a\s+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g,
-    '$2 ($1)',
-  );
-  cleanContent = cleanContent.replace(/<!--[\s\S]*?-->/g, '');
-  cleanContent = cleanContent.replace(/<hr\s*\/?>/g, '---');
-  cleanContent = cleanContent.replace(/<[^>]+>/g, '');
-
-  return cleanContent.trim();
-}
 
 function compactText(text: string): string {
   let compact = text.trim();
