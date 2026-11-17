@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "at.btree/beekeeping-manager",
+  "title": "b.tree Beekeeping Manager",
+  "description": "Manage apiaries, hives, feedings, treatments, harvests and tasks in b.tree beekeeping software.",
+  "version": "1.0.0",
+  "websiteUrl": "https://www.btree.at/doc-agent/",
+  "icons": [
+    { "src": "https://www.btree.at/logo.png", "mimeType": "image/png" }
+  ],
+  "remotes": [
+    { "type": "streamable-http", "url": "https://api.btree.at/api/v1/mcp" }
+  ]
+}
