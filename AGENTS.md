@@ -17,7 +17,7 @@ Development and deployment documentation lives in `README.md`.
 
 - Use `packages/btree_info` (`@btree/info`) for btree.at documentation, `packages/wizbee_info` (`wizbee_info`) for wiz-bee.com, and `packages/btree_tv` (`btree_tv`) for btree.tv.
 - Keep GitHub Actions workflows under `.github/workflows/`, not inside packages.
-- For btree_info redirects, check `packages/btree_info/astro.config.mjs` and `packages/btree_info/edge-script.ts`. The edge script is deployed separately to Bunny Edge Scripting, not by the static-site upload.
+- For btree_info redirects, check `packages/btree_info/astro.config.mjs` and `packages/btree_info/edge-script.ts`. The static-site upload does not deploy the edge script. After a merge to `main`, run `tofu apply` in `bunny/sites` of the infra repository: `edge-script.tf` downloads the script from GitHub and publishes it to Bunny script 68801.
 - Coordinate application documentation with `HannesOberreiter/btree` (`apps/web` and `apps/server`); coordinate database infrastructure documentation with `HannesOberreiter/btree_database`.
 
 ## Site conventions
