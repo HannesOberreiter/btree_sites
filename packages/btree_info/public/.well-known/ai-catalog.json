@@ -1,0 +1,47 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "b.tree",
+    "identifier": "btree.at",
+    "documentationUrl": "https://www.btree.at/doc-agent/",
+    "logoUrl": "https://www.btree.at/logo.png"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:btree.at:mcp:beekeeping-manager",
+      "type": "application/mcp-server-card+json",
+      "tags": ["beekeeping", "apiary", "hive records"],
+      "representativeQueries": [
+        "Log a Varroa treatment for all hives of my apiary",
+        "How much sugar syrup did I feed this season?",
+        "Show the last inspection of each hive",
+        "Create a feeding for hive 12 with 3:2 sugar syrup",
+        "Compare my honey harvests per apiary"
+      ],
+      "data": {
+        "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+        "name": "at.btree/beekeeping-manager",
+        "title": "b.tree Beekeeping Manager",
+        "version": "1.0.0",
+        "description": "Manage apiaries, hives, feedings, treatments, harvests and tasks in b.tree beekeeping software.",
+        "websiteUrl": "https://www.btree.at/doc-agent/",
+        "icons": [{ "src": "https://www.btree.at/logo.png", "mimeType": "image/png" }],
+        "remotes": [
+          { "type": "streamable-http", "url": "https://api.btree.at/api/v1/mcp" }
+        ]
+      }
+    },
+    {
+      "identifier": "urn:air:btree.at:openapi:agent-api",
+      "displayName": "b.tree Agent API",
+      "type": "application/vnd.oai.openapi+json",
+      "url": "https://api.btree.at/api/v1/agent/openapi.json",
+      "tags": ["beekeeping", "apiary", "hive records"],
+      "representativeQueries": [
+        "Beekeeping API for AI agents",
+        "Record hive inspections through an API",
+        "Export beekeeping statistics with an API key"
+      ]
+    }
+  ]
+}
