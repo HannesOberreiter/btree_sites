@@ -183,6 +183,12 @@ https://api.btree.at/api/v1/mcp
 
 Die MCP-Verbindung verwendet die Imkerei und die Rolle, die bei deiner Zustimmung aktiv sind. Benutzer mit Lesezugriff können keine schreibenden Werkzeuge verwenden. MCP ist ein Premium-Feature und kann jederzeit unter **Einstellungen → Profil → MCP** widerrufen werden.
 
+#### Beispiel: Claude
+
+b.tree ist als Konnektor im [Claude-Verzeichnis](https://claude.ai/directory/btree) gelistet. Öffne mit einem kostenpflichtigen Claude-Plan in Claude **Anpassungen → Konnektoren**, wähle **+**, suche nach **b.tree** und wähle **Verbinden**. Melde dich danach bei b.tree an und bestätige den Zugriff.
+
+Nach der Verbindung kannst du Claude beispielsweise bitten, deine Bienenstände aufzulisten, eine Fütterung für alle Völker eines Bienenstands zu erfassen oder deine Ernten zu vergleichen.
+
 #### Beispiel: Mistral AI
 
 Wenn du einen europäischen KI-Anbieter bevorzugst, kannst du mit **Mistral AI** deine Imkerei über b.tree MCP verwalten. Öffne [Verbindungen in Le Chat](https://chat.mistral.ai/connections), füge die oben angegebene b.tree-MCP-Server-URL hinzu und bestätige den Zugriff über die b.tree-OAuth-Anmeldung.

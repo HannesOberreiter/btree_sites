@@ -183,6 +183,12 @@ https://api.btree.at/api/v1/mcp
 
 The MCP connection uses the company and role active when you approve it. Read-only users cannot use write tools. MCP access is a Premium feature and can be revoked at any time under **Settings → Profile → MCP**.
 
+#### Example: Claude
+
+b.tree is listed as a connector in the [Claude directory](https://claude.ai/directory/btree). On a paid Claude plan, open **Customize → Connectors** in Claude, select **+**, search for **b.tree**, and select **Connect**. Then sign in to b.tree and approve the access.
+
+Once connected, ask Claude to list your apiaries, record a feeding for all hives of an apiary, or compare your harvests.
+
 #### Example: Mistral AI
 
 If you prefer a European AI provider, you can use **Mistral AI** to manage your beekeeping operation through b.tree MCP. Open [Connections in Le Chat](https://chat.mistral.ai/connections), add the b.tree MCP server URL shown above, and follow the b.tree OAuth login to approve access.

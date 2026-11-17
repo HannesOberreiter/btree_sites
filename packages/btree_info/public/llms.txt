@@ -73,5 +73,6 @@ The application is accessed through web browsers and offers a comprehensive solu
 - [API Catalog](https://www.btree.at/.well-known/api-catalog)
 - [AI Catalog](https://www.btree.at/.well-known/ai-catalog.json) (MCP Server Card)
 - [MCP Server](https://api.btree.at/api/v1/mcp) (remote MCP, Streamable HTTP, OAuth)
+- [Claude connector](https://claude.ai/directory/btree) (b.tree in the Claude directory)
 
 Each documentation page has a Markdown version at the page URL plus `index.md`, for example https://www.btree.at/doc-agent/index.md.
