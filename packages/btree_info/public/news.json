@@ -1,6 +1,24 @@
 {
   "en": [
     {
+      "version": "Web app 7.12.2 · Server 7.14.0",
+      "versions": [
+        "btree-server-7.14.0",
+        "btree-client-7.12.2"
+      ],
+      "date": "2026-11-18",
+      "items": [
+        {
+          "title": "Readable names for AI tools",
+          "description": "In Claude and other MCP clients, b.tree tools now display readable names such as 'Record feeding' instead of technical IDs. The agent and custom GPT tool specifications show the same names."
+        },
+        {
+          "title": "Pest identification PDF restored",
+          "description": "On the pest maps for small hive beetle and Asian hornet, the identification tab shows the PDF guide again instead of staying empty."
+        }
+      ]
+    },
+    {
       "version": "Web app 7.12.1 · Server 7.13.1",
       "versions": [
         "btree-server-7.13.1",
@@ -5305,6 +5323,24 @@
     }
   ],
   "de": [
+    {
+      "version": "Web-App 7.12.2 · Server 7.14.0",
+      "versions": [
+        "btree-server-7.14.0",
+        "btree-client-7.12.2"
+      ],
+      "date": "2026-11-18",
+      "items": [
+        {
+          "title": "Lesbare Namen für KI-Tools",
+          "description": "In Claude und anderen MCP-Clients zeigen b.tree-Werkzeuge jetzt lesbare Namen wie „Fütterung erfassen“ statt technischer IDs. Die Agenten- und benutzerdefinierten GPT-Werkzeugspezifikationen zeigen dieselben Namen."
+        },
+        {
+          "title": "PDF zur Schädlingsbestimmung wiederhergestellt",
+          "description": "Auf den Schädlingskarten für den Kleinen Bienenstockkäfer und die Asiatische Hornisse zeigt der Bestimmungs-Tab wieder das PDF-Handbuch an, statt leer zu bleiben."
+        }
+      ]
+    },
     {
       "version": "Web-App 7.12.1 · Server 7.13.1",
       "versions": [
