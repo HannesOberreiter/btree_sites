@@ -8,7 +8,6 @@ import apiContent from './doc-api.md?raw';
 import faqsContent from './doc-faqs.md?raw';
 import firstStepsContent from './doc-first-steps.md?raw';
 import otherContent from './doc-other.md?raw';
-import indexContent from './index.mdx?raw';
 import priceContent from './price.md?raw';
 
 interface DocFile {
@@ -35,8 +34,9 @@ Compact machine context for b.tree integrated LLM agents. Source docs stay human
 
 `;
 
+// The home page (index.mdx) is marketing text. llms.txt and the pages
+// below cover its facts, so it is not part of this file.
 const DOC_FILES: DocFile[] = [
-  { rawContent: indexContent, title: 'Introduction' },
   { rawContent: priceContent, title: 'Costs & Price' },
   { rawContent: faqsContent, title: 'FAQs' },
   { rawContent: firstStepsContent, title: 'First Steps' },
@@ -116,8 +116,21 @@ const DROP_SENTENCE_PATTERNS = [
   /i want to say thanks/i,
 ];
 
+// A link whose text is a part of its URL, for example
+// [/table/scale_data](https://app.btree.at/table/scale_data), keeps only
+// the URL. The text adds no information for an agent.
+function compactLinks(text: string): string {
+  return text.replace(
+    /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+    (link: string, label: string, url: string) => {
+      const part = label.replace(/^\/+|\/+$/g, '');
+      return part && url.includes(part) ? url : link;
+    },
+  );
+}
+
 function compactText(text: string): string {
-  let compact = text.trim();
+  let compact = compactLinks(text.trim());
 
   for (const [pattern, replacement] of PHRASE_REPLACEMENTS) {
     compact = compact.replace(pattern, replacement);
@@ -186,23 +199,32 @@ function compactContent(content: string): string {
     .trim();
 }
 
-function generateLatestNews(limit = 5): string {
-  const entries = (newsData as Record<'en' | 'de', NewsEntry[]>).en.slice(
-    0,
-    limit,
-  );
+// The release news grow with each release, so they get a fixed character
+// budget instead of a fixed number of releases. The newest release is always
+// included.
+const MAX_NEWS_CHARS = 3_000;
+const UPDATES_URL = 'https://www.btree.at/updates/';
 
-  return entries
-    .map((entry) => {
-      const items = entry.items
-        .map(
-          (item) =>
-            `- ${compactText(item.title)}: ${compactText(item.description)}`,
-        )
-        .join('\n');
-      return `### ${entry.version} [${entry.date}]\n${items}`;
-    })
-    .join('\n\n');
+function generateLatestNews(): string {
+  const entries = (newsData as Record<'en' | 'de', NewsEntry[]>).en;
+  const sections: string[] = [];
+  let size = 0;
+
+  for (const entry of entries) {
+    const items = entry.items
+      .map(
+        (item) =>
+          `- ${compactText(item.title)}: ${compactText(item.description)}`,
+      )
+      .join('\n');
+    const section = `### ${entry.version} [${entry.date}]\n${items}`;
+    if (sections.length > 0 && size + section.length > MAX_NEWS_CHARS) break;
+    sections.push(section);
+    size += section.length;
+  }
+
+  sections.push(`Older releases: ${UPDATES_URL}`);
+  return sections.join('\n\n');
 }
 
 /** Generates compact docs text for LLM/agent ingestion. */
