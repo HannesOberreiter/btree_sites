@@ -1,25 +1,27 @@
 {
   "en": [
     {
-      "version": "Web app 7.12.2–7.12.3 · Server 7.14.0",
+      "version": "Web app 7.12.2–7.13.0 · Server 7.14.0–7.15.0",
       "versions": [
         "btree-server-7.14.0",
         "btree-client-7.12.2",
-        "btree-client-7.12.3"
+        "btree-client-7.12.3",
+        "btree-server-7.15.0",
+        "btree-client-7.13.0"
       ],
       "date": "2026-11-18",
       "items": [
         {
-          "title": "Readable names for AI tools",
-          "description": "In Claude and other MCP clients, b.tree tools now show readable names like \"Record feeding\" instead of technical IDs. The Agent API and Custom GPT specifications display the same names."
+          "title": "Readable MCP Tool Names",
+          "description": "In Claude and other MCP clients, b.tree tools now display readable names such as \"Record feeding\" instead of internal tool IDs. The Agent API and Custom GPT specifications show the same names."
         },
         {
-          "title": "Pest identification guides visible again",
-          "description": "The identification PDF guides on the Asian hornet and small hive beetle pest maps display again in the identification tab."
+          "title": "Pest PDFs and Dropbox Previews Fixed",
+          "description": "The identification PDF guide on the pest maps for small hive beetle and Asian hornet displays again. Video previews of Dropbox files in the file dialog also play again."
         },
         {
-          "title": "Dropbox video previews restored",
-          "description": "Video previews of Dropbox files in the file dialog play again."
+          "title": "TTN Webhook for LoRaWAN Scales",
+          "description": "LoRaWAN hive scales on The Things Network can now send readings to b.tree via a TTN webhook. Enter the device DevEUI in the scale form and copy the webhook URL from the API settings; the scale data table now shows a second humidity value."
         }
       ]
     },
@@ -5329,25 +5331,27 @@
   ],
   "de": [
     {
-      "version": "Web-App 7.12.2–7.12.3 · Server 7.14.0",
+      "version": "Web-App 7.12.2–7.13.0 · Server 7.14.0–7.15.0",
       "versions": [
         "btree-server-7.14.0",
         "btree-client-7.12.2",
-        "btree-client-7.12.3"
+        "btree-client-7.12.3",
+        "btree-server-7.15.0",
+        "btree-client-7.13.0"
       ],
       "date": "2026-11-18",
       "items": [
         {
-          "title": "Lesbare Namen für KI-Tools",
-          "description": "In Claude und anderen MCP-Clients zeigen b.tree-Tools jetzt lesbare Namen wie „Fütterung erfassen“ statt technischer IDs. Die Agent-API und die Custom-GPT-Spezifikationen zeigen dieselben Namen."
+          "title": "Lesbare MCP-Werkzeugnamen",
+          "description": "In Claude und anderen MCP-Clients zeigen b.tree-Werkzeuge jetzt lesbare Namen wie „Fütterung erfassen“ statt interner Tool-IDs an. Die Agent-API und die Custom-GPT-Spezifikationen zeigen dieselben Namen."
         },
         {
-          "title": "Leitfäden zur Schädlingserkennung wieder sichtbar",
-          "description": "Die PDF-Leitfäden zur Erkennung der Asiatischen Hornisse und des Kleinen Bienenstockkäfers auf den Schädlingskarten werden im Tab „Erkennung“ wieder angezeigt."
+          "title": "Schädlings-PDFs und Dropbox-Vorschauen behoben",
+          "description": "Das Identifikations-PDF auf den Schädlingskarten für Kleinen Bienenstockkäfer und Asiatische Hornisse wird wieder angezeigt. Videovorschauen von Dropbox-Dateien im Dateidialog werden ebenfalls wieder abgespielt."
         },
         {
-          "title": "Dropbox-Videovorschauen wiederhergestellt",
-          "description": "Videovorschauen von Dropbox-Dateien im Dateidialog werden wieder abgespielt."
+          "title": "TTN-Webhook für LoRaWAN-Stockwaagen",
+          "description": "LoRaWAN-Stockwaagen bei The Things Network können jetzt Messwerte über einen TTN-Webhook an b.tree senden. Gib die Geräte-DevEUI im Waagenformular ein und kopiere die Webhook-URL aus den API-Einstellungen; die Waagen-Datentabelle zeigt jetzt einen zweiten Feuchtigkeitswert an."
         }
       ]
     },
