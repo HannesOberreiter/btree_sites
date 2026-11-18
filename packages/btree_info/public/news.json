@@ -1,20 +1,25 @@
 {
   "en": [
     {
-      "version": "Web app 7.12.2 · Server 7.14.0",
+      "version": "Web app 7.12.2–7.12.3 · Server 7.14.0",
       "versions": [
         "btree-server-7.14.0",
-        "btree-client-7.12.2"
+        "btree-client-7.12.2",
+        "btree-client-7.12.3"
       ],
       "date": "2026-11-18",
       "items": [
         {
           "title": "Readable names for AI tools",
-          "description": "In Claude and other MCP clients, b.tree tools now display readable names such as 'Record feeding' instead of technical IDs. The agent and custom GPT tool specifications show the same names."
+          "description": "In Claude and other MCP clients, b.tree tools now show readable names like \"Record feeding\" instead of technical IDs. The Agent API and Custom GPT specifications display the same names."
         },
         {
-          "title": "Pest identification PDF restored",
-          "description": "On the pest maps for small hive beetle and Asian hornet, the identification tab shows the PDF guide again instead of staying empty."
+          "title": "Pest identification guides visible again",
+          "description": "The identification PDF guides on the Asian hornet and small hive beetle pest maps display again in the identification tab."
+        },
+        {
+          "title": "Dropbox video previews restored",
+          "description": "Video previews of Dropbox files in the file dialog play again."
         }
       ]
     },
@@ -5324,20 +5329,25 @@
   ],
   "de": [
     {
-      "version": "Web-App 7.12.2 · Server 7.14.0",
+      "version": "Web-App 7.12.2–7.12.3 · Server 7.14.0",
       "versions": [
         "btree-server-7.14.0",
-        "btree-client-7.12.2"
+        "btree-client-7.12.2",
+        "btree-client-7.12.3"
       ],
       "date": "2026-11-18",
       "items": [
         {
           "title": "Lesbare Namen für KI-Tools",
-          "description": "In Claude und anderen MCP-Clients zeigen b.tree-Werkzeuge jetzt lesbare Namen wie „Fütterung erfassen“ statt technischer IDs. Die Agenten- und benutzerdefinierten GPT-Werkzeugspezifikationen zeigen dieselben Namen."
+          "description": "In Claude und anderen MCP-Clients zeigen b.tree-Tools jetzt lesbare Namen wie „Fütterung erfassen“ statt technischer IDs. Die Agent-API und die Custom-GPT-Spezifikationen zeigen dieselben Namen."
         },
         {
-          "title": "PDF zur Schädlingsbestimmung wiederhergestellt",
-          "description": "Auf den Schädlingskarten für den Kleinen Bienenstockkäfer und die Asiatische Hornisse zeigt der Bestimmungs-Tab wieder das PDF-Handbuch an, statt leer zu bleiben."
+          "title": "Leitfäden zur Schädlingserkennung wieder sichtbar",
+          "description": "Die PDF-Leitfäden zur Erkennung der Asiatischen Hornisse und des Kleinen Bienenstockkäfers auf den Schädlingskarten werden im Tab „Erkennung“ wieder angezeigt."
+        },
+        {
+          "title": "Dropbox-Videovorschauen wiederhergestellt",
+          "description": "Videovorschauen von Dropbox-Dateien im Dateidialog werden wieder abgespielt."
         }
       ]
     },
