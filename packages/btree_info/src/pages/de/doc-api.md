@@ -46,6 +46,17 @@ Die Abfrage-Parameter sind wie folgt definiert:
 - rain: Optional, numerisch für Regenmenge
 - note: Optional, alphanumerischer Text mit maximal 300 Zeichen, hier kann z. B. der Batteriestatus oder Informationen zur Sendeleistung übertragen werden
 
+b.tree speichert einen Wert, den du nicht sendest, als leer (`null`) und nicht als 0. Du kannst auch einen leeren Wert (`weight=`) oder den Text `null` (`weight=null`) senden. Verwende das, wenn ein Sensor ausfällt oder wenn deine Waage den Sensor nicht hat. Die Tabelle und der CSV-Export zeigen dann eine leere Zelle, das Gewichtsdiagramm zeigt eine Lücke, und der Tagesdurchschnitt im Kalender ignoriert den Messwert. Die Erfolgsantwort zeigt `null` für einen leeren Wert. Messwerte von vor dieser Änderung behalten 0 für einen Wert, der nicht gesendet wurde.
+
+#### E-Mail-Warnungen
+
+b.tree sendet in zwei Fällen eine E-Mail an die Administratoren deiner Imkerei:
+
+- Das Gewicht weicht um mehr als 5 kg vom letzten gespeicherten Gewicht der Waage ab. Messwerte ohne Gewicht zwischen den beiden Messwerten verdecken die Änderung nicht.
+- Ein Messwert hat kein Gewicht, aber der Messwert davor hatte eines. Du bekommst diese E-Mail nur für den ersten Messwert ohne Gewicht. Eine ausgefallene Wägezelle sendet daher nicht jede Stunde eine E-Mail.
+
+Ein Gewicht von 0 ist ein echter Wert. Daher sendet eine Änderung von 40 kg auf 0 kg eine E-Mail. Anfragen mit `CREATE_DEMO` senden keine E-Mail. Die Warnungen gelten auch für den TTN-Webhook weiter unten.
+
 #### Server-Antworten
 
 Erfolgreiches Ereignis:
@@ -132,6 +143,8 @@ b.tree liest diese Schlüssel aus `uplink_message.decoded_payload`:
 - `h`: Luftfeuchtigkeit 1, gespeichert als humidity
 - `t_i`: Temperatur 2 (zum Beispiel im Stock), gespeichert als temp2
 - `h_i`: Luftfeuchtigkeit 2 (zum Beispiel im Stock), gespeichert als humidity2
+
+Ein Schlüssel mit dem Wert `null` und ein Schlüssel, den die Payload nicht hat, werden als leer (`null`) gespeichert und nicht als 0. Viele Payload-Formatter senden `null`, wenn ein Sensor ausfällt, zum Beispiel `"weight_kg": null`. b.tree speichert so einen Messwert und sendet die E-Mail-Warnung über das fehlende Gewicht, siehe [E-Mail-Warnungen](#e-mail-warnungen).
 
 b.tree ignoriert alle anderen Schlüssel. Die Zeit des Messwerts ist `uplink_message.received_at`. Das Gerät muss in TTN eine DevEUI haben: Manche ABP-Geräte mit LoRaWAN 1.0.3 oder älter haben keine DevEUI, und b.tree lehnt den Uplink dann mit Status 400 ab.
 

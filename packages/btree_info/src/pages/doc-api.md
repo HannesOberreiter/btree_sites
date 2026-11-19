@@ -45,6 +45,17 @@ The query params are defined as follows:
 - rain: Optional, numeric for rain amount
 - note: Optional, string with a maximum length of 300 characters
 
+b.tree saves a value that you do not send as empty (`null`), not as 0. You can also send an empty value (`weight=`) or the text `null` (`weight=null`). Use this when a sensor fails or when your scale does not have the sensor. The table and the CSV export then show an empty cell, the weight chart shows a gap, and the daily average in the calendar ignores the reading. The success response shows `null` for an empty value. Readings from before this change keep 0 for a value that was not sent.
+
+#### E-mail Warnings
+
+b.tree sends an e-mail to the administrators of your beekeeping operation in two cases:
+
+- The weight differs by more than 5 kg from the last saved weight of the scale. Readings without a weight between the two readings do not hide the change.
+- A reading has no weight, but the reading before it had one. You get this e-mail only for the first reading without a weight, so a failed load cell does not send an e-mail each hour.
+
+A weight of 0 is a real value. Thus a change from 40 kg to 0 kg sends an e-mail. Requests with `CREATE_DEMO` send no e-mail. The warnings also apply to the TTN webhook below.
+
 #### Server Responses
 
 Success:
@@ -131,6 +142,8 @@ b.tree reads these keys from `uplink_message.decoded_payload`:
 - `h`: humidity 1, saved as humidity
 - `t_i`: temperature 2 (for example inside the hive), saved as temp2
 - `h_i`: humidity 2 (for example inside the hive), saved as humidity2
+
+A key with the value `null` and a key that the payload does not have are saved as empty (`null`), not as 0. Many payload formatters send `null` when a sensor fails, for example `"weight_kg": null`. b.tree saves such a reading and sends the e-mail warning about the missing weight, see [E-mail Warnings](#e-mail-warnings).
 
 b.tree ignores all other keys. The time of the reading is `uplink_message.received_at`. The device must have a DevEUI in TTN: some ABP devices with LoRaWAN 1.0.3 or older have no DevEUI, and b.tree then rejects the uplink with status 400.
 
