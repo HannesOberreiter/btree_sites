@@ -1,6 +1,28 @@
 {
   "en": [
     {
+      "version": "Web app 7.14.0 · Server 7.16.0",
+      "versions": [
+        "btree-server-7.16.0",
+        "btree-client-7.14.0"
+      ],
+      "date": "2026-11-19",
+      "items": [
+        {
+          "title": "Show DevEUI in Scale Table",
+          "description": "The hive scale data table can now display the DevEUI of each LoRaWAN scale. Select the \"DevEUI (LoRaWAN)\" column in the column filter, and the search also finds readings by DevEUI."
+        },
+        {
+          "title": "API Activation Buttons Work Again",
+          "description": "The activate and deactivate buttons in Settings under Profile and the API tab work again. After deactivating, the iCal, scale, and TTN URLs stop working until the API is switched on again."
+        },
+        {
+          "title": "Missing Scale Weight Shows Empty",
+          "description": "A hive scale reading without a weight is now stored as empty instead of 0. The scale data table shows an empty cell, the weight chart shows a gap, and the calendar average ignores the reading. You also receive an email when a scale sends a reading without a weight."
+        }
+      ]
+    },
+    {
       "version": "Web app 7.12.2–7.13.0 · Server 7.14.0–7.15.0",
       "versions": [
         "btree-server-7.14.0",
@@ -5330,6 +5352,28 @@
     }
   ],
   "de": [
+    {
+      "version": "Web-App 7.14.0 · Server 7.16.0",
+      "versions": [
+        "btree-server-7.16.0",
+        "btree-client-7.14.0"
+      ],
+      "date": "2026-11-19",
+      "items": [
+        {
+          "title": "DevEUI in der Waagentabelle anzeigen",
+          "description": "Die Datentabelle der Stockwaage kann jetzt die DevEUI jeder LoRaWAN-Waage anzeigen. Wähle die Spalte \"DevEUI (LoRaWAN)\" im Spaltenfilter aus, und die Suche findet auch Messwerte anhand der DevEUI."
+        },
+        {
+          "title": "API-Aktivierungs-Buttons funktionieren wieder",
+          "description": "Die Aktivieren- und Deaktivieren-Buttons in den Einstellungen unter Profil und dem API-Tab funktionieren wieder. Nach dem Deaktivieren funktionieren die iCal-, Waagen- und TTN-URLs nicht mehr, bis die API wieder eingeschaltet wird."
+        },
+        {
+          "title": "Fehlendes Waagengewicht wird leer angezeigt",
+          "description": "Ein Stockwaagen-Messwert ohne Gewicht wird jetzt als leer statt als 0 gespeichert. Die Waagen-Datentabelle zeigt eine leere Zelle, das Gewichtsdiagramm zeigt eine Lücke, und der Kalenderdurchschnitt ignoriert den Messwert. Du erhältst außerdem eine E-Mail, wenn eine Waage einen Messwert ohne Gewicht sendet."
+        }
+      ]
+    },
     {
       "version": "Web-App 7.12.2–7.13.0 · Server 7.14.0–7.15.0",
       "versions": [
