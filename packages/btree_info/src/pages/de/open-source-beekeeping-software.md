@@ -8,7 +8,7 @@ lang: 'de'
 
 Es gibt viele Vergleiche von Imker-Apps, aber die meisten zeigen Apps mit geschlossenem Quellcode. Diese Seite vergleicht nur Imkersoftware mit offenem Quellcode. Bei Open Source kannst du nachlesen, wie die App arbeitet, das Datenformat ist kein Geheimnis, und die Software kann weiterleben, wenn der ursprüngliche Entwickler aufhört.
 
-**Offenlegung:** Ich, Hannes Oberreiter, entwickle b.tree. Ich habe versucht, fair zu bleiben und zu zeigen, wo die anderen Apps besser sind. Alle Angaben stammen von den Webseiten, Dokumentationen und Quellcode-Repositories der Projekte. Ich habe die Apps am 9. November 2026 und die Hardware-Projekte am 11. November 2026 geprüft. Wenn etwas falsch oder veraltet ist, [bearbeite diese Seite auf GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/de/open-source-beekeeping-software.md), und ich korrigiere es.
+**Offenlegung:** Ich, Hannes Oberreiter, entwickle b.tree. Ich habe versucht, fair zu bleiben und zu zeigen, wo die anderen Apps besser sind. Alle Angaben stammen von den Webseiten, Dokumentationen und Quellcode-Repositories der Projekte. Ich habe die Apps am 9. November 2026 und die Hardware-Projekte am 11. November 2026 geprüft (TanenBase am 18. November 2026). Wenn etwas falsch oder veraltet ist, [bearbeite diese Seite auf GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/de/open-source-beekeeping-software.md), und ich korrigiere es.
 
 ## Welche Apps im Vergleich sind
 
@@ -36,7 +36,7 @@ Open-Source-Hardware, zum Beispiel Stockwaagen und eine Abfüllmaschine für Hon
 | Integrierte KI       | WizBee: Erfassung per Text oder Sprache, Fragen zu deinen Daten | Nein                                | Kontrollen per Sprache    | Analyse von Wabenfotos, Assistent         | Nein                                  |
 | API für KI-Agenten   | Agent API (OpenAPI) und MCP                                     | Nein                                | MCP                       | Nein                                      | Nein                                  |
 | Kalender             | iCal-Feed                                                       | Einzelne Termine                    | iCal-Feed                 | Keine Angabe                              | Keine Angabe                          |
-| Stockwaagen          | API für eigene Waagen                                           | BEEP base, API                      | HiveHub-Geräte            | Eigene Sensoren                           | API                                   |
+| Stockwaagen          | API für eigene Waagen, TTN-Webhook (LoRaWAN)                    | BEEP base, API, TTN-Webhook         | HiveHub-Geräte            | Eigene Sensoren                           | API                                   |
 | Datenexport          | CSV, komplettes Backup, Import von beidem                       | Excel, CSV, API                     | Import und Export         | Keine Angabe                              | JSON, Excel, CSV, BeeXML              |
 | Sprachen             | 4                                                               | 15                                  | 10                        | 23                                        | 5                                     |
 | Lizenz               | AGPL-3.0                                                        | AGPL-3.0 (API), MIT (App)           | MIT                       | AGPL-3.0 oder kommerziell                 | AGPL-3.0                              |
@@ -51,7 +51,7 @@ Die Preise und Grenzen der gehosteten Versionen sind vom November 2026.
 
 [Webseite](https://www.btree.at/de/) · [Quellcode](https://github.com/HannesOberreiter/btree)
 
-b.tree ist eine Web-App für die Stockkarte und die Imkereiverwaltung, verfügbar seit 2014. Sie ist um Tabellen aufgebaut, damit du viele Völker, Jahre und Bienenstände vergleichen kannst. Mit einem Eintrag im Quicktool erfasst du eine Aufgabe für alle Völker eines Bienenstands. Fütterungen, Ernten, Behandlungen und Kontrollen importierst du aus CSV-Dateien, und ein komplettes Backup importierst du als neue Imkerei. b.tree zeichnet den Wachskreislauf in Chargen auf, was bei den Aufzeichnungen für die Bio-Imkerei hilft. Mehrere Benutzer arbeiten mit den Rängen Admin, User und Read-Only in einer Imkerei. Der KI-Assistent [WizBee](https://www.wiz-bee.com/) erfasst Fütterungen, Behandlungen, Ernten, Kontrollen und Aufgaben aus Text oder Sprache und beantwortet Fragen zu deinen eigenen Daten. Mit der [Agent API (OpenAPI) und MCP](/de/doc-agent/) verbindest du deinen eigenen KI-Agenten, zum Beispiel Claude oder ChatGPT. Ein [iCal-Feed](/de/doc-api/) zeigt deine Aufgaben in deinem Kalender. b.tree gibt es als Web-App sowie in Google Play und im App Store. Die Apps aus den Stores öffnen dieselbe Web-App: unter Android als Trusted Web Activity (TWA), unter iOS in einer Web-Ansicht. Du kannst dich mit Google oder Apple anmelden.
+b.tree ist eine Web-App für die Stockkarte und die Imkereiverwaltung, verfügbar seit 2014. Sie ist um Tabellen aufgebaut, damit du viele Völker, Jahre und Bienenstände vergleichen kannst. Mit einem Eintrag im Quicktool erfasst du eine Aufgabe für alle Völker eines Bienenstands. Fütterungen, Ernten, Behandlungen und Kontrollen importierst du aus CSV-Dateien, und ein komplettes Backup importierst du als neue Imkerei. b.tree zeichnet den Wachskreislauf in Chargen auf, was bei den Aufzeichnungen für die Bio-Imkerei hilft. Mehrere Benutzer arbeiten mit den Rängen Admin, User und Read-Only in einer Imkerei. Der KI-Assistent [WizBee](https://www.wiz-bee.com/) erfasst Fütterungen, Behandlungen, Ernten, Kontrollen und Aufgaben aus Text oder Sprache und beantwortet Fragen zu deinen eigenen Daten. Mit der [Agent API (OpenAPI) und MCP](/de/doc-agent/) verbindest du deinen eigenen KI-Agenten, zum Beispiel Claude oder ChatGPT. Ein [iCal-Feed](/de/doc-api/) zeigt deine Aufgaben in deinem Kalender. Stockwaagen senden ihre Messwerte über eine [API](/de/doc-api/#stockwaagen), LoRaWAN-Waagen in The Things Network über einen [TTN-Webhook](/de/doc-api/#lorawan-waagen-the-things-network). b.tree gibt es als Web-App sowie in Google Play und im App Store. Die Apps aus den Stores öffnen dieselbe Web-App: unter Android als Trusted Web Activity (TWA), unter iOS in einer Web-Ansicht. Du kannst dich mit Google oder Apple anmelden.
 
 - **Grenzen:** kein Offline-Modus. Der Gratis-Tarif erlaubt 5 Völker und 2 Bienenstände. WizBee, die APIs, iCal, Statistiken und die Wettervorhersage brauchen Premium.
 
@@ -97,9 +97,10 @@ Diese Projekte messen Gewicht, Temperatur und andere Werte am Bienenstock.
 
 - **[Hiveeyes](https://www.hiveeyes.org/):** ein Open-Source-Baukasten für das Monitoring von Bienenstöcken von einer Gruppe Imker aus Berlin. Er verwendet Arduino-Hardware, MQTT, InfluxDB und Grafana. Du kannst ihre gemeinsame Plattform nutzen oder alles auf einem Raspberry Pi betreiben.
 - **[BEEP base](https://beep.nl):** die Stockwaage der BEEP-Stiftung, verbunden mit der BEEP-App.
+- **[TanenBase](https://github.com/hmd83/tanen):** eine LoRaWAN-Stockwaage, die Gewicht und Temperatur misst und jahrelang mit drei AAA-Zellen läuft. Sie sendet die Daten über The Things Network (TTN), und ein TTN-Webhook gibt sie an eine App weiter, zum Beispiel BEEP oder b.tree. Lizenz: Apache-2.0.
 - **[HoneyPi](https://honey-pi.de/):** eine Stockwaage zum Selbstbauen auf Basis eines Raspberry Pi. Ihre Lizenz (CC BY-NC-SA) verbietet die kommerzielle Nutzung, daher ist sie im strengen Sinn nicht Open Source.
 
-b.tree kann Daten von Stockwaagen über seine [API](/de/doc-api/) empfangen.
+b.tree kann Daten von Stockwaagen über seine [API](/de/doc-api/) empfangen. LoRaWAN-Waagen in TTN, die die Payload-Schlüssel von BEEP verwenden, zum Beispiel TanenBase, senden ihre Messwerte mit einem [TTN-Webhook](/de/doc-api/#lorawan-waagen-the-things-network) an b.tree.
 
 ### Honig abfüllen
 
@@ -143,7 +144,7 @@ b.tree gibt es in Google Play und im App Store. Alle fünf Apps laufen im Browse
 
 ### Kann ich eine Stockwaage verbinden?
 
-Ja, bei allen Apps im Vergleich. BEEP und Gratheon haben eigene Hardware. b.tree, BEEP und Openbeehive nehmen über eine API Daten von anderen Waagen an. Hive Pal unterstützt HiveHub-Geräte.
+Ja, bei allen Apps im Vergleich. BEEP und Gratheon haben eigene Hardware. b.tree, BEEP und Openbeehive nehmen über eine API Daten von anderen Waagen an. b.tree und BEEP nehmen auch Daten von LoRaWAN-Waagen in The Things Network (TTN) über einen Webhook an. Hive Pal unterstützt HiveHub-Geräte.
 
 ### Warum ist Open Source für die Stockkarte wichtig?
 

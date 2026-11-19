@@ -8,7 +8,7 @@ lang: 'en'
 
 Many comparisons of beekeeping apps exist, but most of them list closed apps. This page compares only beekeeping software with open source code. With open source code, you can read how the app works, your data format is not a secret, and the software can continue when the original developer stops.
 
-**Disclosure:** I, Hannes Oberreiter, make b.tree. I tried to be fair and to show where the other apps are better. All facts come from the websites, documentation and source code repositories of the projects. I checked the apps on 9 November 2026 and the hardware projects on 11 November 2026. If something is wrong or out of date, [edit this page on GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/open-source-beekeeping-software.md) and I will correct it.
+**Disclosure:** I, Hannes Oberreiter, make b.tree. I tried to be fair and to show where the other apps are better. All facts come from the websites, documentation and source code repositories of the projects. I checked the apps on 9 November 2026 and the hardware projects on 11 November 2026 (TanenBase on 18 November 2026). If something is wrong or out of date, [edit this page on GitHub](https://github.com/HannesOberreiter/btree_sites/blob/main/packages/btree_info/src/pages/open-source-beekeeping-software.md) and I will correct it.
 
 ## Which apps are in the comparison
 
@@ -36,7 +36,7 @@ Open source hardware, for example hive scales and a honey filling machine, is in
 | Integrated AI     | WizBee: entry by text or voice, questions about your data | No                                    | Voice inspections               | Frame photo analysis, assistant         | No                                  |
 | API for AI agents | Agent API (OpenAPI) and MCP                               | No                                    | MCP                             | No                                      | No                                  |
 | Calendar          | iCal feed                                                 | Add single events                     | iCal feed                       | Not stated                              | Not stated                          |
-| Hive scales       | API for own scales                                        | BEEP base, API                        | HiveHub devices                 | Own sensors                             | API                                 |
+| Hive scales       | API for own scales, TTN webhook (LoRaWAN)                 | BEEP base, API, TTN webhook           | HiveHub devices                 | Own sensors                             | API                                 |
 | Data export       | CSV, full backup, import of both                          | Excel, CSV, API                       | Import and export               | Not stated                              | JSON, Excel, CSV, BeeXML            |
 | Languages         | 4                                                         | 15                                    | 10                              | 23                                      | 5                                   |
 | License           | AGPL-3.0                                                  | AGPL-3.0 (API), MIT (app)             | MIT                             | AGPL-3.0 or commercial                  | AGPL-3.0                            |
@@ -51,7 +51,7 @@ The prices and limits of the hosted versions are from November 2026.
 
 [Website](https://www.btree.at) · [Source code](https://github.com/HannesOberreiter/btree)
 
-b.tree is a web app for hive records, available since 2014. It is designed around tables, so you can compare many colonies, years and apiaries. One entry with the Quicktool records a task for all hives of an apiary. You can import feedings, harvests, treatments and inspections from CSV files, and a full backup as a new operation. b.tree records the wax cycle in lots, which helps with the records for organic beekeeping. Several users can work in one operation with the roles Admin, User and Read-Only. The AI assistant [WizBee](https://www.wiz-bee.com/) records feedings, treatments, harvests, inspections and tasks from text or voice, and answers questions about your own data. With the [Agent API (OpenAPI) and MCP](/doc-agent/), you connect your own AI agent, for example Claude or ChatGPT. An [iCal feed](/doc-api/) shows your tasks in your calendar. b.tree is available as a web app and in Google Play and the App Store. The store apps open the same web app: on Android as a Trusted Web Activity (TWA), on iOS in a web view. You can sign in with Google or Apple.
+b.tree is a web app for hive records, available since 2014. It is designed around tables, so you can compare many colonies, years and apiaries. One entry with the Quicktool records a task for all hives of an apiary. You can import feedings, harvests, treatments and inspections from CSV files, and a full backup as a new operation. b.tree records the wax cycle in lots, which helps with the records for organic beekeeping. Several users can work in one operation with the roles Admin, User and Read-Only. The AI assistant [WizBee](https://www.wiz-bee.com/) records feedings, treatments, harvests, inspections and tasks from text or voice, and answers questions about your own data. With the [Agent API (OpenAPI) and MCP](/doc-agent/), you connect your own AI agent, for example Claude or ChatGPT. An [iCal feed](/doc-api/) shows your tasks in your calendar. Hive scales send their readings through an [API](/doc-api/#hive-scales), and LoRaWAN scales on The Things Network through a [TTN webhook](/doc-api/#lorawan-scales-the-things-network). b.tree is available as a web app and in Google Play and the App Store. The store apps open the same web app: on Android as a Trusted Web Activity (TWA), on iOS in a web view. You can sign in with Google or Apple.
 
 - **Limits:** no offline mode. The free plan allows 5 hives and 2 apiaries. WizBee, the APIs, iCal, statistics and the weather forecast need Premium.
 
@@ -97,9 +97,10 @@ These projects measure weight, temperature and other data at the hive.
 
 - **[Hiveeyes](https://www.hiveeyes.org/):** an open source toolkit for beehive monitoring from a group of beekeepers in Berlin. It uses Arduino hardware, MQTT, InfluxDB and Grafana. You can use their shared platform or run it on a Raspberry Pi.
 - **[BEEP base](https://beep.nl/home-english):** the scale of the BEEP foundation, connected to the BEEP app.
+- **[TanenBase](https://github.com/hmd83/tanen):** a LoRaWAN scale that measures weight and temperature and runs for years on three AAA cells. It sends the data over The Things Network (TTN), and a TTN webhook passes them on to an app, for example BEEP or b.tree. License: Apache-2.0.
 - **[HoneyPi](https://honey-pi.de/en/):** a do-it-yourself scale based on a Raspberry Pi. Its license (CC BY-NC-SA) does not allow commercial use, so it is not open source in the strict sense.
 
-b.tree can receive data from hive scales through its [API](/doc-api/).
+b.tree can receive data from hive scales through its [API](/doc-api/). LoRaWAN scales on TTN that use the BEEP payload keys, for example TanenBase, send their readings to b.tree with a [TTN webhook](/doc-api/#lorawan-scales-the-things-network).
 
 ### Honey filling
 
@@ -143,7 +144,7 @@ b.tree is in Google Play and the App Store. All five apps run in the browser and
 
 ### Can I connect a hive scale?
 
-Yes, with all apps in the comparison. BEEP and Gratheon have their own hardware. b.tree, BEEP and Openbeehive accept data from other scales through an API. Hive Pal supports HiveHub devices.
+Yes, with all apps in the comparison. BEEP and Gratheon have their own hardware. b.tree, BEEP and Openbeehive accept data from other scales through an API. b.tree and BEEP also accept data from LoRaWAN scales on The Things Network (TTN) through a webhook. Hive Pal supports HiveHub devices.
 
 ### Why is open source important for beekeeping records?
 
