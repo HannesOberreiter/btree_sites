@@ -1,6 +1,52 @@
 {
   "en": [
     {
+      "version": "Web app 7.14.1 · Server 7.16.1",
+      "versions": [
+        "btree-server-7.16.1",
+        "btree-client-7.14.1"
+      ],
+      "date": "2026-11-20",
+      "items": [
+        {
+          "title": "Rating Statistics with Empty Fields",
+          "description": "The rating statistics table now shows hive and year rows even when a rating field has no value, such as when the field is disabled in settings."
+        },
+        {
+          "title": "Stable Active Company After Deletion",
+          "description": "Deleting a company no longer switches your active company unpredictably. When deleting the active company, you now land in the first company by name."
+        },
+        {
+          "title": "Task History Beyond Two Months",
+          "description": "WizBee and API clients now correctly find your last feeding, treatment, harvest, or checkup even when it was recorded more than two months ago."
+        },
+        {
+          "title": "Consistent Rearing Times",
+          "description": "The rearing table now displays the same time as the rearing form and calendar, fixing a one-hour offset in some time zones."
+        },
+        {
+          "title": "MCP Consent Shows Account Details",
+          "description": "The MCP consent page now displays which b.tree company and login email is authorizing the AI client."
+        },
+        {
+          "title": "Localized MCP Consent Page",
+          "description": "The MCP consent page now uses b.tree's design and shows text in your account language instead of unstyled English."
+        },
+        {
+          "title": "QR Codes Fit Print Dialog",
+          "description": "The print QR dialog now shows all three QR codes per hive row without cutting off the third column."
+        },
+        {
+          "title": "Calendar Updates After Drag",
+          "description": "After dragging a queen rearing step to a new day, opening the step now shows the updated dates."
+        },
+        {
+          "title": "Dropbox Account Email Visible",
+          "description": "The Dropbox settings now show the connected account's email address again."
+        }
+      ]
+    },
+    {
       "version": "Web app 7.14.0 · Server 7.16.0",
       "versions": [
         "btree-server-7.16.0",
@@ -5352,6 +5398,52 @@
     }
   ],
   "de": [
+    {
+      "version": "Web-App 7.14.1 · Server 7.16.1",
+      "versions": [
+        "btree-server-7.16.1",
+        "btree-client-7.14.1"
+      ],
+      "date": "2026-11-20",
+      "items": [
+        {
+          "title": "Bewertungsstatistik mit leeren Feldern",
+          "description": "Die Bewertungsstatistik-Tabelle zeigt jetzt Stock- und Jahreszeilen auch dann an, wenn ein Bewertungsfeld keinen Wert hat, z. B. wenn das Feld in den Einstellungen deaktiviert ist."
+        },
+        {
+          "title": "Stabiles aktives Unternehmen nach dem Löschen",
+          "description": "Das Löschen eines Unternehmens wechselt dein aktives Unternehmen nicht mehr unvorhersehbar. Wenn du das aktive Unternehmen löschst, landest du jetzt beim ersten Unternehmen nach Name."
+        },
+        {
+          "title": "Aufgabenverlauf über zwei Monate hinaus",
+          "description": "WizBee und API-Clients finden jetzt korrekt deine letzte Fütterung, Behandlung, Ernte oder Kontrolle, auch wenn sie vor mehr als zwei Monaten erfasst wurde."
+        },
+        {
+          "title": "Konsistente Zuchtzeiten",
+          "description": "Die Zuchttabelle zeigt jetzt dieselbe Zeit wie das Zuchtformular und der Kalender an und behebt einen einstündigen Versatz in einigen Zeitzonen."
+        },
+        {
+          "title": "MCP-Einwilligung zeigt Kontodetails",
+          "description": "Die MCP-Einwilligungsseite zeigt jetzt an, welches b.tree-Unternehmen und welche Anmelde-E-Mail den KI-Client autorisiert."
+        },
+        {
+          "title": "Lokalisierte MCP-Einwilligungsseite",
+          "description": "Die MCP-Einwilligungsseite verwendet jetzt das b.tree-Design und zeigt Texte in deiner Kontosprache statt unformatiertem Englisch."
+        },
+        {
+          "title": "QR-Codes passen in den Druckdialog",
+          "description": "Der Druck-QR-Dialog zeigt jetzt alle drei QR-Codes pro Stockzeile an, ohne die dritte Spalte abzuschneiden."
+        },
+        {
+          "title": "Kalender aktualisiert sich nach dem Ziehen",
+          "description": "Nach dem Ziehen eines Königinnenzucht-Schritts auf einen neuen Tag zeigt das Öffnen des Schritts jetzt die aktualisierten Daten an."
+        },
+        {
+          "title": "Dropbox-Konto-E-Mail sichtbar",
+          "description": "Die Dropbox-Einstellungen zeigen jetzt wieder die E-Mail-Adresse des verbundenen Kontos an."
+        }
+      ]
+    },
     {
       "version": "Web-App 7.14.0 · Server 7.16.0",
       "versions": [
