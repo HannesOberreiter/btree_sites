@@ -2,16 +2,23 @@
 # Start the b.tree app with demo data on localhost for screenshots.
 # Usage: scripts/screenshots/start-app.sh <path to a btree checkout>
 # Starts fresh MariaDB and Redis containers (shots-mariadb, shots-redis),
-# builds and starts the server on port 8102 and serves the web app on port 9000.
+# builds and starts the server on port 8112 and serves the web app on port 9000.
+# The server does not use port 8102 of env/ci.env, because the server tests of a
+# btree checkout use that port and can run at the same time.
 # Every run drops the database and loads the demo seed again.
+# WizBee works only when MISTRAL_API_KEY is in the environment or in the file
+# .env of this repository. All other pages work without the key.
 set -euo pipefail
+
+REPO_DIR=$(cd "$(dirname "$0")/../.." && pwd)
 
 BTREE_DIR=$(cd "${1:?usage: start-app.sh <path to btree checkout>}" && pwd)
 LOG_DIR=${SHOTS_LOG_DIR:-${TMPDIR:-/tmp}/btree-shots}
 mkdir -p "$LOG_DIR"
 
+API=http://localhost:8112
 # TZ=UTC as in the server container. Some date logic gives wrong results in other time zones.
-export TZ=UTC ENVIRONMENT=ci NODE_ENV=ci DB_PORT=33081 REDIS_PORT=63801 AUTHORIZED=http://localhost:9000
+export TZ=UTC ENVIRONMENT=ci NODE_ENV=ci DB_PORT=33081 REDIS_PORT=63801 AUTHORIZED=http://localhost:9000 PORT=8112 URL=$API
 
 "$(dirname "$0")/stop-app.sh" >/dev/null 2>&1 || true
 
@@ -30,10 +37,17 @@ done
 echo "Loading the demo data"
 (pnpm run migrate && pnpm exec knex seed:run) >"$LOG_DIR/seed.log" 2>&1
 
-nohup node dist/app.bootstrap.js >"$LOG_DIR/server.log" 2>&1 &
+if [ -z "${MISTRAL_API_KEY:-}" ] && [ -f "$REPO_DIR/.env" ]; then
+  MISTRAL_API_KEY=$(grep '^MISTRAL_API_KEY=' "$REPO_DIR/.env" | cut -d= -f2- || true)
+fi
+# Start the server through a link with its own name. The server tests of a
+# btree checkout stop all processes that match "dist/app.bootstrap.js", and a
+# start with this path would stop the demo server too.
+ln -sf "$PWD/dist/app.bootstrap.js" "$LOG_DIR/shots-server.mjs"
+MISTRAL_API_KEY=${MISTRAL_API_KEY:-} nohup node "$LOG_DIR/shots-server.mjs" >"$LOG_DIR/server.log" 2>&1 &
 echo $! >"$LOG_DIR/server.pid"
 for _ in $(seq 1 30); do
-  curl -sf -o /dev/null http://localhost:8102/api/v1/openapi.json && break
+  curl -sf -o /dev/null "$API/api/v1/openapi.json" && break
   sleep 1
 done
 
@@ -42,7 +56,7 @@ echo "Building the web app"
 pnpm install --frozen-lockfile >"$LOG_DIR/web-install.log" 2>&1
 pnpm --dir src-pwa install --frozen-lockfile >"$LOG_DIR/pwa-install.log" 2>&1
 # BRANCH=dev allows API calls to localhost. Matomo needs dummy values or the app does not boot.
-BRANCH=dev BACKEND_URL=http://localhost:8102/api MATOMO_HOST=http://localhost:9999 MATOMO_SITE_ID=1 \
+BRANCH=dev BACKEND_URL="$API/api" MATOMO_HOST=http://localhost:9999 MATOMO_SITE_ID=1 \
   ./node_modules/.bin/quasar build >"$LOG_DIR/web-build.log" 2>&1
 nohup ./node_modules/.bin/vite preview --outDir dist/spa --port 9000 --strictPort >"$LOG_DIR/web.log" 2>&1 &
 echo $! >"$LOG_DIR/web.pid"

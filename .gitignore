@@ -19,4 +19,4 @@ Thumbs.db
 .vscode/settings.json
 .idea/
 *.swp
-videos/
+/videos/
