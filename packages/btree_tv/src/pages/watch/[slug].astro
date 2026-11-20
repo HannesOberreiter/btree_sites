@@ -1,5 +1,11 @@
 ---
-import { videos, BUNNY_LIBRARY_ID } from '../../config';
+import {
+  videos,
+  BUNNY_LIBRARY_ID,
+  thumbnailUrl,
+  transcript,
+  videoObject,
+} from '../../config';
 import Layout from '../../layouts/Layout.astro';
 
 export function getStaticPaths() {
@@ -18,8 +24,14 @@ const title = `${video.title.en} – b.tree Tutorials`;
   lang={lang}
   title={title}
   description={video.description.en}
+  image={thumbnailUrl(video, lang)}
   canonicalUrl={`https://www.btree.tv/watch/${video.slug}/`}
 >
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(videoObject(video, lang))}
+  />
   <section class="hero">
     <h1>{video.title.en}</h1>
     <p>{video.description.en}</p>
@@ -37,6 +49,12 @@ const title = `${video.title.en} – b.tree Tutorials`;
           ></iframe>
         </div>
       </div>
+      <section class="transcript">
+        <h2>Transcript</h2>
+        {transcript(video, lang).map((text) => (
+          <p>{text}</p>
+        ))}
+      </section>
       <div class="watch-nav">
         <a href="/">← All tutorials</a>
       </div>

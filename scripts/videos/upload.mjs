@@ -1,5 +1,8 @@
-// Uploads the videos of videos/out to Bunny Stream and writes their ids to
-// packages/btree_tv/src/videos.json. The website btree.tv reads this file.
+// Uploads the videos of videos/out to Bunny Stream and writes the data that the
+// website btree.tv needs into packages/btree_tv:
+// - src/videos.json: the id, the length and the upload time of each video
+// - src/transcripts.json: the text of the subtitles, one paragraph per scene
+// - public/thumbnails/<episode>-<lang>.jpg: the picture for search engines
 //
 // Usage:
 //   node scripts/videos/upload.mjs [episode ...]   Upload. Default: all episodes.
@@ -11,13 +14,16 @@
 // does not use. A deleted video cannot be restored.
 // Needs BUNNY_API_KEY in the environment or in the root .env.
 import { execFileSync } from 'node:child_process';
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const OUT_DIR = path.join(ROOT, 'videos/out');
-const DATA_FILE = path.join(ROOT, 'packages/btree_tv/src/videos.json');
+const SITE_DIR = path.join(ROOT, 'packages/btree_tv');
+const DATA_FILE = path.join(SITE_DIR, 'src/videos.json');
+const TRANSCRIPT_FILE = path.join(SITE_DIR, 'src/transcripts.json');
+const THUMBNAIL_DIR = path.join(SITE_DIR, 'public/thumbnails');
 const STREAM_URL = 'https://video.bunnycdn.com/library';
 const LANGS = { de: 'Deutsch', en: 'English' };
 // Video states of the Bunny Stream API.
@@ -48,17 +54,53 @@ function post(url, key, body) {
   });
 }
 
-function milliseconds(file) {
-  const seconds = execFileSync('ffprobe', [
-    '-v',
+function seconds(file) {
+  return Number(
+    execFileSync('ffprobe', [
+      '-v',
+      'error',
+      '-show_entries',
+      'format=duration',
+      '-of',
+      'csv=p=0',
+      file,
+    ]).toString(),
+  );
+}
+
+// Bunny serves its own thumbnail only to the player. Search engines need a
+// file on btree.tv, so save the same frame there.
+function saveThumbnail(file, name, time) {
+  mkdirSync(THUMBNAIL_DIR, { recursive: true });
+  execFileSync('ffmpeg', [
+    '-loglevel',
     'error',
-    '-show_entries',
-    'format=duration',
-    '-of',
-    'csv=p=0',
+    '-y',
+    '-ss',
+    String(time),
+    '-i',
     file,
-  ]).toString();
-  return Number(seconds) * 1000;
+    '-frames:v',
+    '1',
+    '-vf',
+    'scale=1280:-2',
+    '-q:v',
+    '4',
+    path.join(THUMBNAIL_DIR, `${name}.jpg`),
+  ]);
+}
+
+// The texts of an SRT file, one per subtitle.
+function paragraphs(srt) {
+  return srt
+    .trim()
+    .split(/\r?\n\r?\n/)
+    .map((block) => block.split(/\r?\n/).slice(2).join(' ').trim())
+    .filter((text) => text !== '');
+}
+
+function writeJson(file, value) {
+  writeFileSync(file, `${JSON.stringify(value, null, 2)}\n`);
 }
 
 // The library has its own key. The account key reads it.
@@ -74,6 +116,7 @@ async function libraryKey(libraryId) {
   return library.ApiKey;
 }
 
+// Uploads one video and returns its data for the website.
 async function upload(library, key, video, lang) {
   const name = `${video.episode}-${lang}`;
   const file = path.join(OUT_DIR, `${name}.mp4`);
@@ -83,9 +126,12 @@ async function upload(library, key, video, lang) {
       throw new Error(`${needed} is missing. Run record.mjs first.`);
     }
   }
+  const length = seconds(file);
+  const thumbnailTime = length * THUMBNAIL_PART;
+  const srt = readFileSync(captions, 'utf8');
   const { guid } = await post(`${library}/videos`, key, {
     title: `b.tree - Tutorial - ${video.title[lang]} - ${LANGS[lang]}`,
-    thumbnailTime: Math.round(milliseconds(file) * THUMBNAIL_PART),
+    thumbnailTime: Math.round(thumbnailTime * 1000),
   });
   await request(`${library}/videos/${guid}`, key, {
     method: 'PUT',
@@ -94,10 +140,16 @@ async function upload(library, key, video, lang) {
   });
   await post(`${library}/videos/${guid}/captions/${lang}`, key, {
     label: LANGS[lang],
-    captionsFile: readFileSync(captions).toString('base64'),
+    captionsFile: Buffer.from(srt).toString('base64'),
   });
+  saveThumbnail(file, name, thumbnailTime);
   console.log(`${name}: uploaded as ${guid}`);
-  return guid;
+  return {
+    id: guid,
+    seconds: Math.round(length),
+    uploaded: new Date().toISOString(),
+    transcript: paragraphs(srt),
+  };
 }
 
 // Bunny encodes a video after the upload. Wait until all videos can play.
@@ -158,6 +210,7 @@ try {
   // No .env file: use the environment only.
 }
 const data = JSON.parse(readFileSync(DATA_FILE, 'utf8'));
+const transcripts = JSON.parse(readFileSync(TRANSCRIPT_FILE, 'utf8'));
 const library = `${STREAM_URL}/${data.libraryId}`;
 const key = await libraryKey(data.libraryId);
 const names = process.argv.slice(2);
@@ -176,10 +229,18 @@ if (names.includes('--prune')) {
       continue;
     }
     for (const lang of Object.keys(LANGS)) {
-      video.ids[lang] = await upload(library, key, video, lang);
-      ids.push(video.ids[lang]);
+      const uploaded = await upload(library, key, video, lang);
+      video.ids[lang] = uploaded.id;
+      video.seconds[lang] = uploaded.seconds;
+      video.uploaded[lang] = uploaded.uploaded;
+      transcripts[video.episode] = {
+        ...transcripts[video.episode],
+        [lang]: uploaded.transcript,
+      };
+      ids.push(uploaded.id);
       // Write after each upload, so that a later error loses no id.
-      writeFileSync(DATA_FILE, `${JSON.stringify(data, null, 2)}\n`);
+      writeJson(DATA_FILE, data);
+      writeJson(TRANSCRIPT_FILE, transcripts);
     }
   }
   await waitUntilFinished(library, key, ids);

@@ -8,9 +8,17 @@ interface Props {
   description: string;
   lang: 'en' | 'de';
   canonicalUrl?: string;
+  // The picture for link previews. Default: the b.tree icon.
+  image?: string;
 }
 
-const { title, description, lang, canonicalUrl } = Astro.props;
+const {
+  title,
+  description,
+  lang,
+  canonicalUrl,
+  image = 'https://www.btree.tv/icons/icon-512x512.png',
+} = Astro.props;
 
 // Build language-switched URL by swapping the /de/ prefix on the current path
 const path = Astro.url.pathname;
@@ -44,10 +52,7 @@ const btreeAtPrefix = lang === 'de' ? '/de' : '';
       property="og:locale:alternate"
       content={lang === 'de' ? 'en_US' : 'de_DE'}
     />
-    <meta
-      property="og:image"
-      content="https://www.btree.tv/icons/icon-512x512.png"
-    />
+    <meta property="og:image" content={image} />
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <link rel="alternate" hreflang="en" href={`https://www.btree.tv${enUrl}`} />
     <link rel="alternate" hreflang="de" href={`https://www.btree.tv${deUrl}`} />
@@ -314,6 +319,13 @@ const btreeAtPrefix = lang === 'de' ? '/de' : '';
         color: var(--text);
         margin-bottom: 0.3rem;
       }
+      .video-info h2 a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .video-info h2 a:hover {
+        color: var(--amber);
+      }
       .video-info p {
         font-size: 0.83rem;
         color: var(--text-muted);
@@ -327,6 +339,17 @@ const btreeAtPrefix = lang === 'de' ? '/de' : '';
         border-radius: var(--radius);
         overflow: hidden;
         border: 1px solid var(--card-border);
+      }
+      .transcript {
+        margin-top: 2rem;
+      }
+      .transcript h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+      }
+      .transcript p {
+        color: var(--text-muted);
+        margin-bottom: 0.75rem;
       }
       .watch-nav {
         margin-top: 1.5rem;
@@ -441,6 +464,7 @@ const btreeAtPrefix = lang === 'de' ? '/de' : '';
         })();
       });
     </script>
+    <slot name="head" />
   </head>
   <body>
     <header>

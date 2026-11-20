@@ -44,7 +44,9 @@ const lang = 'en' as const;
               ></iframe>
             </div>
             <div class="video-info">
-              <h2>{video.title.en}</h2>
+              <h2>
+                <a href={`/watch/${video.slug}/`}>{video.title.en}</a>
+              </h2>
               <p>{video.description.en}</p>
             </div>
           </article>

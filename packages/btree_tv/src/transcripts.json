@@ -1,0 +1,326 @@
+{
+  "intro": {
+    "de": [
+      "b.tree ist deine digitale Stockkarte. Dieses Video zeigt dir die ersten Schritte.",
+      "Die Startseite ist der Kalender. Er zeigt alle Aufgaben, die erledigten und die geplanten. Mit den Pfeilen blätterst du durch die Monate.",
+      "Links ist das Menü mit allen Bereichen. Oben ist die Suche. Sie bringt dich schnell zu einem Volk oder zu einem Stand.",
+      "Beim Volk siehst du alles, was du in einem Jahr gemacht hast: Kontrollen, Fütterungen, Behandlungen und Ernten.",
+      "Jedes Volk steht auf einem Stand. Lege deshalb zuerst einen Stand an. Öffne dazu im Menü Völker und dann die Standkarte.",
+      "Ein Doppelklick auf die Karte legt den Stand an dieser Stelle an. Gib ihm einen Namen und speichere.",
+      "Jetzt kommen die Völker. Mit dem Symbol neben dem Namen legst du mehrere Völker auf einmal an. b.tree nummeriert sie für dich.",
+      "Wähle den Stand. Das Datum der Wanderung sagt, seit wann die Völker dort stehen. Es muss vor deiner ersten Aufgabe liegen.",
+      "Aufgaben trägst du am schnellsten im Quicktool ein: für ein Volk oder gleich für den ganzen Stand.",
+      "In den Einstellungen passt du b.tree an deine Betriebsweise an. Bei den Feldern blendest du ein, was du brauchst.",
+      "In den Optionen legst du eigene Typen an, zum Beispiel für Kontrollen, Behandlungen und Futter.",
+      "Das Fragezeichen unten zeigt dir zu jeder Seite eine kurze Hilfe.",
+      "Das waren die ersten Schritte. Die anderen Videos zeigen dir die einzelnen Bereiche genauer."
+    ],
+    "en": [
+      "b.tree is your digital hive record. This video shows you the first steps.",
+      "The start page is the calendar. It shows all tasks, the done ones and the planned ones. With the arrows, you move through the months.",
+      "On the left is the menu with all areas. At the top is the search. It takes you quickly to a hive or to an apiary.",
+      "At the hive, you see all the work of one year: checkups, feedings, treatments and harvests.",
+      "Each hive stands on an apiary. So create an apiary first. In the menu, open Colonies and then the Apiary Map.",
+      "A double click on the map creates the apiary at this place. Give it a name and save.",
+      "Now add the hives. With the symbol next to the name, you create more than one hive at once. b.tree numbers them for you.",
+      "Select the apiary. The movement date tells since when the hives stand there. It must be before your first task.",
+      "The Quicktool is the fastest way to record tasks: for one hive or for the full apiary at once.",
+      "In the settings, you adapt b.tree to your way of beekeeping. In Fields, you show the fields that you need.",
+      "In Options, you create your own types, for example for checkups, treatments and feed.",
+      "The question mark at the bottom shows a short help text for each page.",
+      "These were the first steps. The other videos show you each area in more detail."
+    ]
+  },
+  "pwa": {
+    "de": [
+      "b.tree ist eine Web-App. Du installierst sie direkt aus dem Browser auf dein Handy. Danach startet sie wie jede andere App vom Startbildschirm.",
+      "Auf Android öffnest du app.btree.at im Browser Chrome. Tippe oben rechts auf die drei Punkte.",
+      "Wähle Zum Startbildschirm hinzufügen. In manchen Versionen heißt der Eintrag App installieren. Bestätige dann mit Installieren.",
+      "Das Symbol von b.tree liegt jetzt auf deinem Startbildschirm. Die App öffnet sich im Vollbild, ohne Adressleiste.",
+      "Auf dem iPhone öffnest du app.btree.at in Safari. Tippe auf das Teilen-Symbol. In neuen Versionen von iOS findest du es hinter den drei Punkten.",
+      "Wische in der Liste nach unten und wähle Zum Home-Bildschirm. Tippe dann auf Hinzufügen.",
+      "Auch hier startet b.tree jetzt als eigene App. Wenn die App nach dem Login fragt, melde dich noch einmal an.",
+      "Neue Versionen von b.tree bekommst du automatisch. Du musst nichts neu installieren."
+    ],
+    "en": [
+      "b.tree is a web app. You install it on your phone directly from the browser. Then it starts from the home screen like any other app.",
+      "On Android, open app.btree.at in the Chrome browser. Tap the three dots at the top right.",
+      "Select Add to Home screen. In some versions, the name of the entry is Install app. Then confirm with Install.",
+      "The b.tree icon is now on your home screen. The app opens in full screen, with no address bar.",
+      "On the iPhone, open app.btree.at in Safari. Tap the Share symbol. In new versions of iOS, you find it behind the three dots.",
+      "Move down in the list and select Add to Home Screen. Then tap Add.",
+      "Here too, b.tree now starts as its own app. If the app asks for the login, sign in again.",
+      "You get new versions of b.tree automatically. It is not necessary to install them."
+    ]
+  },
+  "nfc": {
+    "de": [
+      "Mit einem NFC-Tag am Stock öffnest du die Stockkarte, indem du dein Handy an den Tag hältst. Ohne Kamera und ohne Tippen.",
+      "Die Tags brauchen keine Batterie. Tags aus Kunststoff sind wetterfest, und du bekommst sie günstig im Internet.",
+      "Die Funktion läuft auf Android-Handys mit dem Browser Chrome. iPhones unterstützen sie im Browser nicht.",
+      "Zuerst beschreibst du den Tag. Öffne die Stockkarte und tippe unten rechts auf Teilen.",
+      "Tippe auf Schreiben und halte dein Handy an den Tag. b.tree speichert die Adresse dieser Stockkarte auf dem Tag.",
+      "Zum Lesen schaltest du den NFC-Leser ein. Tippe dafür auf das NFC-Symbol in der Fußzeile. Das Symbol wird grün.",
+      "Halte jetzt dein Handy an einen Tag. b.tree öffnet sofort die Stockkarte von diesem Volk.",
+      "Im Quicktool wählt jeder Tag ein Volk aus. Du gehst von Stock zu Stock und hältst nur dein Handy hin.",
+      "Der Leser bleibt aktiv, bis du wieder auf das Symbol tippst. Einen Tag kannst du jederzeit leeren und neu beschreiben."
+    ],
+    "en": [
+      "With an NFC tag on the hive, you open the hive card when you hold your phone to the tag. No camera and no typing.",
+      "The tags need no battery. Plastic tags are weatherproof, and you can buy them cheaply online.",
+      "The function works on Android phones with the Chrome browser. iPhones do not support it in the browser.",
+      "First, you write the tag. Open the hive card and tap Share at the bottom right.",
+      "Tap Write and hold your phone to the tag. b.tree stores the address of this hive card on the tag.",
+      "To read tags, you switch on the NFC reader. Tap the NFC symbol in the footer. The symbol becomes green.",
+      "Now hold your phone to a tag. b.tree immediately opens the hive card of this colony.",
+      "In the Quicktool, each tag selects a colony. You go from hive to hive and only hold your phone to the tags.",
+      "The reader stays active until you tap the symbol again. You can clear a tag and write it again at any time."
+    ]
+  },
+  "qr": {
+    "de": [
+      "Ein QR-Code am Stock bringt dich mit einem Scan zur richtigen Stockkarte. b.tree erstellt die Codes für dich.",
+      "Öffne die Tabelle deiner Völker und markiere die Völker, für die du einen Code brauchst.",
+      "Im Menü mit den drei Punkten wählst du Drucken QR. b.tree zeigt für jedes Volk einen Code mit seinem Namen.",
+      "Drucke die Codes, am besten auf wetterfeste Etiketten, und klebe einen auf jeden Stock.",
+      "Am Stand scannst du den Code mit der Kamera deines Handys.",
+      "Dein Handy öffnet die Stockkarte von genau diesem Volk. Du siehst die letzten Einträge und kannst gleich weiterarbeiten.",
+      "b.tree hat auch einen eigenen QR-Scanner. Du schaltest ihn in den Einstellungen unter Felder und Lokal ein. Im Quicktool wählt dann jeder Scan ein Volk aus.",
+      "So trägst du eine Kontrolle für mehrere Völker ein, ohne ihre Namen zu tippen."
+    ],
+    "en": [
+      "A QR code on the hive brings you to the correct hive card with one scan. b.tree makes the codes for you.",
+      "Open the table of your colonies and mark the colonies that need a code.",
+      "In the menu with the three dots, select Print QR. b.tree shows a code with the name for each colony.",
+      "Print the codes, best on weatherproof labels, and put one on each hive.",
+      "At the apiary, you scan the code with the camera of your phone.",
+      "Your phone opens the hive card of exactly this colony. You see the last entries and can continue your work immediately.",
+      "b.tree also has its own QR scanner. You switch it on in the settings under Fields and Local. In the Quicktool, each scan then selects a colony.",
+      "So you enter a checkup for many colonies and do not type their names."
+    ]
+  },
+  "users": {
+    "de": [
+      "In b.tree kannst du mehrere Imkereien führen und andere Imker in deine Imkerei einladen.",
+      "Öffne die Einstellungen und dann Imkerei. Hier siehst du deine aktive Imkerei und ihren Status.",
+      "Für einen Gemeinschaftsstand oder einen zweiten Betrieb legst du eine neue Imkerei an.",
+      "Die neue Imkerei ist leer und hat eigene Einstellungen. Premium gilt pro Imkerei, nicht pro Benutzer. Hier wechselst du zwischen deinen Imkereien.",
+      "Im Reiter Benutzer lädst du andere ein. Gib die E-Mail-Adresse ein. Wer noch kein Konto hat, bekommt eine E-Mail und legt ein Passwort fest.",
+      "Ein neuer Benutzer darf nur lesen.",
+      "Mit einem Klick änderst du das Recht. Ein User trägt Aufgaben ein, legt aber keine Völker und Stände an.",
+      "Ein Admin darf alles und verwaltet auch die Benutzer.",
+      "Arbeitet jemand nicht mehr mit, dann gib ihm besser nur Lesezugriff, statt ihn zu entfernen. So bleibt sein Name bei seinen Aufgaben.",
+      "Als Admin lädst du alle Daten der Imkerei herunter. Mach das, bevor du eine Imkerei löschst. Gelöschte Daten kann niemand wiederherstellen.",
+      "Jeder Benutzer sieht die ganze Imkerei. Für getrennte Bereiche legst du mehrere Imkereien an."
+    ],
+    "en": [
+      "In b.tree, you can run more than one company and invite other beekeepers to your company.",
+      "Open Settings, then Company. Here you see your active company and its status.",
+      "For a club apiary or a second business, create a new company.",
+      "The new company is empty and has its own settings. Premium applies per company, not per user. Here you switch between your companies.",
+      "On the Users tab, you invite others. Enter the e-mail address. A person without an account gets an e-mail and sets a password.",
+      "A new user can only read.",
+      "One click changes the access right. A User records tasks, but cannot create hives and apiaries.",
+      "An Admin can do everything and also manages the users.",
+      "When a person stops working with you, give read-only access instead of removing the user. Then the name stays on the tasks of that person.",
+      "As an Admin, you can download all data of the company. Do this before you delete a company. Nobody can restore deleted data.",
+      "Each user sees the full company. For separate areas, create more than one company."
+    ]
+  },
+  "ical": {
+    "de": [
+      "Mit der iCal-URL siehst du deine b.tree Termine in deinem eigenen Kalender, zum Beispiel in Google Kalender oder am Handy.",
+      "Öffne im Profil den Reiter API. Gib dein Passwort ein und klicke auf Aktivieren. Das gilt dann für alle Benutzer deiner Imkerei.",
+      "Klicke auf API-Details freischalten. Jetzt siehst du deine Links.",
+      "Wähle aus, welche Einträge du im Kalender haben willst, zum Beispiel deine ToDos.",
+      "Kopiere den Link. Der Download daneben ist nur eine einmalige Datei und wird nicht aktualisiert.",
+      "Öffne jetzt deinen Kalender, zum Beispiel Google Kalender.",
+      "Klicke bei Weitere Kalender auf das Plus, wähle Per URL und füge den Link ein.",
+      "Deine b.tree Termine sind jetzt in deinem Kalender. Er gleicht sie regelmäßig ab. Dort kannst du sie nur lesen, nicht ändern."
+    ],
+    "en": [
+      "With the iCal URL, you see your b.tree tasks in your own calendar, for example in Google Calendar or on your phone.",
+      "In your profile, open the API tab. Enter your password and click Activate. This then applies to all users of your company.",
+      "Now click the button Unlock API Details. It shows your iCal links.",
+      "Choose which entries you want in your calendar, for example your todos.",
+      "Copy the link. The download next to it is a one-time file that does not update.",
+      "Now open your calendar, for example Google Calendar.",
+      "Next to Other calendars, click the plus, choose From URL, and paste the link.",
+      "Your b.tree tasks are now in your calendar. It syncs them regularly. There, you can only read them, not change them."
+    ]
+  },
+  "dropbox": {
+    "de": [
+      "Fotos und Dokumente brauchen viel Platz. b.tree speichert sie deshalb nicht selbst. Du verbindest dein Dropbox-Konto, und b.tree merkt sich nur, welche Datei zu welcher Arbeit gehört.",
+      "Du findest die Seite unter Einstellungen, Dropbox. Pro Imkerei verbindest du ein Konto. Klicke auf den grünen Knopf.",
+      "Dropbox fragt jetzt, ob b.tree zugreifen darf. b.tree bekommt einen eigenen Ordner. Deine anderen Dateien sieht b.tree nicht.",
+      "Jetzt siehst du hier deine Dateien. Alle Benutzer deiner Imkerei können sie öffnen. Du legst neue Ordner an und lädst Dateien hoch.",
+      "Ein Klick auf eine Datei zeigt dir die Vorschau.",
+      "Damit du eine Datei an eine Arbeit hängen kannst, schaltest du ein Feld ein. Es steht unter Einstellungen, Felder, ganz unten bei Allgemein.",
+      "Das Quicktool hat jetzt das Feld URL. Mit dem Pfeil lädst du ein neues Foto hoch, zum Beispiel vom Handy direkt am Stand. Mit dem Dropbox-Symbol wählst du eine vorhandene Datei aus.",
+      "Wenn du speicherst, gehört das Foto zu dieser Kontrolle. Ein Klick auf das Feld zeigt es dir wieder.",
+      "Das Feld gibt es auch bei Ständen, Königinnen und ToDos. Die Verbindung beendest du jederzeit mit Zugriff löschen. Deine Dateien bleiben in deiner Dropbox."
+    ],
+    "en": [
+      "Photos and documents need a lot of space. So b.tree does not store them itself. You connect your Dropbox account, and b.tree only remembers which file belongs to which task.",
+      "You find the page under Settings, Dropbox. You connect one account per company. Click the green button.",
+      "Dropbox now asks if b.tree may have access. b.tree gets its own folder. It does not see your other files.",
+      "Now you see your files here. All users of your company can open them. You create new folders and upload files.",
+      "A click on a file shows you the preview.",
+      "To attach a file to a task, you switch on one field. You find it under Settings, Fields, at the very bottom under General.",
+      "The Quicktool now has the URL field. With the arrow, you upload a new photo, for example from your phone at the apiary. With the Dropbox icon, you select a file that is already there.",
+      "When you save, the photo belongs to this checkup. A click on the field shows it again.",
+      "The field is also there for apiaries, queens and todos. You can end the connection at any time with Delete access. Your files stay in your Dropbox."
+    ]
+  },
+  "rearing": {
+    "de": [
+      "Mit b.tree planst du deine Königinnenzucht. Eine Methode legt die Schritte fest. Eine Zuchtserie berechnet daraus die Termine.",
+      "Öffne im Menü Königinnenzucht und dann Methode. Eine Methode ist schon angelegt, mit ihren Schritten und Wartezeiten.",
+      "Passe sie an deine Betriebsweise an. Klicke auf einen Schritt. Mit Plus und Minus änderst du die Wartezeit, mit den Pfeilen die Reihenfolge.",
+      "Eigene Schritte legst du im Reiter Zuchtschritte an. Mit Hinzufügen erstellst du eine weitere Methode.",
+      "Jetzt kommt die Zuchtserie. Öffne Königinnenzucht und Hinzufügen, und gib der Serie einen Namen.",
+      "Wähle Datum und Uhrzeit. Wähle dann den Schritt, für den dieser Termin gilt. Hier ist es das Umlarven.",
+      "b.tree rechnet alle anderen Schritte aus, die davor und die danach. Speichere die Serie.",
+      "Im Kalender siehst du alle Schritte der Serie.",
+      "Ein Klick auf einen Schritt zeigt den ganzen Zeitplan.",
+      "Passt ein Termin nicht, dann zieh den Schritt auf einen anderen Tag. Alle anderen Schritte wandern mit.",
+      "Noch ein Hinweis: Eine gelöschte Methode kann niemand wiederherstellen. Benenne eine alte Methode lieber um."
+    ],
+    "en": [
+      "With b.tree, you plan your queen rearing. A method defines the steps. A series calculates the dates from the method.",
+      "In the menu, open Queen rearing and then Method. One method is there from the start, with its steps and waiting times.",
+      "Adapt it to your way of beekeeping. Click a step. Plus and minus change the waiting time, and the arrows change the order.",
+      "On the Rearing Steps tab, you create your own steps. With Add, you create another method.",
+      "Now create the series. Open Queen rearing and Add, and give the series a name.",
+      "Select the date and the time. Then select the step that this date is for. Here it is the grafting.",
+      "b.tree calculates all other steps, the ones before and the ones after. Save the series.",
+      "In the calendar, you see all steps of the series.",
+      "A click on a step shows the full schedule.",
+      "When a date does not fit, drag the step to another day. All other steps move with it.",
+      "One more note: nobody can restore a deleted method. It is better to rename an old method."
+    ]
+  },
+  "stock": {
+    "de": [
+      "b.tree führt dein Lager mit. Wenn du fütterst, bucht die App den Zucker automatisch aus. Dafür verbindest du einmal den Fütterungstyp mit einem Lagerartikel.",
+      "Im Lagerbestand siehst du, wie viel von jedem Artikel da ist. Hier sind es knapp 460 Kilo Zucker.",
+      "Öffne die Einstellungen und dann Optionen. Wähle oben die Fütterungstypen. Die Spalte Lagerverbrauch zeigt, welcher Typ schon verbunden ist.",
+      "Markiere einen Typ und öffne Bearbeiten. Mit Produkt hinzufügen wählst du den Lagerartikel.",
+      "Dann kommt die Menge pro Einheit. Der Zuckerwasser-Rechner hilft dir: Ein Liter Zuckerwasser eins zu eins enthält 0,63 Kilo Zucker. Speichere mit Aktualisieren.",
+      "Jetzt fütterst du wie immer. Im Quicktool wählst du Fütterung, den Stand, den Typ und die Menge. Hier sind es 5 Liter pro Volk.",
+      "Beim Speichern meldet b.tree, wie viel Zucker aus dem Lager geht.",
+      "Bei den Lagerbuchungen zeigt jede Buchung, von welcher Fütterung sie kommt.",
+      "Und der Lagerbestand ist um diesen Zucker kleiner.",
+      "Das geht auch bei Behandlungen. Bei der Ernte läuft es umgekehrt: Sie bucht den Honig ins Lager ein."
+    ],
+    "en": [
+      "b.tree keeps your stock up to date. When you feed, the app books the sugar out automatically. For this, you connect the feeding type with a stock item once.",
+      "The stock page shows the quantity of each item. Here it is almost 460 kilograms of sugar.",
+      "Open Settings and then Options. At the top, select the feeding types. The column Stock use shows which type is connected.",
+      "Mark a type and open Edit. With Add product, you select the stock item.",
+      "Then enter the quantity per unit. The sugar water calculator helps you: one litre of sugar water one to one contains 0.63 kilograms of sugar. Save with Update.",
+      "Now you feed as usual. In the Quicktool, select Feeding, the apiary, the type and the quantity. Here it is 5 litres for each hive.",
+      "When you save, b.tree tells you how much sugar leaves the stock.",
+      "In the stock movements, each movement shows the feeding that it comes from.",
+      "And the stock is smaller by this sugar.",
+      "This works for treatments too. For a harvest, it works the other way: the harvest books the honey into the stock."
+    ]
+  },
+  "wax": {
+    "de": [
+      "Woher kommt das Wachs in deinen Mittelwänden? Der Wachskreislauf in b.tree gibt die Antwort. Er führt dein Wachs in Losen, von der Herkunft bis zurück in die Völker.",
+      "Du findest ihn im Menü unter Lager. Die Produktübersicht zeigt den Bestand pro Wachsprodukt.",
+      "Unter Bestand und Lose hat jedes Los seine Nummer. Mit dem Schalter siehst du auch die Lose, die schon leer sind.",
+      "Die Arbeitsgänge sind dein Wachsjournal. Hier wurde zuerst Deckelwachs eingelagert, dann Wachs aus Altwaben, jeweils mit den Völkern, von denen es stammt.",
+      "Danach ging das Wachs zur Lohnverarbeitung. Aus 7,8 Kilo Wachsblock wurden 7,4 Kilo Mittelwände. b.tree berechnet die Differenz als Verarbeitungsverlust.",
+      "Eine neue Bewegung trägst du mit Wachs buchen ein. Es gibt sieben Arbeitsgänge, vom Einlagern über Zukauf und Verarbeitung bis zum Verkauf.",
+      "Hier kommen Mittelwände in die Völker. Wähle den Stand, das Los und die Menge, und speichere.",
+      "Der Arbeitsgang steht jetzt im Journal, mit den Völkern. Und der Bestand des Loses ist kleiner.",
+      "Einen Fehler korrigierst du mit dem Storno. Es bucht eine Gegenbuchung, und das Journal bleibt vollständig. Mit Export bekommst du alles als Datei, zum Beispiel für deine Bio-Dokumentation."
+    ],
+    "en": [
+      "Where does the wax in your foundation come from? The wax cycle in b.tree gives the answer. It keeps your wax in lots, from the origin back into the hives.",
+      "You find it in the menu under Storage. The product summary shows the stock of each wax product.",
+      "Under Stock and lots, each lot has its number. With the switch, you also see the lots that are empty.",
+      "The operations are your wax journal. Here, wax from cappings was stored first, then wax from old combs, each with the hives that it comes from.",
+      "Then the wax went to contract processing. 7.8 kilograms of wax block became 7.4 kilograms of foundation. b.tree calculates the difference as the processing loss.",
+      "You enter a new movement with Book wax. There are seven operations, from storing through purchase and processing to the sale.",
+      "Here, foundation goes into the hives. Select the apiary, the lot and the quantity, and save.",
+      "The operation is in the journal now, with the hives. And the stock of the lot is smaller.",
+      "You correct an error with the reversal. It books a counter-entry, and the journal stays complete. With Export, you get all data as a file, for example for your organic records."
+    ]
+  },
+  "statistics": {
+    "de": [
+      "Du trägst das ganze Jahr Daten ein. Mit Premium wertet b.tree sie für dich aus: Ernte, Fütterung, Behandlung, Varroa und die Zahl deiner Völker.",
+      "Öffne im Menü die Statistiken und dann die Ernte Statistik. Sie vergleicht deine Jahre. In Klammer steht die Zahl der Völker.",
+      "Der Durchschnitt zeigt den Ertrag pro Volk. So siehst du, ob ein Jahr wirklich besser war. Auch den Wassergehalt kannst du vergleichen.",
+      "Unter Stände vergleichst du deine Bienenstände, unter Typen deine Honigsorten. Mit Minus und Plus wechselst du das Jahr.",
+      "Der Filter schränkt die Auswertung ein, zum Beispiel auf einen Typ, einen Stand oder einzelne Völker.",
+      "Die Tabelle Ernte Stock zeigt die Summen pro Volk und Jahr. Sortiere nach der Menge, und du findest deine besten Völker.",
+      "Für Fütterung und Behandlung gibt es die gleichen Auswertungen.",
+      "Die Varroa Statistik nimmt den Milbenfall aus deinen Kontrollen. Wähle einen Stand. Du siehst Minimum, Maximum und Durchschnitt pro Volk, und darunter den Verlauf.",
+      "Und Anzahl Völker zeigt, wie viele Völker an jedem Stand stehen und wie sich dein Bestand entwickelt.",
+      "Jedes Diagramm kannst du als Bild speichern. So hast du die Zahlen deiner Imkerei immer zur Hand."
+    ],
+    "en": [
+      "You enter data all year. With Premium, b.tree evaluates the data for you: harvest, feeding, treatment, Varroa and the number of your colonies.",
+      "In the menu, open Statistics and then the harvest statistic. It compares your years. The number in brackets is the number of colonies.",
+      "The average shows the yield for each colony. So you see if a year was really better. You can also compare the water content.",
+      "Under Apiaries, you compare your apiaries, and under Types your kinds of honey. With minus and plus, you change the year.",
+      "The filter limits the evaluation, for example to one type, one apiary or some colonies.",
+      "The table Harvest Hive shows the totals for each colony and year. Sort by the amount, and you find your best colonies.",
+      "Feeding and treatment have the same evaluations.",
+      "The Varroa statistic uses the mite counts from your checkups. Select an apiary. You see the minimum, the maximum and the average for each colony, and below them the trend.",
+      "And Hive count shows how many colonies are at each apiary and how the number of your colonies changes.",
+      "You can save each chart as an image. So you always have the numbers of your apiary business at hand."
+    ]
+  },
+  "wizbee": {
+    "de": [
+      "WizBee ist der KI-Assistent in b.tree. Er kennt deine Völker, deine Arbeiten und die Anleitung von b.tree. WizBee gehört zu Premium. Du findest ihn im Menü unter Werkzeuge.",
+      "Stell deine Frage in normalen Worten, oder klick auf ein Beispiel. Wir fragen, wie viele Völker und Stände wir haben.",
+      "WizBee liest jetzt deine Daten. Die grauen Zeilen zeigen, was er nachschaut. Nach ein paar Sekunden steht die Antwort da.",
+      "WizBee trägt auch Arbeiten für dich ein. Schreib einfach, was du gemacht hast.",
+      "Vor dem Speichern zeigt WizBee, was er eintragen will, und fragt nach. Erst wenn du zustimmst, speichert er.",
+      "Jetzt ist die Kontrolle gespeichert, wie jede andere Arbeit in b.tree.",
+      "Mit dem Mikrofon sprichst du deine Frage, statt zu tippen. Unter dem Chat steht das Budget deiner Imkerei für diesen Monat. Deine Fragen und Daten gehen zur Verarbeitung an Mistral AI.",
+      "Mit dem Symbol oben rechts öffnest du WizBee auf jeder Seite. Prüfe wichtige Antworten selbst nach, denn eine KI kann sich irren."
+    ],
+    "en": [
+      "WizBee is the AI assistant in b.tree. It knows your colonies, your tasks and the b.tree manual. WizBee is part of Premium. You find it in the menu under Tools.",
+      "Ask your question in plain words, or click an example. We ask how many colonies and apiaries we have.",
+      "WizBee now reads your data. The grey lines show what it looks up. After a few seconds, the answer is there.",
+      "WizBee also records tasks for you. Simply write what you did.",
+      "Before it saves, WizBee shows what it wants to record and asks you. It saves only after you agree.",
+      "Now the checkup is saved, like every other task in b.tree.",
+      "With the microphone, you speak your question in place of typing. Below the chat, you see the budget of your company for this month. Your questions and data go to Mistral AI for processing.",
+      "With the icon at the top right, you open WizBee on every page. Check important answers yourself, because an AI can be wrong."
+    ]
+  },
+  "agent": {
+    "de": [
+      "Du kannst deinen eigenen KI-Assistenten mit b.tree verbinden, zum Beispiel Claude, ChatGPT oder Le Chat. Er liest deine Daten und trägt Arbeiten für dich ein. Dafür gibt es zwei Wege.",
+      "Der erste Weg ist MCP. Im Profil auf dem Tab MCP steht die Adresse des b.tree Servers. Kopiere sie.",
+      "In deinem KI-Programm fügst du diese Adresse als neuen Konnektor ein und klickst auf Verbinden.",
+      "Jetzt öffnet sich b.tree und fragt, ob das Programm auf deine Daten zugreifen darf. Du meldest dich an und erlaubst den Zugriff. Du gibst kein Passwort und keinen Schlüssel weiter.",
+      "Die Verbindung steht jetzt in deinem Profil. Hier kannst du sie jederzeit widerrufen.",
+      "Der zweite Weg ist ein Agent Key, für eigene Agenten und Automationen. Gib dem Schlüssel einen Namen und erstelle ihn.",
+      "b.tree zeigt den Schlüssel nur dieses eine Mal. Kopiere ihn sofort und bewahre ihn sicher auf.",
+      "Darunter steht ein fertiger Prompt. Er erklärt deinem Agenten, wie er die b.tree API verwendet.",
+      "Beide Wege gehören zu Premium. Über MCP arbeitet der Assistent mit deinen Rechten: Wer nur lesen darf, kann auch über den Assistenten nichts ändern."
+    ],
+    "en": [
+      "You can connect your own AI assistant with b.tree, for example Claude, ChatGPT or Le Chat. It reads your data and records your work for you. There are two ways to do this.",
+      "The first way is MCP. In the profile, the MCP tab shows the address of the b.tree server. Copy it.",
+      "In your AI program, you paste this address as a new connector and click Connect.",
+      "Now b.tree opens and asks if the program may use your data. You sign in and allow the access. You do not give a password or a key to the program.",
+      "The connection is now in your profile. You can revoke it here at any time.",
+      "The second way is an Agent Key, for your own agents and automations. Give the key a name and create it.",
+      "b.tree shows the key only this one time. Copy it immediately and keep it safe.",
+      "Below is a ready prompt. It tells your agent how to use the b.tree API.",
+      "Both ways are part of Premium. With MCP, the assistant works with your rights: a read-only user cannot change data through the assistant."
+    ]
+  }
+}

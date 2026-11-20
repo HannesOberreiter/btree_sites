@@ -13,8 +13,16 @@
         "de": "Ein erster Überblick über die b.tree Imkerei-App."
       },
       "ids": {
-        "en": "10bf24d4-5f41-441b-a343-adbf72a45ea0",
-        "de": "c9fdbc64-7a95-4e01-a95a-9539cb673feb"
+        "en": "e978f8c2-50a9-4f9a-8c76-59b19ad50d91",
+        "de": "fac8e7a3-5fdc-461c-b495-95ad076a972b"
+      },
+      "seconds": {
+        "en": 92,
+        "de": 94
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:19:26.097Z",
+        "de": "2026-11-20T06:19:20.753Z"
       }
     },
     {
@@ -29,8 +37,16 @@
         "de": "b.tree als App auf dem Android-Handy oder iPhone installieren."
       },
       "ids": {
-        "en": "bb46550a-1386-4859-bcc6-c3d437746965",
-        "de": "8fee4ee1-fc74-4e57-9cdf-95b8c05fbf2b"
+        "en": "3d845cb4-06d4-48a7-8902-9433aedc7ed2",
+        "de": "402fd1d7-827e-44e4-b402-b21c6f2717a4"
+      },
+      "seconds": {
+        "en": 58,
+        "de": 64
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:19:30.287Z",
+        "de": "2026-11-20T06:19:28.586Z"
       }
     },
     {
@@ -45,8 +61,16 @@
         "de": "Mit einem NFC-Tag am Stock die Stockkarte öffnen."
       },
       "ids": {
-        "en": "80e1bb45-673b-483c-bf83-6e24edc8704a",
-        "de": "d849367c-2440-4b42-b493-5d4365359300"
+        "en": "70e22768-45ed-4d2b-b1e2-178bbc00d906",
+        "de": "d2346b40-37a2-4caa-994a-0cf919f057e2"
+      },
+      "seconds": {
+        "en": 62,
+        "de": 69
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:19:35.550Z",
+        "de": "2026-11-20T06:19:32.494Z"
       }
     },
     {
@@ -61,8 +85,16 @@
         "de": "QR-Codes drucken und scannen, um Stockkarten zu öffnen."
       },
       "ids": {
-        "en": "069d6b44-d8c1-4fcf-8f6c-b333522beaac",
-        "de": "223307be-e6a0-45df-a6c4-89e007b49d0c"
+        "en": "378d4be7-8bda-43c5-8609-29d30476c52f",
+        "de": "56b7016a-9216-43f2-b934-cd58f399af62"
+      },
+      "seconds": {
+        "en": 50,
+        "de": 55
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:19:41.909Z",
+        "de": "2026-11-20T06:19:38.267Z"
       }
     },
     {
@@ -77,8 +109,16 @@
         "de": "Mehrere Imkereien führen, andere Imker einladen und ihre Rechte festlegen."
       },
       "ids": {
-        "en": "b6e43345-1dc8-4ee5-b9fe-f0888ddb5aed",
-        "de": "50fada2a-560f-4643-a94b-88235309c20c"
+        "en": "d282c92b-c701-4a5a-848e-f237d935a43a",
+        "de": "fd003816-234d-4bdb-98dc-0a974016be1e"
+      },
+      "seconds": {
+        "en": 71,
+        "de": 76
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:19:48.576Z",
+        "de": "2026-11-20T06:19:46.194Z"
       }
     },
     {
@@ -93,8 +133,16 @@
         "de": "b.tree-Aufgaben im eigenen Kalender anzeigen."
       },
       "ids": {
-        "en": "0a81a161-3614-4132-a55a-a4976a063e32",
-        "de": "d4d9f5f9-2901-479b-8016-723ed8f08623"
+        "en": "2fa8ec17-6896-48d0-846f-ca08c0111931",
+        "de": "0adc389e-cfa8-46f0-a16a-db106b6880b0"
+      },
+      "seconds": {
+        "en": 48,
+        "de": 50
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:19:52.040Z",
+        "de": "2026-11-20T06:19:50.308Z"
       }
     },
     {
@@ -109,8 +157,16 @@
         "de": "Dropbox verbinden und Fotos und Dokumente an deine Arbeiten hängen."
       },
       "ids": {
-        "en": "ad33a8b6-4f66-4e95-b2e7-0fc9c707b01c",
-        "de": "7b7cf43b-a0ad-4e3a-b0ec-20233ae189f8"
+        "en": "27270661-18e7-4bc4-9007-eccb70349532",
+        "de": "918ae9ff-b934-4b19-b4ac-470ff54a1901"
+      },
+      "seconds": {
+        "en": 83,
+        "de": 87
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:19:58.183Z",
+        "de": "2026-11-20T06:19:55.322Z"
       }
     },
     {
@@ -125,8 +181,16 @@
         "de": "Eine Zuchtmethode einrichten und eine Zuchtserie mit allen Terminen planen."
       },
       "ids": {
-        "en": "f1acd451-44c8-4328-b00b-1039610cee3f",
-        "de": "733cbe43-1210-4680-9c45-229c7c6d1459"
+        "en": "a4415648-d193-4aba-9746-01c2f496282e",
+        "de": "e6dc4b74-7cf3-44a8-afab-a7d609e1f875"
+      },
+      "seconds": {
+        "en": 73,
+        "de": 82
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:20:03.809Z",
+        "de": "2026-11-20T06:20:00.748Z"
       }
     },
     {
@@ -141,8 +205,16 @@
         "de": "Einen Fütterungstyp mit einem Lagerartikel verbinden, damit jede Fütterung den Zucker ausbucht."
       },
       "ids": {
-        "en": "c0ea1b57-4500-4727-a458-5fcbd8bb5c6f",
-        "de": "1beefe9a-d655-4838-ad99-2214d1755eca"
+        "en": "9dee704e-1be0-4b14-a55c-cd9c267c9943",
+        "de": "54a46131-07fb-4afc-9a5a-7149e4f93241"
+      },
+      "seconds": {
+        "en": 72,
+        "de": 76
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:20:08.971Z",
+        "de": "2026-11-20T06:20:06.510Z"
       }
     },
     {
@@ -157,8 +229,16 @@
         "de": "Das eigene Wachs in Losen führen, von der Herkunft bis zurück in die Völker."
       },
       "ids": {
-        "en": "e9aaad0b-acdf-4a4a-bae4-583cf579f6a9",
-        "de": "517daaa8-ce4e-4c7f-9038-1003ae1f3d83"
+        "en": "b005074e-0b7e-4333-8620-7b4bf623dd63",
+        "de": "80d3b185-1a2c-4968-9be1-75635b598faa"
+      },
+      "seconds": {
+        "en": 79,
+        "de": 81
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:20:14.672Z",
+        "de": "2026-11-20T06:20:12.421Z"
       }
     },
     {
@@ -173,8 +253,16 @@
         "de": "Diagramme und Tabellen zu Ernte, Fütterung, Behandlung, Varroa und Völkerzahl."
       },
       "ids": {
-        "en": "ffc3096d-0847-4242-8b52-ba5fec38335b",
-        "de": "7a1cfa67-154d-47f9-bbab-2fa56bc3a005"
+        "en": "b25396ff-009a-4bb0-a4a6-10ed715a0165",
+        "de": "d366d0b1-08d2-4cb3-85ae-54ea9e754054"
+      },
+      "seconds": {
+        "en": 81,
+        "de": 81
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:20:21.327Z",
+        "de": "2026-11-20T06:20:18.356Z"
       }
     },
     {
@@ -189,8 +277,16 @@
         "de": "WizBee zu deinen Daten fragen und Arbeiten eintragen lassen."
       },
       "ids": {
-        "en": "43e68d05-98c0-43c3-bc41-c9d69e9b7049",
-        "de": "58f985c9-76b5-476a-a52a-53153055cc2c"
+        "en": "ba358a29-58b5-400f-ba4e-168e4e9ec7ca",
+        "de": "103b6e7a-b862-4c3a-afeb-8ab7f74f4d31"
+      },
+      "seconds": {
+        "en": 79,
+        "de": 84
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:20:25.857Z",
+        "de": "2026-11-20T06:20:23.993Z"
       }
     },
     {
@@ -205,8 +301,16 @@
         "de": "Den eigenen KI-Assistenten über MCP oder einen Agent Key mit b.tree verbinden."
       },
       "ids": {
-        "en": "1e54455d-b130-4a4e-b218-1ff2b8507979",
-        "de": "19a77c8b-2c01-4de0-8abb-db08d416c924"
+        "en": "82ae0c0f-630b-4af6-b2fb-2ca8e7d2ab7d",
+        "de": "52214a19-97ad-4e97-b505-a68cf696412e"
+      },
+      "seconds": {
+        "en": 67,
+        "de": 74
+      },
+      "uploaded": {
+        "en": "2026-11-20T06:20:31.726Z",
+        "de": "2026-11-20T06:20:28.814Z"
       }
     }
   ]
