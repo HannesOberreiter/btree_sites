@@ -243,9 +243,10 @@ async function createData(api, t) {
   });
 
   // Stock. Feedings and treatments book their material out through recipes:
-  // 0.79 kg sugar per liter of 3:2 sugar water, 0.2 l formic acid per hive.
+  // 0.79 kg sugar per liter of 3:2 sugar water, 1 ml formic acid per ml of
+  // treatment amount.
   // Harvests book their raw honey in, 1 kg per kg harvested.
-  await call(api, 'POST', 'option/charge_types', { name: t.formic, unit: 'l' });
+  await call(api, 'POST', 'option/charge_types', { name: t.formic, unit: 'ml' });
   await call(api, 'POST', 'option/charge_types', { name: t.honey, unit: 'kg' });
   const stockTypes = await optionIds(api, 'charge_types');
   const recipe = (table, typeId, chargeType, mode, factor, kind = 'out') =>
@@ -257,8 +258,8 @@ async function createData(api, t) {
     'treatment_types',
     treatmentTypes[t.treatment],
     t.formic,
-    'per_hive',
-    0.2,
+    'per_amount',
+    1,
   );
   for (const harvest of t.harvest) {
     await recipe(
@@ -293,7 +294,7 @@ async function createData(api, t) {
   await stockIn(
     '07-22',
     t.formic,
-    5,
+    5000,
     62.5,
     t.notes.formic,
     `AS-${String(SEASON).slice(2)}-3381`,
@@ -415,7 +416,7 @@ async function createData(api, t) {
     type_id: treatmentTypes[t.treatment],
     disease_id: diseases[t.disease],
     vet_id: Object.values(vets)[0],
-    amount: 2,
+    amount: 200,
     wait: 0,
   });
   await task('feed', {
