@@ -19,7 +19,7 @@ Auf der Seite mit den API-Einstellungen kannst du die Endpunkt-URL für die Abon
 
 Die folgenden Links helfen dir bei der Einrichtung deines Abonnements:
 
-- Video iCal Google Kalender hinzufügen: [b.tree - Tutorial - iCal Abonnieren - Deutsch](https://www.btree.tv/de/watch/ical/)
+- Video iCal Google Kalender hinzufügen: [b.tree - Tutorial - iCal abonnieren - Deutsch](https://www.btree.tv/de/watch/ical/)
 - Google Kalender (Computer, Android und iPhone): [support.google.com/calendar/answer/37100](https://support.google.com/calendar/answer/37100)
 - Mac: [support.apple.com/de-at/guide/calendar/icl1022/mac](https://support.apple.com/de-at/guide/calendar/icl1022/mac)
 - Windows Outlook: [support.microsoft.com/de-de/topic/cff1429c-5af6-41ec-a5b4-74f2c278e98c](https://support.microsoft.com/de-de/topic/cff1429c-5af6-41ec-a5b4-74f2c278e98c)

@@ -11,23 +11,18 @@ export function getStaticPaths() {
 
 const { video } = Astro.props;
 const lang = 'de' as const;
-const enOnly = !video.langs.includes('de');
-const pageTitle = enOnly ? `${video.titleDe} (Englisch)` : video.titleDe;
-const title = `${pageTitle} – b.tree Tutorials`;
-const description = enOnly
-  ? `${video.descDe} Video auf Englisch.`
-  : video.descDe;
+const title = `${video.title.de} – b.tree Tutorials`;
 ---
 
 <Layout
   lang={lang}
   title={title}
-  description={description}
+  description={video.description.de}
   canonicalUrl={`https://www.btree.tv/de/watch/${video.slug}/`}
 >
   <section class="hero">
-    <h1>{video.titleDe}</h1>
-    <p>{video.descDe}</p>
+    <h1>{video.title.de}</h1>
+    <p>{video.description.de}</p>
   </section>
 
   <main>
@@ -35,10 +30,10 @@ const description = enOnly
       <div class="watch-player">
         <div class="video-wrapper">
           <iframe
-            src={`https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${video.id}?autoplay=false&loop=false&muted=false&preload=true&responsive=true`}
+            src={`https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${video.ids.de}?autoplay=false&loop=false&muted=false&preload=true&responsive=true`}
             allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
             allowfullscreen
-            title={video.titleDe}
+            title={video.title.de}
           ></iframe>
         </div>
       </div>

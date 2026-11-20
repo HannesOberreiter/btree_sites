@@ -1,9 +1,8 @@
 ---
-import { videosForEnPage, BUNNY_LIBRARY_ID } from '../config';
+import { videos, BUNNY_LIBRARY_ID } from '../config';
 import Layout from '../layouts/Layout.astro';
 
 const lang = 'en' as const;
-const videos = videosForEnPage();
 ---
 
 <Layout
@@ -37,21 +36,16 @@ const videos = videosForEnPage();
           <article class="video-card">
             <div class="video-wrapper">
               <iframe
-                src={`https://player.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${video.id}?autoplay=false&loop=false&muted=false&preload=false&responsive=true`}
+                src={`https://player.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${video.ids.en}?autoplay=false&loop=false&muted=false&preload=false&responsive=true`}
                 loading="lazy"
                 allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
                 allowfullscreen
-                title={video.titleEn}
+                title={video.title.en}
               ></iframe>
             </div>
             <div class="video-info">
-              <h2>{video.titleEn}</h2>
-              {!video.langs.includes('en') && (
-                <p class="lang-badge">
-                  🇦🇹 German audio — no English version available
-                </p>
-              )}
-              <p>{video.descEn}</p>
+              <h2>{video.title.en}</h2>
+              <p>{video.description.en}</p>
             </div>
           </article>
         ))}

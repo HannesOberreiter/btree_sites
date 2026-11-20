@@ -13,10 +13,10 @@ Die b.tree Imkerei-Applikation ist eine reine Web-Lösung und kann als PWA ([wik
 #### Installation PWA
 
 - Chrome Computer & Android
-  - Videoanleitung: [b.tree - Tutorial - PWA Android - Deutsch](https://www.btree.tv/de/watch/pwa-android-de/)
+  - Videoanleitung: [b.tree - Tutorial - Installation auf Android und iOS (PWA) - Deutsch](https://www.btree.tv/de/watch/pwa/)
   - Textanleitung: [support.google.com/chrome/answer/9658361](https://support.google.com/chrome/answer/9658361)
 - Apple iOS
-  - Videoanleitung: [b.tree - Tutorial - PWA iOS - Deutsch](https://www.btree.tv/de/watch/pwa-ios-de/)
+  - Videoanleitung: [b.tree - Tutorial - Installation auf Android und iOS (PWA) - Deutsch](https://www.btree.tv/de/watch/pwa/)
   - Textanleitung: [marlem-software.de/marlemblog/2022/02/04/](https://www.marlem-software.de/marlemblog/2022/02/04/progressive-web-apps-installieren-in-den-betriebssystemen-windows-android-ios-ubuntu-und-macos/#Progressive_Web-App_Installation_im_Betriebssystem_IOS)
 
 #### Store-Links
@@ -65,13 +65,13 @@ Sowohl der NFC- als auch der QR-Code-Scanner sollen dir dabei helfen, schneller 
 
 #### NFC exportieren
 
-Videoerklärung: [b.tree - Tutorial - NFC - Deutsch](https://www.btree.tv/de/watch/nfc-de/)
+Videoerklärung: [b.tree - Tutorial - NFC-Tags - Deutsch](https://www.btree.tv/de/watch/nfc/)
 
 Du kannst NFCs mit einem Tool eines Drittanbieters beschreiben oder die integrierte Schaltfläche "Teilen" verwenden. Du findest die Schaltfläche in der Fußzeile der App, wo die aktuelle URL steht. Wenn du auf den Text klickst, öffnet sich ein Dialog, mit dem du auf einen NFC-Tag schreiben kannst.
 
 #### QR-Code exportieren
 
-Videoerklärung: [b.tree - Tutorial - QR Code - Deutsch](https://www.btree.tv/de/watch/qr-code-de/)
+Videoerklärung: [b.tree - Tutorial - QR-Codes - Deutsch](https://www.btree.tv/de/watch/qr-code/)
 
 In der Stock-Tabelle [/table/hive](https://app.btree.at/table/hive) wählst du die Stöcke aus, für die du einen QR-Code generieren möchtest. Dann klickst du auf die Dropdown-Schaltfläche und wählst "QR drucken". Es öffnet sich ein Dialog, in dem QR-Codes für jeden ausgewählten Bienenstock erzeugt werden. Mit einer zusätzlichen Schaltfläche kannst du ein separates Fenster zum Drucken öffnen. Alternativ kannst du ein QR-Code-Generierungstool eines Drittanbieters verwenden und einfach QR-Codes auf der Grundlage der URLs generieren.
 

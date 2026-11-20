@@ -29,7 +29,7 @@ In unserer Vorgängerversion 5.x.x war es möglich, Dateien auf unseren Server h
 
 ### Dropbox
 
-Eine Videoerklärung findet man auf b.tree Tutorials: [b.tree - Tutorial - Dropbox als Datenverwaltung - Deutsch](https://www.btree.tv/de/watch/dropbox/)
+Eine Videoerklärung findet man auf b.tree Tutorials: [b.tree - Tutorial - Dropbox für Fotos und Dateien - Deutsch](https://www.btree.tv/de/watch/dropbox/)
 
 Um Fotos oder Dateien zu Aufgaben etc. hinzuzufügen, kannst du ein Dropbox-Konto verbinden [/setting/dropbox](https://app.btree.at/setting/dropbox). Dropbox ist zwar nicht kostenlos, bietet aber einen einfach zu bedienenden Cloud-Dienst für die Dateiverwaltung. Wenn die Verbindung zu deinem Dropbox-Konto authentifiziert ist, wird ein spezieller Ordner (b.tree - Beekeeping) in deinem Dropbox-Konto erstellt. Der Zugriff auf diesen Ordner ist dann für dich und **alle deine Benutzer auf demselben Imkereibetrieb** verfügbar. Um den Zugriff zu entfernen, kannst du die entsprechende Schaltfläche auf der Einstellungsseite verwenden oder [dropbox.com/account/connected_apps](https://www.dropbox.com/account/connected_apps) besuchen.
 
@@ -70,7 +70,7 @@ Dieses Feature funktioniert noch nicht in allen Browsern, bisher funktioniert es
 
 Wenn du einen weiteren Benutzer zu deinem Imkereibetrieb hinzufügen möchtest, besuche die Seite mit den Unternehmenseinstellungen [/setting/company](https://app.btree.at/setting/company). Wenn die E-Mail-Adresse noch nicht bei uns registriert ist, wird automatisch ein Konto erstellt und eine E-Mail an den neuen Benutzer geschickt, in der er aufgefordert wird, sein Passwort zurückzusetzen, da wir keine Passwörter per E-Mail verschicken.
 
-Eine Videoerklärung zum Thema Imkereien und User findest du auf b.tree Tutorials: [b.tree - Tutorial - Betriebe und Benutzer Management - Deutsch](https://www.btree.tv/de/watch/business-user-management/)
+Eine Videoerklärung zum Thema Imkereien und User findest du auf b.tree Tutorials: [b.tree - Tutorial - Imkereien und Benutzer - Deutsch](https://www.btree.tv/de/watch/business-user-management/)
 
 Für Benutzer gibt es drei Ränge, die durch Klicken auf das Rangsymbol geändert werden können. Um Benutzer zu entfernen, klicke auf das Symbol "Benutzer entfernen".
 

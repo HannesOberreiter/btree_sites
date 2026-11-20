@@ -19,6 +19,7 @@ On the API settings page you can copy the endpoint URL for subscriptions. It wil
 
 The following links will help you set up your subscription:
 
+- Video on how to add the iCal subscription to a calendar: [b.tree - Tutorial - Subscribe to iCal - English](https://www.btree.tv/watch/ical/)
 - Google Calendar (Computer, Android and iPhone): [support.google.com/calendar/answer/37100](https://support.google.com/calendar/answer/37100)
 - Mac: [support.apple.com/en-gb/guide/calendar/icl1022/mac](https://support.apple.com/en-gb/guide/calendar/icl1022/mac)
 - Windows Outlook: [support.microsoft.com/en-gb/topic/cff1429c-5af6-41ec-a5b4-74f2c278e98c](https://support.microsoft.com/en-gb/topic/cff1429c-5af6-41ec-a5b4-74f2c278e98c)

@@ -13,10 +13,10 @@ The b.tree beekeeping application is a pure web solution and can be installed as
 #### Installation PWA
 
 - Chrome Computer & Android
-  - Tutorial Video: [b.tree - Tutorial - PWA Android - English](https://www.btree.tv/watch/pwa-android/)
+  - Tutorial Video: [b.tree - Tutorial - Install on Android and iOS (PWA) - English](https://www.btree.tv/watch/pwa/)
   - Text description: [support.google.com/chrome/answer/9658361](https://support.google.com/chrome/answer/9658361)
 - Apple iOS
-  - Tutorial Video: [b.tree - Tutorial - PWA iOS - English](https://www.btree.tv/watch/pwa-ios/)
+  - Tutorial Video: [b.tree - Tutorial - Install on Android and iOS (PWA) - English](https://www.btree.tv/watch/pwa/)
   - Text description: [pcmag.com/how-to/how-to-use-progressive-web-apps](https://www.pcmag.com/how-to/how-to-use-progressive-web-apps)
 
 #### Mobile store links
@@ -63,13 +63,13 @@ Both NFC and QR code scanner are meant to help you work faster in the field. The
 
 #### Export NFC
 
-Video explanation: [b.tree - Tutorial - NFC - English](https://www.btree.tv/watch/nfc/)
+Video explanation: [b.tree - Tutorial - NFC Tags - English](https://www.btree.tv/watch/nfc/)
 
 You can write NFCs with a third-party tool or use the integrated "share" button. You find it in the footer of the app and it will show the current URL. If you click on it, a dialog will open which allows you to write onto an NFC tag.
 
 #### Export QR code
 
-Video explanation: [b.tree - Tutorial - QR Code - English](https://www.btree.tv/watch/qr-code/)
+Video explanation: [b.tree - Tutorial - QR Codes - English](https://www.btree.tv/watch/qr-code/)
 
 On the hive table [/table/hive](https://app.btree.at/table/hive) you select the hives you want a QR code for. Then you click on the dropdown button and select "Print QR". A dialog will open and QR codes for each selected hive will be generated. With an additional button you can open a separate window for printing. Alternatively, you can use a third-party QR code generation tool and simply generate QR codes based on the URLs.
 

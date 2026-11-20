@@ -29,6 +29,8 @@ In our previous version 5.x.x it was possible to upload files onto our server. W
 
 ### Dropbox
 
+A video explanation is on b.tree Tutorials: [b.tree - Tutorial - Dropbox for Photos & Files - English](https://www.btree.tv/watch/dropbox/)
+
 To add photos or files to tasks etc., you can add a Dropbox account [/setting/dropbox](https://app.btree.at/setting/dropbox). Dropbox is not free but offers an easy-to-use cloud service for file management. If the connection to your Dropbox account is authenticated, a special folder (b.tree - Beekeeping) will be generated inside your Dropbox account. The access to this folder will then be available for you and **all your users on the same beekeeping operation**. To remove the access, you can use the corresponding button on the setting page or visit [dropbox.com/account/connected_apps](https://www.dropbox.com/account/connected_apps).
 
 After you have connected your Dropbox account, you can manage your files and folders on the settings page [/setting/dropbox](https://app.btree.at/setting/dropbox). To have access to the Dropbox folder or upload new images and files when creating new tasks, activate the link button in the field settings [/setting/field](https://app.btree.at/setting/field). On saving an image or file to your task, an ID will be saved with it and you can click on it to show the content in a small window.
@@ -45,7 +47,7 @@ In the top menu bar, when you click on the magnifying glass icon, it is possible
 
 ### Breeding series
 
-Since breeding methods differ between beekeeping operations, b.tree offers the possibility to define them yourself. Creating these breeding methods [/setting/rearing](https://app.btree.at/setting/rearing) may take you some time. Note that the waiting time for the breeding steps always refers to the time in hours to the previous step.
+Since breeding methods differ between beekeeping operations, b.tree offers the possibility to define them yourself. Creating these breeding methods [/setting/rearing](https://app.btree.at/setting/rearing) may take you some time and is explained in this video: [b.tree - Tutorial - Queen Rearing: Method & Series - English](https://www.btree.tv/watch/breeding/). Note that the waiting time for the breeding steps always refers to the time in hours to the previous step.
 
 After the breeding methods have been defined, breeding series can easily be added using the following form: [/new/rearing](https://app.btree.at/new/rearing). These breeding series are also displayed in the calendar and can be subscribed to as iCal. Attention: Deleting breeding series or methods that have already been used will lead to irrevocable deletion and cannot be restored.
 
@@ -67,6 +69,8 @@ This feature is not working in all browsers; so far it works only with Chrome an
 ### Multiple Users / Beekeepers
 
 If you want to add another user to your beekeeping operation, visit the company settings page [/setting/company](https://app.btree.at/setting/company). You can add new users by their email address. If the address is not already registered with us, an account will be automatically generated and an email will be sent to the new users with instructions to reset the password, as we don't send passwords by email.
+
+A video explanation on companies and users is on b.tree Tutorials: [b.tree - Tutorial - Companies & Users - English](https://www.btree.tv/watch/business-user-management/)
 
 For users, there are three ranks which can be changed by clicking on the rank icon. To remove users, click on the remove user icon.
 

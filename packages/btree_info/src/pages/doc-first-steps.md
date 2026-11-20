@@ -13,6 +13,10 @@ Although you can fill all your information in the app, which is especially usefu
 
 The application may be overkill for a small hobby beekeeper with only one to two colonies; only if you like statistics and history data as we do, it is still worthwhile. For a big operation with more than a thousand colonies, it may also not be the best fit, as labourer time management and material inventory are at that scale more of a concern. We see the application as best designed for intermediate beekeeping operations with a few dozen to a few hundred colonies, especially certified organic beekeepers and their obligatory record keeping. For queen breeders, the app could be a good addition to keep record of queen performances and for beekeeper communities who share colonies, so everyone is on the same track in their notes, as our web application will always present you with the latest data without syncing needs.
 
+### Video tutorial
+
+On [b.tree Tutorials](https://www.btree.tv/watch/introduction/) you can find an introduction video with the first steps: [b.tree - Tutorial - Introduction - English](https://www.btree.tv/watch/introduction/)
+
 ### Options
 
 It is not user-friendly, but the best first step is to go into the settings and define your select options. As nearly every beekeeper and country has its own methods for feeding, treatment etc., due to the diversity, it would make no sense for us to predefine these options. In our application, you can set most of the types in the options [/setting/option/](https://app.btree.at/setting/option/checkup_types). Here you can set types for your colony checks and visits, e.g. swarm happened, added propolis traps, alcohol wash or for your harvest sources, queen mating place and so on.

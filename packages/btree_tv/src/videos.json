@@ -1,0 +1,213 @@
+{
+  "libraryId": "621212",
+  "videos": [
+    {
+      "episode": "intro",
+      "slug": "introduction",
+      "title": {
+        "en": "Introduction",
+        "de": "Einführung"
+      },
+      "description": {
+        "en": "A first look at the b.tree beekeeping app.",
+        "de": "Ein erster Überblick über die b.tree Imkerei-App."
+      },
+      "ids": {
+        "en": "10bf24d4-5f41-441b-a343-adbf72a45ea0",
+        "de": "c9fdbc64-7a95-4e01-a95a-9539cb673feb"
+      }
+    },
+    {
+      "episode": "pwa",
+      "slug": "pwa",
+      "title": {
+        "en": "Install on Android and iOS (PWA)",
+        "de": "Installation auf Android und iOS (PWA)"
+      },
+      "description": {
+        "en": "Install b.tree as an app on your Android phone or iPhone.",
+        "de": "b.tree als App auf dem Android-Handy oder iPhone installieren."
+      },
+      "ids": {
+        "en": "bb46550a-1386-4859-bcc6-c3d437746965",
+        "de": "8fee4ee1-fc74-4e57-9cdf-95b8c05fbf2b"
+      }
+    },
+    {
+      "episode": "nfc",
+      "slug": "nfc",
+      "title": {
+        "en": "NFC Tags",
+        "de": "NFC-Tags"
+      },
+      "description": {
+        "en": "Open a hive card with an NFC tag on the hive.",
+        "de": "Mit einem NFC-Tag am Stock die Stockkarte öffnen."
+      },
+      "ids": {
+        "en": "80e1bb45-673b-483c-bf83-6e24edc8704a",
+        "de": "d849367c-2440-4b42-b493-5d4365359300"
+      }
+    },
+    {
+      "episode": "qr",
+      "slug": "qr-code",
+      "title": {
+        "en": "QR Codes",
+        "de": "QR-Codes"
+      },
+      "description": {
+        "en": "Print QR codes and scan them to open hive cards.",
+        "de": "QR-Codes drucken und scannen, um Stockkarten zu öffnen."
+      },
+      "ids": {
+        "en": "069d6b44-d8c1-4fcf-8f6c-b333522beaac",
+        "de": "223307be-e6a0-45df-a6c4-89e007b49d0c"
+      }
+    },
+    {
+      "episode": "users",
+      "slug": "business-user-management",
+      "title": {
+        "en": "Companies & Users",
+        "de": "Imkereien und Benutzer"
+      },
+      "description": {
+        "en": "Run more than one company, invite other beekeepers and set their rights.",
+        "de": "Mehrere Imkereien führen, andere Imker einladen und ihre Rechte festlegen."
+      },
+      "ids": {
+        "en": "b6e43345-1dc8-4ee5-b9fe-f0888ddb5aed",
+        "de": "50fada2a-560f-4643-a94b-88235309c20c"
+      }
+    },
+    {
+      "episode": "ical",
+      "slug": "ical",
+      "title": {
+        "en": "Subscribe to iCal",
+        "de": "iCal abonnieren"
+      },
+      "description": {
+        "en": "See your b.tree tasks in your calendar app.",
+        "de": "b.tree-Aufgaben im eigenen Kalender anzeigen."
+      },
+      "ids": {
+        "en": "0a81a161-3614-4132-a55a-a4976a063e32",
+        "de": "d4d9f5f9-2901-479b-8016-723ed8f08623"
+      }
+    },
+    {
+      "episode": "dropbox",
+      "slug": "dropbox",
+      "title": {
+        "en": "Dropbox for Photos & Files",
+        "de": "Dropbox für Fotos und Dateien"
+      },
+      "description": {
+        "en": "Connect Dropbox and attach photos and documents to your tasks.",
+        "de": "Dropbox verbinden und Fotos und Dokumente an deine Arbeiten hängen."
+      },
+      "ids": {
+        "en": "ad33a8b6-4f66-4e95-b2e7-0fc9c707b01c",
+        "de": "7b7cf43b-a0ad-4e3a-b0ec-20233ae189f8"
+      }
+    },
+    {
+      "episode": "rearing",
+      "slug": "breeding",
+      "title": {
+        "en": "Queen Rearing: Method & Series",
+        "de": "Zuchtmethode und Zuchtserie"
+      },
+      "description": {
+        "en": "Set up a rearing method and plan a series with all its dates.",
+        "de": "Eine Zuchtmethode einrichten und eine Zuchtserie mit allen Terminen planen."
+      },
+      "ids": {
+        "en": "f1acd451-44c8-4328-b00b-1039610cee3f",
+        "de": "733cbe43-1210-4680-9c45-229c7c6d1459"
+      }
+    },
+    {
+      "episode": "stock",
+      "slug": "stock",
+      "title": {
+        "en": "Feeding from Stock",
+        "de": "Fütterung und Lager"
+      },
+      "description": {
+        "en": "Connect a feeding type with a stock item, so that each feeding books the sugar out.",
+        "de": "Einen Fütterungstyp mit einem Lagerartikel verbinden, damit jede Fütterung den Zucker ausbucht."
+      },
+      "ids": {
+        "en": "c0ea1b57-4500-4727-a458-5fcbd8bb5c6f",
+        "de": "1beefe9a-d655-4838-ad99-2214d1755eca"
+      }
+    },
+    {
+      "episode": "wax",
+      "slug": "wax",
+      "title": {
+        "en": "Wax Cycle",
+        "de": "Wachskreislauf"
+      },
+      "description": {
+        "en": "Keep your wax in lots, from the origin back into the hives.",
+        "de": "Das eigene Wachs in Losen führen, von der Herkunft bis zurück in die Völker."
+      },
+      "ids": {
+        "en": "e9aaad0b-acdf-4a4a-bae4-583cf579f6a9",
+        "de": "517daaa8-ce4e-4c7f-9038-1003ae1f3d83"
+      }
+    },
+    {
+      "episode": "statistics",
+      "slug": "statistics",
+      "title": {
+        "en": "Statistics (Premium)",
+        "de": "Statistiken (Premium)"
+      },
+      "description": {
+        "en": "Charts and tables for harvest, feeding, treatment, Varroa and colony numbers.",
+        "de": "Diagramme und Tabellen zu Ernte, Fütterung, Behandlung, Varroa und Völkerzahl."
+      },
+      "ids": {
+        "en": "ffc3096d-0847-4242-8b52-ba5fec38335b",
+        "de": "7a1cfa67-154d-47f9-bbab-2fa56bc3a005"
+      }
+    },
+    {
+      "episode": "wizbee",
+      "slug": "wizbee",
+      "title": {
+        "en": "WizBee AI Assistant (Premium)",
+        "de": "WizBee KI-Assistent (Premium)"
+      },
+      "description": {
+        "en": "Ask WizBee about your data and let it record tasks for you.",
+        "de": "WizBee zu deinen Daten fragen und Arbeiten eintragen lassen."
+      },
+      "ids": {
+        "en": "43e68d05-98c0-43c3-bc41-c9d69e9b7049",
+        "de": "58f985c9-76b5-476a-a52a-53153055cc2c"
+      }
+    },
+    {
+      "episode": "agent",
+      "slug": "agent-api-mcp",
+      "title": {
+        "en": "Agent API & MCP (Premium)",
+        "de": "Agent API und MCP (Premium)"
+      },
+      "description": {
+        "en": "Connect your own AI assistant with b.tree through MCP or an agent key.",
+        "de": "Den eigenen KI-Assistenten über MCP oder einen Agent Key mit b.tree verbinden."
+      },
+      "ids": {
+        "en": "1e54455d-b130-4a4e-b218-1ff2b8507979",
+        "de": "19a77c8b-2c01-4de0-8abb-db08d416c924"
+      }
+    }
+  ]
+}

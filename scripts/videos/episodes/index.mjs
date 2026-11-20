@@ -6,7 +6,6 @@ import intro from './intro.mjs';
 import nfc from './nfc.mjs';
 import pwa from './pwa.mjs';
 import qr from './qr.mjs';
-import quickCheckup from './quick-checkup.mjs';
 import rearing from './rearing.mjs';
 import statistics from './statistics.mjs';
 import stock from './stock.mjs';
@@ -22,7 +21,6 @@ export const EPISODES = [
   nfc,
   pwa,
   qr,
-  quickCheckup,
   rearing,
   statistics,
   stock,

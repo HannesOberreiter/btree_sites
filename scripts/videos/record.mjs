@@ -4,6 +4,7 @@
 // 2. Set MISTRAL_API_KEY in the environment or in the root .env.
 // 3. Run: node scripts/videos/record.mjs <episode> [lang ...]
 // 4. Stop the app: scripts/screenshots/stop-app.sh
+// 5. Put the videos on btree.tv: see scripts/videos/upload.mjs
 //
 // An episode is a module in scripts/videos/episodes/, listed in episodes/index.mjs. It has a route and a list of
 // scenes. Each scene has a narration text per language and an optional action.

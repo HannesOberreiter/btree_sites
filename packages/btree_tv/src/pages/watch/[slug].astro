@@ -11,37 +11,29 @@ export function getStaticPaths() {
 
 const { video } = Astro.props;
 const lang = 'en' as const;
-const deOnly = !video.langs.includes('en');
-const pageTitle = deOnly ? `${video.titleEn} (German)` : video.titleEn;
-const title = `${pageTitle} – b.tree Tutorials`;
-const description = deOnly ? `${video.descEn} Video in German.` : video.descEn;
+const title = `${video.title.en} – b.tree Tutorials`;
 ---
 
 <Layout
   lang={lang}
   title={title}
-  description={description}
+  description={video.description.en}
   canonicalUrl={`https://www.btree.tv/watch/${video.slug}/`}
 >
   <section class="hero">
-    <h1>{video.titleEn}</h1>
-    <p>{video.descEn}</p>
+    <h1>{video.title.en}</h1>
+    <p>{video.description.en}</p>
   </section>
 
   <main>
     <div class="inner watch-inner">
-      {deOnly && (
-        <p class="lang-notice">
-          🇦🇹 This video is only available in German (Austrian).
-        </p>
-      )}
       <div class="watch-player">
         <div class="video-wrapper">
           <iframe
-            src={`https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${video.id}?autoplay=false&loop=false&muted=false&preload=true&responsive=true`}
+            src={`https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${video.ids.en}?autoplay=false&loop=false&muted=false&preload=true&responsive=true`}
             allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
             allowfullscreen
-            title={video.titleEn}
+            title={video.title.en}
           ></iframe>
         </div>
       </div>
