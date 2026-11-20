@@ -13,7 +13,7 @@ Wir führen unsere eigene Bio-Dokumentation mit b.tree. Lager, Behandlungen, Fü
 ## So funktioniert es
 
 - **Lager mit Chargennummern:** Buche jeden Wareneingang mit Chargennummer, Mindesthaltbarkeitsdatum, Preis und Notiz, zum Beispiel Zucker oder Behandlungsmittel. Die Lagertabelle zeigt Lagerbestand, Wareneingang und Warenausgang.
-- **Lagerbuchungen aus deinen Aufgaben:** Gib einer Fütterungs- oder Behandlungsart einen Lagerverbrauch, zum Beispiel 0,79 kg Zucker pro Liter 3:2-Zuckerwasser oder 0,2 l Ameisensäure pro Volk. Gib einer Ernteart einen Lagerverbrauch, und der geerntete Rohhonig kommt ins Lager. Jede erledigte Aufgabe bucht ihre Lagerbuchung, und die Lagerbuchung verlinkt auf die Aufgabe und das Volk.
+- **Lagerbuchungen aus deinen Aufgaben:** Gib einer Fütterungs- oder Behandlungsart einen Lagerverbrauch, zum Beispiel 0,79 kg Zucker pro Liter 3:2-Zuckerwasser oder 1 ml Ameisensäure für 1 ml Behandlungsmenge. Gib einer Ernteart einen Lagerverbrauch, und der geerntete Rohhonig kommt ins Lager. Jede erledigte Aufgabe bucht ihre Lagerbuchung, und die Lagerbuchung verlinkt auf die Aufgabe und das Volk.
 - **Inventur:** Zähle dein Lager und trage den gezählten Bestand als Inventur ein. b.tree bucht die Differenz.
 - **Behandlungen und Fütterungen pro Volk:** Datum, Menge, Krankheit und Wartezeit werden für jedes Volk erfasst und auf seiner [digitalen Stockkarte](/de/features/hive-records/) angezeigt.
 - **Wachskreislauf mit Losen:** Lagere Eigenwachs aus Deckelwachs oder Altwaben mit Herkunft und Herkunftsvölkern ein. Buche Verarbeitung oder Lohnverarbeitung zu Mittelwänden mit Verarbeiter und Auftragsnummer. b.tree berechnet den Verarbeitungsverlust. Fehler korrigierst du mit einer Gegenbuchung, statt sie zu löschen.

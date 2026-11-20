@@ -77,6 +77,25 @@ Wenn du Königinnen über das Mutterfeld miteinander verknüpft hast, kannst du 
 
 Ein rudimentäres Werkzeug, um den Überblick über deine Vorräte zu behalten. Wir verwenden es, um den Überblick über unser Behandlungsmaterial, das Zuckerlager und die Produktionsmenge zu behalten. Jede Lagerbuchung ist ein Wareneingang oder Warenausgang für einen Lagerartikel, zum Beispiel Zucker. Du kannst eine neue Lagerbuchung mit dem Formular [/new/charge](https://app.btree.at/new/charge) erstellen und hast einen einfachen Überblick über deinen Lagerbestand als Tabelle [/table/charge-stock](https://app.btree.at/table/charge-stock). Wenn wir eine neue Charge Honiggläser abfüllen, schreiben wir die eindeutige Chargennummer in das entsprechende Feld und in das Notizfeld die Charge der verwendeten Ernte. Mit diesem Muster können wir den Warenfluss verfolgen. Für Zucker verwenden wir das Feld "Chargennummer" für die Rechnungsnummer. Fütterungen, Behandlungen, Ernten und Kontrollen können den Bestand automatisch buchen: Gib dem Aufgabentyp einen Lagerverbrauch, zum Beispiel 0,79 kg Zucker pro Liter 3:2 Zuckerwasser, dann bucht jede erledigte Aufgabe ihre Lagerbuchung. Zweimal im Jahr machen wir eine Bestandszählung (Inventur) im Lager und tragen den gezählten Gesamtbestand mit der Art Inventur ein. b.tree bucht die Differenz. Wenn du einen größeren Betrieb hast, gibt es bessere Werkzeuge für Warenmanagement, aber für unseren kleinen Betrieb funktioniert dies gut, um zumindest ein wenig den Überblick zu behalten und die Warenflussaufzeichnungen zu erfüllen, die für unsere Zertifizierung als Bio-Imker erforderlich sind.
 
+#### Lagerbuchungen aus Aufgaben
+
+Fütterungen, Behandlungen, Ernten und Kontrollen können den Bestand automatisch buchen. So richtest du es ein:
+
+1. Lege den Lagerartikel an, zum Beispiel Zucker in kg, in den Optionen [/setting/option/charge_types](https://app.btree.at/setting/option/charge_types).
+2. Öffne den Aufgabentyp in den Optionen, zum Beispiel dein 3:2 Zuckerwasser in [/setting/option/feed_types](https://app.btree.at/setting/option/feed_types).
+3. Wähle unter **Lagerverbrauch** die Schaltfläche **Produkt hinzufügen** und wähle den Lagerartikel.
+4. Wähle **Abgang** für Material, das du verbrauchst, zum Beispiel Zucker oder Ameisensäure. Wähle **Zugang** für Produkte, die du bekommst, zum Beispiel Rohhonig aus einer Ernte.
+5. Gib die Menge des Lagerartikels für 1 Einheit der Aufgabenmenge ein, zum Beispiel 0,79 kg Zucker für 1 l 3:2 Zuckerwasser. Bei Futterarten setzt die Rechner-Schaltfläche die Menge für 1:1 oder 3:2 Zuckerwasser in Liter Lösung oder für Zucker in kg. Kontrollarten haben keine Menge, daher gibst du die Menge für jedes Volk ein.
+6. Speichere den Typ. Die Optionstabelle zeigt den Lagerverbrauch jedes Typs.
+
+Wenn du eine erledigte Aufgabe speicherst, bucht b.tree eine Lagerbuchung für jedes Volk und jeden Lagerartikel. Die Lagerbuchung hat das Datum der Aufgabe und den Namen des Aufgabentyps als Bezeichnung. Eine nicht erledigte Aufgabe bucht nichts; sie bucht, wenn du sie als erledigt markierst.
+
+Im Aufgabenformular ersetzt ein Lager-Symbol das Auswahlsymbol im Typfeld, wenn der Typ einen Lagerverbrauch hat. Tippe auf das Symbol, um den Bestand zu sehen, den das Speichern bucht. Tippe auf den Lagerartikel, um die Buchung für dieses Speichern auszuschalten, und tippe erneut, um sie einzuschalten. Das Symbol ist rot, wenn das Speichern den Bestand unter null bringt, und grau, wenn die Buchung aus ist.
+
+Wenn du eine Aufgabe bearbeitest, ändert eine Änderung von Menge, Typ oder Datum auch ihre Lagerbuchung. Wenn du die Buchung einer gebuchten Aufgabe ausschaltest, entfernt b.tree ihre Lagerbuchung, und spätere Änderungen von Menge oder Datum buchen nicht erneut. Wenn du eine Aufgabe als nicht erledigt markierst, entfernt b.tree ihre Lagerbuchungen. Eine gelöschte Aufgabe verschiebt ihre Lagerbuchungen in den Papierkorb, und das Wiederherstellen holt sie zurück. Wenn du eine Aufgabe endgültig löschst, löscht b.tree auch ihre Lagerbuchungen. Das gilt auch für die Aufgaben eines endgültig gelöschten Volkes. Eine Änderung des Lagerverbrauchs ändert bestehende Lagerbuchungen nicht. Sie gilt für neue erledigte Aufgaben und für Aufgaben, deren Menge oder Typ du änderst.
+
+Die Spalte **Quelle** der Tabelle der Lagerbuchungen [/table/charge](https://app.btree.at/table/charge) zeigt die Aufgabe und das Volk, die eine Lagerbuchung erstellt haben. Wenn du eine gebuchte Lagerbuchung in dieser Tabelle bearbeitest oder löschst, ist sie nicht mehr mit ihrer Aufgabe verknüpft. Spätere Änderungen der Aufgabe ändern sie nicht.
+
 ### Wachskreislauf
 
 Der separate [Wachskreislauf](https://app.btree.at/table/wax) dokumentiert Wachslose und deren Bewegungen unabhängig vom allgemeinen Lager. Ein typischer Ablauf für Eigenwachs ist:

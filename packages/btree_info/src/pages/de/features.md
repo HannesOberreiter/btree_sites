@@ -32,6 +32,12 @@ b.tree ist so aufgebaut, dass deine Imkereidaten nicht eingeschlossen sind. Date
 
 Dokumentiere wichtige Imkereiereignisse an einem Ort: Varroa-Behandlungen, Futtergaben, Honigernten, Kontrollen und Folgeaufgaben. Dadurch entsteht eine nachvollziehbare Historie für jedes Volk und jeden Bienenstand.
 
+### Lagerbuchungen aus deinen Aufgaben
+
+Gib einer Futter-, Behandlungs-, Ernte- oder Kontrollart einen Lagerverbrauch, zum Beispiel 0,79 kg Zucker für 1 l 3:2 Zuckerwasser. Jede erledigte Aufgabe bucht dann ihre Lagerbuchung für jedes Volk, und das [Lager](https://app.btree.at/table/charge-stock) bleibt ohne zweite Eingabe aktuell. Im Aufgabenformular zeigt ein Lager-Symbol den Bestand, den das Speichern bucht, und wird rot, wenn der Bestand unter null fällt. Du kannst die Buchung für eine Aufgabe ausschalten. Die Tabelle der Lagerbuchungen zeigt die Aufgabe und das Volk, die jede Lagerbuchung erstellt haben.
+
+[So funktionieren Lagerbuchungen aus Aufgaben](/de/doc-first-steps/#lagerbuchungen-aus-aufgaben)
+
 ### Wachskreislauf und Los-Rückverfolgbarkeit
 
 Der [Wachskreislauf](https://app.btree.at/table/wax) verwaltet Wachs getrennt vom allgemeinen Lager. Eigenwachs, Zukauf, Verarbeitung, Lohnverarbeitung, Verwendung und Verkauf werden über einzelne Lose dokumentiert. Ein- und Ausgänge lassen sich N:M verknüpfen, Verarbeitungsverluste werden automatisch berechnet und optional ausgewählte Völker erhalten die Herkunftsinformation. Produktübersicht, Belegnummern und CSV-Export unterstützen eine nachvollziehbare Dokumentation für Bio- und Erwerbsimkereien.

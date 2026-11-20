@@ -73,6 +73,25 @@ If you linked queens via the mother field, you can view the breeding lineage as 
 
 Rudimentary tool to keep track of your stock. We use it to keep track of our treatment material, sugar store and production amount. Each stock movement is a goods receipt or outgoing goods for one stock item, for example sugar. You can create a new stock movement with the form [/new/charge](https://app.btree.at/new/charge) and have an overview of your stock as table [/table/charge-stock](https://app.btree.at/table/charge-stock). If we fill a new batch of honey jars, we write the distinct lot number in the lot number field and the lot of the harvest we used in the note field. With this pattern, we can follow the goods flow. For sugar, we use the lot number field for the invoice number. Feedings, treatments, harvests and checkups can book stock automatically: give the task type a stock use, for example 0.79 kg sugar per liter of 3:2 sugar water, and each done task books its stock movement. Twice a year we make a stock count (inventory) in the storage and enter the counted total with the kind Inventory. b.tree books the difference. If you have a bigger operation, there are better tools for this kind of job, but for our small operation this works fine to keep track at least a little bit and fulfil the goods flow record keeping needed for our certification as organic beekeepers.
 
+#### Stock booked from tasks
+
+Feedings, treatments, harvests and checkups can book stock automatically. To set it up:
+
+1. Create the stock item, for example sugar in kg, in the options [/setting/option/charge_types](https://app.btree.at/setting/option/charge_types).
+2. Open the task type in the options, for example your 3:2 sugar water in [/setting/option/feed_types](https://app.btree.at/setting/option/feed_types).
+3. In **Stock use**, select **Add product** and select the stock item.
+4. Select **Out** for material that you use, for example sugar or formic acid. Select **In** for products that you get, for example raw honey from a harvest.
+5. Enter the amount of the stock item for 1 unit of the task amount, for example 0.79 kg sugar for 1 l of 3:2 sugar water. For feed types, the calculator button sets the amount for 1:1 or 3:2 sugar water in liters of solution, or for sugar in kg. Checkup types have no amount, so you enter the amount for each hive.
+6. Save the type. The option table shows the stock use of each type.
+
+When you save a done task, b.tree books one stock movement for each hive and each stock item. The movement has the date of the task and the name of the task type as description. A task that is not done books nothing; it books when you mark it as done.
+
+In the task form, a warehouse icon replaces the dropdown icon of the type field when the type has a stock use. Tap the icon to see the stock that the save books. Tap the stock item to turn off the booking for this save, and tap again to turn it on. The icon is red when the save takes the stock below zero, and grey when the booking is off.
+
+When you edit a task, a change of the amount, type or date also changes its stock movement. When you turn off the booking of a booked task, b.tree removes its stock movement, and later changes of the amount or date do not book it again. When you mark a task as not done, b.tree removes its stock movements. A deleted task moves its stock movements to the trash, and a restore brings them back. When you permanently delete a task, b.tree also deletes its stock movements. This also applies to the tasks of a permanently deleted hive. A change of the stock use does not change existing stock movements. It applies to new done tasks and to tasks whose amount or type you change.
+
+The **Source** column of the stock movement table [/table/charge](https://app.btree.at/table/charge) shows the task and the hive that booked a movement. When you edit or delete a booked movement in this table, the movement is no longer linked to its task. Later changes of the task do not change it.
+
 ### Wax Cycle
 
 The separate [wax cycle](https://app.btree.at/table/wax) documents wax lots and their movements independently from general inventory. A typical own-wax workflow is:

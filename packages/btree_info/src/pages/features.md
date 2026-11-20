@@ -32,6 +32,12 @@ b.tree is designed so your beekeeping data is not locked away. Data can be expor
 
 Track the most important beekeeping events in one place. Document varroa treatments, feed amounts, honey harvests, checkups, and follow-up tasks. This creates a reliable history for each hive and apiary.
 
+### Stock booked from your tasks
+
+Give a feed, treatment, harvest or checkup type a stock use, for example 0.79 kg sugar for 1 l of 3:2 sugar water. Each done task then books its stock movement for each hive, and the [stock](https://app.btree.at/table/charge-stock) stays up to date without a second entry. In the task form, a warehouse icon shows the stock that the save books and turns red when the stock goes below zero. You can turn off the booking for one task. The stock movement table shows the task and the hive that booked each movement.
+
+[How stock booking from tasks works](/doc-first-steps/#stock-booked-from-tasks)
+
 ### Wax cycle and lot traceability
 
 The [wax cycle](https://app.btree.at/table/wax) keeps wax records separate from general inventory. Track own wax, purchases, processing, contract processing, use, and sales across individual lots. Inputs and outputs can be connected many-to-many, processing losses are calculated automatically, and optional source colonies preserve origin information. Product summaries, document references, and CSV export support traceable records for organic and professional operations.

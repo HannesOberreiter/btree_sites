@@ -33,6 +33,10 @@ One reason could be the first movement date for the hive. The system uses the in
 
 Our system is built to maximize individual settings. You can define your own types in the options [/setting/option](https://app.btree.at/setting/option/checkup_types). The order of the selection menu is alphabetical, and the favourite type will always be the first. If you don't need a type anymore, you can set the modus to inactive. Careful: if you delete a type which you previously used, statistics and table values may be wrong or missing.
 
+### How does the app book stock from tasks?
+
+Give the task type a stock use in the options [/setting/option](https://app.btree.at/setting/option/feed_types), for example 0.79 kg sugar for 1 l of 3:2 sugar water. Feed, treatment, harvest and checkup types can have a stock use. When you save a done task, b.tree books one stock movement for each hive. A task that is not done books nothing. In the task form, tap the warehouse icon in the type field to see the booking or to turn it off for this task. A change of the amount, type or date of the task also changes its stock movement. The **Source** column of the stock movement table shows the task that booked a movement. When you edit a booked movement by hand, it is no longer linked to its task. See [Stock booked from tasks](/doc-first-steps/#stock-booked-from-tasks).
+
 ### I'm missing a field for my checkups
 
 You can activate various fields for your tasks in the options [/setting/field](https://app.btree.at/setting/field). If you are still missing a field, you can write us an email with your suggestion. We keep a user wish list and if enough users want a feature, we will try to implement it. But we try to minimize the number of fields we offer, as we think that information which is not important in statistics can also be simply written in the note field.
