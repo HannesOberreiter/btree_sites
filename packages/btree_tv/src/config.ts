@@ -30,18 +30,40 @@ export function thumbnailUrl(video: Video, lang: Lang): string {
   return `https://www.btree.tv/thumbnails/${video.episode}-${lang}.jpg`;
 }
 
-// The schema.org data that makes the video eligible for video search results.
-export function videoObject(video: Video, lang: Lang) {
+// The schema.org properties of one tutorial video.
+function videoObjectNode(video: Video, lang: Lang) {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
+    '@type': 'VideoObject' as const,
     name: video.title[lang],
     description: video.description[lang],
     thumbnailUrl: thumbnailUrl(video, lang),
     uploadDate: video.uploaded[lang],
     duration: `PT${video.seconds[lang]}S`,
-    embedUrl: `https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${video.ids[lang]}`,
+    embedUrl: `https://player.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${video.ids[lang]}`,
     inLanguage: lang,
     transcript: transcript(video, lang).join(' '),
+  };
+}
+
+// The schema.org data that makes the video eligible for video search results.
+export function videoObject(video: Video, lang: Lang) {
+  return {
+    '@context': 'https://schema.org',
+    ...videoObjectNode(video, lang),
+  };
+}
+
+// The schema.org data for the index pages: one VideoObject per embedded
+// tutorial, each pointing to its watch page. Search Console reads this to
+// get the name and description of every video on the page.
+export function videoGraph(lang: Lang) {
+  const watchPrefix = lang === 'de' ? '/de' : '';
+  return {
+    '@context': 'https://schema.org',
+    '@graph': videos.map((video) =>
+      Object.assign(videoObjectNode(video, lang), {
+        url: `https://www.btree.tv${watchPrefix}/watch/${video.slug}/`,
+      }),
+    ),
   };
 }

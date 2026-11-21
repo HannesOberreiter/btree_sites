@@ -1,8 +1,9 @@
 ---
-import { videos, BUNNY_LIBRARY_ID } from '../config';
+import { videos, BUNNY_LIBRARY_ID, videoGraph } from '../config';
 import Layout from '../layouts/Layout.astro';
 
 const lang = 'en' as const;
+const schema = videoGraph(lang);
 ---
 
 <Layout
@@ -11,6 +12,11 @@ const lang = 'en' as const;
   description="Watch tutorial videos for the b.tree beekeeping app. Learn how to use NFC, QR codes, PWA installation, and more."
   canonicalUrl="https://www.btree.tv/"
 >
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(schema)}
+  />
   <section class="hero">
     <h1>b.tree Tutorials</h1>
     <p>
