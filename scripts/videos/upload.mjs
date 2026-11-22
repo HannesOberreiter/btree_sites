@@ -7,6 +7,8 @@
 // Usage:
 //   node scripts/videos/upload.mjs [episode ...]   Upload. Default: all episodes.
 //   node scripts/videos/upload.mjs --prune         Delete the unused videos.
+//   node scripts/videos/upload.mjs --metatags      Set the Open Graph tags of
+//                                                  the videos in videos.json.
 //
 // An episode needs an entry in videos.json before the upload. Each upload makes
 // a new Bunny video, so the website shows the old video until its deploy.
@@ -51,6 +53,17 @@ function post(url, key, body) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
+  });
+}
+
+// The player page exposes the video metaTags as Open Graph tags, and search
+// engines read them there. metaTags replace all tags of the video.
+function setMetaTags(library, key, guid, video, lang) {
+  return post(`${library}/videos/${guid}`, key, {
+    metaTags: [
+      { property: 'og:title', value: video.title[lang] },
+      { property: 'og:description', value: video.description[lang] },
+    ],
   });
 }
 
@@ -133,6 +146,7 @@ async function upload(library, key, video, lang) {
     title: `b.tree - Tutorial - ${video.title[lang]} - ${LANGS[lang]}`,
     thumbnailTime: Math.round(thumbnailTime * 1000),
   });
+  await setMetaTags(library, key, guid, video, lang);
   await request(`${library}/videos/${guid}`, key, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/octet-stream' },
@@ -216,6 +230,13 @@ const key = await libraryKey(data.libraryId);
 const names = process.argv.slice(2);
 if (names.includes('--prune')) {
   await prune(library, key, data);
+} else if (names.includes('--metatags')) {
+  for (const video of data.videos) {
+    for (const lang of Object.keys(LANGS)) {
+      await setMetaTags(library, key, video.ids[lang], video, lang);
+      console.log(`${video.episode}-${lang}: metaTags set (${video.ids[lang]})`);
+    }
+  }
 } else {
   const unknown = names.filter(
     (name) => !data.videos.some((video) => video.episode === name),
