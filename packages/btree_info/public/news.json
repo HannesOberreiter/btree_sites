@@ -1,6 +1,40 @@
 {
   "en": [
     {
+      "version": "Web app 7.15.0 · Server 7.17.0",
+      "versions": [
+        "btree-server-7.17.0",
+        "btree-client-7.15.0"
+      ],
+      "date": "2026-11-23",
+      "items": [
+        {
+          "title": "Queen Placement History",
+          "description": "A new \"Queen history\" table in the queen menu shows in which hive each queen lived, from when to when, and for how many days. The hive page lists the last queens of the hive, and the queen form warns before a queen replaces another queen that moved in on the same day."
+        },
+        {
+          "title": "Company Deletion Explanation",
+          "description": "In Settings > Company, \"Delete\" and \"Remove access\" on your only company now open a dialog explaining how to close your account. When deletion is refused because of other users, the app now shows the specific reason."
+        },
+        {
+          "title": "Queen History Date Sync",
+          "description": "Correcting the end date of a queen in the queen history now updates the hive page immediately. The move form no longer warns about a replacement when the selected queens are inactive."
+        },
+        {
+          "title": "Premium and Calendar Time Fixes",
+          "description": "Premium is now valid until the end of the paid day instead of the start. Calendar movements and scale weights on the first visible day are no longer missing for users in UTC or west of UTC, and the pest map shows the correct observation day."
+        },
+        {
+          "title": "Settings Loading Indicators",
+          "description": "Buttons in Settings, Profile, and API settings now show a spinner while requests run and cannot be clicked twice. Missing passwords in API settings now show a validation message."
+        },
+        {
+          "title": "Dark Mode Dialog Fix",
+          "description": "The dialogs to delete a company or remove your access are readable in dark mode again."
+        }
+      ]
+    },
+    {
       "version": "Web app 7.14.1 · Server 7.16.1",
       "versions": [
         "btree-server-7.16.1",
@@ -5398,6 +5432,40 @@
     }
   ],
   "de": [
+    {
+      "version": "Web-App 7.15.0 · Server 7.17.0",
+      "versions": [
+        "btree-server-7.17.0",
+        "btree-client-7.15.0"
+      ],
+      "date": "2026-11-23",
+      "items": [
+        {
+          "title": "Verlauf der Königinnenplatzierung",
+          "description": "Eine neue Tabelle „Königinnenverlauf“ im Königinnen-Menü zeigt, in welchem Stock jede Königin gelebt hat, von wann bis wann und für wie viele Tage. Die Stockseite listet die letzten Königinnen des Stocks auf, und das Königinnenformular warnt, bevor eine Königin eine andere Königin ersetzt, die am selben Tag eingezogen ist."
+        },
+        {
+          "title": "Erklärung beim Löschen des Betriebs",
+          "description": "In Einstellungen > Betrieb öffnen „Löschen“ und „Zugriff entfernen“ bei deinem einzigen Betrieb jetzt einen Dialog, der erklärt, wie du dein Konto schließt. Wenn das Löschen wegen anderer Benutzer abgelehnt wird, zeigt die App jetzt den konkreten Grund."
+        },
+        {
+          "title": "Datensynchronisation im Königinnenverlauf",
+          "description": "Das Korrigieren des Enddatums einer Königin im Königinnenverlauf aktualisiert jetzt sofort die Stockseite. Das Wanderungsformular warnt nicht mehr vor einer Ersetzung, wenn die ausgewählten Königinnen inaktiv sind."
+        },
+        {
+          "title": "Korrekturen bei Premium und Kalenderzeiten",
+          "description": "Premium ist jetzt bis zum Ende des bezahlten Tages gültig statt bis zum Anfang. Kalenderwanderungen und Stockwaagen-Gewichte am ersten sichtbaren Tag fehlen nicht mehr für Benutzer in UTC oder westlich von UTC, und die Schädlingskarte zeigt den korrekten Beobachtungstag."
+        },
+        {
+          "title": "Ladeanzeigen in den Einstellungen",
+          "description": "Schaltflächen in Einstellungen, Profil und API-Einstellungen zeigen jetzt einen Spinner, während Anfragen laufen, und können nicht doppelt angeklickt werden. Fehlende Passwörter in den API-Einstellungen zeigen jetzt eine Validierungsmeldung."
+        },
+        {
+          "title": "Korrektur der Dialoge im Dunkelmodus",
+          "description": "Die Dialoge zum Löschen eines Betriebs oder zum Entfernen deines Zugriffs sind im Dunkelmodus wieder lesbar."
+        }
+      ]
+    },
     {
       "version": "Web-App 7.14.1 · Server 7.16.1",
       "versions": [
