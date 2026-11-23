@@ -56,6 +56,8 @@ Erstelle eigene Zuchtmethoden, plane Zuchtserien, ordne Königinnen Völkern zu 
 
 Nutze responsive Statistiken für Ernten, Fütterungen, Behandlungen, Varroa-Daten, Königinnen und Völkerleistung. Aus strukturierten Aufzeichnungen wird ein Datenvorteil für zukünftige Entscheidungen.
 
+Videoerklärung: [b.tree - Tutorial - Statistiken (Premium) - Deutsch](https://www.btree.tv/de/watch/statistics/)
+
 ### NFC-Tag-Scanning auf Android
 
 NFC-Tag-Scanning kann die Arbeit am Bienenstand beschleunigen, indem physische Bienenvölker direkt mit digitalen Datensätzen verknüpft werden. Diese Funktion ist nur auf Android-Geräten mit Browser-Unterstützung für Web NFC verfügbar.

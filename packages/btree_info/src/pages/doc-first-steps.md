@@ -77,6 +77,8 @@ If you linked queens via the mother field, you can view the breeding lineage as 
 
 Rudimentary tool to keep track of your stock. We use it to keep track of our treatment material, sugar store and production amount. Each stock movement is a goods receipt or outgoing goods for one stock item, for example sugar. You can create a new stock movement with the form [/new/charge](https://app.btree.at/new/charge) and have an overview of your stock as table [/table/charge-stock](https://app.btree.at/table/charge-stock). If we fill a new batch of honey jars, we write the distinct lot number in the lot number field and the lot of the harvest we used in the note field. With this pattern, we can follow the goods flow. For sugar, we use the lot number field for the invoice number. Feedings, treatments, harvests and checkups can book stock automatically: give the task type a stock use, for example 0.79 kg sugar per liter of 3:2 sugar water, and each done task books its stock movement. Twice a year we make a stock count (inventory) in the storage and enter the counted total with the kind Inventory. b.tree books the difference. If you have a bigger operation, there are better tools for this kind of job, but for our small operation this works fine to keep track at least a little bit and fulfil the goods flow record keeping needed for our certification as organic beekeepers.
 
+Video explanation: [b.tree - Tutorial - Feeding from Stock - English](https://www.btree.tv/watch/stock/)
+
 #### Stock booked from tasks
 
 Feedings, treatments, harvests and checkups can book stock automatically. To set it up:
@@ -107,6 +109,8 @@ The separate [wax cycle](https://app.btree.at/table/wax) documents wax lots and 
 5. Correct mistakes with a reversal entry whenever possible instead of permanently deleting records.
 
 Wax products and origin types can be defined for each operation directly from their dropdowns. The product summary shows total stock and lot counts, empty lots are hidden by default, and the complete wax ledger can be exported as CSV.
+
+Video explanation: [b.tree - Tutorial - Wax Cycle - English](https://www.btree.tv/watch/wax/)
 
 ### Print Hive Records
 

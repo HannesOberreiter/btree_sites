@@ -56,6 +56,8 @@ Create queen rearing methods, plan breeding series, assign queens to colonies, a
 
 Use responsive statistics to compare harvests, feedings, treatments, varroa data, queen data, and colony performance. Structured records become a data advantage for future decisions.
 
+Video explanation: [b.tree - Tutorial - Statistics (Premium) - English](https://www.btree.tv/watch/statistics/)
+
 ### NFC tag scanning on Android
 
 NFC tag scanning can speed up work at the apiary by linking physical hives to their digital records. This feature is only available on Android devices with browser support for Web NFC.

@@ -11,6 +11,8 @@ The b.tree **Agent API** is a dedicated endpoint that lets external **AI agents*
 
 Whether you're using **Claude Desktop**, **ChatGPT with custom actions**, a **Zapier AI workflow**, or building your own agent — b.tree provides full read and write access to your beekeeping operation through the secure Agent API (OpenAPI), with MCP available as an alternative.
 
+Video explanation: [b.tree - Tutorial - Agent API & MCP (Premium) - English](https://www.btree.tv/watch/agent-api-mcp/)
+
 ---
 
 ### Why Use the Agent API?

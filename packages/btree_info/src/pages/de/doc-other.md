@@ -84,6 +84,8 @@ Hinweis: Die Premium-Mitgliedschaft gilt pro Unternehmen und nicht pro Benutzer,
 
 WizBee [/wizbee](https://app.btree.at/wizbee) ist ein KI-gestützter Imkerei-Assistent für Premium-Mitglieder. Stelle Imkerei-Fragen in natürlicher Sprache. WizBee arbeitet auch mit deinen eigenen Daten: Fütterungen, Behandlungen, Ernten, Kontrollen, Aufgaben und Lagerbestand anlegen und ändern, Statistiken anzeigen und das Wetter am Bienenstand abfragen. Du kannst tippen oder die Spracheingabe verwenden. Jede Anfrage zählt zum monatlichen Nutzungsbudget. WizBee ist über das Hauptnavigationsmenü erreichbar.
 
+Videoerklärung: [b.tree - Tutorial - WizBee KI-Assistent (Premium) - Deutsch](https://www.btree.tv/de/watch/wizbee/)
+
 ### Hilfsprogramme
 
 Zwei kleine Hilfswerkzeuge sind über die Navigation verfügbar:

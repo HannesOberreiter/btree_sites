@@ -9,6 +9,9 @@ export type Lang = 'en' | 'de';
 export interface Video {
   episode: string;
   slug: string;
+  // The documentation page that fits the video: a path on www.btree.at
+  // (gets the /de/ prefix on German pages) or a full external URL.
+  doc?: string;
   title: Record<Lang, string>;
   description: Record<Lang, string>;
   ids: Record<Lang, string>;
@@ -28,6 +31,14 @@ export function transcript(video: Video, lang: Lang): string[] {
 
 export function thumbnailUrl(video: Video, lang: Lang): string {
   return `https://www.btree.tv/thumbnails/${video.episode}-${lang}.jpg`;
+}
+
+// The documentation link of a tutorial, in the page language.
+export function docUrl(video: Video, lang: Lang): string | undefined {
+  if (!video.doc) return undefined;
+  if (video.doc.startsWith('http')) return video.doc;
+  const prefix = lang === 'de' ? '/de' : '';
+  return `https://www.btree.at${prefix}${video.doc}`;
 }
 
 // The schema.org properties of one tutorial video.

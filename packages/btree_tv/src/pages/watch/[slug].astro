@@ -5,6 +5,7 @@ import {
   thumbnailUrl,
   transcript,
   videoObject,
+  docUrl,
 } from '../../config';
 import Layout from '../../layouts/Layout.astro';
 
@@ -57,6 +58,14 @@ const title = `${video.title.en} – b.tree Tutorials`;
       </section>
       <div class="watch-nav">
         <a href="/">← All tutorials</a>
+        {docUrl(video, lang) && (
+          <a href={docUrl(video, lang)} target="_blank" rel="noopener">
+            Related documentation ↗
+          </a>
+        )}
+        <a href="https://www.btree.at/" target="_blank" rel="noopener">
+          Get started at btree.at ↗
+        </a>
       </div>
     </div>
   </main>

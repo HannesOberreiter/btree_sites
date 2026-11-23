@@ -11,6 +11,8 @@ Die b.tree **Agent API** ist ein dedizierter Endpunkt, der externen **KI-Agenten
 
 Ob **Claude Desktop**, **ChatGPT mit Custom Actions**, ein **Zapier-KI-Workflow** oder ein selbst gebauter Agent — b.tree bietet vollen Lese- und Schreibzugriff auf deinen Imkereibetrieb über die sichere Agent API (OpenAPI), mit MCP als Alternative.
 
+Videoerklärung: [b.tree - Tutorial - Agent API und MCP (Premium) - Deutsch](https://www.btree.tv/de/watch/agent-api-mcp/)
+
 ---
 
 ### Warum die Agent API nutzen?

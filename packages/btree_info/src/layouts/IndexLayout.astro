@@ -142,7 +142,7 @@ const title = frontmatter.title
           <slot />
           <ButtonBackToTop />
         </PageContent>
-        <Footer />
+        <Footer lang={frontmatter.lang} />
       </div>
       <aside id="grid-right" class="grid-sidebar" title="Table of Contents">
         <RightSideBar {frontmatter} {headings} />

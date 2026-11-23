@@ -4,6 +4,7 @@
     {
       "episode": "intro",
       "slug": "introduction",
+      "doc": "/doc-first-steps/",
       "title": {
         "en": "Introduction",
         "de": "Einführung"
@@ -28,6 +29,7 @@
     {
       "episode": "pwa",
       "slug": "pwa",
+      "doc": "/doc-faqs/",
       "title": {
         "en": "Install on Android and iOS (PWA)",
         "de": "Installation auf Android und iOS (PWA)"
@@ -52,6 +54,7 @@
     {
       "episode": "nfc",
       "slug": "nfc",
+      "doc": "/doc-faqs/",
       "title": {
         "en": "NFC Tags",
         "de": "NFC-Tags"
@@ -76,6 +79,7 @@
     {
       "episode": "qr",
       "slug": "qr-code",
+      "doc": "/doc-faqs/",
       "title": {
         "en": "QR Codes",
         "de": "QR-Codes"
@@ -100,6 +104,7 @@
     {
       "episode": "users",
       "slug": "business-user-management",
+      "doc": "/doc-other/",
       "title": {
         "en": "Companies & Users",
         "de": "Imkereien und Benutzer"
@@ -124,6 +129,7 @@
     {
       "episode": "ical",
       "slug": "ical",
+      "doc": "/doc-api/",
       "title": {
         "en": "Subscribe to iCal",
         "de": "iCal abonnieren"
@@ -148,6 +154,7 @@
     {
       "episode": "dropbox",
       "slug": "dropbox",
+      "doc": "/doc-other/",
       "title": {
         "en": "Dropbox for Photos & Files",
         "de": "Dropbox für Fotos und Dateien"
@@ -172,6 +179,7 @@
     {
       "episode": "rearing",
       "slug": "breeding",
+      "doc": "/doc-other/",
       "title": {
         "en": "Queen Rearing: Method & Series",
         "de": "Zuchtmethode und Zuchtserie"
@@ -196,6 +204,7 @@
     {
       "episode": "stock",
       "slug": "stock",
+      "doc": "/doc-first-steps/",
       "title": {
         "en": "Feeding from Stock",
         "de": "Fütterung und Lager"
@@ -220,6 +229,7 @@
     {
       "episode": "wax",
       "slug": "wax",
+      "doc": "/doc-first-steps/",
       "title": {
         "en": "Wax Cycle",
         "de": "Wachskreislauf"
@@ -244,6 +254,7 @@
     {
       "episode": "statistics",
       "slug": "statistics",
+      "doc": "/features/",
       "title": {
         "en": "Statistics (Premium)",
         "de": "Statistiken (Premium)"
@@ -268,6 +279,7 @@
     {
       "episode": "wizbee",
       "slug": "wizbee",
+      "doc": "https://www.wiz-bee.com/",
       "title": {
         "en": "WizBee AI Assistant (Premium)",
         "de": "WizBee KI-Assistent (Premium)"
@@ -292,6 +304,7 @@
     {
       "episode": "agent",
       "slug": "agent-api-mcp",
+      "doc": "/doc-agent/",
       "title": {
         "en": "Agent API & MCP (Premium)",
         "de": "Agent API und MCP (Premium)"

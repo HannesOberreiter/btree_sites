@@ -77,6 +77,8 @@ Wenn du Königinnen über das Mutterfeld miteinander verknüpft hast, kannst du 
 
 Ein rudimentäres Werkzeug, um den Überblick über deine Vorräte zu behalten. Wir verwenden es, um den Überblick über unser Behandlungsmaterial, das Zuckerlager und die Produktionsmenge zu behalten. Jede Lagerbuchung ist ein Wareneingang oder Warenausgang für einen Lagerartikel, zum Beispiel Zucker. Du kannst eine neue Lagerbuchung mit dem Formular [/new/charge](https://app.btree.at/new/charge) erstellen und hast einen einfachen Überblick über deinen Lagerbestand als Tabelle [/table/charge-stock](https://app.btree.at/table/charge-stock). Wenn wir eine neue Charge Honiggläser abfüllen, schreiben wir die eindeutige Chargennummer in das entsprechende Feld und in das Notizfeld die Charge der verwendeten Ernte. Mit diesem Muster können wir den Warenfluss verfolgen. Für Zucker verwenden wir das Feld "Chargennummer" für die Rechnungsnummer. Fütterungen, Behandlungen, Ernten und Kontrollen können den Bestand automatisch buchen: Gib dem Aufgabentyp einen Lagerverbrauch, zum Beispiel 0,79 kg Zucker pro Liter 3:2 Zuckerwasser, dann bucht jede erledigte Aufgabe ihre Lagerbuchung. Zweimal im Jahr machen wir eine Bestandszählung (Inventur) im Lager und tragen den gezählten Gesamtbestand mit der Art Inventur ein. b.tree bucht die Differenz. Wenn du einen größeren Betrieb hast, gibt es bessere Werkzeuge für Warenmanagement, aber für unseren kleinen Betrieb funktioniert dies gut, um zumindest ein wenig den Überblick zu behalten und die Warenflussaufzeichnungen zu erfüllen, die für unsere Zertifizierung als Bio-Imker erforderlich sind.
 
+Videoerklärung: [b.tree - Tutorial - Fütterung und Lager - Deutsch](https://www.btree.tv/de/watch/stock/)
+
 #### Lagerbuchungen aus Aufgaben
 
 Fütterungen, Behandlungen, Ernten und Kontrollen können den Bestand automatisch buchen. So richtest du es ein:
@@ -107,6 +109,8 @@ Der separate [Wachskreislauf](https://app.btree.at/table/wax) dokumentiert Wachs
 5. Korrigiere Fehler nach Möglichkeit durch eine Storno-Gegenbuchung, statt Aufzeichnungen endgültig zu löschen.
 
 Wachsprodukte und Herkunftsarten können je Imkerei direkt über die Auswahlfelder angelegt werden. Die Produktübersicht zeigt Gesamtbestand und Losanzahl, leere Lose sind standardmäßig ausgeblendet und der vollständige Wachskreislauf kann als CSV exportiert werden.
+
+Videoerklärung: [b.tree - Tutorial - Wachskreislauf - Deutsch](https://www.btree.tv/de/watch/wax/)
 
 ### Stockdaten drucken
 

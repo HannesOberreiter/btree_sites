@@ -5,9 +5,10 @@ import LinkedIn from '../assets/LinkedIn.svg?raw';
 
 interface Props {
   socialclass: string;
+  lang?: string;
 }
 
-const { socialclass } = Astro.props;
+const { socialclass, lang = 'en' } = Astro.props;
 
 const socialLinks = [
   {
@@ -23,7 +24,7 @@ const socialLinks = [
     icon: GitHub,
   },
   {
-    href: 'https://www.btree.tv/',
+    href: `https://www.btree.tv${lang === 'de' ? '/de' : ''}/`,
     title: 'b.tree Tutorials',
     name: 'b.tree Tutorials',
     icon: BtreeTV,

@@ -1,7 +1,13 @@
 ---
 import IconsSocial from './IconsSocial.astro';
 
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
 const now = new Date().getFullYear();
+const tutorialsUrl = `https://www.btree.tv${lang === 'de' ? '/de' : ''}/`;
 ---
 
 <footer class="h-20 w-full border-t">
@@ -11,7 +17,17 @@ const now = new Date().getFullYear();
         © 2014-{now} - b.tree by Hannes Oberreiter
       </span>
     </div>
-    <IconsSocial socialclass="flex" />
+    <div class="flex items-center gap-4">
+      <a
+        href={tutorialsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm hover:text-green-500"
+      >
+        {lang === 'de' ? 'Tutorial-Videos' : 'Tutorial videos'}
+      </a>
+      <IconsSocial socialclass="flex" lang={lang} />
+    </div>
   </div>
 </footer>
 

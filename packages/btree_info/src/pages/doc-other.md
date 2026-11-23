@@ -84,6 +84,8 @@ Hint: Premium membership is per company and not per user, i.e. you only need to 
 
 WizBee [/wizbee](https://app.btree.at/wizbee) is an AI-powered beekeeping assistant available to premium members. You can ask beekeeping questions in plain language, and WizBee can also work with your own records: create and update feedings, treatments, harvests, checkups, todos and stock, show statistics, and check the apiary weather. You can type or use voice input. Each query counts toward a monthly usage budget. Access WizBee from the main navigation menu.
 
+Video explanation: [b.tree - Tutorial - WizBee AI Assistant (Premium) - English](https://www.btree.tv/watch/wizbee/)
+
 ### Helpers
 
 Two small utility tools are available from the navigation:
