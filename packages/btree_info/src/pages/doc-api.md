@@ -122,7 +122,7 @@ Error: Invalid value transferred (example: weight was given as string 'abc')
 
 ### LoRaWAN Scales (The Things Network)
 
-LoRaWAN hive scales that send their data to [The Things Network](https://www.thethingsnetwork.org/) (TTN) can send their readings to b.tree with a TTN webhook. The webhook accepts the payload keys of the [BEEP](https://beep.nl/) platform, so a scale with a BEEP payload formatter works without changes, for example the open-source [TanenBase](https://github.com/hmd83/tanen) scale.
+LoRaWAN hive scales that send their data to [The Things Network](https://www.thethingsnetwork.org/) (TTN) can send their readings to b.tree with a TTN webhook. The webhook accepts the payload keys of the [BEEP](https://beep.nl/) platform, so a scale with a BEEP payload formatter works without changes, for example the open-source [TanenBase](https://github.com/hmd83/tanen) scale ([tanen.eu](https://tanen.eu/)).
 
 The webhook URL is on the API settings page. It looks as follows: `https://api.btree.at/api/v1/external/ttn/API_KEY`. One webhook serves all scales of your beekeeping operation, because b.tree finds the scale by the DevEUI of the device.
 

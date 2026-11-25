@@ -97,7 +97,7 @@ Diese Projekte messen Gewicht, Temperatur und andere Werte am Bienenstock.
 
 - **[Hiveeyes](https://www.hiveeyes.org/):** ein Open-Source-Baukasten für das Monitoring von Bienenstöcken von einer Gruppe Imker aus Berlin. Er verwendet Arduino-Hardware, MQTT, InfluxDB und Grafana. Du kannst ihre gemeinsame Plattform nutzen oder alles auf einem Raspberry Pi betreiben.
 - **[BEEP base](https://beep.nl):** die Stockwaage der BEEP-Stiftung, verbunden mit der BEEP-App.
-- **[TanenBase](https://github.com/hmd83/tanen):** eine LoRaWAN-Stockwaage, die Gewicht und Temperatur misst und jahrelang mit drei AAA-Zellen läuft. Sie sendet die Daten über The Things Network (TTN), und ein TTN-Webhook gibt sie an eine App weiter, zum Beispiel BEEP oder b.tree. Lizenz: Apache-2.0.
+- **[TanenBase](https://github.com/hmd83/tanen) ([tanen.eu](https://tanen.eu/)):** eine LoRaWAN-Stockwaage, die Gewicht und Temperatur misst und jahrelang mit drei AAA-Zellen läuft. Sie sendet die Daten über The Things Network (TTN), und ein TTN-Webhook gibt sie an eine App weiter, zum Beispiel BEEP oder b.tree. Lizenz: Apache-2.0.
 - **[HoneyPi](https://honey-pi.de/):** eine Stockwaage zum Selbstbauen auf Basis eines Raspberry Pi. Ihre Lizenz (CC BY-NC-SA) verbietet die kommerzielle Nutzung, daher ist sie im strengen Sinn nicht Open Source.
 
 b.tree kann Daten von Stockwaagen über seine [API](/de/doc-api/) empfangen. LoRaWAN-Waagen in TTN, die die Payload-Schlüssel von BEEP verwenden, zum Beispiel TanenBase, senden ihre Messwerte mit einem [TTN-Webhook](/de/doc-api/#lorawan-waagen-the-things-network) an b.tree.

@@ -122,7 +122,7 @@ Error: Falscher Wert (zum Beispiel wurde hier 'weight' mit 'abc' übertragen)
 
 ### LoRaWAN-Waagen (The Things Network)
 
-LoRaWAN-Stockwaagen, die ihre Daten an [The Things Network](https://www.thethingsnetwork.org/) (TTN) senden, können ihre Messwerte mit einem TTN-Webhook an b.tree schicken. Der Webhook nimmt die Payload-Schlüssel der Plattform [BEEP](https://beep.nl/) an. Eine Waage mit einem BEEP Payload Formatter funktioniert daher ohne Änderung, zum Beispiel die Open-Source-Waage [TanenBase](https://github.com/hmd83/tanen).
+LoRaWAN-Stockwaagen, die ihre Daten an [The Things Network](https://www.thethingsnetwork.org/) (TTN) senden, können ihre Messwerte mit einem TTN-Webhook an b.tree schicken. Der Webhook nimmt die Payload-Schlüssel der Plattform [BEEP](https://beep.nl/) an. Eine Waage mit einem BEEP Payload Formatter funktioniert daher ohne Änderung, zum Beispiel die Open-Source-Waage [TanenBase](https://github.com/hmd83/tanen) ([tanen.eu](https://tanen.eu/)).
 
 Die Webhook-URL findest du auf der API-Einstellungsseite. Sie sieht wie folgt aus: `https://api.btree.at/api/v1/external/ttn/API_KEY`. Ein Webhook genügt für alle Waagen deiner Imkerei, denn b.tree findet die Waage über die DevEUI des Geräts.
 

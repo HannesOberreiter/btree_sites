@@ -97,7 +97,7 @@ These projects measure weight, temperature and other data at the hive.
 
 - **[Hiveeyes](https://www.hiveeyes.org/):** an open source toolkit for beehive monitoring from a group of beekeepers in Berlin. It uses Arduino hardware, MQTT, InfluxDB and Grafana. You can use their shared platform or run it on a Raspberry Pi.
 - **[BEEP base](https://beep.nl/home-english):** the scale of the BEEP foundation, connected to the BEEP app.
-- **[TanenBase](https://github.com/hmd83/tanen):** a LoRaWAN scale that measures weight and temperature and runs for years on three AAA cells. It sends the data over The Things Network (TTN), and a TTN webhook passes them on to an app, for example BEEP or b.tree. License: Apache-2.0.
+- **[TanenBase](https://github.com/hmd83/tanen) ([tanen.eu](https://tanen.eu/)):** a LoRaWAN scale that measures weight and temperature and runs for years on three AAA cells. It sends the data over The Things Network (TTN), and a TTN webhook passes them on to an app, for example BEEP or b.tree. License: Apache-2.0.
 - **[HoneyPi](https://honey-pi.de/en/):** a do-it-yourself scale based on a Raspberry Pi. Its license (CC BY-NC-SA) does not allow commercial use, so it is not open source in the strict sense.
 
 b.tree can receive data from hive scales through its [API](/doc-api/). LoRaWAN scales on TTN that use the BEEP payload keys, for example TanenBase, send their readings to b.tree with a [TTN webhook](/doc-api/#lorawan-scales-the-things-network).
