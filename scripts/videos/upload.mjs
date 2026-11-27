@@ -234,7 +234,9 @@ if (names.includes('--prune')) {
   for (const video of data.videos) {
     for (const lang of Object.keys(LANGS)) {
       await setMetaTags(library, key, video.ids[lang], video, lang);
-      console.log(`${video.episode}-${lang}: metaTags set (${video.ids[lang]})`);
+      console.log(
+        `${video.episode}-${lang}: metaTags set (${video.ids[lang]})`,
+      );
     }
   }
 } else {

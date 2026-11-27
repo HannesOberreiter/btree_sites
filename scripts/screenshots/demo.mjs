@@ -246,7 +246,10 @@ async function createData(api, t) {
   // 0.79 kg sugar per liter of 3:2 sugar water, 1 ml formic acid per ml of
   // treatment amount.
   // Harvests book their raw honey in, 1 kg per kg harvested.
-  await call(api, 'POST', 'option/charge_types', { name: t.formic, unit: 'ml' });
+  await call(api, 'POST', 'option/charge_types', {
+    name: t.formic,
+    unit: 'ml',
+  });
   await call(api, 'POST', 'option/charge_types', { name: t.honey, unit: 'kg' });
   const stockTypes = await optionIds(api, 'charge_types');
   const recipe = (table, typeId, chargeType, mode, factor, kind = 'out') =>
