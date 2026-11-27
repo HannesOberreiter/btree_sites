@@ -47,6 +47,7 @@ jobs:
       - name: Deploy to Bunny Storage
         env:
           STORAGE_PASSWORD: ${{ secrets.BTREE_INFO_STORAGE_PASSWORD }}
+          SITE_PUBLIC_HOST: www.btree.at
           STORAGE_ZONE_NAME: ${{ vars.BTREE_INFO_STORAGE_ZONE_NAME }}
         working-directory: packages/btree_info
         run: bash ../../scripts/upload-bunny.sh dist

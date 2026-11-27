@@ -38,6 +38,7 @@ jobs:
       - name: Deploy to Bunny Storage
         env:
           STORAGE_PASSWORD: ${{ secrets.BTREE_TV_STORAGE_PASSWORD }}
+          SITE_PUBLIC_HOST: www.btree.tv
           STORAGE_ZONE_NAME: ${{ vars.BTREE_TV_STORAGE_ZONE_NAME }}
         working-directory: packages/btree_tv
         run: bash ../../scripts/upload-bunny.sh dist

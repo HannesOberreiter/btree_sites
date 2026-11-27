@@ -38,6 +38,7 @@ jobs:
       - name: Deploy to Bunny Storage
         env:
           STORAGE_PASSWORD: ${{ secrets.WIZBEE_INFO_STORAGE_PASSWORD }}
+          SITE_PUBLIC_HOST: www.wiz-bee.com
           STORAGE_ZONE_NAME: ${{ vars.WIZBEE_INFO_STORAGE_ZONE_NAME }}
         working-directory: packages/wizbee_info
         run: bash ../../scripts/upload-bunny.sh dist
